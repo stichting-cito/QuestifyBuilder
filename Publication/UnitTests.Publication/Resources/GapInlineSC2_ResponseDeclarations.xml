@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<responseDeclarations>
+  <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="integer">
+    <correctResponse interpretation="(19&amp;9&amp;10&amp;3&amp;6&amp;4)|(19&amp;10&amp;9&amp;4&amp;6&amp;3)|(17&amp;10&amp;7&amp;6&amp;4&amp;3)|(17&amp;7&amp;10&amp;3&amp;4&amp;6)|(16&amp;9&amp;7&amp;6&amp;3&amp;4)|(16&amp;7&amp;9&amp;4&amp;3&amp;6)">
+      <value>19</value>
+    </correctResponse>
+  </responseDeclaration>
+  <responseDeclaration identifier="RESPONSE2" cardinality="single" baseType="integer">
+    <correctResponse>
+      <value>9</value>
+    </correctResponse>
+  </responseDeclaration>
+  <responseDeclaration identifier="RESPONSE3" cardinality="single" baseType="integer">
+    <correctResponse>
+      <value>10</value>
+    </correctResponse>
+  </responseDeclaration>
+  <responseDeclaration identifier="RESPONSE4" cardinality="single" baseType="integer">
+    <correctResponse>
+      <value>3</value>
+    </correctResponse>
+  </responseDeclaration>
+  <responseDeclaration identifier="RESPONSE5" cardinality="single" baseType="integer">
+    <correctResponse>
+      <value>6</value>
+    </correctResponse>
+  </responseDeclaration>
+  <responseDeclaration identifier="RESPONSE6" cardinality="single" baseType="integer">
+    <correctResponse>
+      <value>4</value>
+    </correctResponse>
+  </responseDeclaration>
+</responseDeclarations>

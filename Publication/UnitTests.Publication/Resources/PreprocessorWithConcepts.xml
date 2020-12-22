@@ -1,0 +1,121 @@
+<assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="TI_PreProcessing_Inline" title="TI_PreProcessing_Inline" layoutTemplateSrc="Cito.Generic.Gap.Inline.SC">
+  <solution>
+    <keyFindings>
+      <keyFinding id="gapController" scoringMethod="Dichotomous">
+        <keyFact id="1-d8a12ec3-e934-48e7-8e67-814db27baa4a" score="1" xmlns="http://Cito.Tester.Server/xml/serialization">
+          <keyValue domain="d8a12ec3-e934-48e7-8e67-814db27baa4a" occur="1">
+            <stringValue>
+              <typedValue>test</typedValue>
+            </stringValue>
+            <preprocessingRule>
+              <ruleName>HLKL</ruleName>
+            </preprocessingRule>
+            <preprocessingRule>
+              <ruleName>VSBE</ruleName>
+            </preprocessingRule>
+            <preprocessingRule>
+              <ruleName>VDT</ruleName>
+            </preprocessingRule>
+          </keyValue>
+        </keyFact>
+      </keyFinding>
+    </keyFindings>
+	  <conceptFindings>
+		  <conceptFinding id="gapController" scoringMethod="None">
+			  <conceptFact id="1-d8a12ec3-e934-48e7-8e67-814db27baa4a" score="1" xmlns="http://Cito.Tester.Server/xml/serialization">
+				  <conceptValue domain="d8a12ec3-e934-48e7-8e67-814db27baa4a" occur="1">
+					  <stringValue>
+						  <typedValue>testing</typedValue>
+					  </stringValue>
+					  <preprocessingRule>
+						  <ruleName>HLKL</ruleName>
+					  </preprocessingRule>
+					  <preprocessingRule>
+						  <ruleName>VSBE</ruleName>
+					  </preprocessingRule>
+					  <preprocessingRule>
+						  <ruleName>VDT</ruleName>
+					  </preprocessingRule>
+				  </conceptValue>
+				  <concepts>
+					  <concept value="1" code="CONCEPT1" />
+					  <concept value="2" code="CONCEPT2" />
+				  </concepts>
+        </conceptFact>
+		  </conceptFinding>
+	  </conceptFindings>
+    <aspectReferences />
+  </solution>
+  <parameters>
+    <parameterSet id="entireItem">
+      <listedparameter name="inlineType">input</listedparameter>
+      <booleanparameter name="dualColumnLayout">False</booleanparameter>
+      <booleanparameter name="displayVerklankingOnTheRight">True</booleanparameter>
+      <booleanparameter name="showCalculatorButton" />
+      <collectionparameter name="numberOfAudioContentItems">
+        <definition id="">
+          <resourceparameter name="audiocontent" />
+          <xhtmlparameter name="description" />
+        </definition>
+      </collectionparameter>
+      <xhtmlparameter name="leftBody" />
+      <xhtmlresourceparameter name="leftSource" />
+      <integerparameter name="sourceHeight">200</integerparameter>
+      <integerparameter name="sourcePositionTop">0</integerparameter>
+      <xhtmlparameter name="itemBody" />
+      <xhtmlparameter name="itemQuestion">
+        <p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml">ToLower, Trim, ToAscii <cito:InlineElement id="d8a12ec3-e934-48e7-8e67-814db27baa4a" layoutTemplateSourceName="InlineGapLayoutTemplate" xmlns:cito="http://www.cito.nl/citotester"><cito:parameters><cito:parameterSet id="entireItem"><cito:plaintextparameter name="gapId">d8a12ec3-e934-48e7-8e67-814db27baa4a</cito:plaintextparameter><cito:plaintextparameter name="gapLabel">1</cito:plaintextparameter><cito:listedparameter name="gapType">String</cito:listedparameter><cito:listedparameter name="timeSubType">hhmm</cito:listedparameter><cito:listedparameter name="dateSubType">dutch</cito:listedparameter><cito:booleanparameter name="includeCurrencySymbolInMask">False</cito:booleanparameter><cito:listedparameter name="autoInputProcessing">None</cito:listedparameter><cito:booleanparameter name="isUnsignedEntry">False</cito:booleanparameter><cito:listedparameter name="nrOfDigits">5</cito:listedparameter><cito:listedparameter name="nrOfDecimals">0</cito:listedparameter><cito:integerparameter name="nrOfCharacters">10</cito:integerparameter><cito:booleanparameter name="showEditMask">False</cito:booleanparameter><cito:plaintextparameter name="gapMaskCharacter">_</cito:plaintextparameter><cito:booleanparameter name="editSize">True</cito:booleanparameter><cito:integerparameter name="width">57</cito:integerparameter><cito:integerparameter name="height">19</cito:integerparameter>
+          <cito:stringScoringParameter name="stringScoring" label="fsfsf" ControllerId="gapController" findingOverride="gapController" expectedLength="5">
+            <cito:subparameterset id="1">
+              <cito:booleanparameter name="fictiveString">True</cito:booleanparameter>
+            </cito:subparameterset>
+            <cito:definition id="">
+              <cito:booleanparameter name="fictiveString" />
+            </cito:definition>
+          </cito:stringScoringParameter>
+        </cito:parameterSet></cito:parameters></cito:InlineElement> </p>
+      </xhtmlparameter>
+      <xhtmlparameter name="itemInlineInput">
+        <p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml">Bla</p>
+      </xhtmlparameter>
+      <xhtmlparameter name="itemGeneral" />
+      <collectionparameter name="choices">
+        <definition id="">
+          <plaintextparameter name="choice" />
+          <integerparameter name="nrOfConnections" />
+        </definition>
+      </collectionparameter>
+    </parameterSet>
+    <parameterSet id="kenmerken">
+      <booleanparameter name="showCalculatorButton">False</booleanparameter>
+      <integerparameter name="hightOfScrollText" />
+      <booleanparameter name="showGroup">False</booleanparameter>
+      <plaintextparameter name="calculatorDescription" />
+      <listedparameter name="calculatorMode">basic</listedparameter>
+      <booleanparameter name="showReset" />
+      <booleanparameter name="showNotepad" />
+      <plaintextparameter name="notepadDescription" />
+      <booleanparameter name="showSymbolPicker" />
+      <plaintextparameter name="symbolPickerDescription" />
+      <plaintextparameter name="symbols" />
+      <booleanparameter name="showRuler" />
+      <plaintextparameter name="rulerDescription" />
+      <integerparameter name="rulerStart" />
+      <integerparameter name="rulerEnd" />
+      <integerparameter name="rulerStep" />
+      <integerparameter name="rulerStepSize" />
+      <listedparameter name="rulerLengthUnit">centimeter</listedparameter>
+      <booleanparameter name="showTriangle" />
+      <plaintextparameter name="trianglePickerDescription" />
+      <integerparameter name="triangleMinDegrees" />
+      <integerparameter name="triangleMaxDegrees" />
+      <booleanparameter name="showSpellCheck">False</booleanparameter>
+      <listedparameter name="spellCheckCulture">nl-NL</listedparameter>
+      <booleanparameter name="showFormulaEditor">False</booleanparameter>
+      <plaintextparameter name="formulaEditorDescription" />
+      <listedparameter name="formulaEditorType" />
+      <booleanparameter name="showTextMarker">False</booleanparameter>
+      <plaintextparameter name="textMarkerDescription" />
+    </parameterSet>
+  </parameters>
+</assessmentItem>

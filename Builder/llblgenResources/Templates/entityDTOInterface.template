@@ -1,0 +1,23 @@
+using System;
+using System.ComponentModel;
+using System.Collections;
+using System.Runtime.Serialization;
+
+using <[RootNamespace]>.HelperClasses;
+using <[RootNamespace]>.EntityClasses;
+
+using SD.LLBLGen.Pro.ORMSupportClasses;
+
+namespace <[RootNamespace]>.DTOClasses
+{
+/*
+    /// <summary>
+    /// DTO interface.
+    /// </summary>
+    public interface IDTO<T>
+    {
+        T ToEntity(T toFill);
+        IDTO<T> FromEntity(T entityInstance, Hashtable seenObjects, Hashtable parents);
+    }
+	*/
+}

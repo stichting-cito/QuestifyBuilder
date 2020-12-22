@@ -1,0 +1,92 @@
+<Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" defintionVersion="1">
+	<Description/>
+	<Targets>
+		<Target xsi:type="ControlTemplateTarget" enabled="true" name="ces"><![CDATA[
+				<div class="test">
+				</div>
+			]]></Target>
+	</Targets>
+	<SharedFunctions>
+	</SharedFunctions>
+	<SharedParameterSet id="">
+		<booleanparameter name="dualColumnLayout">
+			<designersetting key="visible">False</designersetting>
+			<designersetting key="defaultvalue">False</designersetting>
+		</booleanparameter>
+		<xhtmlparameter name="leftBody">
+			<designersetting key="label">Body links</designersetting>
+			<designersetting key="description">Geef hier de tekst en/of de afbeelding in zoals die in het linkerdeel weergegeven dient te worden.</designersetting>
+			<designersetting key="group">3 Linkerkolom</designersetting>
+			<designersetting key="required">False</designersetting>
+			<designersetting key="visible">False</designersetting>
+			<designersetting key="sortkey">1</designersetting>
+		</xhtmlparameter>
+		<xhtmlparameter name="itemBody">
+			<designersetting key="label">Body</designersetting>
+			<designersetting key="description">Geef hier de tekst en/of de afbeelding(en) in zoals die boven de vraag weergegeven dienen te worden.</designersetting>
+			<designersetting key="group">4 Stam</designersetting>
+			<designersetting key="required">false</designersetting>
+			<designersetting key="sortkey">1</designersetting>
+		</xhtmlparameter>
+		<listedparameter name="expectedAnswers">
+			<designersetting key="label">Max. sleutels</designersetting>
+			<designersetting key="description">Geef aan uit hoeveel sleutels het antwoord maximaal bestaat.</designersetting>
+			<designersetting key="group">6 Alternatieven</designersetting>
+			<designersetting key="visible">True</designersetting>
+			<designersetting key="defaultvalue">1</designersetting>
+			<designersetting key="sortkey">1</designersetting>
+			<designersetting key="list">
+				<listvalues>
+					<listvalue key="0">Onbeperkt</listvalue>
+					<listvalue key="1">1</listvalue>
+					<listvalue key="2">2</listvalue>
+					<listvalue key="3">3</listvalue>
+					<listvalue key="4">4</listvalue>
+					<listvalue key="5">5</listvalue>
+					<listvalue key="6">6</listvalue>
+					<listvalue key="7">7</listvalue>
+					<listvalue key="8">8</listvalue>
+					<listvalue key="9">9</listvalue>
+					<listvalue key="10">10</listvalue>
+					<listvalue key="11">11</listvalue>
+					<listvalue key="12">12</listvalue>
+				</listvalues>
+			</designersetting>
+		</listedparameter>
+		<integerparameter name="multiChoiceType">
+			<designersetting key="label">Type: mc/mr</designersetting>
+			<designersetting key="description">0: check, 1: radio, 2: unknown</designersetting>
+			<designersetting key="group">6 Alternatieven</designersetting>
+			<designersetting key="visible">False</designersetting>
+			<designersetting key="defaultvalue">0</designersetting>
+		</integerparameter>
+		<multichoicescoringparameter ControllerId="mc" findingOverride="mc" name="multiChoiceScoring">
+			<attributereference name="minChoices">expectedAnswers</attributereference>
+			<attributereference name="maxChoices">expectedAnswers</attributereference>
+			<attributereference name="multiChoice">multiChoiceType</attributereference>
+			<designersetting key="label"/>
+			<designersetting key="itemcountlabel">Aantal alternatieven</designersetting>
+			<designersetting key="description"/>
+			<designersetting key="visible">true</designersetting>
+			<designersetting key="group">6 Alternatieven</designersetting>
+			<designersetting key="sortkey">4</designersetting>
+			<designersetting key="minimumLength">2</designersetting>
+			<designersetting key="maximumLength">12</designersetting>
+			<designersetting key="subsetidentifiers">Alphabetic</designersetting>
+			<definition>
+				<xhtmlparameter name="mcOption">
+					<designersetting key="label">Keuze</designersetting>
+					<designersetting key="description"/>
+					<designersetting key="required">true</designersetting>
+					<designersetting key="visible">true</designersetting>
+				</xhtmlparameter>
+				<xhtmlparameter name="mcOption2">
+					<designersetting key="label">Keuze kolom 2</designersetting>
+					<designersetting key="description"/>
+					<designersetting key="required">False</designersetting>
+					<designersetting key="visible">False</designersetting>
+				</xhtmlparameter>
+			</definition>
+		</multichoicescoringparameter>
+	</SharedParameterSet>
+</Template>

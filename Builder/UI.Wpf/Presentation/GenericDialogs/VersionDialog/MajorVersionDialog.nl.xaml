@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <s:String x:Key="MajorVersionDialog.Title">Nieuwe versie</s:String>
+    <s:String x:Key="MajorVersionDialog.Label">Opmerkingen</s:String>
+    <s:String x:Key="MajorVersionDialog.Description">Typ opmerkingen die beschrijven wat in deze versie is gewijzigd.</s:String>
+
+    <s:String x:Key="MajorVersionDialog.Command.Ok">OK</s:String>
+    <s:String x:Key="MajorVersionDialog.Command.Cancel">Annuleren</s:String>
+    <s:String x:Key="MajorVersionDialog.Command.Ok.Error" xml:space="preserve">Er is een fout opgetreden bij het opslaan.&#x0d;&#x0a;Fout: {0}</s:String>
+    <s:String x:Key="MajorVersionDialog.MajorVersionDialogViewModel.Remark.Required">Veld Opmerkingen moet worden gevuld.</s:String>
+
+    <!-- ViewModel Messages -->
+    <s:String x:Key="MajorVersionDialog.MajorVersionDialogViewModel.HasErrors">Niet alle invoer is geldig.</s:String>
+</ResourceDictionary>

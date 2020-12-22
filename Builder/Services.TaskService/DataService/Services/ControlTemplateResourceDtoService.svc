@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Questify.Builder.Services.TasksService.DataService.Services.ControlTemplateResourceDtoService" CodeBehind="ControlTemplateResourceDtoService.svc.cs" %>

@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7A467241-C0C8-43D0-AE5B-22C606CB0CCF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Questify.Builder.Plugins.PaperBased</RootNamespace>
+    <AssemblyName>Questify.Builder.Plugins.PaperBased</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Questify.Builder.Plugins.PaperBased.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Questify.Builder.Plugins.PaperBased.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>Questify.Builder.Plugins.PaperBased.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>Questify.Builder.Plugins.PaperBased.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>
+    </NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlToOpenXml, Version=1.6.0.0, Culture=neutral, PublicKeyToken=6ad79d83e2b60e63, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\HtmlToOpenXml.1.6.1\lib\net40\HtmlToOpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.2.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.2.1\lib\net45\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Diagnostics.TraceSource.4.3.0\lib\net46\System.Diagnostics.TraceSource.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.IO.Packaging.4.4.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Runtime.InteropServices.4.3.0\lib\net463\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\BorderStyle.vb" />
+    <Compile Include="Helpers\FormulaHelper.vb" />
+    <Compile Include="Helpers\ImageHelper.vb" />
+    <Compile Include="Helpers\InlineElementConverter.vb" />
+    <Compile Include="Helpers\MhtFile.vb" />
+    <Compile Include="Helpers\ProgressEventArgs.vb" />
+    <Compile Include="Helpers\TableCellBorderExtractor.vb" />
+    <Compile Include="Helpers\WidthExtractor.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="OpenXmlGenerator.vb" />
+    <Compile Include="PaperBasedTestPlugin.vb" />
+    <Compile Include="Publication\PreviewHandlers\Word_ItemPreviewHandler.vb" />
+    <Compile Include="Publication\UI\SelectPublicationOptions.Designer.vb">
+      <DependentUpon>SelectPublicationOptions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Publication\UI\SelectPublicationOptions.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Publication\WordPublicationHandler\WordPublicationHandler.vb" />
+    <Compile Include="Reports\OptionValidatorWordExport.vb" />
+    <Compile Include="Reports\UI\SelectInformationBlocks.Designer.vb">
+      <DependentUpon>SelectInformationBlocks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\UI\SelectInformationBlocks.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\UI\SelectReportLocation.Designer.vb">
+      <DependentUpon>SelectReportLocation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\UI\SelectReportLocation.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\WordReport.vb" />
+    <Compile Include="Tests\Model\PrintForm.vb" />
+    <Compile Include="Tests\Model\PrintFormCollection.vb" />
+    <Compile Include="Tests\Model\PrintFormType.vb" />
+    <Compile Include="Tests\Model\WordAssessmentTest.vb" />
+    <Compile Include="Tests\Model\WordAssessmentTestValidator.vb" />
+    <Compile Include="Tests\Model\WordItemReference.vb" />
+    <Compile Include="Tests\Model\WordItemReferenceValidator.vb" />
+    <Compile Include="Tests\Model\WordTestPart.vb" />
+    <Compile Include="Tests\Model\WordTestPartValidator.vb" />
+    <Compile Include="Tests\Model\WordTestSection.vb" />
+    <Compile Include="Tests\Model\WordTestSectionValidator.vb" />
+    <Compile Include="Tests\PrintFormEventArgs.vb" />
+    <Compile Include="Tests\UI\ChoosePrintFormControl.Designer.vb">
+      <DependentUpon>ChoosePrintFormControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\UI\ChoosePrintFormControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\UI\PrintFormEditor.Designer.vb">
+      <DependentUpon>PrintFormEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\UI\PrintFormEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\UI\Word_AssessmentTestPropertiesEditor.Designer.vb">
+      <DependentUpon>Word_AssessmentTestPropertiesEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\UI\Word_AssessmentTestPropertiesEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\UI\Word_ItemReferencePropertiesEditor.Designer.vb">
+      <DependentUpon>Word_ItemReferencePropertiesEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\UI\Word_ItemReferencePropertiesEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\UI\Word_TestPartPropertiesEditor.Designer.vb">
+      <DependentUpon>Word_TestPartPropertiesEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\UI\Word_TestPartPropertiesEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\UI\Word_TestSectionPropertiesEditor.Designer.vb">
+      <DependentUpon>Word_TestSectionPropertiesEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\UI\Word_TestSectionPropertiesEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WordItemSelectorManager.vb" />
+    <Compile Include="Helpers\WordStyleHelper.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.nl.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publication\UI\SelectPublicationOptions.resx">
+      <DependentUpon>SelectPublicationOptions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\UI\SelectInformationBlocks.nl.resx">
+      <DependentUpon>SelectInformationBlocks.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\UI\SelectInformationBlocks.resx">
+      <DependentUpon>SelectInformationBlocks.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\UI\SelectReportLocation.nl.resx">
+      <DependentUpon>SelectReportLocation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\UI\SelectReportLocation.resx">
+      <DependentUpon>SelectReportLocation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\UI\ChoosePrintFormControl.resx">
+      <DependentUpon>ChoosePrintFormControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\UI\PrintFormEditor.nl.resx">
+      <DependentUpon>PrintFormEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\UI\PrintFormEditor.resx">
+      <DependentUpon>PrintFormEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\UI\Word_AssessmentTestPropertiesEditor.nl.resx">
+      <DependentUpon>Word_AssessmentTestPropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\UI\Word_AssessmentTestPropertiesEditor.resx">
+      <DependentUpon>Word_AssessmentTestPropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\UI\Word_ItemReferencePropertiesEditor.nl.resx">
+      <DependentUpon>Word_ItemReferencePropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\UI\Word_ItemReferencePropertiesEditor.resx">
+      <DependentUpon>Word_ItemReferencePropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\UI\Word_TestPartPropertiesEditor.nl.resx">
+      <DependentUpon>Word_TestPartPropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\UI\Word_TestPartPropertiesEditor.resx">
+      <DependentUpon>Word_TestPartPropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\UI\Word_TestSectionPropertiesEditor.nl.resx">
+      <DependentUpon>Word_TestSectionPropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\UI\Word_TestSectionPropertiesEditor.resx">
+      <DependentUpon>Word_TestSectionPropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Questify.Builder.IoC\Questify.Builder.IoC.csproj">
+      <Project>{63ce1dee-458d-47a3-82fd-78e0132b536b}</Project>
+      <Name>Questify.Builder.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Cito.Tester.Common\Cito.Tester.Common.vbproj">
+      <Project>{9a0bd8fe-d6f6-4ce5-9a0b-877610b00deb}</Project>
+      <Name>Cito.Tester.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Cito.Tester.ContentModel\Cito.Tester.ContentModel.vbproj">
+      <Project>{94ee8d6c-5c52-4f34-9e61-e407b3240004}</Project>
+      <Name>Cito.Tester.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Configuration\Questify.Builder.Configuration.vbproj">
+      <Project>{d2b8db3e-9ae4-4568-851b-cf8f030785c4}</Project>
+      <Name>Questify.Builder.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Logic.Service\Questify.Builder.Logic.Service.csproj">
+      <Project>{885875BF-3E90-4B06-B1FB-A7883E54E391}</Project>
+      <Name>Questify.Builder.Logic.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Logic\Questify.Builder.Logic.vbproj">
+      <Project>{c4ab026e-b1e2-4d1e-a857-4ca29baa9981}</Project>
+      <Name>Questify.Builder.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Model.ContentModel\Questify.Builder.Model.ContentModel.vbproj">
+      <Project>{A4A21CD0-3F23-4BE8-A859-9778CD5F6DE7}</Project>
+      <Name>Questify.Builder.Model.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Packaging\Questify.Builder.Packaging.vbproj">
+      <Project>{56c0d819-f3ed-48ce-8f1f-07e415103f46}</Project>
+      <Name>Questify.Builder.Packaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Security\Questify.Builder.Security.vbproj">
+      <Project>{30b8e255-bb43-4f43-8dd1-387988e33af3}</Project>
+      <Name>Questify.Builder.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\UI\Questify.Builder.UI.vbproj">
+      <Project>{D35F44EC-B3C4-48DF-9BEC-76DA023B393A}</Project>
+      <Name>Questify.Builder.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\Default.docx" />
+    <None Include="Resources\remove16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-icon_16.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>robocopy "$(TargetDir)\" "$(SolutionDir)\Builder\Client\bin\x86\$(ConfigurationName)\Plugins" "$(TargetName).dll" "$(TargetName).pdb" "$(TargetName).resources.dll" /R:5 /S /njh /njs /nfl /ndl /nc /ns
+robocopy "$(TargetDir)\" "$(SolutionDir)\Publication\Services.PublicationService\bin\Plugins" "$(TargetName).dll" "$(TargetName).pdb" "$(TargetName).resources.dll" /R:5 /S /njh /njs /nfl /ndl /nc /ns
+exit /b 0</PostBuildEvent>
+  </PropertyGroup>
+</Project>

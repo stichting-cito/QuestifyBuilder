@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ResourceCustomProperties1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 131</value>
+  </data>
+  <data name="TestSetControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>613, 490</value>
+  </data>
+  <data name="_TestPackageEditorAutoHideControl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="DockableWindow11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>613, 512</value>
+  </data>
+  <data name="WindowDockingArea5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="WindowDockingArea3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="_TestPackageEditorUnpinnedTabAreaTop.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="_TestPackageEditorUnpinnedTabAreaBottom.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="_TestPackageEditorUnpinnedTabAreaLeft.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="_TestPackageEditorUnpinnedTabAreaRight.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="SaveToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAjJJREFUOE+tkt9Lk1EYx99/oftugi66rakxnIvV4C3XUJYNw4qwH2+kWZou00TF
+        yjRq/oJshUsnrVaTcFKRP8AUKRFlKlmauaIlDjXFJoLB1/OcvXlcRRfRF56bl/fzOed5ziP9lzx/FgaV
+        r3UJLd5FPHTPo6kxhLuOadTVfoH9VgDXyydRWjKOwoK3yMsdwflzfqi4JBHY1QnU1qzgb1leWYUptQuH
+        Up/yUnFJ8j5Z4ILKim/qr7+H4ND8MnZZXkCjUWA96BEC94M5Ligt+ar+Hp2f8MfgAmLMPhRcmsIBS7MQ
+        OBtmuOCi7YOKiGyEhydC2CZ7kZM9huQkpxDU3w5yQdbZERWL5Fe4zx/EZoMbijIAs9khBDXVn7lAOTWg
+        on+GO/s/YVN8Iw4feYXExDohuFE5hY52sKcEjh1/A+vRXj5tGhj1TNemkyNwN1KsLyHLdiG4UjaBNh/Y
+        DgDNrh/s3b+j/NosHyoNjHrOzPCvw/uTW2E0VgjB5cIxeB4B952rbHHCMKVlR5Ul3Ya0M0UROInB+zww
+        GMqEwJY3ymCguirMTyaIfUaMTsbg+xmMTs5Cyb2KPaYWDut2u6DXFwkBraXjDtavTQKCT+ffxLvAHALT
+        i7hQbEeswcXgJsQm3IMuPl8IMjOGWN9LHN5q9GDLDhmP23rga+9DR3c/el8PYq/ZCo2+AXEM3q6th1ab
+        IwSUkyd6+HrShtGS0DvTU9G0aWDUM51KRfDOuKxowb9FktYATrQ4xbl82G8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="SaveToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 22</value>
+  </data>
+  <data name="SaveToolStripButton.Text" xml:space="preserve">
+    <value>&amp;Opslaan</value>
+  </data>
+  <data name="SaveAsToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAjNJREFUOE+tkutL01EYx3//Qu97E/SitzU1hmuxGvzKNZRlw7Aiuv3CW2m6zAsp
+        lqZRywtkK1w6abWahJOKvIApYiKLpWhl5oqmOLyiE8Hg23nOfnmyohfRA8+bw/l8znku0n+J588ioPS1
+        LqHFu4iH7jk0NYZx1zGFutqvsN8M4lrFOEpLPqCwYAR5uUM4fy4AFZckArs6gdqaVfwtVlbXYErpwuGU
+        pzxVXJK8Txa4oKpyXr36exAcnlvBbssLaDQKrIc8QuB+MMsFpSWT6vWN8QP+FFpAjNmHgksTOGhpFgJn
+        wzQXXLR9VBERP8Nvx8LYJnuRkz2KpESnENTfDnFBVuaQikXjV7gvEMJmgxuKMgiz2SEENdVfuEA5M6ii
+        f4Y7Bz5jU3wjjhx9hYSEOiG4XjWBjnawUQLHT76G9Vgv7zY1jGqmb9PLUbgbydaXkGW7EFwpG0ObD2wH
+        gGbXNzb3ZVSUz/CmUsOo5oz0wDp8IKkVRmOlEBQVjsLzCLjvXGOLE4EpNXtDWk7YkJpWHIUTGbzfA4Oh
+        TAhsecMMBqpvRfjLBLFjxOhk+N9PY3h8BkruVew1tXBYt8cFvb5YCGgtHXew/m0SEHw2/wbeBWcRnFrE
+        hct2xBpcDG5C7K570MXnC0FG+htW9xKHtxo92LJDxuO2Hvja+9DRPYDefj/2ma3Q6BsQx+Dt2npotTlC
+        kJnmTz59qoevJ20YLQnNmUZF3aaGUc30KiXBO+OyhODfQ5K+A0JWOr6CUjSGAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="SaveAsToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 22</value>
+  </data>
+  <data name="SaveAsToolStripButton.Text" xml:space="preserve">
+    <value>Opslaan als...</value>
+  </data>
+  <data name="SaveCloseToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 22</value>
+  </data>
+  <data name="SaveCloseToolStripButton.Text" xml:space="preserve">
+    <value>Opslaan &amp;&amp; sluiten</value>
+  </data>
+  <data name="SaveCloseToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Opslaan &amp; sluiten</value>
+  </data>
+  <data name="AddTestToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAABGNJREFUSEvdlX9MlVUYx1+qBWSmUKRQ0TRZcOPyI0BAfrwgDGyKToFRooM1Zluy
+        GjNbk9ydQQEGXBSFC4LALVAQJpHObKllJGYXELhw4fIbhAxSAUGBe8/5dl58+aGwxR/80fpsz87u87zn
+        85xzz3n3cv8pgE6jsWt2QZBxT4mppWVyRC0byDdHX5aJpZhaOoAxp76+isnhyzswkGf6kZheGgAY6HVt
+        VdDXYqIrCwNFq6rE0uKhPTHGdDTenNJiYzE1w+Tk6AHomgGdFvSeAkMXHHH3uzV2YnlxkN7ocvowG5MT
+        J27p9cVqMvHtJXL/KwW5kxg3NtY7DHIHdLQCdGAXHlRvw73z6+LFqYtDd339Zvr3Z6BDB5lICfrge+Dh
+        VbbiOGBcxaIG5M9IkN5N0LXvxMiPkmaUhD4tTn8Sgzkxi17lJqNDCaDDmaAjhaBjF9lYADr4Kchf0SA9
+        ASBdfiCdQZhoCoO+e1sVHQz/4G77nhWiYpr58mlIR9RPGEoChhXAaDHo/QqQW2FM7MvETN7OxlZv0FZ/
+        kLbtoD3hGL8dMZgjd0+1tX3eWtQILNxAKvfq2i3bTncVhSDi1HvQ9e8F7dz4SNzmA6L1Amn2AGlyA2lw
+        AqlzYaMX0B8MDATj9yLpZRMT7skdzWKT7F2ZVHsSCs1phJXuQXeDB9DGM7E3SIsniGYDSKMgX8/krEGN
+        A2i1LdBoA+2ZdfWBrst8RNXCWLMGyXWZKGgtxLtl76Or1hVoYSsWxMKq1Uxc7wxy8+0pORrsoa6x0cv3
+        rviCTX/mkWXmDOb/TUKDpJtHkKvNYzuIRE+1I6BxAdTOTMakwqprHZncHqizQ0/5q12Bzob+4nSBuXID
+        TpLiPmib5ltpm+rz61sp/C9OxwK0aeqjUDRnYHd5FMLz/RFZ4IeIqdgIXQ2Tq6SgNVLgh1cQzXP7BStj
+        GQtDFsLVnW3gkOHbk6k5jrzWbORoFTjJIrslHcc0qUjXpCCpIREHaz7Hvj9isLk4BF2/2QE3rAGVDfRn
+        XkSsDycXpS+wEJo8OyWeRmiQpU2DsoM1aTuKnNY0ZLR8DXlTPJLUsYir/wSyuo9xqD4GwWWh6LwqAaqs
+        QK9bgZSbIXkrp2QaIxamLIQGj+Odu0UVqNwBXskTIdxl79DExv1IVO+DmyIAfrIgyuezWgFPJKUS/ZUr
+        VgSVa0Eq14CeX4X8KKNzTLOchRmL+W+2fR6/0rd05+tOJaGWDsUhZg5H+GpBntl+AILU4fQWlw3lWy2E
+        +iZWHykx/lB9yUJPfrYELq7GuVjTa0wjyJ+bEv4b0jTvSmX3IZy9/SUkMoneTun+sliagZ7ivMYvmA5Q
+        1kB11KKdpeY98zglbGuJ7O07zK1+M9m19kSnDCX9CeC/4YnhYXYF47jX2FGu5GQz95xDIbdWd3a5piP3
+        JTXPz+YXRvjGythBsSZvJHs2S+Xe/ZJUT5V1iscNlrPkEjgTLoUznnpuDrSMM+9O5yzEn/9LOO4f8VOv
+        WIY91/IAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="AddTestToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 22</value>
+  </data>
+  <data name="AddTestToolStripButton.Text" xml:space="preserve">
+    <value>Toets toevoegen</value>
+  </data>
+  <data name="AddTestsetToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAABGNJREFUSEvdlX9MlVUYx1+qBWSmUKRQ0TRZcOPyI0BAfrwgDGyKToFRooM1Zluy
+        GjNbk9ydQQEGXBSFC4LALVAQJpHObKllJGYXELhw4fIbhAxSAUGBe8/5dl58+aGwxR/80fpsz87u87zn
+        85xzz3n3cv8pgE6jsWt2QZBxT4mppWVyRC0byDdHX5aJpZhaOoAxp76+isnhyzswkGf6kZheGgAY6HVt
+        VdDXYqIrCwNFq6rE0uKhPTHGdDTenNJiYzE1w+Tk6AHomgGdFvSeAkMXHHH3uzV2YnlxkN7ocvowG5MT
+        J27p9cVqMvHtJXL/KwW5kxg3NtY7DHIHdLQCdGAXHlRvw73z6+LFqYtDd339Zvr3Z6BDB5lICfrge+Dh
+        VbbiOGBcxaIG5M9IkN5N0LXvxMiPkmaUhD4tTn8Sgzkxi17lJqNDCaDDmaAjhaBjF9lYADr4Kchf0SA9
+        ASBdfiCdQZhoCoO+e1sVHQz/4G77nhWiYpr58mlIR9RPGEoChhXAaDHo/QqQW2FM7MvETN7OxlZv0FZ/
+        kLbtoD3hGL8dMZgjd0+1tX3eWtQILNxAKvfq2i3bTncVhSDi1HvQ9e8F7dz4SNzmA6L1Amn2AGlyA2lw
+        AqlzYaMX0B8MDATj9yLpZRMT7skdzWKT7F2ZVHsSCs1phJXuQXeDB9DGM7E3SIsniGYDSKMgX8/krEGN
+        A2i1LdBoA+2ZdfWBrst8RNXCWLMGyXWZKGgtxLtl76Or1hVoYSsWxMKq1Uxc7wxy8+0pORrsoa6x0cv3
+        rviCTX/mkWXmDOb/TUKDpJtHkKvNYzuIRE+1I6BxAdTOTMakwqprHZncHqizQ0/5q12Bzob+4nSBuXID
+        TpLiPmib5ltpm+rz61sp/C9OxwK0aeqjUDRnYHd5FMLz/RFZ4IeIqdgIXQ2Tq6SgNVLgh1cQzXP7BStj
+        GQtDFsLVnW3gkOHbk6k5jrzWbORoFTjJIrslHcc0qUjXpCCpIREHaz7Hvj9isLk4BF2/2QE3rAGVDfRn
+        XkSsDycXpS+wEJo8OyWeRmiQpU2DsoM1aTuKnNY0ZLR8DXlTPJLUsYir/wSyuo9xqD4GwWWh6LwqAaqs
+        QK9bgZSbIXkrp2QaIxamLIQGj+Odu0UVqNwBXskTIdxl79DExv1IVO+DmyIAfrIgyuezWgFPJKUS/ZUr
+        VgSVa0Eq14CeX4X8KKNzTLOchRmL+W+2fR6/0rd05+tOJaGWDsUhZg5H+GpBntl+AILU4fQWlw3lWy2E
+        +iZWHykx/lB9yUJPfrYELq7GuVjTa0wjyJ+bEv4b0jTvSmX3IZy9/SUkMoneTun+sliagZ7ivMYvmA5Q
+        1kB11KKdpeY98zglbGuJ7O07zK1+M9m19kSnDCX9CeC/4YnhYXYF47jX2FGu5GQz95xDIbdWd3a5piP3
+        JTXPz+YXRvjGythBsSZvJHs2S+Xe/ZJUT5V1iscNlrPkEjgTLoUznnpuDrSMM+9O5yzEn/9LOO4f8VOv
+        WIY91/IAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="AddTestsetToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 22</value>
+  </data>
+  <data name="AddTestsetToolStripButton.Text" xml:space="preserve">
+    <value>Toetsset toevoegen</value>
+  </data>
+  <data name="DeleteTestPackageComponentToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAABGpJREFUSEutlHtMllUcx08IvHJ9kwCB5QBBCeQqUoAlKUVZUGSv4BhdlFiXjVpr
+        jgUzbJOR5NYmf2CuDZsxHBteoFCmAgHBJO4UKCAojKnwcr+N933O+fY78JAziGrx3b47e57zPJ/v7/zO
+        eR72X4WxC49PlrtFqJdrr/n+/G8enLasVy/XVkJMRiijF1BxdhMfyrffot5eGwFYbzS2dUGpx2Tlfujz
+        7Y+oU2sjbtSfgKEFUDow35uNkULnDoA9pk6vLtGVohGjqbvE1PHPhJJ3QIiCSDH/na+YzHSQEMNsZ3hG
+        RoaAMgjMlYM/+BQTZcEYL3YPURGrS1QFOvDuxDIx+y0wcwqYLwQMxZiezpsyDqf3YbZ4HHwEMPaBDx+G
+        uKfDbEMsJi57nlQR/yxU+DjNDyTfF2OpEJOnIKYLIWavA1PnIEbSF+Bi9Dj4QDT5JRh7EjF+3XdQ9Lzo
+        qCL+Ktm+R1torHkqiuu/gJjIIedBTBVRSBW4/gi1JYXAr4HfjQLv2wPeGw1DVyLm+veN8nvxuZj5MFjF
+        LGl5gBRvizsmRjOp2pMQ42copARCnw1+Zzf5BQITvOd58K7nyBHkGAo8ADF0EI0/x1Qkv+WasHEjs1Jx
+        ywOADBOlK6la6I9Ra2glw1lUNbVFgm9TSLeEEvzmTvCOMPD2YPDWIHI4cDsGGInHXGfk2KFo7ZsqcrlE
+        fdQmQ0/KoLifRtVRhT27HoJvPQveGQ7+eyjBnwZvo4DmQPAGP6DNG5MVW2eyPnJOs7NjtipuZfHud77i
+        vQS/RZVKqKx4CfybBO8Ab9m+AEezP9Dhi9rTTtf83dlWFSG1vEVLwp2oSnSHAt1hQBeN0jcJ3E7gVlk1
+        taUpAKIlANN1rlNH37X9XH1VammDFwMOP2HhkuaiDUx10QZ9otUGfq9zixirDpseuRoOfVkohsuewdBP
+        OzD0YxCMTVQ1gXmjP0SjH0SVO76MNTuxAGJsPVlDXkd+GHDSwgS/JB/EjfffQ92ht1EZF4fy2Ndxde/L
+        uLw7Apf8fVFga4NcSzMMlXpTS/zA632Axm0wnrPD0UiWSxgTsg1ZniAZtBSyGNAar0NHQjzadW+gLeYV
+        NBG43n8bahzsUG5C3yF1TT6nL9kCNHiD13kBN7ygnLdHzj5WSBhZ+Qay3Fwz8iJcSr74bz1S5Ar86gVe
+        4wFe6wGl2BH5SabXCGNNdlDHR5VtZeZ/0dpCd9HcXFcbovmgIM76etJmi8w91pZJH9taJZRoLXTSP9hY
+        Rg9mmSSMX7GdVardwatcoZQ64Vq6TTNh5C9DWrbq/0kUsRBDqf1dXvEklMtOaM9xHNBomAdNyTatjcRZ
+        5qxcsqxSrjiiP9/ZQAGb1am/F2hjEMFM4cPMaVwvQpmF8GSahXsrLJ123pSf1xQOntHWfZ345/9nZWE/
+        Wwc/tkEEMU+xnYWKQLZXBLBXyTuFH/NCMLMny9OxTChcOJKrS1a/UG0w0yKEOSGAuUlToIsMlitaaRWr
+        i7E/AGhr2POZOu/cAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="DeleteTestPackageComponentToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 22</value>
+  </data>
+  <data name="DeleteTestPackageComponentToolStripButton.Text" xml:space="preserve">
+    <value>Verwijder toetspakketcomponent</value>
+  </data>
+  <data name="MoveTestUpToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAdVJREFUOE9jwAcka6xPqqwMEYVySQOStVYnb3+8+99+pv1fqYUBwlBh4oBkjcXx
+        q++v/V9xd9X/K++v/refbv9Xg1hDJGstjp9/e/7/vFtz/8++Mfv/jOsz/p99c+a//RT7v1or3YSgyrAD
+        +XrLM2ffnPo/+9aU/1OvT/w/+dqE/xOu9v7vudL+/9CLvf9NJ7r+N8AVJpzZGvNVu53fGXS4PhErNvzc
+        eK72f9uluv/158v+6/U6fFdtsX6s2mL1nDNP66P6Bj9eqDYkUF/PBGUxMMbLH87Yn/G19nze//oLBf+l
+        6s2uQKUYGP4zMIIxPgAyoPBk7ue2y8X/O66W/pdvMr8MlSIOgAwoOVn4ue9G+f8JNyv/K5NnQMnnaXeq
+        /s+4W/NftcmadAPagAbMu1/3f8GDhv+qbTakG9B1veTzsseN/1c8af6v1U6GAVNvlXxe96Ll/4YXbf+1
+        O8gwYP79ts+733X/3/u+979hhwMeA0BxWs/AwtDNwM3QyiDK0MEgx5giNbv+SvK3JY8a/i9/0vJfoV7/
+        DkMzgyJDO4MCWA1I7SoGZkh6ABEgTj0DF0MPgwjIACDWZE6XWcySIbsMhDl6OeyBGjXAciA1ILUgS/8z
+        MAIABUTg3PaSwlkAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="MoveTestUpToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="MoveTestUpToolStripButton.Text" xml:space="preserve">
+    <value>Toets omhoog verplaatsen</value>
+  </data>
+  <data name="MoveTestUpToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Toets omhoog verplaatsen</value>
+  </data>
+  <data name="MoveTestDownToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAbNJREFUOE9jwArqtdjk6m3vKLXYP1VutX9psSqsCSpDJIiTP3TiyuE/Z16f+3/y
+        1en/ojXGV6EyRAKgAfUn6n9MuDLlf/elfqAB5uQaMPF/z+VeCgy42v+/93L3f6kaC/IMmHSt73/X5db/
+        0g0kGsAINaDtUu3/qrMFQANIDESIAZU/qs/l/q89DzSgiSwXVP1ovlT0v/VyyX95YgzgytSYJldndkC6
+        ymSnbLX5vrb9WT/brxT/77xa+t98gttrqQqjbdLVprskq0322a8K5YFqQwCXTaFyuh32H0+/3fd/yq2q
+        /xNvVv7vu1H+vxeIp96u/X/63f7/XnP8/0fujl8G1YIJvDfHSev12LyZea/m/9Q7VUCNEDwdyPaa4/s/
+        dn/STKhS3MBlV4SURY/7m0WPGv/PuV/7f96Duv/+8wP+px/JIqwZBowWG0maT3R5vfZ5x//ghcH/4/ZH
+        T4FK4QCrGJgZuhm4GXoYRBjaGRQYmhkUOft5/SzqnX75bnE9xtDKoAPEGmA5kBqQ2noGFob/DIyYBnQz
+        yDN0MGgDNeixdLLYM7QxmAM1GoPFQHIoBjAwAgCkit/Zi1nrsgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="MoveTestDownToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 20</value>
+  </data>
+  <data name="MoveTestDownToolStripButton.Text" xml:space="preserve">
+    <value>Toets omlaag verplaatsen</value>
+  </data>
+  <data name="MoveTestSetUpToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAdVJREFUOE9jwAcka6xPqqwMEYVySQOStVYnb3+8+99+pv1fqYUBwlBh4oBkjcXx
+        q++v/V9xd9X/K++v/refbv9Xg1hDJGstjp9/e/7/vFtz/8++Mfv/jOsz/p99c+a//RT7v1or3YSgyrAD
+        +XrLM2ffnPo/+9aU/1OvT/w/+dqE/xOu9v7vudL+/9CLvf9NJ7r+N8AVJpzZGvNVu53fGXS4PhErNvzc
+        eK72f9uluv/158v+6/U6fFdtsX6s2mL1nDNP66P6Bj9eqDYkUF/PBGUxMMbLH87Yn/G19nze//oLBf+l
+        6s2uQKUYGP4zMIIxPgAyoPBk7ue2y8X/O66W/pdvMr8MlSIOgAwoOVn4ue9G+f8JNyv/K5NnQMnnaXeq
+        /s+4W/NftcmadAPagAbMu1/3f8GDhv+qbTakG9B1veTzsseN/1c8af6v1U6GAVNvlXxe96Ll/4YXbf+1
+        O8gwYP79ts+733X/3/u+979hhwMeA0BxWs/AwtDNwM3QyiDK0MEgx5giNbv+SvK3JY8a/i9/0vJfoV7/
+        DkMzgyJDO4MCWA1I7SoGZkh6ABEgTj0DF0MPgwjIACDWZE6XWcySIbsMhDl6OeyBGjXAciA1ILUgS/8z
+        MAIABUTg3PaSwlkAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="MoveTestSetUpToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 20</value>
+  </data>
+  <data name="MoveTestSetUpToolStripButton.Text" xml:space="preserve">
+    <value>Toetsset omhoog verplaatsen</value>
+  </data>
+  <data name="MoveTestSetUpToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Toetsset omhoog verplaatsen</value>
+  </data>
+  <data name="MoveTestSetDownToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAbNJREFUOE9jwArqtdjk6m3vKLXYP1VutX9psSqsCSpDJIiTP3TiyuE/Z16f+3/y
+        1en/ojXGV6EyRAKgAfUn6n9MuDLlf/elfqAB5uQaMPF/z+VeCgy42v+/93L3f6kaC/IMmHSt73/X5db/
+        0g0kGsAINaDtUu3/qrMFQANIDESIAZU/qs/l/q89DzSgiSwXVP1ovlT0v/VyyX95YgzgytSYJldndkC6
+        ymSnbLX5vrb9WT/brxT/77xa+t98gttrqQqjbdLVprskq0322a8K5YFqQwCXTaFyuh32H0+/3fd/yq2q
+        /xNvVv7vu1H+vxeIp96u/X/63f7/XnP8/0fujl8G1YIJvDfHSev12LyZea/m/9Q7VUCNEDwdyPaa4/s/
+        dn/STKhS3MBlV4SURY/7m0WPGv/PuV/7f96Duv/+8wP+px/JIqwZBowWG0maT3R5vfZ5x//ghcH/4/ZH
+        T4FK4QCrGJgZuhm4GXoYRBjaGRQYmhkUOft5/SzqnX75bnE9xtDKoAPEGmA5kBqQ2noGFob/DIyYBnQz
+        yDN0MGgDNeixdLLYM7QxmAM1GoPFQHIoBjAwAgCkit/Zi1nrsgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="MoveTestSetDownToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 20</value>
+  </data>
+  <data name="MoveTestSetDownToolStripButton.Text" xml:space="preserve">
+    <value>Toetsset omlaag verplaatsen</value>
+  </data>
+  <data name="MoveTestSetDownToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Toetsset omlaag verplaatsen</value>
+  </data>
+  <data name="ExportToExcelToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        rkJggg==
+</value>
+  </data>
+  <data name="ExportToExcelToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 20</value>
+  </data>
+  <data name="ExportToExcelToolStripButton.Text" xml:space="preserve">
+    <value>Exporteren naar MS Excel</value>
+  </data>
+  <data name="SaveToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAjJJREFUOE+tkt9Lk1EYx99/oftugi66rakxnIvV4C3XUJYNw4qwH2+kWZou00TF
+        yjRq/oJshUsnrVaTcFKRP8AUKRFlKlmauaIlDjXFJoLB1/OcvXlcRRfRF56bl/fzOed5ziP9lzx/FgaV
+        r3UJLd5FPHTPo6kxhLuOadTVfoH9VgDXyydRWjKOwoK3yMsdwflzfqi4JBHY1QnU1qzgb1leWYUptQuH
+        Up/yUnFJ8j5Z4ILKim/qr7+H4ND8MnZZXkCjUWA96BEC94M5Ligt+ar+Hp2f8MfgAmLMPhRcmsIBS7MQ
+        OBtmuOCi7YOKiGyEhydC2CZ7kZM9huQkpxDU3w5yQdbZERWL5Fe4zx/EZoMbijIAs9khBDXVn7lAOTWg
+        on+GO/s/YVN8Iw4feYXExDohuFE5hY52sKcEjh1/A+vRXj5tGhj1TNemkyNwN1KsLyHLdiG4UjaBNh/Y
+        DgDNrh/s3b+j/NosHyoNjHrOzPCvw/uTW2E0VgjB5cIxeB4B952rbHHCMKVlR5Ul3Ya0M0UROInB+zww
+        GMqEwJY3ymCguirMTyaIfUaMTsbg+xmMTs5Cyb2KPaYWDut2u6DXFwkBraXjDtavTQKCT+ffxLvAHALT
+        i7hQbEeswcXgJsQm3IMuPl8IMjOGWN9LHN5q9GDLDhmP23rga+9DR3c/el8PYq/ZCo2+AXEM3q6th1ab
+        IwSUkyd6+HrShtGS0DvTU9G0aWDUM51KRfDOuKxowb9FktYATrQ4xbl82G8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="SaveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 22</value>
+  </data>
+  <data name="SaveToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Opslaan</value>
+  </data>
+  <data name="SaveAsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAjNJREFUOE+tkutL01EYx3//Qu97E/SitzU1hmuxGvzKNZRlw7Aiuv3CW2m6zAsp
+        lqZRywtkK1w6abWahJOKvIApYiKLpWhl5oqmOLyiE8Hg23nOfnmyohfRA8+bw/l8znku0n+J588ioPS1
+        LqHFu4iH7jk0NYZx1zGFutqvsN8M4lrFOEpLPqCwYAR5uUM4fy4AFZckArs6gdqaVfwtVlbXYErpwuGU
+        pzxVXJK8Txa4oKpyXr36exAcnlvBbssLaDQKrIc8QuB+MMsFpSWT6vWN8QP+FFpAjNmHgksTOGhpFgJn
+        wzQXXLR9VBERP8Nvx8LYJnuRkz2KpESnENTfDnFBVuaQikXjV7gvEMJmgxuKMgiz2SEENdVfuEA5M6ii
+        f4Y7Bz5jU3wjjhx9hYSEOiG4XjWBjnawUQLHT76G9Vgv7zY1jGqmb9PLUbgbydaXkGW7EFwpG0ObD2wH
+        gGbXNzb3ZVSUz/CmUsOo5oz0wDp8IKkVRmOlEBQVjsLzCLjvXGOLE4EpNXtDWk7YkJpWHIUTGbzfA4Oh
+        TAhsecMMBqpvRfjLBLFjxOhk+N9PY3h8BkruVew1tXBYt8cFvb5YCGgtHXew/m0SEHw2/wbeBWcRnFrE
+        hct2xBpcDG5C7K570MXnC0FG+htW9xKHtxo92LJDxuO2Hvja+9DRPYDefj/2ma3Q6BsQx+Dt2npotTlC
+        kJnmTz59qoevJ20YLQnNmUZF3aaGUc30KiXBO+OyhODfQ5K+A0JWOr6CUjSGAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="SaveAsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 22</value>
+  </data>
+  <data name="SaveAsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Opslaan als..</value>
+  </data>
+  <data name="SaveCloseToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 22</value>
+  </data>
+  <data name="SaveCloseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Opslaan &amp;&amp; sluiten</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 6</value>
+  </data>
+  <data name="ExitToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAxdJREFUOE9t
+        kmtIk2EUx98ikiLomxZBhERBl08FRkkURUUh3fFWpoZgkl0hKro4dbq5ispyZrqpqWE6L6npXnFtNvO2
+        YaWW5mU6dXO6q5fUbfbvzDDQ9eH3Pue8z/85l+c5DAA3Kioq12SIxNcLi4pTJMUlKSJx5vXKKqnX/7Ru
+        P7KysmPldZ87zFbbrGl0FBaTGUarzaFube1oaGy6uFj/z8jPL1hZWv5BOmIwwKjphSTIH6UBZ1HmfwYV
+        IcEYG9DCPjUFmULBFkqKVrgFKCotqx7q74eSGwvFpQh84SfgqwvyW+7fRe25ALTwuLD2acDWyNgFAVJf
+        pXH0Oj3quHFgw0OgvnMLzdeiob52GerLkVBFhEF18QLYY0fwjcuBZWQEIrE4Zi6AODPbq5yt7jL19qLG
+        /xQaKLt9YgK/rFaozgdBffoEHFT67MwMmv2OQrnHB18TE6BobOx8VyDZxjx5+uyG3jDyu/SkHz5RmUpa
+        7ZOTGJj8hcaoSNSHh8I0NQ0nBVCuW4v6LZvRcOQgtMMGZ0ZWloARpqWn6oaGULbfF4qjh1B3+ABkGzdA
+        ttsHpvEJmKia2kB/KKjbJqJuCQPl6lWwDBvw7n1ZHvMyNU04TP2X++zAx107IfdeDxkJa/fugZUyW6en
+        0RQWijaP5WhdyqCFaPZYBrNOh7fFJXkMjy+4aTCafkv3+aJ6nSdYOuzq10A3VB8ciM8nj0NHtoPa6qK9
+        H0THti3o0PQ5k4WpAiaRJ/AsrpT+1MlqUEGbcirRSWL7+Dhaye8lHDYbHEYjdGRrCBvLQlIl7XyenLJ1
+        7hmpCo62uxvfr0ajlgQqoo3QUjAjYSF7jHBlt0VFwUzDxkt69PcZXR8XJR+qCsxdXei5Ej0XoJMYpMNm
+        WmeIAcLO52N8YBBCUebCQXJx+869laI3OdIxvR6TcjlUmzbShS3BD0Lj7Y3Znh66OD1evE6X3n/AcR/l
+        ebg8fuz76pp2i23MaR0chEWrhWF0dDa7qKQ9Jo7mepF+gTMPJy5hO+/xE35aTm6uMDsnJz5JwH/Iid/u
+        rgXzB5RBws+vNSlFAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ExitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 22</value>
+  </data>
+  <data name="ExitToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Afsluiten</value>
+  </data>
+  <data name="FileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 23</value>
+  </data>
+  <data name="FileToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Bestand</value>
+  </data>
+  <data name="AddNewTestsetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="AddNewTestsetToolStripMenuItem.Text" xml:space="preserve">
+    <value>Toetsset toevoegen</value>
+  </data>
+  <data name="AddNewTestToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="AddNewTestToolStripMenuItem.Text" xml:space="preserve">
+    <value>Toets toevoegen</value>
+  </data>
+  <data name="DeleteTestPackageComponentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="DeleteTestPackageComponentToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verwijder toetspakketcomponent</value>
+  </data>
+  <data name="ToolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 6</value>
+  </data>
+  <data name="MoveTestUpInTestsetToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="MoveTestUpInTestsetToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Toets omhoog verplaatsen</value>
+  </data>
+  <data name="MoveTestDownInTestsetToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="MoveTestDownInTestsetToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Toets omlaag verplaatsen</value>
+  </data>
+  <data name="MoveTestsetUpInTestpackageToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="MoveTestsetUpInTestpackageToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Toetsset omhoog verplaatsen</value>
+  </data>
+  <data name="MoveTestsetDownInTestpackageToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="MoveTestsetDownInTestpackageToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Toetsset omlaag verplaatsen</value>
+  </data>
+  <data name="EditToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 23</value>
+  </data>
+  <data name="EditToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bewerken</value>
+  </data>
+  <data name="ChangeViewTypesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAABNlJREFUSEuV
+        lVtMXEUYx/sgL/pkoU8+ND60aULRQoGkscRaNJpN+uAtVV9sDLE1xTSammhQBKqytLQqaZsKIhT2xrJX
+        oNAWC8W2wdCGggvLpSy77O0clr2z7C7L5e83g627xi56kn/mzJwz/9/5vpnvzBYAj5Sbu+fA/1Xy/H9T
+        Sic7e+e+oFdGt0b4/5BS252kK6ROkhHr6zqsrmjQ0PCZsajohXdpMMUnWSmdwsLnDj0ECMObA672VfNn
+        +/c/HpLSKSzIkYR8CqwlNPCOSrEOA7BOItMNGbC2psdKQovEcjsHhIJyGu8GRXKYefxTKZ28/N0SuyCH
+        L6TC/H0pfFEd/EsaBKJahOI6kh5BNhbRwEdiAEFsoakbURLknWQ/ppRO7t7dkhlrE0S/CiIBPGTiWVTB
+        E1bD7dNhPqiFb6kd3iU1vBEtBzB1Xf/mUVtUtD8lkhTAHgJMWC/D5VViYUQKi6hHz+3zkOs/wfj4OG4N
+        yvH72EXMum5ACLZDCLXD7lVhxi2D2daEGWcrDhYXvJnsmQJgKbK65RB9SoTGatA70IaysnKUlpZS7tdQ
+        WVkJmUxOMBOsQgtFQdGwKAkkBFTwRw148WDB68meqQCWItsvYPr+x3JUVFXQ8Ma1FI3+dQfcvNmPnhtt
+        tDZqLrZOXkpjKN6Bl4rTAPIpArf7Mjd3OJ1YWPAiGoth1mrFwEA/fD4/vQYEg0HEaLy+sQzhmBqRZR21
+        GkQSV1iKHg/YS4BZRwsHhMJh+uoY2ttVPBJD99e8HR6+S68CkUiEvycENAjGdHynBePd6SPYm58jYZM6
+        ujroa328ZaZiSEmLqua7ifXZuCCI6O7u5RB/VEPSEaAHBw4Wpl8DNoFdgiBwo1HTVQi+ZspxG+19JXqu
+        1/Jxh92BcHiRA8JUI0yRxDVKURoAS9H45CX+lR6Phy8sM3PND0L0Gqjt4f0opW56apqbO+f1VHgqLFJl
+        c8DLm0RgmWvChYs/QBRFrKyuwDpr5aYP5XS54HS6YDKZ+Lbt77uF3t8q4RB6aRd1pQfk5mVLTFMN3Oj8
+        eSl95RQNb1yBQADx5QTsDgfu3L6Du/fuYXJyErF4HPX1zdAb5FT12k0AFIHZ0gQrbVVWZB0dGg4ZM43B
+        bDZj5P4IRkdGMTQ0BNucHRaLBZ2dapoKyOUbgLS7KDeP1mC6ETYCsPPgTN1xnPz8LXx84g1eC6eqS/Bt
+        zTF8erIEbrebp3LYpEdrawsGBwfxU/NRFL+SFpAtGZ+4hDlXCz8P5jwK2OflGLhbjgv1H2B4qoJ+eip8
+        VXGE14HR2AWVSo3e3l8pXdOo+u4wRZA2RdmSiQeNBLjMz4M5j5wAMjiodS4o4CK56UdonmnAl+UfUkWH
+        MDNjwRTtqFM178G3aNwkRQQwP/gZs45mfh5YRTlsggw2UYY5isROIAdF5VxQ0hrVoqFRinN1R/FF+RH6
+        w7ZQoXWlBxQU5Byy0o8uvNjGz4NwTItFprgWS8taRBM6xFb0XPFVAxYCSiTWjSQDVtFBFn149bV9byd7
+        pgC2b3/m+dra4wppdYlCWvW+oub0UcXpGhK1Z5jOHOOqZard0NmzH3GdI9XVnVDu2vVsfrJnCiAj44kn
+        t23L2pGZuXVH5tand2RmUcvu/6OysjJ3ZmRkPPW3J7b8CehHgDeO2tV1AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ChangeViewTypesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>299, 22</value>
+  </data>
+  <data name="ChangeViewTypesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Toetsvormen veranderen</value>
+  </data>
+  <data name="ToolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 6</value>
+  </data>
+  <data name="MoveButtonsMenuToolStripSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 6</value>
+  </data>
+  <data name="MoveTestUpInTestsetToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB7UlEQVQ4T2P4//8/TixVY31SfUmgKDY5
+        GMYqCMJStVYnb3+8+997ZsJfxYVewtjUgDBWQakay+NX31/7v+Luqv9X3l/97zI98q/6El+shmAISNda
+        Hj//9vz/ebfm/p99Y/b/Gddn/D/75sx/+ylBf7WW+Qqhq0fhyDdYnzn75tT/2bem/J96feL/ydcm/J9w
+        tfd/z5X2/4de7P1vOtH1v8nqIJQwgTM4czTm63Y7vzPodn0iVmz4ufFc7f+2S3X/68+X/dfrdfiu2mb9
+        WLPT7jlvntZH7eVevBgGaC51YYKxGeMVD2ccyfhaez7vf/2Fgv8yDWZXYHJaS90YdVd4M8L4cAOQMciA
+        wpO5n9suF//vuFr6X6HJ4jI2dSCMVRBkQMXZws99N8r/T7hZ+V+52ZJ0A+ovlHyedqfq/4y7Nf9VW6xJ
+        N6DtSvnneffr/i940PBfo82GdAN6r1d9Xva48f+KJ83/tdptSTdg6q3az+tetPzf8KLtv16nPakGKBxe
+        8qjt8+533f/3vu/9b9jlgNsAhg4GRiBmAWJuIBZlaGeQY0yVmd12pfDbkkcN/5c/afmv2Gxwh6GJQREo
+        rwBWA1HLDMSMMANAHC4gFgFiOSDWZM6UWcySJbsMhNl7OeyBBmtA5UBqQGqBljIwAgAGgX+zik2THgAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="MoveTestUpInTestsetToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verplaats toets binnen de toetsset omhoog</value>
+  </data>
+  <data name="MoveTestDownInTestsetToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB3ElEQVQ4T2P4//8/BuaYbMom12h3R7nV
+        6alym9NLy9XhTdjUgTB2wXiFQydeH/5z5vW5/ydfnf4vWmN2FZs6EMYuCDSg92rTjwlXpvzvvtT/X6zW
+        nHQD+q6BDJj4v+dy73+JOjIM6L8ONOBq///ey93/peotSDVA8dAEoAGTrvX977rc+l+6gUQDGEEG3Gj4
+        0Xap9n/V2YL/Mg0kBiLIgO5rlT+qz+X+rz1f8F+uiQwX9F6v+tF8qeh/6+WS//LEGMCVpTFNrs7sgHS1
+        yU7ZWvN9bZdqfrZfKf7febX0v/kEj9dSVSbbZGtMd0nXmO5z2hTKg2GA46YQOYM+x4+n3+77P+VW1f+J
+        Nyv/990o/98LxFNv1/4//W7/f685/v8j9yYug+lBMQCEPbfHSBv1O72Zea/m/9Q7VUCNEDwdyPaa4/s/
+        7kDKTGT1IIzCAWHPbRFSFhPd3yx61Ph/zv3a//Me1P33nx/wP+NoNoZmEMYQAGG9JaaS5hNdXq993vE/
+        eGHw/7j9MVOwqQNhCNHBwAzE3EAswtDGoMDQwqDI3c/nZzHZ6ZfvFvdjDO2MOgytDBoM7UA5kBqIWhYg
+        ZsQ0oINBHoi1gQbpMXey2jO2MZkDNRqDxSBySAYwMAIAgS158vU6CbIAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="MoveTestDownInTestsetToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verplaats toets binnen de toetsset omlaag</value>
+  </data>
+  <data name="MoveTestSetUpInTestPackageToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB7UlEQVQ4T2P4//8/TixVY31SfUmgKDY5
+        GMYqCMJStVYnb3+8+997ZsJfxYVewtjUgDBWQakay+NX31/7v+Luqv9X3l/97zI98q/6El+shmAISNda
+        Hj//9vz/ebfm/p99Y/b/Gddn/D/75sx/+ylBf7WW+Qqhq0fhyDdYnzn75tT/2bem/J96feL/ydcm/J9w
+        tfd/z5X2/4de7P1vOtH1v8nqIJQwgTM4czTm63Y7vzPodn0iVmz4ufFc7f+2S3X/68+X/dfrdfiu2mb9
+        WLPT7jlvntZH7eVevBgGaC51YYKxGeMVD2ccyfhaez7vf/2Fgv8yDWZXYHJaS90YdVd4M8L4cAOQMciA
+        wpO5n9suF//vuFr6X6HJ4jI2dSCMVRBkQMXZws99N8r/T7hZ+V+52ZJ0A+ovlHyedqfq/4y7Nf9VW6xJ
+        N6DtSvnneffr/i940PBfo82GdAN6r1d9Xva48f+KJ83/tdptSTdg6q3az+tetPzf8KLtv16nPakGKBxe
+        8qjt8+533f/3vu/9b9jlgNsAhg4GRiBmAWJuIBZlaGeQY0yVmd12pfDbkkcN/5c/afmv2Gxwh6GJQREo
+        rwBWA1HLDMSMMANAHC4gFgFiOSDWZM6UWcySJbsMhNl7OeyBBmtA5UBqQGqBljIwAgAGgX+zik2THgAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="MoveTestSetUpInTestPackageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verplaats toetsset binnen het toetspakket omhoog</value>
+  </data>
+  <data name="MoveTestsetDownInTestPackageToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB3ElEQVQ4T2P4//8/BuaYbMom12h3R7nV
+        6alym9NLy9XhTdjUgTB2wXiFQydeH/5z5vW5/ydfnf4vWmN2FZs6EMYuCDSg92rTjwlXpvzvvtT/X6zW
+        nHQD+q6BDJj4v+dy73+JOjIM6L8ONOBq///ey93/peotSDVA8dAEoAGTrvX977rc+l+6gUQDGEEG3Gj4
+        0Xap9n/V2YL/Mg0kBiLIgO5rlT+qz+X+rz1f8F+uiQwX9F6v+tF8qeh/6+WS//LEGMCVpTFNrs7sgHS1
+        yU7ZWvN9bZdqfrZfKf7febX0v/kEj9dSVSbbZGtMd0nXmO5z2hTKg2GA46YQOYM+x4+n3+77P+VW1f+J
+        Nyv/990o/98LxFNv1/4//W7/f685/v8j9yYug+lBMQCEPbfHSBv1O72Zea/m/9Q7VUCNEDwdyPaa4/s/
+        7kDKTGT1IIzCAWHPbRFSFhPd3yx61Ph/zv3a//Me1P33nx/wP+NoNoZmEMYQAGG9JaaS5hNdXq993vE/
+        eGHw/7j9MVOwqQNhCNHBwAzE3EAswtDGoMDQwqDI3c/nZzHZ6ZfvFvdjDO2MOgytDBoM7UA5kBqIWhYg
+        ZsQ0oINBHoi1gQbpMXey2jO2MZkDNRqDxSBySAYwMAIAgS158vU6CbIAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="MoveTestsetDownInTestPackageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verplaats toetsset binnen het toetspakket omlaag</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Huidige toetsvorm:</value>
+  </data>
+  <data name="WindowDockingArea7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="WindowDockingArea8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="DockableControlPane1.Text" xml:space="preserve">
+    <value>Toetspakkethiërarchie</value>
+  </data>
+  <data name="DockableGroupPane1.Text" xml:space="preserve">
+    <value>Kenmerken</value>
+  </data>
+  <data name="DockableGroupPane1.TextTab" xml:space="preserve">
+    <value>Kenmerken</value>
+  </data>
+  <data name="TabPage1.Text" xml:space="preserve">
+    <value>Toetsreferentie-eigenschappen</value>
+  </data>
+  <data name="TabPage2.Text" xml:space="preserve">
+    <value>Toetsseteigenschappen</value>
+  </data>
+  <data name="TabPage3.Text" xml:space="preserve">
+    <value>Toetspakketeigenschappen</value>
+  </data>
+  <data name="TabPage4.Text" xml:space="preserve">
+    <value>Metadata</value>
+  </data>
+  <data name="TabPage5.Text" xml:space="preserve">
+    <value>Kenmerken</value>
+  </data>
+</root>

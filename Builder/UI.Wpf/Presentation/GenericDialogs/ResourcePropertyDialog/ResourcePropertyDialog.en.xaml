@@ -1,0 +1,72 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <!-- GENERAL WINDOW -->
+    <s:String x:Key="ResourcePropertyDialog.Title">Resource property editor</s:String>
+
+    <!-- COMMANDS -->
+    <s:String x:Key="ResourcePropertyDialog.Command.Ok">OK</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Command.Ok.Error" xml:space="preserve">An error occurred while trying to save. &#x0d;&#x0a;Error: {0}</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Command.Cancel">Cancel</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Command.Apply">Apply</s:String>
+
+    <!-- TAB -->
+    <s:String x:Key="ResourcePropertyDialog.Tab.General">General</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.References">References</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies">Dependencies</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Data">Data</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History">History</s:String>
+
+    <!-- General Tab -->
+    <s:String x:Key="ResourcePropertyDialog.Tab.General.Header">Properties</s:String>
+
+    <!-- Dependencies Tab -->
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.Header">Dependencies</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.Description">Other resources where this resource depends on.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.AddButton.Title">Add</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.RemoveButton.Title">Remove</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.RemoveButton.Confirm">The resource will be removed. Are you sure?</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.ListView.Name">Code</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.ListView.Title">Title</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.ListView.Bank">Bank</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.ListView.Version">Version</s:String>
+
+    <!-- References Tab -->
+    <s:String x:Key="ResourcePropertyDialog.Tab.References.Header">References</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.References.Description">Other resources that contain references to this resource.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.References.ListView.Name">Code</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.References.ListView.Title">Title</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.References.ListView.Bank">Bank</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.References.ListView.Version">Version</s:String>
+
+    <!-- Data Tab -->
+    <s:String x:Key="ResourcePropertyDialog.Tab.Data.ReplaceSource.GroupBox.Title">Replace resource</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Data.ReplaceSource.Description">Replace the current resource with a resource on the local file system. The action will be performed after the settings in this dialog are applied.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Data.ReplaceSource.BrowseButton.Title">Browse...</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Data.ExportSource.GroupBox.Title">Export resource</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Data.ExportSource.GroupBox.Description">Export the current resource to a file on the local file system.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Data.ReplaceSource.ExportButton.Title">Export...</s:String>
+
+    <!-- History Tab -->
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.GroupBox.Title">Changes</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.Command.Compare">Compare</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.Version">Version</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.ModifiedDate">Date modified</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.ModifiedBy">Modified by</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.Label">Label</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.Revert">Revert</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.Compare">Compare</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.RevertButton.Confirm">Are you sure you want to revert to this version?</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.RevertButton.CloseOpenEditors">All related open editors must be closed first. Are you sure you want to do this?</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.RevertButton.Enabled.ToolTip">Revert to this version.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.RevertButton.Disabled.ToolTip">Unable to revert to this version because of conflicting changes between the selected version and the most recent version.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.RevertButton.Disabled.ToolTipMedia">Unable to revert to this version because media items are not versioned.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.RevertButton.NoChangesBetweenVersions">There are no changes between the selected version and the most recent version.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.RevertButton.ReinitiateRevert">The editor that was closed resulted in a new history version ({0}). Please reinitiate the reverting to a previous version.</s:String>
+
+    <!-- ViewModel Messages -->
+    <s:String x:Key="ResourcePropertyDialog.ResourcePropertyDialogViewModel.PendingChangesWishToLeave">There are unsaved changes. Do you wish to save them?</s:String>
+    <s:String x:Key="ResourcePropertyDialog.ResourcePropertyDialogViewModel.HasErrors">Not all input is valid.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.ResourcePropertyDialogViewModel.PropertiesOf">{0} Properties</s:String>
+</ResourceDictionary>

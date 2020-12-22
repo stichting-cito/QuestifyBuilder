@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.PublicationService.Validation" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.PublicationService.Validation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:import schemaLocation="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.PublicationService" />
+  <xs:complexType name="ArrayOfValidationHandlerIdentifier">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ValidationHandlerIdentifier" nillable="true" type="tns:ValidationHandlerIdentifier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfValidationHandlerIdentifier" nillable="true" type="tns:ArrayOfValidationHandlerIdentifier" />
+  <xs:complexType name="ValidationHandlerIdentifier">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaskId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserFriendlyName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidationHandlerIdentifier" nillable="true" type="tns:ValidationHandlerIdentifier" />
+  <xs:complexType name="ValidationTaskProgress">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.PublicationService" base="q1:TaskProgress">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsReportAvailable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Report" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ResultText" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ValidationResult" type="q2:ValidationResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValidationTaskProgress" nillable="true" type="tns:ValidationTaskProgress" />
+</xs:schema>

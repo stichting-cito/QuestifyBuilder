@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+	<!-- GENERAL WINDOW -->
+	<s:String x:Key="VersionDifferences.Title">Verschillen</s:String>
+	<s:String x:Key="VersionDifferences.Command.Ok">OK</s:String>
+	<s:String x:Key="VersionDifferences.ListView.Column.PropertyName">Eigenschap</s:String>
+	<s:String x:Key="VersionDifferences.ListView.Column.OldVersionColumnHeaderPrefix">Versie</s:String>
+
+</ResourceDictionary>

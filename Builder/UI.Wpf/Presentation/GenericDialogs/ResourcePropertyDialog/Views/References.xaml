@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.GenericDialogs.ResourcePropertyDialog.Views.References"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+             meffed:ViewModelLocator.ViewModel="ResourcePropertyDialog.ReferencesViewModel" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:helpers="clr-namespace:Questify.Builder.UI.Wpf.Presentation.Helpers"
+             mc:Ignorable="d"
+			 d:DesignHeight="500" d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--Please make sure that Resources are commented out-->
+                <ResourceDictionary Source="..\..\..\Styles\DefaultStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <GroupBox Style="{StaticResource DefaultGroupBoxStyle}" Header="{StaticResource ResourcePropertyDialog.Tab.References.Header}">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+
+		<Label Content="{StaticResource ResourcePropertyDialog.Tab.References.Description}" Grid.Row="0" />
+
+		<ListView Grid.Row="1" ItemsSource="{Binding References.DataValue}" ItemContainerStyle="{StaticResource alternatingStyle}"
+				  AlternationCount="2" IsSynchronizedWithCurrentItem="True"
+				  helpers:GridViewSort.AutoSort="True" helpers:GridViewSort.ShowSortGlyph="False">
+			<ListView.View>
+				<GridView>
+					<GridViewColumn DisplayMemberBinding="{Binding Entity.Name}" Header="{StaticResource ResourcePropertyDialog.Tab.References.ListView.Name}"
+									Width="190" HeaderContainerStyle="{StaticResource horizontalColumnHeaderStyle}" helpers:GridViewSort.PropertyName="Name" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Entity.Title}" Header="{StaticResource ResourcePropertyDialog.Tab.References.ListView.Title}"
+									Width="190" HeaderContainerStyle="{StaticResource horizontalColumnHeaderStyle}" helpers:GridViewSort.PropertyName="Title"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding BankPath}" Header="{StaticResource ResourcePropertyDialog.Tab.References.ListView.Bank}"
+									Width="190" HeaderContainerStyle="{StaticResource horizontalColumnHeaderStyle}" helpers:GridViewSort.PropertyName="BankPath"/>
+                    </GridView>
+			</ListView.View>
+		</ListView>
+
+	</Grid>
+    </GroupBox>
+</UserControl>

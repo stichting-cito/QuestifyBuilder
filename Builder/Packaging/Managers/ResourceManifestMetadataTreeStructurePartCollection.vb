@@ -1,0 +1,4 @@
+Public Class ResourceManifestMetadataTreeStructurePartCollection
+    Inherits List(Of ResourceManifestMetaDataTreeStructurePartDefinition)
+
+End Class

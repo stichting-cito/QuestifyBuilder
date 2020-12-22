@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.SourceTextEditor.Views.LinkedStyleSheets"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:TbUI="clr-namespace:Questify.Builder.UI;assembly=Questify.Builder.UI"
+             xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+             xmlns:views="clr-namespace:Questify.Builder.UI.Wpf.Presentation.SourceTextEditor.Views"
+             meffed:ViewModelLocator.ViewModel="SourceTextEditor.LinkedStyleSheetsVM" 
+             xmlns:ccmds="clr-namespace:Questify.Builder.UI.Wpf.Presentation.SourceTextEditor"
+             xmlns:valueConverters="clr-namespace:Questify.Builder.UI.Wpf.Presentation.ValueConverters"
+             mc:Ignorable="d" 
+             d:DesignHeight="432" d:DesignWidth="350" 
+             >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <valueConverters:NullToBooleanConverter x:Key="NullToBooleanConverter"/>
+
+            <ResourceDictionary.MergedDictionaries>
+            <!--Please make sure that Resources are commented out-->
+                <!--<ResourceDictionary Source="..\SourceTextEditor.Metadata.nl.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+            
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+
+    <GroupBox Header="{StaticResource SourceTextEditor.LinkedStyleSheets.InfoGroup}" Margin="5">
+        <DockPanel LastChildFill="True">
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" DockPanel.Dock="Bottom">
+                <Button Command="{Binding AddStyleSheetLinkCommand}" Width="100" Content="{StaticResource SourceTextEditor.LinkedStyleSheets.AddButtonLabel}" />
+                <Button Command="{Binding RemoveStyleSheetLinkCommand}" IsEnabled="{Binding ElementName=stylesheetslv, Path=SelectedItem, Converter={StaticResource NullToBooleanConverter}}" Width="100" Content="{StaticResource SourceTextEditor.LinkedStyleSheets.RemoveButtonLabel}"/>
+            </StackPanel>
+
+            <ListView Name="stylesheetslv" ItemsSource="{Binding LinkedStyleSheetResources.DataValue}" SelectedItem="{Binding SelectedStyleSheet.DataValue}" SelectionMode="Single" Initialized="stylesheetslv_Initialized">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="{StaticResource SourceTextEditor.LinkedStyleSheets.NameColumnHeader}" DisplayMemberBinding="{Binding DependentResource.Name}" />
+                        <GridViewColumn Header="{StaticResource SourceTextEditor.LinkedStyleSheets.TitleColumnHeader}" DisplayMemberBinding="{Binding DependentResource.Title}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+    </GroupBox>
+</UserControl>

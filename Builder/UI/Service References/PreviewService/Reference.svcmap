@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f0a88c47-e63c-446b-a035-70fd3a28a54c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/Questify.Builder.Services.PublicationService/ItemPreview/ItemPreviewService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ItemPreviewService2.xsd" MetadataType="Schema" ID="f94360cf-73a1-44d9-a616-6f5357ffc636" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/ItemPreview/ItemPreviewService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ItemPreviewService.wsdl" MetadataType="Wsdl" ID="ff947874-0c6f-47da-b451-4e7b3cfeec32" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/ItemPreview/ItemPreviewService.svc?wsdl" />
+    <MetadataFile FileName="ItemPreviewService.disco" MetadataType="Disco" ID="5c9c3fbf-10c1-479b-af04-cde58b580704" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/ItemPreview/ItemPreviewService.svc?disco" />
+    <MetadataFile FileName="ItemPreviewService.xsd" MetadataType="Schema" ID="d644ae9d-7087-4772-9cc1-cb5e9c8f49dc" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/ItemPreview/ItemPreviewService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ItemPreviewService1.xsd" MetadataType="Schema" ID="964f5007-0fd3-4409-96af-5d95cac1e8fb" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/ItemPreview/ItemPreviewService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,894 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83FD60F3-1ED1-4B21-8ADF-BD7A055B0420}</ProjectGuid>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <RootNamespace>Questify.Builder.UnitTests.VB</RootNamespace>
+    <AssemblyName>Questify.Builder.UnitTests.VB</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>true</IncrementalBuild>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>false</IncrementalBuild>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cinch.WPF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Cinch.2.0.70832\lib\net40\Cinch.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="FakeItEasy, Version=4.0.0.0, Culture=neutral, PublicKeyToken=eff28e2146d5fd2c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FakeItEasy.4.6.0\lib\net45\FakeItEasy.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions, Version=5.3.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentAssertions.5.3.2\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlToOpenXml, Version=1.7.0.0, Culture=neutral, PublicKeyToken=6ad79d83e2b60e63, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\HtmlToOpenXml.1.6.1\lib\net40\HtmlToOpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="MEFedMVVM.WPF, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b6db3dc4f5fba1e3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Cinch.2.0.70832\lib\net40\MEFedMVVM.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Services3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.2.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.2.1\lib\net45\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IO.Packaging.4.4.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.InteropServices.4.3.0\lib\net463\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WIRIScommon, Version=0.0.0.0, Culture=neutral, PublicKeyToken=e6c25a2806ef6977, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartyComponents\Wiris\WIRIScommon.dll</HintPath>
+    </Reference>
+    <Reference Include="WIRISeditor, Version=3.10.4.2550, Culture=neutral, PublicKeyToken=4027d14efbd44f11, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartyComponents\Wiris\WIRISeditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+    <Import Include="System" />
+    <Import Include="System.Collections.Generic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cito.TestBuilder.Conversion\HtmlToOpenXmlTests.vb" />
+    <Compile Include="Cito.TestBuilder.Conversion\TableCellBorderExtractorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Conversion\WidthExtractorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Conversion\WordStyleHelperTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Converter\HtmlConverter_MathML_Tests.vb" />
+    <Compile Include="Cito.Tester.Common\Canvas\Add_Remove_Behavior.vb" />
+    <Compile Include="Cito.Tester.Common\Canvas\Factory\ShapeFactoryTests.vb" />
+    <Compile Include="Cito.Tester.Common\Canvas\ShapeConstructor\CircleByMidPointConstructorTest.vb" />
+    <Compile Include="Cito.Tester.Common\Canvas\ShapeConstructor\EllipseByMidPointConstructorTest.vb" />
+    <Compile Include="Cito.Tester.Common\Canvas\Shapes\AnchorPointBehaviourTest.vb" />
+    <Compile Include="Cito.Tester.Common\Canvas\Shapes\RectangleTests.vb" />
+    <Compile Include="Cito.Tester.Common\Canvas\ToolTests\baseToolTests.vb" />
+    <Compile Include="Cito.Tester.Common\Canvas\ToolTests\CreateToolTests.vb" />
+    <Compile Include="Cito.Tester.Common\Canvas\ToolTests\MoveToolTests.vb" />
+    <Compile Include="Cito.Tester.Common\Canvas\ToolTests\SelectToolTests.vb" />
+    <Compile Include="Cito.TestBuilder.Common\CreateObjectJITTests.vb" />
+    <Compile Include="Cito.Tester.Common\SetOperations\DifferenceTests.vb" />
+    <Compile Include="Cito.Tester.Common\SetOperations\helpers\IntegerEqualityComparer.vb" />
+    <Compile Include="Cito.Tester.Common\TemplateHelperTests.vb" />
+    <Compile Include="Cito.Tester.Common\XHtmlReferenceFactory\ParseHtmlReferenceTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\HelperClasses\MediaDimensionsHelperTest.vb" />
+    <Compile Include="Cito.TestBuilder.Configuration\UserSettings\UserSettingsTest.vb" />
+    <Compile Include="Cito.TestBuilder.ContentModel\EntityClasses\UserEntityFake.vb" />
+    <Compile Include="Cito.TestBuilder.ContentModel\ResourceValidatorTest.vb" />
+    <Compile Include="Cito.TestBuilder.ContentModel\ValidatorClasses\UserValidatorFake.vb" />
+    <Compile Include="Cito.TestBuilder.ContentModel\Version\GenericMetaDataGenerationTest.Specific.vb" />
+    <Compile Include="Cito.TestBuilder.ContentModel\Version\GenericMetaDataGenerationTest.vb" />
+    <Compile Include="Cito.TestBuilder.ContentModel\Version\MetaDataGeneratorForEntityTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Chain\Validation\ItemSupportedViewsValidatorTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\FactEqualityComparerTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\FactSetEqualityComparerTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\ParameterSetCollectionExtensionTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\AdvancedScoringManipulatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ConceptDisplayValueTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ConceptIdSorterTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\InlineChoiceScoringManipulatorTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\KeyFindingToConceptFinding_SpecificExamples_Tests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ScoringDisplayValueCalculcatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\StaticExample_FindingToFindingManipulatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\MatrixScoringManipulatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\OrderScoringManipulatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ChoiceScoringManipulator_ExistingValues_Tests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ChoiceScoring_JIT_ManipulatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\CombinedScoringMapKeyTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ConceptScoreInFindingManipulatorTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ConceptScoreInSetsManipulatorTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ConceptScoreManipulatorGroupTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ConceptScoreManipulatorScoreParameterIntergrationTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\GraphGapMatchScoringManipulatorTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\GapMatchScoringManipulatorTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\IntegerScoreManipulatorTargetTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\KeyManipulatorTargetTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ScoreFixTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ScoreParameterSolutionFixerIntergrationTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ScoringExamplesTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ScoringManipulatorApiTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ScoringMapConceptTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ScoringMapTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ScoringMapTests_SpecialParams.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ScoringValidatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ScoringMapKeyTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\SolutionsExtensionTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\StringExtensionTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\ConceptFactsSetLogicTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\DefaultStringOperationsTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\AddFactsToScoreParameterTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\AddMissingAnswerCatagoryToMCTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\GetFactsIdsPerScoringParameterTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\Integration_2InlineChoice_WithCustomDisplayValue_Grouped.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\ConceptInitiFlowTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\Integration_GapMatchTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\integration_HotText.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\Integration_IntegerTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\Integration_Matrix.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\Integration_MR_Grouped.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\integration_OrderedTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\Integration_SolutionCleanerFlow_Test.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\Integration_2InlineChoice_Grouped.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\Integration_2MC_Grouped.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\Intergration_MC_NotGrouped.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\MoveSingleFactsFromFactSetsToFindingTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\RemoveDuplicatedKeysInConceptTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\RemoveEmptyFactsTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\RemoveEmptyKeyFactSetsTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\RemoveUnusedFactsTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\RemoveUnusedFindingsTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\EnforceSingleChoiceScoreTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\SynchronizeKeyFindingToConceptFindingActivityTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\GetIdForAnswerCategoryTests.vb" />
+    <Compile Include="Cito.TestBuilder.Common\ItemIdHelperTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\CustomInteractions\PackageValidatorTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ItemProcessing\GapImageParameterHandlerTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ItemProcessing\ItemTestData.Inline.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\RefreshUsingDataSources\ProposalCreatorTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Versioning\AssessmentItemBooleanParameterComparerTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Versioning\AssessmentItemCollectionParameterComparerTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Versioning\AssessmentItemIntegerParameterComparerTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Versioning\AssessmentItemListedParameterComparerTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Versioning\AssessmentItemParameterComparerTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Versioning\AssessmentItemXhtmlParameterComparerTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Versioning\ComparerTestBase.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Versioning\DependentResourcesComparerTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Versioning\Helper.vb" />
+    <Compile Include="Cito.TestBuilder.ContentModel\BankEntityTest.vb" />
+    <Compile Include="Cito.TestBuilder.ContentModel\GenericTestBase.vb" />
+    <Compile Include="Cito.TestBuilder.ContentModel\ListValueCustomBankPropertyEntityTest.vb" />
+    <Compile Include="Cito.TestBuilder.ContentModel\ResourceEntityTest.vb" />
+    <Compile Include="Cito.TestBuilder.ContentModel\CustomBankPropertyEntityTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Chain\ChainTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Chain\Filtering\ModifyTargetSectionTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Chain\Processing\AddNonExistingSectionsToAssessmentTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Chain\Validation\ItemInDatasourceTargetValidationTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Chain\Validation\PreferDatabindingValidationTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Chain\_IntegrationTest\TestConstrAddBugFixesTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Chain\_IntegrationTest\TestConstrDeleteTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Chain\_IntegrationTest\TestConstructionTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Chain\Filtering\ModifyItemsInRequestHandlerTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Chain\Validation\ItemRelationshipValidationHandlerTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Common\GroupedPropertyReaderTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Common\ResourcesForCommon.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcesForCommon.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\DecimalScoringExtensionTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\ItemManipulationInAssessmentTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\ParamsetFlattnerTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\ParamValidator\baseParamValidator.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\ParamValidator\BaseParamValidatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\ParamValidator\HierarchicalParameterSetCollectionValidatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\ParamValidator\HierarchicalParameterSetCollectionValidator_ConditionalEnabled_Tests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\ParamValidator\ParamValidator_Area_Tests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\ParamValidator\ParamValidator_Integer_Tests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\ParamValidator\ParamValidator_PlainText_Tests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\ParamValidator\ParamValidator_ResourceParam_Tests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\ParamValidator\ParamValidator_XHtml_Tests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\ParamValidator\ScoringParamValidatiorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\ChoiceScoringExtensionTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\BaseScoringManipulatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ChoiceScoringManipulatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\BaseFindingToFindingManipulatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ConceptFindingToFindingManipulatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ConceptScoreManipulatorTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ConceptManipulatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\IntegerScoringManipulatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\KeyFindingToFindingManipulatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\KeyManipulatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\ScoringPropertiesCalculatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\Scoring\StringScoringManipulatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\StringScoringExtensionTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\XHtmlInlineElementsManipulatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\XHtmlResourceExtractorTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ItemProcessing\baseItemTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ItemProcessing\DefaultParameterMergerTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ItemProcessing\ScoringParametermergerTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Versioning\MetaDataDeserializerTest.vb" />
+    <Compile Include="Cito.TestBuilder.Conversion\OpenXmlGeneratorTests.vb" />
+    <Compile Include="Cito.TestBuilder.ResourceManager\ResourceVersionConverterTest.vb" />
+    <Compile Include="Cito.TestBuilder.Security.Direct\Converter\SerializedDataSets.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SerializedDataSets.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Cito.TestBuilder.Service.Direct\ResourceHistoryCreatorTest.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Converter\HtmlConverter_DealWithMovedInlineControlTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Converter\HtmlConverter_DealWithMovedInlineElementTests.vb" />
+    <Compile Include="Cito.TestBuilder.Service\SplitSqlQueryDecoratorTest.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Converter\HtmlConverterTextToSpeechTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\EditBehavior\InlineChoiceOptionBehaviorTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\EditBehavior\PopupContentBehaviorTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\EditBehavior\XHtmlEditBehavior_InlineBug.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\BaseHtmlSplitterTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\ParagraphHtmlSplitterTest.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\RegExHtmlSplitterTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\SentenceSplitterTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\WordHtmlSplitterTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ContentModel\workers\Flow\ClearConceptIfRequiredTest.vb" />
+    <Compile Include="Cito.Tester.Common\AlphabeticIdentifierGeneratorTest.vb" />
+    <Compile Include="Cito.Tester.Common\AlphabeticIdentifierHelperTest.vb" />
+    <Compile Include="Cito.Tester.Common\ArrayHelperTest.vb" />
+    <Compile Include="Cito.Tester.Common\TesterFileHelperTest.vb" />
+    <Compile Include="Cito.Tester.Common\ListManipulationTest.vb" />
+    <Compile Include="Cito.Tester.Common\LoggerTest.vb" />
+    <Compile Include="Cito.Tester.Common\MathMLValidatorTests.vb" />
+    <Compile Include="Cito.Tester.Common\SerializableUriTest.vb" />
+    <Compile Include="Cito.Tester.Common\SerializeHelperTest.vb" />
+    <Compile Include="Cito.Tester.Common\QbProtectedConfigurationProviderTest.vb" />
+    <Compile Include="Cito.Tester.Common\ValidationHelperTest.vb" />
+    <Compile Include="Cito.Tester.Common\WeakEventHandler\ApiGuidelineWeakGenericEventTest.vb" />
+    <Compile Include="Cito.Tester.Common\WeakEventHandler\VanillaEventHandlersTest.vb" />
+    <Compile Include="Cito.Tester.Common\WeakEventHandler\WeakEventTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Collections\ExtendedNamedDecimalMapTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Collections\NamedDecimalMapTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Context\TestSessionContextTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\DataSources\ResourceRefTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\GenericEntities\AssessmentItemValidationTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\GenericEntities\InlineElementImageConverterTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ItemTemplates_V2\AssesmentDeserialisationTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ItemTemplates_V2\ControlAdapterTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ItemTemplates_V2\ControlTemplateTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ItemTemplates_V2\ItemLayoutAdapterTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ItemTemplates_V2\ItemLayoutAndControlAdapterTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ItemTemplates_V2\ItmLayoutAndResouceParamTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ItemTemplates_V2\RefreshResource.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ItemTemplates_V2\SerializeAssesmentTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\AreaParameterSerializationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\AspectReferenceSerializationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\AttributeReferencesTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ConceptAtConceptFinding.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ConceptWithFactsSet.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\CustomInteractionResourceParameterTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\DesignerSettingCollectionTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\DesignerSettingsTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\InlineElementTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\IntegerParameterSerializationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ParameterSetCollectionTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ResourceParameterTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\CurrencyScoringParameterSerialisationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\DateScoringParameterSerialisationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\DecimalScoringParameterSerialisationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\GapMatchRichTextParameterSerializationTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\GapMatchScoringParameterSerializationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\GraphGapMatchScoringParameterSerializationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\HotspotScoringParameterSerialisationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\HotTextCorrectionScoringParameterSerialisationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\HotTextScoringParameterSerialisationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\InlineChoiceScoringParameterSerialisationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\IntegerScoringParameterSerialisationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\MathScoringParameterSerialisationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\MatrixScoringParameterSerialisationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\MultiChoiceScoringParameterSerialisationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\OrderScoringParameterSerialisationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\StringScoringParameterTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ScoringParameters\TimeScoringSerialisationParameterTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\SerializationTestBase.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\ShapeListTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\Parametermodel\XHtmlParameterSerializationTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ResponseAndScoringModel\Solution\CatchAllValueTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ResponseAndScoringModel\Solution\ConceptFactsSetTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ResponseAndScoringModel\Solution\ConceptFactsTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ResponseAndScoringModel\Solution\KeyFactTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ResponseAndScoringModel\Solution\KeyFindingCollectionTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ResponseAndScoringModel\Solution\SolutionPreprocessingTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ResponseAndScoringModel\Values\DecimalComparisonValueTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ResponseAndScoringModel\Values\IntegerComparisonValueTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ResponseAndScoringModel\Values\StringComparisonValueTest.vb" />
+    <Compile Include="Cito.Tester.ContentModel\ResponseAndScoringModel\Values\TypedComparisonValueBaseTest.vb" />
+    <Compile Include="Cito.Tester.UI\DelegateCommandTest.vb" />
+    <Compile Include="ExtensionMethodsForParameters.vb" />
+    <Compile Include="Extensions.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Questify.Builder.Security\PasswordHashTests.vb" />
+    <Compile Include="Questify.Builder.Security\PasswordPolicyTests.vb" />
+    <Compile Include="Questify.Builder.UI\AreaEditorTest.vb" />
+    <Compile Include="ResponseAndScoringModel\ScoringTestBase.vb" />
+    <Compile Include="ResponseAndScoringModel\BugTests.vb" />
+    <Compile Include="ResponseAndScoringModel\DecimalValueTest.vb" />
+    <Compile Include="ResponseAndScoringModel\DistinctFactGroupsTests.vb" />
+    <Compile Include="ResponseAndScoringModel\DistinctFactGroupsTests_poly.vb" />
+    <Compile Include="ResponseAndScoringModel\GapMatch_Scoring.vb" />
+    <Compile Include="ResponseAndScoringModel\Get_SolutionPropertyValuesFrom_Examples.vb" />
+    <Compile Include="ResponseAndScoringModel\GraphicalGapMatch_Cat_Scoring.vb" />
+    <Compile Include="ResponseAndScoringModel\IntegerValue_FactSet_And_Fact_poly_Test.vb" />
+    <Compile Include="ResponseAndScoringModel\IntegerValue_FactSet_And_Fact_Test.vb" />
+    <Compile Include="ResponseAndScoringModel\IntegerValue_FactSet_Test.vb" />
+    <Compile Include="ResponseAndScoringModel\IntegerValue_mangledSolution__Test.vb" />
+    <Compile Include="ResponseAndScoringModel\IntegerValue_mangledSolution__Test_poly.vb" />
+    <Compile Include="ResponseAndScoringModel\IntegerValue_Test_poly.vb" />
+    <Compile Include="ResponseAndScoringModel\MatrixScoreBug_V23Score.vb" />
+    <Compile Include="ResponseAndScoringModel\MatrixScoreBug_V23Score_Polytomous.vb" />
+    <Compile Include="ResponseAndScoringModel\MultiChoice_Scoring.vb" />
+    <Compile Include="ResponseAndScoringModel\MultiChoice_Scoring_Polytomous.vb" />
+    <Compile Include="ResponseAndScoringModel\MultipleInlineChoiceAndAspectTests.vb" />
+    <Compile Include="ResponseAndScoringModel\MultiResponse_Scoring.vb" />
+    <Compile Include="ResponseAndScoringModel\MultiResponse_Scoring_v23.vb" />
+    <Compile Include="ResponseAndScoringModel\NewOnlySolutionScoringInfoTests.vb" />
+    <Compile Include="ResponseAndScoringModel\ScoringMethodAttribute.vb" />
+    <Compile Include="ResponseAndScoringModel\SingleChoice_Scoring.vb" />
+    <Compile Include="ResponseAndScoringModel\SolutionScoringInfoTests.vb" />
+    <Compile Include="ResponseAndScoringModel\String_Scoring.vb" />
+    <Compile Include="ResponseAndScoringModel\V23Scoring_ScoreBehaviorCheckTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\Validation\QuestifyThemeValidatorTests.vb" />
+    <Compile Include="TestBuilderClient\ImportAndExport\ExcelImportHandlerTest.vb" />
+    <Compile Include="UnitTestInitializer.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ItemProcessing\ItemProcessingBase.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ItemProcessing\ItemSetupTests.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ItemProcessing\ItemTemplateSwitchingTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ItemProcessing\ParameterMergerTest.vb" />
+    <Compile Include="Cito.TestBuilder.Logic\ItemProcessing\ItemTestData.vb" />
+    <Compile Include="Cito.TestBuilder.Service\AuthorizationFactoryTest.vb" />
+    <Compile Include="Cito.TestBuilder.Service\BankFactoryTest.vb" />
+    <Compile Include="Cito.TestBuilder.Common\AppLogicExceptionTest.vb" />
+    <Compile Include="Cito.TestBuilder.Common\MultiLanguageExceptionTest.vb" />
+    <Compile Include="Questify.Builder.Security\DefaultAuthenticationLoginEventArgsTest.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Controls\Logic\DrawingMathTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Converter\baseHtmlConverterTest.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Converter\HtmlConverter_AssignDivIdTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Converter\HtmlConverter_FullToPartialTest.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Converter\HtmlConverter_PartialToFullTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Converter\HtmlConverter_RepairElementReferenceTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Converter\Html_RefsC1_2_CitoTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Converter\Html_RefsCito_2_C1CitoTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Dialogs\BusinessRules\AllTableStyleStrategyTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Dialogs\BusinessRules\baseTableStyleTest.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Dialogs\BusinessRules\baseBorderAndShadingPresenterInitTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Dialogs\BusinessRules\BorderAndShadingPresenterTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Dialogs\BusinessRules\BoxTableStyleHandlerTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Dialogs\BusinessRules\CellBorderAndShadingPresenterInitTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Dialogs\BusinessRules\ColumAndRowBorderAndShadingPresenterInitTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Dialogs\BusinessRules\GridTableStyleStrategyTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Dialogs\BusinessRules\NoneTableStyleStrategyTest.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Dialogs\BusinessRules\ColumBorderAndShadingPresenterInitTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Dialogs\BusinessRules\RowBorderAndShadingPresenterInitTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\EditBehavior\AspectEditorBehaviorTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\EditBehavior\Bugs.vb" />
+    <Compile Include="Cito.TestBuilder.UI\EditBehavior\GenericResourceEditorBehaviorTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\baseFakedTable.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\BorderCssStyleTest.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\CellDeterminator_CollapseTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\CellDeterminator_seperatedTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\CssStyleTest.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\SetCellBordeStyleHandler_CollapsedStrategyTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\SetCellBordeStyleHandler_SeperatedStrategyTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\SetStyleToTableCellTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\TableBorderStyleWorkerTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\TableBoundsTest.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\TableCell_MergeTest.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\TableHelperTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\TableStyleDeterminatorBugRepro.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\TableStyleDeterminatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\TableWalker_Tests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\Table_CanMergeTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\Table_HSplitTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\TableStyleDtoTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\Table_SimpleTable_Tests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\Table_VSplitTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\Table_WithColAndRowSpanTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\Table_WithColSpan_Tests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\Table_WithRowSpan_Tests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\TestData.vb" />
+    <Compile Include="Cito.TestBuilder.UI\Handlers\Logic\TableBaseTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\HtmlContentHelperTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\HtmlContentValidatorTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\HtmlResourceExtractorTest.vb" />
+    <Compile Include="Cito.TestBuilder.UI\ParameterSetEditor\ParameterSetsEditorSmokeApiTest.vb" />
+    <Compile Include="Cito.TestBuilder.UI\ParameterSetEditor\ParameterSet_ResourcesUsed_Tests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\ParameterSetEditor\XHtmlResourceParamTest.vb" />
+    <Compile Include="Cito.TestBuilder.UI\EditBehavior\AspectReferenceEditBehaviorTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\EditBehavior\XHtmlEditBehaviorTests.vb" />
+    <Compile Include="Cito.TestBuilder.UI\EditBehavior\XOldHtmlEditBehaviorTests.vb" />
+    <Compile Include="Cito.Tester.ContentModel\TestDefinition_v2\ItemReferenceSerialisationTests.vb" />
+    <Compile Include="FailOnAssert.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Cito.TestBuilder.Common\ServiceExceptionTest.vb" />
+    <Compile Include="Cito.TestBuilder.Common\UIExceptionTest.vb" />
+    <Compile Include="Questify.Builder.Security\SecurityFactoryTest.vb" />
+    <Compile Include="Questify.Builder.Security\SecurityUsernameTokenTest.vb" />
+    <Compile Include="Questify.Builder.Security\TestBuilderIdentityTest.vb" />
+    <Compile Include="Questify.Builder.Security\TestBuilderPermissionEntryCollectionTest.vb" />
+    <Compile Include="Questify.Builder.Security\TestBuilderPermissionEntryTest.vb" />
+    <Compile Include="WCF_Related\SerialisationIssue.vb" />
+    <None Include="Questify.Builder.Security\TestBuilderPrincipalTest.vb" />
+    <Compile Include="Cito.TestBuilder.Service\ResourceFactoryTest.vb" />
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="UnitTestSettings.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\3rdPartyComponents\MediaInfoDotNet\MediaInfo.dll">
+      <Link>MediaInfo.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Cito.TestBuilder.Logic\ItemProcessing\DefaultMergerData.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cito.TestBuilder.Logic\ItemProcessing\ParameterMergerData.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cito.TestBuilder.Logic\ItemProcessing\TemplateParameterMergerData.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\2.2.4.ci" />
+    <None Include="Resources\Concept.xlsx" />
+    <None Include="Resources\ConceptAttribute.xlsx" />
+    <None Include="Resources\ConceptEmpty.xlsx" />
+    <None Include="Resources\FreeValue.xlsx" />
+    <None Include="Resources\MultiListValue.xlsx" />
+    <None Include="Resources\OtherGroupWithSameInteractionsExists_Zero.xml" />
+    <None Include="Resources\SingleListValue .xlsx" />
+    <None Include="Resources\SingleListValueDoubleValue .xlsx" />
+    <None Include="Resources\Test Doc.docx" />
+    <None Include="Resources\Tree.xlsx" />
+    <None Include="Resources\TreeEmpty.xlsx" />
+    <None Include="Resources\TreeMulti.xlsx" />
+    <None Include="Resources\TreeMulti2.xlsx" />
+    <None Include="Resources\UnitTestAbsolutePackage.container" />
+    <None Include="Resources\UnitTestPackageFile.container" />
+    <None Include="Cito.TestBuilder.Logic\Validation\basic-qade-theme.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="UnitTestConfigFiles\Cleanup.bat" />
+    <None Include="UnitTestConfigFiles\CreateTestDatabase.sql" />
+    <None Include="UnitTestConfigFiles\CreateUnitTestDatabase.bat" />
+    <None Include="UnitTestConfigFiles\DropTestbuilderTest.sql" />
+    <None Include="UnitTestConfigFiles\DropUnitTestDatabase.bat" />
+    <None Include="UnitTestConfigFiles\Setup.bat" />
+    <None Include="UnitTestConfigFiles\TestbuilderTestData.sql" />
+    <Content Include="Resources\sampleimage.jpg" />
+    <Content Include="Resources\TestMathImg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\formula.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\samplemp4.mp4" />
+    <Content Include="Resources\EachInteractionHasScoringDefinition_Choice.xml" />
+    <Content Include="Resources\EachInteractionHasScoringDefinition_Date.xml" />
+    <Content Include="Resources\EachInteractionHasScoringDefinition_Decimal.xml" />
+    <Content Include="Resources\EachInteractionHasScoringDefinition_InlineChoice.xml" />
+    <Content Include="Resources\EachInteractionHasScoringDefinition_InlineGap.xml" />
+    <Content Include="Resources\EachInteractionHasScoringDefinition_Integer.xml" />
+    <Content Include="Resources\EachInteractionHasScoringDefinition_Math.xml" />
+    <Content Include="Resources\EachInteractionHasScoringDefinition_String.xml" />
+    <Content Include="Resources\EachInteractionHasScoringDefinition_Time.xml" />
+    <Content Include="Resources\GroupConsistsOfMultipleDifferentInteractions_Choice.xml" />
+    <Content Include="Resources\GroupConsistsOfMultipleDifferentInteractions_ChoiceInline.xml" />
+    <None Include="Resources\GroupsWithSameInteractionsAreEqual.xml" />
+    <Content Include="Resources\InlineChoice_EmptyFacts.xml" />
+    <Content Include="Resources\InlineChoice_SingleAnswer.xml" />
+    <Content Include="Resources\InlineChoice_MultipleAnswer.xml" />
+    <None Include="Resources\InteractionOfGroupCannotExistOutsideAGroup.xml" />
+    <Content Include="Resources\IntegerGrouping.xml" />
+    <Content Include="Resources\MRGroupedRemovedAlternative.xml" />
+    <Content Include="Resources\NoAndOnSameInteraction.xml" />
+    <Content Include="Resources\NoOrBetweenSingleInteractions.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\OtherGroupWithSameInteractionsExists_Wrong.xml" />
+    <None Include="Resources\Valid_SingleInteraction.xml" />
+    <None Include="Resources\Valid_SingleInteractionWithOr.xml" />
+    <None Include="Resources\Valid_MulitpleInteractionWithAnd.xml" />
+    <None Include="Resources\Valid_MulitpleInteractionsWithAndInOrGroups.xml" />
+    <None Include="Resources\Valid_MulitpleInteractionsWithAndInOrGroups_PlusSingleInteraction.xml" />
+    <None Include="Resources\Valid_MulitpleResponsesWithOr.xml" />
+    <None Include="Resources\Valid_TwoSetsOfIndependentGroups.xml" />
+    <None Include="Resources\groupconsistsofmultipledifferentinteractions_choice.xml" />
+    <None Include="Resources\groupconsistsofmultipledifferentinteractions_choiceinline.xml" />
+    <None Include="Resources\InlineChoice_EmptyFacts1.xml" />
+    <None Include="Resources\InlineChoice_MultipleAnswer1.xml" />
+    <None Include="Resources\InlineChoice_SingleAnswer1.xml" />
+    <None Include="Resources\NoAndOnSameInteraction.xml" />
+    <None Include="Resources\NoOrBetweenSingleInteractions.xml" />
+    <None Include="Resources\samplesvg.svg" />
+    <Content Include="wse3policyCache.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Questify.Builder.IoC\Questify.Builder.IoC.csproj">
+      <Project>{63ce1dee-458d-47a3-82fd-78e0132b536b}</Project>
+      <Name>Questify.Builder.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cito.Tester.Common\Cito.Tester.Common.vbproj">
+      <Project>{9a0bd8fe-d6f6-4ce5-9a0b-877610b00deb}</Project>
+      <Name>Cito.Tester.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cito.Tester.ContentModel\Cito.Tester.ContentModel.vbproj">
+      <Project>{94ee8d6c-5c52-4f34-9e61-e407b3240004}</Project>
+      <Name>Cito.Tester.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Packaging\Questify.Builder.Packaging.vbproj">
+      <Project>{56c0d819-f3ed-48ce-8f1f-07e415103f46}</Project>
+      <Name>Questify.Builder.Packaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\PaperBased\Questify.Builder.Plugins.PaperBased.vbproj">
+      <Project>{7A467241-C0C8-43D0-AE5B-22C606CB0CCF}</Project>
+      <Name>Questify.Builder.Plugins.PaperBased</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnitTests.Framework\Questify.Builder.UnitTests.Framework.vbproj">
+      <Project>{8769017a-15d1-49ef-9e23-2e920468326d}</Project>
+      <Name>Questify.Builder.UnitTests.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Configuration\Questify.Builder.Configuration.vbproj">
+      <Project>{c38faa1f-f9ca-415e-99ea-56370b9207d8}</Project>
+      <Name>Questify.Builder.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.ContentModel.DatabaseSpecific\Questify.Builder.Model.ContentModel.DatabaseSpecific.vbproj">
+      <Project>{A1AB6724-A8E0-4064-8F51-49BFB8EB8B31}</Project>
+      <Name>Questify.Builder.Model.ContentModel.DatabaseSpecific</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.ContentModel\Questify.Builder.Model.ContentModel.vbproj">
+      <Project>{44EAFD1E-6CC9-4A94-B6F6-A78734C7AAE5}</Project>
+      <Name>Questify.Builder.Model.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security.ActiveDirectory\Questify.Builder.Security.ActiveDirectory.csproj">
+      <Project>{255D7324-4EB1-4438-ACD5-76E74D67B31B}</Project>
+      <Name>Questify.Builder.Security.ActiveDirectory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security\Questify.Builder.Security.vbproj">
+      <Project>{F7B4A532-DDCC-47F5-BB20-A7AE6F1D47B5}</Project>
+      <Name>Questify.Builder.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Questify.Builder.Logic.vbproj">
+      <Project>{3a707189-b5de-439d-91d3-fa20ce79e8bf}</Project>
+      <Name>Questify.Builder.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UI\Questify.Builder.UI.vbproj">
+      <Project>{d35f44ec-b3c4-48df-9bec-76da023b393a}</Project>
+      <Name>Questify.Builder.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Service\Questify.Builder.Logic.Service.csproj">
+      <Project>{f8d65f41-d624-4343-8733-778bc0b4ff9e}</Project>
+      <Name>Questify.Builder.Logic.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Client\Questify.Builder.Client.vbproj">
+      <Project>{4d72156d-9847-4257-b8f9-e154eb379ca3}</Project>
+      <Name>Questify.Builder.Client</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Cito.TestBuilder.UI\TextEditor\Handlers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Cito.TestBuilder.Logic\Common\ResourcesForCommon.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcesForCommon.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Cito.TestBuilder.Security.Direct\Converter\SerializedDataSets.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SerializedDataSets.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.Targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

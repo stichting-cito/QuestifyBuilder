@@ -1,0 +1,1269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="pBorderBorderChoice.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LineColorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 249</value>
+  </data>
+  <data name="LineColorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LineColorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;LineColorButton.Name" xml:space="preserve">
+    <value>LineColorButton</value>
+  </data>
+  <data name="&gt;&gt;LineColorButton.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.Controls.ColorButton, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;LineColorButton.Parent" xml:space="preserve">
+    <value>pBorderBorderChoice</value>
+  </data>
+  <data name="&gt;&gt;LineColorButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LineColorLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LineColorLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 232</value>
+  </data>
+  <data name="LineColorLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="LineColorLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="LineColorLabel.Text" xml:space="preserve">
+    <value>Line color:</value>
+  </data>
+  <data name="&gt;&gt;LineColorLabel.Name" xml:space="preserve">
+    <value>LineColorLabel</value>
+  </data>
+  <data name="&gt;&gt;LineColorLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LineColorLabel.Parent" xml:space="preserve">
+    <value>pBorderBorderChoice</value>
+  </data>
+  <data name="&gt;&gt;LineColorLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListBoxLineStyle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ListBoxLineStyle.ItemHeight" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="ListBoxLineStyle.Items" xml:space="preserve">
+    <value>Solid</value>
+  </data>
+  <data name="ListBoxLineStyle.Items1" xml:space="preserve">
+    <value>Dotted</value>
+  </data>
+  <data name="ListBoxLineStyle.Items2" xml:space="preserve">
+    <value>Dashed</value>
+  </data>
+  <data name="ListBoxLineStyle.Items3" xml:space="preserve">
+    <value>Double</value>
+  </data>
+  <data name="ListBoxLineStyle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 55</value>
+  </data>
+  <data name="ListBoxLineStyle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 84</value>
+  </data>
+  <data name="ListBoxLineStyle.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;ListBoxLineStyle.Name" xml:space="preserve">
+    <value>ListBoxLineStyle</value>
+  </data>
+  <data name="&gt;&gt;ListBoxLineStyle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ListBoxLineStyle.Parent" xml:space="preserve">
+    <value>pBorderBorderChoice</value>
+  </data>
+  <data name="&gt;&gt;ListBoxLineStyle.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 39</value>
+  </data>
+  <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="Label3.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>Line style:</value>
+  </data>
+  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
+    <value>Label3</value>
+  </data>
+  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
+    <value>pBorderBorderChoice</value>
+  </data>
+  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ComboBoxLineWeight.Items" xml:space="preserve">
+    <value>1px</value>
+  </data>
+  <data name="ComboBoxLineWeight.Items1" xml:space="preserve">
+    <value>2px</value>
+  </data>
+  <data name="ComboBoxLineWeight.Items2" xml:space="preserve">
+    <value>3px</value>
+  </data>
+  <data name="ComboBoxLineWeight.Items3" xml:space="preserve">
+    <value>4px</value>
+  </data>
+  <data name="ComboBoxLineWeight.Items4" xml:space="preserve">
+    <value>5px</value>
+  </data>
+  <data name="ComboBoxLineWeight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 181</value>
+  </data>
+  <data name="ComboBoxLineWeight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 21</value>
+  </data>
+  <data name="ComboBoxLineWeight.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;ComboBoxLineWeight.Name" xml:space="preserve">
+    <value>ComboBoxLineWeight</value>
+  </data>
+  <data name="&gt;&gt;ComboBoxLineWeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ComboBoxLineWeight.Parent" xml:space="preserve">
+    <value>pBorderBorderChoice</value>
+  </data>
+  <data name="&gt;&gt;ComboBoxLineWeight.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 165</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Line weight:</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>pBorderBorderChoice</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1, 314</value>
+  </data>
+  <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
+    <value>pBorderBorderChoice</value>
+  </data>
+  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblStyle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblStyle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 4</value>
+  </data>
+  <data name="lblStyle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
+  </data>
+  <data name="lblStyle.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblStyle.Text" xml:space="preserve">
+    <value>Style:</value>
+  </data>
+  <data name="&gt;&gt;lblStyle.Name" xml:space="preserve">
+    <value>lblStyle</value>
+  </data>
+  <data name="&gt;&gt;lblStyle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblStyle.Parent" xml:space="preserve">
+    <value>pBorderBorderChoice</value>
+  </data>
+  <data name="&gt;&gt;lblStyle.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="pBorderBorderChoice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>133, 6</value>
+  </data>
+  <data name="pBorderBorderChoice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 314</value>
+  </data>
+  <data name="pBorderBorderChoice.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pBorderBorderChoice.Name" xml:space="preserve">
+    <value>pBorderBorderChoice</value>
+  </data>
+  <data name="&gt;&gt;pBorderBorderChoice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pBorderBorderChoice.Parent" xml:space="preserve">
+    <value>tabBorders</value>
+  </data>
+  <data name="&gt;&gt;pBorderBorderChoice.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pBorderSetting.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="lblSetting.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSetting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 4</value>
+  </data>
+  <data name="lblSetting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="lblSetting.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblSetting.Text" xml:space="preserve">
+    <value>Setting:</value>
+  </data>
+  <data name="&gt;&gt;lblSetting.Name" xml:space="preserve">
+    <value>lblSetting</value>
+  </data>
+  <data name="&gt;&gt;lblSetting.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSetting.Parent" xml:space="preserve">
+    <value>pBorderSetting</value>
+  </data>
+  <data name="&gt;&gt;lblSetting.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblBorderCustom.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBorderCustom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 272</value>
+  </data>
+  <data name="lblBorderCustom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 13</value>
+  </data>
+  <data name="lblBorderCustom.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblBorderCustom.Text" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="&gt;&gt;lblBorderCustom.Name" xml:space="preserve">
+    <value>lblBorderCustom</value>
+  </data>
+  <data name="&gt;&gt;lblBorderCustom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBorderCustom.Parent" xml:space="preserve">
+    <value>pBorderSetting</value>
+  </data>
+  <data name="&gt;&gt;lblBorderCustom.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblBorderGrid.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBorderGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 215</value>
+  </data>
+  <data name="lblBorderGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 13</value>
+  </data>
+  <data name="lblBorderGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblBorderGrid.Text" xml:space="preserve">
+    <value>Grid</value>
+  </data>
+  <data name="&gt;&gt;lblBorderGrid.Name" xml:space="preserve">
+    <value>lblBorderGrid</value>
+  </data>
+  <data name="&gt;&gt;lblBorderGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBorderGrid.Parent" xml:space="preserve">
+    <value>pBorderSetting</value>
+  </data>
+  <data name="&gt;&gt;lblBorderGrid.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblBorderAll.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBorderAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 155</value>
+  </data>
+  <data name="lblBorderAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 13</value>
+  </data>
+  <data name="lblBorderAll.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblBorderAll.Text" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="&gt;&gt;lblBorderAll.Name" xml:space="preserve">
+    <value>lblBorderAll</value>
+  </data>
+  <data name="&gt;&gt;lblBorderAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBorderAll.Parent" xml:space="preserve">
+    <value>pBorderSetting</value>
+  </data>
+  <data name="&gt;&gt;lblBorderAll.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblBorderBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBorderBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 99</value>
+  </data>
+  <data name="lblBorderBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 13</value>
+  </data>
+  <data name="lblBorderBox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lblBorderBox.Text" xml:space="preserve">
+    <value>Box</value>
+  </data>
+  <data name="&gt;&gt;lblBorderBox.Name" xml:space="preserve">
+    <value>lblBorderBox</value>
+  </data>
+  <data name="&gt;&gt;lblBorderBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBorderBox.Parent" xml:space="preserve">
+    <value>pBorderSetting</value>
+  </data>
+  <data name="&gt;&gt;lblBorderBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblBorderNone.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBorderNone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 39</value>
+  </data>
+  <data name="lblBorderNone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
+  </data>
+  <data name="lblBorderNone.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblBorderNone.Text" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;lblBorderNone.Name" xml:space="preserve">
+    <value>lblBorderNone</value>
+  </data>
+  <data name="&gt;&gt;lblBorderNone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBorderNone.Parent" xml:space="preserve">
+    <value>pBorderSetting</value>
+  </data>
+  <data name="&gt;&gt;lblBorderNone.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tbpNone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 20</value>
+  </data>
+  <data name="tbpNone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 52</value>
+  </data>
+  <data name="tbpNone.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tbpNone.Text" xml:space="preserve">
+    <value>TableCellPreview6</value>
+  </data>
+  <data name="&gt;&gt;tbpNone.Name" xml:space="preserve">
+    <value>tbpNone</value>
+  </data>
+  <data name="&gt;&gt;tbpNone.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.Controls.TableCellPreview, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;tbpNone.Parent" xml:space="preserve">
+    <value>pBorderSetting</value>
+  </data>
+  <data name="&gt;&gt;tbpNone.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tbpBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 78</value>
+  </data>
+  <data name="tbpBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 52</value>
+  </data>
+  <data name="tbpBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tbpBox.Text" xml:space="preserve">
+    <value>TableCellPreview5</value>
+  </data>
+  <data name="&gt;&gt;tbpBox.Name" xml:space="preserve">
+    <value>tbpBox</value>
+  </data>
+  <data name="&gt;&gt;tbpBox.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.Controls.TableCellPreview, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;tbpBox.Parent" xml:space="preserve">
+    <value>pBorderSetting</value>
+  </data>
+  <data name="&gt;&gt;tbpBox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tbpAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 136</value>
+  </data>
+  <data name="tbpAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 52</value>
+  </data>
+  <data name="tbpAll.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tbpAll.Text" xml:space="preserve">
+    <value>TableCellPreview4</value>
+  </data>
+  <data name="&gt;&gt;tbpAll.Name" xml:space="preserve">
+    <value>tbpAll</value>
+  </data>
+  <data name="&gt;&gt;tbpAll.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.Controls.TableCellPreview, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;tbpAll.Parent" xml:space="preserve">
+    <value>pBorderSetting</value>
+  </data>
+  <data name="&gt;&gt;tbpAll.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tbpGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 194</value>
+  </data>
+  <data name="tbpGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 52</value>
+  </data>
+  <data name="tbpGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tbpGrid.Text" xml:space="preserve">
+    <value>TableCellPreview3</value>
+  </data>
+  <data name="&gt;&gt;tbpGrid.Name" xml:space="preserve">
+    <value>tbpGrid</value>
+  </data>
+  <data name="&gt;&gt;tbpGrid.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.Controls.TableCellPreview, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;tbpGrid.Parent" xml:space="preserve">
+    <value>pBorderSetting</value>
+  </data>
+  <data name="&gt;&gt;tbpGrid.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="tbpCustom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 252</value>
+  </data>
+  <data name="tbpCustom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 52</value>
+  </data>
+  <data name="tbpCustom.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tbpCustom.Text" xml:space="preserve">
+    <value>TableCellPreview2</value>
+  </data>
+  <data name="&gt;&gt;tbpCustom.Name" xml:space="preserve">
+    <value>tbpCustom</value>
+  </data>
+  <data name="&gt;&gt;tbpCustom.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.Controls.TableCellPreview, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;tbpCustom.Parent" xml:space="preserve">
+    <value>pBorderSetting</value>
+  </data>
+  <data name="&gt;&gt;tbpCustom.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="pBorderSetting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="pBorderSetting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 314</value>
+  </data>
+  <data name="pBorderSetting.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pBorderSetting.Name" xml:space="preserve">
+    <value>pBorderSetting</value>
+  </data>
+  <data name="&gt;&gt;pBorderSetting.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pBorderSetting.Parent" xml:space="preserve">
+    <value>tabBorders</value>
+  </data>
+  <data name="&gt;&gt;pBorderSetting.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pBorderPreview.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
+  </data>
+  <data name="Panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="Panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1, 314</value>
+  </data>
+  <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Name" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Parent" xml:space="preserve">
+    <value>pBorderPreview</value>
+  </data>
+  <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblPreview.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 4</value>
+  </data>
+  <data name="lblPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="lblPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblPreview.Text" xml:space="preserve">
+    <value>Preview:</value>
+  </data>
+  <data name="&gt;&gt;lblPreview.Name" xml:space="preserve">
+    <value>lblPreview</value>
+  </data>
+  <data name="&gt;&gt;lblPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPreview.Parent" xml:space="preserve">
+    <value>pBorderPreview</value>
+  </data>
+  <data name="&gt;&gt;lblPreview.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ToggleRightVertical.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="ToggleRightVertical.Location" type="System.Drawing.Point, System.Drawing">
+    <value>159, 190</value>
+  </data>
+  <data name="ToggleRightVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="ToggleRightVertical.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ToggleRightVertical.Name" xml:space="preserve">
+    <value>ToggleRightVertical</value>
+  </data>
+  <data name="&gt;&gt;ToggleRightVertical.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.Controls.TableToggleButton, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;ToggleRightVertical.Parent" xml:space="preserve">
+    <value>pBorderPreview</value>
+  </data>
+  <data name="&gt;&gt;ToggleRightVertical.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ToggleMidVertical.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="ToggleMidVertical.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 190</value>
+  </data>
+  <data name="ToggleMidVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="ToggleMidVertical.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;ToggleMidVertical.Name" xml:space="preserve">
+    <value>ToggleMidVertical</value>
+  </data>
+  <data name="&gt;&gt;ToggleMidVertical.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.Controls.TableToggleButton, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;ToggleMidVertical.Parent" xml:space="preserve">
+    <value>pBorderPreview</value>
+  </data>
+  <data name="&gt;&gt;ToggleMidVertical.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ToggleLeftVertical.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="ToggleLeftVertical.Location" type="System.Drawing.Point, System.Drawing">
+    <value>61, 190</value>
+  </data>
+  <data name="ToggleLeftVertical.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="ToggleLeftVertical.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;ToggleLeftVertical.Name" xml:space="preserve">
+    <value>ToggleLeftVertical</value>
+  </data>
+  <data name="&gt;&gt;ToggleLeftVertical.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.Controls.TableToggleButton, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;ToggleLeftVertical.Parent" xml:space="preserve">
+    <value>pBorderPreview</value>
+  </data>
+  <data name="&gt;&gt;ToggleLeftVertical.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ToggleBottomHorizontal.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="ToggleBottomHorizontal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 155</value>
+  </data>
+  <data name="ToggleBottomHorizontal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="ToggleBottomHorizontal.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;ToggleBottomHorizontal.Name" xml:space="preserve">
+    <value>ToggleBottomHorizontal</value>
+  </data>
+  <data name="&gt;&gt;ToggleBottomHorizontal.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.Controls.TableToggleButton, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;ToggleBottomHorizontal.Parent" xml:space="preserve">
+    <value>pBorderPreview</value>
+  </data>
+  <data name="&gt;&gt;ToggleBottomHorizontal.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ToggleMidHorizontal.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="ToggleMidHorizontal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 114</value>
+  </data>
+  <data name="ToggleMidHorizontal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="ToggleMidHorizontal.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ToggleMidHorizontal.Name" xml:space="preserve">
+    <value>ToggleMidHorizontal</value>
+  </data>
+  <data name="&gt;&gt;ToggleMidHorizontal.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.Controls.TableToggleButton, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;ToggleMidHorizontal.Parent" xml:space="preserve">
+    <value>pBorderPreview</value>
+  </data>
+  <data name="&gt;&gt;ToggleMidHorizontal.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="ToggleTopHorizontal.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="ToggleTopHorizontal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 70</value>
+  </data>
+  <data name="ToggleTopHorizontal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="ToggleTopHorizontal.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ToggleTopHorizontal.Name" xml:space="preserve">
+    <value>ToggleTopHorizontal</value>
+  </data>
+  <data name="&gt;&gt;ToggleTopHorizontal.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.Controls.TableToggleButton, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;ToggleTopHorizontal.Parent" xml:space="preserve">
+    <value>pBorderPreview</value>
+  </data>
+  <data name="&gt;&gt;ToggleTopHorizontal.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="TableCellPreview1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>61, 70</value>
+  </data>
+  <data name="TableCellPreview1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 114</value>
+  </data>
+  <data name="TableCellPreview1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TableCellPreview1.Text" xml:space="preserve">
+    <value>TableCellPreview1</value>
+  </data>
+  <data name="&gt;&gt;TableCellPreview1.Name" xml:space="preserve">
+    <value>TableCellPreview1</value>
+  </data>
+  <data name="&gt;&gt;TableCellPreview1.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.Controls.TableCellPreview, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;TableCellPreview1.Parent" xml:space="preserve">
+    <value>pBorderPreview</value>
+  </data>
+  <data name="&gt;&gt;TableCellPreview1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="pBorderPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>358, 6</value>
+  </data>
+  <data name="pBorderPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 314</value>
+  </data>
+  <data name="pBorderPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pBorderPreview.Name" xml:space="preserve">
+    <value>pBorderPreview</value>
+  </data>
+  <data name="&gt;&gt;pBorderPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pBorderPreview.Parent" xml:space="preserve">
+    <value>tabBorders</value>
+  </data>
+  <data name="&gt;&gt;pBorderPreview.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabBorders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabBorders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabBorders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>588, 326</value>
+  </data>
+  <data name="tabBorders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabBorders.Text" xml:space="preserve">
+    <value>Borders</value>
+  </data>
+  <data name="&gt;&gt;tabBorders.Name" xml:space="preserve">
+    <value>tabBorders</value>
+  </data>
+  <data name="&gt;&gt;tabBorders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabBorders.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabBorders.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Panel6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 37</value>
+  </data>
+  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 13</value>
+  </data>
+  <data name="Label5.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>Pick a color</value>
+  </data>
+  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
+    <value>Label5</value>
+  </data>
+  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
+    <value>Panel6</value>
+  </data>
+  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ClearColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 161</value>
+  </data>
+  <data name="ClearColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 23</value>
+  </data>
+  <data name="ClearColor.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="ClearColor.Text" xml:space="preserve">
+    <value>No Color</value>
+  </data>
+  <data name="&gt;&gt;ClearColor.Name" xml:space="preserve">
+    <value>ClearColor</value>
+  </data>
+  <data name="&gt;&gt;ClearColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ClearColor.Parent" xml:space="preserve">
+    <value>Panel6</value>
+  </data>
+  <data name="&gt;&gt;ClearColor.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ColorButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 53</value>
+  </data>
+  <data name="ColorButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 72</value>
+  </data>
+  <data name="ColorButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;ColorButton1.Name" xml:space="preserve">
+    <value>ColorButton1</value>
+  </data>
+  <data name="&gt;&gt;ColorButton1.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.Controls.ColorButton, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;ColorButton1.Parent" xml:space="preserve">
+    <value>Panel6</value>
+  </data>
+  <data name="&gt;&gt;ColorButton1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 4</value>
+  </data>
+  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>Setting:</value>
+  </data>
+  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
+    <value>Label4</value>
+  </data>
+  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
+    <value>Panel6</value>
+  </data>
+  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Panel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="Panel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 314</value>
+  </data>
+  <data name="Panel6.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;Panel6.Name" xml:space="preserve">
+    <value>Panel6</value>
+  </data>
+  <data name="&gt;&gt;Panel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel6.Parent" xml:space="preserve">
+    <value>tabShading</value>
+  </data>
+  <data name="&gt;&gt;Panel6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Panel4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
+  </data>
+  <data name="Panel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="Panel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1, 314</value>
+  </data>
+  <data name="Panel5.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;Panel5.Name" xml:space="preserve">
+    <value>Panel5</value>
+  </data>
+  <data name="&gt;&gt;Panel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel5.Parent" xml:space="preserve">
+    <value>Panel4</value>
+  </data>
+  <data name="&gt;&gt;Panel5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 4</value>
+  </data>
+  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>Preview:</value>
+  </data>
+  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
+    <value>Label2</value>
+  </data>
+  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+    <value>Panel4</value>
+  </data>
+  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TableCellPreview2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>61, 70</value>
+  </data>
+  <data name="TableCellPreview2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 114</value>
+  </data>
+  <data name="TableCellPreview2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TableCellPreview2.Text" xml:space="preserve">
+    <value>TableCellPreview2</value>
+  </data>
+  <data name="&gt;&gt;TableCellPreview2.Name" xml:space="preserve">
+    <value>TableCellPreview2</value>
+  </data>
+  <data name="&gt;&gt;TableCellPreview2.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.Controls.TableCellPreview, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;TableCellPreview2.Parent" xml:space="preserve">
+    <value>Panel4</value>
+  </data>
+  <data name="&gt;&gt;TableCellPreview2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Panel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>358, 6</value>
+  </data>
+  <data name="Panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 314</value>
+  </data>
+  <data name="Panel4.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;Panel4.Name" xml:space="preserve">
+    <value>Panel4</value>
+  </data>
+  <data name="&gt;&gt;Panel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel4.Parent" xml:space="preserve">
+    <value>tabShading</value>
+  </data>
+  <data name="&gt;&gt;Panel4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabShading.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabShading.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabShading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>588, 326</value>
+  </data>
+  <data name="tabShading.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabShading.Text" xml:space="preserve">
+    <value>Shading</value>
+  </data>
+  <data name="&gt;&gt;tabShading.Name" xml:space="preserve">
+    <value>tabShading</value>
+  </data>
+  <data name="&gt;&gt;tabShading.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabShading.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabShading.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tabControl.Padding" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>596, 352</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>596, 352</value>
+  </data>
+  <data name="&gt;&gt;ContentPanel.Name" xml:space="preserve">
+    <value>ContentPanel</value>
+  </data>
+  <data name="&gt;&gt;ContentPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ContentPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ContentPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>606, 390</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Borders and Shading</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>BordersAndShading</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.DialogBase, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="tbpGrid.AccessibleDescription" xml:space="preserve">
+    <value>In order to select Grid, choose a Line weight of more than 1px</value>
+  </data>
+</root>

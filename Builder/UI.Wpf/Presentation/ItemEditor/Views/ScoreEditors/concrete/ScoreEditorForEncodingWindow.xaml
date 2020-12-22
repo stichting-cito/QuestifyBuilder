@@ -1,0 +1,65 @@
+﻿<Window x:Class="Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.ScoreEditors.concrete.ScoreEditorForEncoding" x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"        
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="ToolWindow"
+        ResizeMode="CanResizeWithGrip"
+        xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+        xmlns:controls="clr-namespace:Questify.Builder.UI.Wpf.Controls"
+        meffed:ViewModelLocator.ViewModel="ItemEditor.ScoreEditorForEncoding"
+        Title="{DynamicResource ItemEditor.ScoreEditor.ScoreEditorForEncodingWindow}" Height="300" Width="501"
+        >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\DataTemplates\SharedDataTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <!--Row 0 :: Toolbar-->
+        <ToolBar Grid.Row="0"  ToolBar.OverflowMode="AsNeeded" ToolBarTray.IsLocked="True">
+            <Button ToolTip="{StaticResource ItemEditor.Ribbon.ScoreEditor.Interactions.Add}" 
+                    Command="controls:BlockGridCommands.InsertBlockGridElement" 
+                    CommandParameter="{x:Static controls:BlockGridElement.BlockRow}" >
+                <Image Source="..\..\..\..\Images\Ribbon\interactionAdd_32.png"/>
+            </Button>
+            <Button ToolTip="{StaticResource ItemEditor.Ribbon.ScoreEditor.Interactions.Add}" 
+                    Command="controls:BlockGridCommands.DeleteBlockGridElement" 
+                    CommandParameter="{x:Static controls:BlockGridElement.BlockRow}">
+                <Image Source="..\..\..\..\Images\Ribbon\interactionDelete_32.png"/>
+            </Button>
+        </ToolBar>
+        
+        <!--Row 1 :: Editor-->
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
+            <ContentControl Content="{Binding FindingVM}" ContentTemplate="{StaticResource KeyFindingTemplate}" DataContext="{Binding}" />
+        </ScrollViewer>
+        
+        <!--Row 2 :: Buttons-->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2" MinHeight="49">
+
+            <!-- OK Button -->
+            <Button Name="Button_OK" Style="{StaticResource DialogButtonStyle}" HorizontalAlignment="Right" 
+                       IsDefault="True" Command="{Binding OkCommand}">
+                <Label Name="Label_Ok" Padding="0" Margin="10,0" Content="{StaticResource Dialog.Ok}"/>
+            </Button>
+            <!-- End OK Button -->            
+
+            <!-- Cancel Button -->
+            <Button Name="Button_Cancel" HorizontalAlignment="Right" Visibility="Visible" IsCancel="True"
+                        Style="{StaticResource DialogButtonStyle}" Command="{Binding CancelCommand}">
+                <Label Name="Label_Cancel" Padding="0" Margin="10,0" Content="{StaticResource Dialog.Cancel}"/>
+            </Button>
+            <!-- End Cancel Button -->
+
+        </StackPanel>
+
+    </Grid>
+</Window>

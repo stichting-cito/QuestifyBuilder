@@ -1,0 +1,163 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="CustomInteractions.Flow.AssignScoring"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:ctc="clr-namespace:Cito.Tester.ContentModel;assembly=Cito.Tester.ContentModel"
+ xmlns:ctlc="clr-namespace:Questify.Builder.Logic.CustomInteractions;assembly=Questify.Builder.Logic"
+ xmlns:local="clr-namespace:Questify.Builder.Logic.CustomInteractions.Flow"
+ xmlns:local1="clr-namespace:Questify.Builder.Logic.CodeActivities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="scoring" Type="InArgument(scg:IEnumerable(ctlc:ScoringTypeBase))" />
+    <x:Property Name="parameterCollection" Type="InArgument(ctc:ParameterCollection)" />
+    <x:Property Name="counter" Type="OutArgument(x:Int32)" />
+    <x:Property Name="ItemSolution" Type="InArgument(ctc:Solution)" />
+    <x:Property Name="findingOverride" Type="InArgument(x:String)" />
+    <x:Property Name="controllerId" Type="InArgument(x:String)" />
+    <x:Property Name="scoringLabel" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:WorkflowViewState.IdRef>Questify.Builder.Logic.CustomInteractions.Flow.AssignScoring_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>Cito.Tester.ContentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Cito.Tester.Common</AssemblyReference>
+      <AssemblyReference>Cito.Tester.ContentModel</AssemblyReference>
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>SD.LLBLGen.Pro.ORMSupportClasses</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Web</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>Questify.Builder.Model.ContentModel</AssemblyReference>
+      <AssemblyReference>Questify.Builder.Logic</AssemblyReference>
+      <AssemblyReference>Questify.Builder.Service</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>Questify.Builder.Logic</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <ForEach x:TypeArguments="ctlc:ScoringTypeBase" DisplayName="ForEach&lt;ScoringTypeBase&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
+    <ForEach.Values>
+      <InArgument x:TypeArguments="scg:IEnumerable(ctlc:ScoringTypeBase)">
+        [scoring]
+      </InArgument>
+    </ForEach.Values>
+    <ActivityAction x:TypeArguments="ctlc:ScoringTypeBase">
+      <ActivityAction.Argument>
+        <DelegateInArgument x:TypeArguments="ctlc:ScoringTypeBase" Name="item" />
+      </ActivityAction.Argument>
+      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="ctc:ScoringParameter" Name="scoreParameter" />
+        </Sequence.Variables>
+        <local:CreateScoringParameter sap2010:WorkflowViewState.IdRef="CreateScoringParameter_1">
+          <local:CreateScoringParameter.ControllerId>
+            <InArgument x:TypeArguments="x:String">
+              [controllerId]
+            </InArgument>
+          </local:CreateScoringParameter.ControllerId>
+          <local:CreateScoringParameter.Counter>
+            <InArgument x:TypeArguments="x:Int32">
+              [counter]
+            </InArgument>
+          </local:CreateScoringParameter.Counter>
+          <local:CreateScoringParameter.CustomInterActionScoreParameter>
+            <InArgument x:TypeArguments="ctlc:ScoringTypeBase">
+              [item]
+            </InArgument>
+          </local:CreateScoringParameter.CustomInterActionScoreParameter>
+          <local:CreateScoringParameter.FindingOverride>
+            <InArgument x:TypeArguments="x:String">
+              [findingOverride]
+            </InArgument>
+          </local:CreateScoringParameter.FindingOverride>
+          <local:CreateScoringParameter.Result>
+            <OutArgument x:TypeArguments="ctc:ScoringParameter">
+              [scoreParameter]
+            </OutArgument>
+          </local:CreateScoringParameter.Result>
+          <local:CreateScoringParameter.ScoringLabel>
+            <InArgument x:TypeArguments="x:String">
+              [scoringLabel]
+            </InArgument>
+          </local:CreateScoringParameter.ScoringLabel>
+        </local:CreateScoringParameter>
+        <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Int32">
+              [counter]
+            </OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Int32">
+              [(counter+1)]
+            </InArgument>
+          </Assign.Value>
+        </Assign>
+        <local1:AddParameterToCollection sap2010:WorkflowViewState.IdRef="AddParameterToCollection_1">
+          <local1:AddParameterToCollection.ParameterCollection>
+            <InArgument x:TypeArguments="ctc:ParameterCollection">
+              [parameterCollection]
+            </InArgument>
+          </local1:AddParameterToCollection.ParameterCollection>
+          <local1:AddParameterToCollection.ParameterToAdd>
+            <InArgument x:TypeArguments="ctc:ParameterBase">
+              [scoreParameter]
+            </InArgument>
+          </local1:AddParameterToCollection.ParameterToAdd>
+        </local1:AddParameterToCollection>
+        <local:CreateKeyFact sap2010:WorkflowViewState.IdRef="CreateKeyFact_1">
+          <local:CreateKeyFact.CustomInterActionScoreParameter>
+            <InArgument x:TypeArguments="ctc:ScoringParameter">
+              [scoreParameter]
+            </InArgument>
+          </local:CreateKeyFact.CustomInterActionScoreParameter>
+          <local:CreateKeyFact.ItemSolution>
+            <InArgument x:TypeArguments="ctc:Solution">
+              [ItemSolution]
+            </InArgument>
+          </local:CreateKeyFact.ItemSolution>
+        </local:CreateKeyFact>
+      </Sequence>
+    </ActivityAction>
+    <sads:DebugSymbol.Symbol>d4QBQzpcVEZTLkFTNjMuUHJvamVjdHNcUHJvamVjdCBRdWVzdGlmeVxHZW5lcmljXERldlxEZXYzXFRlc3RCdWlsZGVyXFF1ZXN0aWZ5LkJ1aWxkZXIuTG9naWNcQ3VzdG9tSW50ZXJhY3Rpb25zXEZsb3dcQXNzaWduU2NvcmluZy54YW1sE0ADlQENAgEBQwlDawIBf0oHkgESAgECTgltKAIBQm4JeRICAS16CYUBKwIBGIYBCZEBHwIBA2oPalkCAXVWD1ZTAgFrYA9gXAIBYWUPZW8CAVdRD1FZAgFNWw9bXQIBQ3YPdlcCAThxD3FbAgEufQ99bwIBI4IBD4IBZAIBGY4BD44BXQIBDokBD4kBZwIBBA==</sads:DebugSymbol.Symbol>
+  </ForEach>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="CreateScoringParameter_1" sap:VirtualizedContainerService.HintSize="242,22" />
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="242,62" />
+      <sap2010:ViewStateData Id="AddParameterToCollection_1" sap:VirtualizedContainerService.HintSize="242,22" />
+      <sap2010:ViewStateData Id="CreateKeyFact_1" sap:VirtualizedContainerService.HintSize="242,22" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="264,372">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_2" sap:VirtualizedContainerService.HintSize="294,522" />
+      <sap2010:ViewStateData Id="Questify.Builder.Logic.CustomInteractions.Flow.AssignScoring_1" sap:VirtualizedContainerService.HintSize="334,602" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

@@ -1,0 +1,985 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Message_TestConstruction_AlreadyInItemContext" xml:space="preserve">
+    <value>{0} items have been found that already exist.</value>
+  </data>
+  <data name="Message_TestPackageConstruction_AlreadyInTestContext" xml:space="preserve">
+    <value>{0} tests have been found that already exist.</value>
+  </data>
+  <data name="RefreshUsingDataSources_CreateProposalsFromDataSourceList_ProposalPrefix" xml:space="preserve">
+    <value>Proposal</value>
+  </data>
+  <data name="RequestContainsItemsValidationHandler_DoesNotContainItems" xml:space="preserve">
+    <value>The request does not contain any items. Nothing to do.</value>
+  </data>
+  <data name="RequestContainsTestsUsedAsRetry" xml:space="preserve">
+    <value>The test(s) you are about to delete are used as retry in the following test(s):'{0}' {1}The retry reference will be deleted.{1}{1}Are you sure you want to continue?</value>
+  </data>
+  <data name="RequestContainsTestValidationHandler_DoesNotContainTest" xml:space="preserve">
+    <value>The request does not contain any tests. Nothing to do.</value>
+  </data>
+  <data name="SolutionWillBeDeletedNoMatchPossible" xml:space="preserve">
+    <value>Solution will be deleted. No match possible.</value>
+  </data>
+  <data name="Message_ValidateItemRelationShip_Conflicts" xml:space="preserve">
+    <value>Item relationship [{0}] of type [{1}] is not satisfied and has {2} conflicts.</value>
+  </data>
+  <data name="Message_ValidateItemRelationShip_UnknownRequestType" xml:space="preserve">
+    <value>Request type [{0}] is not supported.</value>
+  </data>
+  <data name="Message_CreatingProposal_Error" xml:space="preserve">
+    <value>No proposals could be made due to the following reason:
+{0}</value>
+  </data>
+  <data name="MandatoryEmptyParameterMessage" xml:space="preserve">
+    <value>Field '{0}' is mandatory.</value>
+  </data>
+  <data name="Category_Solution" xml:space="preserve">
+    <value>Solution</value>
+  </data>
+  <data name="Property_AspectReference" xml:space="preserve">
+    <value>Aspects</value>
+  </data>
+  <data name="Property_Concept" xml:space="preserve">
+    <value>Concept</value>
+  </data>
+  <data name="Property_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Property_Findings" xml:space="preserve">
+    <value>KeyFindings</value>
+  </data>
+  <data name="Property_Index" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="Property_MaxScore" xml:space="preserve">
+    <value>Max. score</value>
+  </data>
+  <data name="Property_MaxSolutionRawScore" xml:space="preserve">
+    <value>Max. raw score</value>
+  </data>
+  <data name="Property_Method" xml:space="preserve">
+    <value>Method</value>
+  </data>
+  <data name="Property_ModifiedBy" xml:space="preserve">
+    <value>Modified by</value>
+  </data>
+  <data name="Property_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Property_RawScore" xml:space="preserve">
+    <value>Raw score</value>
+  </data>
+  <data name="Property_StateName" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Property_Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Property_TranslatedScore" xml:space="preserve">
+    <value>Translated Score</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_Moved" xml:space="preserve">
+    <value>Moved</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_PropertyAlreadyExistsInBank" xml:space="preserve">
+    <value>Bank "{0}" already contains a custom bank property named "{1}".</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_ResourceAlreadyExistsInBank" xml:space="preserve">
+    <value>Bank "{0}" already contains a resource named "{1}".</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_ResourceNotFound" xml:space="preserve">
+    <value>No resource found with id "{0}".</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_ResourceReferencedFromOtherSubBank" xml:space="preserve">
+    <value>This referencing resource is in sub-bank "{0}" and can therefore not be moved as well.</value>
+  </data>
+  <data name="Category_AssessmentItem" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_HierarchyAlreadyContainsCustomBankProperty" xml:space="preserve">
+    <value>The hierarchy of bank "{0}" already contains a custom bank property named "{1}".</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_HierarchyAlreadyContainsResource" xml:space="preserve">
+    <value>The hierarchy of bank "{0}" already contains a resource named ""{1}".</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_InsufficientPermissionsInDestinationBank" xml:space="preserve">
+    <value>Insufficient permissions to make changes in the destination bank "{0}".</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_InsufficientPermissionsInSourceBank" xml:space="preserve">
+    <value>Insufficient permissions to make changes in the source bank "{0}".</value>
+  </data>
+  <data name="MostRecentVersion" xml:space="preserve">
+    <value>Used in most recent version:</value>
+  </data>
+  <data name="ThisVersion" xml:space="preserve">
+    <value>Used in this version:</value>
+  </data>
+  <data name="ResourceDoesNotExist" xml:space="preserve">
+    <value>Resource does not exist</value>
+  </data>
+  <data name="NoThemeAvailable" xml:space="preserve">
+    <value>No themes available</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="InlineChoice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineChoice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InlineEssay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineEssay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InlineGap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineGap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InlineGapMatch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineGapMatch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InlineHTSC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineHotText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InlineMC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineMC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InlineMR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineMR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InlineTabular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineTabular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemLayoutTemplateInlineMultimediaMissing" xml:space="preserve">
+    <value>Item layout template {0} must be available in the bank</value>
+  </data>
+  <data name="InlineImageParameterSet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineImageParameterSet.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TestEditor_InvalidAdd" xml:space="preserve">
+    <value>{0} items cannot be added because they are not suitable for this test type.</value>
+  </data>
+  <data name="MandatoryEmptyShapelistMessage" xml:space="preserve">
+    <value>At least one shape should be defined for field '{0}'.</value>
+  </data>
+  <data name="MissingJsonManifest" xml:space="preserve">
+    <value>No Json Manifest file was found in folder '{0}'</value>
+  </data>
+  <data name="ReferencedFileNotFoundInJsonManifest" xml:space="preserve">
+    <value>Json manifest file '{0}' contains a reference to '{1}' but is not found</value>
+  </data>
+  <data name="ErrorWhileProcessingMetadataFile" xml:space="preserve">
+    <value>Error while processing metadata file:  '{0}'</value>
+  </data>
+  <data name="CoordinateCorrectResponseNotValid" xml:space="preserve">
+    <value>Correct response not valid. Should be in format: {0}</value>
+  </data>
+  <data name="CorrectResponseNotInChoiceCollection" xml:space="preserve">
+    <value>Correct response: {0} not found in choice collection</value>
+  </data>
+  <data name="DecimalScoringNotValid" xml:space="preserve">
+    <value>Correct response is not a decimal (culture invariant)</value>
+  </data>
+  <data name="DuplicateKey" xml:space="preserve">
+    <value>Duplicate keys found: {0}</value>
+  </data>
+  <data name="IntegerScoringNotValid" xml:space="preserve">
+    <value>Correct response is not an integer</value>
+  </data>
+  <data name="MathMlCorrectResponseNotValid" xml:space="preserve">
+    <value>Correct response not valid mathml.</value>
+  </data>
+  <data name="MaxChoicesGreaterThanChoices" xml:space="preserve">
+    <value>Max choices can't be greater than number of choices</value>
+  </data>
+  <data name="MinchoicesGreaterThanChoices" xml:space="preserve">
+    <value>Min choices can't be greater than number of choices</value>
+  </data>
+  <data name="MinchoicesGreaterThanMaxChoices" xml:space="preserve">
+    <value>Min choices can't be greater than max choices</value>
+  </data>
+  <data name="ScoringEmpty" xml:space="preserve">
+    <value>At least one scorable interaction should be filled</value>
+  </data>
+  <data name="ParameterWillBeDeletedMessage" xml:space="preserve">
+    <value>Parameter '{0}' will be deleted or modified</value>
+  </data>
+  <data name="SwitchingTemplateConsequencesWarning" xml:space="preserve">
+    <value>Switching the item template to {0} has the following consequences:
+{1}
+
+Continue?</value>
+  </data>
+  <data name="InlineElementRemovedFromParameter" xml:space="preserve">
+    <value>One or more inline elements will be removed from parameter {0}</value>
+  </data>
+  <data name="OnlyAValueWithinTheRangeOfTillIsAllowed" xml:space="preserve">
+    <value>Only a value within the range of {0} to {1} is allowed</value>
+  </data>
+  <data name="ResourcesCouldNotBeFound" xml:space="preserve">
+    <value>The following resources could not be found:
+- {0}</value>
+  </data>
+  <data name="NoDependenciesAvailable" xml:space="preserve">
+    <value>Cannot revert to this version is not possible due to technical restrictions. Please apply changes manually.</value>
+  </data>
+  <data name="FormatTitle" xml:space="preserve">
+    <value>{0}_Group_{1}_First_seeding_item_{2}</value>
+  </data>
+  <data name="ProposalCreator_DuplicateItemsInMultipleDataSources" xml:space="preserve">
+    <value>Multiple selection groups within the test contain the same items</value>
+  </data>
+  <data name="ProposalCreator_ItemsAlreadyInTest" xml:space="preserve">
+    <value>The test already contains the following items (detected in the selection groups): {0}</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>SequenceNumber</value>
+  </data>
+  <data name="NavigationNumber" xml:space="preserve">
+    <value>Navigation number</value>
+  </data>
+  <data name="ProgressMessage" xml:space="preserve">
+    <value>Searching for columns for item {0}</value>
+  </data>
+  <data name="Section" xml:space="preserve">
+    <value>Section</value>
+  </data>
+  <data name="TestPart" xml:space="preserve">
+    <value>TestPart</value>
+  </data>
+  <data name="AlternativesCount" xml:space="preserve">
+    <value>Alternative Count</value>
+  </data>
+  <data name="ApplicableToMask" xml:space="preserve">
+    <value>Applies to</value>
+  </data>
+  <data name="AspectGrid" xml:space="preserve">
+    <value>AspectGrid</value>
+  </data>
+  <data name="Aspects" xml:space="preserve">
+    <value>Aspects</value>
+  </data>
+  <data name="BankId" xml:space="preserve">
+    <value>BankId</value>
+  </data>
+  <data name="BankName" xml:space="preserve">
+    <value>Bank name</value>
+  </data>
+  <data name="CannotStartExport" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CannotStartExport1" xml:space="preserve">
+    <value>The export cannot be executed {0}</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_AdditionalKeyValuesAndConceptScores" xml:space="preserve">
+    <value>Additional key values and concept scores</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_AttributeLevelConceptResponseCount" xml:space="preserve">
+    <value>Attribute level concept response count (per item)</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_BankName" xml:space="preserve">
+    <value>Bank</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_ConceptCode" xml:space="preserve">
+    <value>Concept code</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_ConceptResponseLabel" xml:space="preserve">
+    <value>Concept response label</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_GroupElementCount" xml:space="preserve">
+    <value>Group element count</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_InteractionCount" xml:space="preserve">
+    <value>Interaction count (per item)</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_IsGrouped" xml:space="preserve">
+    <value>Grouped</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_ItemCode" xml:space="preserve">
+    <value>Item code</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_Itemlayouttemplate" xml:space="preserve">
+    <value>Item layout template</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_ItemTitle" xml:space="preserve">
+    <value>Item title</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_KeyValuesAndConceptScores" xml:space="preserve">
+    <value>Key values and concept scores</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_SubAttributLevelConceptResponseCount" xml:space="preserve">
+    <value>Sub-attribut level concept response count (per item)</value>
+  </data>
+  <data name="ControlTemplateGrid" xml:space="preserve">
+    <value>ControlTemplateGrid</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>Creation Date</value>
+  </data>
+  <data name="CSVFileFilter" xml:space="preserve">
+    <value>CSV (*.csv)|*.csv|All files (*.*)|*.*</value>
+  </data>
+  <data name="CustomPropertiesCount" xml:space="preserve">
+    <value>No. custom properties</value>
+  </data>
+  <data name="CustomPropertyName" xml:space="preserve">
+    <value>Custom property code</value>
+  </data>
+  <data name="CustomPropertyTitle" xml:space="preserve">
+    <value>Custom property title</value>
+  </data>
+  <data name="CustomPropertyType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="DataSourceGrid" xml:space="preserve">
+    <value>DataSourceGrid</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>An error occured: {0}</value>
+  </data>
+  <data name="ErrorWhileExportingToExcelFileMightBeInUse" xml:space="preserve">
+    <value>Error while exporting to MS Excel. File might be in use.</value>
+  </data>
+  <data name="ExportCustomPropertyReportDescription" xml:space="preserve">
+    <value>All selected items from the custom properties tab</value>
+  </data>
+  <data name="ExportGridDescription" xml:space="preserve">
+    <value>The content of the selection screen will be exported to MS Excel. Including sorting and grouping.</value>
+  </data>
+  <data name="ExportGridName" xml:space="preserve">
+    <value>MS Excel: selection screen content export</value>
+  </data>
+  <data name="ExtraOptionConceptcodesTask" xml:space="preserve">
+    <value>Additional overview options</value>
+  </data>
+  <data name="ExtraOptionConceptcodesTaskDescription" xml:space="preserve">
+    <value>Make any additional overview choices here.</value>
+  </data>
+  <data name="ExtraOptionTask" xml:space="preserve">
+    <value>Select the item properties</value>
+  </data>
+  <data name="ExtraOptionTaskDescription" xml:space="preserve">
+    <value>Please select the item properties for this report.</value>
+  </data>
+  <data name="FieldEmpty" xml:space="preserve">
+    <value>Please fill in field {0}</value>
+  </data>
+  <data name="FileExists" xml:space="preserve">
+    <value>File already exists</value>
+  </data>
+  <data name="FileNameCustomReport" xml:space="preserve">
+    <value>CustomProperties_BankName_{0}</value>
+  </data>
+  <data name="FilenameNotValid" xml:space="preserve">
+    <value>Please enter a valid package file name.</value>
+  </data>
+  <data name="Index1" xml:space="preserve">
+    <value>SequenceNumber</value>
+  </data>
+  <data name="IsSystemItem" xml:space="preserve">
+    <value>IsSystemItem</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="ItemCode" xml:space="preserve">
+    <value>ItemCode</value>
+  </data>
+  <data name="ItemGrid" xml:space="preserve">
+    <value>ItemGrid</value>
+  </data>
+  <data name="ItemLayoutTemplateGrid" xml:space="preserve">
+    <value>ItemLayoutTemplateGrid</value>
+  </data>
+  <data name="ItemLayoutTemplateUsedName" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="KeyValues" xml:space="preserve">
+    <value>Solution</value>
+  </data>
+  <data name="MaxScore" xml:space="preserve">
+    <value>Max. score</value>
+  </data>
+  <data name="ModifiedBy" xml:space="preserve">
+    <value>Modified by</value>
+  </data>
+  <data name="ModifiedDate" xml:space="preserve">
+    <value>Modified date</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NoInfo" xml:space="preserve">
+    <value>No value found</value>
+  </data>
+  <data name="NoProgrammInstalled" xml:space="preserve">
+    <value>There is no program associated with the file.</value>
+  </data>
+  <data name="OriginalName" xml:space="preserve">
+    <value>Orginal name</value>
+  </data>
+  <data name="OriginalVersion" xml:space="preserve">
+    <value>Orginal version</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>Report: {1}{0}Location: {2}{0}Selected columns: {0}{3}</value>
+  </data>
+  <data name="OverviewConceptScoring" xml:space="preserve">
+    <value>Report: {1}{0}Location: {2}{0}Include conceptcodes without scoring: {3}{0}</value>
+  </data>
+  <data name="OverviewGridToExcel" xml:space="preserve">
+    <value>Report: {1}.{0}Location: {2}</value>
+  </data>
+  <data name="ProgressMessage1" xml:space="preserve">
+    <value>Searching for columns for item {0}</value>
+  </data>
+  <data name="ProgressMessageConceptScoringReport" xml:space="preserve">
+    <value>Gathering concept response data for item {0}</value>
+  </data>
+  <data name="Publishable" xml:space="preserve">
+    <value>Publishable</value>
+  </data>
+  <data name="RawScore" xml:space="preserve">
+    <value>Raw score</value>
+  </data>
+  <data name="ReportDescriptionConceptScoring" xml:space="preserve">
+    <value>All selected items with their concept scoring data in MS Excel </value>
+  </data>
+  <data name="ReportDescriptionDatasource" xml:space="preserve">
+    <value>All items in a selection in MS Excel. You can select which columns should be in the MS Excel.</value>
+  </data>
+  <data name="ReportDescriptionItem" xml:space="preserve">
+    <value>All selected items with properties. You can select which columns should be in the MS Excel.</value>
+  </data>
+  <data name="ReportDescriptionLinkedAspects" xml:space="preserve">
+    <value>All aspects of the items in a test in CSV format. You can select which columns should be in the CSV.</value>
+  </data>
+  <data name="ReportDescriptionTest" xml:space="preserve">
+    <value>All items in a test in MS Excel. You can select which columns should be in the MS Excel.</value>
+  </data>
+  <data name="ReportNameConceptScoring" xml:space="preserve">
+    <value>Item concept scoring data in MS Excel</value>
+  </data>
+  <data name="ReportNameDatasource" xml:space="preserve">
+    <value>MS Excel: selection screen content export</value>
+  </data>
+  <data name="ReportNameItem" xml:space="preserve">
+    <value>MS Excel: items including custom properties</value>
+  </data>
+  <data name="ReportNameKenmerkenOverzicht" xml:space="preserve">
+    <value>Custom properties overview in MS Excel</value>
+  </data>
+  <data name="ReportNameLinkedAspects" xml:space="preserve">
+    <value>CSV: linked aspects report</value>
+  </data>
+  <data name="ReportNameTest" xml:space="preserve">
+    <value>MS Excel: items in test including custom properties</value>
+  </data>
+  <data name="ReportSuccesful" xml:space="preserve">
+    <value>Report {0} is successfully created</value>
+  </data>
+  <data name="ReportUnSuccesful" xml:space="preserve">
+    <value>There was a problem while creating the report {0}. {1} Error: {2}</value>
+  </data>
+  <data name="ResourceId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="ResponseCount" xml:space="preserve">
+    <value>Response count</value>
+  </data>
+  <data name="Sort" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="PlaceHolderHelper_NoSourceSelectedText" xml:space="preserve">
+    <value>No source selected</value>
+  </data>
+  <data name="TestGrid" xml:space="preserve">
+    <value>TestGrid</value>
+  </data>
+  <data name="TestPart1" xml:space="preserve">
+    <value>TestPart</value>
+  </data>
+  <data name="TestTemplateGrid" xml:space="preserve">
+    <value>TestTemplateGrid</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="WouldYouLikeToOpen" xml:space="preserve">
+    <value>Would you like to open the file?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="ItemTemplateSwitchingUnableToLoadTemplate" xml:space="preserve">
+    <value>Unable to load current or target template. Template switching not possible.</value>
+  </data>
+  <data name="ProposalCreator_FailedToAddItems" xml:space="preserve">
+    <value>Failed to add items to the test.</value>
+  </data>
+  <data name="IsAnchorItem" xml:space="preserve">
+    <value>Anchor item</value>
+  </data>
+  <data name="ItemFunctionalType" xml:space="preserve">
+    <value>Item usage</value>
+  </data>
+  <data name="ReferenceTitle" xml:space="preserve">
+    <value>Reference title</value>
+  </data>
+  <data name="Weight" xml:space="preserve">
+    <value>Weighting</value>
+  </data>
+  <data name="ItemActive" xml:space="preserve">
+    <value>Item active</value>
+  </data>
+  <data name="CreatedByFullName" xml:space="preserve">
+    <value>Created by</value>
+  </data>
+  <data name="ExclusionGroupCode" xml:space="preserve">
+    <value>Exclusion group</value>
+  </data>
+  <data name="InclusionGroupCode" xml:space="preserve">
+    <value>Inclusion group</value>
+  </data>
+  <data name="ItemTypeFromItemLayoutTemplateString" xml:space="preserve">
+    <value>Item type</value>
+  </data>
+  <data name="ModifiedByFullName" xml:space="preserve">
+    <value>Modified by</value>
+  </data>
+  <data name="ReferenceCount" xml:space="preserve">
+    <value>Reference count</value>
+  </data>
+  <data name="StateName" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="DataTableKey1" xml:space="preserve">
+    <value>TestCode</value>
+  </data>
+  <data name="DataTableKey2" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="ReferencedFileNotFoundInImsManifest" xml:space="preserve">
+    <value>Imsmanifest file '{0}' contains a reference to '{1}' but is not found</value>
+  </data>
+  <data name="IsEnteredMessage" xml:space="preserve">
+    <value>Is entered</value>
+  </data>
+  <data name="LogicFileHelper_CodeMissingOrIncorrectExtension" xml:space="preserve">
+    <value>One or more codes have a missing or incorrect extension. Please use a valid extension matching the file type(s).</value>
+  </data>
+  <data name="LogicFileHelper_ImageSizeTooLarge" xml:space="preserve">
+    <value>The dimensions of the image are large ({0} x {1}). The recommended dimensions are: {2} x {3}. Are you sure you want to import this image?</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="PublicationToFile" xml:space="preserve">
+    <value>Publication to file</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="PublicationToServer" xml:space="preserve">
+    <value>Publication to server</value>
+  </data>
+  <data name="PublicationToFileAndServer" xml:space="preserve">
+    <value>Publication to file and server</value>
+  </data>
+  <data name="Error_DependentResourceNotFound" xml:space="preserve">
+    <value>Failed to set DependantResourceID, dependent resource not in database, or in a sub bank : {0}</value>
+  </data>
+  <data name="Error_ManifestResourceHandler_ClearCache_CacheDirectoryError" xml:space="preserve">
+    <value>Error: Cachedirectory could not be deleted</value>
+  </data>
+  <data name="Error_ManifestResourceManager_CannotGetResource" xml:space="preserve">
+    <value>Error: Cannot get resource with name '{0}' because of the following error: {1}</value>
+  </data>
+  <data name="Error_ManifestResourceManager_CopyMediaToCache_ErrorWhileWritingToCache" xml:space="preserve">
+    <value>Error: Resourcefiles could not be written to the cache</value>
+  </data>
+  <data name="Error_ManifestResourceManager_EmptyStream" xml:space="preserve">
+    <value>Error: Resource with name '{0}' returns an empty stream</value>
+  </data>
+  <data name="Error_PackageManager_GetStreamRelativeUri_UriNotSet" xml:space="preserve">
+    <value>Error: Uri parameter not set</value>
+  </data>
+  <data name="Error_PackageManager_GetStream_UriNotRelative" xml:space="preserve">
+    <value>Error: Uri is not relative</value>
+  </data>
+  <data name="Error_ResourceEntriesInCacheCollection_itemParNotSet" xml:space="preserve">
+    <value>Error: parameter 'item' is not set</value>
+  </data>
+  <data name="Error_ResourceEntry_Constructor_DependentResources_Empty" xml:space="preserve">
+    <value>Error: parameter 'dependentResources' is Null</value>
+  </data>
+  <data name="Error_ResourceEntry_Constructor_Name_Empty" xml:space="preserve">
+    <value>Error: parameter 'name' is Null Or Empty</value>
+  </data>
+  <data name="Error_ResourceEntry_Constructor_Type_Empty" xml:space="preserve">
+    <value>Error: parameter 'Type' is Null Or Empty</value>
+  </data>
+  <data name="Error_ResourceEntry_Constructor_Uri_Empty" xml:space="preserve">
+    <value>Error: parameter 'Uri' is Null Or Empty</value>
+  </data>
+  <data name="Error_ResourceManifest_Load_StreamNotSet" xml:space="preserve">
+    <value>Error: parameter 'manifestStream' not set</value>
+  </data>
+  <data name="Error_UriNotSet" xml:space="preserve">
+    <value>Error: Uri parameter not set</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_ClearCache_CacheCleared" xml:space="preserve">
+    <value>Resource cache is cleared.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_ClearCache_CachedirNotFoundOrNoEntriesInCache" xml:space="preserve">
+    <value>Cachedir not found or no entries in cache</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_CopyMediaToCache_AddedToCache" xml:space="preserve">
+    <value>Resource with name '{0}' is added to cache.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_CopyMediaToCache_CopyResources" xml:space="preserve">
+    <value>Copying {0} resources to cache.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_GetFromCache_GetResourceStream" xml:space="preserve">
+    <value>Getting resourcestream.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_GetFromCache_ProcessingStream" xml:space="preserve">
+    <value>Processing resourcestream, stream is {0} bytes.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_GetResourceAndProcessStream_GetResourceStream" xml:space="preserve">
+    <value>Getting resourcestream.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_GetResourceAndProcessStream_ProcessingStream" xml:space="preserve">
+    <value>Processing resourcestream, stream is {0} bytes.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_GetResource_FoundInCache" xml:space="preserve">
+    <value>Resource with name '{0}' is found in cache and will be returned from it.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_GetResource_GetResource" xml:space="preserve">
+    <value>Trying to get resource with name '{0}'.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_GetResource_NotFoundInCache" xml:space="preserve">
+    <value>Resource with name '{0}' is not in cache and will be returned from package.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_GetTypedResource_GetResource" xml:space="preserve">
+    <value>Trying to get a typed resource with name '{0}' of type '{1}'.</value>
+  </data>
+  <data name="Trace_ItemSelectorManager_GetItemReferenceAtIndex_NewItemPicked" xml:space="preserve">
+    <value>New item with resourcename '{0}' picked.</value>
+  </data>
+  <data name="MathFormulaImage" xml:space="preserve">
+    <value>Math formula image</value>
+  </data>
+  <data name="MathFormulaImageOfResource" xml:space="preserve">
+    <value>Math formula image of resource {0}</value>
+  </data>
+  <data name="DescriptionItemKeyValidator" xml:space="preserve">
+    <value>Validator that will test if all items have a key.</value>
+  </data>
+  <data name="DescriptionResourceStateValidator" xml:space="preserve">
+    <value>Validator will check the state of the resource that are about to be published.</value>
+  </data>
+  <data name="NameItemKeyValidator" xml:space="preserve">
+    <value>Item key validator</value>
+  </data>
+  <data name="NameResourceStateValidator" xml:space="preserve">
+    <value>States of resources</value>
+  </data>
+  <data name="ResourcesCanBePublished" xml:space="preserve">
+    <value>Test can be published</value>
+  </data>
+  <data name="TheFollowingResourcesPreventYouFromPublishingThisPackage" xml:space="preserve">
+    <value>The following {0} resources prevent you from publishing this package:</value>
+  </data>
+  <data name="TheFollowingResourcesResultInAWarning" xml:space="preserve">
+    <value>The following {0} resources result in a warning:</value>
+  </data>
+  <data name="ValidatingResource" xml:space="preserve">
+    <value>Validating resource {0}...</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>{0} resources have a state that prevent from publishing.{1}{2} resources have a state that result in a warning.</value>
+  </data>
+  <data name="WarningItemNoKey" xml:space="preserve">
+    <value>Item {0} has no key defined.</value>
+  </data>
+  <data name="WarningItemsWithoutKeys" xml:space="preserve">
+    <value>There are {0} items that have no key defined.</value>
+  </data>
+  <data name="TestConstructionValidator_Description" xml:space="preserve">
+    <value>Validator that performs the same checks as during test construction.</value>
+  </data>
+  <data name="TestConstructionValidator_Name" xml:space="preserve">
+    <value>Test construction</value>
+  </data>
+  <data name="TestConstructionValidator_TestContainsValidationErrors" xml:space="preserve">
+    <value>Test '{0}' validation violations {1}</value>
+  </data>
+  <data name="BusyEncryptingDocument" xml:space="preserve">
+    <value>Encrypting the document...</value>
+  </data>
+  <data name="CannotAddExtensionFileAlreadyExists" xml:space="preserve">
+    <value>Filename without extension found in package. Extension could not be added, file with same name 
+    already exists: {0}</value>
+  </data>
+  <data name="CannotStartPublication" xml:space="preserve">
+    <value>Cannot start publication, because of the following errors:{0}{0}</value>
+  </data>
+  <data name="ErrorMessage" xml:space="preserve">
+    <value>An error occured in: '{0}' error type: {1}{2}</value>
+  </data>
+  <data name="ErrorOccurred" xml:space="preserve">
+    <value>Error of type '{0}' processing: {1}, message {2} </value>
+  </data>
+  <data name="ErrorWhilePreviewIsPrepared" xml:space="preserve">
+    <value>Error while preparing preview</value>
+  </data>
+  <data name="ExportAlreadyExistsSelectOtherExportLocation" xml:space="preserve">
+    <value>Export already exists, please select other export location.</value>
+  </data>
+  <data name="ExtensionShouldBeZip" xml:space="preserve">
+    <value>File should have the extension: .zip</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>Package already exists.</value>
+  </data>
+  <data name="Ie9Required" xml:space="preserve">
+    <value>Internet Explorer 9 or higher is required for the preview</value>
+  </data>
+  <data name="MissingGeogebraFile" xml:space="preserve">
+    <value>Required manifest ('{0}') was found in geogebra file</value>
+  </data>
+  <data name="MissingJsonManifest1" xml:space="preserve">
+    <value>No Json Manifest file was found in folder '{0}'</value>
+  </data>
+  <data name="MultipleJsonManifest" xml:space="preserve">
+    <value>Multiple Json Manifest file were found in folder '{0}'</value>
+  </data>
+  <data name="NoScoringAvailable" xml:space="preserve">
+    <value>No scoring available. Add it in the Scores tab in Questify Builder.</value>
+  </data>
+  <data name="PerformCreationOfZipFile" xml:space="preserve">
+    <value>Performing creation of zip file...</value>
+  </data>
+  <data name="PerformXsdValidation" xml:space="preserve">
+    <value>Performing xsd validation...</value>
+  </data>
+  <data name="PerformXsdValidationOnFile" xml:space="preserve">
+    <value>Validating file: '{0}'...</value>
+  </data>
+  <data name="PerformXslTransformation" xml:space="preserve">
+    <value>Performing xsl translation...</value>
+  </data>
+  <data name="ProcessingItem" xml:space="preserve">
+    <value>Processing item: '{0}'.</value>
+  </data>
+  <data name="PublicationLocationText" xml:space="preserve">
+    <value>Location of {0}:</value>
+  </data>
+  <data name="PublishingPackageToSpecifiedLocation" xml:space="preserve">
+    <value>Publishing package to specified location...</value>
+  </data>
+  <data name="ReferencedFileFromJsonManifestNotFound" xml:space="preserve">
+    <value>Referenced file '{0}' from Json Manifest was not found</value>
+  </data>
+  <data name="UploadPackage" xml:space="preserve">
+    <value>Facet Package is uploaded to the Facet Server. This may take a while</value>
+  </data>
+  <data name="ValidationError" xml:space="preserve">
+    <value>Validation error</value>
+  </data>
+  <data name="XsdValidationFile" xml:space="preserve">
+    <value>Item '{0}' File '{1}': {2}</value>
+  </data>
+  <data name="Schemas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\QTI\Resources\Schemas.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="schema_qti22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\QTI\Resources\schema_qti22.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Formula" xml:space="preserve">
+    <value>Formula</value>
+  </data>
+  <data name="Message_TestConstruction_DuplicateDataSource" xml:space="preserve">
+    <value>Selections have been found that already exist.</value>
+  </data>
+  <data name="ImageReportNameItem" xml:space="preserve">
+    <value>JPG: item screenshots</value>
+  </data>
+  <data name="ImageReportNameTest" xml:space="preserve">
+    <value>JPG: screenshots of items in test</value>
+  </data>
+  <data name="NoCommonTargetFound" xml:space="preserve">
+    <value>No common target found.</value>
+  </data>
+  <data name="PleaseSelectAnExistingPath" xml:space="preserve">
+    <value>Please select an existing path.</value>
+  </data>
+  <data name="FolderContainsInvalidCharacters" xml:space="preserve">
+    <value>Folder contains invalid character: "{0}"</value>
+  </data>
+  <data name="CreatingScreenshot" xml:space="preserve">
+    <value>An image of item '{0}' is created.</value>
+  </data>
+  <data name="PlaceHolderSpacer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\placeholderspacer.gif;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NoGenericTestFound" xml:space="preserve">
+    <value>Test doesn't contain a GenericAssessmentTest view.</value>
+  </data>
+  <data name="CodeNotFound" xml:space="preserve">
+    <value>The column Code couldn't be found in the MS Excel document</value>
+  </data>
+  <data name="CannotCopyPasteInlineControls" xml:space="preserve">
+    <value>Cannot paste inline control. It can only be pasted into the field it is copied from.</value>
+  </data>
+  <data name="CannotPasteImagesOutsideBankHierarchy" xml:space="preserve">
+    <value>Can't paste image {0} because it does not exist in the current bank hierarchy</value>
+  </data>
+  <data name="MathML_NoPlugin" xml:space="preserve">
+    <value>There is no plugin for editing MathML available.</value>
+  </data>
+  <data name="MaximumNumberSymbolreferencesReached" xml:space="preserve">
+    <value>Maximum number of symbol references reached.</value>
+  </data>
+  <data name="OnlyImagesSupportCopyPaste" xml:space="preserve">
+    <value>Copy-paste of audio or video is not supported</value>
+  </data>
+  <data name="schema_qti30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\QTI\Resources\schema_qti30.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

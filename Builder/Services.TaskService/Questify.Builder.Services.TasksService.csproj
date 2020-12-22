@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D14EDE7-3B64-40AF-A2B1-AD1A43AF355F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Questify.Builder.Services.TasksService</RootNamespace>
+    <AssemblyName>Questify.Builder.Services.TasksService</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>%24/Project Questify/Generic/Main/TestBuilder/Questify.BuilderTasks.Service</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>https://tfs.cito.nl/tfs/projects</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NLog.4.4.11\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.2.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.2.1\lib\net45\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Versioning\GeneralInfo.cs">
+      <Link>Properties\GeneralInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Versioning\QBTasks_VersionInfo.cs">
+      <Link>Properties\QBTasks_VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="DataService\CustomFactories\ServiceFactory.cs" />
+    <Compile Include="DataService\Decorators\WcfCacheService.cs" />
+    <Compile Include="DataService\Decorators\WcfDataSourceResourceDtoService.cs" />
+    <Compile Include="DataService\Decorators\WcfControlTemplateResourceDtoService.cs" />
+    <Compile Include="DataService\Decorators\WcfTestPackageResourceDtoService.cs" />
+    <Compile Include="DataService\Decorators\WcfTestTemplateResourceDtoService.cs" />
+    <Compile Include="DataService\Decorators\WcfDataSourceTemplateResourceDtoService.cs" />
+    <Compile Include="DataService\Decorators\WcfItemTemplateResourceDtoService.cs" />
+    <Compile Include="DataService\Decorators\WcfCustomBankPropertyResourceDtoService.cs" />
+    <Compile Include="DataService\Decorators\WcfGenericResourceDtoService.cs" />
+    <Compile Include="DataService\Decorators\WcfBankDtoService.cs" />
+    <Compile Include="DataService\Decorators\WcfCustomBankPropertyDtoService.cs" />
+    <Compile Include="DataService\Decorators\WcfAspectResourceDtoService.cs" />
+    <Compile Include="DataService\Decorators\WcfTestResourceDtoService.cs" />
+    <Compile Include="DataService\Decorators\WcfItemResourceDtoService.cs" />
+    <Compile Include="DataService\Decorators\WcfResourceDtoServiceDecorator.cs" />
+    <Compile Include="DataService\Helpers\EnumTranslator.cs" />
+    <Compile Include="DataService\Services\CacheService.svc.cs">
+      <DependentUpon>CacheService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DataService\Services\AspectResourceDtoService.svc.cs">
+      <DependentUpon>AspectResourceDtoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DataService\Services\BankDtoService.svc.cs">
+      <DependentUpon>BankDtoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DataService\Services\ControlTemplateResourceDtoService.svc.cs">
+      <DependentUpon>ControlTemplateResourceDtoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DataService\Services\CustomBankPropertyDtoService.svc.cs">
+      <DependentUpon>CustomBankPropertyDtoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DataService\Services\CustomBankPropertyResourceDtoService.svc.cs">
+      <DependentUpon>CustomBankPropertyResourceDtoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DataService\Services\DataSourceTemplateResourceDtoService.svc.cs">
+      <DependentUpon>DataSourceTemplateResourceDtoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DataService\Services\GenericResourceDtoService.svc.cs">
+      <DependentUpon>GenericResourceDtoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DataService\Services\ItemResourceDtoService.svc.cs">
+      <DependentUpon>ItemResourceDtoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DataService\Services\DataSourceResourceDtoService.svc.cs">
+      <DependentUpon>DataSourceResourceDtoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DataService\Services\ItemTemplateResourceDtoService.svc.cs">
+      <DependentUpon>ItemTemplateResourceDtoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DataService\Services\TestResourceDtoService.svc.cs">
+      <DependentUpon>TestResourceDtoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DataService\Services\TestPackageResourceDtoService.svc.cs">
+      <DependentUpon>TestPackageResourceDtoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DataService\Services\TestTemplateResourceDtoService.svc.cs">
+      <DependentUpon>TestTemplateResourceDtoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IConvertEnumToLocalizedString.cs" />
+    <Content Include="DataService\Services\CacheService.svc" />
+    <Content Include="DataService\Services\AspectResourceDtoService.svc" />
+    <Content Include="DataService\Services\BankDtoService.svc" />
+    <Content Include="DataService\Services\ControlTemplateResourceDtoService.svc" />
+    <Content Include="DataService\Services\CustomBankPropertyDtoService.svc" />
+    <Content Include="DataService\Services\CustomBankPropertyResourceDtoService.svc" />
+    <Content Include="DataService\Services\DataSourceTemplateResourceDtoService.svc" />
+    <Content Include="DataService\Services\GenericResourceDtoService.svc" />
+    <Content Include="DataService\Services\ItemResourceDtoService.svc" />
+    <Content Include="DataService\Services\DataSourceResourceDtoService.svc" />
+    <Content Include="DataService\Services\ItemTemplateResourceDtoService.svc" />
+    <Content Include="DataService\Services\TestResourceDtoService.svc" />
+    <Content Include="DataService\Services\TestPackageResourceDtoService.svc" />
+    <Content Include="DataService\Services\TestTemplateResourceDtoService.svc" />
+    <Content Include="Global.asax" />
+    <Content Include="parameters.xml" />
+    <Content Include="QuestifyBuilderTasksService.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\Initializer.cs" />
+    <Compile Include="ItemHarmonization\ItemHarmonizationTask.cs" />
+    <Compile Include="ItemHarmonization\ItemHarmonizationExecutionParams.cs" />
+    <Compile Include="Properties\Resources.nl.Designer.cs">
+      <DependentUpon>Resources.nl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TaskClasses\BuilderTaskProgress.cs" />
+    <Compile Include="TaskClasses\BuilderTaskProgressItem.cs" />
+    <Compile Include="TaskClasses\BuilderTaskResult.cs" />
+    <Compile Include="TaskClasses\BuilderTaskSessionTicket.cs" />
+    <Compile Include="QbAuthorizationPolicy.cs" />
+    <Compile Include="QuestifyBuilderTaskBase.cs" />
+    <Compile Include="BuilderTaskExecutionParamsBase.cs" />
+    <Compile Include="QuestifyBuilderTasksService.svc.cs">
+      <DependentUpon>QuestifyBuilderTasksService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="IQuestifyBuilderTasksService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Direct\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\PublishProfiles\Release.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cito.Tester.Common\Cito.Tester.Common.vbproj">
+      <Project>{9a0bd8fe-d6f6-4ce5-9a0b-877610b00deb}</Project>
+      <Name>Cito.Tester.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cito.Tester.ContentModel\Cito.Tester.ContentModel.vbproj">
+      <Project>{94ee8d6c-5c52-4f34-9e61-e407b3240004}</Project>
+      <Name>Cito.Tester.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.ContentModel\Questify.Builder.Model.ContentModel.vbproj">
+      <Project>{44eafd1e-6cc9-4a94-b6f6-a78734c7aae5}</Project>
+      <Name>Questify.Builder.Model.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Questify.Builder.Logic.vbproj">
+      <Project>{3a707189-b5de-439d-91d3-fa20ce79e8bf}</Project>
+      <Name>Questify.Builder.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.LlblGen.Proxy\Questify.Builder.Model.LlblGen.Proxy.csproj">
+      <Project>{82d3535c-4f99-4f9b-b576-743961ea20c3}</Project>
+      <Name>Questify.Builder.Model.LlblGen.Proxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security.ActiveDirectory\Questify.Builder.Security.ActiveDirectory.csproj">
+      <Project>{929de55d-69b6-41cf-bbeb-12230210daf3}</Project>
+      <Name>Questify.Builder.Security.ActiveDirectory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security\Questify.Builder.Security.vbproj">
+      <Project>{f7b4a532-ddcc-47f5-bb20-a7ae6f1d47b5}</Project>
+      <Name>Questify.Builder.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Service\Questify.Builder.Logic.Service.csproj">
+      <Project>{f8d65f41-d624-4343-8733-778bc0b4ff9e}</Project>
+      <Name>Questify.Builder.Logic.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.nl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Any CPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\TestBuilder.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52759</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Questify.Builder.Services.TasksService</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

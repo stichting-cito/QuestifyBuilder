@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <!-- GENERAL WINDOW -->
+    <s:String x:Key="AnnouncementDialog.Title">Systeemonderhoud</s:String>
+
+    <!-- COMMANDS -->
+    <s:String x:Key="AnnouncementDialog.Command.Close">Sluiten</s:String>
+
+    <!-- TAB -->
+    <s:String x:Key="AnnouncementDialog.Tab.SendAnnouncement">Mededelingen verzenden</s:String>
+
+    <!-- General Tab -->
+    <s:String x:Key="AnnouncementDialog.Tab.SendAnnouncement.Header">Opdrachten verzenden</s:String>
+    <s:String x:Key="AnnouncementDialog.Tab.SendAnnouncement.LoginBlockingStartTime">Begintijd login-blokkering</s:String>
+    <s:String x:Key="AnnouncementDialog.Tab.Commands.SendAnnouncementButton.Title">Verzenden</s:String>
+    <s:String x:Key="AnnouncementDialog.Tab.Commands.SendRenouncementButton.Title">Intrekken</s:String>
+</ResourceDictionary>

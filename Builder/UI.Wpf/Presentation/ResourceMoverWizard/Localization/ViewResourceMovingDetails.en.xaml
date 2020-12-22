@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <!-- View resource to move details page introduction -->
+    <s:String x:Key="ResourceMoverWizard.ViewResourceMovingDetails.Introduction">Overview of resources to move</s:String>
+
+    <s:String x:Key="ResourceMoverWizard.ViewResourceMovingDetails.ColHdrSourceBank">Source bank</s:String>
+    <s:String x:Key="ResourceMoverWizard.ViewResourceMovingDetails.ColHdrDestinationBank">Destination bank</s:String>
+    <s:String x:Key="ResourceMoverWizard.ViewResourceMovingDetails.ColHdrResourceName">Name</s:String>
+    <s:String x:Key="ResourceMoverWizard.ViewResourceMovingDetails.ColHdrResourceTitle">Title</s:String>
+    <s:String x:Key="ResourceMoverWizard.ViewResourceMovingDetails.ColHdrResourceType">Resource type</s:String>
+    <s:String x:Key="ResourceMoverWizard.ViewResourceMovingDetails.ColHdrViaResource">Via resource</s:String>
+    <s:String x:Key="ResourceMoverWizard.ViewResourceMovingDetails.ColHdrProblemDescription">Problem description</s:String>
+</ResourceDictionary>

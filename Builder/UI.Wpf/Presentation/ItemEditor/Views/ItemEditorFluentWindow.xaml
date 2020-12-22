@@ -1,0 +1,619 @@
+﻿<Fluent:RibbonWindow 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    x:Class="Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.ItemEditorFluentWindow" 
+    x:ClassModifier="internal"
+    xmlns:cc="clr-namespace:Questify.Builder.UI.Wpf.Controls"
+    xmlns:cinch="clr-namespace:Cinch;assembly=Cinch.WPF"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:ie="clr-namespace:Questify.Builder.UI.Wpf.Presentation.ItemEditor"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:se="clr-namespace:Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.ScoreEditors"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:types="clr-namespace:Questify.Builder.UI.Wpf.Presentation.Types"
+    xmlns:valueConverters="clr-namespace:Questify.Builder.UI.Wpf.Presentation.ValueConverters"
+    xmlns:behaviors="clr-namespace:Questify.Builder.UI.Wpf.Presentation.Behaviors"
+    xmlns:controls="clr-namespace:Questify.Builder.UI.Wpf.Controls"
+
+    mc:Ignorable="d" 
+    x:Name="ItemEditorFluent" 
+    Icon="../../Images/QuestifyIcon.ico"
+    Title="{Binding WindowTitle.DataValue}"
+    MinHeight="710" 
+    WindowState="{Binding WindowState}"
+    Left="{Binding Left, Mode=TwoWay}" 
+    Top="{Binding Top, Mode=TwoWay}"
+    d:DesignWidth="1000" 
+    d:DesignHeight="710"
+    Height="768" 
+    Width="1366">
+
+    <Fluent:RibbonWindow.Resources>
+
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <types:DesignTimeResourceDictionary Source="..\..\Localization\en.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <valueConverters:ListHasItemsToVisibilityConverter x:Key="hasValue" />
+            <valueConverters:ListHasNoItemsToVisibilityConverter x:Key="hasNoValue" />
+            <valueConverters:InverseBooleanConverter x:Key="inverseBoolean" />
+            <valueConverters:IntegerToVisibilityConverter x:Key="int2Vis" />
+            <valueConverters:IntegerToBooleanConverter x:Key="int2Bool" />
+            <valueConverters:ToUppercaseConverter x:Key="toUpper" />
+            <BooleanToVisibilityConverter x:Key="bool2Vis" />
+
+            <system:String x:Key="DebugString">Debug</system:String>
+
+            <!-- This is needed to create a view based on the bound workspace data -->
+            <DataTemplate DataType="{x:Type cinch:WorkspaceData}">
+                <AdornerDecorator>
+                    <Border HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        cinch:NavProps.ViewCreator="{Binding}"/>
+                </AdornerDecorator>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Fluent:RibbonWindow.Resources>
+
+    <Fluent:RibbonWindow.InputBindings>
+        <KeyBinding Key="S" Modifiers="Control" Command="{Binding Save}" />
+        <KeyBinding Key="S" Modifiers="Ctrl+Shift" Command="{Binding SaveAs}" />
+
+        <KeyBinding Gesture="ALT+D" Key="T" Command="{Binding ToggleShowDebug}"/>
+    </Fluent:RibbonWindow.InputBindings>
+
+    <i:Interaction.Triggers>
+        <!--The [Closed] event is handled by the behavior below-->
+        <i:EventTrigger EventName="Closing">
+            <cinch:EventToCommandTrigger Command="{Binding WindowClosing}" />
+        </i:EventTrigger>
+
+        <i:EventTrigger EventName="Activated">
+            <cinch:EventToCommandTrigger Command="{Binding WindowActivated}" />
+        </i:EventTrigger>
+
+        <i:EventTrigger EventName="SizeChanged">
+            <cinch:EventToCommandTrigger Command="{Binding SizeChanged}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <i:Interaction.Behaviors>
+        <!-- Handles the CTRL+S key event for Saving -->
+        <behaviors:WindowBehavior SaveCommand="{Binding Save}" ClosedCommand="{Binding WindowClosed}" />
+        <behaviors:WindowPreviewKeyToRoutedUiCommand Command="New" Key="N" Modifiers="Control" />
+    </i:Interaction.Behaviors>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="24"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="#CDD1D6" Margin="0,48,0,0" />
+        <Fluent:Ribbon AutomaticStateManagement="False" x:Name="ribbon" FocusManager.IsFocusScope="True" Grid.Row="0">
+
+            <Fluent:Ribbon.IsQuickAccessToolBarVisible >True</Fluent:Ribbon.IsQuickAccessToolBarVisible>
+            <!-- QUICK ACCESS TOOLBAR -->
+            <Fluent:Ribbon.QuickAccessItems>
+                <!--Quick Access toolbar items automatically have ScreenTips of the target -->
+                <!--KeyTips in Quick Access Toolbar names automatically-->
+
+                <!--Use Content or Target Property to set QAT item-->
+                <Fluent:QuickAccessMenuItem 
+                    Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/save_16.png"
+                    IsChecked="true" AutomationProperties.AutomationId="QAT_SaveMenuItem">
+                    <Fluent:Button Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/save_16.png" Command="{Binding Save}" AutomationProperties.AutomationId="QAT_Save" Header="{StaticResource ItemEditor.Command.Save }"/>
+                </Fluent:QuickAccessMenuItem>
+
+                <!-- SAVE AS default not visible -->
+                <Fluent:QuickAccessMenuItem
+                    Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/saveAs_16.png"
+                    IsChecked="{Binding IsQATSaveAsVisible, FallbackValue=False}" AutomationProperties.AutomationId="QAT_SaveAsMenuItem">
+                    <Fluent:Button Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/saveAs_16.png" Command="{Binding SaveAs}" AutomationProperties.AutomationId="QAT_SaveAs" Header="{StaticResource ItemEditor.Command.SaveAs }"/>
+                </Fluent:QuickAccessMenuItem>
+
+                <!-- SaveAndClose default not visible -->
+                <Fluent:QuickAccessMenuItem
+                    Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/saveAndClose_16.png"
+                    IsChecked="{Binding IsQATSaveAndCloseVisible, FallbackValue=False}" AutomationProperties.AutomationId="QAT_SaveAndCloseMenuItem">
+                    <Fluent:Button Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/saveAndClose_16.png" Command="{Binding SaveAndClose}"  AutomationProperties.AutomationId="QAT_SaveAndClose" Header="{StaticResource ItemEditor.Command.SaveAndClose}"/>
+                </Fluent:QuickAccessMenuItem>
+
+                <Fluent:QuickAccessMenuItem 
+                    Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/previousItem_16.png"
+                    IsChecked="true" AutomationProperties.AutomationId="QAT_BrowseBackMenuItem">
+                    <Fluent:Button Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/previousItem_16.png" KeyTip="," Command="{Binding MoveBackInList}" AutomationProperties.AutomationId="QAT_BrowseBack" Header="{StaticResource ItemEditor.Command.BrowseBack}"/>
+                </Fluent:QuickAccessMenuItem>
+
+                <Fluent:QuickAccessMenuItem 
+                    Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/nextItem_16.png"
+                    IsChecked="true" AutomationProperties.AutomationId="QAT_BrowseFowardMenuItem">
+                    <Fluent:Button Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/nextItem_16.png" KeyTip="." Command="{Binding MoveNextInList}" AutomationProperties.AutomationId="QAT_BrowseFoward" Header="{StaticResource ItemEditor.Command.BrowseForward}"/>
+                </Fluent:QuickAccessMenuItem>
+
+
+            </Fluent:Ribbon.QuickAccessItems>
+
+            <!-- MENU -->
+            <Fluent:Ribbon.Menu  >
+                <Grid>
+                    <Fluent:ApplicationMenu Background="#FFbc0045" BorderBrush="#FFbc0045" AutomationProperties.AutomationId="Ribbon_Menu">
+                        <Fluent:ApplicationMenu.RightPaneContent>
+                            <StackPanel HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        Orientation="Vertical">
+
+                                <Border HorizontalAlignment="Stretch"
+                                        BorderBrush="#64647F"
+                                        BorderThickness="0,0,0,0">
+
+                                    <TextBlock Text="Recent files"
+                                               Background="#F6F7F8"
+                                               TextAlignment="Left"
+                                               Padding="12,4,4,4"
+                                               Foreground="#64647F"
+                                               FontWeight="SemiBold"
+                                               FontSize="12" />
+                                </Border>
+
+                                <StackPanel HorizontalAlignment="Stretch"
+                                            Height="2">
+
+                                    <Border Height="1"
+                                            BorderThickness="1"
+                                            HorizontalAlignment="Stretch"
+                                            BorderBrush="#DCDDDE" />
+
+                                    <Border Height="1"
+                                            BorderThickness="1"
+                                            HorizontalAlignment="Stretch"
+                                            BorderBrush="#FEFEFF" />
+                                </StackPanel>
+                            </StackPanel>
+                        </Fluent:ApplicationMenu.RightPaneContent>
+
+
+                        <Fluent:MenuItem Header="{StaticResource ItemEditor.Command.New }" Command="New" CommandParameter="Test" AutomationProperties.AutomationId="RibbonMenu_New"/>
+                        <Fluent:MenuItem Header="{StaticResource ItemEditor.Command.Save }" Command="{Binding Save}" AutomationProperties.AutomationId="RibbonMenu_Save"/>
+                        <Fluent:MenuItem Header="{StaticResource ItemEditor.Command.SaveAs }" Command="{Binding SaveAs}" AutomationProperties.AutomationId="RibbonMenu_SaveAs"/>
+                        <Fluent:MenuItem Header="{StaticResource ItemEditor.Command.SaveAsNewVersion }" Command="{Binding SaveAndMajorVersion}" AutomationProperties.AutomationId="RibbonMenu_SaveAsMajorVersion" />
+                        <Fluent:MenuItem Header="{StaticResource ItemEditor.Command.SaveAndClose }" Command="{Binding SaveAndClose}" AutomationProperties.AutomationId="RibbonMenu_SaveAndClose" />
+                        <!--<Separator />-->
+                    </Fluent:ApplicationMenu>
+                </Grid>
+            </Fluent:Ribbon.Menu>
+
+            <!-- START TAB -->
+            <Fluent:RibbonTabItem x:Name="startTabItem" 
+                                  Header="{Binding Source={StaticResource ItemEditor.RibbonTab.Start}, Converter={StaticResource toUpper}}" 
+                                  KeyTip="S"
+                                  AutomationProperties.AutomationId="StartRibbonTab"
+                                  Visibility="Visible"
+                                  IsSelected="{Binding RibbonTabToShowOverride.DataValue, Mode=OneWay, Converter={StaticResource int2Bool}, ConverterParameter=0}">
+                <Fluent:RibbonGroupBox x:Name="ClipboardGroup" Header="{StaticResource ItemEditor.Ribbon.ClipboardGroup}">
+                    <!--LargeIcon="..\..\Images\Ribbon\paste_32.png"-->
+
+                    <Fluent:SplitButton Header="{StaticResource ItemEditor.Ribbon.Paste}"
+                                      LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/paste_32.png"
+                                      ToolTip="{StaticResource ItemEditor.Ribbon.Paste}"
+                                      DropDownToolTip="{StaticResource ItemEditor.Ribbon.Paste.ToolTipDescription}"
+                                      Command="{Binding PasteAsText}" AutomationProperties.AutomationId="PasteSplitButton">
+
+                        <Fluent:SplitButton.Items>
+                            <Fluent:MenuItem Header="{StaticResource ItemEditor.Ribbon.PasteAsText}" Command="{Binding PasteAsText}" AutomationProperties.AutomationId="PasteAsText" />
+                            <Fluent:MenuItem Header="{StaticResource ItemEditor.Ribbon.PasteSpecial}" Command="{Binding PasteSpecial}" AutomationProperties.AutomationId="PasteSpecial" />
+                        </Fluent:SplitButton.Items>
+
+
+                    </Fluent:SplitButton>
+
+                    <Fluent:Button SizeDefinition="Middle" Header="{StaticResource ItemEditor.Ribbon.Cut}" KeyTip="X" Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/cut_16.png" Command="{Binding Cut}" 
+                                   AutomationProperties.AutomationId="Cut"/>
+                    <Fluent:Button SizeDefinition="Middle" Header="{StaticResource ItemEditor.Ribbon.Copy}" KeyTip="C" Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/copy_16.png" Command="{Binding Copy}" 
+                                   AutomationProperties.AutomationId="Copy"/>
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox x:Name="FormatGroup" Header="{StaticResource ItemEditor.Ribbon.FormatGroup}">
+                    <Fluent:RibbonToolBar>
+
+                        <!-- Layout definition -->
+
+                        <Fluent:RibbonToolBar.LayoutDefinitions>
+                            <Fluent:RibbonToolBarLayoutDefinition Size="Large">
+                                <Fluent:RibbonToolBarRow>
+
+                                    <Fluent:RibbonToolBarControlDefinition Target="StyleCbx" Width="75"/>
+
+                                    <Fluent:RibbonToolBarControlDefinition Target="LanguageCbx" Width="75"/>
+
+                                    <Fluent:RibbonToolBarControlGroupDefinition>
+                                        <Fluent:RibbonToolBarControlDefinition Target="ClearFormatting"/>
+                                        <Fluent:RibbonToolBarControlDefinition Target="Lock"/>
+                                    </Fluent:RibbonToolBarControlGroupDefinition>
+
+                                    <Fluent:RibbonToolBarControlGroupDefinition>
+                                        <Fluent:RibbonToolBarControlDefinition Target="NumberedList"/>
+                                        <Fluent:RibbonToolBarControlDefinition Target="RomanNumberedList"/>
+                                        <Fluent:RibbonToolBarControlDefinition Target="BulletedList"/>
+                                    </Fluent:RibbonToolBarControlGroupDefinition>
+
+                                    <Fluent:RibbonToolBarControlGroupDefinition>
+                                        <Fluent:RibbonToolBarControlDefinition Target="DeIndent"/>
+                                        <Fluent:RibbonToolBarControlDefinition Target="Indent"/>
+                                    </Fluent:RibbonToolBarControlGroupDefinition>
+
+                                </Fluent:RibbonToolBarRow>
+
+                                <!--2nd row-->
+                                <Fluent:RibbonToolBarRow>
+                                    <Fluent:RibbonToolBarControlGroupDefinition>
+                                        <Fluent:RibbonToolBarControlDefinition Target="Bold"         />
+                                        <Fluent:RibbonToolBarControlDefinition Target="Italic"       />
+                                        <Fluent:RibbonToolBarControlDefinition Target="Underline"    />
+                                        <Fluent:RibbonToolBarControlDefinition Target="SuperScript"  />
+                                        <Fluent:RibbonToolBarControlDefinition Target="SubScript"    />
+                                        <Fluent:RibbonToolBarControlDefinition Target="StrikeThrough"/>
+                                    </Fluent:RibbonToolBarControlGroupDefinition>
+
+                                    <Fluent:RibbonToolBarControlGroupDefinition>
+                                        <Fluent:RibbonToolBarControlDefinition Target="AlignLeft"   />
+                                        <Fluent:RibbonToolBarControlDefinition Target="AlignMiddle" />
+                                        <Fluent:RibbonToolBarControlDefinition Target="AlignRight"  />
+                                    </Fluent:RibbonToolBarControlGroupDefinition>
+
+                                </Fluent:RibbonToolBarRow>
+
+                            </Fluent:RibbonToolBarLayoutDefinition>
+                        </Fluent:RibbonToolBar.LayoutDefinitions>
+
+
+                        <Fluent:ComboBox x:Name="StyleCbx" SelectedItem="{Binding CurrentStyle}" 
+                                         ItemsSource="{Binding AvailableStyles.DataValue}" 
+                                         AutomationProperties.AutomationId="comboStyles" 
+                                         IsEnabled="{Binding CanSetFormatting.DataValue}"/>
+
+                        <Fluent:Button  x:Name="ClearFormatting" Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/eraseformat_16.png" 
+                                        AutomationProperties.AutomationId="ClearFormatting" SizeDefinition="Small" 
+                                        Command="{Binding ClearFormatting}" />
+
+                        <Fluent:Button  x:Name="Lock" Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/LockedForEdit_16.png" 
+                                       AutomationProperties.AutomationId="Lock" SizeDefinition="Small"
+                                       Command="{Binding Lock}" />
+                        <!-- -->
+                        <Fluent:ToggleButton x:Name="NumberedList" Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/orderedlist_16.png" 
+                                       AutomationProperties.AutomationId="NumberedList" SizeDefinition="Small"
+                                       Command="{Binding NumberedList}" IsChecked="{Binding IsMakeNumberedChecked}" />
+
+                        <Fluent:ToggleButton x:Name="RomanNumberedList" Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/orderedromanlist_16.png" 
+                                       AutomationProperties.AutomationId="RomanNumberedList" SizeDefinition="Small"
+                                       Command="{Binding RomanNumberedList}" IsChecked="{Binding IsMakeRomanNumberedChecked}" />
+
+                        <Fluent:ToggleButton x:Name="BulletedList" Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/unorderedlist_16.png" 
+                                       AutomationProperties.AutomationId="BulletedList" SizeDefinition="Small"
+                                       Command="{Binding BulletedList}" IsChecked="{Binding IsMakeBulletedChecked}"/>
+                        <!-- -->
+                        <Fluent:Button x:Name="DeIndent" Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/indentdecrease_16.png" 
+                                       AutomationProperties.AutomationId="DeInit" SizeDefinition="Small"
+                                       Command="{Binding DeIndent}" />
+
+                        <Fluent:Button  x:Name="Indent" Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/indentincrease_16.png" 
+                                       AutomationProperties.AutomationId="Ident" SizeDefinition="Small"
+                                       Command="{Binding Indent}" />
+                        <!-- 2nd Row -->
+
+                        <Fluent:ToggleButton x:Name="Bold"          AutomationProperties.AutomationId="Bold"          Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/bold_16.png"            SizeDefinition="Small"   IsChecked="{Binding IsBoldChecked}" Command="{Binding Bold}"/>
+                        <Fluent:ToggleButton x:Name="Italic"        AutomationProperties.AutomationId="Italic"        Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/italic_16.png"          SizeDefinition="Small"   IsChecked="{Binding IsItalicChecked}" Command="{Binding Italic}"/>
+                        <Fluent:ToggleButton x:Name="Underline"     AutomationProperties.AutomationId="Underline"     Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/underline_16.png"       SizeDefinition="Small"   IsChecked="{Binding IsUnderlineChecked}" Command="{Binding Underline}"/>
+                        <Fluent:ToggleButton x:Name="SuperScript"   AutomationProperties.AutomationId="SuperScript"   Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/superindex_16.png"      SizeDefinition="Small"   IsChecked="{Binding IsSuperScriptChecked}" Command="{Binding SuperScript}"/>
+                        <Fluent:ToggleButton x:Name="SubScript"     AutomationProperties.AutomationId="SubScript"     Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/subindex_16.png"        SizeDefinition="Small"   IsChecked="{Binding IsSubScriptChecked}" Command="{Binding SubScript}"/>
+                        <Fluent:ToggleButton x:Name="StrikeThrough" AutomationProperties.AutomationId="StrikeThrough" Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/strikethrough_16.png"   SizeDefinition="Small"   IsChecked="{Binding IsStrikeThroughChecked}" Command="{Binding StrikeThrough}"/>
+                        <Fluent:ToggleButton x:Name="AlignLeft"     AutomationProperties.AutomationId="AlignLeft"     Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/textalignleft_16.png"   SizeDefinition="Small"   IsChecked="{Binding IsAlignLeftChecked}"  Command="{Binding AlignLeft}"/>
+                        <Fluent:ToggleButton x:Name="AlignMiddle"   AutomationProperties.AutomationId="AlignMiddle"   Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/textaligncenter_16.png" SizeDefinition="Small"   IsChecked="{Binding IsAlignMiddleChecked}" Command="{Binding AlignMiddle}"/>
+                        <Fluent:ToggleButton x:Name="AlignRight"    AutomationProperties.AutomationId="AlignRight"    Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/textalignright_16.png"  SizeDefinition="Small"   IsChecked="{Binding IsAlignRightChecked}" Command="{Binding AlignRight}"/>
+
+                    </Fluent:RibbonToolBar>
+
+
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox x:Name="InsertGroup" Header="{StaticResource ItemEditor.Ribbon.InsertGroup}" Height="84">
+
+                    <Fluent:Button Header="{StaticResource ItemEditor.Ribbon.Insert.Image}"   AutomationProperties.AutomationId="InlineImage"     LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/image_32.png"        Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/image_16.png"     Command="{Binding AddPicture}"/>
+                    <Fluent:Button Header="{StaticResource ItemEditor.Ribbon.Insert.Video}"   AutomationProperties.AutomationId="InlineVideo"     LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/video_32.png"        Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/video_16.png"     Command="{Binding AddVideo}"/>
+                    <Fluent:Button Header="{StaticResource ItemEditor.Ribbon.Insert.Audio}"   AutomationProperties.AutomationId="InlineAudio"     LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/audio_32.png"        Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/audio_16.png"     Command="{Binding AddAudio}"/>
+                    <Fluent:Button Header="{StaticResource ItemEditor.Ribbon.Insert.Table}"   AutomationProperties.AutomationId="InlineTable"     LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/table_32.png"        Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/table_16.png"     Command="{Binding AddTable}"/>
+                    <Fluent:Button Header="{StaticResource ItemEditor.Ribbon.Insert.Popup}"   AutomationProperties.AutomationId="Popup"           LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/popup_32.png"        Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/popup_16.png" Command="{Binding AddPopup}" />
+                    <Fluent:Button Header="{StaticResource ItemEditor.Ribbon.Insert.Formula}" AutomationProperties.AutomationId="InlineFormula"   LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/formula_32.png"      Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/formula_16.png"   Command="{Binding AddFormula}"/>
+                    <Fluent:Button Header="{StaticResource ItemEditor.Ribbon.Insert.Symbol}"  AutomationProperties.AutomationId="InlineSymbol"    LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/symbol_32.png"       Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/symbol_16.png"    Command="{Binding OpenSymbolDialog}"/>
+                    <Fluent:Button Header="{StaticResource ItemEditor.Ribbon.Insert.CustomInteraction}"  AutomationProperties.AutomationId="InlineCI"    LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/customInteraction_32.png"       Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/customInteraction_16.png"    Command="{Binding AddCI}" Visibility="{Binding ShowingAddCI.DataValue, Converter={StaticResource bool2Vis}}"/>
+
+                    <!-- Inline Control, double button 1 split button one normal button-->
+                    <!-- START :: Split Button -->
+
+                    <Fluent:SplitButton Header="{StaticResource ItemEditor.Ribbon.Insert.InlineControl}"
+                                        LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/inlineControl_32.png" 
+                                        Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/inlineControl_16.png"
+                                        AutomationProperties.AutomationId="AddInlineControlMulti"
+                                        CanAddToQuickAccessToolBar="False"
+                                        ItemsSource="{Binding AvailableInlineControls.DataValue}"
+                                        Visibility="{Binding AvailableInlineControls.DataValue, Converter={StaticResource hasValue}}"
+                                        Command="{Binding AddInlineControl}">
+
+                        <Fluent:SplitButton.Resources>
+                            <Style TargetType="{x:Type Fluent:MenuItem}">
+                                <Setter Property="Header" Value="{Binding Path=Title}" />
+                                <Setter Property="Command" Value="{Binding Path=Command}" />
+                            </Style>
+                        </Fluent:SplitButton.Resources>
+
+                    </Fluent:SplitButton>
+                    <!-- END :: Split Button -->
+
+                    <!-- START :: RibbonButton -->
+                    <Fluent:Button Header="{StaticResource ItemEditor.Ribbon.Insert.InlineControl}" 
+                                   LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/inlineControl_32.png"
+                                   Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/inlineControl_16.png"
+                                   AutomationProperties.AutomationId="AddInlineControlSingle"
+                                   Visibility="{Binding AvailableInlineControls.DataValue, Converter={StaticResource hasNoValue}}"
+                                   Command="{Binding AddInlineControl}"/>
+                    <!-- END :: RibbonButton -->
+
+
+                    <Fluent:SplitButton Header="{StaticResource ItemEditor.Ribbon.Insert.Reference}" 
+                                        LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/reference_32.png" 
+                                        Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/reference_16.png"
+                                        ItemsSource="{Binding AvailableElementsToReference.DataValue}"
+                                        Visibility="{Binding AvailableElementsToReference.DataValue, Converter={StaticResource hasValue}}"
+                                        Command="{Binding AddReference}"
+                                        >
+
+                        <Fluent:SplitButton.Resources>
+                            <Style TargetType="{x:Type Fluent:MenuItem}">
+                                <Setter Property="Header" Value="{Binding Path=Title}" />
+                                <Setter Property="Command" Value="{Binding Path=Command}" />
+                            </Style>
+                        </Fluent:SplitButton.Resources>
+
+                    </Fluent:SplitButton>
+
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox x:Name="TextToSpeechGroup" Header="{StaticResource ItemEditor.Ribbon.TextToSpeechGroup}" Visibility="{Binding ShowTextToSpeechGroup.DataValue, Converter={StaticResource bool2Vis}}">
+
+                    <Fluent:ComboBox x:Name="LanguageCbx" SelectedItem="{Binding CurrentLanguage}" 
+                                         ItemsSource="{Binding AvailableLanguages.DataValue}" 
+                                         AutomationProperties.AutomationId="comboLanguages" Width="75" Height="22" Size="Small" Margin="3,9,3,0"
+                                         />
+
+                    <Fluent:Button Header="{StaticResource ItemEditor.Ribbon.TextToSpeech.Mute}"
+                                   LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/Mute_32.png"
+                                   Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/Mute_16.png"
+                                   AutomationProperties.AutomationId="MuteTextToSpeech"
+                                   Command="{Binding MuteTextToSpeech}"
+                                   Visibility="{Binding ShowTextToSpeech.DataValue, Converter={StaticResource bool2Vis}}" />
+
+                    <Fluent:Button Header="{StaticResource ItemEditor.Ribbon.TextToSpeech.Alternative}"
+                            LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/TTSAlternative_32.png"
+                            Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/TTSAlternative_16.png"
+                            AutomationProperties.AutomationId="AlternativeTextToSpeech"
+                            Command="{Binding AlternativeTextToSpeech}"
+                            Visibility="{Binding ShowTextToSpeech.DataValue, Converter={StaticResource bool2Vis}}" />
+
+                    <Fluent:SplitButton Header="{StaticResource ItemEditor.Ribbon.TextToSpeech.Pause}"
+                                    LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/pause_32.png"
+                                    Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/pause_16.png"
+                                    ItemsSource="{Binding AvailableDefaultDurations.DataValue}"
+                                    Command="{Binding PauseTextToSpeech}"
+                                    Visibility="{Binding ShowTextToSpeech.DataValue, Converter={StaticResource bool2Vis}}" />
+
+                    <Fluent:Button Header="{StaticResource ItemEditor.Ribbon.TextToSpeech.Remove}"
+                            LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/TTSRemove_32.png"
+                            Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/TTSRemove_16.png"
+                            AutomationProperties.AutomationId="RemoveTextToSpeech"
+                            Command="{Binding RemoveTextToSpeech}"
+                            Visibility="{Binding ShowTextToSpeech.DataValue, Converter={StaticResource bool2Vis}}" />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+
+            <!-- Score TAB -->
+            <Fluent:RibbonTabItem x:Name="scoreTabItem" 
+                                  KeyTip="C"
+                                  Header="{Binding Source={StaticResource ItemEditor.Ribbon.ScoreEditor.TabName}, Converter={StaticResource toUpper}}" 
+                                  AutomationProperties.AutomationId="ScoreRibbonTab"
+                                  Visibility="{Binding SelectedTab.DataValue, Mode=OneWay, Converter={StaticResource int2Vis}, ConverterParameter=2}"
+                                  IsSelected="{Binding RibbonTabToShowOverride.DataValue, Mode=OneWay, Converter={StaticResource int2Bool}, ConverterParameter=2}"
+                                >
+
+                <Fluent:RibbonGroupBox x:Name="Interaction" Header="{StaticResource ItemEditor.Ribbon.ScoreEditor.InteractionsGroup}">
+
+                    <Fluent:Button
+                        Header="{StaticResource ItemEditor.Ribbon.ScoreEditor.Interactions.Add}" 
+                        LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/interactionAdd_32.png"
+                        Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/interactionAdd_16.png"
+                        Command="cc:BlockGridCommands.InsertBlockGridElement" CommandParameter="{x:Static controls:BlockGridElement.BlockRow}"/>
+
+                    <Fluent:Button
+                        Header="{StaticResource ItemEditor.Ribbon.ScoreEditor.Interactions.Remove}"
+                        LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/interactionDelete_32.png" 
+                        Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/interactionDelete_16.png" 
+                        Command="cc:BlockGridCommands.DeleteBlockGridElement" CommandParameter="{x:Static controls:BlockGridElement.BlockRow}"/>
+
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox x:Name="Group" Header="{StaticResource ItemEditor.Ribbon.ScoreEditor.GroupsGroup}">
+
+                    <Fluent:Button
+                        Header="{StaticResource ItemEditor.Ribbon.ScoreEditor.Groups.Group}" 
+                        LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/groupNew_32.png" 
+                        Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/groupNew_16.png"
+                        Command="se:ScoreEditorCommands.GroupInteractions"/>
+
+                    <Fluent:Button 
+                        Header="{StaticResource ItemEditor.Ribbon.ScoreEditor.Groups.Ungroup}" 
+                        LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/groupUnGroup_32.png" 
+                        Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/groupUnGroup_16.png" 
+                        Command="se:ScoreEditorCommands.Ungroup" />
+
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox x:Name="Set" Header="{StaticResource ItemEditor.Ribbon.ScoreEditor.SetGroup}">
+
+                    <Fluent:Button 
+                        Header="{StaticResource ItemEditor.Ribbon.ScoreEditor.Set.New}" 
+                        LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/blockNew_32.png" 
+                        Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/blockNew_16.png" 
+                        Command="cc:BlockGridCommands.InsertBlockGridElement" CommandParameter="{x:Static controls:BlockGridElement.BlockInRow}"/>
+
+                    <Fluent:Button  
+                        Header="{StaticResource ItemEditor.Ribbon.ScoreEditor.Set.Delete}" 
+                        LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/blockDelete_32.png" 
+                        Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/blockDelete_16.png" 
+                        Command="se:ScoreEditorCommands.RemoveSet" />
+
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox x:Name="AutoScoring" Header="{StaticResource ItemEditor.Ribbon.ScoreEditor.AutoScoringGroup}" MinWidth="120">
+
+                    <Fluent:Button
+                        Header="{StaticResource ItemEditor.Ribbon.ScoreEditor.AutoScoring.On}" 
+                        LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/autoScoringOn_32.png" 
+                        Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/autoScoringOn_16.png"
+                        Command="se:ScoreEditorCommands.AutoScoringOn"/>
+
+                    <Fluent:Button 
+                        Header="{StaticResource ItemEditor.Ribbon.ScoreEditor.AutoScoring.Off}" 
+                        LargeIcon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/autoScoringOff_32.png" 
+                        Icon="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/autoScoringOff_16.png" 
+                        Command="se:ScoreEditorCommands.AutoScoringOff" />
+
+                </Fluent:RibbonGroupBox>
+
+            </Fluent:RibbonTabItem>
+
+            <Fluent:RibbonTabItem 
+                Header="{Binding Source={StaticResource DebugString}, Converter={StaticResource toUpper}}" 
+                Visibility="{Binding ShowingDebug.DataValue,Converter={StaticResource bool2Vis}}">
+                <!-- These are for debugging purposes -->
+                <Fluent:RibbonGroupBox x:Name="Output" Header="Open Output" BorderThickness="3" Margin="0" Width="200" ItemsSource="{Binding Targets}">
+                    <Fluent:RibbonGroupBox.ItemTemplate>
+                        <DataTemplate>
+                            <Fluent:Button Header="{Binding .}" CommandParameter="{Binding .}" Command="{Binding DataContext.ShowTargetXml, ElementName=ItemEditorFluent}"/>
+                        </DataTemplate>
+                    </Fluent:RibbonGroupBox.ItemTemplate>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+
+        </Fluent:Ribbon>
+
+        <!-- Row 1 -->
+        <TabControl Panel.ZIndex="1" Style="{StaticResource ItemEditorTabControl}" Grid.Row="1" TabStripPlacement="Bottom" x:Name="TabCtrl" SelectedIndex="{Binding SelectedTab.DataValue,UpdateSourceTrigger=PropertyChanged}" AutomationProperties.AutomationId="MainTabControl">
+            <TabItem Header="{StaticResource ItemEditor.Tab.Presentation}" AutomationProperties.AutomationId="Tab_Presentation" >
+                <ContentControl Content="{Binding PresentationWorkspace.DataValue}"/>
+            </TabItem>
+            <TabItem Header="{StaticResource ItemEditor.Tab.Metadata}" AutomationProperties.AutomationId="Tab_MetaData" >
+                <ContentControl Content="{Binding MetadataWorkspace.DataValue}"/>
+            </TabItem>
+            <TabItem Header="{StaticResource ItemEditor.Tab.Score}" AutomationProperties.AutomationId="Tab_Score" >
+                <ContentControl Content="{Binding ScoreWorkspace.DataValue}"/>
+            </TabItem>
+            <TabItem Header="{StaticResource ItemEditor.Tab.Source}" AutomationProperties.AutomationId="Tab_Source" >
+                <ContentControl Content="{Binding SourceWorkspace.DataValue}"/>
+            </TabItem>
+        </TabControl>
+
+        <!-- ROW 2 -->
+        <StatusBar Style="{StaticResource ItemEditorStatusbar}" Grid.Row="2" x:Name="StatusBar" >
+            <DockPanel LastChildFill="False">
+                <Image Width="auto" Height="16" DockPanel.Dock="Left">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding HasError.DataValue}" Value="True">
+                                    <Setter Property="Source" Value="..\..\Images\ItemEditor\error_withItem_16.png" />
+                                    <Setter Property="ToolTip">
+                                        <Setter.Value>
+                                            <StackPanel>
+                                                <!-- Have to add image and other decorations here -->
+                                                <TextBlock Text = "{StaticResource ItemEditor.StatusBar.ImageToolTip.ItemHasError}"/>
+                                            </StackPanel>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsOlderItem.DataValue}" Value="True">
+                                    <Setter Property="Source" Value="..\..\Images\ItemEditor\warning_oldItem_16.png" />
+                                    <Setter Property="ToolTip">
+                                        <Setter.Value>
+                                            <StackPanel>
+                                                <!-- Have to add image and other decorations here -->
+                                                <TextBlock Text = "{StaticResource ItemEditor.StatusBar.ImageToolTip.ItemIsV1Model}"/>
+                                            </StackPanel>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <Image Width="auto" Height="16" DockPanel.Dock="Left">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding HasSolutionDefined.DataValue}" Value="True">
+                                    <Setter Property="Source" Value="..\..\Images\ItemEditor\score_ok_16x16.png" />
+                                    <Setter Property="ToolTip">
+                                        <Setter.Value>
+                                            <StackPanel>
+                                                <!-- Have to add image and other decorations here -->
+                                                <TextBlock Text = "{StaticResource ItemEditor.StatusBar.ImageToolTip.ItemHasKeyDefined}"/>
+                                            </StackPanel>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding HasSolutionDefined.DataValue}" Value="False">
+                                    <Setter Property="Source" Value="..\..\Images\ItemEditor\score_notok_16x16.png" />
+                                    <Setter Property="ToolTip">
+                                        <Setter.Value>
+                                            <StackPanel>
+                                                <!-- Have to add image and other decorations here -->
+                                                <TextBlock Text = "{StaticResource ItemEditor.StatusBar.ImageToolTip.ItemHasNoKeyDefined}"/>
+                                            </StackPanel>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <ProgressBar x:Name="ProgressBarStatus"  Width="50" Height="10" IsIndeterminate="True"  Orientation="Horizontal" Visibility="Hidden" DockPanel.Dock="Left" >
+                    <ProgressBar.Style>
+                        <Style TargetType="{x:Type ProgressBar}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsWorking.DataValue}" Value="True">
+                                    <DataTrigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard Duration="00:00:04">
+                                                <ObjectAnimationUsingKeyFrames                                                      
+                                                     Storyboard.TargetProperty="Visibility">
+                                                    <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}" KeyTime="00:00:00"/>
+                                                    <DiscreteObjectKeyFrame Value="{x:Static Visibility.Hidden}" KeyTime="00:00:04"/>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </DataTrigger.EnterActions>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ProgressBar.Style>
+                </ProgressBar>
+
+            </DockPanel>
+        </StatusBar>
+
+    </Grid>
+</Fluent:RibbonWindow >

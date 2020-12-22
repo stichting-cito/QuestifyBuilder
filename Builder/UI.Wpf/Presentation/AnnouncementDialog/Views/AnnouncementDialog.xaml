@@ -1,0 +1,48 @@
+﻿<Window x:Class="Questify.Builder.UI.Wpf.Presentation.AnnouncementDialog.Views.AnnouncementDialog" x:Name="announcementDialogWindow" x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:CinchV2="clr-namespace:Cinch;assembly=Cinch.WPF"
+        Title="{StaticResource AnnouncementDialog.Title}" 
+		WindowStartupLocation="CenterOwner"
+        MinHeight="650" Height="650" MinWidth="550" Width="600" ResizeMode="NoResize"
+		Icon="../../Images/QuestifyIcon.ico">
+    <Window.Resources>
+        <ResourceDictionary>
+            
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+            <!-- Keep this (below) uncommented!-->
+            <!-- This is needed to create a view based on the bound workspace data -->
+            <DataTemplate DataType="{x:Type CinchV2:WorkspaceData}">
+                <AdornerDecorator>
+                    <Border HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        CinchV2:NavProps.ViewCreator="{Binding}"/>
+                </AdornerDecorator>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <CinchV2:EventToCommandTrigger Command="{Binding WindowClosing}" />
+        </i:EventTrigger>
+	</i:Interaction.Triggers>
+
+	<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0"  TabStripPlacement="Top" x:Name="TabCtrl" SelectedIndex="{Binding SelectedTab.DataValue,UpdateSourceTrigger=PropertyChanged}" AutomationProperties.AutomationId="MainTabControl">
+            <TabItem Header="{StaticResource AnnouncementDialog.Tab.SendAnnouncement}" Height="23" VerticalAlignment="Top" AutomationProperties.AutomationId="Tab_General" Visibility="{Binding GeneralTabVisible.DataValue, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <ContentControl Content="{Binding SendAnnouncementWorkspace.DataValue}"/>
+            </TabItem>
+        </TabControl>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" Margin="5">
+            <Button Content="{StaticResource AnnouncementDialog.Command.Close}" 
+					Command="{Binding Close}" IsDefault="True" IsCancel="True" Style="{StaticResource DialogButtonStyle}"/>
+        </StackPanel>
+    </Grid>
+</Window>

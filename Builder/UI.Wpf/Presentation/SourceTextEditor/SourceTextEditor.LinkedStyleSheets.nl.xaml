@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+    
+    <s:String x:Key="SourceTextEditor.LinkedStyleSheets.InfoGroup">Gekoppelde style sheets</s:String>
+    <s:String x:Key="SourceTextEditor.LinkedStyleSheets.AddButtonLabel">Toevoegen</s:String>
+    <s:String x:Key="SourceTextEditor.LinkedStyleSheets.RemoveButtonLabel">Verwijderen</s:String>
+
+    <s:String x:Key="SourceTextEditor.LinkedStyleSheets.NameColumnHeader">Code</s:String>
+    <s:String x:Key="SourceTextEditor.LinkedStyleSheets.TitleColumnHeader">Titel</s:String>
+
+</ResourceDictionary>

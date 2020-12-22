@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <s:String x:Key="SourceTextEditor.Metadata.InfoGroup">Informatie over de brontekst</s:String>
+    <s:String x:Key="SourceTextEditor.Metadata.CustomPropertiesGroup">Kenmerken</s:String>
+
+    <s:String x:Key="SourceTextEditor.MetaDataViewModel.ActionNotAllowedNeedSave">Deze actie kan alleen uitgevoerd worden als er geen onbewaarde wijzigingen zijn.</s:String>
+
+</ResourceDictionary>

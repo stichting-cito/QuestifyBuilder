@@ -1,0 +1,1749 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutDialog_About" xml:space="preserve">
+    <value>Over</value>
+  </data>
+  <data name="AboutDialog_Version" xml:space="preserve">
+    <value>Versie</value>
+  </data>
+  <data name="AdaptiveSectionValidation" xml:space="preserve">
+    <value>Validatie van adaptieve secties</value>
+  </data>
+  <data name="AddAControlTemplate" xml:space="preserve">
+    <value>Toevoegen controltemplate</value>
+  </data>
+  <data name="AddAItemLayoutTemplate" xml:space="preserve">
+    <value>Toevoegen itemlay-outtemplate</value>
+  </data>
+  <data name="AddBank_EnterValidInfo" xml:space="preserve">
+    <value>Geef een geldige banknaam</value>
+  </data>
+  <data name="AddingControlTemplate" xml:space="preserve">
+    <value>Controltemplate toevoegen</value>
+  </data>
+  <data name="AddingCustomProperties" xml:space="preserve">
+    <value>Bezig met het toevoegen van kenmerk '{0}'</value>
+  </data>
+  <data name="AddingCustomPropertiesToItem" xml:space="preserve">
+    <value>Bezig met het toevoegen van kenmerken aan item '{0}'</value>
+  </data>
+  <data name="AddingItemLayoutTemplate" xml:space="preserve">
+    <value>Voeg itemlay-outtemplate toe</value>
+  </data>
+  <data name="AddingMediaFile" xml:space="preserve">
+    <value>Mediabestand toevoegen</value>
+  </data>
+  <data name="AllEditors_CannotUpdateBecauseOfState" xml:space="preserve">
+    <value>Deze bron mag niet gewijzigd worden vanwege de status.</value>
+  </data>
+  <data name="AlterOrDeleteSelectedFiles" xml:space="preserve">
+    <value>Wijzig of verwijder de geselecteerde bestand(en).</value>
+  </data>
+  <data name="AnErrorOccurred" xml:space="preserve">
+    <value>Er is een fout opgetreden:</value>
+  </data>
+  <data name="AnErrorOccurredWhileValidatingTheSolution" xml:space="preserve">
+    <value>Er is een fout opgetreden bij het valideren van de oplossing!</value>
+  </data>
+  <data name="AspectEditor_PleaseEnterNewItemCode" xml:space="preserve">
+    <value>Geef een nieuwe code op:</value>
+  </data>
+  <data name="AspectEditor_Save_SavedStatusbarMessage" xml:space="preserve">
+    <value>Aspect is opgeslagen...</value>
+  </data>
+  <data name="AspectEditor_Save_SaveFailedStatusbarMessage" xml:space="preserve">
+    <value>Opslaan van het aspect is mislukt...</value>
+  </data>
+  <data name="AspectEditor_TitleBar" xml:space="preserve">
+    <value>Editor voor aspect '{0}'</value>
+  </data>
+  <data name="Authorization_Error_Saving" xml:space="preserve">
+    <value>Fout bij het opslaan van autorisatie-informatie!{0}{0}{1}</value>
+  </data>
+  <data name="AutoHide" xml:space="preserve">
+    <value>Automatisch verbergen</value>
+  </data>
+  <data name="BankCodeIsNotFilledMakeSureBankExternalKeyIsFilledThisIsOnlyAllowedByBankmanager" xml:space="preserve">
+    <value>De bankcode is niet ingevuld. De bankcode mag alleen ingevuld worden door de bankbeheerder.</value>
+  </data>
+  <data name="BankPropertiesFor" xml:space="preserve">
+    <value>Bankeigenschappen voor '{0}'</value>
+  </data>
+  <data name="BrowseForResource" xml:space="preserve">
+    <value>Bladeren</value>
+  </data>
+  <data name="CanTFindOtdForSection" xml:space="preserve">
+    <value>Er is geen otd gevonden voor deze sectie</value>
+  </data>
+  <data name="CanTFindOtdForThisSection" xml:space="preserve">
+    <value>Er is geen OTD gevonden voor deze sectie</value>
+  </data>
+  <data name="ChangeCodeDialog_EmptyCodeName" xml:space="preserve">
+    <value>Voer eerst een nieuwe code in voordat u verder gaat.</value>
+  </data>
+  <data name="ChangeDataSourceDialogHeaderTooMuchReferences" xml:space="preserve">
+    <value>Dit veld kan alleen worden aangepast indien er nog geen referenties naar deze selectie zijn</value>
+  </data>
+  <data name="ChooseAExportMethod" xml:space="preserve">
+    <value>Kies een exportmethode</value>
+  </data>
+  <data name="ChooseAImportMethod" xml:space="preserve">
+    <value>Kies een importmethode</value>
+  </data>
+  <data name="ChooseAPublicationMethod" xml:space="preserve">
+    <value>Kies een publicatiemethode</value>
+  </data>
+  <data name="ClickHereToOpen" xml:space="preserve">
+    <value>Klik hier om het overzicht te openen</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
+  <data name="CodeIsARequiredField" xml:space="preserve">
+    <value>Code is a required field</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Voltooid</value>
+  </data>
+  <data name="CompleteTheWizard" xml:space="preserve">
+    <value>De wizard voltooien.</value>
+  </data>
+  <data name="ControlTemplateToBeAdded" xml:space="preserve">
+    <value>Toe te voegen controltemplate:</value>
+  </data>
+  <data name="CopyOf0" xml:space="preserve">
+    <value>Kopie_van_{0}</value>
+  </data>
+  <data name="CopyOf01" xml:space="preserve">
+    <value>Kopie_van_{0}</value>
+  </data>
+  <data name="CouldNotSaveResourceUnsupportedType" xml:space="preserve">
+    <value>Kan bron van het type '{0}' niet opslaan.</value>
+  </data>
+  <data name="CreateNewBankAsChild" xml:space="preserve">
+    <value>Maak nieuwe bank als subbank van '{0}'</value>
+  </data>
+  <data name="CreateNewBankOnRootlevel" xml:space="preserve">
+    <value>Voeg nieuwe bank op hoogste niveau toe</value>
+  </data>
+  <data name="CustomBankPropertiesAdded" xml:space="preserve">
+    <value>{0} kenmerken zijn toegevoegd.</value>
+  </data>
+  <data name="CustomBankPropertiesAlreadyExisted" xml:space="preserve">
+    <value>{0} kenmerken waren al aanwezig.</value>
+  </data>
+  <data name="CustomBankPropertiesConflicts" xml:space="preserve">
+    <value>{0} kenmerken waren niet van het type 'Vrije waarde' en zijn overgeslagen. </value>
+  </data>
+  <data name="CustomPropertyAlreadyExistInThisBankHierarchy" xml:space="preserve">
+    <value>De volgende kenmerken bestaan al in deze bank hierarchy: {0}</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>Selectie</value>
+  </data>
+  <data name="DataSourceEditor_DialogTitle" xml:space="preserve">
+    <value>Selectie-editor</value>
+  </data>
+  <data name="DataSourceEditor_ValidationErrorsOnExit" xml:space="preserve">
+    <value>Er zijn validatie fouten. Wilt u doorgaan zonder op te slaan?</value>
+  </data>
+  <data name="DeleteFailureMessage" xml:space="preserve">
+    <value>De volgende resources konden niet verwijderd worden omdat ze nog gebruikt worden door andere objecten binnen de bank:
+
+{0}</value>
+  </data>
+  <data name="DeleteThisUser" xml:space="preserve">
+    <value>Deze gebruiker verwijderen?</value>
+  </data>
+  <data name="DeleteUserError" xml:space="preserve">
+    <value>Deze gebruiker kan niet verwijderd worden. Er zijn nog onderdelen gekoppeld.</value>
+  </data>
+  <data name="DirectoryDoesNotExist" xml:space="preserve">
+    <value>De gekozen map bestaat niet.</value>
+  </data>
+  <data name="DocKable" xml:space="preserve">
+    <value>Doc&amp;kable</value>
+  </data>
+  <data name="DockedPane" xml:space="preserve">
+    <value>Docked Panel</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Klaar.</value>
+  </data>
+  <data name="DoYouReallyWantToClearAllTheResourcesInTheBank" xml:space="preserve">
+    <value>Weet u zeker dat u al het materiaal in deze bank wilt verwijderen.</value>
+  </data>
+  <data name="Editor_SaveChangesQuestionMessage" xml:space="preserve">
+    <value>Nog niet alle wijzigingen zijn opgeslagen! Wilt u deze opslaan, voordat de editor gesloten wordt?</value>
+  </data>
+  <data name="EditorFor01" xml:space="preserve">
+    <value>Editor voor {0} '{1}'</value>
+  </data>
+  <data name="EnabledConditionRefersToNonExistingParameter" xml:space="preserve">
+    <value>Parameter '{0}' wordt actief gemaakt op basis van een parameter: '{1}' die niet bestaat.</value>
+  </data>
+  <data name="Error_EmtpyPassword" xml:space="preserve">
+    <value>Om dit package te importeren is een wachtwoord vereist.</value>
+  </data>
+  <data name="Error_WrongPassword" xml:space="preserve">
+    <value>Het ingevoerde wachtwoord is niet juist! 
+Voer het juiste wachtwoord in en probeer opnieuw.</value>
+  </data>
+  <data name="Passwordvalidate" xml:space="preserve">
+    <value>Toegestane tekens:
+- Kleine letter : abcdefghijklmnopqrstuvwxyz
+- Hoofdletters : ABCDEFGHIJKLMNOPQRSTUVWXYZ
+- Numerieke waardes : 0123456789
+- Speciale tekens : .-#@~!$^*()+={{}}[]
+Het wachtwoord bestaat uit tenminste één teken uit drie van de vier categorieën
+Het wachtwoord moet 8 of meer tekens bevatten.
+Het wachtwoord mag niet de gebruikersnaam bevatten</value>
+  </data>
+  <data name="ErrorDeletingEntity" xml:space="preserve">
+    <value>Fout tijdens het verwijderen {0}.</value>
+  </data>
+  <data name="ErrorImporting" xml:space="preserve">
+    <value>Er is een fout opgetreden bij het importeren van een package</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Foutmeldingen:</value>
+  </data>
+  <data name="ErrorSavingBankInformation" xml:space="preserve">
+    <value>Foutinformatie van het opslaan van de bank!{0}{0}{1}</value>
+  </data>
+  <data name="ErrorsFoundInCollectionparameter" xml:space="preserve">
+    <value>Volgende fouten zijn gevonden in de collectieparameter:</value>
+  </data>
+  <data name="ErrorThrown" xml:space="preserve">
+    <value>Er is een fout opgetreden.</value>
+  </data>
+  <data name="ErrorWhileParsingTemplate" xml:space="preserve">
+    <value>Er is een fout opgetreden tijdens het parsen van de template.</value>
+  </data>
+  <data name="ExportingResourcesToSpecifiedLocation" xml:space="preserve">
+    <value>Bezig met het exporteren van de bronnen naar de opgegeven locatie...</value>
+  </data>
+  <data name="ExportLocationDoesNotExist" xml:space="preserve">
+    <value>De exportlocatie bestaat niet</value>
+  </data>
+  <data name="ExportOfResources" xml:space="preserve">
+    <value>Exporteer de bronnen</value>
+  </data>
+  <data name="ExportTitle" xml:space="preserve">
+    <value>Exporteren</value>
+  </data>
+  <data name="ExportToABasFile" xml:space="preserve">
+    <value>Exporteren naar een BAS-bestand</value>
+  </data>
+  <data name="ExportToAPackageFile" xml:space="preserve">
+    <value>Exporteren naar een exportbestand</value>
+  </data>
+  <data name="ExportToAPOKFile" xml:space="preserve">
+    <value>Exporteren naar een POK-bestand</value>
+  </data>
+  <data name="FileAlreadyExist" xml:space="preserve">
+    <value>Het bestand bestaat al op de geselecteerde locatie.</value>
+  </data>
+  <data name="FileDoesNotExist" xml:space="preserve">
+    <value>Bestand bestaat niet!</value>
+  </data>
+  <data name="ChangePasswordDialogTitle" xml:space="preserve">
+    <value>Wachtwoord kiezen</value>
+  </data>
+  <data name="FillInPassword" xml:space="preserve">
+    <value>Vul het wachtwoord in</value>
+  </data>
+  <data name="FillInPasswordDesc" xml:space="preserve">
+    <value>Een wachtwoord is vereist omdat het package beveiligd is.</value>
+  </data>
+  <data name="NewPasswordIntro" xml:space="preserve">
+    <value>Kies een nieuw wachtwoord om door te gaan</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Type een nieuw wachtwoord </value>
+  </data>
+  <data name="RepeatPassword" xml:space="preserve">
+    <value>Type nogmaals het wachtwoord </value>
+  </data>
+  <data name="PasswordCannotBeEmpty" xml:space="preserve">
+    <value>Een waarde voor wachtwoord is verplicht</value>
+  </data>
+  <data name="PasswordsDoNotMatch" xml:space="preserve">
+    <value>De ingevulde waarden komen niet overeen. </value>
+  </data>
+  <data name="FillTheExportMethodOptions" xml:space="preserve">
+    <value>Stel de exportmethode in</value>
+  </data>
+  <data name="FillTheImportMethodOptions" xml:space="preserve">
+    <value>Stel de importopties in</value>
+  </data>
+  <data name="FillThePublicationMethodOptions" xml:space="preserve">
+    <value>Stel de publicatiemethode in</value>
+  </data>
+  <data name="FillTheSecurityOptions" xml:space="preserve">
+    <value>Stel de beveilingsopties in</value>
+  </data>
+  <data name="Floating" xml:space="preserve">
+    <value>&amp;Los maken</value>
+  </data>
+  <data name="FollowingFilesAreExported" xml:space="preserve">
+    <value>De volgende bestanden zijn gepubliceerd:{0}{0}{0}</value>
+  </data>
+  <data name="FollowingResourcesPreventDeleting" xml:space="preserve">
+    <value>De volgende {0} '{1}'-bronnen voorkomen verwijdering:</value>
+  </data>
+  <data name="FollowingResourcesResultInAWarning" xml:space="preserve">
+    <value>De volgende {0} '{1}'-bronnen veroorzaken een waarschuwing:</value>
+  </data>
+  <data name="GenerateReport" xml:space="preserve">
+    <value>Maak een overzicht</value>
+  </data>
+  <data name="GenerationProgress" xml:space="preserve">
+    <value>Voortgang van het rapport</value>
+  </data>
+  <data name="GenerationProgressDescription" xml:space="preserve">
+    <value>Bezig met maken van het rapport.</value>
+  </data>
+  <data name="Hide" xml:space="preserve">
+    <value>&amp;Verbergen</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Importeer</value>
+  </data>
+  <data name="ImportFailure" xml:space="preserve">
+    <value>Het is niet gelukt om het bestand te importeren vanwege een fout.
+(Fout bij laden van manifest)</value>
+    <comment>ImportFailure description</comment>
+  </data>
+  <data name="ImportFailureGeneral" xml:space="preserve">
+    <value>Het is niet gelukt om het bestand te importeren vanwege een fout.</value>
+  </data>
+  <data name="ImportFailureTitle" xml:space="preserve">
+    <value>Import fout</value>
+    <comment>ImportFailureTitle description</comment>
+  </data>
+  <data name="ImportFromAExcelFile" xml:space="preserve">
+    <value>Voeg kenmerken toe vanuit een MS Excelbestand</value>
+  </data>
+  <data name="ImportFromATestBuilderPackageFile" xml:space="preserve">
+    <value>Importeer vanuit een Questify Builder export(set) bestand</value>
+  </data>
+  <data name="ImportingResourcesToSpecifiedLocation" xml:space="preserve">
+    <value>Bron importeren naar opgegeven locatie...</value>
+  </data>
+  <data name="ImportOfResources" xml:space="preserve">
+    <value>Import van bronnen</value>
+  </data>
+  <data name="InitialiseProgressDescription" xml:space="preserve">
+    <value>Bezig met het voorbereiden van het overzicht.</value>
+  </data>
+  <data name="InitialiseProgressTask" xml:space="preserve">
+    <value>Initialisatie voortgang</value>
+  </data>
+  <data name="InstanceAlreadyOpened" xml:space="preserve">
+    <value>Er is al een instantie van Questify Builder geopend. Het is niet mogelijk om een tweede instantie te openen, waarvan de versie gelijk is.</value>
+  </data>
+  <data name="Item0InAdaptiveSectionIsMissingInOtd1" xml:space="preserve">
+    <value>Item {0} in de adaptieve sectie komt niet voor in het OTD{1}</value>
+  </data>
+  <data name="Item0InOtdIsMissingInAdaptiveSection1" xml:space="preserve">
+    <value>Item {0} in het otd komt niet voor in de adaptieve sectie{1}</value>
+  </data>
+  <data name="ItemEditor_AnErrorOccurredWhileUpdatingTheCodeNameInTests" xml:space="preserve">
+    <value>Er is een fout opgetreden terwijl de code van het item gewijzigd werd!</value>
+  </data>
+  <data name="ItemEditor_ItemCodeNameAlreadyExistsInBankHierarchy" xml:space="preserve">
+    <value>De itemcode bestaat al in deze bankhiërarchie!</value>
+  </data>
+  <data name="ItemEditor_ItemCodeRenamingIsSucceeded" xml:space="preserve">
+    <value>De code van het item is succesvol gewijzigd!</value>
+  </data>
+  <data name="ItemEditor_Load_ItemDefinitionLoaded" xml:space="preserve">
+    <value>Itemdefinitie is geladen</value>
+  </data>
+  <data name="ItemEditor_NoSufficientRightsToPerformThisAction" xml:space="preserve">
+    <value>U heeft niet de benodigde rechten om deze actie uit te voeren.</value>
+  </data>
+  <data name="ItemEditor_OldItemLayoutTemplateOpenedStatusBarMessage" xml:space="preserve">
+    <value>Item gebaseerd op een oud itemlay-outtemplate geopend</value>
+  </data>
+  <data name="ItemEditor_OnlyPossibleToChangeTheResourceCodeWhenNoOtherChanges" xml:space="preserve">
+    <value>Het is alleen mogelijk om de {0}code te wijzigen als er nog geen verdere wijzigingen zijn gemaakt. Bewaar eerst en probeer opnieuw!</value>
+  </data>
+  <data name="ItemEditor_PleaseEnterNewItemCode" xml:space="preserve">
+    <value>Geef een nieuwe code op:</value>
+  </data>
+  <data name="ItemEditor_SaveAsCancelled" xml:space="preserve">
+    <value>'Opslaan als' is afgebroken</value>
+  </data>
+  <data name="ItemEditor_SaveAsText" xml:space="preserve">
+    <value>Opslaan als</value>
+  </data>
+  <data name="ItemEditor_SaveItem_ItemSavedStatusbarMessage" xml:space="preserve">
+    <value>Item is opgeslagen...</value>
+  </data>
+  <data name="ItemEditor_SaveItem_SaveFailedStatusbarMessage" xml:space="preserve">
+    <value>Opslaan van het item is mislukt...</value>
+  </data>
+  <data name="ItemEditor_TitleBar" xml:space="preserve">
+    <value>Itemeditor voor item '{0}'</value>
+  </data>
+  <data name="ItemEditor_ValidateItem_ValidationErrors" xml:space="preserve">
+    <value>Vanwege de volgende validatiefouten kan het item niet worden geüpdated:{0}{0}</value>
+  </data>
+  <data name="ItemEditorNaviateNextNotPossible" xml:space="preserve">
+    <value>Huidige item is het laatste item in de lijst, navigeren naar volgende is niet mogelijk</value>
+  </data>
+  <data name="ItemEditorNaviatePreviousNotPossible" xml:space="preserve">
+    <value>Huidige item is het eerste item in de lijst, navigeren naar vorige is niet mogelijk</value>
+  </data>
+  <data name="ItemForm_IsDirtyWhenCancelPressed" xml:space="preserve">
+    <value>Uw aanpassingen zullen verloren gaan. Weet u zeker dat u dit formulier wilt afsluiten.</value>
+  </data>
+  <data name="ItemForm_ValidationFailedWhenSaved" xml:space="preserve">
+    <value>Dit formulier bevat nog fouten. Verbeter deze voor </value>
+  </data>
+  <data name="ItemLayoutTemplateToBeAdded" xml:space="preserve">
+    <value>Toe te voegen Itemlay-outtemplates:</value>
+  </data>
+  <data name="ItemrefenceDoesnTContainAnyItems" xml:space="preserve">
+    <value>De adaptieve sectie bevat geen items</value>
+  </data>
+  <data name="ItemrefenceInSectionIsEqualToTheItemsInTheOtd" xml:space="preserve">
+    <value>Itemreferentie in de sectie bevat dezelfde items als de OTD.</value>
+  </data>
+  <data name="ItemsInExcel" xml:space="preserve">
+    <value>{0} items gevonden in het MS Excelbestand.</value>
+  </data>
+  <data name="ItemsUpdatedWithCustomProperties" xml:space="preserve">
+    <value>{0} items zijn bijgewerkt.</value>
+  </data>
+  <data name="Login_LoginFailed_Text" xml:space="preserve">
+    <value>Het aanmelden is mislukt met de opgegeven gebruikersnaam en wachtwoord.</value>
+  </data>
+  <data name="Login_LoginFailed_Title" xml:space="preserve">
+    <value>Aanmelden</value>
+  </data>
+  <data name="MainForm_DoYouReallyWantToDeleteBankAndAllOfItsResources" xml:space="preserve">
+    <value>Weet u zeker dat u de bank '{0}' wilt verwijderen?</value>
+  </data>
+  <data name="MainForm_FastSearchTimeOut" xml:space="preserve">
+    <value>De zoekopdracht is niet gelukt wegens een te algemene zoekterm.
+(Reden: Time out)
+Verfijn uw zoekterm en probeer opnieuw.</value>
+  </data>
+  <data name="MainForm_NoResourcesSelected" xml:space="preserve">
+    <value>Er zijn geen bronnen geselecteerd</value>
+  </data>
+  <data name="MainForm_SelectResourcesToExport" xml:space="preserve">
+    <value>Selecteer bronnen om te exporteren</value>
+  </data>
+  <data name="MainForm_SelectTestPackageToPublish" xml:space="preserve">
+    <value>Selecteer een toetspakket om te publiceren.</value>
+  </data>
+  <data name="MainForm_SelectTestToPublish" xml:space="preserve">
+    <value>Selecteer een toets ter publicatie</value>
+  </data>
+  <data name="MainForm_SyntaxErrorSearchString" xml:space="preserve">
+    <value>Er is een fout opgetreden tijdens zoeken. Controleer de juistheid van de zoekopdracht!</value>
+  </data>
+  <data name="MainForm_TestCannotBePreviewed" xml:space="preserve">
+    <value>Er kan geen preview van deze toets worden uitgevoerd, omdat er geen preview-methode is voor deze toets.</value>
+  </data>
+  <data name="MainForm_TestCannotBePreviewed_Title" xml:space="preserve">
+    <value>Toetsvoorbeeld</value>
+  </data>
+  <data name="MainForm_TestTemplateGrid_GenerateResources_DialogTitle" xml:space="preserve">
+    <value>Voorstellen maken</value>
+  </data>
+  <data name="MainForm_TestTemplateGrid_GenerateResources_NoDataSourceSections" xml:space="preserve">
+    <value>Dit template bevat geen secties met automatische itemselectie. Het is daarom niet mogelijk om voorstellen te genereren.</value>
+  </data>
+  <data name="MainForm_TestTemplateGrid_GenerateResources_OldTestModelMessage" xml:space="preserve">
+    <value>Dit template bevat een oud toetsdefinitiemodel. Het is daarom niet mogelijk om hiervoor toetsvoorstellen te genereren. Maak een nieuwe toetsdefinitie aan volgens het nieuwe model (2.0+).</value>
+  </data>
+  <data name="MainForm_TestTemplateGrid_GenerateResources_ProposalPrefix" xml:space="preserve">
+    <value>Voorstel</value>
+  </data>
+  <data name="MakeSureBankExternalKeyHasAValue" xml:space="preserve">
+    <value>'Bank Externalkey' mag niet leeg zijn.</value>
+  </data>
+  <data name="MakeSureBankExternalKeyHasAValueThatIsNoLongerThanThreeCharactersThisIsOnlyAllowedByBankManager" xml:space="preserve">
+    <value>De ingevulde bankcode heeft meer dan 3 karakters.</value>
+  </data>
+  <data name="Maximize" xml:space="preserve">
+    <value>Maximaliseren</value>
+  </data>
+  <data name="MediaEditorForResource" xml:space="preserve">
+    <value>Editor voor media '{0}'</value>
+  </data>
+  <data name="MediaFile" xml:space="preserve">
+    <value>mediabestand</value>
+  </data>
+  <data name="MediaFileS" xml:space="preserve">
+    <value>mediabestand(en)</value>
+  </data>
+  <data name="MediaFileToBeAdded" xml:space="preserve">
+    <value>Toe te voegen mediabestanden:</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="Message_NoSectionSelected" xml:space="preserve">
+    <value>Er is geen sectie geselecteerd in de toets om item(s) aan toe te voegen. Selecteer eerst een sectie of een van zijn items en probeer opnieuw.</value>
+  </data>
+  <data name="Message_NoSectionSelectedTitle" xml:space="preserve">
+    <value>Selectiefout</value>
+  </data>
+  <data name="MetaDataDescription" xml:space="preserve">
+    <value>Omschrijving</value>
+  </data>
+  <data name="MetaDataStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Minimize" xml:space="preserve">
+    <value>Minimaliseren</value>
+  </data>
+  <data name="MultiSelectItemEditWizardChanging" xml:space="preserve">
+    <value>U staat op het punt de parameter/kenmerk/metadatawaarde voor de {0} geselecteerde item(s) te wijzigen.
+
+Let op! Dit kan niet ongedaan gemaakt worden!</value>
+  </data>
+  <data name="MultiSelectItemEditWizardCompleted" xml:space="preserve">
+    <value>Je hebt de parameter/kenmerk/metadata waarde voor {0} item(s) gewijzigd.</value>
+  </data>
+  <data name="MultiSelectItemEditWizardEditDescription" xml:space="preserve">
+    <value>Wijzig de parameter of het kenmerk of de metadata met de nieuwe waarde, voor de {0} geselecteerde item(s).</value>
+  </data>
+  <data name="MultiSelectItemEditWizardEditTitle" xml:space="preserve">
+    <value>Wijzigen parameter of kenmerk of metadata</value>
+  </data>
+  <data name="MultiSelectItemEditWizardMultipleBanksSelected" xml:space="preserve">
+    <value>Het is niet mogelijk kenmerken of parameters of metadata te bewerken van items uit verschillende banken</value>
+  </data>
+  <data name="MultiSelectItemEditWizardResultDescription" xml:space="preserve">
+    <value>Parameter of kenmerk of metadata opgeslagen voor de {0} geselecteerde item(s).</value>
+  </data>
+  <data name="MultiSelectItemEditWizardSelectEditDescription" xml:space="preserve">
+    <value>Selecteer de parameter of het kenmerk of de metadata die je wilt wijzigen voor de {0} geselecteerde item(s).</value>
+  </data>
+  <data name="MultiSelectItemEditWizardSelectEditTitle" xml:space="preserve">
+    <value>Selecteer parameter of kenmerk of metadata</value>
+  </data>
+  <data name="MultiSelectItemEditWizardValidationErrors" xml:space="preserve">
+    <value>Er zijn validatiefouten gevonden bij de ingevulde waarden van deze parameter. Pas deze aan voordat u verder gaat.</value>
+  </data>
+  <data name="MultiSelectItemEditWizardWelcomeDescription" xml:space="preserve">
+    <value>Met deze wizard kun je een parameter of kenmerk of metadata van meerdere items tegelijk wijzigen.</value>
+  </data>
+  <data name="MultiSelectItemEditWizardWelcomeTitle" xml:space="preserve">
+    <value>Parameter of kenmerk of metadata wijzigen</value>
+  </data>
+  <data name="NewSection" xml:space="preserve">
+    <value>Nieuwe sectie</value>
+  </data>
+  <data name="newString" xml:space="preserve">
+    <value>nieuwe</value>
+  </data>
+  <data name="NewTestpart" xml:space="preserve">
+    <value>Nieuw toetsdeel</value>
+  </data>
+  <data name="NewTestset" xml:space="preserve">
+    <value>Nieuwe toetsset</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nee</value>
+  </data>
+  <data name="NoExportHandlersAvailable" xml:space="preserve">
+    <value>Geen exporthandlers beschikbaar</value>
+  </data>
+  <data name="NoFieldValidation" xml:space="preserve">
+    <value>Er is geen validatie voor veld '{0}'.</value>
+  </data>
+  <data name="NoPublicationHandlers" xml:space="preserve">
+    <value>Er is geen publicatiemethode die de geselecteerde toetsen kan publiceren.</value>
+  </data>
+  <data name="NoReportsAvailable" xml:space="preserve">
+    <value>Er zijn geen overzichten beschikbaar.</value>
+  </data>
+  <data name="NotAbleToDelete" xml:space="preserve">
+    <value>U bent niet gemachtigd de selecteerde {0} te verwijderen!</value>
+  </data>
+  <data name="NotAllRequiredTemplateFieldsAreFilled" xml:space="preserve">
+    <value>Niet alle verplichte velden zijn gevuld! Vul alle velden en druk op OK om door te gaan.</value>
+  </data>
+  <data name="NothingIsPreventingYouToPublishThisPackage" xml:space="preserve">
+    <value>Package(s) kunnen gepubliceerd worden.</value>
+  </data>
+  <data name="NotValidFiles0" xml:space="preserve">
+    <value>Bestanden die niet geïmporteerd kunnen worden:{0}</value>
+  </data>
+  <data name="OperationSuccesfull" xml:space="preserve">
+    <value>Opdracht is succesvol verlopen</value>
+  </data>
+  <data name="OperationUnSuccesfull" xml:space="preserve">
+    <value>Opdracht is niet succesvol verlopen</value>
+  </data>
+  <data name="OptionsForm_RestartLanguage_Text" xml:space="preserve">
+    <value>Na het opnieuw opstarten van Builder is de gekozen taal van kracht. Het programma wordt nu afgesloten.</value>
+  </data>
+  <data name="OptionsForm_RestartLanguage_Title" xml:space="preserve">
+    <value>Opties</value>
+  </data>
+  <data name="OtdAndAdaptiveSectionDoesnTContainAnyItems" xml:space="preserve">
+    <value>Zowel het otd als de adaptieve sectie bevatten geen items.</value>
+  </data>
+  <data name="OtdDoesnTContainAnyItems" xml:space="preserve">
+    <value>Het otd bevat geen items</value>
+  </data>
+  <data name="ParameterCannotBeRedirectedMultiTimes" xml:space="preserve">
+    <value>Parameter '{0}' mag niet worden verwezen naar een parameter '{1}' die ook wordt doorverwezen.</value>
+  </data>
+  <data name="ParameterRedirectionInfoIsMissing" xml:space="preserve">
+    <value>'redirectToTargetControlId' en 'redirectToTargetParameterId' moet worden ingevuld wanneer parameter '{0}' doorverwezen moet worden.</value>
+  </data>
+  <data name="ParametersCannotReferToItself" xml:space="preserve">
+    <value>Parameter '{0}' mag niet naar zichzelf verwijzen.</value>
+  </data>
+  <data name="ParametersMustHaveSameType" xml:space="preserve">
+    <value>Parameter '{0}' van het type '{1}' mag niet worden verwezen naar parameter '{2}' van het type '{3}'</value>
+  </data>
+  <data name="PerformingOperation" xml:space="preserve">
+    <value>Bezig met uitvoeren van de opdracht...</value>
+  </data>
+  <data name="PermissionTarget" xml:space="preserve">
+    <value>Permissie onderwerp</value>
+  </data>
+  <data name="PleaseChooseThePublicationLocation" xml:space="preserve">
+    <value>Selecteer hier de locatie waar de package(s) gepubliceerd moeten worden.</value>
+  </data>
+  <data name="PleaseCloseAllItemEditorsFirst" xml:space="preserve">
+    <value>U dient eerst alle item editors te sluiten</value>
+  </data>
+  <data name="PleaseEnterAValidExportFilename" xml:space="preserve">
+    <value>Selecteer een geldig exportbestand.</value>
+  </data>
+  <data name="PleaseSelectAReport" xml:space="preserve">
+    <value>Selecteer een overzicht</value>
+  </data>
+  <data name="PleaseSelectDocx" xml:space="preserve">
+    <value>Kies een geldige bestandsnaam.</value>
+  </data>
+  <data name="ProcessingResource" xml:space="preserve">
+    <value>Bron '{0}' verwerken...</value>
+  </data>
+  <data name="Publication" xml:space="preserve">
+    <value>Publicatie</value>
+  </data>
+  <data name="PublicationFormWizard_PasswordRules" xml:space="preserve">
+    <value>Toetspakketencryptie is ingeschakeld, maar het opgegeven wachtwoord voldoet niet aan de validatieregels. Geef een wachtwoord op dat voldoet aan deze regels:
+
+Mogelijke karakters:
+
+- Kleine letters: abcdefghijklmnopqrstuvwxyz
+- Hoofdletters:   ABCDEFGHIJKLMNOPQRSTUVWXYZ
+- Numeriek: 0123456789
+- Symbolen: .-#@~!$^*()+={{}}[]
+
+Wachtwoord moet minimaal 1 teken uit drie categoriën bevatten.
+Wachtwoord moet bestaan uit minimaal 8 en maximaal 40 karakters.</value>
+  </data>
+  <data name="PublicationFormWizard_PasswordsDontMatch" xml:space="preserve">
+    <value>Wachtwoorden komen niet overeen. Geef de wachtwoorden opnieuw op.</value>
+  </data>
+  <data name="PublicationLocationText" xml:space="preserve">
+    <value>Locatie {0} :</value>
+  </data>
+  <data name="PublicationName" xml:space="preserve">
+    <value>Gepubliceerd als: {0}</value>
+  </data>
+  <data name="PublicationOfTheTest" xml:space="preserve">
+    <value>Publicatie van de toets(en) {0}</value>
+  </data>
+  <data name="ReadExcelAdditionalExceptionMessage" xml:space="preserve">
+    <value>De fout kan ook veroorzaakt zijn door het importeren van een oud excel formaat.</value>
+  </data>
+  <data name="ReadyImporting" xml:space="preserve">
+    <value>Het package is geïmporteerd</value>
+  </data>
+  <data name="RefreshItemTemplate" xml:space="preserve">
+    <value>Ververs Itemtemplate</value>
+  </data>
+  <data name="ResourceParameterContainsValueNotInBank" xml:space="preserve">
+    <value>Bronparameter '{0}' bevat de standaard waarde '{1}', die niet aanwezig is in de bank!</value>
+  </data>
+  <data name="ResourcePropertiesFor" xml:space="preserve">
+    <value>Broneigenschappen voor '{0}'</value>
+  </data>
+  <data name="ResourcePropertyDialog_BrowseForRawDataButton_Click_ControlTemplateResourceFilter" xml:space="preserve">
+    <value>Controltemplatebestanden (*.xHtml, *.code)|*.xhtml; *.code|Alle bestanden (*.*)|*.*</value>
+  </data>
+  <data name="ResourcePropertyDialog_BrowseForRawDataButton_Click_GenericResourceFilter" xml:space="preserve">
+    <value>Alle bestanden (*.*)|*.*|Afbeeldingen (*.jpg; *.jpeg; *.gif; *.png; *.svg; *.bmp)|*.jpg;*.jpeg;*.gif;*.png;*.svg;*.bmp|Drukwerkafbeeldingen (*.eps, *.tiff, *.tif)|*.eps;*.tiff;*.tif|MS Word templates (*.dotx)|*.dotx|MS Word documenten (*.docx)|*.docx|Style Sheetbestanden (*.css)|*.css|Audiobestanden (*.mp3, *.opus, *.ogg)|*.mp3;*.opus;*.ogg</value>
+  </data>
+  <data name="ResourcePropertyDialog_BrowseForRawDataButton_Click_ItemLayoutResourceFilter" xml:space="preserve">
+    <value>Itemlay-outtemplate bestanden (*.xhtml)|*.xhtml|Alle bestanden (*.*)|*.*</value>
+  </data>
+  <data name="ResourcePropertyDialog_BrowseForRawDataButton_Click_ItemResourceFilter" xml:space="preserve">
+    <value>Itemdatabestanden (*.xml)|*.xml|All Files (*.*)|*.*</value>
+  </data>
+  <data name="ResourcePropertyDialog_BrowseForRawDataButton_Click_TestPackageResourceFilter" xml:space="preserve">
+    <value>Toetspakketdatabestanden (*.xml)|*.xml|Alle bestanden (*.*)|*.*</value>
+  </data>
+  <data name="ResourcePropertyDialog_BrowseForRawDataButton_Click_TestResourceFilter" xml:space="preserve">
+    <value>Toetsdatabestanden (*.xml)|*.xml|Alle bestanden (*.*)|*.*</value>
+  </data>
+  <data name="ResourcePropertyDialog_ExportButton_Click_DialogTitle" xml:space="preserve">
+    <value>Exporteer bron naar een bestand</value>
+  </data>
+  <data name="ResourcePropertyDialog_ExportButton_Click_ResourceExported" xml:space="preserve">
+    <value>De bron is geëxporteerd</value>
+  </data>
+  <data name="ResourceToImportDestinationCurrentBank" xml:space="preserve">
+    <value>Te importeren bron: {0}.{1}Doel: Huidige bank{1}Methode: {2}</value>
+  </data>
+  <data name="ResourceToImportDestinationCurrentBankExcel" xml:space="preserve">
+    <value>Te importeren bron: {0}.{1}Doel: Huidige bank{1}Methode: {2}{1}</value>
+  </data>
+  <data name="ResourceToPublishDestinationPublicationMethod" xml:space="preserve">
+    <value>Te publiceren bron: {0}.{1}Doel: {2}{1}Publicatiemethode: {3}.{1}</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Herstellen</value>
+  </data>
+  <data name="RolePropertyTitle" xml:space="preserve">
+    <value>Roleigenschappen</value>
+  </data>
+  <data name="Saving0312" xml:space="preserve">
+    <value>opslaan {0}{3}({1}/{2}).</value>
+  </data>
+  <data name="Section0" xml:space="preserve">
+    <value>Sectie: {0}</value>
+  </data>
+  <data name="SelectAFileToAdd" xml:space="preserve">
+    <value>Selecteer een bestand</value>
+  </data>
+  <data name="SelectAnUserBeforeContinuing" xml:space="preserve">
+    <value>Selecteer een gebruiker voordat u verder gaat.</value>
+  </data>
+  <data name="SelectDependentResourceDialog_NoResourceSelectedMessage" xml:space="preserve">
+    <value>Er is nog geen bron geselecteerd. Selecteer een bron en druk op 'OK'</value>
+  </data>
+  <data name="SelectedBank" xml:space="preserve">
+    <value>Selecteer een bank</value>
+  </data>
+  <data name="SelectReport" xml:space="preserve">
+    <value>Selecteer een overzicht</value>
+  </data>
+  <data name="SelectReportDescription" xml:space="preserve">
+    <value>Selecteer het overzicht dat u wilt maken.</value>
+  </data>
+  <data name="SelectReportLocation" xml:space="preserve">
+    <value>Selecteer map</value>
+  </data>
+  <data name="SelectReportLocationDescription" xml:space="preserve">
+    <value>Selecteer de locatie waar het overzicht opgeslagen dient te worden.</value>
+  </data>
+  <data name="SelectResourceDialog_CannotSelectBecauseOfStatus" xml:space="preserve">
+    <value>Deze bron kan niet gebruikt worden door zijn status.</value>
+  </data>
+  <data name="SelectSupportedViewsForAssessmentTestDialog_ContentLabel_AddRemoveViewTypes" xml:space="preserve">
+    <value>Wijzig de toetsvormen die de toets moet ondersteunen. Om toetsvormen toe te voegen vink deze aan. Haal het vinkje weg om ondersteuning voor een toetsvorm weg te halen:</value>
+  </data>
+  <data name="SelectSupportedViewsForAssessmentTestDialog_ContentLabel_NewTest" xml:space="preserve">
+    <value>Selecteer de toetsvorm(en) die het toetstemplate moet(en) gaan ondersteunen, waardoor nieuwe toetsen gebaseerd op dit template ook deze toetsvormen gaan ondersteunen:</value>
+  </data>
+  <data name="SelectSupportedViewsForAssessmentTestDialog_PleaseSelectViews_Message" xml:space="preserve">
+    <value>Selecteer één of meer toetsvormen en druk op OK.</value>
+  </data>
+  <data name="SelectSupportedViewsForAssessmentTestDialog_PleaseSelectViews_Title" xml:space="preserve">
+    <value>Selecteer toetsvormen</value>
+  </data>
+  <data name="SelectTemplateDialog_NoTemplateSelected_Text" xml:space="preserve">
+    <value>Selecteer een template</value>
+  </data>
+  <data name="SetExportSettings" xml:space="preserve">
+    <value>Selecteer exportinstellingen.</value>
+  </data>
+  <data name="ShowReport" xml:space="preserve">
+    <value>Klik hier voor een export van het resultaat van de controle.</value>
+  </data>
+  <data name="SkipConflictingBankPropertiesAndContinueWithImport" xml:space="preserve">
+    <value>De volgende kenmerken bestaan al en zullen daardoor worden overgeslagen omdat:
+    - ze van een niet overeenkomend type zijn (of van het type Concept of Boom), of
+    - de namen verschillen qua hoofdlettergebruik.
+    {0}Wilt u alsnog doorgaan met importeren?</value>
+  </data>
+  <data name="SolutionWillBeDeletedNoMatchPossible" xml:space="preserve">
+    <value>Solution zal verwijderd worden. Geen match mogelijk.</value>
+  </data>
+  <data name="SortKeyMustBeNumeric" xml:space="preserve">
+    <value>Sortkey: '{0}' bij parameter: '{1}' moet een numerieke waarde hebben.</value>
+  </data>
+  <data name="SourceEditor_SaveItem_ItemSavedStatusMessage" xml:space="preserve">
+    <value>Bron is opgeslagen</value>
+  </data>
+  <data name="SourceEditor_SaveItem_SaveFailedStatusbarMessage" xml:space="preserve">
+    <value>Het opslaan van de bron is mislukt</value>
+  </data>
+  <data name="StartGenerationReport" xml:space="preserve">
+    <value>Bezig met het genereren van het overzicht.</value>
+  </data>
+  <data name="StartPublication" xml:space="preserve">
+    <value>Start publicatie...</value>
+  </data>
+  <data name="StartPublishingTest" xml:space="preserve">
+    <value>Bezig met het publiceren van toets: '{0}'</value>
+  </data>
+  <data name="Status_GetData" xml:space="preserve">
+    <value>Data wordt opgehaald...</value>
+  </data>
+  <data name="Status_SavingItem" xml:space="preserve">
+    <value>Item aan het opslaan...</value>
+  </data>
+  <data name="StatusBar_ItemsFound" xml:space="preserve">
+    <value>{0} items Gevonden.</value>
+  </data>
+  <data name="StatusOfResourcesUsedInTest" xml:space="preserve">
+    <value>Status van de bronnen in de toets</value>
+  </data>
+  <data name="Succesfull" xml:space="preserve">
+    <value>Succesvol</value>
+  </data>
+  <data name="SuccesfulyExported" xml:space="preserve">
+    <value>Succesvol geëxporteerd</value>
+  </data>
+  <data name="SuccesfulyExportedResourcesTo" xml:space="preserve">
+    <value>{0} bronnen zijn succesvol geëxporteerd naar {1}.</value>
+  </data>
+  <data name="SuccesfulyImportedToCurrentBank" xml:space="preserve">
+    <value>{0} bronnen zijn succesvol in de huidige bank geïmporteerd.</value>
+  </data>
+  <data name="SureToDelete" xml:space="preserve">
+    <value>Weet u zeker dat u de geselecteerde rij(en) wilt verwijderen?</value>
+  </data>
+  <data name="TemplateSwitchWarningContinue" xml:space="preserve">
+    <value>{0}{1}Doorgaan?</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>toets</value>
+  </data>
+  <data name="TestDoesNotContainAnyItemsPleaseAddItemsToTheTestBeforePublishing" xml:space="preserve">
+    <value>De toets bevat geen items. Voordat u publiceert dient u eerst items aan de toets toe te voegen.</value>
+  </data>
+  <data name="TestEditor_ChangeViewTypes_InCompatibleItemsInTestMessage" xml:space="preserve">
+    <value>Niet alle items ondersteunen de geselecteerde toetsvormen. De bewerking kan daarom niet doorgaan!</value>
+  </data>
+  <data name="TestEditor_ChangeViewTypes_InCompatibleItemsInTestTitle" xml:space="preserve">
+    <value>Toetsvormen veranderen</value>
+  </data>
+  <data name="TestEditor_DeleteComponentsQuestionMessage" xml:space="preserve">
+    <value>Naast het verwijderen van de geselecteerde component(en) worden ook alle onderliggende componenten verwijderd. Wilt u doorgaan?</value>
+  </data>
+  <data name="TestEditor_ItemNotInBank" xml:space="preserve">
+    <value>Item '{0}' kan niet toegevoegd worden aan de toets, omdat het item niet in de bank staat.</value>
+  </data>
+  <data name="TestEditor_Load_TestDefinitionLoaded" xml:space="preserve">
+    <value>Toetsdefinitie is geladen.</value>
+  </data>
+  <data name="TestEditor_MulitpleItemsNotInBank" xml:space="preserve">
+    <value>volgende items kunnen niet toegevoegd worden aan de toets, omdat ze niet in de bank staan: {0}</value>
+  </data>
+  <data name="TestEditor_MultipleItemsAlreadyExistsInTestMessage" xml:space="preserve">
+    <value>Kan de volgende items niet aan de toets toevoegen, omdat ze al aanwezig zijn: {0}</value>
+  </data>
+  <data name="TestEditor_MultipleItemsAlreadyInTestAndBecauseOfWorkFlowStatusMessage" xml:space="preserve">
+    <value>Kan de volgende items niet aan de toets toevoegen, omdat ze al aanwezig zijn: {0}{0}{1}{0} En de volgende items kunnen niet toegevoegd worden door hun status: {0}{0}{2}</value>
+  </data>
+  <data name="TestEditor_MultipleItemsNotAddedInTest_AlreadyInTestAndIncompatibleViewTypesMessage" xml:space="preserve">
+    <value>Kan de volgende items niet aan de toets toevoegen, omdat ze al aanwezig zijn: {0}{0}{1}{0}En de volgende items kunnen niet toegevoegd worden omdat ze niet de toetsvormen van de toets ondersteunen:{0}{0}{2}</value>
+  </data>
+  <data name="TestEditor_MultipleItemsNotAddedInTest_AlreadyInTestAndWorkflowStatusAndIncompatibleViewTypesMessage" xml:space="preserve">
+    <value>Kan de volgende items niet aan de toets toevoegen, omdat ze al aanwezig zijn: {0}{0}{1}{0}En de volgende items kunnen niet toegevoegd worden door hun status: {0}{0}{2}{0}En de volgende items kunnen niet toegevoegd worden omdat ze niet de toetsvormen van de toets ondersteunen:{0}{0}{3}</value>
+  </data>
+  <data name="TestEditor_MultipleItemsNotAddedInTest_IncompatibleViewTypesMessage" xml:space="preserve">
+    <value>Kan de volgende items niet aan de toets toevoegen omdat ze niet de toetsvormen van de toets ondersteunen:{0}{0}{1}</value>
+  </data>
+  <data name="TestEditor_MultipleItemsNotAddedInTest_WorkflowStatusAndIncompatibleViewTypesMessage" xml:space="preserve">
+    <value>Kan de volgende items niet aan de toets toevoegen door hun status: {0}{0}{1}{0}En de volgende items kunnen niet toegevoegd worden omdat ze niet de toetsvormen van de toets ondersteunen:{0}{0}{2}</value>
+  </data>
+  <data name="TestEditor_MultipleItemsNotAddedToTestBecauseOfWorkFlowStatusMessage" xml:space="preserve">
+    <value>Kan de volgende items niet aan de toets toevoegen door hun status: {0}</value>
+  </data>
+  <data name="TestEditor_RemoveViewTypeMessageBox" xml:space="preserve">
+    <value>U staat op het punt om de toetsvorm '{0}' te verwijderen uit deze toets. Alleen specifieke toetsvormeigenschappen zullen hierdoor verwijderd worden. Wilt u doorgaan?</value>
+  </data>
+  <data name="TestEditor_RemoveViewTypeMessageBoxTitle" xml:space="preserve">
+    <value>Verwijderen van toetsvorm</value>
+  </data>
+  <data name="TestEditor_SaveTest_SaveFailedStatusbarMessage" xml:space="preserve">
+    <value>Opslaan van de toets is mislukt...</value>
+  </data>
+  <data name="TestEditor_SaveTest_TestSavedStatusbarMessage" xml:space="preserve">
+    <value>Toets is opgeslagen...</value>
+  </data>
+  <data name="TestEditor_TestCodeNameAlreadyExistsInBankHierarchy" xml:space="preserve">
+    <value>Deze code bestaat al in de bankhiërarchie. Kies een andere code.</value>
+  </data>
+  <data name="TestEditor_TestCodeRenamingIsSucceeded" xml:space="preserve">
+    <value>De toetscode is veranderd.</value>
+  </data>
+  <data name="TestEditor_TestPreview_IsDirty" xml:space="preserve">
+    <value>Er zijn wijzigingen die eerst opgeslagen moeten worden voordat een voorbeeld kan worden getoond.
+Wilt u de wijzigingen nu opslaan?</value>
+  </data>
+  <data name="TestEditor_ValidateItem_ValidationErrors" xml:space="preserve">
+    <value>Kan de wijzigingen in deze toets niet opslaan vanwege de volgende fouten:{0}{0}</value>
+  </data>
+  <data name="TestEditorv2_CannotAddItemIncompatibleViewTypes" xml:space="preserve">
+    <value>Kan item(s) niet aan de test toevoegen omdat deze niet alle toetsvormen van deze toets ondersteund.</value>
+  </data>
+  <data name="TestEditorv2_OldModelOpenedStatusBarMessage" xml:space="preserve">
+    <value>Oud toetsdefinitiemodel geopend.</value>
+  </data>
+  <data name="TestPackage" xml:space="preserve">
+    <value>Toetspakket</value>
+  </data>
+  <data name="TestPackageDoesNotContainAnytestPleaseAddTetsToTheTestPackagebeforePublishing" xml:space="preserve">
+    <value>Toetspakket bevat geen toetsen. Voeg eerst toetsen toe aan het toetspakket voor het publiceren.</value>
+  </data>
+  <data name="TestPackageEditor_CannotAddTestIncompatibleViewTypes" xml:space="preserve">
+    <value>Kan item(s) niet aan de test toevoegen omdat deze niet alle toetsvormen van deze toets ondersteund.</value>
+  </data>
+  <data name="TestPackageEditor_ChangeViewTypes_InCompatibleTestsInTestPackageMessage" xml:space="preserve">
+    <value>Niet alle toetsen ondersteunen de geselecteerde toetspakketvormen. De bewerking kan daarom niet doorgaan.</value>
+  </data>
+  <data name="TestPackageEditor_ChangeViewTypes_InCompatibleTestsInTestPackageTitle" xml:space="preserve">
+    <value>Toetsvormen veranderen</value>
+  </data>
+  <data name="TestPackageEditor_DeleteComponentsQuestionMessage" xml:space="preserve">
+    <value>Naast het verwijderen van de geselecteerde component(en) worden ook alle onderliggende componenten verwijderd. Wilt u doorgaan?</value>
+  </data>
+  <data name="TestPackageEditor_Load_TestPackageDefinitionLoaded" xml:space="preserve">
+    <value>Toetspakket definitie is geladen</value>
+  </data>
+  <data name="TestPackageEditor_MultipleItemsNotInBank" xml:space="preserve">
+    <value>volgende toetsen kunnen niet toegevoegd worden aan het toetspakket, omdat ze niet in de bank staan: {0}</value>
+  </data>
+  <data name="TestPackageEditor_MultipleTestNotAddedToTestPackageBecauseOfWorkFlowStatusMessage" xml:space="preserve">
+    <value>Kan de volgende items niet aan de toets toevoegen omdat ze niet de toetsvormen van de toets ondersteunen:{0}{0}{1}</value>
+  </data>
+  <data name="TestPackageEditor_MultipleTestsAlreadyExistsInTestPackageMessage" xml:space="preserve">
+    <value>volgende toetsen kunnen niet toegevoegd worden aan het toetspakket, omdat ze niet in de bank staan: {0}</value>
+  </data>
+  <data name="TestPackageEditor_MultipleTestsAlreadyInTestPackageAndBecauseOfWorkFlowStatusMessage" xml:space="preserve">
+    <value>Kan de volgende toetsen niet aan het toetspakket toevoegen, omdat ze al aanwezig zijn: {0}{0}{1}{0} En de volgende toetsen kunnen niet toegevoegd worden door hun status: {0}{0}{2}</value>
+  </data>
+  <data name="TestPackageEditor_MultipleTestsNotAddedInTestPackage_AlreadyInTestAndWorkflowStatusAndIncompatibleViewTypesMessage" xml:space="preserve">
+    <value>Kan de volgende toetsen niet aan het toetspakket toevoegen, omdat ze al aanwezig zijn: {0}{0}{1}{0}En de volgende items kunnen niet toegevoegd worden omdat ze niet de toetsvormen van de toets ondersteunen:{0}{0}{2}</value>
+  </data>
+  <data name="TestPackageEditor_MultipleTestsNotAddedInTestPackage_AlreadyInTestPackageAndIncompatibleViewTypesMessage" xml:space="preserve">
+    <value>Kan de volgende toetsen niet aan het toetspakket toevoegen, omdat ze al aanwezig zijn: {0}{0}{1}{0}En de volgende toetsen kunnen niet toegevoegd worden omdat ze niet de toetsvormen van het toetspakket ondersteunen:{0}{0}{2}</value>
+  </data>
+  <data name="TestPackageEditor_MultipleTestsNotAddedInTestPackage_IncompatibleViewTypesMessage" xml:space="preserve">
+    <value>Kan de volgende toetsen niet aan het toetspakket toevoegen, omdat ze al aanwezig zijn: {0}{0}{1}{0}En de volgende toetsen kunnen niet toegevoegd worden door hun status: {0}{0}{2}{0}En de volgende toetsen kunnen niet toegevoegd worden omdat ze niet de toetsvormen van het toetspakket ondersteunen:{0}{0}{3}</value>
+  </data>
+  <data name="TestPackageEditor_MultipleTestsNotAddedInTestPackage_WorkflowStatusAndIncompatibleViewTypesMessage" xml:space="preserve">
+    <value>Kan de volgende toetsen niet aan het toetspakket toevoegen door hun status: {0}{0}{1}{0}En de volgende toetsen kunnen niet toegevoegd worden omdat ze niet de toetsvormen van het toetspakket ondersteunen:{0}{0}{2}</value>
+  </data>
+  <data name="TestPackageEditor_RemoveViewTypeMessageBox" xml:space="preserve">
+    <value>U staat op het punt om de toetsvorm '{0}' te verwijderen uit dit toetspakket. Alleen specifieke toetsvormeigenschappen zullen hierdoor verwijderd worden. Wilt u doorgaan?</value>
+  </data>
+  <data name="TestPackageEditor_RemoveViewTypeMessageBoxTitle" xml:space="preserve">
+    <value>Verwijderen van toetsvorm</value>
+  </data>
+  <data name="TestPackageEditor_SaveTestPackage_SaveFailedStatusbarMessage" xml:space="preserve">
+    <value>Opslaan van het toetspakket is mislukt...</value>
+  </data>
+  <data name="TestPackageEditor_SaveTestPackage_TestPackageSavedStatusbarMessage" xml:space="preserve">
+    <value>Toetspakket is opgeslagen...</value>
+  </data>
+  <data name="TestPackageEditor_TestCodeNameAlreadyExistsInBankHierarchy1" xml:space="preserve">
+    <value>Deze code bestaat al in de bankhiërarchie. Kies een andere code.</value>
+  </data>
+  <data name="TestPackageEditor_TestCodeRenamingIsSucceeded" xml:space="preserve">
+    <value>De toetspakketcode is veranderd.</value>
+  </data>
+  <data name="TestPackageEditor_TestNotInBank" xml:space="preserve">
+    <value>Toets '{0}' kan niet toegevoegd worden aan het toetspakket, omdat de toets niet in de bank staat.</value>
+  </data>
+  <data name="TestPackageEditor_ValidateItem_ValidationErrors" xml:space="preserve">
+    <value>Kan de wijzigingen in deze toets niet opslaan vanwege de volgende fouten:{0}{0}</value>
+  </data>
+  <data name="TestPackageToPublishPublicationMethod" xml:space="preserve">
+    <value>Toetspakket wordt gepubliceerd: {0}.{1}Publicatiemethode: {2}.{3}Versleutelde publicatie: {4}{5}</value>
+  </data>
+  <data name="TestTemplate" xml:space="preserve">
+    <value>toetstemplate</value>
+  </data>
+  <data name="TestToPublishPublicationMethod" xml:space="preserve">
+    <value>Te publiceren test: {0}.{1}Publicatiemethode: {2}.{3}Ge-encrypte publicatie: {4}{5}</value>
+  </data>
+  <data name="TheBankCouldnTBeCleared" xml:space="preserve">
+    <value>De bank kan niet geleegd worden.</value>
+  </data>
+  <data name="TheCodeIsNotFilledForAllItemLayoutTemplates" xml:space="preserve">
+    <value>Bij een aantal items ontbreekt de code.</value>
+  </data>
+  <data name="TheFilenameCannotContainIllegalCharacters" xml:space="preserve">
+    <value>De bestandsnaam bevat ongeldige tekens</value>
+  </data>
+  <data name="TheFollowingResourcesPreventYouFromPublishingThisPackage" xml:space="preserve">
+    <value>De volgende  '{0}' object(en)heeft/hebben een status waarbij er niet gepubliceerd kan worden :</value>
+  </data>
+  <data name="TheFollowingResourcesResultInAWarning" xml:space="preserve">
+    <value>De volgende  '{0}' object(en) heeft/hebben een status die resulteert in een waarschuwing:</value>
+  </data>
+  <data name="TheFollowingResourcesWereSkippedBecauseTheyAlreadyExistedWithinDestinationBankHierarchy" xml:space="preserve">
+    <value>De volgende bronnen werden overgeslagen omdat ze al in de bankhiërarchie aanwezig waren. </value>
+  </data>
+  <data name="TheFollowingTestAreSkipped0" xml:space="preserve">
+    <value>De volgende toets(en) zijn overgeslagen:{0}.</value>
+  </data>
+  <data name="TheFollowingTestHaveBeenSuccessfullyPublished0" xml:space="preserve">
+    <value>De volgende toets(en) zijn succesvol gepubliceerd:{0}.</value>
+  </data>
+  <data name="TheLocationOfTheTestPreviewPlayerIsnTSpecifiedInTheConfigurationFile" xml:space="preserve">
+    <value>De locatie van de voorbeeldafname-omgeving is niet gespecificeerd in het config-bestand!</value>
+  </data>
+  <data name="TheOperationIsSuccesfulyCompleted" xml:space="preserve">
+    <value>De actie is succesvol afgerond.</value>
+  </data>
+  <data name="ThereAre0ItemsThatAreMissingInTheAdaptiveSection1" xml:space="preserve">
+    <value>Er missen {0} items in de adaptieve sectie {1}</value>
+  </data>
+  <data name="ThereAre0ItemsThatAreMissingInTheOtd1" xml:space="preserve">
+    <value>Er missen {0} items in het otd {1}</value>
+  </data>
+  <data name="ThereIsNoApplicationAssociatedToThisFileExcelIsProbablyNotInstalled" xml:space="preserve">
+    <value>Er is geen programma gekoppeld aan het bestand.</value>
+  </data>
+  <data name="TheTestHaveBeenSuccesfulyPublished" xml:space="preserve">
+    <value>De toets {0} is succesvol gepubliceerd.</value>
+  </data>
+  <data name="TheTestPackageContainTheFollowingTests" xml:space="preserve">
+    <value>Toetspakket bevat de volgende toetsen: {0}</value>
+  </data>
+  <data name="ThisWizardChecksIfTheOtdAndTheAdativeSectionContainTheSameItems" xml:space="preserve">
+    <value>Deze wizard controleert of het otd dezelfde items bevat als de adaptieve sectie</value>
+  </data>
+  <data name="ThisWizardHelpsYouToExportTheSelectedResources" xml:space="preserve">
+    <value>Deze wizard assisteert u bij het exporteren van de geselecteerde bronnen.</value>
+  </data>
+  <data name="ThisWizardHelpsYouToGenerateAReport" xml:space="preserve">
+    <value>Deze wizard helpt u bij het maken van een overzicht</value>
+  </data>
+  <data name="ThisWizardHelpsYouToImportResources" xml:space="preserve">
+    <value>Deze wizard assisteert u bij het importeren van bronnen.</value>
+  </data>
+  <data name="ThisWizardHelpsYouToPublicateTheSelectedTest" xml:space="preserve">
+    <value>Deze wizard helpt u bij het publiceren van de gekozen toets(en).</value>
+  </data>
+  <data name="TitleIsARequiredField" xml:space="preserve">
+    <value>De titel is niet ingevuld.</value>
+  </data>
+  <data name="TypeIsARequiredField" xml:space="preserve">
+    <value>Het type is niet ingevuld.</value>
+  </data>
+  <data name="UnknownHostname" xml:space="preserve">
+    <value>Een onbekende hostname maakt gebruik van de protocol: resource://. Hostname moet 'package' zijn.</value>
+  </data>
+  <data name="UserPropertyTitle" xml:space="preserve">
+    <value>Gebruikereigenschappen voor {0}</value>
+  </data>
+  <data name="ValidateParametersCollectionParameterWillShrink" xml:space="preserve">
+    <value>Collectieparameter '{0}': Collectie wordt verkleind van {1} naar {2} items. Data verlies start bij het laatste item.</value>
+  </data>
+  <data name="ValidateParametersCollectionWillBeDeleted" xml:space="preserve">
+    <value>Collectie '{0}' wordt verwijderd.</value>
+  </data>
+  <data name="ValidateParametersParameterHasADifferentType" xml:space="preserve">
+    <value>Parameter '{0}' is van een afwijkende type t.o.v. het nieuwe itemlay-outtemplate. De huidige waarde zal worden verwijderd.</value>
+  </data>
+  <data name="ValidateParametersParameterWillBeDeleted" xml:space="preserve">
+    <value>Parameter '{0}' wordt verwijderd.</value>
+  </data>
+  <data name="ValidateParametersWhenOpeningEditorThisEditorCannotBeOpened" xml:space="preserve">
+    <value>Deze editor kan niet correct geopend worden.{0}{0}Details:{0}{1}</value>
+  </data>
+  <data name="ValidateParametersWhenOpeningItemThisItemCannotBeOpenedPossibleLossOfData" xml:space="preserve">
+    <value>Mogelijk gegevensverlies. Tussen nu en de laatste keer dat dit item geopend was is het itemlay-outtemplate gewijzigd.{0}Doorgaan?{0}{0}Details:{0}{1}</value>
+  </data>
+  <data name="ValidatingResource" xml:space="preserve">
+    <value>Bezig met het valideren van object '{0}'...</value>
+  </data>
+  <data name="ValidationResult" xml:space="preserve">
+    <value>Resultaten: geslaagd: {0}, waarschuwing: {1}, mislukt: {2}.</value>
+  </data>
+  <data name="ValidationsSucceeded" xml:space="preserve">
+    <value>Alle controles zijn geslaagd.</value>
+  </data>
+  <data name="ValidationTask" xml:space="preserve">
+    <value>Controles</value>
+  </data>
+  <data name="ValidationTaskDesciption" xml:space="preserve">
+    <value>Voorafgaand aan publicatie wordt een aantal validaties uitgevoerd.</value>
+  </data>
+  <data name="ValidFilename" xml:space="preserve">
+    <value>Selecteer of geef een geldige bestandsnaam op</value>
+  </data>
+  <data name="VerifiesThatNoResourcesPreventYouFromPublishing" xml:space="preserve">
+    <value>Deze stap controleert of al het materiaal binnen de toets gepubliceerd kan worden.</value>
+  </data>
+  <data name="VerifyTheChoicesMadeInTheWizard" xml:space="preserve">
+    <value>Controleer de gemaakte keuzes en klik op 'Voltooien'.</value>
+  </data>
+  <data name="WarningDeleteCustomProperties" xml:space="preserve">
+    <value>Ten minste één kenmerk die u wilt verwijderen wordt gebruikt door items of andere objecten. 
+Weet u zeker dat u dit wilt doen?</value>
+  </data>
+  <data name="WarningDeleteCustomPropertiesTitle" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="Warnings" xml:space="preserve">
+    <value>Waarschuwingen:</value>
+  </data>
+  <data name="WarningsFoundInCollectionparameter" xml:space="preserve">
+    <value>Volgende waarschuwingen zijn gevonden in de collectieparameter:</value>
+  </data>
+  <data name="WizardFileSelectionTabTaskDescription" xml:space="preserve">
+    <value>Klik op bladeren om een {0} bestand te selecteren. Het is mogelijk om meerdere bestanden tegelijk te selecteren.</value>
+  </data>
+  <data name="WizardForm_CodeFieldCannotContainIllegalChars" xml:space="preserve">
+    <value>'Code' mag niet één van de volgende tekens bevatten: &lt;&gt;"#%{}|\/^~[]';?:@=&amp;^$+()!,`*</value>
+  </data>
+  <data name="WizardForm_CodeNotFilled" xml:space="preserve">
+    <value>Bij een aantal objecten ontbreekt de code.</value>
+  </data>
+  <data name="WizardForm_FileNameCannotContainIllegalChars" xml:space="preserve">
+    <value>De bestandsnaam bevat ongeldige tekens.</value>
+  </data>
+  <data name="WizardForm_SelectAnObject" xml:space="preserve">
+    <value>Kies minimaal één object om door te gaan.</value>
+  </data>
+  <data name="WizardForm_TitleNotFilled" xml:space="preserve">
+    <value>De titel is niet ingevuld voor alle objecten.</value>
+  </data>
+  <data name="WizardForm_TypeNotFilled" xml:space="preserve">
+    <value>Voor een aantal objecten is nog geen type gedefinieerd.</value>
+  </data>
+  <data name="WizardResultTabTaskDescription" xml:space="preserve">
+    <value>Het {0} is met succes toegevoegd.</value>
+  </data>
+  <data name="WizardSelectedFilesTabTaskDescription" xml:space="preserve">
+    <value>Selecteer een rij om de 'Titel', 'Code' of 'Omschrijving' te wijzigen.</value>
+  </data>
+  <data name="WizardSelectMethodTask" xml:space="preserve">
+    <value>Wat wilt u doen?</value>
+  </data>
+  <data name="WizardSelectTemplateTask" xml:space="preserve">
+    <value>Selecteer een template</value>
+  </data>
+  <data name="WizardSelectTemplateTaskDescription" xml:space="preserve">
+    <value>Selecteer een template dat als basis voor de nieuwe brontekst gebruikt zal worden</value>
+  </data>
+  <data name="WizardWelcomeTabDescription" xml:space="preserve">
+    <value>Deze wizard helpt u bij het toevoegen van {0} aan de geselecteerde bank.</value>
+  </data>
+  <data name="WordPublication_NoBookletsFound_Caption" xml:space="preserve">
+    <value>MS Word publicatie</value>
+  </data>
+  <data name="WordPublication_NoBookletsFound_Message" xml:space="preserve">
+    <value>Er zijn geen boekjes gevonden voor de publicatie.</value>
+  </data>
+  <data name="WouldYouLikeToOpenTheFileNow" xml:space="preserve">
+    <value>Wilt u het bestand openen?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="YouHaveSelected0ValidFiles1ValidFiles2" xml:space="preserve">
+    <value>U heeft {0} bestanden geselecteerd die geïmporteerd kunnen worden.{1}{1}Bestanden die geïmporteerd kunnen worden:{2}</value>
+  </data>
+  <data name="MainForm_NoPreviewerAvailable" xml:space="preserve">
+    <value>Er is geen voorbeeldweergave beschikbaar voor dit type toetspakket</value>
+  </data>
+  <data name="PublicationOfTheTestPackage" xml:space="preserve">
+    <value>Publicatie van de toetspakket(ten): {0}.</value>
+  </data>
+  <data name="TheFollowingTestPackagesHaveBeenSuccessfullyPublished0" xml:space="preserve">
+    <value>De volgende toetspakket(ten) zijn succesvol gepubliceerd:{0}.</value>
+  </data>
+  <data name="ItemEditor_UnexpectedError" xml:space="preserve">
+    <value>Er is een onverwachte fout opgetreden. Foutmelding: {0}</value>
+  </data>
+  <data name="SelectSupportedViewsForTestPackageDialog_ContentLabel_AddRemoveViewTypes" xml:space="preserve">
+    <value>Wijzig de toetsvormen die het toetspakket moet ondersteunen. Vink toetsvormen aan om de ondersteuning toe te voegen. Haal het vinkje weg als de toetsvorm niet moet ondersteund:</value>
+  </data>
+  <data name="SelectSupportedViewsForTestPackageDialog_ContentLabel_NewTestPackage" xml:space="preserve">
+    <value>Selecteer de toetsvormen die het toetspakket gaat ondersteunen:</value>
+  </data>
+  <data name="SelectTargetsForTestPackages" xml:space="preserve">
+    <value>Selecteer toetsvormen voor toetspakket</value>
+  </data>
+  <data name="SelectTargetsForTests" xml:space="preserve">
+    <value>Selecteer toetsvormen voor toets</value>
+  </data>
+  <data name="MainForm_EntityDoesNotExist" xml:space="preserve">
+    <value>Entititeit '{0}' bestaat niet in bank '{1}'. Waarschijnlijk is de entiteit verwijderd door een andere gebruiker. Wilt u het grid vernieuwen?</value>
+  </data>
+  <data name="MainForm_EntityDoesNotExistTitle" xml:space="preserve">
+    <value>Entiteit bestaat niet in deze bank</value>
+  </data>
+  <data name="MainForm_BankDoesNotExist" xml:space="preserve">
+    <value>Bank '{0}' bestaat niet. Mogelijk is de bank verwijderd door een andere gebruiker. Wilt u de bankhiërarchie verversen?</value>
+  </data>
+  <data name="MainForm_BankDoesNotExistTitle" xml:space="preserve">
+    <value>Bank bestaat niet</value>
+  </data>
+  <data name="NewTestDefaultName" xml:space="preserve">
+    <value>Nieuwe toets</value>
+  </data>
+  <data name="NewTestPackage" xml:space="preserve">
+    <value>Nieuw toetspakket</value>
+  </data>
+  <data name="AspectEditor_ValidateAspect_ValidationErrors" xml:space="preserve">
+    <value>Vanwege de volgende validatiefouten kan het aspect niet worden geüpdated:{0}{0}</value>
+  </data>
+  <data name="FieldMustBeFilled" xml:space="preserve">
+    <value>Veld '{0}' moet ingevuld worden.</value>
+  </data>
+  <data name="FieldExportSource" xml:space="preserve">
+    <value>Exportlocatie</value>
+  </data>
+  <data name="FieldImportSource" xml:space="preserve">
+    <value>Importeer bron</value>
+  </data>
+  <data name="ExportAlreadyExistsSelectOtherExportLocation" xml:space="preserve">
+    <value>Exportbestand bestaat reeds, selecteer een andere locatie of bestandsnaam.</value>
+  </data>
+  <data name="InvalidTargetMessage" xml:space="preserve">
+    <value>Invalide target '{0}' gespecificeerd in de Template</value>
+  </data>
+  <data name="ParameterNamesMustBeUniqueMessage" xml:space="preserve">
+    <value>Parameternames (per target and shared) must be unique. Parameter '{0}' is not unique</value>
+  </data>
+  <data name="TargetSpecifiedMoreThanOnceMessage" xml:space="preserve">
+    <value>Target '{0}' is meer dan een keer gespecificeerd</value>
+  </data>
+  <data name="AssessementTestCodeFieldDiffers" xml:space="preserve">
+    <value>Er is een discrepantie gedetecteerd in het Code veld. Indien het Code veld wordt overschreven, kan dit consequenties hebben voor de koppeling met andere systemen.{2}{2}Wilt u de waarde '{0}' aanpassen naar '{1}'? </value>
+  </data>
+  <data name="AssessementTestTitleFieldDiffers" xml:space="preserve">
+    <value>Er is een discrepantie gedetecteerd in het Titel veld.{2}{2}Wilt u de waarde '{0}' aanpassen naar '{1}'?</value>
+  </data>
+  <data name="IdentifierAndCodeFieldDiffer" xml:space="preserve">
+    <value>De waarde van het Id veld ({0}) uit de xml komt niet overeen met de waarde van het Code veld ({1}) en zal worden gewijzigd naar {1}</value>
+  </data>
+  <data name="ResourceNotFound" xml:space="preserve">
+    <value>Resource '{0}' kon niet worden gevonden</value>
+  </data>
+  <data name="ExportFormWizard_BusyConstructingListOfDepencies" xml:space="preserve">
+    <value>Bezig met opbouwen lijst met afhankelijkheden voor: {0}</value>
+  </data>
+  <data name="ExportResultDescriptionOperationCancelled" xml:space="preserve">
+    <value>Er is geen volledig exportbestand aangemaakt.</value>
+  </data>
+  <data name="ExportTaskDescriptionOperationCancelled" xml:space="preserve">
+    <value>Het exporteren is op uw verzoek voortijdig gestopt.</value>
+  </data>
+  <data name="ExportTaskOperationCancelled" xml:space="preserve">
+    <value>Opdracht geannuleerd</value>
+  </data>
+  <data name="AddASelectionTemplate" xml:space="preserve">
+    <value>Toevoegen selectietemplate</value>
+  </data>
+  <data name="NewTestTemplateDefaultName" xml:space="preserve">
+    <value>Nieuw toetstemplate</value>
+  </data>
+  <data name="SelectedMultipleInValidFiles" xml:space="preserve">
+    <value>Er zijn {0} ongeldige bestanden geselecteerd.
+
+Ongeldige bestanden:
+{1}</value>
+  </data>
+  <data name="SelectedMultipleValidFiles" xml:space="preserve">
+    <value>Er zijn {0} geldige bestanden geselecteerd.
+
+Geldige bestanden: 
+{1}</value>
+  </data>
+  <data name="SelectedSingleInValidFile" xml:space="preserve">
+    <value>Er is 1 ongeldig bestand geselecteerd.
+
+Ongeldig bestand: {0}</value>
+  </data>
+  <data name="SelectedSingleValidFile" xml:space="preserve">
+    <value>Er is 1 geldig bestand geselecteerd.
+
+Geldig bestand: {0}</value>
+  </data>
+  <data name="SelectFilesToAdd" xml:space="preserve">
+    <value>Selecteer bestand(en)</value>
+  </data>
+  <data name="WizardFileSelectionTabTaskDescription2" xml:space="preserve">
+    <value>Selecteer 1 of meerdere {0}(en).</value>
+  </data>
+  <data name="WizardForm_SelectAFileMessage" xml:space="preserve">
+    <value>Selecteer eerst een bestand.</value>
+  </data>
+  <data name="WizardForm_SelectAFileTitle" xml:space="preserve">
+    <value>Geen bestand geselecteerd.</value>
+  </data>
+  <data name="CesLocationFilter" xml:space="preserve">
+    <value>Facet previewer|cefclient.exe|Alle bestanden (*.*)|*.*</value>
+  </data>
+  <data name="SelectCesPreview" xml:space="preserve">
+    <value>Selecteer Facet Previewer</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>Geannuleerd</value>
+  </data>
+  <data name="PreviewTestProgressCaption" xml:space="preserve">
+    <value>Toetsvoorbeeld</value>
+  </data>
+  <data name="DeletedItemsAfterPaste" xml:space="preserve">
+    <value>De volgende items zijn verwijderd uit de paste-operatie omdat ze al in de toets aanwezig zijn: {0}</value>
+  </data>
+  <data name="ResourcePropertyDialog_BrowseForRawDataButton_Click_DeliveryResourceFilter" xml:space="preserve">
+    <value>Alle bestanden (*.*)|*.*</value>
+  </data>
+  <data name="DeliveryEditor_SaveDelivery_DeliverySavedStatusbarMessage" xml:space="preserve">
+    <value>Opslaan van de afname is mislukt...</value>
+  </data>
+  <data name="DeliveryEditor_SaveDelivery_SaveFailedStatusbarMessage" xml:space="preserve">
+    <value>Afname is opgeslagen...</value>
+  </data>
+  <data name="DeliveryEditor_UnexpectedError" xml:space="preserve">
+    <value>Er is een onverwachte fout opgetreden. Fout: {0}</value>
+  </data>
+  <data name="DeliveryEditor_Load_DeliveryDefinitionLoaded" xml:space="preserve">
+    <value>Afnamedefinitie is geladen</value>
+  </data>
+  <data name="DeliveryEditor_DeliveryCodeNameAlreadyExistsInBankHierarchy" xml:space="preserve">
+    <value>Afname code bestaat al in deze bank hierarchy!</value>
+  </data>
+  <data name="DeliveryEditor_NoSufficientRightsToPerformThisAction" xml:space="preserve">
+    <value>U heeft niet de benodigde rechten om deze actie uit te voeren.</value>
+  </data>
+  <data name="DeliveryEditor_OnlyPossibleToChangeTheDeliveryCodeWhenNoOtherChanges" xml:space="preserve">
+    <value>Het is alleen mogelijk om de afnamecode te wijzigen als er nog geen verdere wijzigingen zijn gemaakt. Bewaar eerst het afname en probeer opnieuw!</value>
+  </data>
+  <data name="ResourceToImportPsychometricData" xml:space="preserve">
+    <value>Te importeren bron: {0}.{1}Doel: Huidige bank{1}Methode: {2}{1}Afname: {3}{1}Analyse: {4}{1}</value>
+  </data>
+  <data name="ConnectDelivery" xml:space="preserve">
+    <value>Koppel afname</value>
+  </data>
+  <data name="OptionsForm_Text" xml:space="preserve">
+    <value>Na het opnieuw opstarten van de applicatie zijn de gemaakte wijzigingen van kracht.</value>
+  </data>
+  <data name="OptionsForm_Title" xml:space="preserve">
+    <value>Opties</value>
+  </data>
+  <data name="DeliveryEditor_TitleBar" xml:space="preserve">
+    <value>Editor voor afname '{0}'</value>
+  </data>
+  <data name="MultiSelectItemEditWizardEditPreprocessingRule" xml:space="preserve">
+    <value>Aanpassen voorbereidingsregels</value>
+  </data>
+  <data name="DeleteResources" xml:space="preserve">
+    <value>De volgende bronnen kunnen verwijderd omdat ze alleen referenties hebben naar één of meerdere afnames.{0}{1}{0}De referenties moeten verwijderd om de bronnen te kunnen verwijderen. Weet u zeker dat u dit wilt?</value>
+  </data>
+  <data name="MultiSelectItemEditWizardSkippedItemsBecauseMissingKey" xml:space="preserve">
+    <value>Onderstaande {0} item(s) zijn niet bijgewerkt omdat ze geen sleutelwaarde hebben.</value>
+  </data>
+  <data name="LastPublicationStatusMessage" xml:space="preserve">
+    <value>Laatste status in het publicatieproces:</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Referentie(s):</value>
+  </data>
+  <data name="Resource" xml:space="preserve">
+    <value>Bronnen: </value>
+  </data>
+  <data name="CustomPropertiesNewFree" xml:space="preserve">
+    <value>nieuwe vrije waarde</value>
+  </data>
+  <data name="CustomPropertiesNewMulti" xml:space="preserve">
+    <value>nieuwe meervoudige waarde</value>
+  </data>
+  <data name="CustomPropertiesNewSingle" xml:space="preserve">
+    <value>nieuwe enkelvoudige waarde</value>
+  </data>
+  <data name="CustomPropertiesNewConceptStructure" xml:space="preserve">
+    <value>nieuwe conceptstructuur</value>
+  </data>
+  <data name="ConceptEditor_SaveChanges" xml:space="preserve">
+    <value>Er zijn niet opgeslagen wijzigingen. Wilt u ze alsnog opslaan?</value>
+  </data>
+  <data name="CustomPropertyEditor_TitleBar" xml:space="preserve">
+    <value>Editor voor kenmerk '{0}'</value>
+  </data>
+  <data name="MainForm_DeleteCustomProperty" xml:space="preserve">
+    <value>Dit kenmerk kan worden verwijderd omdat het aan geen enkele andere bron is gekoppeld. Weet u zeker dat u dit kenmerk wilt verwijderen?</value>
+  </data>
+  <data name="FixErrorsFirst" xml:space="preserve">
+    <value>U moet eerst de foutieve invoer corrigeren voordat een nieuw kenmerk kan worden toegevoegd.</value>
+  </data>
+  <data name="MainForm_CopyToClipboard" xml:space="preserve">
+    <value>Activeer een scherm en druk op Ctrl-Shift-C om het kruimelpad naar het klembord te kopiëren</value>
+  </data>
+  <data name="MainForm_CustomPropertyIsConnectedToItem" xml:space="preserve">
+    <value>Ten minste één van de geselecteerde kenmerken is gekoppeld aan onderstaande bronnen. Indien u doorgaat zullen de koppelingen met de bronnen verwijderd worden.
+Wilt u doorgaan?</value>
+  </data>
+  <data name="Harmonization" xml:space="preserve">
+    <value>Harmonisatie</value>
+  </data>
+  <data name="ServiceNotAvailable" xml:space="preserve">
+    <value>{0} service is niet beschikbaar.{1}</value>
+  </data>
+  <data name="Validation" xml:space="preserve">
+    <value>Validatie</value>
+  </data>
+  <data name="SourceEditorControlTemplateTitle" xml:space="preserve">
+    <value>Editor voor controltemplate '{0}'</value>
+  </data>
+  <data name="SourceEditorDataSourceTitle" xml:space="preserve">
+    <value>Editor voor selectietemplate '{0}'</value>
+  </data>
+  <data name="SourceEditorItemLayoutTemplateTitle" xml:space="preserve">
+    <value>Editor voor itemlay-outtemplate '{0}'</value>
+  </data>
+  <data name="ResourcesToMoveMustBeInSameBank" xml:space="preserve">
+    <value>De te verplaatsen bronnen dienen in één en dezelfde bank te zitten.</value>
+  </data>
+  <data name="CustomPropertiesNewTreeStructure" xml:space="preserve">
+    <value>Nieuwe boomstructuur</value>
+  </data>
+  <data name="MainForm_TestPackageCannotBePreviewed" xml:space="preserve">
+    <value>Er kan geen preview van dit toetspakket worden uitgevoerd omdat het toetspakket geen testen bevat.</value>
+  </data>
+  <data name="ExportTaskOperationFailed" xml:space="preserve">
+    <value>Opdracht is niet geslaagd</value>
+  </data>
+  <data name="OnlyAllowedWhenResourceIsNotNew" xml:space="preserve">
+    <value>Deze actie kan alleen uitgevoerd worden als de bron niet nieuw is.</value>
+  </data>
+  <data name="Error_PublicationType_Not_Available" xml:space="preserve">
+    <value>Het toetsvoorbeeld kan niet gemaakt worden omdat de publicatieservice het publicatietype {0} niet ondersteunt.</value>
+  </data>
+  <data name="ErrorUnableToCreatePreview" xml:space="preserve">
+    <value>Er is een fout opgetreden, het toetsvoorbeeld kan niet gemaakt worden. Foutmelding: {0}</value>
+  </data>
+  <data name="ErrorPublicationServiceUnableToPreview" xml:space="preserve">
+    <value>Het toetsvoorbeeld kan niet gemaakt worden. In de publicatieservice trad een fout op: {0}.</value>
+  </data>
+  <data name="HarmonizationDialogTitle" xml:space="preserve">
+    <value>Harmoniseren</value>
+  </data>
+  <data name="PublicationResultText" xml:space="preserve">
+    <value>Het resultaat van publicatie is:</value>
+  </data>
+  <data name="PublicationOfTheBank" xml:space="preserve">
+    <value>Publicatie van bank met zijn subbanken: {0}</value>
+  </data>
+  <data name="ThisWizardHelpsYouToPublicateTheSelectedBank" xml:space="preserve">
+    <value>Deze wizard helpt u bij het publiceren van de gekozen bank.</value>
+  </data>
+  <data name="PleaseEnterACompleteAndValidPath" xml:space="preserve">
+    <value>Voer aub een compleet en geldig pad in</value>
+  </data>
+  <data name="ErrorCaption" xml:space="preserve">
+    <value>Fout</value>
+  </data>
+  <data name="CustomPropertyEditor_ValidationErrors" xml:space="preserve">
+    <value>Vanwege de volgende validatiefouten kan het kenmerk niet worden geüpdated:{0}{0}</value>
+  </data>
+  <data name="CustomPropertyEditor_NotAllowed" xml:space="preserve">
+    <value>U heeft geen rechten om dit kenmerk te wijzigen.</value>
+  </data>
+  <data name="HandleImportConflictCustomPropertyDialogWindowTitle" xml:space="preserve">
+    <value>Importeren - Conflicterende kenmerken</value>
+  </data>
+  <data name="HandleImportConflictResourceDialogWindowTitle" xml:space="preserve">
+    <value>Importeren - Conflicterende bronnen</value>
+  </data>
+  <data name="ProgressHandler_UpdatingBankAndServerCache" xml:space="preserve">
+    <value>De bank- en servercache wordt geüpdated. Een moment geduld...</value>
+  </data>
+  <data name="SourceFileNotFoundErrorMessage" xml:space="preserve">
+    <value>Het bronbestand {0} kan niet worden gevonden.</value>
+  </data>
+  <data name="HarmonizationCancelledMessage" xml:space="preserve">
+    <value>Harmonisatie is geannuleerd. Harmonisatie is nodig om parameters in templates en items gelijk te houden. Publicaties en voorbeeldweergaven kunnen falen of een onverwacht resultaat opleveren. Het is aan te bevelen alsnog de templates/items handmatig te harmoniseren.</value>
+  </data>
+  <data name="OperationCancelled" xml:space="preserve">
+    <value>Opdracht geannuleerd.</value>
+  </data>
+  <data name="InitializingHarmonization" xml:space="preserve">
+    <value>Bezig met het verzamelen van data voor harmonisatie.</value>
+  </data>
+  <data name="OperationCancelling" xml:space="preserve">
+    <value>Bezig met annuleren</value>
+  </data>
+  <data name="BankCodeCannotContainMoreThanThreeCharactersForBAS" xml:space="preserve">
+    <value>De bankcode mag niet meer dan drie karakters bevatten.</value>
+  </data>
+  <data name="PackageExportHandler_CreateExportFile" xml:space="preserve">
+    <value>Aanmaken van het exportbestand ...</value>
+  </data>
+  <data name="PackageExportHandler_ProcessingCustomBankProperties" xml:space="preserve">
+    <value>Bezig met het exporteren van kenmerk '{0}'</value>
+  </data>
+  <data name="CustomBankPropertiesRemovedFromItem" xml:space="preserve">
+    <value>Aan {0} item(s) zijn meerdere boomstructuren gekoppeld. Een item mag maximaal aan één boomstructuur gekoppeld zijn. De boomstructuren zijn weggehaald bij het item.</value>
+  </data>
+  <data name="ErrorWhileImportingItemMissingIlt" xml:space="preserve">
+    <value>Het vereiste itemlay-outtemplate '{0}' kon niet worden gevonden in de bank.</value>
+  </data>
+  <data name="TestPartValidationRuleRemoved" xml:space="preserve">
+    <value>{0} validatieregels zijn verwijderd uit één of meer toetsen, omdat de daarin gebruikte kenmerken niet beschikbaar zijn in de geselecteerde bank:</value>
+  </data>
+  <data name="BankNameMaxLenghtExceeded" xml:space="preserve">
+    <value>De maximale lengte van de banknaam is {0}.</value>
+  </data>
+  <data name="MainForm_MaxOpenItemsReached" xml:space="preserve">
+    <value>Het maximaal aantal geopende items ({0}) is bereikt. Sluit tenminste één item om een ander item te kunnen openen.</value>
+  </data>
+  <data name="MainForm_MaxOpenItemsReachedTitle" xml:space="preserve">
+    <value>Het maximaal aantal geopende items bereikt.</value>
+  </data>
+  <data name="MainForm_NoOpenIItems" xml:space="preserve">
+    <value>Er is geen item geopend. Open eerst een item voordat een tweede item geopend kan worden.</value>
+  </data>
+  <data name="MainForm_NoOpenIItemsTitle" xml:space="preserve">
+    <value>Er zijn geen geopende items.</value>
+  </data>
+  <data name="MainForm_ItemAlreadyOpen" xml:space="preserve">
+    <value>Het item dat u probeert te openen is al geopend in een andere editor.</value>
+  </data>
+  <data name="MainForm_ItemAlreadyOpenTitle" xml:space="preserve">
+    <value>Het item is al geopend.</value>
+  </data>
+  <data name="MainForm_MaxOpenItemsReachedNewItem" xml:space="preserve">
+    <value>Het maximaal aantal geopende items ({0}) is bereikt. Sluit tenminste één item om een nieuw item aan te kunnen maken.</value>
+  </data>
+  <data name="ShowPassword" xml:space="preserve">
+    <value>Wachtwoord tonen of verbergen</value>
+  </data>
+  <data name="CitoTesterServerPublicationOptionsHandler_ApplicationsAssociatedToPackage" xml:space="preserve">
+    <value>Selecteer de doelapplicaties waarvoor de package wordt gepubliceerd</value>
+  </data>
+  <data name="NoApplications" xml:space="preserve">
+    <value>Er is een fout opgetreden bij het ophalen van applicaties van de Server.</value>
+  </data>
+  <data name="MultiSelectItemEditWizardOverwriteCheckboxText" xml:space="preserve">
+    <value>Overschrijf reeds geselecteerde waarde(n) voor kenmerk '{0}'</value>
+  </data>
+  <data name="MultiSelectItemEditWizardOverwriteDescription" xml:space="preserve">
+    <value>Geef aan wat er moet gebeuren met bestaande waarden voor de {0} geselecteerde item(s).</value>
+  </data>
+  <data name="MultiSelectItemEditWizardOverwriteTitle" xml:space="preserve">
+    <value>Bestaande waarden</value>
+  </data>
+  <data name="GenerateProposals_TestIsDirty" xml:space="preserve">
+    <value>Het is niet mogelijk om varianten te genereren als niet alle wijzigingen in de toets zijn opgeslagen. Bewaar de toets eerst en probeer het opnieuw!</value>
+  </data>
+  <data name="GenerateProposals_NrOfGeneratedTests" xml:space="preserve">
+    <value>Aantal gegenereerde toetsvarianten: {0}</value>
+  </data>
+  <data name="MainForm_LoginNotPermittedMessage" xml:space="preserve">
+    <value>Inloggen is op dit moment niet toegestaan i.v.m. onderhoud aan Builder.
+Neem voor meer informatie contact op met functioneel applicatiebeheer.</value>
+  </data>
+  <data name="MainForm_MaintenanceWindowMessage" xml:space="preserve">
+    <value>Wegens onderhoud is Questify Builder tijdelijk niet beschikbaar (vanaf {0}). Vergeet niet om uit te loggen.</value>
+  </data>
+  <data name="CustomPropertiesNewFreeRichText" xml:space="preserve">
+    <value>nieuwe rijke tekstwaarde</value>
+  </data>
+  <data name="TestPackageNoCaps" xml:space="preserve">
+    <value>toetspakket</value>
+  </data>
+  <data name="BankDeleted" xml:space="preserve">
+    <value>De geselecteerde bank is verwijderd.</value>
+  </data>
+  <data name="TestPackageEditor_TestNotFoundMessage" xml:space="preserve">
+    <value>De geselecteerde toets kon niet worden geopend. Mogelijk is het toetspakket corrupt.</value>
+  </data>
+  <data name="TestPackageEditor_TestNotFoundTitle" xml:space="preserve">
+    <value>Fout bij openen toets</value>
+  </data>
+  <data name="TestEditor_ItemNotFoundMessage" xml:space="preserve">
+    <value>Het geselecteerde item kan niet worden geopend.</value>
+  </data>
+  <data name="TestEditor_ItemNotFoundTitle" xml:space="preserve">
+    <value>Fout bij openen item</value>
+  </data>
+  <data name="ImportHarmonisationDetermineParameterSetForILT" xml:space="preserve">
+    <value>Bezig met het ophalen van de parameters van item layout template '{0}'...</value>
+  </data>
+  <data name="ImportHarmonisationDetermineIltsToHarmonize" xml:space="preserve">
+    <value>Bepalen van de item layout templates die geharmoniseerd moeten worden...</value>
+  </data>
+  <data name="Import_Package" xml:space="preserve">
+    <value>Laden van package...</value>
+  </data>
+  <data name="Import_PackageSet" xml:space="preserve">
+    <value>Laden van package set...</value>
+  </data>
+  <data name="Import_PackageSet_StartImport" xml:space="preserve">
+    <value>Start importeren van package set...</value>
+  </data>
+  <data name="Import_Package_StartImport" xml:space="preserve">
+    <value>Start importeren van package...</value>
+  </data>
+  <data name="OneOrMoreInstancesRunning" xml:space="preserve">
+    <value>Er zijn al één of meer instanties van Questify Builder actief. Wilt u deze instanties afsluiten?</value>
+  </data>
+  <data name="OneOrMoreInstancesRunningTitle" xml:space="preserve">
+    <value>Questify Builder al actief</value>
+  </data>
+  <data name="ImportSettingCustomPropertyDisplayValue" xml:space="preserve">
+    <value>Kenmerkwaarden van de geïmporteerde resources vastleggen...</value>
+  </data>
+  <data name="Login_LoginFailedBcOldVersion_Text" xml:space="preserve">
+    <value>Uw versie van Questify Builder is niet bijgewerkt naar de laatste versie. U kunt daarom niet inloggen.
+Start Questify Builder vanaf {0} om deze bij te werken.</value>
+  </data>
+  <data name="CustomPropertyEditor_ValidationErrorsOnExit" xml:space="preserve">
+    <value>Er zijn validatie fouten. Wilt u doorgaan zonder op te slaan?</value>
+  </data>
+  <data name="UpdateAvailableWillBeInstalled_Message" xml:space="preserve">
+    <value>Questify Builder wordt bijgewerkt naar een nieuwere versie en moet opnieuw gestart worden.</value>
+  </data>
+  <data name="UpdateAvailbleWillBeInstalled_Caption" xml:space="preserve">
+    <value>Nieuwe versie beschikbaar</value>
+  </data>
+  <data name="GenericTest_SupportedView" xml:space="preserve">
+    <value>Algemeen</value>
+  </data>
+  <data name="AllEditors_SaveChangesForResourceWithStateWarning" xml:space="preserve">
+    <value>Bron '{0}' heeft de status '{1}', weet u zeker dat u de wijzigingen wil opslaan?</value>
+  </data>
+  <data name="apiConnectionError" xml:space="preserve">
+    <value>Verbinding met het API eindpunt is mislukt</value>
+  </data>
+  <data name="AboutToClearAndDeleteResourcesInTheBankAndSubbanks" xml:space="preserve">
+    <value>U staat op het punt om de geselecteerde bank (en de onderliggende banken) leeg te maken en te verwijderen. Wilt u doorgaan?</value>
+  </data>
+</root>

@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ImageFromOtherEditor" xml:space="preserve">
+    <value>Version:1.0
+StartHTML:000000263
+EndHTML:000008984
+StartFragment:000008625
+EndFragment:000008948
+StartSelection:000008625
+EndSelection:000008948
+SourceURL:file:///C:/Program%20Files%20(x86)/Microsoft%20Visual%20Studio%2011.0/Common7/IDE
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;HTML id=c1-id-1 xmlns="http://www.w3.org/1999/xhtml" xmlns:c1 = 
+"http://www.componentone.com"&gt;&lt;HEAD id=c1-id-2&gt;
+&lt;STYLE id=c1-font-style type=text/css&gt;BODY {
+	FONT-SIZE: 9pt; FONT-FAMILY: segoe ui; COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+&lt;/STYLE&gt;
+
+&lt;STYLE id=c1-iframe-borders-style type=text/css&gt;IFRAME {
+	BORDER-TOP: gray 1pt dashed; BORDER-RIGHT: gray 1pt dashed; BORDER-BOTTOM: gray 1pt dashed; BORDER-LEFT: gray 1pt dashed
+}
+&lt;/STYLE&gt;
+
+&lt;STYLE id=c1-table-borders-style type=text/css&gt;TD {
+	BORDER-TOP: silver 1pt solid; BORDER-RIGHT: silver 1pt solid; BORDER-BOTTOM: silver 1pt solid; BORDER-LEFT: silver 1pt solid
+}
+TH {
+	BORDER-TOP: silver 1pt solid; BORDER-RIGHT: silver 1pt solid; BORDER-BOTTOM: silver 1pt solid; BORDER-LEFT: silver 1pt solid
+}
+CAPTION {
+	BORDER-TOP: silver 1pt solid; BORDER-RIGHT: silver 1pt solid; BORDER-BOTTOM: silver 1pt solid; BORDER-LEFT: silver 1pt solid
+}
+&lt;/STYLE&gt;
+&lt;TITLE id=c1-id-3&gt;Document Title 4&lt;/TITLE&gt;
+&lt;STYLE id=c1-id-4 c1-tag="c1-import-styles" c1-type="text/css" 
+c1-href="resource://package:1/Generic.css"&gt;&lt;/STYLE&gt;
+
+&lt;STYLE id=c1-id-5 c1-tag="c1-import-styles" c1-type="text/css" 
+c1-href="resource://package:1/IBEstyle.css"&gt;&lt;/STYLE&gt;
+
+&lt;STYLE id=c1-id-6 c1-tag="c1-import-styles" c1-type="text/css" 
+c1-href="resource://package:1/userstyle.css"&gt;&lt;/STYLE&gt;
+
+&lt;STYLE id=c1-id-7 type=text/css&gt;A[popuppar] {
+	BORDER-TOP: blue 1px dotted; BORDER-RIGHT: blue 1px dotted; BORDER-BOTTOM: blue 1px dotted; BORDER-LEFT: blue 1px dotted
+}
+&lt;/STYLE&gt;
+
+&lt;STYLE id=c1-id-8 type=text/css&gt;&lt;/STYLE&gt;
+
+&lt;STYLE c1-tag="c1-custom-styles"&gt;c1\:c1-bookmark {
+	DISPLAY: inline
+}
+c1\:c1-hyperlink {
+	DISPLAY: inline
+}
+&lt;/STYLE&gt;
+
+&lt;STYLE id=c1-runtime-style type=text/css&gt;HTML {
+	CURSOR: default; FONT-SIZE: 13px; HEIGHT: 100%; FONT-FAMILY: Verdana; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; WIDTH: 100%
+}
+BODY {
+	CURSOR: default; FONT-SIZE: 13px; HEIGHT: 100%; FONT-FAMILY: Verdana; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; WIDTH: 100%
+}
+P {
+	MARGIN: 0px 0px 9px
+}
+TABLE {
+	FONT-SIZE: 13px; FONT-FAMILY: Verdana
+}
+TD {
+	FONT-SIZE: 13px; FONT-FAMILY: Verdana
+}
+TD P {
+	MARGIN: 0px
+}
+#gap {
+	FONT-SIZE: 13px; FONT-FAMILY: Verdana
+}
+#content {
+	TABLE-LAYOUT: fixed; MARGIN-LEFT: 25px; MARGIN-TOP: 25px; MARGIN-RIGHT: 25px
+}
+#audioPlayer {
+	POSITION: absolute; TOP: 10px
+}
+#left {
+	VERTICAL-ALIGN: top; MARGIN: 0px; WIDTH: 50%
+}
+#right {
+	VERTICAL-ALIGN: top; MARGIN: 0px; WIDTH: 50%
+}
+#body {
+	MARGIN: 0px 0px 20px
+}
+#question {
+	MARGIN: 0px 0px 20px
+}
+#questionwithinlinecontrol P {
+	LINE-HEIGHT: 30px
+}
+TD.mcRadioButtonCell {
+	VERTICAL-ALIGN: top; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px
+}
+TD.mcCell {
+	VERTICAL-ALIGN: top
+}
+TD.mcLabelCell {
+	VERTICAL-ALIGN: top; PADDING-TOP: 2px
+}
+TD.mcRadioButtonCellHC {
+	VERTICAL-ALIGN: bottom; TEXT-ALIGN: center
+}
+TD.mcCellHC {
+	VERTICAL-ALIGN: bottom; TEXT-ALIGN: center
+}
+TD.mcLabelCellHC {
+	VERTICAL-ALIGN: top; TEXT-ALIGN: center
+}
+.alternativeLabel {
+	CURSOR: hand
+}
+IMG.mml {
+	VERTICAL-ALIGN: middle
+}
+.td_gap {
+	
+}
+.mcTabularCell {
+	VERTICAL-ALIGN: middle; TEXT-ALIGN: left
+}
+TD.mcTabularRadioButtonCell {
+	VERTICAL-ALIGN: middle; PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; WIDTH: 30px
+}
+TD.mcTabularLabelCell {
+	VERTICAL-ALIGN: middle; PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 1px; PADDING-LEFT: 4px; WIDTH: 200px
+}
+TD.mcTabularHeaderCell {
+	VERTICAL-ALIGN: middle; PADDING-BOTTOM: 1px; TEXT-ALIGN: left; PADDING-LEFT: 4px; WIDTH: 200px
+}
+.top {
+	BORDER-TOP: black thin solid; BORDER-BOTTOM-COLOR: black; BORDER-RIGHT-COLOR: black; BORDER-LEFT-COLOR: black
+}
+.bottom {
+	BORDER-TOP-COLOR: black; BORDER-BOTTOM: black thin solid; BORDER-RIGHT-COLOR: black; BORDER-LEFT-COLOR: black
+}
+.left {
+	BORDER-TOP-COLOR: black; BORDER-BOTTOM-COLOR: black; BORDER-LEFT: black thin solid; BORDER-RIGHT-COLOR: black
+}
+.right {
+	BORDER-RIGHT: black thin solid; BORDER-TOP-COLOR: black; BORDER-BOTTOM-COLOR: black; BORDER-LEFT-COLOR: black
+}
+.inlinecontrol {
+	VERTICAL-ALIGN: middle
+}
+.content {
+	OVERFLOW: hidden; POSITION: relative; MARGIN-TOP: 60px; WIDTH: 940px
+}
+.content P {
+	MARGIN: 0px 0px 14px
+}
+.content TABLE TD P {
+	MARGIN: 0px
+}
+.content .orderInteraction SPAN.textWrapper &gt; * {
+	FLOAT: none
+}
+.content .vertical .orderInteractionList {
+	PADDING-TOP: 0px; WIDTH: auto
+}
+.content .horizontal .orderInteractionList LABEL {
+	WIDTH: 188px
+}
+.content .questify_prompt {
+	FONT-WEIGHT: bold
+}
+.content #questify_questionwithinlinecontrol P {
+	LINE-HEIGHT: 25px
+}
+.content .questify_itemtitle {
+	FONT-SIZE: 19px; FONT-FAMILY: "Roboto",Arial,sans-serif; FONT-WEIGHT: 700
+}
+.content .questify_div_left {
+	FLOAT: left; DISPLAY: inline-block; WIDTH: 49.5%
+}
+.content .questify_div_right {
+	FLOAT: right; DISPLAY: inline-block; WIDTH: 49.5%
+}
+.content .questify_div_left_inner {
+	OVERFLOW: hidden; MAX-WIDTH: 450px; FLOAT: right; MARGIN-RIGHT: 25px
+}
+.content .questify_div_right_inner {
+	OVERFLOW: hidden; MAX-WIDTH: 450px; FLOAT: left; MARGIN-LEFT: 25px
+}
+.content .questify_div_line {
+	HEIGHT: 200px; FLOAT: left; FILTER: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#B8B8B8', endColorstr='#B8B8B8'); WIDTH: 1px
+}
+.content .questify_div_center {
+	POSITION: relative; FLOAT: left; LEFT: 50%; WIDTH: 60%
+}
+.content .questify_div_center_inner {
+	POSITION: relative; FLOAT: left; LEFT: -50%
+}
+.content .alignRight {
+	FLOAT: left
+}
+.content .alignRight LABEL[class='simpleChoice'] {
+	WIDTH: 100%
+}
+.content .alignRight LABEL[class='simpleChoice'] .textWrapper P {
+	FLOAT: right
+}
+.UserSRVet {
+	FONT-WEIGHT: bold
+}
+.UserSRSchuin {
+	FONT-STYLE: italic
+}
+.UserSRVetSchuin {
+	FONT-WEIGHT: bold; FONT-STYLE: italic
+}
+.UserSROnderstreept {
+	TEXT-DECORATION: underline
+}
+.UserSRVetOnderstreept {
+	FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+.UserSRGroep {
+	WHITE-SPACE: nowrap
+}
+.UserSRQuote {
+	FONT-STYLE: italic; BACKGROUND-COLOR: lightgrey
+}
+.UserSRQuote:before {
+	CONTENT: '
+}
+.UserSRQuote:after {
+	CONTENT: '
+}
+.UserSRNummer {
+	WORD-SPACING: 0px; BACKGROUND-COLOR: lightgrey
+}
+.UserSRCourier {
+	FONT-SIZE: 15px; FONT-FAMILY: Courier New, Courier
+}
+.UserSRDoorstrepen {
+	TEXT-DECORATION: line-through
+}
+.UserSRTitelKlein {
+	FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.UserSRTitelGroot {
+	FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+.UserSRMarker {
+	BACKGROUND-COLOR: yellow
+}
+.UserSRGrijs {
+	COLOR: #808080
+}
+.UserSRDeelscore {
+	BACKGROUND-COLOR: lightgrey
+}
+.UserSRBuitenlandseTaalMan {
+	BACKGROUND-COLOR: #65ebff
+}
+.UserSRBuitenlandseTaalVrouw {
+	BACKGROUND-COLOR: #fecbff
+}
+&lt;/STYLE&gt;
+
+&lt;STYLE id=c1-custom-selection-style type=text/css&gt;&lt;/STYLE&gt;
+
+&lt;STYLE id=c1-custom-hyperlink-style type=text/css&gt;c1\:c1-hyperlink {
+	COLOR: #0070c0; TEXT-DECORATION: underline
+}
+&lt;/STYLE&gt;
+
+&lt;STYLE id=c1-comment-style type=text/css&gt;.c1-comment-container {
+	HEIGHT: 100%; RIGHT: 10pt; POSITION: absolute; FLOAT: right; DISPLAY: none; TOP: -1000pt; WIDTH: 140pt; BACKGROUND-COLOR: white
+}
+.c1-comment {
+	BORDER-TOP: white 1px solid; BORDER-RIGHT: white 1px solid; BORDER-BOTTOM: white 1px solid; POSITION: absolute; PADDING-BOTTOM: 2pt; PADDING-TOP: 18pt; PADDING-LEFT: 2pt; MARGIN: 0pt; BORDER-LEFT: white 1px solid; PADDING-RIGHT: 2pt; WIDTH: 140pt; BACKGROUND-COLOR: white
+}
+.c1-comment-reply {
+	FLOAT: right; PADDING-BOTTOM: 2pt; PADDING-TOP: 18pt; PADDING-LEFT: 2pt; MARGIN: 5pt 0pt 0pt; PADDING-RIGHT: 2pt; WIDTH: 130pt
+}
+.c1-comment P {
+	PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0pt 0pt 2pt; PADDING-RIGHT: 0pt
+}
+.c1-comment-reply P {
+	PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt; PADDING-LEFT: 0pt; MARGIN: 0pt 0pt 2pt; PADDING-RIGHT: 0pt
+}
+&lt;/STYLE&gt;
+
+&lt;STYLE id=c1-selected-comment-style type=text/css&gt;&lt;/STYLE&gt;
+
+&lt;STYLE id=c1-custom-bookmark-tags-style type=text/css&gt;&lt;/STYLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY id=c1-id-10 
+style="PADDING-BOTTOM: 2px; PADDING-TOP: 2px; PADDING-LEFT: 2px; MARGIN: 0px; PADDING-RIGHT: 2px; WIDTH: 100%"&gt;
+&lt;P id=c1-id-12&gt;&lt;!--StartFragment--&gt;  +&lt;IMG id=0d1d8a19-64fe-4654-8b34-d600ed8d6e22 alt="" 
+src="resource://package:1/L_Z2_MA_ZuV_A0138_00888_Bild1.png" width=72 height=56 
+isinlineelement="true"&gt;+&lt;IMG id=32f2e762-fd95-4158-b554-9e5214569a66 alt="" 
+src="resource://package:1/L_Z2_MA_ZuV_A0138_00888_Bild1.png" width=72 height=56 
+isinlineelement="true"&gt;&lt;!--EndFragment--&gt;&lt;/P&gt;&lt;/BODY&gt;&lt;/HTML&gt;</value>
+  </data>
+</root>

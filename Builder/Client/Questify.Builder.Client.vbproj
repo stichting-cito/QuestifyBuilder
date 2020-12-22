@@ -1,0 +1,1587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4D72156D-9847-4257-B8F9-E154EB379CA3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Questify.Builder.Client.My.MyApplication</StartupObject>
+    <RootNamespace>Questify.Builder.Client</RootNamespace>
+    <AssemblyName>Questify.Builder.Client</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\TestBuilder.snk</AssemblyOriginatorKeyFile>
+    <OptionStrict>On</OptionStrict>
+    <ManifestCertificateThumbprint>70A569DC2DA5D95BC6ED2119E250C9439BAB54AB</ManifestCertificateThumbprint>
+    <ManifestKeyFile>TestBuilderClient_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetZone>LocalIntranet</TargetZone>
+    <ApplicationIcon>QuestifyIcon.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>C:\tmp\qb\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationRevision>22</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Caliburn.Micro.Core.3.2.0\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinch.WPF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Cinch.2.0.70832\lib\net40\Cinch.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <!-- Cito.TestBuilder.CSVHelper is handmatig toegevoegd, omdat deze anders niet gepubliceerd wordt. -->
+    <Reference Include="HtmlToOpenXml, Version=1.6.0.0, Culture=neutral, PublicKeyToken=6ad79d83e2b60e63, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HtmlToOpenXml.1.6.1\lib\net40\HtmlToOpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Data.v4, Version=4.0.50.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartyComponents\Janus\v4.0.36\Janus.Data.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.Common.v4, Version=4.0.50.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartyComponents\Janus\v4.0.36\Janus.Windows.Common.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.GridEX.v4, Version=4.0.50.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartyComponents\Janus\v4.0.36\Janus.Windows.GridEX.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="MEFedMVVM.WPF, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b6db3dc4f5fba1e3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Cinch.2.0.70832\lib\net40\MEFedMVVM.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.8.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.8.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.8.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.WindowsServer.2.8.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.2.8.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.NLogTarget, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.NLogTarget.2.8.1\lib\net45\Microsoft.ApplicationInsights.NLogTarget.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>..\..\packages\MicrosoftExpressionInteractions.3.0.40218.0\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.2.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.2.1\lib\net45\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Diagnostics.TraceSource.4.3.0\lib\net46\System.Diagnostics.TraceSource.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.IO.Packaging.4.4.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.InteropServices.4.3.0\lib\net463\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Cito.TestBuilder.UI" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Versioning\GeneralInfo.vb">
+      <Link>GeneralInfo.vb</Link>
+    </Compile>
+    <Compile Include="..\..\Versioning\TestBuilder_VersionInfo.vb">
+      <Link>My Project\TestBuilder_VersionInfo.vb</Link>
+    </Compile>
+    <Compile Include="Bootstrapper.vb" />
+    <Compile Include="Dialogs\AddTemplateDialog.Designer.vb">
+      <DependentUpon>AddTemplateDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AddTemplateDialog.PostProcessing.vb">
+      <DependentUpon>AddTemplateDialog.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AddTemplateDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BankPropertyDialog.Designer.vb">
+      <DependentUpon>BankPropertyDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\BankPropertyDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ChangeItemCodeDialog.Designer.vb">
+      <DependentUpon>ChangeItemCodeDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ChangeItemCodeDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ChangeCreatorModifierDialog.Designer.vb">
+      <DependentUpon>ChangeCreatorModifierDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ChangeCreatorModifierDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ChangeTestCodeDialog.Designer.vb">
+      <DependentUpon>ChangeTestCodeDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ChangeTestCodeDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ChangeDataSourceCodeDialog.Designer.vb">
+      <DependentUpon>ChangeDataSourceCodeDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ChangeDataSourceCodeDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ChangeDeliveryCodeDialog.Designer.vb">
+      <DependentUpon>ChangeDeliveryCodeDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ChangeDeliveryCodeDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PasswordChangeDialog.Designer.vb">
+      <DependentUpon>PasswordChangeDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PasswordChangeDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SelectCustomPropertyTypeDialog.Designer.vb">
+      <DependentUpon>SelectCustomPropertyTypeDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SelectCustomPropertyTypeDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ProgressDialog.Designer.vb">
+      <DependentUpon>ProgressDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ProgressDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SelectTestPreviewDialog.Designer.vb">
+      <DependentUpon>SelectTestPreviewDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SelectTestPreviewDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\MessageDialog.Designer.vb">
+      <DependentUpon>MessageDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\MessageDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ResolveValidationErrorDialog.Designer.vb">
+      <DependentUpon>ResolveValidationErrorDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ResolveValidationErrorDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SelectSupportedViewsForAssessmentTestDialog.Designer.vb">
+      <DependentUpon>SelectSupportedViewsForAssessmentTestDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SelectSupportedViewsForAssessmentTestDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\HandleImportConflictDialog.Designer.vb">
+      <DependentUpon>HandleImportConflictDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\HandleImportConflictDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AspectEditor.Designer.vb">
+      <DependentUpon>AspectEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AspectEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Commands\AddDataSourceToSection.vb" />
+    <Compile Include="Forms\Commands\RefreshItemLayouts.vb" />
+    <Compile Include="Forms\Commands\ResourceManagerHolder.vb" />
+    <Compile Include="Forms\CustomPropertyEditor.Designer.vb">
+      <DependentUpon>CustomPropertyEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomPropertyEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExtensionMethods.vb" />
+    <Compile Include="Forms\Services\ResourceEditorService.vb" />
+    <Compile Include="Forms\DataSourceEditor.Designer.vb">
+      <DependentUpon>DataSourceEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataSourceEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TestEditor_v2.Designer.vb">
+      <DependentUpon>TestEditor_v2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TestEditor_v2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AuthorizationManagementDialog.Designer.vb">
+      <DependentUpon>AuthorizationManagementDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AuthorizationManagementDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AddBank.Designer.vb">
+      <DependentUpon>AddBank.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AddBank.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Dialogs\AboutDialog.Designer.vb">
+      <DependentUpon>AboutDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AboutDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\DialogBase.Designer.vb">
+      <DependentUpon>DialogBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClasses\DialogBase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SplashScreen.Designer.vb">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RoleMaintenanceEditor.Designer.vb">
+      <DependentUpon>RoleMaintenanceEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RoleMaintenanceEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\RolePropertyDialog.Designer.vb">
+      <DependentUpon>RolePropertyDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\RolePropertyDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\UserPropertyDialog.Designer.vb">
+      <DependentUpon>UserPropertyDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\UserPropertyDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TestPackageEditor.Designer.vb">
+      <DependentUpon>TestPackageEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TestPackageEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GenericResourceEditor.Designer.vb">
+      <DependentUpon>GenericResourceEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GenericResourceEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\OptionsDialog.Designer.vb">
+      <DependentUpon>OptionsDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\OptionsDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Wizards\AddGenericResourceWizardForm.Designer.vb">
+      <DependentUpon>AddGenericResourceWizardForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Wizards\AddGenericResourceWizardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Wizards\MultiSelectItemEditWizardForm.Designer.vb">
+      <DependentUpon>MultiSelectItemEditWizardForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Wizards\MultiSelectItemEditWizardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Wizards\ExportFormWizard.Designer.vb">
+      <DependentUpon>ExportFormWizard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Wizards\ExportFormWizard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Wizards\ImportFormWizard.Designer.vb">
+      <DependentUpon>ImportFormWizard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Wizards\ImportFormWizard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Wizards\ReportFormWizard.Designer.vb">
+      <DependentUpon>ReportFormWizard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Wizards\ReportFormWizard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportAndExport\ImportOptionsDataEntityBase.vb" />
+    <Compile Include="HelperClasses\CustomServiceMessage.vb" />
+    <Compile Include="HelperClasses\FormHelper.vb" />
+    <Compile Include="HelperClasses\TestBuilderAssemblyResolveManager.vb" />
+    <Compile Include="ImportAndExport\ExcelImportHandler\ExcelImportHandler.vb" />
+    <Compile Include="ImportAndExport\ExcelImportHandler\ExcelImportOptionsControl.Designer.vb">
+      <DependentUpon>ExcelImportOptionsControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImportAndExport\ExcelImportHandler\ExcelImportOptionsControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImportAndExport\ExcelImportHandler\ExcelImportOptionsDataEntity.vb" />
+    <Compile Include="ImportAndExport\ExportOptionControlBase.Designer.vb">
+      <DependentUpon>ExportOptionControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImportAndExport\ExportOptionControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImportAndExport\IExportHandlerBase.vb" />
+    <Compile Include="ImportAndExport\IExportHandlerPackage.vb" />
+    <Compile Include="ImportAndExport\IImportHandlerQuestifyExportFiles.vb" />
+    <Compile Include="ImportAndExport\IImportHandler.vb" />
+    <Compile Include="ImportAndExport\ImportOptionControlBase.Designer.vb">
+      <DependentUpon>ImportOptionControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImportAndExport\ImportOptionControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImportAndExport\PackageExportHandler\PackageExportHandler.vb" />
+    <Compile Include="ImportAndExport\PackageExportHandler\PackageExportOptionsControl.Designer.vb">
+      <DependentUpon>PackageExportOptionsControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImportAndExport\PackageExportHandler\PackageExportOptionsControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImportAndExport\PackageExportHandler\PackageExportOptionsDataEntity.vb" />
+    <Compile Include="ImportAndExport\PackageImportHandler\DbResourceManagerFactory.vb" />
+    <Compile Include="ImportAndExport\PackageImportHandler\HarmonizeDuringImport.vb" />
+    <Compile Include="ImportAndExport\PackageImportHandler\PackageImportHandler.vb" />
+    <Compile Include="ImportAndExport\PackageImportHandler\PackageImportOptionsControl.Designer.vb">
+      <DependentUpon>PackageImportOptionsControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImportAndExport\PackageImportHandler\PackageImportOptionsControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImportAndExport\PackageImportHandler\PackageImportOptionsDataEntity.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.nl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.nl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Forms\Wizards\PublicationFormWizard.Designer.vb">
+      <DependentUpon>PublicationFormWizard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Wizards\PublicationFormWizard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Publication\TestPackagesAndTestPublicationSelection.vb" />
+    <Compile Include="Service References\BuilderTasksService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PublicationService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ValidationService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TestPreview\TestPreviewLauncher.vb" />
+    <Compile Include="V2ModelExposer\AspectObjectFactory.vb" />
+    <Compile Include="V2ModelExposer\AssessmentTestObjectFactory.vb" />
+    <Compile Include="V2ModelExposer\ControlTemplateObjectFactory.vb" />
+    <Compile Include="V2ModelExposer\CustomBankPropertyObjectFactory.vb" />
+    <Compile Include="V2ModelExposer\DataSourceObjectFactory.vb" />
+    <Compile Include="V2ModelExposer\GenericResourceObjectFactory.vb" />
+    <Compile Include="V2ModelExposer\ItemLayoutTemplateObjectFactoryvb.vb" />
+    <Compile Include="V2ModelExposer\MajorVersionDialogObjectFactory.vb" />
+    <Compile Include="V2ModelExposer\ResourcePropertyDialogObjectFactory.vb" />
+    <Compile Include="V2ModelExposer\SourceTextEditorObjectFactory.vb" />
+    <Compile Include="V2ModelExposer\ItemEditorObjectFactory.vb" />
+    <Compile Include="V2ModelExposer\MefConfiguration.vb" />
+    <Compile Include="V2ModelExposer\TestPackageObjectFactoryvb.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseClasses\DialogBase.nl.resx">
+      <DependentUpon>DialogBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddBank.nl.resx">
+      <DependentUpon>AddBank.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddTemplateDialog.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddTemplateDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddTemplateDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddTemplateDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AuthorizationManagementDialog.nl.resx">
+      <DependentUpon>AuthorizationManagementDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BankPropertyDialog.nl.resx">
+      <DependentUpon>BankPropertyDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BankPropertyDialog.resx">
+      <DependentUpon>BankPropertyDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ChangeItemCodeDialog.nl.resx">
+      <DependentUpon>ChangeItemCodeDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ChangeItemCodeDialog.resx">
+      <DependentUpon>ChangeItemCodeDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ChangeCreatorModifierDialog.nl.resx">
+      <DependentUpon>ChangeCreatorModifierDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ChangeCreatorModifierDialog.resx">
+      <DependentUpon>ChangeCreatorModifierDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ChangeTestCodeDialog.nl.resx">
+      <DependentUpon>ChangeTestCodeDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ChangeTestCodeDialog.resx">
+      <DependentUpon>ChangeTestCodeDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ChangeDataSourceCodeDialog.nl.resx">
+      <DependentUpon>ChangeDataSourceCodeDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ChangeDataSourceCodeDialog.resx">
+      <DependentUpon>ChangeDataSourceCodeDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ChangeDeliveryCodeDialog.nl.resx">
+      <DependentUpon>ChangeDeliveryCodeDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ChangeDeliveryCodeDialog.resx">
+      <DependentUpon>ChangeDeliveryCodeDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\PasswordChangeDialog.resx">
+      <DependentUpon>PasswordChangeDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SelectCustomPropertyTypeDialog.nl.resx">
+      <DependentUpon>SelectCustomPropertyTypeDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SelectCustomPropertyTypeDialog.resx">
+      <DependentUpon>SelectCustomPropertyTypeDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\MessageDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MessageDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ProgressDialog.nl.resx">
+      <DependentUpon>ProgressDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ProgressDialog.resx">
+      <DependentUpon>ProgressDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SelectSupportedViewsForAssessmentTestDialog.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectSupportedViewsForAssessmentTestDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SelectSupportedViewsForAssessmentTestDialog.resx">
+      <DependentUpon>SelectSupportedViewsForAssessmentTestDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\HandleImportConflictDialog.nl.resx">
+      <DependentUpon>HandleImportConflictDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\HandleImportConflictDialog.resx">
+      <DependentUpon>HandleImportConflictDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AspectEditor.nl.resx">
+      <DependentUpon>AspectEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AspectEditor.resx">
+      <DependentUpon>AspectEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomPropertyEditor.nl.resx">
+      <DependentUpon>CustomPropertyEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomPropertyEditor.resx">
+      <DependentUpon>CustomPropertyEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataSourceEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DataSourceEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestEditor_v2.nl.resx">
+      <DependentUpon>TestEditor_v2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestEditor_v2.resx">
+      <DependentUpon>TestEditor_v2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\RolePropertyDialog.nl.resx">
+      <DependentUpon>RolePropertyDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AuthorizationManagementDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AuthorizationManagementDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SplashScreen.nl.resx">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\UserPropertyDialog.nl.resx">
+      <DependentUpon>UserPropertyDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GenericResourceEditor.nl.resx">
+      <DependentUpon>GenericResourceEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddBank.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddBank.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AboutDialog.nl.resx">
+      <DependentUpon>AboutDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AboutDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\DialogBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DialogBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SplashScreen.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RoleMaintenanceEditor.nl.resx">
+      <DependentUpon>RoleMaintenanceEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RoleMaintenanceEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RoleMaintenanceEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\RolePropertyDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RolePropertyDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\UserPropertyDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserPropertyDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestPackageEditor.nl.resx">
+      <DependentUpon>TestPackageEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestPackageEditor.resx">
+      <DependentUpon>TestPackageEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GenericResourceEditor.resx">
+      <DependentUpon>GenericResourceEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.nl.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\OptionsDialog.nl.resx">
+      <DependentUpon>OptionsDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\OptionsDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OptionsDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\AddGenericResourceWizardForm.nl.resx">
+      <DependentUpon>AddGenericResourceWizardForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\AddGenericResourceWizardForm.resx">
+      <DependentUpon>AddGenericResourceWizardForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\MultiSelectItemEditWizardForm.nl.resx">
+      <DependentUpon>MultiSelectItemEditWizardForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\MultiSelectItemEditWizardForm.resx">
+      <DependentUpon>MultiSelectItemEditWizardForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\ExportFormWizard.nl.resx">
+      <DependentUpon>ExportFormWizard.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\ExportFormWizard.resx">
+      <DependentUpon>ExportFormWizard.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\ImportFormWizard.nl.resx">
+      <DependentUpon>ImportFormWizard.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\ImportFormWizard.resx">
+      <DependentUpon>ImportFormWizard.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\PublicationFormWizard.nl.resx">
+      <DependentUpon>PublicationFormWizard.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\ReportFormWizard.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReportFormWizard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\ReportFormWizard.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReportFormWizard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportAndExport\ExcelImportHandler\ExcelImportOptionsControl.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ExcelImportOptionsControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportAndExport\ExcelImportHandler\ExcelImportOptionsControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ExcelImportOptionsControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportAndExport\ExportOptionControlBase.nl.resx">
+      <DependentUpon>ExportOptionControlBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportAndExport\ExportOptionControlBase.resx">
+      <DependentUpon>ExportOptionControlBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportAndExport\ImportOptionControlBase.nl.resx">
+      <DependentUpon>ImportOptionControlBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportAndExport\ImportOptionControlBase.resx">
+      <DependentUpon>ImportOptionControlBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportAndExport\PackageExportHandler\PackageExportOptionsControl.nl.resx">
+      <DependentUpon>PackageExportOptionsControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportAndExport\PackageExportHandler\PackageExportOptionsControl.resx">
+      <DependentUpon>PackageExportOptionsControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportAndExport\PackageImportHandler\PackageImportOptionsControl.nl.resx">
+      <DependentUpon>PackageImportOptionsControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportAndExport\PackageImportHandler\PackageImportOptionsControl.resx">
+      <DependentUpon>PackageImportOptionsControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.nl.resx">
+      <SubType>Designer</SubType>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.nl.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources1.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Wizards\PublicationFormWizard.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PublicationFormWizard.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="chrome_elf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CryptoKey.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d3dcompiler_47.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libEGL.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libGLESv2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="..\..\Documentation\Components.md">
+      <Link>Resources\Components.md</Link>
+    </None>
+    <None Include="My Project\DataSources\QTI30ImportOptionsDataEntity.datasource" />
+    <None Include="Resources\CopyToolStripMenuItem.Image.png" />
+    <Content Include="Resources\DocX2Html.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Cef3Browser\cef_extensions.pak">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ShowPassword.gif" />
+    <None Include="Resources\ShowPasswordImg.png" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="..\..\3rdPartyComponents\MediaInfoDotNet\MediaInfo.dll">
+      <Link>MediaInfo.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cef3Browser\cef.pak">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cef3Browser\locales\en-US.pak">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cef3Browser\locales\nl.pak">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icudtl.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cef3Browser\cef_100_percent.pak">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cef3Browser\cef_200_percent.pak">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="natives_blob.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\BuilderTasksService\QuestifyBuilderTasksService1.wsdl" />
+    <None Include="Service References\BuilderTasksService\QuestifyBuilderTasksService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BuilderTasksService\QuestifyBuilderTasksService51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BuilderTasksService\QuestifyBuilderTasksService52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BuilderTasksService\QuestifyBuilderTasksService53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BuilderTasksService\QuestifyBuilderTasksService54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicationService\PublicationService1.wsdl" />
+    <None Include="Service References\PublicationService\PublicationService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicationService\PublicationService63.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicationService\PublicationService64.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicationService\PublicationService65.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicationService\PublicationService66.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ValidationService\configuration91.svcinfo" />
+    <None Include="Service References\ValidationService\configuration.svcinfo" />
+    <None Include="Service References\ValidationService\Questify.Builder.Client.ValidationService.ValidationHandlerIdentifier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ValidationService\Questify.Builder.Client.ValidationService.ValidationTaskProgress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ValidationService\Questify.Builder.Client.ValidationService.Version.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ValidationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\PublicationService\PublicationService1.disco" />
+    <None Include="Service References\BuilderTasksService\QuestifyBuilderTasksService1.disco" />
+    <None Include="Service References\ValidationService\ValidationService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ValidationService\ValidationService1.disco" />
+    <None Include="Service References\ValidationService\ValidationService11.disco" />
+    <None Include="Resources\PasteToolStripMenuItem.Image.png" />
+    <Content Include="snapshot_blob.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="IncludePlugins.targets" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\Questify.Builder.Model.Model.Item.datasource" />
+    <None Include="My Project\DataSources\Questify.Builder.Model.Model.Resource.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BuilderTasksService\Questify.Builder.Client.BuilderTasksService.BuilderTaskProgress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BuilderTasksService\Questify.Builder.Client.BuilderTasksService.BuilderTaskResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BuilderTasksService\Questify.Builder.Client.BuilderTasksService.BuilderTaskSessionTicket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PublicationService\Questify.Builder.Client.PublicationService.ConceptProcessingLabelEntry.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PublicationService\Questify.Builder.Client.PublicationService.PublicationHandlerIdentifier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PublicationService\Questify.Builder.Client.PublicationService.PublicationTaskProgress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PublicationService\Questify.Builder.Client.PublicationService.TestPreviewHandlerIdentifier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Resources\Network-Download-icon.png" />
+    <None Include="Resources\property-blue-icon.png" />
+    <None Include="Service References\BuilderTasksService\configuration91.svcinfo" />
+    <None Include="Service References\BuilderTasksService\configuration.svcinfo" />
+    <None Include="Service References\BuilderTasksService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\PublicationService\configuration91.svcinfo" />
+    <None Include="Service References\PublicationService\configuration.svcinfo" />
+    <None Include="Service References\PublicationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="libcef.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\ValidationService\ValidationService1.wsdl" />
+    <None Include="Service References\ValidationService\ValidationService11.wsdl" />
+    <None Include="Service References\ValidationService\ValidationService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ValidationService\ValidationService51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ValidationService\ValidationService510.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ValidationService\ValidationService511.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ValidationService\ValidationService52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ValidationService\ValidationService53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ValidationService\ValidationService54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ValidationService\ValidationService55.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ValidationService\ValidationService56.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ValidationService\ValidationService57.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ValidationService\ValidationService58.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ValidationService\ValidationService59.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Questify.Builder.IoC\Questify.Builder.IoC.csproj">
+      <Project>{63ce1dee-458d-47a3-82fd-78e0132b536b}</Project>
+      <Name>Questify.Builder.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cito.ItemViewer.AsyncPluggableProtocol\Cito.ItemViewer.AsyncPluggableProtocol.csproj">
+      <Project>{c8641177-a9a2-4d02-839b-74dfbd67debb}</Project>
+      <Name>Cito.ItemViewer.AsyncPluggableProtocol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cito.Tester.Common\Cito.Tester.Common.vbproj">
+      <Project>{9a0bd8fe-d6f6-4ce5-9a0b-877610b00deb}</Project>
+      <Name>Cito.Tester.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cito.Tester.ContentModel\Cito.Tester.ContentModel.vbproj">
+      <Project>{94ee8d6c-5c52-4f34-9e61-e407b3240004}</Project>
+      <Name>Cito.Tester.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Configuration\Questify.Builder.Configuration.vbproj">
+      <Project>{C38FAA1F-F9CA-415E-99EA-56370B9207D8}</Project>
+      <Name>Questify.Builder.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Questify.Builder.Logic.vbproj">
+      <Project>{C4AB026E-B1E2-4D1E-A857-4CA29BAA9981}</Project>
+      <Name>Questify.Builder.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.ContentModel\Questify.Builder.Model.ContentModel.vbproj">
+      <Project>{44EAFD1E-6CC9-4A94-B6F6-A78734C7AAE5}</Project>
+      <Name>Questify.Builder.Model.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Packaging\Questify.Builder.Packaging.vbproj">
+      <Project>{56c0d819-f3ed-48ce-8f1f-07e415103f46}</Project>
+      <Name>Questify.Builder.Packaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security.ActiveDirectory\Questify.Builder.Security.ActiveDirectory.csproj">
+      <Project>{255d7324-4eb1-4438-acd5-76e74d67b31b}</Project>
+      <Name>Questify.Builder.Security.ActiveDirectory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security\Questify.Builder.Security.vbproj">
+      <Project>{F7B4A532-DDCC-47F5-BB20-A7AE6F1D47B5}</Project>
+      <Name>Questify.Builder.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UI\Questify.Builder.UI.vbproj">
+      <Project>{D35F44EC-B3C4-48DF-9BEC-76DA023B393A}</Project>
+      <Name>Questify.Builder.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.LlblGen.Proxy\Questify.Builder.Model.LlblGen.Proxy.csproj">
+      <Project>{a81d4848-fa00-4841-b5a9-12914a9173b3}</Project>
+      <Name>Questify.Builder.Model.LlblGen.Proxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Service\Questify.Builder.Logic.Service.csproj">
+      <Project>{f8d65f41-d624-4343-8733-778bc0b4ff9e}</Project>
+      <Name>Questify.Builder.Logic.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UI.Wpf\Questify.Builder.UI.Wpf.csproj">
+      <Project>{5786158c-19cc-4c3f-a19e-9f8948f9f69a}</Project>
+      <Name>Questify.Builder.UI.Wpf</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kryterion.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sinc_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\web_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-file_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_16x.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveHS.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BaseApplicationManifest Include="My Project\app.manifest" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.ResourceEntity.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.AssessmentTest.datasource" />
+    <None Include="My Project\DataSources\PackageOutputOptionsDataEntity.datasource" />
+    <None Include="Resources\NoAction.bmp" />
+    <None Include="Resources\ExportToExcel.ICO" />
+    <None Include="Resources\savexcl.gif" />
+    <None Include="Resources\network share_16x16.png" />
+    <None Include="Resources\online_16x16.png" />
+    <EmbeddedResource Include="Cito.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SelectTestPreviewDialog.nl.resx">
+      <DependentUpon>SelectTestPreviewDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SelectTestPreviewDialog.resx">
+      <DependentUpon>SelectTestPreviewDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ResolveValidationErrorDialog.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ResolveValidationErrorDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ResolveValidationErrorDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ResolveValidationErrorDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataSourceEditor.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DataSourceEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\back.ico" />
+    <None Include="Resources\next-page.ico" />
+    <None Include="Resources\wait_animated_image.gif" />
+    <None Include="Resources\yellow-button_24x24.png" />
+    <None Include="Resources\red-button_24x24.png" />
+    <None Include="Resources\green-button_24x24.png" />
+    <None Include="Resources\button-blue_24x24.png" />
+    <None Include="Resources\download_24x24.png" />
+    <None Include="Resources\Save16.png" />
+    <None Include="Resources\SaveAs16.png" />
+    <None Include="Resources\SaveClose16.png" />
+    <None Include="Resources\favorites.ico" />
+    <None Include="Resources\AboutToolStripMenuItem.Image.png" />
+    <None Include="Resources\Appearance1.Image.png" />
+    <None Include="Resources\Appearance2.Image.png" />
+    <None Include="Resources\Appearance3.Image.png" />
+    <None Include="Resources\Appearance4.Image.png" />
+    <None Include="Resources\Appearance5.Image.png" />
+    <None Include="Resources\Appearance7.Image.png" />
+    <None Include="Resources\Appearance8.Image.png" />
+    <None Include="Resources\Appearance9.Image.png" />
+    <None Include="Resources\Appearance10.Image.png" />
+    <None Include="Resources\Appearance11.Image.png" />
+    <None Include="Resources\AspectsToolStripMenuItem.Image.png" />
+    <None Include="Resources\ControlTemplateToolStripMenuItem.Image.png" />
+    <None Include="Resources\DeleteToolStripButton.Image.png" />
+    <None Include="Resources\DeleteToolStripMenuItem.Image.png" />
+    <None Include="Resources\EditFileToolStripMenuItem.Image.png" />
+    <None Include="Resources\EditToolStripButton.Image.png" />
+    <None Include="Resources\ExportToolStripButton.Image.png" />
+    <None Include="Resources\ExportToolStripMenuItem.Image.png" />
+    <None Include="Resources\ImportToolStripButton.Image.png" />
+    <None Include="Resources\ImportToolStripMenuItem.Image.png" />
+    <None Include="Resources\ItemLayoutTemplateToolStripMenuItem.Image.png" />
+    <None Include="Resources\ItemToolStripMenuItem.Image.png" />
+    <None Include="Resources\MediaToolStripMenuItem.Image.png" />
+    <None Include="Resources\NewAspectToolStripMenuItem.Image.png" />
+    <None Include="Resources\NewControlTemplateToolStripMenuItem.Image.png" />
+    <None Include="Resources\NewItemLayoutTemplateToolStripMenuItem.Image.png" />
+    <None Include="Resources\NewItemToolStripMenuItem.Image.png" />
+    <None Include="Resources\NewMediaToolStripMenuItem.Image.png" />
+    <None Include="Resources\NewPluginToolStripMenuItem.Image.png" />
+    <None Include="Resources\NewTestTemplateToolStripMenuItem.Image.png" />
+    <None Include="Resources\NewTestToolStripMenuItem.Image.png" />
+    <None Include="Resources\NewToolStripMenuItem.Image.png" />
+    <None Include="Resources\NewToolStripSplitButton.Image.png" />
+    <None Include="Resources\PluginToolStripMenuItem.Image.png" />
+    <None Include="Resources\PreviewToolStripButton.Image.png" />
+    <None Include="Resources\PreviewToolStripMenuItem.Image.png" />
+    <None Include="Resources\ProperiesToolStripMenuItem.Image.png" />
+    <None Include="Resources\PropertyToolStripButton.Image.png" />
+    <None Include="Resources\PublishToolStripButton.Image.png" />
+    <None Include="Resources\RefreshToolStripButton.Image.png" />
+    <None Include="Resources\RefreshToolStripMenuItem.Image.png" />
+    <None Include="Resources\ReportsToolStripButton.Image.png" />
+    <None Include="Resources\ReportsToolStripMenuItem.Image.png" />
+    <None Include="Resources\SearchToolStripButton.Image.png" />
+    <None Include="Resources\SearchToolStripMenuItem.Image.png" />
+    <None Include="Resources\TestTemplateToolStripMenuItem.Image.png" />
+    <None Include="Resources\TestToolStripMenuItem.Image.png" />
+    <None Include="Resources\UserAccountToolStripMenuItem.Image.png" />
+    <None Include="Resources\AddItem24x24.Image.png" />
+    <None Include="Resources\DeleteItem16x16.png" />
+    <None Include="Resources\DeleteItems24x24.Image.png" />
+    <None Include="Resources\AddItem16x16.Image.png" />
+    <None Include="Resources\NewTestPackageToolStripMenuItem_Image.bmp" />
+    <None Include="Resources\documents2_16x16.png" />
+    <None Include="Resources\smart folder_32x32.png" />
+    <None Include="Resources\add-favorite_16x16.png" />
+    <None Include="Resources\delete-favorite_16x16.png" />
+    <None Include="Resources\up_16x16.png" />
+    <None Include="Resources\down_16x16.png" />
+    <None Include="Resources\Questify.gif" />
+    <Content Include="QuestifyIcon.ico" />
+    <None Include="Resources\Splashscreen_Questify_Builder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="TestPreviewPlayer">
+      <Visible>False</Visible>
+      <ProductName>TestPreviewPlayer</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.mshtml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Web.Services3">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Questify.Builder.MessagingHub">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-contact.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\offline-user-icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user__16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\DataSources\Cito.TestBuilder.Configuration.TestServerCollection.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.Configuration.TestServerElement.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.RoleEntity.datasource" />
+    <None Include="My Project\DataSources\CitoTesterServerPublicationOptionsDataEntity.datasource" />
+    <None Include="My Project\DataSources\ExcelImportOptionsDataEntity.datasource" />
+    <None Include="My Project\DataSources\PackageImportOptionsDataEntity.datasource" />
+    <None Include="My Project\DataSources\PokExportOptionsDataEntity.datasource" />
+    <None Include="My Project\DataSources\WordOptionsDataEntity.datasource" />
+    <None Include="Resources\database_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BuilderTasksService\" />
+    <WCFMetadataStorage Include="Service References\PublicationService\" />
+    <WCFMetadataStorage Include="Service References\ValidationService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="IncludePlugins.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Label="SlowCheetah">
+    <SlowCheetahToolsPath>$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\SlowCheetah.2.5.15\tools\))</SlowCheetahToolsPath>
+    <SlowCheetah_EnableImportFromNuGet Condition=" '$(SlowCheetah_EnableImportFromNuGet)'=='' ">true</SlowCheetah_EnableImportFromNuGet>
+    <SlowCheetah_NuGetImportPath Condition=" '$(SlowCheetah_NuGetImportPath)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\Properties\SlowCheetah\SlowCheetah.Transforms.targets ))</SlowCheetah_NuGetImportPath>
+    <SlowCheetahTargets Condition=" '$(SlowCheetah_EnableImportFromNuGet)'=='true' and Exists('$(SlowCheetah_NuGetImportPath)') ">$(SlowCheetah_NuGetImportPath)</SlowCheetahTargets>
+  </PropertyGroup>
+  <UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Web\Microsoft.Web.Publishing.Tasks.dll" />
+</Project>

@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{489F2820-4410-41D4-8C96-4F96CB707D57}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Questify.Builder.Plugins.DataSource.DynamicGroups</RootNamespace>
+    <AssemblyName>Questify.Builder.Plugins.DataSource.DynamicGroups</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Cito.Tester.PlugIns.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.2.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.2.1\lib\net45\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Versioning\GeneralInfo.vb">
+      <Link>GeneralInfo.vb</Link>
+    </Compile>
+    <Compile Include="DynamicGroupDatasource.vb" />
+    <Compile Include="DynamicGroupDatasourceConfig.vb" />
+    <Compile Include="My Project\Resources.nl.Designer.vb">
+      <DependentUpon>Resources.nl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\Base\Filters\DyadicFilterPredicate.vb" />
+    <Compile Include="ResourceQueries\QueryObjects\Base\Filters\MonadicFilterPredicate.vb" />
+    <Compile Include="ResourceQueries\QueryObjects\Base\Filters\NOOPFilterPredicate.vb" />
+    <Compile Include="ResourceQueries\QueryObjects\Base\Filters\VariadicFilterPredicate.vb" />
+    <Compile Include="ResourceQueries\QueryObjects\Item\Filters\ItemInTestFilterPredicate.vb" />
+    <Compile Include="ResourceQueries\QueryObjects\Item\Filters\ResourcePropertyFilterPredicate.vb" />
+    <Compile Include="ResourceQueries\QueryObjects\Item\Query\ItemFilterPredicate.vb" />
+    <Compile Include="ResourceQueries\QueryObjects\Item\Query\ItemQuery.vb" />
+    <Compile Include="ResourceQueries\QueryObjects\UI\Base\FilterEditorBase.Designer.vb">
+      <DependentUpon>FilterEditorBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\UI\Base\FilterEditorBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\UI\Commands\contextParameters\QueryEditorContext.vb" />
+    <Compile Include="ResourceQueries\QueryObjects\UI\Commands\RemoveFilterCommand.vb" />
+    <Compile Include="ResourceQueries\QueryObjects\UI\Commands\SetFilterCommand.vb" />
+    <Compile Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\Base\DyadicFilterEditor.Designer.vb">
+      <DependentUpon>DyadicFilterEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\Base\DyadicFilterEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\Base\EmptyFilterEditor.Designer.vb">
+      <DependentUpon>EmptyFilterEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\Base\EmptyFilterEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\Base\MonadicFilterEditor.Designer.vb">
+      <DependentUpon>MonadicFilterEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\Base\MonadicFilterEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\FilterEditorFactory.vb" />
+    <Compile Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\ItemInTestFilterEditor.Designer.vb">
+      <DependentUpon>ItemInTestFilterEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\ItemInTestFilterEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\PropertyFilterEditor.Designer.vb">
+      <DependentUpon>PropertyFilterEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\PropertyFilterEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\UI\QueryDetails.Designer.vb">
+      <DependentUpon>QueryDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\UI\QueryDetails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\UI\QueryEditor.Designer.vb">
+      <DependentUpon>QueryEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\UI\QueryEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DynamicGroupSourceEditor.Designer.vb">
+      <DependentUpon>DynamicGroupSourceEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DynamicGroupSourceEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DynamicGroupUIDesignerFactory.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ResourceQueries\QueryObjects\Base\Filters\AndFilterPredicate.vb" />
+    <Compile Include="ResourceQueries\QueryObjects\Base\Filters\FilterPredicate.vb" />
+    <Compile Include="ResourceQueries\QueryObjects\Base\Filters\NotFilterPredicate.vb" />
+    <Compile Include="ResourceQueries\QueryObjects\Base\Filters\OrFilterPredicate.vb" />
+    <Compile Include="ResourceQueries\QueryObjects\Base\Query\Query.vb" />
+    <Compile Include="ResourceQueries\QueryVisitors\Base\ItemQueryVisitor.vb" />
+    <Compile Include="ResourceQueries\QueryVisitors\Base\QueryVisitor.vb" />
+    <Compile Include="ResourceQueries\QueryVisitors\LLBLGEN\LLBLGENItemQueryVisitor.vb" />
+    <Compile Include="ResourceQueries\QueryVisitors\SQL\SQLItemQueryVisitor.vb" />
+    <Compile Include="UI\DynamicGroupEditor.Designer.vb">
+      <DependentUpon>DynamicGroupEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DynamicGroupEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.nl.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.nl.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceQueries\QueryObjects\UI\Base\FilterEditorBase.resx">
+      <DependentUpon>FilterEditorBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\Base\DyadicFilterEditor.nl.resx">
+      <DependentUpon>DyadicFilterEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\Base\DyadicFilterEditor.resx">
+      <DependentUpon>DyadicFilterEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\Base\EmptyFilterEditor.nl.resx">
+      <DependentUpon>EmptyFilterEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\Base\EmptyFilterEditor.resx">
+      <DependentUpon>EmptyFilterEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\Base\MonadicFilterEditor.nl.resx">
+      <DependentUpon>MonadicFilterEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\Base\MonadicFilterEditor.resx">
+      <DependentUpon>MonadicFilterEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\ItemInTestFilterEditor.nl.resx">
+      <DependentUpon>ItemInTestFilterEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\ItemInTestFilterEditor.resx">
+      <DependentUpon>ItemInTestFilterEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\PropertyFilterEditor.nl.resx">
+      <DependentUpon>PropertyFilterEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceQueries\QueryObjects\UI\FilterTypeEditors\PropertyFilterEditor.resx">
+      <DependentUpon>PropertyFilterEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceQueries\QueryObjects\UI\QueryDetails.nl.resx">
+      <DependentUpon>QueryDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceQueries\QueryObjects\UI\QueryDetails.resx">
+      <DependentUpon>QueryDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceQueries\QueryObjects\UI\QueryEditor.nl.resx">
+      <DependentUpon>QueryEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceQueries\QueryObjects\UI\QueryEditor.resx">
+      <DependentUpon>QueryEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DynamicGroupEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DynamicGroupEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DynamicGroupSourceEditor.resx">
+      <DependentUpon>DynamicGroupSourceEditor.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.ResourceProperties.ResourcePropertyDefinition.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.ResourceProperties.ResourcePropertyDefinitionCollection.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.ResourceProperties.ResourcePropertyListValueDefinition.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.ResourceProperties.ResourcePropertyValueCollection.datasource" />
+    <None Include="My Project\DataSources\ItemInTestFilterPredicate.datasource" />
+    <None Include="My Project\DataSources\ItemQuery.datasource" />
+    <None Include="My Project\DataSources\ResourcePropertyFilterPredicate.datasource" />
+    <None Include="My Project\DataSources\ResourcePropertyFilterPredicate.FilterOperatorEnum.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Cito.Tester.Common\Cito.Tester.Common.vbproj">
+      <Project>{9a0bd8fe-d6f6-4ce5-9a0b-877610b00deb}</Project>
+      <Name>Cito.Tester.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Cito.Tester.ContentModel\Cito.Tester.ContentModel.vbproj">
+      <Project>{94ee8d6c-5c52-4f34-9e61-e407b3240004}</Project>
+      <Name>Cito.Tester.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Model.ContentModel\Questify.Builder.Model.ContentModel.vbproj">
+      <Project>{44EAFD1E-6CC9-4A94-B6F6-A78734C7AAE5}</Project>
+      <Name>Questify.Builder.Model.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Logic\Questify.Builder.Logic.vbproj">
+      <Project>{3a707189-b5de-439d-91d3-fa20ce79e8bf}</Project>
+      <Name>Questify.Builder.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\UI\Questify.Builder.UI.vbproj">
+      <Project>{D35F44EC-B3C4-48DF-9BEC-76DA023B393A}</Project>
+      <Name>Questify.Builder.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Logic.Service\Questify.Builder.Logic.Service.csproj">
+      <Project>{F8D65F41-D624-4343-8733-778BC0B4FF9E}</Project>
+      <Name>Questify.Builder.Logic.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>IF $(PlatformName) == x86 (
+   SET PLATFORM=$(PlatformName)
+)
+robocopy "$(TargetDir)\" "$(SolutionDir)\Builder\Client\bin\%25PLATFORM%25\$(ConfigurationName)\Plugins" "$(TargetName).dll" "$(TargetName).pdb" "$(TargetName).resources.dll" /R:5 /S /njh /njs /nfl /ndl /nc /ns
+robocopy "$(TargetDir)\" "$(SolutionDir)\Publication\Services.PublicationService\bin\Plugins" "$(TargetName).dll" "$(TargetName).resources.dll" /R:5 /S /njh /njs /nfl /ndl /nc /ns
+exit /b 0</PostBuildEvent>
+  </PropertyGroup>
+</Project>

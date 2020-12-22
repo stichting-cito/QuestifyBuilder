@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <s:String x:Key="ItemEditor.Metadata.InfoGroup">Information about the item</s:String>
+    <s:String x:Key="ItemEditor.Metadata.ConceptGroup">Concepts</s:String>
+    <s:String x:Key="ItemEditor.Metadata.TreeGroup">Tree structures</s:String>
+    <s:String x:Key="ItemEditor.Metadata.CustomPropertiesGroup">Custom properties</s:String>
+
+    <s:String x:Key="ItemEditor.MetaDataViewModel.ActionNotAllowedWhenNew">This action not permitted when the resource is new.</s:String>
+    <s:String x:Key="ItemEditor.MetaDataViewModel.ActionNotAllowedNeedSave">This action not permitted when the item has not been saved.</s:String>
+    <s:String x:Key="ItemEditor.MetaDataViewModel.TemlateSwitchingDialogTitle">Warning</s:String>
+    <s:String x:Key="ItemEditor.MetaDataViewModel.TemlateSwitchingWithWarnings">This template can only be converted with these errors :</s:String>
+
+</ResourceDictionary>

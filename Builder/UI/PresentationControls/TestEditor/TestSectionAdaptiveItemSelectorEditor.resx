@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="SettingsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="OTDSourceLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="OTDSourceLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="OTDSourceLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="OTDSourceLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 60</value>
+  </data>
+  <data name="OTDSourceLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="OTDSourceLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="OTDSourceLabel.Text" xml:space="preserve">
+    <value>OTDSource:</value>
+  </data>
+  <data name="&gt;&gt;OTDSourceLabel.Name" xml:space="preserve">
+    <value>OTDSourceLabel</value>
+  </data>
+  <data name="&gt;&gt;OTDSourceLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OTDSourceLabel.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;OTDSourceLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="MinTimeLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="MinTimeLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="MinTimeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MinTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 6</value>
+  </data>
+  <data name="MinTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="MinTimeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="MinTimeLabel.Text" xml:space="preserve">
+    <value>Min. duration:</value>
+  </data>
+  <data name="&gt;&gt;MinTimeLabel.Name" xml:space="preserve">
+    <value>MinTimeLabel</value>
+  </data>
+  <data name="&gt;&gt;MinTimeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MinTimeLabel.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;MinTimeLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="MaxTimeLabel.GenerateMember" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="MaxTimeLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="MaxTimeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="MaxTimeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 32</value>
+  </data>
+  <data name="MaxTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="MaxTimeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="MaxTimeLabel.Text" xml:space="preserve">
+    <value>Max. duration:</value>
+  </data>
+  <data name="&gt;&gt;MaxTimeLabel.Name" xml:space="preserve">
+    <value>MaxTimeLabel</value>
+  </data>
+  <data name="&gt;&gt;MaxTimeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MaxTimeLabel.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;MaxTimeLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="MaxTimeNumericUpDown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="MaxTimeNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 29</value>
+  </data>
+  <data name="MaxTimeNumericUpDown.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 30, 3</value>
+  </data>
+  <data name="MaxTimeNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 20</value>
+  </data>
+  <data name="MaxTimeNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;MaxTimeNumericUpDown.Name" xml:space="preserve">
+    <value>MaxTimeNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;MaxTimeNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MaxTimeNumericUpDown.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;MaxTimeNumericUpDown.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="MinTimeNumericUpDown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="MinTimeNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 3</value>
+  </data>
+  <data name="MinTimeNumericUpDown.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 30, 3</value>
+  </data>
+  <data name="MinTimeNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 20</value>
+  </data>
+  <data name="MinTimeNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;MinTimeNumericUpDown.Name" xml:space="preserve">
+    <value>MinTimeNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;MinTimeNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MinTimeNumericUpDown.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;MinTimeNumericUpDown.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="OTDSourceTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="OTDSourceTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 57</value>
+  </data>
+  <data name="OTDSourceTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 30, 3</value>
+  </data>
+  <data name="OTDSourceTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 20</value>
+  </data>
+  <data name="OTDSourceTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;OTDSourceTextBox.Name" xml:space="preserve">
+    <value>OTDSourceTextBox</value>
+  </data>
+  <data name="&gt;&gt;OTDSourceTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OTDSourceTextBox.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;OTDSourceTextBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="OpenSelectGenericResourceDialog.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAjxJREFUOE9j+P//
+        PwMMt7S0M+flF/Cnp2eq5uTkCjU1tbIhy2NjwzU3NrVKVFZWNQUEBLXHxSe2xcTEt2VnZc1saGy2xGcI
+        2IDSskrenOyc6R8/fnr958+fN0Cxuf/+/dvy+/efzUnJGfMqq6pNcRnCoKqqypSamlZ/+uzl+UBFF/7+
+        +9f3+NX3Oe+//loO5M/8/efvxtLSip2FRSVMWL1gY23NnVdQvuzL998nn7z72ffw9dcJIAOevvt25Nvv
+        f1u//fw3vaCkbmNSUpIoVgMcHBwUuvpmbf759/8RkEYQvv/i2zIY+83n39sbWidvSUlJ1cZqgJWlJXd3
+        3/STn779f/Tg3a+Dl1/+WAPS/PDNt4d///5Levbu19mJ0xbdSExMlMJqAAMDA1N8fMKcy/d+fXn+4ffH
+        K69+33v48uuZR2+/f3728c+7Pee+Puns7j8F9AIzzmgEGiIxY9bCB1cf/vn/5M3v/8/e//7/5O3v/+du
+        //w/Y9aC/7W1NY04YwEmwczMpFhQULijb9KsP5NnrPg/cdrCf/39k07b29utq66p+Xfm7Ln9d+7eFUA3
+        CJ6QYBLe3t4cJiZGCl5envwJCQngqHNzc9tVXFL6//iJk/cePXokj2wIhgG4nOrr63u8trbuP9Alb27c
+        vMkFU0e0ASANQcHBF9o7Ov7fuHnr2fnzFzhAYiQZAAxsxsDAwHP9/RP+P3r0+O6lS5clSTIA5mz/gICz
+        7R2dG1xdXdnJMoCHh4dZSEiIlQkIAGp4uX1XYnq7AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="OpenSelectGenericResourceDialog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="OpenSelectGenericResourceDialog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>350, 55</value>
+  </data>
+  <data name="OpenSelectGenericResourceDialog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="OpenSelectGenericResourceDialog.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="OpenSelectGenericResourceDialog.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;OpenSelectGenericResourceDialog.Name" xml:space="preserve">
+    <value>OpenSelectGenericResourceDialog</value>
+  </data>
+  <data name="&gt;&gt;OpenSelectGenericResourceDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OpenSelectGenericResourceDialog.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;OpenSelectGenericResourceDialog.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="DeleteGenericResourceButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAj5JREFUOE+Fkstr
+        E1EUxm9MH4EihCiaiqDEByiiaaJY0FpKIBMVmkkUCy5aBJcVXViwe/+B6L6bQF4LKRa66MpFa1qhUTAv
+        a0mDIaNjUCFmXpmZHM9MM01GUzzwMffCOb/5vjNDAIAYcjqdw6FQKGyIpumwrmAw7PP5blmt1v7ufu28
+        N6xdAoFAUMWSZVlVFEWXJEkqxzXU2ndWfDQ7+/x/ABobQFVb0Gppp91CJvyu16HZlGB+/pkJ8rcDHdCU
+        ZZAVRR80ShRF2Nr6BDs7JZiZnp4znJgAFBXQAZLUxLfJgBF0N0ZhNB0ajUaX9wFQOkAQRBAlCSFNk5NW
+        O1csFlvcF6D18Lxgguw66cRJJBK9AX4/RSvY2OA44Hi+C2KOk0qlegMm/P5JBS00cJjDGDwurjuO5kSr
+        ZDLZATx22A4/ddiOTtkGj9y7Sc38rNWArVaBrVTgB8uiE3OcfwDLdyaZdw8fSOn7U+LqXVp+c5uClSsj
+        8Mphh8WJ61AXBODRjeFEA5h2sDHq5Uq+cdi+6oHPZ13wwT4EmX4LbOJPmh71wi/chx6pvRMNEI/HOxEW
+        7Acvve6zXI5YDnifjF2bq2U24dvGOrDraWBzWRxuRxAlkPCztiMs9fyMF8dujGe2S1/eZguVtVyxupYt
+        Mu8/ZplsLsfk83mmUCgy5XL5ayTyYqED8BALeMgQ6ljxHDm/eoa4V04R15KLHHp5nNhODpABQkwaxHtf
+        B+BGgBsBI2QYdRoukBMoB2qvyWju9fwDvADjvx5CjAoAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="DeleteGenericResourceButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="DeleteGenericResourceButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>382, 55</value>
+  </data>
+  <data name="DeleteGenericResourceButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="DeleteGenericResourceButton.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;DeleteGenericResourceButton.Name" xml:space="preserve">
+    <value>DeleteGenericResourceButton</value>
+  </data>
+  <data name="&gt;&gt;DeleteGenericResourceButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DeleteGenericResourceButton.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;DeleteGenericResourceButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="TableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="TableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>411, 213</value>
+  </data>
+  <data name="TableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Name" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="MaxTimeLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="MaxTimeNumericUpDown" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="MinTimeLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="MinTimeNumericUpDown" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="OTDSourceLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="OTDSourceTextBox" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="OpenSelectGenericResourceDialog" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="DeleteGenericResourceButton" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,Absolute,32,Absolute,32" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>411, 213</value>
+  </data>
+  <data name="&gt;&gt;SettingsBindingSource.Name" xml:space="preserve">
+    <value>SettingsBindingSource</value>
+  </data>
+  <data name="&gt;&gt;SettingsBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>TestSectionAdaptiveItemSelectorEditor</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.SettingsEditorControlBase, Questify.Builder.UI, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+</root>

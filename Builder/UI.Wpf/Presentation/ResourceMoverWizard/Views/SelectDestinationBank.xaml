@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.ResourceMoverWizard.Views.SelectDestinationBank"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+             meffed:ViewModelLocator.ViewModel="ResourceMoverWizard.SelectDestinationBank" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+
+        <HierarchicalDataTemplate x:Key="ChildBankNodeTemplate"
+                                  ItemsSource="{Binding ChildBankNodes}">
+            
+                <TextBlock Text="{Binding Path=BankName}" />
+            
+        </HierarchicalDataTemplate>
+        
+        <HierarchicalDataTemplate x:Key="RootNodeTemplate"
+                ItemsSource="{Binding ChildBankNodes}"
+                ItemTemplate="{StaticResource ChildBankNodeTemplate}">
+           
+                <TextBlock Grid.Row="0" Text="{Binding Path=BankName}" />
+
+        </HierarchicalDataTemplate>
+    </UserControl.Resources>
+    
+    <Grid>
+        <TreeView x:Name="BankTree" 
+                  ItemsSource="{Binding BankHierarchyRootAsList.DataValue}"
+                  ItemTemplate="{StaticResource RootNodeTemplate}"
+                  SelectedValuePath="BankId"
+                  SelectedItemChanged="BankTree_SelectedItemChanged">
+            
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="TreeViewItem">
+                    <Setter Property="TreeViewItem.IsExpanded" Value="True"/>
+                    
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=IsViewPointBank}" Value="True">
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=IsViewPointBank}" Value="False">
+                            <Setter Property="FontWeight" Value="Normal"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TreeView.ItemContainerStyle>
+        </TreeView>
+            
+        <!-- This textbox is used to bind the bank id from the selected item in the treeview to the viewmodel because the TreeView doesn't support that kind of binding. 
+         Some SelectedItemChanged codebehind completes the magic. -->
+        <TextBox x:Name="tbSelectectBankId" Visibility="Collapsed" Text="{Binding SelectedBankId, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</UserControl>

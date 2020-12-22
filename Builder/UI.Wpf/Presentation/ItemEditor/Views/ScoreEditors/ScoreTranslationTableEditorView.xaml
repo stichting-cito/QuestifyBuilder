@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.ScoreEditors.ScoreTranslationTableEditorView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:local="clr-namespace:Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.ScoreEditors"
+			 xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+			 xmlns:types="clr-namespace:Questify.Builder.UI.Wpf.Presentation.Types"
+			 meffed:ViewModelLocator.ViewModel="ItemEditor.ScoreTranslationTableEditorVM"
+			 mc:Ignorable="d" 
+			 d:DesignHeight="300" d:DesignWidth="300">
+	<UserControl.Resources>
+		<ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--Please make sure that Resources are commented out-->
+                <!--<ResourceDictionary Source="..\..\ItemEditor.ScoreTranslationTableEditor.nl.xaml" /-->
+                <types:DesignTimeResourceDictionary Source="..\..\ItemEditor.ScoreTranslationTableEditor.en.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+	</UserControl.Resources>
+	<StackPanel Visibility="{Binding ScoreTranslationVisibility.DataValue}">
+		<Expander IsExpanded="True" Style="{StaticResource EditorExpander}" Header="{StaticResource ItemEditor.ScoreTranslationTableEditor.ScoreTranslationTable}">
+			<DataGrid ItemsSource="{Binding ScoreTranslationTable.DataValue}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserSortColumns="False">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="{StaticResource ItemEditor.ScoreTranslationTableEditor.RawScore}" Binding="{Binding RawScore}" IsReadOnly="True"/>
+					<DataGridTextColumn Header="{StaticResource ItemEditor.ScoreTranslationTableEditor.TranslatedScore}" Binding="{Binding TranslatedScore,UpdateSourceTrigger=PropertyChanged}"/>
+				</DataGrid.Columns>
+			</DataGrid>
+		</Expander>
+	</StackPanel>
+</UserControl>

@@ -1,0 +1,924 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Message_TestConstruction_AlreadyInItemContext" xml:space="preserve">
+    <value>Er zijn {0} items gevonden die reeds aanwezig zijn.</value>
+  </data>
+  <data name="Message_TestPackageConstruction_AlreadyInTestContext" xml:space="preserve">
+    <value>Er zijn {0} toetsen gevonden die reeds aanwezig zijn.</value>
+  </data>
+  <data name="RefreshUsingDataSources_CreateProposalsFromDataSourceList_ProposalPrefix" xml:space="preserve">
+    <value>Voorstel</value>
+  </data>
+  <data name="RequestContainsItemsValidationHandler_DoesNotContainItems" xml:space="preserve">
+    <value>Deze actie bevat geen items meer en kan daarom niet meer verder uitgevoerd worden.</value>
+  </data>
+  <data name="RequestContainsTestsUsedAsRetry" xml:space="preserve">
+    <value>De toets(en) die u wilt verwijderen, worden gebuikt als herkansing in de volgende toetsen'{0}' {1}De herkansingsverwijzing zal worden verwijderd.{1}{1}Weet u zeker dat u verder wilt gaan?</value>
+  </data>
+  <data name="RequestContainsTestValidationHandler_DoesNotContainTest" xml:space="preserve">
+    <value>Deze actie bevat geen toetsen meer en kan daarom niet meer verder uitgevoerd worden.</value>
+  </data>
+  <data name="SolutionWillBeDeletedNoMatchPossible" xml:space="preserve">
+    <value>Scoring van het item wordt leeggemaakt.</value>
+  </data>
+  <data name="Message_ValidateItemRelationShip_Conflicts" xml:space="preserve">
+    <value>Aan item relatie [{0}] van type [{1}] is niet voldaan, er zijn {2} conflicten.</value>
+  </data>
+  <data name="Message_ValidateItemRelationShip_UnknownRequestType" xml:space="preserve">
+    <value>Aanvraagtype [{0}] is niet ondersteund.</value>
+  </data>
+  <data name="Message_CreatingProposal_Error" xml:space="preserve">
+    <value>Er konden geen voorstellen worden gemaakt door de volgende oorzaak:
+{0}</value>
+  </data>
+  <data name="MandatoryEmptyParameterMessage" xml:space="preserve">
+    <value>'{0}' is een verplicht veld.</value>
+  </data>
+  <data name="Category_Solution" xml:space="preserve">
+    <value>Score</value>
+  </data>
+  <data name="Property_MaxSolutionRawScore" xml:space="preserve">
+    <value>Max. ruwe score</value>
+  </data>
+  <data name="Property_AspectReference" xml:space="preserve">
+    <value>Aspecten</value>
+  </data>
+  <data name="Property_Concept" xml:space="preserve">
+    <value>Concept</value>
+  </data>
+  <data name="Property_Description" xml:space="preserve">
+    <value>Omschrijving</value>
+  </data>
+  <data name="Property_Findings" xml:space="preserve">
+    <value>Sleutelwaarden</value>
+  </data>
+  <data name="Property_Index" xml:space="preserve">
+    <value>Volgorde</value>
+  </data>
+  <data name="Property_MaxScore" xml:space="preserve">
+    <value>Max. score</value>
+  </data>
+  <data name="Property_Method" xml:space="preserve">
+    <value>Methode</value>
+  </data>
+  <data name="Property_ModifiedBy" xml:space="preserve">
+    <value>Gewijzigd door</value>
+  </data>
+  <data name="Property_Name" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Property_RawScore" xml:space="preserve">
+    <value>Ruwe score</value>
+  </data>
+  <data name="Property_StateName" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Property_Title" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="Property_TranslatedScore" xml:space="preserve">
+    <value>Getransleerde score</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_Moved" xml:space="preserve">
+    <value>Verplaatst</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_PropertyAlreadyExistsInBank" xml:space="preserve">
+    <value>De bank "{0}" bevat al een kenmerk met de naam "{1}".</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_ResourceAlreadyExistsInBank" xml:space="preserve">
+    <value>De bank "{0}" bevat al een bron met de naam "{1}".</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_ResourceNotFound" xml:space="preserve">
+    <value>Geen bron aanwezig met id "{0}".</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_ResourceReferencedFromOtherSubBank" xml:space="preserve">
+    <value>Deze verwijzende bron staat in bank "{0}" en kan daardoor niet mee degraderen.</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_HierarchyAlreadyContainsCustomBankProperty" xml:space="preserve">
+    <value>In de hierarchy van bank "{0}" komt al een kenmerk voor met de naam "{1}".</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_HierarchyAlreadyContainsResource" xml:space="preserve">
+    <value>In de hierarchy van bank "{0}" komt al reen bron voor met de naam "{1}".</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_InsufficientPermissionsInDestinationBank" xml:space="preserve">
+    <value>Onvoldoende rechten om wijzigingen door te voeren in de doel bank "{0}".</value>
+  </data>
+  <data name="ResourceAndCustomBankPropertyMover_InsufficientPermissionsInSourceBank" xml:space="preserve">
+    <value>Onvoldoende rechten om wijzigingen door te voeren in bron bank "{0}".</value>
+  </data>
+  <data name="MostRecentVersion" xml:space="preserve">
+    <value>Gebruikt in de meest recente versie:</value>
+  </data>
+  <data name="ThisVersion" xml:space="preserve">
+    <value>Gebruikt in deze versie:</value>
+  </data>
+  <data name="ResourceDoesNotExist" xml:space="preserve">
+    <value>De resource bestaat niet</value>
+  </data>
+  <data name="NoThemeAvailable" xml:space="preserve">
+    <value>Geen thema's beschikbaar</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>Bestand</value>
+  </data>
+  <data name="ItemLayoutTemplateInlineMultimediaMissing" xml:space="preserve">
+    <value>Itemlay-outtemplate {0} moet beschikbaar zijn in de bank</value>
+  </data>
+  <data name="TestEditor_InvalidAdd" xml:space="preserve">
+    <value>{0} items kunnen niet worden toegevoegd omdat deze niet geschikt zijn voor dit toetstype.</value>
+  </data>
+  <data name="MandatoryEmptyShapelistMessage" xml:space="preserve">
+    <value>Er moet minimaal één gebied worden opgegeven voor veld '{0}' .</value>
+  </data>
+  <data name="MissingJsonManifest" xml:space="preserve">
+    <value>Er is geen Json Manifest gevonden in folder '{0}'</value>
+  </data>
+  <data name="ReferencedFileNotFoundInJsonManifest" xml:space="preserve">
+    <value>Json manifest bestand '{0}' bevat een referentie naar '{1}' maar is niet aanwezig</value>
+  </data>
+  <data name="ErrorWhileProcessingMetadataFile" xml:space="preserve">
+    <value>Fout bij het verwerken van het metadat bestand : '{0}'</value>
+  </data>
+  <data name="CoordinateCorrectResponseNotValid" xml:space="preserve">
+    <value>Sleutel is niet correct opgegeven. Dit moet ik formaat: '{0}'</value>
+  </data>
+  <data name="CorrectResponseNotInChoiceCollection" xml:space="preserve">
+    <value>Sleutel: {0} kon niet gevonden worden in de collectie met alternatieven</value>
+  </data>
+  <data name="DecimalScoringNotValid" xml:space="preserve">
+    <value>Sleutel is geen decimaal (culture invariant)</value>
+  </data>
+  <data name="DuplicateKey" xml:space="preserve">
+    <value>Dubbele sleutel gevonden: {0}</value>
+  </data>
+  <data name="IntegerScoringNotValid" xml:space="preserve">
+    <value>Sleutel is geen geheel getal</value>
+  </data>
+  <data name="MathMlCorrectResponseNotValid" xml:space="preserve">
+    <value>Sleutel is geen valide mathml</value>
+  </data>
+  <data name="MaxChoicesGreaterThanChoices" xml:space="preserve">
+    <value>Maximaal aantal alternatieven kan niet groter zijn dat het aantal alternatieven</value>
+  </data>
+  <data name="MinchoicesGreaterThanChoices" xml:space="preserve">
+    <value>Minimaal aantal alternatieven kan niet groter zijn dat het aantal alternatieven</value>
+  </data>
+  <data name="MinchoicesGreaterThanMaxChoices" xml:space="preserve">
+    <value>Minimaal aantal alternatieven kan niet groter zijn dat het maximaal aantal alternatieven</value>
+  </data>
+  <data name="ScoringEmpty" xml:space="preserve">
+    <value>Er moet tenminste één scoorbare interactie in de metadata aanwezig zijn.</value>
+  </data>
+  <data name="ParameterWillBeDeletedMessage" xml:space="preserve">
+    <value>Veld '{0}' wordt leeggemaakt of aangepast</value>
+  </data>
+  <data name="SwitchingTemplateConsequencesWarning" xml:space="preserve">
+    <value>Het wijzigen van het itemtemplate naar {0} heeft de volgende gevolgen:
+{1}
+
+Wilt u doorgaan?</value>
+  </data>
+  <data name="InlineElementRemovedFromParameter" xml:space="preserve">
+    <value>Één of meer inline elementen worden weggehaald uit parameter {0}.</value>
+  </data>
+  <data name="OnlyAValueWithinTheRangeOfTillIsAllowed" xml:space="preserve">
+    <value>Waarde moet binnen het bereik van {0} en {1} vallen.</value>
+  </data>
+  <data name="ResourcesCouldNotBeFound" xml:space="preserve">
+    <value>De volgende bronnen zijn niet (meer) aanwezig in de bank:
+- {0}</value>
+  </data>
+  <data name="NoDependenciesAvailable" xml:space="preserve">
+    <value>Teruggaan naar deze versie is i.v.m. technische beperkingen niet mogelijk. Voer de wijzigingen handmatig door.</value>
+  </data>
+  <data name="FormatTitle" xml:space="preserve">
+    <value>{0}_Groep_{1}_Eerste_Zaai-item_{2}</value>
+  </data>
+  <data name="ProposalCreator_DuplicateItemsInMultipleDataSources" xml:space="preserve">
+    <value>Meerdere selectiegroepen in de toets hebben overeenkomstige items</value>
+  </data>
+  <data name="ProposalCreator_ItemsAlreadyInTest" xml:space="preserve">
+    <value>De toets bevat reeds de volgende items (uit de selectiegroepen): {0}</value>
+  </data>
+  <data name="NavigationNumber" xml:space="preserve">
+    <value>Navigatienummer</value>
+  </data>
+  <data name="ProgressMessage" xml:space="preserve">
+    <value>Bezig met zoeken van kolommen in item {0}.</value>
+  </data>
+  <data name="Section" xml:space="preserve">
+    <value>Sectie</value>
+  </data>
+  <data name="TestPart" xml:space="preserve">
+    <value>Toetsdeel</value>
+  </data>
+  <data name="AlternativesCount" xml:space="preserve">
+    <value>Aantal alternatieven</value>
+  </data>
+  <data name="ApplicableToMask" xml:space="preserve">
+    <value>Toepasbaar op</value>
+  </data>
+  <data name="AspectGrid" xml:space="preserve">
+    <value>Aspecten_overzicht</value>
+  </data>
+  <data name="Aspects" xml:space="preserve">
+    <value>Aspecten</value>
+  </data>
+  <data name="BankId" xml:space="preserve">
+    <value>Bank id</value>
+  </data>
+  <data name="BankName" xml:space="preserve">
+    <value>Banknaam</value>
+  </data>
+  <data name="CannotStartExport" xml:space="preserve">
+    <value>Het overzicht kan nog niet worden gemaakt. {0}</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_AdditionalKeyValuesAndConceptScores" xml:space="preserve">
+    <value>Extra sleutelwaarde(s) en conceptscore(s)</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_AttributeLevelConceptResponseCount" xml:space="preserve">
+    <value>Aantal conceptresponses op attribuutniveau (per item)</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_BankName" xml:space="preserve">
+    <value>Banknaam</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_ConceptCode" xml:space="preserve">
+    <value>Conceptcode</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_ConceptResponseLabel" xml:space="preserve">
+    <value>Conceptresponse</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_GroupElementCount" xml:space="preserve">
+    <value>Aantal elementen id groep</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_InteractionCount" xml:space="preserve">
+    <value>Aantal interacties (per item)</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_IsGrouped" xml:space="preserve">
+    <value>Gegroepeerd</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_ItemCode" xml:space="preserve">
+    <value>Itemcode</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_Itemlayouttemplate" xml:space="preserve">
+    <value>Itemlay-outtemplate</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_ItemTitle" xml:space="preserve">
+    <value>Itemtitel</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_KeyValuesAndConceptScores" xml:space="preserve">
+    <value>Sleutelwaarde(s) en conceptscore(s)</value>
+  </data>
+  <data name="ConceptScoringReportColumnCaption_SubAttributLevelConceptResponseCount" xml:space="preserve">
+    <value>Aantal conceptresponses op deelattribuutniveau (per item)</value>
+  </data>
+  <data name="ControlTemplateGrid" xml:space="preserve">
+    <value>ControlTemplate_overzicht</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Gemaakt door</value>
+  </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>Gemaakt op</value>
+  </data>
+  <data name="CSVFileFilter" xml:space="preserve">
+    <value>CSV (*.csv)|*.csv| Alle bestanden (*.*)|*.*</value>
+  </data>
+  <data name="CustomPropertiesCount" xml:space="preserve">
+    <value>Aantal kenmerken</value>
+  </data>
+  <data name="CustomPropertyName" xml:space="preserve">
+    <value>Code vd waarde</value>
+  </data>
+  <data name="CustomPropertyTitle" xml:space="preserve">
+    <value>Titel vd waarde</value>
+  </data>
+  <data name="CustomPropertyType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="DataSourceGrid" xml:space="preserve">
+    <value>Selectie_overzicht</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>Er is een foutmelding opgetreden: {0}</value>
+  </data>
+  <data name="ErrorWhileExportingToExcelFileMightBeInUse" xml:space="preserve">
+    <value>Fout optreden tijdens het exporteren. Het bestand kan in gebruik zijn.</value>
+  </data>
+  <data name="ExportCustomPropertyReportDescription" xml:space="preserve">
+    <value>Alle geselecteerde items van het tabblad kenmerken</value>
+  </data>
+  <data name="ExportGridDescription" xml:space="preserve">
+    <value>Het volledige selectiescherm wordt geëxporteerd inclusief sortering en groepering.</value>
+  </data>
+  <data name="ExportGridName" xml:space="preserve">
+    <value>Exporteer de inhoud van het selectiescherm</value>
+  </data>
+  <data name="ExtraOptionConceptcodesTask" xml:space="preserve">
+    <value>Aanvullende keuzes</value>
+  </data>
+  <data name="ExtraOptionConceptcodesTaskDescription" xml:space="preserve">
+    <value>Maak hier de aanvullende keuzes.</value>
+  </data>
+  <data name="ExtraOptionTask" xml:space="preserve">
+    <value>Selecteer de itemgegevens</value>
+  </data>
+  <data name="ExtraOptionTaskDescription" xml:space="preserve">
+    <value>Selecteer de itemgegevens voor dit overzicht.</value>
+  </data>
+  <data name="FieldEmpty" xml:space="preserve">
+    <value>Het veld '{0}' is niet gevuld.</value>
+  </data>
+  <data name="FileExists" xml:space="preserve">
+    <value>Bestand bestaat al.</value>
+  </data>
+  <data name="FileNameCustomReport" xml:space="preserve">
+    <value>Kenmerkenoverzicht_Banknaam_{0}</value>
+  </data>
+  <data name="FilenameNotValid" xml:space="preserve">
+    <value>Kies een geldige bestandsnaam.</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Volgnummer</value>
+  </data>
+  <data name="IsSystemItem" xml:space="preserve">
+    <value>Is systeemitem</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="ItemGrid" xml:space="preserve">
+    <value>Item_overzicht</value>
+  </data>
+  <data name="ItemLayoutTemplateGrid" xml:space="preserve">
+    <value>ItemLayoutTemplate_overzicht</value>
+  </data>
+  <data name="ItemLayoutTemplateUsedName" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="KeyValues" xml:space="preserve">
+    <value>Sleutel</value>
+  </data>
+  <data name="LayoutSourceName" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="MaxScore" xml:space="preserve">
+    <value>Max. score</value>
+  </data>
+  <data name="ModifiedBy" xml:space="preserve">
+    <value>Gewijzigd door</value>
+  </data>
+  <data name="ModifiedDate" xml:space="preserve">
+    <value>Gewijzigd op</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nee</value>
+  </data>
+  <data name="NoInfo" xml:space="preserve">
+    <value>Geen waarde</value>
+  </data>
+  <data name="NoProgrammInstalled" xml:space="preserve">
+    <value>Er kan geen programma gevonden worden om het bestand mee te openen.</value>
+  </data>
+  <data name="OriginalName" xml:space="preserve">
+    <value>Originele naam</value>
+  </data>
+  <data name="OriginalVersion" xml:space="preserve">
+    <value>Originele versie</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>Overzicht: {1}{0} Locatie: {2}{0} Geselecteerde kolommen: {0}{3}</value>
+  </data>
+  <data name="OverviewConceptScoring" xml:space="preserve">
+    <value>Overzicht: {1}{0}Locatie: {2}{0}Ook conceptcodes zonder score weergeven: {3}{0}</value>
+  </data>
+  <data name="OverviewGridToExcel" xml:space="preserve">
+    <value>Overzicht: {1}{0}Locatie: {2}</value>
+  </data>
+  <data name="PathOrFilenameNotValid" xml:space="preserve">
+    <value>Kies een geldig pad en/of bestandsnaam.</value>
+  </data>
+  <data name="ProgressMessageConceptScoringReport" xml:space="preserve">
+    <value>Bezig met het verzamelen van concept response gegevens voor item {0}</value>
+  </data>
+  <data name="Publishable" xml:space="preserve">
+    <value>Publiceerbaar</value>
+  </data>
+  <data name="RawScore" xml:space="preserve">
+    <value>Ruwe score</value>
+  </data>
+  <data name="ReportDescriptionConceptScoring" xml:space="preserve">
+    <value>Alle geselecteerde items met bijbehorende conceptcodering in MS Excel.</value>
+  </data>
+  <data name="ReportDescriptionDatasource" xml:space="preserve">
+    <value>Alle items van de toets in tabelvorm. U kunt opgeven welke kolommen in het overzicht komen.</value>
+  </data>
+  <data name="ReportDescriptionItem" xml:space="preserve">
+    <value>Alle geselecteerde items in tabelvorm. U kunt opgeven welke kolommen in het overzicht komen.</value>
+  </data>
+  <data name="ReportDescriptionLinkedAspects" xml:space="preserve">
+    <value>Alle aspecten van de items in een toets in CSV-formaat. U kunt opgeven welke kolommen in het overzicht komen.</value>
+  </data>
+  <data name="ReportDescriptionTest" xml:space="preserve">
+    <value>Alle items van de toets in tabelvorm. U kunt opgeven welke kolommen in het overzicht komen.</value>
+  </data>
+  <data name="ReportNameConceptScoring" xml:space="preserve">
+    <value>Items met conceptcodering in MS Excel</value>
+  </data>
+  <data name="ReportNameDatasource" xml:space="preserve">
+    <value>Items in een selectie met kenmerken in MS Excel</value>
+  </data>
+  <data name="ReportNameItem" xml:space="preserve">
+    <value>Items met kenmerken in MS Excel</value>
+  </data>
+  <data name="ReportNameKenmerkenOverzicht" xml:space="preserve">
+    <value>Kenmerkenoverzicht in MS Excel</value>
+  </data>
+  <data name="ReportNameLinkedAspects" xml:space="preserve">
+    <value>Gekoppelde aspectenrapportage in CSV</value>
+  </data>
+  <data name="ReportNameTest" xml:space="preserve">
+    <value>Toetsitems met kenmerken in MS Excel</value>
+  </data>
+  <data name="ReportSuccesful" xml:space="preserve">
+    <value>Het overzicht {0} is succesvol gemaakt.</value>
+  </data>
+  <data name="ReportUnSuccesful" xml:space="preserve">
+    <value>Er is een foutmelding opgetreden tijdens het maken van het overzicht{0}. {1} Fout: {2}</value>
+  </data>
+  <data name="ResourceId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="ResponseCount" xml:space="preserve">
+    <value>Max. responses</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TestGrid" xml:space="preserve">
+    <value>Toets_overzicht</value>
+  </data>
+  <data name="TestPart1" xml:space="preserve">
+    <value>Toetsdeel</value>
+  </data>
+  <data name="TestTemplateGrid" xml:space="preserve">
+    <value>ToetsTemplate_overzicht</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versie</value>
+  </data>
+  <data name="WouldYouLikeToOpen" xml:space="preserve">
+    <value>Wilt u het bestand openen?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="ItemTemplateSwitchingUnableToLoadTemplate" xml:space="preserve">
+    <value>Kan huidig of nieuw template niet vinden in de bank. Template wijzigen is niet mogelijk.</value>
+  </data>
+  <data name="ProposalCreator_FailedToAddItems" xml:space="preserve">
+    <value>De items konden niet aan de toetsdefintie worden toegevoegd.</value>
+  </data>
+  <data name="IsAnchorItem" xml:space="preserve">
+    <value>Ankeritem</value>
+  </data>
+  <data name="ItemFunctionalType" xml:space="preserve">
+    <value>Itemgebruik</value>
+  </data>
+  <data name="ReferenceTitle" xml:space="preserve">
+    <value>Referentietitel</value>
+  </data>
+  <data name="Weight" xml:space="preserve">
+    <value>Gewicht</value>
+  </data>
+  <data name="ItemActive" xml:space="preserve">
+    <value>Item actief</value>
+  </data>
+  <data name="PlaceHolderHelper_NoSourceSelectedText" xml:space="preserve">
+    <value>Geen bestand geselecteerd</value>
+  </data>
+  <data name="CreatedByFullName" xml:space="preserve">
+    <value>Gemaakt door</value>
+  </data>
+  <data name="ExclusionGroupCode" xml:space="preserve">
+    <value>Uitsluitgroep(en)</value>
+  </data>
+  <data name="InclusionGroupCode" xml:space="preserve">
+    <value>Insluitgroep(en)</value>
+  </data>
+  <data name="ItemTypeFromItemLayoutTemplateString" xml:space="preserve">
+    <value>Itemtype</value>
+  </data>
+  <data name="ModifiedByFullName" xml:space="preserve">
+    <value>Gewijzigd door</value>
+  </data>
+  <data name="ReferenceCount" xml:space="preserve">
+    <value>Aantal referenties</value>
+  </data>
+  <data name="StateName" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ReferencedFileNotFoundInImsManifest" xml:space="preserve">
+    <value>Imsmanifest bestand '{0}' bevat een referentie naar '{1}' maar is niet aanwezig.</value>
+  </data>
+  <data name="IsEnteredMessage" xml:space="preserve">
+    <value>Is ingevuld</value>
+  </data>
+  <data name="LogicFileHelper_CodeMissingOrIncorrectExtension" xml:space="preserve">
+    <value>Één of meer codes missen of hebben een onjuiste extensie. Gebruik aub een geldige extensie voor de te importeren bestanden.</value>
+  </data>
+  <data name="LogicFileHelper_ImageSizeTooLarge" xml:space="preserve">
+    <value>De afmetingen van de afbeelding zijn groot ({0} x {1}). De aanbevolen maximale afmetingen zijn: {2} x {3}. Weet u zeker dat u deze afbeelding wilt importeren?</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Exporteren</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Eigenschappen - Data - Exporteren</value>
+  </data>
+  <data name="PublicationToFile" xml:space="preserve">
+    <value>Publiceren naar bestand</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Overzichten</value>
+  </data>
+  <data name="PublicationToServer" xml:space="preserve">
+    <value>Publiceren naar server</value>
+  </data>
+  <data name="PublicationToFileAndServer" xml:space="preserve">
+    <value>Publiceren naar bestand en server</value>
+  </data>
+  <data name="Error_DependentResourceNotFound" xml:space="preserve">
+    <value>Het bestand bevat een afhankelijkheid die niet in de database staat of het bestand komt reeds voor in een onderliggende bank: {0}</value>
+  </data>
+  <data name="Error_ManifestResourceHandler_ClearCache_CacheDirectoryError" xml:space="preserve">
+    <value>Fout: Cache map kan niet verwijderd worden.</value>
+  </data>
+  <data name="Error_ManifestResourceManager_CannotGetResource" xml:space="preserve">
+    <value>Fout: Bestand '{0}' kon niet worden opgehaald vanwege de volgende fout: {1}</value>
+  </data>
+  <data name="Error_ManifestResourceManager_CopyMediaToCache_ErrorWhileWritingToCache" xml:space="preserve">
+    <value>Fout: Bestand kon niet naar de cache worden geschreven.</value>
+  </data>
+  <data name="Error_ManifestResourceManager_EmptyStream" xml:space="preserve">
+    <value>Fout: Bestand '{0}' bevat een lege stream.</value>
+  </data>
+  <data name="Error_PackageManager_GetStreamRelativeUri_UriNotSet" xml:space="preserve">
+    <value>Fout: Uri niet bevat geen waarde.</value>
+  </data>
+  <data name="Error_PackageManager_GetStream_UriNotRelative" xml:space="preserve">
+    <value>Fout: Uri is niet relatief</value>
+  </data>
+  <data name="Error_ResourceEntriesInCacheCollection_itemParNotSet" xml:space="preserve">
+    <value>Fout: Parameter 'item' bevat geen waarde.</value>
+  </data>
+  <data name="Error_ResourceEntry_Constructor_DependentResources_Empty" xml:space="preserve">
+    <value>Fout: parameter 'dependentResources' is null</value>
+  </data>
+  <data name="Error_ResourceEntry_Constructor_Name_Empty" xml:space="preserve">
+    <value>Fout: parameter 'name' is null or empty</value>
+  </data>
+  <data name="Error_ResourceEntry_Constructor_Type_Empty" xml:space="preserve">
+    <value>Fout: parameter 'Type' is null or empty</value>
+  </data>
+  <data name="Error_ResourceEntry_Constructor_Uri_Empty" xml:space="preserve">
+    <value>Fout: parameter 'Uri' is null or empty</value>
+  </data>
+  <data name="Error_ResourceManifest_Load_StreamNotSet" xml:space="preserve">
+    <value>Fout: parameter 'manifestStream' is niet gezet</value>
+  </data>
+  <data name="Error_UriNotSet" xml:space="preserve">
+    <value>Fout: Uri parameter not set</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_ClearCache_CacheCleared" xml:space="preserve">
+    <value>Resource cache is leeggemaakt.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_ClearCache_CachedirNotFoundOrNoEntriesInCache" xml:space="preserve">
+    <value>Cache map niet gevonden of de cache bevat geen bestanden.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_CopyMediaToCache_AddedToCache" xml:space="preserve">
+    <value>Bestand '{0}' is toegevoegd aan de cache.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_CopyMediaToCache_CopyResources" xml:space="preserve">
+    <value>Bezig met het kopiëren van {0} bestanden naar de cache.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_GetFromCache_GetResourceStream" xml:space="preserve">
+    <value>Getting resourcestream.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_GetFromCache_ProcessingStream" xml:space="preserve">
+    <value>Bezig met het verwerken van de stream van het bestand, stream is {0} bytes.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_GetResourceAndProcessStream_GetResourceStream" xml:space="preserve">
+    <value>Getting resourcestream.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_GetResourceAndProcessStream_ProcessingStream" xml:space="preserve">
+    <value>Processing resourcestream, stream is {0} bytes.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_GetResource_FoundInCache" xml:space="preserve">
+    <value>Bestand '{0}' wordt uit de cache gehaald.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_GetResource_GetResource" xml:space="preserve">
+    <value>Er wordt geprobeerd het bestand '{0}' op te halen.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_GetResource_NotFoundInCache" xml:space="preserve">
+    <value>Bestand '{0}' staat niet in de cache en wordt uit het package gehaald.</value>
+  </data>
+  <data name="Trace_ManifestResourceManager_GetTypedResource_GetResource" xml:space="preserve">
+    <value>Trying to get a typed resource with name '{0}' of type '{1}'.</value>
+  </data>
+  <data name="MathFormulaImage" xml:space="preserve">
+    <value>Wiskundige formule afbeelding</value>
+  </data>
+  <data name="MathFormulaImageOfResource" xml:space="preserve">
+    <value>Wiskunde formule afbeelding van bron {0}</value>
+  </data>
+  <data name="DescriptionItemKeyValidator" xml:space="preserve">
+    <value>Controle of elk item een sleutel heeft.</value>
+  </data>
+  <data name="DescriptionResourceStateValidator" xml:space="preserve">
+    <value>Controleert de status van de bronnen.</value>
+  </data>
+  <data name="NameItemKeyValidator" xml:space="preserve">
+    <value>Itemsleutel</value>
+  </data>
+  <data name="NameResourceStateValidator" xml:space="preserve">
+    <value>Status van bronnen</value>
+  </data>
+  <data name="ResourcesCanBePublished" xml:space="preserve">
+    <value>De toets kan worden gepubliceerd.</value>
+  </data>
+  <data name="TheFollowingResourcesPreventYouFromPublishingThisPackage" xml:space="preserve">
+    <value>De volgende  '{0}' bron(nen)heeft/hebben een status waarbij er niet gepubliceerd kan worden:</value>
+  </data>
+  <data name="TheFollowingResourcesResultInAWarning" xml:space="preserve">
+    <value>De volgende  '{0}' bron(nen) heeft/hebben een status die resulteert in een waarschuwing:</value>
+  </data>
+  <data name="ValidatingResource" xml:space="preserve">
+    <value>Bezig met het valideren van bron '{0}'...</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>{0} bronnen hebben een status waarbij niet gepubliceerd mag worden.{1}{2} bronnen hebben de status die resulteert in een waarschuwing.</value>
+  </data>
+  <data name="WarningItemNoKey" xml:space="preserve">
+    <value>Item {0} heeft geen sleutel gedefinieerd.</value>
+  </data>
+  <data name="WarningItemsWithoutKeys" xml:space="preserve">
+    <value>Er zijn {0} items zonder sleutel gevonden.</value>
+  </data>
+  <data name="TestConstructionValidator_Description" xml:space="preserve">
+    <value>Dezelfde controles worden uitgevoerd als bij toetsconstructie.</value>
+  </data>
+  <data name="TestConstructionValidator_Name" xml:space="preserve">
+    <value>Toetsconstructie</value>
+  </data>
+  <data name="TestConstructionValidator_TestContainsValidationErrors" xml:space="preserve">
+    <value>Toets '{0}' validatiefouten {1}</value>
+  </data>
+  <data name="BusyEncryptingDocument" xml:space="preserve">
+    <value>Versleutelen van het document...</value>
+  </data>
+  <data name="CannotAddExtensionFileAlreadyExists" xml:space="preserve">
+    <value>Bestand zonder extensie aangetroffen in package en extensie kon niet automatisch toegevoegd worden
+    (bestand bestaat al): {0}</value>
+  </data>
+  <data name="CannotStartPublication" xml:space="preserve">
+    <value>Publicatie kan om de volgende fouten niet gestart worden:{0}{0}</value>
+  </data>
+  <data name="CesPreviewerNotFound" xml:space="preserve">
+    <value>Facet Previewer is niet geïnstalleerd of kon niet gevonden worden op de opgegeven lokatie: '{0}'.</value>
+  </data>
+  <data name="CesPreviewStartUpError" xml:space="preserve">
+    <value>Facet Preview kan niet worden opgestart. Controleer of de applicatie is geïnstalleerd. Locatie: '{0}'. Fout: {1}</value>
+  </data>
+  <data name="CESPreviewUserFriendlyName" xml:space="preserve">
+    <value>Facet Player</value>
+  </data>
+  <data name="ErrorMessage" xml:space="preserve">
+    <value>Er is een fout opgetreden bij bron: '{0}' van het type: {1}{2}</value>
+  </data>
+  <data name="ErrorOccurred" xml:space="preserve">
+    <value>Er is een foutmelding opgetreden van het type '{0}' tijdens het verwerken van: '{1}', melding: '{2}'</value>
+  </data>
+  <data name="ErrorWhilePreviewIsPrepared" xml:space="preserve">
+    <value>Fout tijdens het voorbereiden van het voorbeeld.</value>
+  </data>
+  <data name="ExportAlreadyExistsSelectOtherExportLocation" xml:space="preserve">
+    <value>Export bestaat al, selecteer een andere export locatie.</value>
+  </data>
+  <data name="ExtensionShouldBeZip" xml:space="preserve">
+    <value>Bestand moet de extensie: .zip hebben.</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>Package bestaat al.</value>
+  </data>
+  <data name="Ie9Required" xml:space="preserve">
+    <value>Internet Explorer 9 of hoger is vereist om een voorbeeld van het item te kunnen tonen.</value>
+  </data>
+  <data name="MissingJsonManifest1" xml:space="preserve">
+    <value>Er is geen Json manifest bestand gevonden in '{0}'</value>
+  </data>
+  <data name="MultipleJsonManifest" xml:space="preserve">
+    <value>Er zijn meerdere Json manifest bestanden gevonden in '{0}'</value>
+  </data>
+  <data name="NoScoringAvailable" xml:space="preserve">
+    <value>Geen score beschikbaar. Voeg deze toe in de Scores tab in Questify Builder.</value>
+  </data>
+  <data name="PerformCreationOfZipFile" xml:space="preserve">
+    <value>Bezig met het maken van het zip bestand...</value>
+  </data>
+  <data name="PerformXsdValidation" xml:space="preserve">
+    <value>Bezig met xsd validatie...</value>
+  </data>
+  <data name="PerformXsdValidationOnFile" xml:space="preserve">
+    <value>Bezig met valideren van bestand: '{0}'...</value>
+  </data>
+  <data name="PerformXslTransformation" xml:space="preserve">
+    <value>Bezig met xsl transformatie...</value>
+  </data>
+  <data name="ProcessingItem" xml:space="preserve">
+    <value>Item '{0}' wordt toegevoegd aan het package.</value>
+  </data>
+  <data name="PublicationLocationText" xml:space="preserve">
+    <value>Locatie van {0}:</value>
+  </data>
+  <data name="PublishingPackageToSpecifiedLocation" xml:space="preserve">
+    <value>Document wordt gepubliceerd naar de opgegeven locatie...</value>
+  </data>
+  <data name="ReferencedFileFromJsonManifestNotFound" xml:space="preserve">
+    <value>Het gerefereerde bestand uit het Json Manifest '{0}' is niet gevonden</value>
+  </data>
+  <data name="ValidationError" xml:space="preserve">
+    <value>Validatiefout</value>
+  </data>
+  <data name="XsdValidationFile" xml:space="preserve">
+    <value>Item '{0}' Bestand '{1}': {2}</value>
+  </data>
+  <data name="Formula" xml:space="preserve">
+    <value>Formule</value>
+  </data>
+  <data name="ImageReportNameItem" xml:space="preserve">
+    <value>Schermafdrukken van geselecteerde items</value>
+  </data>
+  <data name="ImageReportNameTest" xml:space="preserve">
+    <value>Schermafdrukken van items in een toets</value>
+  </data>
+  <data name="NoCommonTargetFound" xml:space="preserve">
+    <value>Er is geen gemeenschappelijke target gevonden.</value>
+  </data>
+  <data name="PleaseSelectAnExistingPath" xml:space="preserve">
+    <value>Selecteer een bestaande locatie.</value>
+  </data>
+  <data name="FolderContainsInvalidCharacters" xml:space="preserve">
+    <value>Folder bevat een character dat niet is toegestaan: "{0}"</value>
+  </data>
+  <data name="CreatingScreenshot" xml:space="preserve">
+    <value>Bezig met het maken van een afbeelding van item '{0}'</value>
+  </data>
+  <data name="NoGenericTestFound" xml:space="preserve">
+    <value>Test bevat geen GenericAssessmentTest view.</value>
+  </data>
+  <data name="CodeNotFound" xml:space="preserve">
+    <value>De kolom Code kon niet gevonden worden in het MS Excel document</value>
+  </data>
+  <data name="CannotCopyPasteInlineControls" xml:space="preserve">
+    <value>Het is niet mogelijk om het inline control in dit veld te plakken. Het kan alleen geplakt in het veld waaruit het geknipt of gekopieerd is.</value>
+  </data>
+  <data name="CannotPasteImagesOutsideBankHierarchy" xml:space="preserve">
+    <value>Kan plaatje {0} niet plakken omdat het niet bestaat in de huidige bankhiërarchie.</value>
+  </data>
+  <data name="MathML_NoPlugin" xml:space="preserve">
+    <value>Er is geen plugin beschikbaar om MathML te kunnen bewerken.</value>
+  </data>
+  <data name="MaximumNumberSymbolreferencesReached" xml:space="preserve">
+    <value>Maximaal aantal symbool verwijzingen bereikt</value>
+  </data>
+  <data name="OnlyImagesSupportCopyPaste" xml:space="preserve">
+    <value>Kopiëren-plakken wordt niet ondersteund voor video of audio.</value>
+  </data>
+</root>

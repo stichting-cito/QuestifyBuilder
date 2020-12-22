@@ -1,0 +1,849 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A4A21CD0-3F23-4BE8-A859-9778CD5F6DE7}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Questify.Builder.Model.ContentModel</AssemblyName>
+    <AssemblyOriginatorKeyFile>..\TestBuilder.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>On</OptionStrict>
+    <RootNamespace>
+    </RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SignAssembly>false</SignAssembly>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>Cito.TestBuilder.ContentModel\bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>Cito.TestBuilder.ContentModel\bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Any CPU' ">
+    <OutputPath>Cito.TestBuilder.ContentModel\bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <DebugType>Full</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.2.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.2.1\lib\net45\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Versioning\GeneralInfo.vb">
+      <Link>GeneralInfo.vb</Link>
+    </Compile>
+    <Compile Include="..\..\Versioning\TestBuilder_VersionInfo.vb">
+      <Link>My Project\TestBuilder_VersionInfo.vb</Link>
+    </Compile>
+    <Compile Include="CustomClasses\BankStatistics.vb" />
+    <Compile Include="CustomClasses\HelperClasses\CachingWithOptionsConverter.vb" />
+    <Compile Include="CustomClasses\ItemStatus.vb" />
+    <Compile Include="CustomClasses\ItemStatusList.vb" />
+    <Compile Include="CustomClasses\ModifiedItems.vb" />
+    <Compile Include="CustomClasses\ModifiedItemsList.vb" />
+    <Compile Include="CustomClasses\ResourceEntityWithOptions.vb" />
+    <Compile Include="EntityClasses\ActionEntity.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\AspectResourceEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\ChildTreeStructurePartCustomBankPropertyEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\ConceptStructureCustomBankPropertyEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\CustomBankPropertyEntity.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\CustomBankPropertyValueEntity.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\DataSourceResourceEntity.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\FreeValueCustomBankPropertyEntity.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\FreeValueCustomBankPropertyValueEntity.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\HiddenResourceEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\ListCustomBankPropertyEntity.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\ListCustomBankPropertyValueEntity.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\ListValueCustomBankPropertyEntity.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\ResourceHistoryEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\RichTextValueCustomBankPropertyEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\RichTextValueCustomBankPropertyValueEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\StateActionEntity.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\StateEntity.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\TestPackageResourceEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\TreeStructureCustomBankPropertyEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\TreeStructureCustomBankPropertySelectedPartEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\TreeStructureCustomBankPropertyValueEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\TreeStructurePartCustomBankPropertyEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="Extended Classes\EntityClasses\ResourceDataEntity.vb" />
+    <Compile Include="HelperClasses\workers\MetaDataGeneratorForEntity.vb" />
+    <Compile Include="HelperClasses\ExtensionMethods.vb" />
+    <Compile Include="Enums\ConceptTypeApplicableTo.vb" />
+    <Compile Include="Enums\CustomBankPropertyType.vb" />
+    <Compile Include="Enums\Enums.vb" />
+    <Compile Include="Extended Classes\EntityClasses\AspectResourceEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\AssessmentTestResourceEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\BankEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\ChildTreeStructurePartCustomBankPropertyEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\CommonEntityBase.vb" />
+    <Compile Include="Extended Classes\EntityClasses\ConceptStructurePartCustomBankPropertyEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\TreeStructurePartCustomBankPropertyEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\TreeStructureCustomBankPropertyEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\ConceptStructureCustomBankPropertyEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\ControlTemplateResourceEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\CustomBankPropertyEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\DataSourceResourceEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\FreeValueCustomBankPropertyEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\GenericResourceEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\ItemLayoutTemplateResourceEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\ItemResourceEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\ListCustomBankPropertyEntity .vb" />
+    <Compile Include="Extended Classes\EntityClasses\ListValueCustomBankPropertyEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\PackageResourceEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\ResourceEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\ResourceHistoryEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\TestPackageResourceEntity.vb" />
+    <Compile Include="Extended Classes\EntityClasses\UserEntity.vb" />
+    <Compile Include="Extended Classes\HelperClasses\BankstructureHelper.vb" />
+    <Compile Include="Extended Classes\HelperClasses\EntityCollection.vb" />
+    <Compile Include="Extended Classes\Interfaces\IVersionable.vb" />
+    <Compile Include="Extended Classes\ValidatorClasses\BankValidator.vb" />
+    <Compile Include="Extended Classes\ValidatorClasses\CustomBankPropertyValidator.vb" />
+    <Compile Include="Extended Classes\ValidatorClasses\ListValueCustomBankPropertyValidator.vb" />
+    <Compile Include="Extended Classes\ValidatorClasses\ResourceValidator.vb" />
+    <Compile Include="Extended Classes\ValidatorClasses\UserValidator.vb" />
+    <Compile Include="HelperClasses\AssessmentTestResourceEntityCollection.vb" />
+    <Compile Include="HelperClasses\EntityCollection.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="HelperClasses\ItemResourceEntityCollection.vb" />
+    <Compile Include="Extended Classes\Interfaces\IPropertyEntity.vb" />
+    <Compile Include="RelationClasses\ChildTreeStructurePartCustomBankPropertyRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\ConceptStructureCustomBankPropertyRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\HiddenResourceRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\ResourceHistoryRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\RichTextValueCustomBankPropertyRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\RichTextValueCustomBankPropertyValueRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\TestPackageResourceRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\TreeStructureCustomBankPropertyRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\TreeStructureCustomBankPropertySelectedPartRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\TreeStructureCustomBankPropertyValueRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\TreeStructurePartCustomBankPropertyRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ResourceProperties\AssemblyInfo.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ConstantsEnums.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="HelperClasses\FieldInfoProvider.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="HelperClasses\TypeDefaultValue.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="HelperClasses\InheritanceInfoProvider.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="My Project\Resources.nl.Designer.vb">
+      <DependentUpon>Resources.nl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RelationClasses\ActionRelations.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\AspectResourceRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\BankRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\CustomBankPropertyRelations.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\CustomBankPropertyValueRelations.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\DataSourceResourceRelations.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\DynamicRelation.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\FreeValueCustomBankPropertyRelations.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\FreeValueCustomBankPropertyValueRelations.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\ListCustomBankPropertyRelations.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\ListCustomBankPropertyValueRelations.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\ListValueCustomBankPropertyRelations.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\ResourceDataRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\StateActionRelations.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\StateRelations.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\UserApplicationRoleRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\UserBankRoleRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\UserRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\ResourceRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\DependentResourceRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\AssessmentTestResourceRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\ItemResourceRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\ItemLayoutTemplateResourceRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\ControlTemplateResourceRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\GenericResourceRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\RoleRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\RolePermissionRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\PermissionTargetRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\PermissionRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\CommonEntityBase.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\BankEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\ResourceDataEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\UserApplicationRoleEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\UserBankRoleEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\UserEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\ResourceEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\DependentResourceEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\AssessmentTestResourceEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\ItemResourceEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\ItemLayoutTemplateResourceEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\ControlTemplateResourceEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\GenericResourceEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\RoleEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\RolePermissionEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\PermissionTargetEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\PermissionEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="FactoryClasses\EntityFactories.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="FactoryClasses\EntityFieldFactory.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="FactoryClasses\EntityFieldsFactory.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="HelperClasses\ResultsetFields.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="HelperClasses\FieldCreationClasses.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="UnitTestInfo.vb" />
+    <Compile Include="ValidatorClasses\HiddenResourceValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="Versioning\ConceptStructureMetaData.vb" />
+    <Compile Include="Versioning\CustomBankPropertyMetaData.vb" />
+    <Compile Include="Versioning\DependentResourceMetaData.vb" />
+    <Compile Include="Versioning\MetaData.vb" />
+    <Compile Include="Versioning\MetaDataBase.vb" />
+    <Compile Include="Versioning\MetaDataCompareResult.vb" />
+    <Compile Include="Versioning\PropertyEntityMetaData.vb" />
+    <Compile Include="Versioning\Retrieval\ConceptStructureRetriever.vb" />
+    <Compile Include="Versioning\Retrieval\CustomPropertiesRetriever.vb" />
+    <Compile Include="Versioning\Retrieval\DependentResourcesRetriever.vb" />
+    <Compile Include="Versioning\Retrieval\MetaDataRetrieverBase.vb" />
+    <Compile Include="Versioning\Retrieval\PropertyEntityRetriever.vb" />
+    <Compile Include="Versioning\Retrieval\TreeStructureRetriever.vb" />
+    <Compile Include="Versioning\TreeStructureMetaData.vb" />
+    <None Include="HelperClasses\WebServiceHelper.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </None>
+    <Compile Include="ResourceProperties\ResourcePropertyDefinition.vb" />
+    <Compile Include="ResourceProperties\ResourcePropertyDefinitionCollection.vb" />
+    <Compile Include="ResourceProperties\ResourcePropertyHelpers.vb" />
+    <Compile Include="ResourceProperties\ResourcePropertyListValueDefinition.vb" />
+    <Compile Include="ResourceProperties\ResourcePropertyValueCollection.vb" />
+    <Compile Include="ValidatorClasses\ActionValidator.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\AspectResourceValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\BankCustomPropertyValidator.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidatorClasses\BankValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\CachedItemLayoutTemplateResourceValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ChildTreeStructurePartCustomBankPropertyValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ConceptStructureCustomBankPropertyValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ConceptTypeValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\CustomBankPropertyValidator.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\CustomBankPropertyValueValidator.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\CustomPropertyValidator.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidatorClasses\DataSourceResourceValidator.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\FreeValueBankCustomPropertyValidator.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidatorClasses\FreeValueBankCustomPropertyValueValidator.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidatorClasses\FreeValueCustomBankPropertyValidator.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\FreeValueCustomBankPropertyValueValidator.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\FreeValueCustomPropertyValidator.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidatorClasses\FreeValueCustomPropertyValueValidator.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidatorClasses\ListBankCustomPropertyValidator.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidatorClasses\ListBankCustomPropertyValueValidator.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidatorClasses\ListCustomBankPropertyValidator.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ListCustomBankPropertyValueValidator.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ListCustomPropertyValidator.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidatorClasses\ListCustomPropertyValueValidator.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidatorClasses\ListValueBankCustomPropertyValidator.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidatorClasses\ListValueCustomBankPropertyValidator.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ListValueCustomPropertyValidator.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValidatorClasses\ResourceDataValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ResourceHistoryValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\StateActionValidator.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\StateValidator.vb">
+      <SubType>Code</SubType>
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\TreeStructureCustomBankPropertySelectedPartValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\TreeStructureCustomBankPropertyValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\TreeStructureCustomBankPropertyValueValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\TreeStructurePartCustomBankPropertyValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\UserApplicationRoleValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\UserBankRoleValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\UserValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ResourceValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\DependentResourceValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\AssessmentTestResourceValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ItemResourceValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ItemLayoutTemplateResourceValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ControlTemplateResourceValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\GenericResourceValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\RoleValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\RolePermissionValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\PermissionTargetValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\PermissionValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <AppDesigner Include="My Project\" />
+    <Compile Include="EntityClasses\ListCustomBankPropertySelectedValueEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ListCustomBankPropertySelectedValueValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\ListCustomBankPropertySelectedValueRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\TestPackageResourceValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\PackageResourceValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\PackageResourceRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\PackageResourceEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\ConceptStructureCustomBankPropertySelectedPartRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\ConceptTypeRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ConceptStructureCustomBankPropertySelectedPartValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\ConceptTypeEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\ConceptStructureCustomBankPropertySelectedPartEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ConceptStructureCustomBankPropertyValueValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ConceptStructurePartCustomBankPropertyValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\ConceptStructurePartCustomBankPropertyRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\ConceptStructureCustomBankPropertyValueRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\ConceptStructurePartCustomBankPropertyEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\ConceptStructureCustomBankPropertyValueEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="EntityClasses\ChildConceptStructurePartCustomBankPropertyEntity.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ChildConceptStructurePartCustomBankPropertyValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="RelationClasses\ChildConceptStructurePartCustomBankPropertyRelations.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\RichTextValueCustomBankPropertyValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\RichTextValueCustomBankPropertyValueValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+    <Compile Include="ValidatorClasses\ResourceExposureLogValidator.vb">
+      <GeneratedBy>LLBLGen Pro</GeneratedBy>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cito.Tester.Common\Cito.Tester.Common.vbproj">
+      <Project>{9a0bd8fe-d6f6-4ce5-9a0b-877610b00deb}</Project>
+      <Name>Cito.Tester.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.ContentModel.DatabaseSpecific\Questify.Builder.Model.ContentModel.DatabaseSpecific.vbproj">
+      <Project>{A1AB6724-A8E0-4064-8F51-49BFB8EB8B31}</Project>
+      <Name>Questify.Builder.Model.ContentModel.DatabaseSpecific</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security\Questify.Builder.Security.vbproj">
+      <Project>{30B8E255-BB43-4F43-8DD1-387988E33AF3}</Project>
+      <Name>Questify.Builder.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.nl.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.nl.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.Targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

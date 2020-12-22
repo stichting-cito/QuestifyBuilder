@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{CBC94D98-6C8E-476A-BEB9-F5C651752886}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Questify.Builder.UnitTests.Framework</RootNamespace>
+    <AssemblyName>Questify.Builder.UnitTests.Framework</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>
+    </NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FakeItEasy, Version=4.0.0.0, Culture=neutral, PublicKeyToken=eff28e2146d5fd2c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FakeItEasy.4.6.0\lib\net45\FakeItEasy.dll</HintPath>
+    </Reference>
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.2.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.2.1\lib\net45\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CTContentSampleDataHelper.vb" />
+    <Compile Include="ExtensionMethods.vb" />
+    <Compile Include="FakeAppTemplate\ExportReadyResourceManager.vb" />
+    <Compile Include="FakeAppTemplate\FakeBankServiceHandler.vb" />
+    <Compile Include="FakeAppTemplate\FakeDAL.vb" />
+    <Compile Include="FakeAppTemplate\FakedResources.vb" />
+    <Compile Include="FakeAppTemplate\FakeDtoRepositoryHandler.vb" />
+    <Compile Include="FakeAppTemplate\FakeGenericResourceDtoRepositoryHandler.vb" />
+    <Compile Include="FakeAppTemplate\FakeResourceDtoRepositoryHandler.vb" />
+    <Compile Include="FakeAppTemplate\FakeResourceServiceHandler.vb" />
+    <Compile Include="FakeAppTemplate\FakeSecurityServiceHandler.vb" />
+    <Compile Include="FakeAppTemplate\FakeStaticResources1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FakeStaticResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="FakeAppTemplate\Mapper.vb" />
+    <Compile Include="FakeAppTemplate\SequentialGuid.vb" />
+    <Compile Include="FakeAppTemplate\SimpleFakedResourceManager.vb" />
+    <Compile Include="Faketory\customMocks\datasources\MockedItemDataSource.vb" />
+    <Compile Include="Faketory\customMocks\datasources\MockedItemDataSourceConfig.vb" />
+    <Compile Include="Faketory\FakeDtoRepository.vb" />
+    <Compile Include="Faketory\FakeFactory.vb" />
+    <Compile Include="Faketory\FakeResourceManager.vb" />
+    <Compile Include="Faketory\FakeServices.vb" />
+    <Compile Include="Faketory\impl\AddAsDependency.vb" />
+    <Compile Include="Faketory\impl\AddBase.vb" />
+    <Compile Include="Faketory\impl\AddIsUsedBy.vb" />
+    <Compile Include="Faketory\impl\AddKeyword.vb" />
+    <Compile Include="Faketory\impl\AddNoParent.vb" />
+    <Compile Include="Faketory\impl\AddTreePropertyKeyword.vb" />
+    <Compile Include="Faketory\impl\AssessmentTestMaker.vb" />
+    <Compile Include="Faketory\impl\DataSourceMaker.vb" />
+    <Compile Include="Faketory\impl\EntityMaker.vb" />
+    <Compile Include="Faketory\impl\SectionOrItemMaker.vb" />
+    <Compile Include="Faketory\impl\TestPartMaker.vb" />
+    <Compile Include="Faketory\impl\TestSectionMaker.vb" />
+    <Compile Include="Faketory\interface\Fluent_Syntax_Interfaces.vb" />
+    <Compile Include="Faketory\interface\IAssesmentTestMaker.vb" />
+    <Compile Include="Faketory\interface\IDataSourceMaker.vb" />
+    <Compile Include="Faketory\interface\IEntityMaker.vb" />
+    <Compile Include="Faketory\interface\IFakeDtoRepository.vb" />
+    <Compile Include="Faketory\interface\IFakeServices.vb" />
+    <Compile Include="Faketory\interface\ISectionOrItemMaker.vb" />
+    <Compile Include="Faketory\interface\ITestPartMaker.vb" />
+    <Compile Include="Faketory\interface\ITestSectionMaker.vb" />
+    <Compile Include="Faketory\ResourceRefFactory.vb" />
+    <Compile Include="Faketory\TestConstructionFactory.vb" />
+    <Compile Include="HelperClasses\UnitTestHelper.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RandomStringGenerator.vb" />
+    <Compile Include="TestDefV2_ExtensionMethods.vb" />
+    <Compile Include="Util\XmlTools.vb" />
+    <Compile Include="Util\Xsi.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FakeAppTemplate\FakeStaticResources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FakeStaticResources1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Resources\AssessmentTestModelv2" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\transparentPix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Builder\Model.ContentModel\Questify.Builder.Model.ContentModel.vbproj">
+      <Project>{44eafd1e-6cc9-4a94-b6f6-a78734c7aae5}</Project>
+      <Name>Questify.Builder.Model.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Builder\Logic\Questify.Builder.Logic.vbproj">
+      <Project>{3a707189-b5de-439d-91d3-fa20ce79e8bf}</Project>
+      <Name>Questify.Builder.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Builder\Security\Questify.Builder.Security.vbproj">
+      <Project>{f7b4a532-ddcc-47f5-bb20-a7ae6f1d47b5}</Project>
+      <Name>Questify.Builder.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cito.Tester.Common\Cito.Tester.Common.vbproj">
+      <Project>{9a0bd8fe-d6f6-4ce5-9a0b-877610b00deb}</Project>
+      <Name>Cito.Tester.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cito.Tester.ContentModel\Cito.Tester.ContentModel.vbproj">
+      <Project>{94ee8d6c-5c52-4f34-9e61-e407b3240004}</Project>
+      <Name>Cito.Tester.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Service\Questify.Builder.Logic.Service.csproj">
+      <Project>{885875BF-3E90-4B06-B1FB-A7883E54E391}</Project>
+      <Name>Questify.Builder.Logic.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

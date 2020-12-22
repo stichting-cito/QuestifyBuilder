@@ -1,0 +1,64 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Expander header -->
+    <s:String x:Key="ItemEditor.ScoreEditor.ExpanderScoringHeader">Score editor</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ExpanderEncodingHeader">Encoding editor</s:String>
+
+    <!-- GENERAL UserControl -->
+    <s:String x:Key="ItemEditor.ScoreEditor.ScoreEditor">Score editors</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.EncodingEditor">Encoding editor</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ScoreEditorForEncodingWindow">Encoding score editor</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.NoKeysSet">No key has been given.</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.TooLittleKeySet">Not enough keys have been set.</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.TooManyKeysSet">Too many keys given.</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ReloadScore">Refresh score.</s:String>
+
+    <!-- Column headers -->
+    <s:String x:Key="ItemEditor.ScoreEditor.FieldNameColumnHeaderText">Field name</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.OperatorColumnHeaderText">Operator</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ValueColumnHeaderText">Value</s:String>
+
+    <!-- Often used words -->
+    <s:String x:Key="ItemEditor.ScoreEditor.Alternatives">Correct responses</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.AddAlternative">Add response</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.RemoveAlternative">Remove response</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.PreProcessingRule">Pre processing rule</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.Key">Key</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ColumnSeparatorText">or</s:String>
+
+    <!-- Scoring Method -->
+    <s:String x:Key="ItemEditor.ScoreEditor.ScoreMethod">Score method :</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ScoreMethod.None">None</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ScoreMethod.Dichotomous">Dichotomous</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ScoreMethod.Polytomous">Polytomous</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ComparisonType">Comparison type</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.RangeText">up to and including</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.Equals">Equals</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.Range">Range</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.GreaterThan">Greater than</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.SmallerThan">Smaller than</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.GreaterThanEquals">Greater than equals</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.SmallerThanEquals">Smaller than equals</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.Equivalent">Equivalent to</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.NotEquals">Not equals</s:String>
+
+    <!-- Validation errors -->
+    <s:String x:Key="ItemEditor.ScoreEditor.Choice.NoDuplicateKeys">Duplicate keys are not allowed.</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.GapMatch.ValidateMatchMax">The allowed number of connections for the selected value has been exceeded.</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.GraphGapMatch.Hotspot">Hotspot</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.GraphGapMatch.Picture">Picture</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.Order.ValidateAssignToOnePositionOnly">An element may be assigned to one position only.</s:String>
+
+    <!-- Ordering label -->
+    <s:String x:Key="ItemEditor.ScoreEditor.Order.PostionLabel">Position</s:String>
+
+    <!--Cas Scoring-->
+    <s:String x:Key="ItemEditor.ScoreEditor.CasEditor.NrVariable">Number of variables</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.CasEditor.NrSolutions">Number of solutions</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.CasEditor.Label">Label</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.CasEditor.SolutionNR">solution {0}</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.CasEditor.Degree">Check for degree</s:String>
+    
+</ResourceDictionary>

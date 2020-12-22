@@ -1,0 +1,135 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="ConceptInitiFlow"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:local="clr-namespace:Questify.Builder.Logic.ContentModel.Scoring"
+ xmlns:local1="clr-namespace:Questify.Builder.Logic.ContentModel.workers.Flow"
+ xmlns:local2="clr-namespace:Questify.Builder.Logic"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:contentModel="clr-namespace:Cito.Tester.ContentModel;assembly=Cito.Tester.ContentModel">
+  <x:Members>
+    <x:Property Name="Solution" Type="InArgument(contentModel:Solution)" />
+    <x:Property Name="ScoreParameters" Type="InArgument(scg:IEnumerable(contentModel:ScoringParameter))" />
+    <x:Property Name="CombinedScoringMapKey" Type="InArgument(local:CombinedScoringMapKey)" />
+  </x:Members>
+  <sap2010:WorkflowViewState.IdRef>ConceptInitiFlow_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>Cito.Tester.ContentModel</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>Questify.Builder.Logic.ContentModel.Scoring</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>Cito.Tester.ContentModel</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Questify.Builder.Logic</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <local1:ClearConceptIfRequired sap2010:WorkflowViewState.IdRef="ClearConceptIfRequired_1" ScoringParameters="[ScoreParameters]" Solution="[Solution]" />
+    <If Condition="[CombinedScoringMapKey.IsGroup]" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <local1:SynchronizeKeyFindingToConceptFindingActivity DisplayName="Synchronize KeyFinding To ConceptFinding" sap2010:WorkflowViewState.IdRef="SynchronizeKeyFindingToConceptFindingActivity_4" ScoreParameter="[ScoreParameters.First()]" Solution="[Solution]" />
+          <local1:EnforceSingleChoiceScore CombinedScoringMapKey="[CombinedScoringMapKey]" sap2010:WorkflowViewState.IdRef="EnforceSingleChoiceScore_3" Solution="[Solution]" />
+          <local1:AddCatchAll CombinedScoringMapKey="[CombinedScoringMapKey]" sap2010:WorkflowViewState.IdRef="AddCatchAll_3" Solution="[Solution]" />
+          <local2:RemoveOrphanConceptFact CombinedScoringMapKey="[CombinedScoringMapKey]" sap2010:WorkflowViewState.IdRef="RemoveOrphanConceptFact_1" Solution="[Solution]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="contentModel:ScoringParameter" Name="ScoringParameter" />
+          </Sequence.Variables>
+          <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="contentModel:ScoringParameter">[ScoringParameter]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="contentModel:ScoringParameter">[ScoreParameters.First()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <local1:SynchronizeKeyFindingToConceptFindingActivity DisplayName="Synchronize KeyFinding To ConceptFinding" sap2010:WorkflowViewState.IdRef="SynchronizeKeyFindingToConceptFindingActivity_2" ScoreParameter="[ScoringParameter]" Solution="[Solution]" />
+          <If Condition="[TypeOf ScoringParameter Is ChoiceScoringParameter]" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <local1:EnforceSingleChoiceScore CombinedScoringMapKey="[CombinedScoringMapKey]" sap2010:WorkflowViewState.IdRef="EnforceSingleChoiceScore_1" Solution="[Solution]" />
+                <local1:RemoveDuplicatedKeysInConcept CombinedScoringMapKey="[CombinedScoringMapKey]" sap2010:WorkflowViewState.IdRef="RemoveDuplicatedKeysInConcept_1" Solution="[Solution]" />
+                <local1:AddFactsToScoreParameter CombinedScoringKey="[CombinedScoringMapKey]" sap2010:WorkflowViewState.IdRef="AddFactsToScoreParameter_1" Solution="[Solution]" />
+                <local1:AddMissingAnswerCatagoryToMC CombinedScoringMapKey="[CombinedScoringMapKey]" sap2010:WorkflowViewState.IdRef="AddMissingAnswerCatagoryToMC_1" Solution="[Solution]" />
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <local1:AddCatchAll CombinedScoringMapKey="[CombinedScoringMapKey]" sap2010:WorkflowViewState.IdRef="AddCatchAll_1" Solution="[Solution]" />
+            </If.Else>
+          </If>
+        </Sequence>
+      </If.Else>
+    </If>
+    <sads:DebugSymbol.Symbol>d3NDOlxQcm9qZWN0IFF1ZXN0aWZ5XEdlbmVyaWNcdjIuN1xUZXN0QnVpbGRlclxDaXRvLlRlc3RCdWlsZGVyLkxvZ2ljXENvbnRlbnRNb2RlbFx3b3JrZXJzXEZsb3dcQ29uY2VwdEluaXRpRmxvdy54YW1sLC0DVw4CAQEuBS6dAQIBPi8FVQoCAQIucS6EAQIBQS6OAS6aAQIBPy8TLzQCAQMxCTYUAgEqOQlTFAIBBDILMo0CAgE6MwszsQECATU0CzSXAQIBMDULNa8BAgErPQtEFAIBJkULRYYCAgEhRgtSEAIBBTLZATL0AQIBPTL+ATKKAgIBOzNCM1sCATgzogEzrgECATY0NTROAgEzNIgBNJQBAgExNUE1WgIBLjWgATWsAQIBLEJCQlsCASk/Qz9VAgEnRdkBRe0BAgEkRfcBRYMCAgEiRhlGTgIBBkgPTRoCAQxQD1CbAQIBB0kRSbcBAgEcShFKwQECARdLEUu0AQIBEkwRTL8BAgENUDlQUgIBClCMAVCYAQIBCElISWECAR9JqAFJtAECAR1KTUpmAgEaSrIBSr4BAgEYS0VLXgIBFUulAUuxAQIBE0xMTGUCARBMsAFMvAECAQ4=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="ClearConceptIfRequired_1" sap:VirtualizedContainerService.HintSize="733,22" />
+      <sap2010:ViewStateData Id="SynchronizeKeyFindingToConceptFindingActivity_4" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="EnforceSingleChoiceScore_3" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="AddCatchAll_3" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="RemoveOrphanConceptFact_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_5" sap:VirtualizedContainerService.HintSize="222,332">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="464,60" />
+      <sap2010:ViewStateData Id="SynchronizeKeyFindingToConceptFindingActivity_2" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="EnforceSingleChoiceScore_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="RemoveDuplicatedKeysInConcept_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="AddFactsToScoreParameter_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="AddMissingAnswerCatagoryToMC_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="222,332">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="AddCatchAll_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="464,480" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="486,766">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_2" sap:VirtualizedContainerService.HintSize="733,914" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="755,1100">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ConceptInitiFlow_1" sap:VirtualizedContainerService.HintSize="795,1180" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

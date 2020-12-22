@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{4937B123-E6BC-43CE-B1B6-2280043DD805}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Questify.Builder.UnitTests.Publication</RootNamespace>
+    <AssemblyName>Questify.Builder.UnitTests.Publication</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <ReferencePath>$(DevEnvDir)PublicAssemblies\</ReferencePath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FakeItEasy, Version=4.0.0.0, Culture=neutral, PublicKeyToken=eff28e2146d5fd2c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FakeItEasy.4.6.0\lib\net45\FakeItEasy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.2.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.2.1\lib\net45\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasePublicationTest.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseDeclaration\QTI22ResponseDeclarationTests_Base.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\QTI22ResponseProcessingChoiceTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\QTI22ResponseProcessingGapmatchTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\QTI22ResponseProcessingGraphicGapMatchCategorizeTests.vb" />
+    <Compile Include="QTI22\Helpers\QTI22\ResponseProcessingHelperTests.vb" />
+    <Compile Include="QTI22\Helpers\QTI22\ResponseDeclarationHelperTests.vb" />
+    <Compile Include="QTI22\QTI22PublicationTestHelpers\QTI22PublicationTestHelper.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22OutcomeDeclarationTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseDeclaration\QTI22ResponseDeclarationCasTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseDeclaration\QTI22ResponseDeclarationChoiceTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseDeclaration\QTI22ResponseDeclarationCombinedItemsTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseDeclaration\QTI22ResponseDeclarationCustomInteractionTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseDeclaration\QTI22ResponseDeclarationGapMatchTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseDeclaration\QTI22ResponseDeclarationGraphicGapMatchCategorizeTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseDeclaration\QTI22ResponseDeclarationGraphicGapMatchTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseDeclaration\QTI22ResponseDeclarationHotspotTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseDeclaration\QTI22ResponseDeclarationHottextCorrectionsTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseDeclaration\QTI22ResponseDeclarationHottextTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseDeclaration\QTI22ResponseDeclarationInputTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseDeclaration\QTI22ResponseDeclarationMatrixTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseDeclaration\QTI22ResponseDeclarationMultiChoiceTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseDeclaration\QTI22ResponseDeclarationOrderTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseDeclaration\QTI22ResponseDeclarationTests_NoScoringParams.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\QTI22ResponseProcessingCustomInteractionTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\QTI22ResponseProcessingGraphicGapMatchTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\QTI22ResponseProcessingHotspotTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\QTI22ResponseProcessingHottextCorrectionsTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\QTI22ResponseProcessingHottextTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\QTI22ResponseProcessingMatrixTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\QTI22ResponseProcessingMultiChoiceTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\QTI22ResponseProcessingOrderTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\ConceptScoring\QTI22ConceptResponseProcessingInputTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\ConceptScoring\QTI22ConceptResponseProcessingTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\Input\QTI22ResponseProcessingInputCurrencyTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\Input\QTI22ResponseProcessingInputDateTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\Input\QTI22ResponseProcessingInputDecimalTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\Input\QTI22ResponseProcessingInputIntegerTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\Input\QTI22ResponseProcessingInputStringTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\Input\QTI22ResponseProcessingInputTimeTests.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ScoringConvertTest.vb" />
+    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22KeyValueContainsDateTimeValuesTest.vb" />
+    <Compile Include="QTI22\Helpers\QTI22\DocumentHelperTests.vb" />
+    <Compile Include="QTI22\Helpers\QTI22\ModifyToBeQTICompliant\QTI22FixAspectTests.vb" />
+    <Compile Include="QTI22\Helpers\QTI22\ModifyToBeQTICompliant\QTI22FixDivTest.vb" />
+    <Compile Include="QTI22\Helpers\QTI22\ModifyToBeQTICompliant\QTI22FixExtendedTextInteractionTest.vb" />
+    <Compile Include="QTI22\Helpers\QTI22\ModifyToBeQTICompliant\QTI22FixIdsTest.vb" />
+    <Compile Include="QTI22\Helpers\QTI22\ModifyToBeQTICompliant\QTI22FixTableTests.vb" />
+    <Compile Include="QTI22\Helpers\QTI22\ResourceHelperTests.vb" />
+    <Compile Include="ExtensionMethod.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationGapMatchTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationGraphicGapMatchTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationHotspotTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationHottextTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationOrderTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationChoiceTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationInputTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationMatrixTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationMultiChoiceTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\Input\ResponseProcessingInputIntegerTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingChoiceTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingGapmatchTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingGraphicGapMatchTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingHotspotTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingHottextTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingOrderTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingMatrixTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingMultiChoiceTests.vb" />
+    <Compile Include="QTI30\TestHelpers\PublicationTestHelper.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseDeclaration\ResponseDeclarationGapMatchTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseDeclaration\ResponseDeclarationGraphicGapMatchTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseDeclaration\ResponseDeclarationHotspotTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseDeclaration\ResponseDeclarationHottextTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseDeclaration\ResponseDeclarationOrderTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseDeclaration\ResponseDeclarationChoiceTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseDeclaration\ResponseDeclarationInputTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseDeclaration\ResponseDeclarationMatrixTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseDeclaration\ResponseDeclarationMultiChoiceTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseProcessing\Input\ResponseProcessingInputIntegerTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseProcessing\ResponseProcessingChoiceTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseProcessing\ResponseProcessingGapmatchTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseProcessing\ResponseProcessingGraphicGapMatchTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseProcessing\ResponseProcessingHotspotTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseProcessing\ResponseProcessingHottextTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseProcessing\ResponseProcessingOrderTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseProcessing\ResponseProcessingMatrixTestsBase.vb" />
+    <Compile Include="QTI_Base\Converters\ResponseProcessing\ResponseProcessingMultiChoiceTestsBase.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Builder\Cito.Tester.Common\Cito.Tester.Common.vbproj">
+      <Project>{9a0bd8fe-d6f6-4ce5-9a0b-877610b00deb}</Project>
+      <Name>Cito.Tester.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Builder\Cito.Tester.ContentModel\Cito.Tester.ContentModel.vbproj">
+      <Project>{94ee8d6c-5c52-4f34-9e61-e407b3240004}</Project>
+      <Name>Cito.Tester.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Builder\Configuration\Questify.Builder.Configuration.vbproj">
+      <Project>{d2b8db3e-9ae4-4568-851b-cf8f030785c4}</Project>
+      <Name>Questify.Builder.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Builder\Model.ContentModel\Questify.Builder.Model.ContentModel.vbproj">
+      <Project>{A4A21CD0-3F23-4BE8-A859-9778CD5F6DE7}</Project>
+      <Name>Questify.Builder.Model.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Builder\Logic\Questify.Builder.Logic.vbproj">
+      <Project>{C4AB026E-B1E2-4D1E-A857-4CA29BAA9981}</Project>
+      <Name>Questify.Builder.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Builder\UnitTests.Framework\Questify.Builder.UnitTests.Framework.vbproj">
+      <Project>{cbc94d98-6c8e-476a-beb9-f5c651752886}</Project>
+      <Name>Questify.Builder.UnitTests.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ChoiceInline.xml" />
+    <Content Include="Resources\ChoiceInline_Itembody.xml" />
+    <Content Include="Resources\ChoiceInline_ResponseDeclarations.xml" />
+    <Content Include="Resources\ChoiceInline_ResponseProcessing1.xml" />
+    <Content Include="Resources\ContentWithResources.xml" />
+    <Content Include="Resources\GapDateSC.xml" />
+    <Content Include="Resources\GapDateSC_Itembody.xml" />
+    <Content Include="Resources\GapDateSC_ResponseProcessing1.xml" />
+    <Content Include="Resources\GapInlineSC.xml" />
+    <Content Include="Resources\GapInlineSC2.xml" />
+    <Content Include="Resources\GapInlineSC2_Itembody.xml" />
+    <Content Include="Resources\GapInlineSC2_ResponseDeclarations.xml" />
+    <Content Include="Resources\GapInlineSC2_ResponseProcessing1.xml" />
+    <Content Include="Resources\GapInlineSC_ItemBody.xml" />
+    <Content Include="Resources\GapInlineSC_ResponseDeclarations.xml" />
+    <Content Include="Resources\GapInlineSC_ResponseProcessing1.xml" />
+    <Content Include="Resources\GraphicGapMatch.xml" />
+    <Content Include="Resources\GraphicGapMatch_Itembody.xml" />
+    <Content Include="Resources\GraphicGapMatch_ResponseDeclarations.xml" />
+    <Content Include="Resources\GraphicGapMatch_ResponseProcessing1.xml" />
+    <Content Include="Resources\McWithConcepts.xml" />
+    <Content Include="Resources\McWithConcepts_Itembody.xml" />
+    <Content Include="Resources\McWithConcepts_OutcomeDeclarations.xml" />
+    <Content Include="Resources\McWithConcepts_ResponseProcessing1.xml" />
+    <Content Include="Resources\PreprocessorWithConcepts.xml" />
+    <Content Include="Resources\PreprocessorWithConcepts_Itembody.xml" />
+    <Content Include="Resources\PreprocessorWithConcepts_OutcomeDeclarations.xml" />
+    <Content Include="Resources\PreprocessorWithConcepts_ResponseProcessing1.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="QTI30\Converters\OutcomeDeclaration\" />
+    <Folder Include="QTI30\Converters\ScoringConverter\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

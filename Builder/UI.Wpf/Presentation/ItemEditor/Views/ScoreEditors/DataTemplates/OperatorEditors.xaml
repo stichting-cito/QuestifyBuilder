@@ -1,0 +1,120 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:valueConverters="clr-namespace:Questify.Builder.UI.Wpf.Presentation.ValueConverters">
+
+    <Style x:Key="OperatorComboStyle" TargetType="ComboBox">
+        <Setter Property="Padding" Value="17,4,0,0" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="IsDropDownOpen" Value="True" />
+        <Setter Property="SelectedValuePath" Value="Content" />
+    </Style>
+
+    <valueConverters:GapComparisonTypeConverter x:Key="comparison2Str" />
+    <valueConverters:CasOperatorVisibilityConverter x:Key="CasOperatorVisibilityConverter"/>
+    <Style x:Key="CasScoringFilterStyle" TargetType="{x:Type ComboBoxItem}">
+        <Setter Property="Visibility">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource CasOperatorVisibilityConverter}">
+                    <Binding Path="ScoringParameter"/>
+                    <Binding RelativeSource="{RelativeSource Self}"/>
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <DataTemplate x:Key="DefaultOperatorEditor">
+		<TextBlock Text="{Binding ComparisonType.DataValue,Converter={StaticResource comparison2Str}}" Padding="0,4,0,0" TextAlignment="Center" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="GapMatchBlockRowViewModel_OperatorEditor">
+        <ComboBox SelectedValue="{Binding ComparisonType.DataValue,Converter={StaticResource comparison2Str}}" Style="{StaticResource OperatorComboStyle}">
+            <!--Hard list-->
+            <ComboBoxItem Name="eq">=</ComboBoxItem>
+            <ComboBoxItem Name="novalue">Ø</ComboBoxItem>
+        </ComboBox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="GapMatchRichTextBlockRowViewModel_OperatorEditor">
+        <ComboBox SelectedValue="{Binding ComparisonType.DataValue,Converter={StaticResource comparison2Str}}" Style="{StaticResource OperatorComboStyle}">
+            <!--Hard list-->
+            <ComboBoxItem Name="eq">=</ComboBoxItem>
+            <ComboBoxItem Name="novalue">Ø</ComboBoxItem>
+        </ComboBox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="GraphGapMatchBlockRowViewModel_OperatorEditor">
+        <ComboBox SelectedValue="{Binding ComparisonType.DataValue,Converter={StaticResource comparison2Str}}" Style="{StaticResource OperatorComboStyle}">
+            <!--Hard list-->
+            <ComboBoxItem Name="eq">=</ComboBoxItem>
+            <ComboBoxItem Name="novalue">Ø</ComboBoxItem>
+        </ComboBox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="GraphGapMatchVar2BlockRowViewModel_OperatorEditor">
+        <ComboBox SelectedValue="{Binding ComparisonType.DataValue,Converter={StaticResource comparison2Str}}" Style="{StaticResource OperatorComboStyle}">
+            <!--Hard list-->
+            <ComboBoxItem Name="eq">=</ComboBoxItem>
+            <ComboBoxItem Name="novalue">Ø</ComboBoxItem>
+        </ComboBox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CurrencyBlockRowViewModel_OperatorEditor">
+		<ComboBox SelectedValue="{Binding ComparisonType.DataValue,Converter={StaticResource comparison2Str}}" Style="{StaticResource OperatorComboStyle}">
+            <!--Hard list-->
+            <ComboBoxItem Name="eq">=</ComboBoxItem>
+            <ComboBoxItem Name="gt">&gt;</ComboBoxItem>
+            <ComboBoxItem Name="gteq">&gt;=</ComboBoxItem>
+            <ComboBoxItem Name="lt">&lt;</ComboBoxItem>
+            <ComboBoxItem Name="lteq">&lt;=</ComboBoxItem>
+            <ComboBoxItem Name="range">[]</ComboBoxItem>
+        </ComboBox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DecimalBlockRowViewModel_OperatorEditor">
+        <ComboBox SelectedValue="{Binding ComparisonType.DataValue,Converter={StaticResource comparison2Str}}" Style="{StaticResource OperatorComboStyle}">
+            <!--Hard list-->
+            <ComboBoxItem Name="eq">=</ComboBoxItem>
+            <ComboBoxItem Name="gt">&gt;</ComboBoxItem>
+            <ComboBoxItem Name="gteq">&gt;=</ComboBoxItem>
+            <ComboBoxItem Name="lt">&lt;</ComboBoxItem>
+            <ComboBoxItem Name="lteq">&lt;=</ComboBoxItem>
+            <ComboBoxItem Name="range">[]</ComboBoxItem>
+            <ComboBoxItem Style="{StaticResource CasScoringFilterStyle}" Name="dep">dependency</ComboBoxItem>
+        </ComboBox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="IntegerBlockRowViewModel_OperatorEditor">
+        <ComboBox SelectedValue="{Binding ComparisonType.DataValue,Converter={StaticResource comparison2Str}}" Style="{StaticResource OperatorComboStyle}">
+            <!--Hard list-->
+            <ComboBoxItem Name="eq">=</ComboBoxItem>
+            <ComboBoxItem Name="gt">&gt;</ComboBoxItem>
+            <ComboBoxItem Name="gteq">&gt;=</ComboBoxItem>
+            <ComboBoxItem Name="lt">&lt;</ComboBoxItem>
+            <ComboBoxItem Name="lteq">&lt;=</ComboBoxItem>
+            <ComboBoxItem Name="range">[]</ComboBoxItem>
+            <ComboBoxItem Style="{StaticResource CasScoringFilterStyle}" Name="dep">dependency</ComboBoxItem>
+        </ComboBox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MathBlockRowViewModel_OperatorEditor">
+        <ComboBox SelectedValue="{Binding ComparisonType.DataValue,Converter={StaticResource comparison2Str}, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource OperatorComboStyle}">
+            <!--Hard list-->
+            <ComboBoxItem Name="equal">equal strict</ComboBoxItem>
+            <ComboBoxItem Name="EqualsSoft">equal soft</ComboBoxItem>
+            <ComboBoxItem Name="equi">equivalent</ComboBoxItem>
+            <ComboBoxItem Name="eval">evaluate</ComboBoxItem>
+            <ComboBoxItem Name="EqualEquation">equal equation</ComboBoxItem>
+        </ComboBox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MathCasDependencyBlockRowViewModel_OperatorEditor">
+        <ComboBox SelectedValue="{Binding ComparisonType.DataValue,Converter={StaticResource comparison2Str}}" Style="{StaticResource OperatorComboStyle}">
+            <!--Hard list-->
+            <ComboBoxItem Name="equal">=</ComboBoxItem>
+            <ComboBoxItem Name="notequal">&lt;&gt;</ComboBoxItem>
+        </ComboBox>
+    </DataTemplate>
+
+</ResourceDictionary>

@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.ScoreEditors.AspectEditorSingleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+             xmlns:types="clr-namespace:Questify.Builder.UI.Wpf.Presentation.Types"
+             xmlns:TbUI="clr-namespace:Questify.Builder.UI;assembly=Questify.Builder.UI"
+             meffed:ViewModelLocator.ViewModel="ItemEditor.AspectReferenceScoringVM"
+             mc:Ignorable="d" 
+             d:DesignHeight="224" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <ResourceDictionary.MergedDictionaries>
+                <!--Please make sure that Resources are commented out-->
+                <!--<ResourceDictionary Source="..\ItemEditor.AspectEditor.nl.xaml" /-->
+                <ResourceDictionary Source="..\..\..\..\Styles\DefaultStyle.xaml" />
+                <types:DesignTimeResourceDictionary Source="..\..\..\ItemEditor.AspectEditor.en.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Expander Style="{StaticResource EditorExpander}" IsExpanded="True" Header="{Binding AspectExpanderHeader.DataValue}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="26" />
+                <RowDefinition Height="26" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Label Content="{StaticResource ItemEditor.AspectEditor.MaxScoreLabel}" Grid.Row="0" Grid.Column="0" Margin="0" />
+            <TextBox x:Name="MaxScoreTextBox" Grid.Row="0" Grid.Column="1" Text="{Binding AspectRef.DataValue.MaxScore, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalAlignment="Left" Width="25" Height="18" LostFocus="TextBox_LostFocus"></TextBox>
+            <Label Content="{StaticResource ItemEditor.AspectEditor.DescriptionLabel}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
+            <DockPanel  LastChildFill="True" Grid.Row="2" Grid.ColumnSpan="2" Visibility="{Binding AspectEditorVisible.DataValue, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <WindowsFormsHost x:Name="host2" DockPanel.Dock="Top">
+                    <TbUI:FocusedReparentHtmlEditor x:Name="FocusedEditor" Dock="Fill" AutoSize="True" />
+                </WindowsFormsHost>
+            </DockPanel>
+        </Grid>
+    </Expander>
+</UserControl>

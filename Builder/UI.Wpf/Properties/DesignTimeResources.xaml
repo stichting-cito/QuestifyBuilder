@@ -1,0 +1,10 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!-- Resource dictionary entries should be defined here. -->
+  <!-- These are used by Blend -->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="\Presentation\Localization\nl.xaml" />
+        <ResourceDictionary Source="\Presentation\Localization\languageIndependent.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

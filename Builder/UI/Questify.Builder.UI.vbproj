@@ -1,0 +1,2829 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D35F44EC-B3C4-48DF-9BEC-76DA023B393A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Questify.Builder.UI</RootNamespace>
+    <AssemblyName>Questify.Builder.UI</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\TestBuilder.snk</AssemblyOriginatorKeyFile>
+    <OptionStrict>Off</OptionStrict>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>40000</WarningsNotAsErrors>
+    <WarningLevel>1</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>40000</WarningsNotAsErrors>
+    <WarningLevel>1</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>40000</WarningsNotAsErrors>
+    <WarningLevel>1</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>40000</WarningsNotAsErrors>
+    <WarningLevel>1</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.7.2.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HtmlAgilityPack.1.7.2\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Data.v4, Version=4.0.50.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartyComponents\Janus\v4.0.36\Janus.Data.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.Common.v4, Version=4.0.50.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartyComponents\Janus\v4.0.36\Janus.Windows.Common.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.GridEX.v4, Version=4.0.50.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartyComponents\Janus\v4.0.36\Janus.Windows.GridEX.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="MakarovDev.ExpandCollapsePanel">
+      <HintPath>..\..\3rdPartyComponents\ExpandCollapsePanel\MakarovDev.ExpandCollapsePanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NLog.4.4.11\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.2.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.2.1\lib\net45\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.XML.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xilium.CefGlue, Version=64.0.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartyComponents\Cef3\Xilium.CefGlue.dll</HintPath>
+    </Reference>
+    <Reference Include="Xilium.CefGlue.WindowsForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartyComponents\Cef3\Xilium.CefGlue.WindowsForms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Versioning\GeneralInfo.vb">
+      <Link>GeneralInfo.vb</Link>
+    </Compile>
+    <Compile Include="..\..\Versioning\TestBuilder_VersionInfo.vb">
+      <Link>My Project\TestBuilder_VersionInfo.vb</Link>
+    </Compile>
+    <Compile Include="AreaEditor\AreaEditor.Designer.vb">
+      <DependentUpon>AreaEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AreaEditor\AreaEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AreaEditor\ShapeConverter.vb" />
+    <Compile Include="BaseClasses\ActionCommandSupportBaseControl.Designer.vb">
+      <DependentUpon>ActionCommandSupportBaseControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClasses\ActionCommandSupportBaseControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\DeletingRowsEventArgs.vb" />
+    <Compile Include="BaseClasses\GridInUseAsItemGridBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\ItemPreviewerBase.Designer.vb">
+      <DependentUpon>ItemPreviewerBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClasses\ItemPreviewerBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\RowsDeletedEventArgs.vb" />
+    <Compile Include="Cef\CefBootstrapper.vb" />
+    <Compile Include="Commanding\Base\CommandBase.vb" />
+    <Compile Include="Commanding\Base\CommandBinding.vb" />
+    <Compile Include="Commanding\Base\CommandManager.Designer.vb">
+      <DependentUpon>CommandManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Commanding\Base\CommandManager.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Commanding\Base\ICommand.vb" />
+    <Compile Include="Commanding\Base\ICommandBinding.vb" />
+    <Compile Include="Commanding\Base\IParameterBinding.vb" />
+    <Compile Include="Commanding\Base\ParameterBinding.vb" />
+    <Compile Include="Commanding\CommandBinders\ButtonBaseCommandBinding.vb" />
+    <Compile Include="Commanding\CommandBinders\MenuItemCommandBinding.vb" />
+    <Compile Include="Commanding\Commands\DelegateCommand.vb" />
+    <Compile Include="Commanding\ParameterBinders\ContextParameterBinding.vb" />
+    <Compile Include="Commanding\ParameterBinders\ControlTagParameterBinding.vb" />
+    <Compile Include="Commanding\ParameterBinders\DelegateParameterBinding.vb" />
+    <Compile Include="Commanding\ParameterBinders\NullParameterBinding.vb" />
+    <Compile Include="Commanding\ParameterBinders\SelectedNodeTagParameterBinding.vb" />
+    <Compile Include="Controls\FocussedCheckBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NoDblClickTree.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\TestPackageEditorControlBase.Designer.vb">
+      <DependentUpon>TestPackageEditorControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClasses\TestPackageEditorControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\DialogBase.Designer.vb">
+      <DependentUpon>DialogBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClasses\DialogBase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\DialogBase2.Designer.vb">
+      <DependentUpon>DialogBase2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClasses\DialogBase2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\EventArgs.vb" />
+    <Compile Include="BaseClasses\MultipleSelectedEntiesEventArgs.vb" />
+    <Compile Include="BaseClasses\PropertyDialogBase.Designer.vb">
+      <DependentUpon>PropertyDialogBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClasses\PropertyDialogBase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\GridBase.Designer.vb">
+      <DependentUpon>GridBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClasses\GridBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\SelectResourceEntityDialogBase.Designer.vb">
+      <DependentUpon>SelectResourceEntityDialogBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClasses\SelectResourceEntityDialogBase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\SettingsEditorControlBase.Designer.vb">
+      <DependentUpon>SettingsEditorControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClasses\SettingsEditorControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\TestEditorControlBase.Designer.vb">
+      <DependentUpon>TestEditorControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClasses\TestEditorControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clipboard\ClipboardHelper.vb" />
+    <Compile Include="Clipboard\ComponentCollectionClipboardWrapperBase.vb" />
+    <Compile Include="Clipboard\TestComponentCollectionClipboardWrapper.vb" />
+    <Compile Include="Clipboard\TestPackageComponentCollectionClipboardWrapper.vb" />
+    <Compile Include="Controls\ColorButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ColorFader.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ColorSelector.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ColorWheel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Logic\ColorMath.vb" />
+    <Compile Include="Controls\Logic\DrawingMath.vb" />
+    <Compile Include="Controls\Logic\HslColor.vb" />
+    <Compile Include="Controls\Logic\PenFactory.vb" />
+    <Compile Include="Controls\TableCellPreview.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSourceReporting\DataSourceReportContainerControl.Designer.vb">
+      <DependentUpon>DataSourceReportContainerControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DataSourceReporting\DataSourceReportContainerControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataSourceReporting\DataSourceUIReportControlBase.Designer.vb">
+      <DependentUpon>DataSourceUIReportControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DataSourceReporting\DataSourceUIReportControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataSourceReporting\IDataSourceReporting.vb" />
+    <Compile Include="DataSourceSettings\DataSourceSettingsEditor.Designer.vb">
+      <DependentUpon>DataSourceSettingsEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DataSourceSettings\DataSourceSettingsEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataSourceSettings\DataSourceUIControlBase.Designer.vb">
+      <DependentUpon>DataSourceUIControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DataSourceSettings\DataSourceUIControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataSourceSettings\IDataSourceSettingsDesignerFactory.vb" />
+    <Compile Include="DataSourceSettings\ItemDataSourceSettingsUiControlBase.Designer.vb">
+      <DependentUpon>ItemDataSourceSettingsUiControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DataSourceSettings\ItemDataSourceSettingsUiControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AddCustomPropertyFormDialog.Designer.vb">
+      <DependentUpon>AddCustomPropertyFormDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AddCustomPropertyFormDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BusinessLogic\AllStyleStrategy.vb" />
+    <Compile Include="Dialogs\BusinessLogic\baseTableStyleStrategy.vb" />
+    <Compile Include="Dialogs\BusinessLogic\BorderAndShadingPresenter.vb" />
+    <Compile Include="Dialogs\BusinessLogic\BoxTableStyleStrategy.vb" />
+    <Compile Include="Dialogs\BusinessLogic\CustomTableStyleStrategy.vb" />
+    <Compile Include="Dialogs\BusinessLogic\GridTableStyleStrategy.vb" />
+    <Compile Include="Dialogs\BusinessLogic\IBordersAndShadingView.vb" />
+    <Compile Include="Dialogs\BusinessLogic\NoneTableStyleStrategy.vb" />
+    <Compile Include="Dialogs\BusinessLogic\TableStyleFactory.vb" />
+    <Compile Include="Dialogs\RemoveCustomPropertyWithConnectedResourcesDialog.Designer.vb">
+      <DependentUpon>RemoveCustomPropertyWithConnectedResourcesDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\RemoveCustomPropertyWithConnectedResourcesDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectDependenceResourceDialog.Designer.vb" />
+    <Compile Include="Dialogs\Selection Dialogs\SelectDependenceResourceDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectTestPackageResourceDialog.Designer.vb">
+      <DependentUpon>SelectTestPackageResourceDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectTestPackageResourceDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperClasses\ContextChangedEventArgs.vb" />
+    <Compile Include="HelperClasses\TaskType.vb" />
+    <Compile Include="HelperClasses\UIExtensions.vb" />
+    <Compile Include="PresentationControls\Bank\ApplicableToMaskItem.vb" />
+    <Compile Include="PresentationControls\CustomProperty\BaseClasses\CustomPropertyUserControlBase.Designer.vb">
+      <DependentUpon>CustomPropertyUserControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\BaseClasses\CustomPropertyUserControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\ConceptStructure\ConceptStructureHelper.vb" />
+    <Compile Include="PresentationControls\CustomProperty\ConceptStructure\ConceptValueDetailsUserControl.Designer.vb">
+      <DependentUpon>ConceptValueDetailsUserControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\ConceptStructure\ConceptValueDetailsUserControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\ConceptStructure\ConceptStructureUserControl.Designer.vb">
+      <DependentUpon>ConceptStructureUserControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\ConceptStructure\ConceptStructureUserControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\BaseClasses\DeptStructureUserControlBase.Designer.vb">
+      <DependentUpon>DeptStructureUserControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\BaseClasses\DeptStructureUserControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\RichText\RichTextValueDetailsUserControl.Designer.vb">
+      <DependentUpon>RichTextValueDetailsUserControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\RichText\RichTextValueDetailsUserControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\TreeStructureHelper.vb" />
+    <Compile Include="PresentationControls\CustomProperty\TreeStructure\DeptTreeStructureUserControl.Designer.vb">
+      <DependentUpon>DeptTreeStructureUserControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\TreeStructure\DeptTreeStructureUserControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\ConceptStructure\DeptConceptStructureUserControl.Designer.vb">
+      <DependentUpon>DeptConceptStructureUserControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\ConceptStructure\DeptConceptStructureUserControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\GeneralUserControl.Designer.vb">
+      <DependentUpon>GeneralUserControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\GeneralUserControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\IEditableCollectionControl.vb" />
+    <Compile Include="PresentationControls\CustomProperty\ListValue\ListValueDetailsUserControl.Designer.vb">
+      <DependentUpon>ListValueDetailsUserControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\ListValue\ListValueDetailsUserControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\TreeStructure\TreeStructureUserControl.Designer.vb">
+      <DependentUpon>TreeStructureUserControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\TreeStructure\TreeStructureUserControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\TreeStructure\TreeStructureViewerUserControl.Designer.vb">
+      <DependentUpon>TreeStructureViewerUserControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\TreeStructure\TreeStructureViewerUserControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\TreeStructure\TreeValueDetailsUserControl.Designer.vb">
+      <DependentUpon>TreeValueDetailsUserControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\CustomProperty\TreeStructure\TreeValueDetailsUserControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\ConceptStructureGrid.Designer.vb">
+      <DependentUpon>ConceptStructureGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\ConceptStructureGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\ListValueDetailsGrid.Designer.vb">
+      <DependentUpon>ListValueDetailsGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\ListValueDetailsGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\TreeStructureGrid.Designer.vb">
+      <DependentUpon>TreeStructureGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\TreeStructureGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ItemEditor\Preview\QTI21\CefBrowserManager.vb" />
+    <Compile Include="PresentationControls\ItemEditor\Preview\QTI21\Chromium_ItemPreviewer.Designer.vb">
+      <DependentUpon>Chromium_ItemPreviewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ItemEditor\Preview\QTI21\Chromium_ItemPreviewer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ItemEditor\Preview\QTI21\Chromium_ScreenshotClient.vb" />
+    <Compile Include="PresentationControls\ItemEditor\Preview\QTI21\PreviewApp.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\AreaParameterEditorControl1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AreaParameterEditorControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\AreaPrmFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\CustomInteractionResourcePrmFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\GapImagePrmFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\GapTextPrmFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\GapTextRichTextParameterEditorFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\MathMLParameterEditorFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\ScoringParameterEditorFactoryOfT.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\HotTextScoringParameterEditorFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\CustomInteractionResourceParameterEditorControl.Designer.vb">
+      <DependentUpon>CustomInteractionResourceParameterEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\CustomInteractionResourceParameterEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\GapTextRichTextParameterEditorControl.Designer.vb">
+      <DependentUpon>GapTextRichTextParameterEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\GapTextRichTextParameterEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\GraphicalGapMatchEditorControl.Designer.vb">
+      <DependentUpon>GraphicalGapMatchEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\GraphicalGapMatchEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\HotTextScoringParameterEditorControl.Designer.vb">
+      <DependentUpon>HotTextScoringParameterEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\HotTextScoringParameterEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\GapImageParameterEditorControl.Designer.vb">
+      <DependentUpon>GapImageParameterEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\GapImageParameterEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\GapTextParameterEditorControl.Designer.vb">
+      <DependentUpon>GapTextParameterEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\GapTextParameterEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\IParameterEditorControl.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\MathMLParameterEditorControl.Designer.vb">
+      <DependentUpon>MathMLParameterEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\MathMLParameterEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ResizableParameterEditorControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\CustomPropertiesGrid.Designer.vb">
+      <DependentUpon>CustomPropertiesGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\CustomPropertiesGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\ParameterEditorHelper.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\ScoringParameterMultiEditorFactory.vb" />
+    <Compile Include="PresentationControls\Resources\RichTextValueEditor.Designer.vb">
+      <DependentUpon>RichTextValueEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Resources\RichTextValueEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Resources\TreeStructureEditor.Designer.vb">
+      <DependentUpon>TreeStructureEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Resources\TreeStructureEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\SectionLogicSettingsControlBase.Designer.vb">
+      <DependentUpon>SectionLogicSettingsControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\SectionLogicSettingsControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\TestResourceEventBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TableToggleButton.Designer.vb">
+      <DependentUpon>TableToggleButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TableToggleButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AddItemsFromCodeDialog.Designer.vb">
+      <DependentUpon>AddItemsFromCodeDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AddItemsFromCodeDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AddSymbolsDialog.designer.vb">
+      <DependentUpon>AddSymbolsDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AddSymbolsDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DataSources\RefreshDataSourcesDialog.Designer.vb">
+      <DependentUpon>RefreshDataSourcesDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DataSources\RefreshDataSourcesDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EditImagePropertiesDialog.Designer.vb">
+      <DependentUpon>EditImagePropertiesDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EditImagePropertiesDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EditMathFormulaDialog.designer.vb">
+      <DependentUpon>EditMathFormulaDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EditMathFormulaDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\InlineElementPropertiesDialog.Designer.vb">
+      <DependentUpon>InlineElementPropertiesDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\InlineElementPropertiesDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NewGenericResourceDialog.Designer.vb">
+      <DependentUpon>NewGenericResourceDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewGenericResourceDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NewRoleDialog.Designer.vb">
+      <DependentUpon>NewRoleDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewRoleDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NewUserDialog.Designer.vb">
+      <DependentUpon>NewUserDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewUserDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectTestResourceDialog.Designer.vb">
+      <DependentUpon>SelectTestResourceDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectTestResourceDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectAspectResourceDialog.Designer.vb">
+      <DependentUpon>SelectAspectResourceDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectAspectResourceDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectDataSourceResourceDialog.Designer.vb">
+      <DependentUpon>SelectDataSourceResourceDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectDataSourceResourceDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectItemLayoutTemplateResourceDialog.Designer.vb">
+      <DependentUpon>SelectItemLayoutTemplateResourceDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectItemLayoutTemplateResourceDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectItemResourceDialog.Designer.vb">
+      <DependentUpon>SelectItemResourceDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectItemResourceDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectMediaResourceDialog.Designer.vb">
+      <DependentUpon>SelectMediaResourceDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectMediaResourceDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectPauseItemResourceDialog.Designer.vb">
+      <DependentUpon>SelectPauseItemResourceDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectPauseItemResourceDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectTestTemplateResourceDialog.Designer.vb">
+      <DependentUpon>SelectTestTemplateResourceDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectTestTemplateResourceDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectUserDialog.Designer.vb">
+      <DependentUpon>SelectUserDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Selection Dialogs\SelectUserDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BordersAndShading.Designer.vb">
+      <DependentUpon>BordersAndShading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\BordersAndShading.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\UserBankRoleDialog.Designer.vb">
+      <DependentUpon>UserBankRoleDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\UserBankRoleDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\WizardExceptionDialog.Designer.vb">
+      <DependentUpon>WizardExceptionDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\WizardExceptionDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\XhtmlReferenceDialog.Designer.vb">
+      <DependentUpon>XhtmlReferenceDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\XhtmlReferenceDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventArgs.vb" />
+    <Compile Include="HelperClasses\FormulaEventArgs.vb" />
+    <Compile Include="HelperClasses\ExtensionMethods.vb" />
+    <Compile Include="PresentationControls\GenericResourceEditor\SvgImageViewer.Designer.vb">
+      <DependentUpon>SvgImageViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\GenericResourceEditor\SvgImageViewer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\GenericResourceEditor\MpegVideoViewer.Designer.vb">
+      <DependentUpon>MpegVideoViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\GenericResourceEditor\MpegVideoViewer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\GlobalSuppressions.vb" />
+    <Compile Include="HelperClasses\BackGroundWorkerPool.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HelperClasses\BackgroundWorkerTask.vb" />
+    <Compile Include="HelperClasses\ExceptionHelper.vb" />
+    <Compile Include="HelperClasses\ForegroundWindow.vb" />
+    <Compile Include="HelperClasses\RoleGridEntities\RoleGridRowEntity.vb" />
+    <Compile Include="HelperClasses\RoleGridEntities\BankRoleGridRowEntity.vb" />
+    <Compile Include="My Project\Resources.nl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.nl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\AspectEditor\AspectGeneralProperties.Designer.vb">
+      <DependentUpon>AspectGeneralProperties.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\AspectEditor\AspectGeneralProperties.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\AspectEditor\AspectEditor.Designer.vb">
+      <DependentUpon>AspectEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\AspectEditor\AspectEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Authorization\RoleMetaData.Designer.vb">
+      <DependentUpon>RoleMetaData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Authorization\RoleMetaData.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Authorization\UserBankRoleViewer.Designer.vb">
+      <DependentUpon>UserBankRoleViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Authorization\UserBankRoleViewer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Authorization\UserMetaData.Designer.vb">
+      <DependentUpon>UserMetaData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Authorization\UserMetaData.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\BankStartPageControl.Designer.vb">
+      <DependentUpon>BankStartPageControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\BankStartPageControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Bank\ApplicableToMaskControl.Designer.vb">
+      <DependentUpon>ApplicableToMaskControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Bank\ApplicableToMaskControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Bank\BankMetaData.Designer.vb">
+      <DependentUpon>BankMetaData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Bank\BankMetaData.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Bank\BankSecurityControl.Designer.vb">
+      <DependentUpon>BankSecurityControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Bank\BankSecurityControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\DataSources\DataSourcePreview.Designer.vb" />
+    <Compile Include="PresentationControls\DataSources\DataSourcePreview.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\DataSources\DataSourcePreviewExecutedEventArgs.vb" />
+    <Compile Include="PresentationControls\DataSources\ItemDataSourcePreview.Designer.vb" />
+    <Compile Include="PresentationControls\DataSources\ItemDataSourcePreview.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\GenericResourceEditor\GenericResourceEditorControl.Designer.vb">
+      <DependentUpon>GenericResourceEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\GenericResourceEditor\GenericResourceEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\GenericResourceViewerBase.Designer.vb">
+      <DependentUpon>GenericResourceViewerBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClasses\GenericResourceViewerBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\GenericResourceEditor\ImageGenericResourceViewer.Designer.vb">
+      <DependentUpon>ImageGenericResourceViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\GenericResourceEditor\ImageGenericResourceViewer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\GenericResourceEditor\NoPreviewResourceViewer.Designer.vb">
+      <DependentUpon>NoPreviewResourceViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\GenericResourceEditor\NoPreviewResourceViewer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\GenericResourceEditor\SourceGenericResourceEditor.Designer.vb">
+      <DependentUpon>SourceGenericResourceEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\GenericResourceEditor\SourceGenericResourceEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\GenericResourceEditor\WordGenericResourceViewer.Designer.vb">
+      <DependentUpon>WordGenericResourceViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\GenericResourceEditor\WordGenericResourceViewer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\XhtmlGenericResourceViewer.Designer.vb">
+      <DependentUpon>XhtmlGenericResourceViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\XhtmlGenericResourceViewer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\AspectGrid.Designer.vb">
+      <DependentUpon>AspectGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\AspectGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\BankRoleGrid.Designer.vb">
+      <DependentUpon>BankRoleGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\BankRoleGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\ApplicationRoleGrid.Designer.vb">
+      <DependentUpon>ApplicationRoleGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\ApplicationRoleGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\DataSourceGrid.Designer.vb">
+      <DependentUpon>DataSourceGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\DataSourceGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\DataSourceTemplateGrid.Designer.vb">
+      <DependentUpon>DataSourceTemplateGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\DataSourceTemplateGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\TestPackageGrid.Designer.vb">
+      <DependentUpon>TestPackageGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\TestPackageGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\TestTemplateGrid.Designer.vb">
+      <DependentUpon>TestTemplateGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\TestTemplateGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\UserGrid.Designer.vb">
+      <DependentUpon>UserGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\UserGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\ItemEditorControlBase.Designer.vb">
+      <DependentUpon>ItemEditorControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClasses\ItemEditorControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ItemEditor\ItemEditor.Designer.vb">
+      <DependentUpon>ItemEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ItemEditor\ItemEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ItemEditor\ItemSource.Designer.vb">
+      <DependentUpon>ItemSource.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ItemEditor\ItemSource.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ItemEditor\Preview\ItemPreviewContainer.Designer.vb">
+      <DependentUpon>ItemPreviewContainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ItemEditor\Preview\ItemPreviewContainer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ItemEditor\Preview\PreviewPanel\COMInterop\MessageFilter\MessageFilter.vb" />
+    <Compile Include="PresentationControls\ItemEditor\Preview\PreviewPanel\COMInterop\MessageFilter\_IOleMessageFilter.vb" />
+    <Compile Include="PresentationControls\ItemEditor\Preview\PreviewPanel\COMInterop\PreviewHandlers\COMStream.vb" />
+    <Compile Include="PresentationControls\ItemEditor\Preview\PreviewPanel\COMInterop\PreviewHandlers\IInitializeWithFile.vb" />
+    <Compile Include="PresentationControls\ItemEditor\Preview\PreviewPanel\COMInterop\PreviewHandlers\IInitializeWithStream.vb" />
+    <Compile Include="PresentationControls\ItemEditor\Preview\PreviewPanel\COMInterop\PreviewHandlers\IPreviewHandler.vb" />
+    <Compile Include="PresentationControls\ItemEditor\Preview\PreviewPanel\COMInterop\PreviewHandlers\RECT.vb" />
+    <Compile Include="PresentationControls\ItemEditor\Preview\PreviewPanel\Manager\PreviewHandlerCollection.vb" />
+    <Compile Include="PresentationControls\ItemEditor\Preview\PreviewPanel\Manager\PreviewHandlerInfo.vb" />
+    <Compile Include="PresentationControls\ItemEditor\Preview\PreviewPanel\Manager\PreviewHandlerInstanceInfo.vb" />
+    <Compile Include="PresentationControls\ItemEditor\Preview\PreviewPanel\Manager\PreviewManager.vb" />
+    <Compile Include="PresentationControls\ItemEditor\Preview\PreviewPanel\PanelControl\PreviewPanel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ItemEditor\Preview\Word\Word_ItemPreviewer.Designer.vb">
+      <DependentUpon>Word_ItemPreviewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ItemEditor\Preview\Word\Word_ItemPreviewer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\AreaParameterEditorControl.Designer.vb">
+      <DependentUpon>AreaParameterEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\AreaParameterEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ChoicesParameterEditorControl.Designer.vb">
+      <DependentUpon>ChoicesParameterEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ChoicesParameterEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\BooleanParameterEditorControl.Designer.vb">
+      <DependentUpon>BooleanParameterEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\BooleanParameterEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\CollectionEditorControlBase.Designer.vb">
+      <DependentUpon>CollectionEditorControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\CollectionEditorControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\BooleanPrmFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\ChoiceCollectionPrmFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\CollectionPrmFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\FactoryBase.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\IntegerPrmFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\ListedPrmFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\PlainTextPrmFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\ResourcePrmFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\IParameterEditorControlFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\ParameterEditorFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\XHtmlPrmFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ConcreteFactory\XHtmlResourcePrmFactory.vb" />
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ListedParameterEditorControl.Designer.vb">
+      <DependentUpon>ListedParameterEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ListedParameterEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ParameterCollectionEditorControl.Designer.vb">
+      <DependentUpon>ParameterCollectionEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ParameterCollectionEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\ParameterGroupBox.Designer.vb">
+      <DependentUpon>ParameterGroupBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\ParameterGroupBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\PlainTextParameterEditorControl.Designer.vb">
+      <DependentUpon>PlainTextParameterEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\PlainTextParameterEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ResourceParameterEditorControl.Designer.vb">
+      <DependentUpon>ResourceParameterEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\ResourceParameterEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\IntegerParameterEditorControl.Designer.vb">
+      <DependentUpon>IntegerParameterEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\IntegerParameterEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\ParameterEditorControlBase.Designer.vb">
+      <DependentUpon>ParameterEditorControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\ParameterEditorControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\ParameterSetsEditor.Designer.vb">
+      <DependentUpon>ParameterSetsEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\ParameterSetsEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HelperClasses\ActionCommand.vb" />
+    <Compile Include="HelperClasses\StatusBarListener.vb" />
+    <Compile Include="Interfaces\IActionCommands.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\BankBrowser.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\BankBrowser.Designer.vb">
+      <DependentUpon>BankBrowser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\ControlTemplateGrid.Designer.vb">
+      <DependentUpon>ControlTemplateGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\ControlTemplateGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\ItemGrid.Designer.vb">
+      <DependentUpon>ItemGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\ItemGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\ItemLayoutTemplateGrid.Designer.vb">
+      <DependentUpon>ItemLayoutTemplateGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\MediaGrid.Designer.vb">
+      <DependentUpon>MediaGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\TestGrid.Designer.vb">
+      <DependentUpon>TestGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\ItemLayoutTemplateGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\MediaGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\XHtmlParameterEditorControl2.Designer.vb">
+      <DependentUpon>XHtmlParameterEditorControl2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\XHtmlParameterEditorControl2.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\XhtmlResourceParameterEditorControl.Designer.vb">
+      <DependentUpon>XhtmlResourceParameterEditorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ParameterEditors\EditorControls\XhtmlResourceParameterEditorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Resources\ResourceMetaDataMultiEdit.Designer.vb">
+      <DependentUpon>ResourceMetaDataMultiEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Resources\ResourceMetaDataMultiEdit.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Resources\ListValueEditor.Designer.vb">
+      <DependentUpon>ListValueEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Resources\ListValueEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Resources\ResourceCustomProperties.Designer.vb">
+      <DependentUpon>ResourceCustomProperties.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Resources\ResourceCustomProperties.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Resources\ResourceIdentifierEditor.Designer.vb">
+      <DependentUpon>ResourceIdentifierEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Resources\ResourceIdentifierEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Resources\ResourceMetaData.Designer.vb">
+      <DependentUpon>ResourceMetaData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\Resources\ResourceMetaData.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\Grids\TestGrid.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\ScoreEditor\ScoreEditorControlBase.Designer.vb">
+      <DependentUpon>ScoreEditorControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\ScoreEditor\ScoreEditorControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\SimpleSearchControl.Designer.vb">
+      <DependentUpon>SimpleSearchControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\SimpleSearchControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\ImportantMessageControl.Designer.vb">
+      <DependentUpon>ImportantMessageControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\ImportantMessageControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\ItemSessionControlEditor.Designer.vb">
+      <DependentUpon>ItemSessionControlEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\ItemSessionControlEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\TestSectionAdaptiveItemSelectorEditor.Designer.vb" />
+    <Compile Include="PresentationControls\TestEditor\TestSectionAdaptiveItemSelectorEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestPackageEditor\General_PropertyEditors\General_TestReferencePropertiesEditor.Designer.vb">
+      <DependentUpon>General_TestReferencePropertiesEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestPackageEditor\General_PropertyEditors\General_TestReferencePropertiesEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestPackageEditor\General_PropertyEditors\General_TestSetPropertiesEditor.Designer.vb">
+      <DependentUpon>General_TestSetPropertiesEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestPackageEditor\General_PropertyEditors\General_TestSetPropertiesEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestPackageEditor\PropertyEditorsContainers\TestReferencePropertyEditorContainer.Designer.vb">
+      <DependentUpon>TestReferencePropertyEditorContainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestPackageEditor\PropertyEditorsContainers\TestReferencePropertyEditorContainer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestPackageEditor\PropertyEditorsContainers\TestPackageEditorContainerBase.Designer.vb">
+      <DependentUpon>TestPackageEditorContainerBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestPackageEditor\PropertyEditorsContainers\TestPackageEditorContainerBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestPackageEditor\PropertyEditorsContainers\TestSetPropertyEditorContainer.Designer.vb">
+      <DependentUpon>TestSetPropertyEditorContainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestPackageEditor\PropertyEditorsContainers\TestSetPropertyEditorContainer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestPackageEditor\PropertyEditorsContainers\TestPackagePropertyEditorContainer.Designer.vb">
+      <DependentUpon>TestPackagePropertyEditorContainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestPackageEditor\PropertyEditorsContainers\TestPackagePropertyEditorContainer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\General_PropertyEditors\General_AssessmentTestPropertiesEditor.Designer.vb">
+      <DependentUpon>General_AssessmentTestPropertiesEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\General_PropertyEditors\General_AssessmentTestPropertiesEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\General_PropertyEditors\General_ItemReferencePropertiesEditor.Designer.vb">
+      <DependentUpon>General_ItemReferencePropertiesEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\General_PropertyEditors\General_ItemReferencePropertiesEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\General_PropertyEditors\General_TestPartPropertiesEditor.Designer.vb">
+      <DependentUpon>General_TestPartPropertiesEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\General_PropertyEditors\General_TestPartPropertiesEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\General_PropertyEditors\General_TestSectionPropertiesEditor.Designer.vb">
+      <DependentUpon>General_TestSectionPropertiesEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\General_PropertyEditors\General_TestSectionPropertiesEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\PropertyEditorsContainers\AssessmentTestPropertyEditorContainer.Designer.vb">
+      <DependentUpon>AssessmentTestPropertyEditorContainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\PropertyEditorsContainers\AssessmentTestPropertyEditorContainer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\PropertyEditorsContainers\ItemReferencePropertyEditorContainer.Designer.vb">
+      <DependentUpon>ItemReferencePropertyEditorContainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\PropertyEditorsContainers\ItemReferencePropertyEditorContainer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\PropertyEditorsContainers\TestSectionPropertyEditorContainer.Designer.vb">
+      <DependentUpon>TestSectionPropertyEditorContainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\PropertyEditorsContainers\TestSectionPropertyEditorContainer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\PropertyEditorsContainers\TestPartPropertyEditorContainer.Designer.vb">
+      <DependentUpon>TestPartPropertyEditorContainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\PropertyEditorsContainers\TestPartPropertyEditorContainer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\PropertyEditorsContainers\TestEditorContainerBase.Designer.vb">
+      <DependentUpon>TestEditorContainerBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\PropertyEditorsContainers\TestEditorContainerBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\TestHierarchyControl.Designer.vb">
+      <DependentUpon>TestHierarchyControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\TestHierarchyControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\TestSectionInsertionGrpEditor.Designer.vb">
+      <DependentUpon>TestSectionInsertionGrpEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestEditor\TestSectionInsertionGrpEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestPackageEditor\General_PropertyEditors\General_TestPackagePropertiesEditor.Designer.vb">
+      <DependentUpon>General_TestPackagePropertiesEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestPackageEditor\General_PropertyEditors\General_TestPackagePropertiesEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TestPackageEditor\TestPackageHierarchyControl.Designer.vb">
+      <DependentUpon>TestPackageHierarchyControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TestPackageEditor\TestPackageHierarchyControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TextEditor\FocusedReparentHtmlEditor.Designer.vb">
+      <DependentUpon>FocusedReparentHtmlEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TextEditor\FocusedReparentHtmlEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TextEditor\Handlers\HtmlInlineDialogHandler.vb" />
+    <Compile Include="PresentationControls\TextEditor\Handlers\HtmlInlineSplicer.vb" />
+    <Compile Include="PresentationControls\TextEditor\HtmlTableContentHelper.vb" />
+    <Compile Include="PresentationControls\TextEditor\ReparentHtmlEditor.Designer.vb">
+      <DependentUpon>ReparentHtmlEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationControls\TextEditor\ReparentHtmlEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PresentationControls\TextEditor\HtmlResourceExtractor.vb" />
+    <Compile Include="PresentationControls\TextEditor\TextToSpeech.vb" />
+    <Compile Include="PresentationControls\TextEditor\XhtmlDialogs.vb" />
+    <Compile Include="PresentationControls\TextEditor\XHtmlEditorCommands.vb" />
+    <Compile Include="PresentationControls\TextEditor\XhtmlText.vb" />
+    <Compile Include="PresentationControls\TextEditor\XHtmlViewer\XHtmlViewer.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PublicationOptions\SelectPublicationOptions.Designer.vb">
+      <DependentUpon>SelectPublicationOptions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PublicationOptions\SelectPublicationOptions.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\CBTExtraOptions.Designer.vb">
+      <DependentUpon>CBTExtraOptions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CBTExtraOptions.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\SelectImageLocation.Designer.vb">
+      <DependentUpon>SelectImageLocation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SelectImageLocation.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\SelectTarget.Designer.vb">
+      <DependentUpon>SelectTarget.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SelectTarget.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\SelectTargetAndColumns.Designer.vb">
+      <DependentUpon>SelectTargetAndColumns.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SelectTargetAndColumns.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SelectColumns\SelectColumns.Designer.vb">
+      <DependentUpon>SelectColumns.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelectColumns\SelectColumnsOptionsValidator.vb" />
+    <Compile Include="SelectColumns\SelectColumns.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Service References\PreviewService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PublicationService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard Components\WizardBase.Designer.vb">
+      <DependentUpon>WizardBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard Components\WizardBase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard Components\WizardOverviewTabControl.Designer.vb">
+      <DependentUpon>WizardOverviewTabControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard Components\WizardOverviewTabControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard Components\WizardProcessTabControl.Designer.vb">
+      <DependentUpon>WizardProcessTabControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard Components\WizardProcessTabControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard Components\WizardResultTabControl.Designer.vb">
+      <DependentUpon>WizardResultTabControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard Components\WizardResultTabControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard Components\WizardTabContentControl.Designer.vb">
+      <DependentUpon>WizardTabContentControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard Components\WizardTabContentControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wizard Components\WizardWelcomeTabControl.Designer.vb">
+      <DependentUpon>WizardWelcomeTabControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard Components\WizardWelcomeTabControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScoreUI\KeyFindingEditorControlBase.Designer.vb">
+      <DependentUpon>KeyFindingEditorControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreUI\KeyFindingEditorControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScoreUI\SolutionEditorControlBase.Designer.vb">
+      <DependentUpon>SolutionEditorControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreUI\SolutionEditorControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.CesTestPartValidationRule.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.CesTestPartValidationRules.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.CustomInteractionResourceParameter.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.GapImageParameter.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.GapTextParameter.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.GapTextRichTextParameter.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.HotTextScoringParameter.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.PrintForm.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.QtiTestPart.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.ResourceParameter.datasource" />
+    <None Include="My Project\DataSources\Questify.Builder.Logic.Service.Classes.PublicationResult.datasource" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AreaEditor\AreaEditor.resx">
+      <DependentUpon>AreaEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\TestPackageEditorControlBase.nl.resx">
+      <DependentUpon>TestPackageEditorControlBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\TestPackageEditorControlBase.resx">
+      <DependentUpon>TestPackageEditorControlBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\DialogBase.nl.resx">
+      <DependentUpon>DialogBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\DialogBase.resx">
+      <DependentUpon>DialogBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\DialogBase2.nl.resx">
+      <DependentUpon>DialogBase2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\DialogBase2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DialogBase2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\GenericResourceViewerBase.nl.resx">
+      <DependentUpon>GenericResourceViewerBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\GenericResourceViewerBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GenericResourceViewerBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\PropertyDialogBase.nl.resx">
+      <DependentUpon>PropertyDialogBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\PropertyDialogBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PropertyDialogBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\GridBase.nl.resx">
+      <DependentUpon>GridBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\ItemEditorControlBase.nl.resx">
+      <DependentUpon>ItemEditorControlBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\SelectResourceEntityDialogBase.nl.resx">
+      <DependentUpon>SelectResourceEntityDialogBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\SelectResourceEntityDialogBase.resx">
+      <DependentUpon>SelectResourceEntityDialogBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\SettingsEditorControlBase.nl.resx">
+      <DependentUpon>SettingsEditorControlBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\SettingsEditorControlBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SettingsEditorControlBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\TestEditorControlBase.nl.resx">
+      <DependentUpon>TestEditorControlBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\TestEditorControlBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TestEditorControlBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddCustomPropertyFormDialog.nl.resx">
+      <DependentUpon>AddCustomPropertyFormDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddCustomPropertyFormDialog.resx">
+      <DependentUpon>AddCustomPropertyFormDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddItemsFromCodeDialog.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddItemsFromCodeDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddItemsFromCodeDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddItemsFromCodeDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddSymbolsDialog.nl.resx">
+      <DependentUpon>AddSymbolsDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddSymbolsDialog.resx">
+      <DependentUpon>AddSymbolsDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BordersAndShading.nl.resx">
+      <DependentUpon>BordersAndShading.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BordersAndShading.resx">
+      <DependentUpon>BordersAndShading.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DataSources\RefreshDataSourcesDialog.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RefreshDataSourcesDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DataSources\RefreshDataSourcesDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RefreshDataSourcesDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EditImagePropertiesDialog.nl.resx">
+      <DependentUpon>EditImagePropertiesDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EditImagePropertiesDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditImagePropertiesDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EditMathFormulaDialog.nl.resx">
+      <DependentUpon>EditMathFormulaDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EditMathFormulaDialog.resx">
+      <DependentUpon>EditMathFormulaDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\InlineElementPropertiesDialog.nl.resx">
+      <DependentUpon>InlineElementPropertiesDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\InlineElementPropertiesDialog.resx">
+      <DependentUpon>InlineElementPropertiesDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewGenericResourceDialog.nl.resx">
+      <DependentUpon>NewGenericResourceDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewGenericResourceDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewGenericResourceDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewRoleDialog.nl.resx">
+      <DependentUpon>NewRoleDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewRoleDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewRoleDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewUserDialog.nl.resx">
+      <DependentUpon>NewUserDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewUserDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewUserDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\RemoveCustomPropertyWithConnectedResourcesDialog.nl.resx">
+      <DependentUpon>RemoveCustomPropertyWithConnectedResourcesDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\RemoveCustomPropertyWithConnectedResourcesDialog.resx">
+      <DependentUpon>RemoveCustomPropertyWithConnectedResourcesDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectDependenceResourceDialog.nl.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectDependenceResourceDialog.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectTestPackageResourceDialog.nl.resx">
+      <DependentUpon>SelectTestPackageResourceDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectTestPackageResourceDialog.resx">
+      <DependentUpon>SelectTestPackageResourceDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectTestResourceDialog.nl.resx">
+      <DependentUpon>SelectTestResourceDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectTestResourceDialog.resx">
+      <DependentUpon>SelectTestResourceDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectAspectResourceDialog.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectAspectResourceDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectAspectResourceDialog.resx">
+      <DependentUpon>SelectAspectResourceDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectDataSourceResourceDialog.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectDataSourceResourceDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectDataSourceResourceDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectDataSourceResourceDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectItemLayoutTemplateResourceDialog.nl.resx">
+      <DependentUpon>SelectItemLayoutTemplateResourceDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectItemLayoutTemplateResourceDialog.resx">
+      <DependentUpon>SelectItemLayoutTemplateResourceDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectItemResourceDialog.nl.resx">
+      <DependentUpon>SelectItemResourceDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectItemResourceDialog.resx">
+      <DependentUpon>SelectItemResourceDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectMediaResourceDialog.nl.resx">
+      <DependentUpon>SelectMediaResourceDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectMediaResourceDialog.resx">
+      <DependentUpon>SelectMediaResourceDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectPauseItemResourceDialog.nl.resx">
+      <DependentUpon>SelectPauseItemResourceDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectPauseItemResourceDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectPauseItemResourceDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectTestTemplateResourceDialog.nl.resx">
+      <DependentUpon>SelectTestTemplateResourceDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectTestTemplateResourceDialog.resx">
+      <DependentUpon>SelectTestTemplateResourceDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectUserDialog.nl.resx">
+      <DependentUpon>SelectUserDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Selection Dialogs\SelectUserDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectUserDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\UserBankRoleDialog.nl.resx">
+      <DependentUpon>UserBankRoleDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\UserBankRoleDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserBankRoleDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\WizardExceptionDialog.nl.resx">
+      <DependentUpon>WizardExceptionDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\WizardExceptionDialog.resx">
+      <DependentUpon>WizardExceptionDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\XhtmlReferenceDialog.nl.resx">
+      <DependentUpon>XhtmlReferenceDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\XhtmlReferenceDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>XhtmlReferenceDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.nl.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.nl.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\AspectEditor\AspectEditor.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AspectEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\AspectEditor\AspectEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AspectEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\AspectEditor\AspectGeneralProperties.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AspectGeneralProperties.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\AspectEditor\AspectGeneralProperties.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AspectGeneralProperties.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Authorization\RoleMetaData.nl.resx">
+      <DependentUpon>RoleMetaData.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Authorization\RoleMetaData.resx">
+      <DependentUpon>RoleMetaData.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Authorization\UserBankRoleViewer.nl.resx">
+      <DependentUpon>UserBankRoleViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Authorization\UserBankRoleViewer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserBankRoleViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Authorization\UserMetaData.nl.resx">
+      <DependentUpon>UserMetaData.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Authorization\UserMetaData.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserMetaData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\BankBrowser.nl.resx">
+      <DependentUpon>BankBrowser.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\BankStartPageControl.nl.resx">
+      <DependentUpon>BankStartPageControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\BankStartPageControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BankStartPageControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Bank\ApplicableToMaskControl.nl.resx">
+      <DependentUpon>ApplicableToMaskControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Bank\ApplicableToMaskControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ApplicableToMaskControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Bank\BankMetaData.nl.resx">
+      <DependentUpon>BankMetaData.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Bank\BankMetaData.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BankMetaData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Bank\BankSecurityControl.nl.resx">
+      <DependentUpon>BankSecurityControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Bank\BankSecurityControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BankSecurityControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\BaseClasses\CustomPropertyUserControlBase.resx">
+      <DependentUpon>CustomPropertyUserControlBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\ConceptStructure\ConceptStructureUserControl.nl.resx">
+      <DependentUpon>ConceptStructureUserControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\ConceptStructure\ConceptValueDetailsUserControl.nl.resx">
+      <DependentUpon>ConceptValueDetailsUserControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\ConceptStructure\ConceptValueDetailsUserControl.resx">
+      <DependentUpon>ConceptValueDetailsUserControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\ConceptStructure\ConceptStructureUserControl.resx">
+      <DependentUpon>ConceptStructureUserControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\BaseClasses\DeptStructureUserControlBase.resx">
+      <DependentUpon>DeptStructureUserControlBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\RichText\RichTextValueDetailsUserControl.nl.resx">
+      <DependentUpon>RichTextValueDetailsUserControl.vb</DependentUpon>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\RichText\RichTextValueDetailsUserControl.resx">
+      <DependentUpon>RichTextValueDetailsUserControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\TreeStructure\DeptTreeStructureUserControl.resx">
+      <DependentUpon>DeptTreeStructureUserControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\ConceptStructure\DeptConceptStructureUserControl.resx">
+      <DependentUpon>DeptConceptStructureUserControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\GeneralUserControl.nl.resx">
+      <DependentUpon>GeneralUserControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\GeneralUserControl.resx">
+      <DependentUpon>GeneralUserControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\ListValue\ListValueDetailsUserControl.nl.resx">
+      <DependentUpon>ListValueDetailsUserControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\ListValue\ListValueDetailsUserControl.resx">
+      <DependentUpon>ListValueDetailsUserControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\TreeStructure\TreeStructureUserControl.nl.resx">
+      <DependentUpon>TreeStructureUserControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\TreeStructure\TreeStructureUserControl.resx">
+      <DependentUpon>TreeStructureUserControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\TreeStructure\TreeStructureViewerUserControl.nl.resx">
+      <DependentUpon>TreeStructureViewerUserControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\TreeStructure\TreeStructureViewerUserControl.resx">
+      <DependentUpon>TreeStructureViewerUserControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\TreeStructure\TreeValueDetailsUserControl.nl.resx">
+      <DependentUpon>TreeValueDetailsUserControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\CustomProperty\TreeStructure\TreeValueDetailsUserControl.resx">
+      <DependentUpon>TreeValueDetailsUserControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\DataSources\DataSourcePreview.nl.resx" />
+    <EmbeddedResource Include="PresentationControls\DataSources\DataSourcePreview.resx" />
+    <EmbeddedResource Include="PresentationControls\DataSources\ItemDataSourcePreview.nl.resx" />
+    <EmbeddedResource Include="PresentationControls\DataSources\ItemDataSourcePreview.resx" />
+    <EmbeddedResource Include="PresentationControls\Grids\ConceptStructureGrid.nl.resx">
+      <DependentUpon>ConceptStructureGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\ConceptStructureGrid.resx">
+      <DependentUpon>ConceptStructureGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\ListValueDetailsGrid.nl.resx">
+      <DependentUpon>ListValueDetailsGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\ListValueDetailsGrid.resx">
+      <DependentUpon>ListValueDetailsGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\GenericResourceEditor\SvgImageViewer.resx">
+      <DependentUpon>SvgImageViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\GenericResourceEditor\GenericResourceEditorControl.nl.resx">
+      <DependentUpon>GenericResourceEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\GenericResourceEditor\GenericResourceEditorControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GenericResourceEditorControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\GenericResourceEditor\ImageGenericResourceViewer.nl.resx">
+      <DependentUpon>ImageGenericResourceViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\GenericResourceEditor\ImageGenericResourceViewer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ImageGenericResourceViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\GenericResourceEditor\MpegVideoViewer.resx">
+      <DependentUpon>MpegVideoViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\GenericResourceEditor\NoPreviewResourceViewer.nl.resx">
+      <DependentUpon>NoPreviewResourceViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\GenericResourceEditor\NoPreviewResourceViewer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NoPreviewResourceViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\GenericResourceEditor\SourceGenericResourceEditor.nl.resx">
+      <DependentUpon>SourceGenericResourceEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\GenericResourceEditor\SourceGenericResourceEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SourceGenericResourceEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\GenericResourceEditor\WordGenericResourceViewer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WordGenericResourceViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\CustomPropertiesGrid.nl.resx">
+      <DependentUpon>CustomPropertiesGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\CustomPropertiesGrid.resx">
+      <DependentUpon>CustomPropertiesGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\TreeStructureGrid.nl.resx">
+      <DependentUpon>TreeStructureGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\TreeStructureGrid.resx">
+      <DependentUpon>TreeStructureGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ItemEditor\Preview\QTI21\Chromium_ItemPreviewer.nl.resx">
+      <DependentUpon>Chromium_ItemPreviewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ItemEditor\Preview\QTI21\Chromium_ItemPreviewer.resx">
+      <DependentUpon>Chromium_ItemPreviewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ItemEditor\Preview\Word\Word_ItemPreviewer.nl.resx">
+      <DependentUpon>Word_ItemPreviewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\CustomInteractionResourceParameterEditorControl.nl.resx">
+      <DependentUpon>CustomInteractionResourceParameterEditorControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\CustomInteractionResourceParameterEditorControl.resx">
+      <DependentUpon>CustomInteractionResourceParameterEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\GapTextRichTextParameterEditorControl.nl.resx">
+      <DependentUpon>GapTextRichTextParameterEditorControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\GapTextRichTextParameterEditorControl.resx">
+      <DependentUpon>GapTextRichTextParameterEditorControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\HotTextScoringParameterEditorControl.resx">
+      <DependentUpon>HotTextScoringParameterEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\GapImageParameterEditorControl.nl.resx">
+      <DependentUpon>GapImageParameterEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\GapImageParameterEditorControl.resx">
+      <DependentUpon>GapImageParameterEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\GapTextParameterEditorControl.nl.resx">
+      <DependentUpon>GapTextParameterEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\GapTextParameterEditorControl.resx">
+      <DependentUpon>GapTextParameterEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\MathMLParameterEditorControl.resx">
+      <DependentUpon>MathMLParameterEditorControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\XhtmlGenericResourceViewer.nl.resx">
+      <DependentUpon>XhtmlGenericResourceViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\XhtmlGenericResourceViewer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>XhtmlGenericResourceViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\ApplicationRoleGrid.nl.resx">
+      <DependentUpon>ApplicationRoleGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\AspectGrid.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AspectGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\AspectGrid.resx">
+      <DependentUpon>AspectGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\BankRoleGrid.nl.resx">
+      <DependentUpon>BankRoleGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\ControlTemplateGrid.nl.resx">
+      <DependentUpon>ControlTemplateGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\ApplicationRoleGrid.resx">
+      <DependentUpon>ApplicationRoleGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\DataSourceGrid.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DataSourceGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\DataSourceGrid.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DataSourceGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\DataSourceTemplateGrid.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DataSourceTemplateGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\DataSourceTemplateGrid.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DataSourceTemplateGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\ItemGrid.nl.resx">
+      <DependentUpon>ItemGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\ItemLayoutTemplateGrid.nl.resx">
+      <DependentUpon>ItemLayoutTemplateGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\MediaGrid.nl.resx">
+      <DependentUpon>MediaGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\BankRoleGrid.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BankRoleGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\TestGrid.nl.resx">
+      <DependentUpon>TestGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\TestPackageGrid.nl.resx">
+      <DependentUpon>TestPackageGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\TestPackageGrid.resx">
+      <DependentUpon>TestPackageGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\TestTemplateGrid.nl.resx">
+      <DependentUpon>TestTemplateGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\TestTemplateGrid.resx">
+      <DependentUpon>TestTemplateGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\UserGrid.nl.resx">
+      <DependentUpon>UserGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\UserGrid.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\ItemEditorControlBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ItemEditorControlBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ItemEditor\ItemEditor.nl.resx">
+      <DependentUpon>ItemEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ItemEditor\ItemEditor.resx">
+      <DependentUpon>ItemEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ItemEditor\ItemSource.nl.resx">
+      <DependentUpon>ItemSource.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ItemEditor\ItemSource.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ItemSource.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ItemEditor\Preview\ItemPreviewContainer.nl.resx">
+      <DependentUpon>ItemPreviewContainer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ItemEditor\Preview\ItemPreviewContainer.resx">
+      <DependentUpon>ItemPreviewContainer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ItemEditor\Preview\PreviewPanel\PanelControl\PreviewPanel.resx">
+      <DependentUpon>PreviewPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ItemEditor\Preview\Word\Word_ItemPreviewer.resx">
+      <DependentUpon>Word_ItemPreviewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\AreaParameterEditorControl.resx">
+      <DependentUpon>AreaParameterEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AreaParameterEditorControl1.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\ChoicesParameterEditorControl.nl.resx">
+      <DependentUpon>ChoicesParameterEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\ChoicesParameterEditorControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChoicesParameterEditorControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\BooleanParameterEditorControl.nl.resx">
+      <DependentUpon>BooleanParameterEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\BooleanParameterEditorControl.resx">
+      <DependentUpon>BooleanParameterEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\CollectionEditorControlBase.resx">
+      <DependentUpon>CollectionEditorControlBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\ListedParameterEditorControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ListedParameterEditorControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\ParameterCollectionEditorControl.nl.resx">
+      <DependentUpon>ParameterCollectionEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\ParameterCollectionEditorControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ParameterCollectionEditorControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\ParameterGroupBox.nl.resx">
+      <DependentUpon>ParameterGroupBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\ParameterGroupBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ParameterGroupBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\PlainTextParameterEditorControl.nl.resx">
+      <DependentUpon>PlainTextParameterEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\PlainTextParameterEditorControl.resx">
+      <DependentUpon>PlainTextParameterEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\IntegerParameterEditorControl.nl.resx">
+      <DependentUpon>IntegerParameterEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\ParameterEditorControlBase.nl.resx">
+      <DependentUpon>ParameterEditorControlBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\ParameterSetsEditor.nl.resx">
+      <DependentUpon>ParameterSetsEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\ResourceParameterEditorControl.nl.resx">
+      <DependentUpon>ResourceParameterEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\ResourceParameterEditorControl.resx">
+      <DependentUpon>ResourceParameterEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\IntegerParameterEditorControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IntegerParameterEditorControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\ParameterEditorControlBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ParameterEditorControlBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\ParameterSetsEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ParameterSetsEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\BankBrowser.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BankBrowser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\GridBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GridBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\ControlTemplateGrid.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ControlTemplateGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\ItemGrid.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ItemGrid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\ItemLayoutTemplateGrid.resx">
+      <DependentUpon>ItemLayoutTemplateGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\MediaGrid.resx">
+      <DependentUpon>MediaGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Grids\TestGrid.resx">
+      <DependentUpon>TestGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\XHtmlParameterEditorControl2.resx">
+      <DependentUpon>XHtmlParameterEditorControl2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\XhtmlResourceParameterEditorControl.nl.resx">
+      <DependentUpon>XhtmlResourceParameterEditorControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ParameterEditors\EditorControls\XhtmlResourceParameterEditorControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>XhtmlResourceParameterEditorControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Resources\ResourceMetaDataMultiEdit.nl.resx">
+      <DependentUpon>ResourceMetaDataMultiEdit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Resources\ResourceMetaDataMultiEdit.resx">
+      <DependentUpon>ResourceMetaDataMultiEdit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Resources\ListValueEditor.nl.resx">
+      <DependentUpon>ListValueEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Resources\ListValueEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ListValueEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Resources\ResourceCustomProperties.nl.resx">
+      <DependentUpon>ResourceCustomProperties.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Resources\ResourceCustomProperties.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ResourceCustomProperties.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Resources\ResourceIdentifierEditor.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ResourceIdentifierEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Resources\ResourceIdentifierEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ResourceIdentifierEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Resources\ResourceMetaData.nl.resx">
+      <DependentUpon>ResourceMetaData.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Resources\ResourceMetaData.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ResourceMetaData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Resources\RichTextValueEditor.nl.resx">
+      <DependentUpon>RichTextValueEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Resources\RichTextValueEditor.resx">
+      <DependentUpon>RichTextValueEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\Resources\TreeStructureEditor.resx">
+      <DependentUpon>TreeStructureEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ScoreEditor\ScoreEditorControlBase.nl.resx">
+      <DependentUpon>ScoreEditorControlBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\ScoreEditor\ScoreEditorControlBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ScoreEditorControlBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\SectionLogicSettingsControlBase.resx">
+      <DependentUpon>SectionLogicSettingsControlBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\SimpleSearchControl.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SimpleSearchControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\SimpleSearchControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SimpleSearchControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\ImportantMessageControl.resx">
+      <DependentUpon>ImportantMessageControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\ItemSessionControlEditor.nl.resx">
+      <DependentUpon>ItemSessionControlEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\ItemSessionControlEditor.resx">
+      <DependentUpon>ItemSessionControlEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\TestSectionAdaptiveItemSelectorEditor.nl.resx" />
+    <EmbeddedResource Include="PresentationControls\TestEditor\TestSectionAdaptiveItemSelectorEditor.resx" />
+    <EmbeddedResource Include="PresentationControls\TestPackageEditor\General_PropertyEditors\General_TestReferencePropertiesEditor.nl.resx">
+      <DependentUpon>General_TestReferencePropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestPackageEditor\General_PropertyEditors\General_TestReferencePropertiesEditor.resx">
+      <DependentUpon>General_TestReferencePropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestPackageEditor\General_PropertyEditors\General_TestSetPropertiesEditor.nl.resx">
+      <DependentUpon>General_TestSetPropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestPackageEditor\General_PropertyEditors\General_TestSetPropertiesEditor.resx">
+      <DependentUpon>General_TestSetPropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestPackageEditor\PropertyEditorsContainers\TestReferencePropertyEditorContainer.resx">
+      <DependentUpon>TestReferencePropertyEditorContainer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestPackageEditor\PropertyEditorsContainers\TestPackageEditorContainerBase.resx">
+      <DependentUpon>TestPackageEditorContainerBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestPackageEditor\PropertyEditorsContainers\TestSetPropertyEditorContainer.resx">
+      <DependentUpon>TestSetPropertyEditorContainer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestPackageEditor\PropertyEditorsContainers\TestPackagePropertyEditorContainer.resx">
+      <DependentUpon>TestPackagePropertyEditorContainer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\General_PropertyEditors\General_AssessmentTestPropertiesEditor.nl.resx">
+      <DependentUpon>General_AssessmentTestPropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\General_PropertyEditors\General_AssessmentTestPropertiesEditor.resx">
+      <DependentUpon>General_AssessmentTestPropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\General_PropertyEditors\General_ItemReferencePropertiesEditor.nl.resx">
+      <DependentUpon>General_ItemReferencePropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\General_PropertyEditors\General_ItemReferencePropertiesEditor.resx">
+      <DependentUpon>General_ItemReferencePropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\General_PropertyEditors\General_TestPartPropertiesEditor.nl.resx">
+      <DependentUpon>General_TestPartPropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\General_PropertyEditors\General_TestPartPropertiesEditor.resx">
+      <DependentUpon>General_TestPartPropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\General_PropertyEditors\General_TestSectionPropertiesEditor.nl.resx">
+      <DependentUpon>General_TestSectionPropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\General_PropertyEditors\General_TestSectionPropertiesEditor.resx">
+      <DependentUpon>General_TestSectionPropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\PropertyEditorsContainers\AssessmentTestPropertyEditorContainer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AssessmentTestPropertyEditorContainer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\PropertyEditorsContainers\TestEditorContainerBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TestEditorContainerBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\PropertyEditorsContainers\ItemReferencePropertyEditorContainer.resx">
+      <DependentUpon>ItemReferencePropertyEditorContainer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\PropertyEditorsContainers\TestSectionPropertyEditorContainer.resx">
+      <DependentUpon>TestSectionPropertyEditorContainer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\PropertyEditorsContainers\TestPartPropertyEditorContainer.resx">
+      <DependentUpon>TestPartPropertyEditorContainer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\TestHierarchyControl.nl.resx">
+      <DependentUpon>TestHierarchyControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\TestHierarchyControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TestHierarchyControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\TestSectionInsertionGrpEditor.nl.resx">
+      <DependentUpon>TestSectionInsertionGrpEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestEditor\TestSectionInsertionGrpEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TestSectionInsertionGrpEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestPackageEditor\General_PropertyEditors\General_TestPackagePropertiesEditor.nl.resx">
+      <DependentUpon>General_TestPackagePropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestPackageEditor\General_PropertyEditors\General_TestPackagePropertiesEditor.resx">
+      <DependentUpon>General_TestPackagePropertiesEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestPackageEditor\TestPackageHierarchyControl.nl.resx">
+      <DependentUpon>TestPackageHierarchyControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TestPackageEditor\TestPackageHierarchyControl.resx">
+      <DependentUpon>TestPackageHierarchyControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TextEditor\FocusedReparentHtmlEditor.resx">
+      <DependentUpon>FocusedReparentHtmlEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationControls\TextEditor\ReparentHtmlEditor.resx">
+      <DependentUpon>ReparentHtmlEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublicationOptions\SelectPublicationOptions.resx">
+      <DependentUpon>SelectPublicationOptions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CBTExtraOptions.nl.resx">
+      <DependentUpon>CBTExtraOptions.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CBTExtraOptions.resx">
+      <DependentUpon>CBTExtraOptions.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SelectImageLocation.nl.resx">
+      <DependentUpon>SelectImageLocation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SelectImageLocation.resx">
+      <DependentUpon>SelectImageLocation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SelectTarget.nl.resx">
+      <DependentUpon>SelectTarget.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SelectTarget.resx">
+      <DependentUpon>SelectTarget.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectColumns\SelectColumns.nl.resx">
+      <DependentUpon>SelectColumns.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectColumns\SelectColumns.resx">
+      <DependentUpon>SelectColumns.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard Components\WizardBase.nl.resx">
+      <DependentUpon>WizardBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard Components\WizardBase.resx">
+      <DependentUpon>WizardBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard Components\WizardOverviewTabControl.nl.resx">
+      <DependentUpon>WizardOverviewTabControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard Components\WizardOverviewTabControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WizardOverviewTabControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard Components\WizardProcessTabControl.nl.resx">
+      <DependentUpon>WizardProcessTabControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard Components\WizardProcessTabControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WizardProcessTabControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard Components\WizardResultTabControl.nl.resx">
+      <DependentUpon>WizardResultTabControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard Components\WizardResultTabControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WizardResultTabControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard Components\WizardTabContentControl.nl.resx">
+      <DependentUpon>WizardTabContentControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard Components\WizardTabContentControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WizardTabContentControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard Components\WizardWelcomeTabControl.nl.resx">
+      <DependentUpon>WizardWelcomeTabControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard Components\WizardWelcomeTabControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WizardWelcomeTabControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataSourceReporting\DataSourceReportContainerControl.nl.resx">
+      <DependentUpon>DataSourceReportContainerControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataSourceReporting\DataSourceReportContainerControl.resx">
+      <DependentUpon>DataSourceReportContainerControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataSourceSettings\DataSourceSettingsEditor.nl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DataSourceSettingsEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataSourceSettings\DataSourceSettingsEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DataSourceSettingsEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataSourceSettings\DataSourceUIControlBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DataSourceUIControlBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataSourceSettings\ItemDataSourceSettingsUiControlBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ItemDataSourceSettingsUiControlBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoreUI\KeyFindingEditorControlBase.nl.resx">
+      <DependentUpon>KeyFindingEditorControlBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoreUI\KeyFindingEditorControlBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>KeyFindingEditorControlBase.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.ConceptStructureCustomBankPropertyEntity.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.ConceptStructureEntity.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.DeliveryResourceEntity.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.IPropertyEntity.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.ListCustomBankPropertyEntity.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.ListValueCustomBankPropertyEntity.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.TreeStructureCustomBankPropertyEntity.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.CesAssessmentTest.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.CesItemReference.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.CesTestPart.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.CesTestSection.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.CutOffScoreCondition.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.Delivery.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.GeneralItemReference.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.ItemSessionControl.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.MappedColumnProperties.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.PreconditionReference.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.PublishMetaData.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.SectionPart.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.TestPackage.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.TestSet.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.TestsetCollection.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.TimeLimits.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.WordTestSection.datasource" />
+    <None Include="My Project\DataSources\CustomClasses.BankStatistics.datasource" />
+    <None Include="My Project\DataSources\EnumItem.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Resources\F20.zip" />
+    <None Include="Resources\SCHEMA_DEP_20130502.zip" />
+    <None Include="Resources\WirisResources.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Questify.Builder.IoC\Questify.Builder.IoC.csproj">
+      <Project>{63ce1dee-458d-47a3-82fd-78e0132b536b}</Project>
+      <Name>Questify.Builder.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cito.ItemViewer.AsyncPluggableProtocol\Cito.ItemViewer.AsyncPluggableProtocol.csproj">
+      <Project>{c8641177-a9a2-4d02-839b-74dfbd67debb}</Project>
+      <Name>Cito.ItemViewer.AsyncPluggableProtocol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cito.Tester.Common\Cito.Tester.Common.vbproj">
+      <Project>{9a0bd8fe-d6f6-4ce5-9a0b-877610b00deb}</Project>
+      <Name>Cito.Tester.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cito.Tester.ContentModel\Cito.Tester.ContentModel.vbproj">
+      <Project>{94ee8d6c-5c52-4f34-9e61-e407b3240004}</Project>
+      <Name>Cito.Tester.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Configuration\Questify.Builder.Configuration.vbproj">
+      <Project>{C38FAA1F-F9CA-415E-99EA-56370B9207D8}</Project>
+      <Name>Questify.Builder.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Service\Questify.Builder.Logic.Service.csproj">
+      <Project>{885875bf-3e90-4b06-b1fb-a7883e54e391}</Project>
+      <Name>Questify.Builder.Logic.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.ContentModel\Questify.Builder.Model.ContentModel.vbproj">
+      <Project>{44EAFD1E-6CC9-4A94-B6F6-A78734C7AAE5}</Project>
+      <Name>Questify.Builder.Model.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Questify.Builder.Logic.vbproj">
+      <Project>{3A707189-B5DE-439D-91D3-FA20CE79E8BF}</Project>
+      <Name>Questify.Builder.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security\Questify.Builder.Security.vbproj">
+      <Project>{F7B4A532-DDCC-47F5-BB20-A7AE6F1D47B5}</Project>
+      <Name>Questify.Builder.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.ResourceEntity.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.ControlTemplateResourceEntity1.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.ItemLayoutTemplateResourceEntity1.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.ItemResourceEntity.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.BankEntity.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.CustomBankPropertyEntity.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.RoleEntity.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.StateEntity.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.UserEntity.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.IntegerParameter.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.TestSection.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.TestSectionAdaptiveItemSelectorSettings.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.TestSectionDefaultItemSelectorSettings.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.TestSectionInsertionGrpSettings.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\DataSources\Cito.Tester.Common.XhtmlReference.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.XhtmlResourceParameter.datasource" />
+    <None Include="Resources\preliminaryimplementation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bPause.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bPlay.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.AspectResourceEntity1.datasource" />
+    <None Include="My Project\DataSources\Cito.TestBuilder.ContentModel.EntityClasses.GenericResourceEntity.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.Aspect.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.AspectReference.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.ListedParameter.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.Resolution.datasource" />
+    <None Include="Resources\bStop.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.AssessmentTest2.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.AssessmentTestViewBase.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.CBTAssessmentTest.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.CBTItemReference.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.CBTTestSection.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.GenericAssessmentTest.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.GenericTestSection.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.PBTAssessmentTest.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.PBTItemReference.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.PBTTestPart.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.TestPart2.datasource" />
+    <None Include="My Project\DataSources\Cito.Tester.ContentModel.TestSection2.datasource" />
+    <None Include="Resources\LockedForEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\add-icon_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anchor-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\109_AllAnnotations_Default_16x16_72.png" />
+    <None Include="Resources\add-icon_161.png" />
+    <Content Include="Resources\bNewPointDownTriangle.bmp" />
+    <Content Include="Resources\bNewPointDownTriangle1.png" />
+    <Content Include="Resources\chrome.png" />
+    <Content Include="Resources\close.png" />
+    <None Include="Resources\TTSRemove_16.png" />
+    <None Include="Resources\TTSAlternative_16.png" />
+    <None Include="Resources\pause_16.png" />
+    <None Include="Service References\PreviewService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\PreviewService\configuration.svcinfo" />
+    <None Include="Service References\PreviewService\configuration91.svcinfo" />
+    <None Include="Service References\PreviewService\ItemPreviewService.disco" />
+    <None Include="Resources\placeholderspacer.gif" />
+    <None Include="Service References\PreviewService\ItemPreviewService.wsdl" />
+    <None Include="Service References\PreviewService\ItemPreviewService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PreviewService\ItemPreviewService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PreviewService\ItemPreviewService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicationService\PublicationService1.disco" />
+    <None Include="Resources\Mute_16.png" />
+    <None Include="Resources\nowyoudontseeme_16.png" />
+    <None Include="Resources\seeding-icon.png" />
+    <None Include="Resources\customInteraction_16.png" />
+    <None Include="Resources\customInteraction_32.png" />
+    <Content Include="Resources\FolderOpen_16x16_72.png" />
+    <Content Include="Resources\icon-firefox.png" />
+    <None Include="Resources\ttsDeleteResource.png" />
+    <None Include="Resources\ttsEditResource.png" />
+    <None Include="Resources\linked.png" />
+    <None Include="Resources\LockedForEdit1.png" />
+    <Content Include="Resources\logo-browser-ie8.png" />
+    <None Include="Resources\ShowPassword.gif" />
+    <None Include="Resources\ShowPasswordImg.png" />
+    <None Include="Resources\text-icon.png" />
+    <None Include="Service References\PublicationService\PublicationService1.wsdl" />
+    <None Include="Service References\PublicationService\PublicationService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicationService\PublicationService63.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicationService\PublicationService64.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicationService\PublicationService65.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicationService\PublicationService66.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicationService\Questify.Builder.UI.PublicationService.ConceptProcessingLabelEntry.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PublicationService\Questify.Builder.UI.PublicationService.PublicationHandlerIdentifier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PublicationService\Questify.Builder.UI.PublicationService.PublicationTaskProgress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PublicationService\Questify.Builder.UI.PublicationService.TestPreviewHandlerIdentifier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PublicationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\PublicationService\configuration.svcinfo" />
+    <None Include="Service References\PublicationService\configuration91.svcinfo" />
+    <None Include="Resources\SearchToolStripMenuItem.Image.png" />
+    <None Include="Resources\SearchToolStripButton.Image.png" />
+    <None Include="Resources\InlineTabular.png" />
+    <None Include="Resources\InlineMR.png" />
+    <None Include="Resources\InlineMC.png" />
+    <None Include="Resources\InlineHotText.png" />
+    <None Include="Resources\InlineGapMatch.png" />
+    <None Include="Resources\InlineGap.png" />
+    <None Include="Resources\InlineEssay.png" />
+    <None Include="Resources\InlineChoice.png" />
+    <None Include="Resources\NewToolStripMenuItem.Image.png" />
+    <None Include="Resources\Network-Download-icon.png" />
+    <None Include="Resources\delete_16x.PNG" />
+    <None Include="Resources\down_16x16.png" />
+    <None Include="Resources\up_16x16.png" />
+    <None Include="Resources\remove16.png" />
+    <None Include="Resources\shape_Rect.png" />
+    <None Include="Resources\shape_Ellipse.png" />
+    <None Include="Resources\shape_Circle.png" />
+    <None Include="Resources\Questify.gif" />
+    <None Include="Resources\Q32-32trans.ico" />
+    <None Include="Resources\DesignMode.GIF" />
+    <None Include="Resources\insert-audio.png" />
+    <None Include="Resources\insert-video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PresentationControls\MathMLEditor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PreviewService\" />
+    <WCFMetadataStorage Include="Service References\PublicationService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

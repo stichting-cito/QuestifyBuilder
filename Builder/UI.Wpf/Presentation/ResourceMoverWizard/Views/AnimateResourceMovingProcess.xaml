@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.ResourceMoverWizard.Views.AnimateResourceMovingProcess"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+             meffed:ViewModelLocator.ViewModel="ResourceMoverWizard.AnimateResourceMovingProcess" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <ProgressBar Margin="5,5,5,5" Grid.Row="1" Height="30" IsIndeterminate="True">
+            
+        </ProgressBar>
+    </Grid>
+</UserControl>

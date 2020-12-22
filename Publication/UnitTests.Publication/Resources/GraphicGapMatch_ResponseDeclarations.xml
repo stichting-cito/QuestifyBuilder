@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<responseDeclarations>
+  <responseDeclaration identifier="RESPONSE" cardinality="multiple" baseType="directedPair">
+    <correctResponse interpretation="(A HSB&amp;B HSC&amp;C HSD&amp;C HSH&amp;B HSI&amp;A HSJ)|(C HSB&amp;A HSC&amp;B HSD&amp;B HSH&amp;A HSI&amp;C HSJ)">
+      <value>A HSB</value>
+      <value>B HSC</value>
+      <value>C HSD</value>
+      <value>C HSH</value>
+      <value>B HSI</value>
+      <value>A HSJ</value>
+    </correctResponse>
+  </responseDeclaration>
+</responseDeclarations>

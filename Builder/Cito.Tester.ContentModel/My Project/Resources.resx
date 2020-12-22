@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Error_AttributeTransaction_ParametersNotSet" xml:space="preserve">
+    <value>Constructor parameters either null or empty</value>
+  </data>
+  <data name="Error_ItemReference_Constructor_ParametersNotSet" xml:space="preserve">
+    <value>Error: Constructor parameters either null or empty</value>
+  </data>
+  <data name="Error_MethodTransaction_ParametersNotSet" xml:space="preserve">
+    <value>Constructor parameters either null or empty</value>
+  </data>
+  <data name="Error_ResourceParameter_Value_1node" xml:space="preserve">
+    <value>Error: resource parameter cannot have multiple nodes, only 1 xmltext-node</value>
+  </data>
+  <data name="Error_StringParameter_Value_1node" xml:space="preserve">
+    <value>Error: resource parameter cannot have multiple nodes, only 1 xmltext-node</value>
+  </data>
+  <data name="Error_TransactionBase_Constructor" xml:space="preserve">
+    <value>Constructor parameters either null or empty</value>
+  </data>
+  <data name="Error_ChoiceCollectionParameter_Value_SetValueNotAllowed" xml:space="preserve">
+    <value>set now allowed</value>
+  </data>
+  <data name="Error_DictionaryTransaction_ParametersNotSet" xml:space="preserve">
+    <value>Constructor parameters either null or empty</value>
+  </data>
+  <data name="ItemFunctionalType_Informational" xml:space="preserve">
+    <value>Informative</value>
+  </data>
+  <data name="ItemFunctionalType_Regular" xml:space="preserve">
+    <value>Regular</value>
+  </data>
+  <data name="ItemFunctionalType_System" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="enumSectionType_BumperGrp" xml:space="preserve">
+    <value>Leading item group</value>
+  </data>
+  <data name="enumSectionType_categoryGrp" xml:space="preserve">
+    <value>Category group</value>
+  </data>
+  <data name="enumSectionType_insertionCol" xml:space="preserve">
+    <value>Insertion collection</value>
+  </data>
+  <data name="enumSectionType_insertionGrp" xml:space="preserve">
+    <value>Insertion group</value>
+  </data>
+  <data name="enumSectionType_normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="EnumScoringMethod_Dichotomous" xml:space="preserve">
+    <value>Dichotomous</value>
+  </data>
+  <data name="EnumScoringMethod_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="EnumScoringMethod_Polytomous" xml:space="preserve">
+    <value>Polytomous</value>
+  </data>
+  <data name="ItemSelectorIsNotAllowedForThisSectionType" xml:space="preserve">
+    <value>'Item selector' is not allowed for this section type.</value>
+  </data>
+  <data name="ItemSelectorIsARequiredField" xml:space="preserve">
+    <value>'Item selector' is a required field.</value>
+  </data>
+  <data name="TitleIsARequiredField" xml:space="preserve">
+    <value>'Title' is a required field.</value>
+  </data>
+  <data name="IdentifierIsARequiredField" xml:space="preserve">
+    <value>'Identifier' is a required field.</value>
+  </data>
+  <data name="ItemFunctionalTypeIsARequiredField" xml:space="preserve">
+    <value>'Item functional type' is a required field.</value>
+  </data>
+  <data name="SourceNameIsARequiredField" xml:space="preserve">
+    <value>'Referenced item' is a required field.</value>
+  </data>
+  <data name="AssessmentTestViewType_Word" xml:space="preserve">
+    <value>Paper based test with MS Word</value>
+  </data>
+  <data name="Error_CompileEngine_CallMethod_CannotFindEntryPoint" xml:space="preserve">
+    <value>Error: engine cannot find entry point '{0}'</value>
+  </data>
+  <data name="Error_CompileEngine_CallMethod_ErrorWhileExecutingControlTemplateScript" xml:space="preserve">
+    <value>Error: an error occurred while executing control template script</value>
+  </data>
+  <data name="Error_CompileEngine_CallMethod_ExceptionOccurred" xml:space="preserve">
+    <value>Error:  An exception occurred '{0}'</value>
+  </data>
+  <data name="Error_CompileEngine_CallMethod_NumberOfParametersDoesNotMatch" xml:space="preserve">
+    <value>Error: number of parameters does not match. {0} parameters excepted.</value>
+  </data>
+  <data name="Error_CompileEngine_CallMethod_OutputDoesNotReturnStringObject" xml:space="preserve">
+    <value>Error: output of compiled function does not return an string object.</value>
+  </data>
+  <data name="Error_CompileEngine_CreateAssembly_CannotLoadReference" xml:space="preserve">
+    <value>Error: cannot load reference '{0}'</value>
+  </data>
+  <data name="Error_CompileEngine_CreateAssembly_LanguageNotSupported" xml:space="preserve">
+    <value>Error: The language '{0}' is not supported</value>
+  </data>
+  <data name="Error_CompileEngine_CreateAssembly_NoScriptCode" xml:space="preserve">
+    <value>Error: There was no script code to compile</value>
+  </data>
+  <data name="Error_ControlAdapter_GetAttributeValue_AttributeNotFound" xml:space="preserve">
+    <value>Error: attribute '{0}' on element '{1}' is not found</value>
+  </data>
+  <data name="Error_ControlAdapter_GetControlAdapterTemplate_CannotGetControlTemplate" xml:space="preserve">
+    <value>Error: did not get control template of type '{0}' as resource from an external source</value>
+  </data>
+  <data name="Error_ControlAdapter_ParseControl_CompilingFailed" xml:space="preserve">
+    <value>Error: compiling/executing template code failed. '{0}' errors{1}{1}</value>
+  </data>
+  <data name="Error_ControlAdapter_ParseControl_ErrorExecuting" xml:space="preserve">
+    <value>An error occurred while running control template script.</value>
+  </data>
+  <data name="Error_ItemAdapter_GetAttributeValue_AttributeNotFound" xml:space="preserve">
+    <value>Error: attribute '{0}' on element '{1}' is not found</value>
+  </data>
+  <data name="Error_ItemAdapter_ParseTemplate_CannotProcessOutput" xml:space="preserve">
+    <value>Error while parsing control template: cannot process output from template because of error '{0}'</value>
+  </data>
+  <data name="Error_ItemAdapter_ProcessControlTemplateOutput_NoValidTemplate" xml:space="preserve">
+    <value>Error: control '{0}' has no valid control template </value>
+  </data>
+  <data name="Trace_AspV3StyleParser_GetParsedResult_ConstructCode" xml:space="preserve">
+    <value>Construct compilable code from control template.</value>
+  </data>
+  <data name="Trace_ControlAdapter_ParseControl_CompileControltemplate" xml:space="preserve">
+    <value>Compile control template.</value>
+  </data>
+  <data name="Trace_ItemAdapter_ProcessControlTemplateOutput_AddScriptOutput" xml:space="preserve">
+    <value>Add script output to RenderML document.</value>
+  </data>
+  <data name="AssessmentTestViewBase_FriendlyEntityName" xml:space="preserve">
+    <value>Test properties</value>
+  </data>
+  <data name="ItemReferenceViewBase_FriendlyEntityName" xml:space="preserve">
+    <value>Item reference properties</value>
+  </data>
+  <data name="TestPartViewBase_FriendlyEntityName" xml:space="preserve">
+    <value>Test part properties</value>
+  </data>
+  <data name="TestSectionViewBase_FriendlyEntityName" xml:space="preserve">
+    <value>Test section properties</value>
+  </data>
+  <data name="AssessmentTestViewType_CES" xml:space="preserve">
+    <value>Computer based test with Facet Player</value>
+  </data>
+  <data name="Qti21NavigationMode_linear" xml:space="preserve">
+    <value>Forward navigation</value>
+  </data>
+  <data name="Qti21NavigationMode_nonlinear" xml:space="preserve">
+    <value>Free navigation</value>
+  </data>
+  <data name="Qti21NavigationMode_automatic" xml:space="preserve">
+    <value>Automatic navigation</value>
+  </data>
+  <data name="SubmissionMode_individual" xml:space="preserve">
+    <value>per item</value>
+  </data>
+  <data name="SubmissionMode_simultaneous" xml:space="preserve">
+    <value>after passing testpart</value>
+  </data>
+  <data name="TypeIsARequiredField" xml:space="preserve">
+    <value>'Type' is a required field</value>
+  </data>
+  <data name="Error_TestReference_Constructor_ParametersNotSet1" xml:space="preserve">
+    <value>Error: Constructor parameters either null or empty</value>
+  </data>
+  <data name="TestPackageViewBase_FriendlyEntityName" xml:space="preserve">
+    <value>Test package properties</value>
+  </data>
+  <data name="TestReferenceViewBase_FriendlyEntityName" xml:space="preserve">
+    <value>Test reference properties</value>
+  </data>
+  <data name="TestSetViewBase_FriendlyEntityName" xml:space="preserve">
+    <value>Test set properties</value>
+  </data>
+  <data name="PasswordRules" xml:space="preserve">
+    <value>Password validation failed. Please enter a password using the following validation rules:
+
+Possible characters:
+
+- Alphnumeric: abcdefghijklmnopqrstuvwxyz
+- Alphnumeric capitals:   ABCDEFGHIJKLMNOPQRSTUVWXYZ
+- Numbers: 0123456789
+- Symbols: .-#@~!$^*()+={{}}[]
+
+Password has to contain at least one character form three categories.
+Password has to have 8 to 40 characters.</value>
+  </data>
+  <data name="PasswordIsARequiredField" xml:space="preserve">
+    <value>'Password' is a required field.</value>
+  </data>
+  <data name="PeriodIndicationIsARequiredField" xml:space="preserve">
+    <value>'Period indication' is a required field.</value>
+  </data>
+  <data name="DataSourceBehaviourEnum_Exclusion" xml:space="preserve">
+    <value>Exclusion group</value>
+  </data>
+  <data name="DataSourceBehaviourEnum_Inclusion" xml:space="preserve">
+    <value>Inclusion group</value>
+  </data>
+  <data name="DataSourceBehaviourEnum_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="DataSourceBehaviourEnum_Seeding" xml:space="preserve">
+    <value>Seeding group</value>
+  </data>
+  <data name="AssessmentTestViewType_GenericTest" xml:space="preserve">
+    <value>Generic test</value>
+  </data>
+  <data name="MappedColumnNotVisible" xml:space="preserve">
+    <value>Not visible on report</value>
+  </data>
+  <data name="MappedColumnVisible" xml:space="preserve">
+    <value>Visible on report</value>
+  </data>
+  <data name="SelectionTemplateNotConfiguredCorrectly" xml:space="preserve">
+    <value>The selection template is not configured correctly.</value>
+  </data>
+  <data name="CesItemUsageType_default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="CesItemUsageType_informational" xml:space="preserve">
+    <value>Informational</value>
+  </data>
+  <data name="CesItemUsageType_seeding" xml:space="preserve">
+    <value>Seeding</value>
+  </data>
+  <data name="CesTestPartValidationRuleUnit_Number" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="CesTestPartValidationRuleUnit_Percentage" xml:space="preserve">
+    <value>Percentage</value>
+  </data>
+  <data name="ItemFunctionalType_Seeding" xml:space="preserve">
+    <value>Seeding</value>
+  </data>
+  <data name="TestOutcomeValidator_FriendlyName" xml:space="preserve">
+    <value>Score properties</value>
+  </data>
+  <data name="TestOutcomeValidator_Outcome" xml:space="preserve">
+    <value>'Outcome' is a required field.</value>
+  </data>
+  <data name="TestOutcomeValidator_Score" xml:space="preserve">
+    <value>'Score' is a required field.</value>
+  </data>
+  <data name="ConvertToLower_Description" xml:space="preserve">
+    <value>Convert to lower characters</value>
+  </data>
+  <data name="ConvertYToIJ_Description" xml:space="preserve">
+    <value>Convert y to ij</value>
+  </data>
+  <data name="RemoveAllSpaces_Description" xml:space="preserve">
+    <value>Remove all spaces</value>
+  </data>
+  <data name="RemoveApostrophs_Description" xml:space="preserve">
+    <value>Remove apostrophs</value>
+  </data>
+  <data name="RemoveDiacritics_Description" xml:space="preserve">
+    <value>Remove diacritics</value>
+  </data>
+  <data name="RemoveHyphens_Description" xml:space="preserve">
+    <value>Remove hyphens</value>
+  </data>
+  <data name="RemoveLeadingTrailingSpaces_Description" xml:space="preserve">
+    <value>Remove leading and trailing spaces</value>
+  </data>
+</root>

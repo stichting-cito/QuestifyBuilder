@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.ScoreEditors.concrete.DateGapScoreEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:CinchV2="clr-namespace:Cinch;assembly=Cinch.WPF"
+             xmlns:s="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             xmlns:TCntMdl="clr-namespace:Cito.Tester.ContentModel;assembly=Cito.Tester.ContentModel"
+             xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+             xmlns:concrete="clr-namespace:Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.ScoreEditors.concrete"
+             meffed:ViewModelLocator.ViewModel="ItemEditor.ScoreEditors.DateScoringVM"
+             d:DesignHeight="300" d:DesignWidth="640">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <concrete:ComparisonTypeToVisbilityConverter x:Key="ComparisonTypeToVisbilityConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <ItemsControl ItemsSource="{Binding ScorableItems}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="{StaticResource ItemEditor.ScoreEditor.SeparatorBrush}" BorderThickness="0,0,0,1">
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <Label Content="{Binding Key}" VerticalContentAlignment="Center" Margin="5" />
+                            <ListView ItemsSource="{Binding Value}" BorderThickness="0">
+                                <ListView.Resources>
+                                    <Style TargetType="GridViewColumnHeader">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </Style>
+                                </ListView.Resources>
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="{StaticResource ItemEditor.ScoreEditor.Alternatives}"  Width="Auto">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <xctk:MaskedTextBox MinWidth="150" ValueDataType="{x:Type s:String}" PromptChar="0" IncludePromptInValue="True" InsertKeyMode="Overwrite" Mask="{Binding Mask}" 
+                                                    Value="{Binding Value, ValidatesOnDataErrors=True,ValidatesOnExceptions=True,UpdateSourceTrigger=PropertyChanged}"  
+                                                    />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Width="Auto">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button Command="{Binding RemoveItem}">
+                                                        <Button.ToolTip>
+                                                            <TextBlock Text="{StaticResource ItemEditor.ScoreEditor.RemoveAlternative}" />
+                                                        </Button.ToolTip>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <Image Source="{StaticResource ItemEditor.ScoreEditor.ScoreEditor_ErrorImage}" Width="16" Height="16" />
+                                                        </StackPanel>
+                                                    </Button>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+
+                            <Button Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.AddItem}" CommandParameter="{Binding Key}" VerticalAlignment="Bottom" Margin="0,0,0,3">
+                                <Button.ToolTip>
+                                    <TextBlock Text="{StaticResource ItemEditor.ScoreEditor.AddAlternative}" />
+                                </Button.ToolTip>
+                                <Image Source="{StaticResource ItemEditor.ScoreEditor.ScoreEditor_AddImage}" Width="16" Height="16" />
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</UserControl>

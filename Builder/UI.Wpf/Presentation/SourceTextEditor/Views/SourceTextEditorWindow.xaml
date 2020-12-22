@@ -1,0 +1,300 @@
+﻿<RibbonWindow 
+        x:Class="Questify.Builder.UI.Wpf.Presentation.SourceTextEditor.Views.SourceTextEditorWindow" x:Name="SourceTextEditor" x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:CinchV2="clr-namespace:Cinch;assembly=Cinch.WPF"
+        xmlns:valueConverters="clr-namespace:Questify.Builder.UI.Wpf.Presentation.ValueConverters"
+        Title="{DynamicResource SourceTextEditor.Title}" MinHeight="710" Height="710" Width="1000"
+        Icon="../../Images/QuestifyIcon.ico">
+    <RibbonWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--Please make sure that Resources are commented out-->
+                <!--<ResourceDictionary x: Source="..\SourceTextEditor.nl.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+
+            <valueConverters:QuestifyBooleanToVisibilityConverter x:Key="QuestifyBooleanToVisibilityConverter"/>
+            <valueConverters:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+
+            <!-- Keep this (below) uncommented!-->
+            <!-- This is needed to create a view based on the bound workspace data -->
+            <DataTemplate DataType="{x:Type CinchV2:WorkspaceData}">
+                <AdornerDecorator>
+                    <Border HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        CinchV2:NavProps.ViewCreator="{Binding}"/>
+                </AdornerDecorator>
+            </DataTemplate>
+        </ResourceDictionary>
+    </RibbonWindow.Resources>
+
+    <Window.InputBindings>
+        <KeyBinding Key="S" Modifiers="Alt" Command="{Binding Save}" />
+        <KeyBinding Key="S" Modifiers="Control" Command="{Binding Save}" />
+        <KeyBinding Key="S" Modifiers="Ctrl+Shift" Command="{Binding SaveAs}"/>
+    </Window.InputBindings>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <CinchV2:EventToCommandTrigger Command="{Binding WindowClosing}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="24"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!-- ROW 0 -->
+        <Ribbon Grid.Row="0" x:Name="Ribbon" IsMinimized="{Binding IsRibbonMinimized.DataValue, Mode=TwoWay}" AutomationProperties.AutomationId="Ribbon" HorizontalAlignment="Left">
+            <!-- Title of window in Center -->
+            <Ribbon.TitleTemplate>
+                <DataTemplate>
+                    <DockPanel>
+                        <TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Width="{Binding ElementName=SourceTextEditor, Path=ActualWidth}" Text="{Binding ElementName=SourceTextEditor, Path=DataContext.WindowTitle.DataValue}"/>
+                    </DockPanel>
+                </DataTemplate>
+            </Ribbon.TitleTemplate>
+
+            <Ribbon.QuickAccessToolBar>
+                <RibbonQuickAccessToolBar Height="Auto">
+                    <DockPanel VerticalAlignment="Center" >
+                        <RibbonButton SmallImageSource="..\..\Images\Ribbon\save_16.png" Command="{Binding Save}" IsEnabled="{Binding SaveNeeded.DataValue, UpdateSourceTrigger=PropertyChanged}" />
+                    </DockPanel>
+                </RibbonQuickAccessToolBar>
+            </Ribbon.QuickAccessToolBar>
+
+            <Ribbon.HelpPaneContent>
+                <!-- Buttons Right -->
+                <RibbonButton Content="^" Command="{Binding ToggleRibbonMinimize}" >
+                    <RibbonButton.Style>
+                        <Style TargetType="RibbonButton">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=Ribbon, Path=IsMinimized}" Value="True">
+                                    <Setter Property="SmallImageSource" Value="..\..\Images\Ribbon\ribbon_2Expand.png"></Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=Ribbon, Path=IsMinimized}" Value="False">
+                                    <Setter Property="SmallImageSource" Value="..\..\Images\Ribbon\ribbon_2Collapse.png"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </RibbonButton.Style>
+                </RibbonButton>
+
+            </Ribbon.HelpPaneContent>
+
+            <Ribbon.ApplicationMenu>
+
+                <RibbonApplicationMenu Background="#FFbc0045" BorderBrush="#FFbc0045"  >
+                    <RibbonApplicationMenuItem Header="{StaticResource SourceTextEditor.Command.Save }" Command="{Binding Save}"/>
+                    <RibbonApplicationMenuItem Header="{StaticResource SourceTextEditor.Command.SaveAs }" Command="{Binding SaveAs}" IsEnabled="{Binding GenericResourceEntity.DataValue.IsNew, Converter={StaticResource ResourceKey=InverseBooleanConverter}}"/>
+                    <RibbonApplicationMenuItem Header="{StaticResource SourceTextEditor.Command.SaveAndClose }" Command="{Binding SaveAndClose}"/>
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+
+            <RibbonTab Header="{StaticResource SourceTextEditor.RibbonTab.Start}">
+                <RibbonGroup x:Name="ClipboardGroup" Header="{StaticResource SourceTextEditor.Ribbon.ClipboardGroup}">
+
+                    <RibbonSplitButton Label="{StaticResource SourceTextEditor.Ribbon.Paste}"
+                                      LargeImageSource="..\..\Images\Ribbon\paste_32.png"
+                                      ToolTipTitle="{StaticResource SourceTextEditor.Ribbon.Paste}"
+                                      ToolTipDescription="{StaticResource SourceTextEditor.Ribbon.Paste.ToolTipDescription}"
+                                      ToolTipImageSource="..\..\Images\Ribbon\paste_32.png"
+                                      Command="{Binding PasteAsText}" >
+
+                        <RibbonMenuItem Header="{StaticResource SourceTextEditor.Ribbon.PasteAsText}" Command="{Binding PasteAsText}" />
+                        <RibbonMenuItem Header="{StaticResource SourceTextEditor.Ribbon.PasteSpecial}" Command="{Binding PasteSpecial}" />
+                    </RibbonSplitButton>
+                    <RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.Cut}" KeyTip="X" SmallImageSource="..\..\Images\Ribbon\cut_16.png" Command="{Binding Cut}" />
+                    <RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.Copy}" KeyTip="C" SmallImageSource="..\..\Images\Ribbon\copy_16.png" Command="{Binding Copy}" />
+                </RibbonGroup>
+
+                <RibbonGroup x:Name="FormatGroup" Header="{StaticResource SourceTextEditor.Ribbon.FormatGroup}" >
+                    <RibbonControlGroup>
+                        <RibbonComboBox Background="{x:Null}"  >
+                            <RibbonGallery x:Name="StyleCbx">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="SelectionChanged">
+                                        <i:InvokeCommandAction Command="{Binding SetStyleCommand}" CommandParameter="{Binding ElementName=StyleCbx,Path=SelectedValue}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                                <RibbonGalleryCategory ItemsSource="{Binding AvailableStyles.DataValue}" />
+                            </RibbonGallery>
+                        </RibbonComboBox>
+
+                        <!-- Clear Formatting -->
+                        <RibbonButton SmallImageSource="..\..\Images\Ribbon\eraseformat_16.png" Command="{Binding ClearFormatting}"/>
+                        <!-- Lock Editing -->
+                        <RibbonButton SmallImageSource="..\..\Images\Ribbon\LockedForEdit_16.png"  Command="{Binding Lock}"/>
+                        <!-- Lists -->
+                        <RibbonRadioButton SmallImageSource="..\..\Images\Ribbon\orderedlist_16.png" Command="{Binding NumberedList}"/>
+                        <RibbonRadioButton SmallImageSource="..\..\Images\Ribbon\orderedromanlist_16.png" Command="{Binding RomanNumberedList}" />
+                        <RibbonRadioButton SmallImageSource="..\..\Images\Ribbon\unorderedlist_16.png" Command="{Binding BulletedList}"/>                        
+                        <!-- Ident -->
+                        <Separator />
+                        <RibbonButton SmallImageSource="..\..\Images\Ribbon\indentdecrease_16.png" Command="{Binding DeIndent}"/>
+                        <RibbonButton SmallImageSource="..\..\Images\Ribbon\indentincrease_16.png" Command="{Binding  Indent}"/>
+                    </RibbonControlGroup>
+
+
+                    <RibbonControlGroup>
+                        <RibbonButton SmallImageSource="..\..\Images\Ribbon\bold_16.png" Command="{Binding Bold}"/>
+                        <RibbonButton SmallImageSource="..\..\Images\Ribbon\italic_16.png" Command="{Binding Italic}"/>
+                        <RibbonButton SmallImageSource="..\..\Images\Ribbon\underline_16.png" Command="{Binding Underline}"/>
+                        <RibbonButton SmallImageSource="..\..\Images\Ribbon\superindex_16.png" Command="{Binding SuperScript}"/>
+                        <RibbonButton SmallImageSource="..\..\Images\Ribbon\subindex_16.png" Command="{Binding SubScript}"/>
+                        <RibbonButton SmallImageSource="..\..\Images\Ribbon\strikethrough_16.png" Command="{Binding StrikeThrough}"/>
+                        <Separator Width="2"/>
+                        <RibbonButton SmallImageSource="..\..\Images\Ribbon\textalignleft_16.png" Command="{Binding AlignLeft}"/>
+                        <RibbonButton SmallImageSource="..\..\Images\Ribbon\textaligncenter_16.png" Command="{Binding AlignMiddle}"/>
+                        <RibbonButton SmallImageSource="..\..\Images\Ribbon\textalignright_16.png" Command="{Binding AlignRight}"/>
+                    </RibbonControlGroup>
+
+                </RibbonGroup>
+
+                <RibbonGroup x:Name="InsertGroup" Header="{StaticResource SourceTextEditor.Ribbon.InsertGroup}">
+                    <RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.Insert.Image}" LargeImageSource="..\..\Images\Ribbon\image_32.png" SmallImageSource="..\..\Images\Ribbon\image_16.png"                           Command="{Binding AddPicture}"/>
+                    <!--RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.Insert.Video}" LargeImageSource="..\..\Images\Ribbon\video_32.png" SmallImageSource="..\..\Images\Ribbon\video_16.png"                           Command="{Binding AddVideo}"/-->
+                    <!--RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.Insert.Audio}" LargeImageSource="..\..\Images\Ribbon\audio_32.png" SmallImageSource="..\..\Images\Ribbon\audio_16.png"                           Command="{Binding AddAudio}"/-->
+                    <RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.Insert.Table}" LargeImageSource="..\..\Images\Ribbon\table_32.png" SmallImageSource="..\..\Images\Ribbon\table_16.png"                           Command="{Binding AddTable}"/>
+                    <RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.Insert.Formula}" LargeImageSource="..\..\Images\Ribbon\formula_32.png" SmallImageSource="..\..\Images\Ribbon\formula_16.png"                     Command="{Binding AddFormula}"/>
+                    <RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.Insert.Symbol}" LargeImageSource="..\..\Images\Ribbon\symbol_32.png" SmallImageSource="..\..\Images\Ribbon\symbol_16.png"                        Command="{Binding OpenSymbolDialog}"/>
+                    <!--RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.Insert.Reference}" LargeImageSource="..\..\Images\Ribbon\reference_32.png" SmallImageSource="..\..\Images\Ribbon\reference_16.png"               Command="{Binding AddReference}"/-->
+                </RibbonGroup>
+                
+                <RibbonGroup Header="{StaticResource SourceTextEditor.Ribbon.ReferenceGroup}" Visibility="{Binding GenericResourceEntity.DataValue.IsTemplate, Converter={StaticResource ResourceKey=QuestifyBooleanToVisibilityConverter}, ConverterParameter=InvertBooleanValue}">
+                    <RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.References.Symbol}" SmallImageSource="..\..\Images\Ribbon\reference_16.png" Command="{Binding InsertSymbolReference}"/>
+                    <RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.References.Highlight}" SmallImageSource="..\..\Images\Ribbon\reference_16.png" Command="{Binding InsertHighlightReference}"/>
+                    <RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.References.Element}" SmallImageSource="..\..\Images\Ribbon\reference_16.png" Command="{Binding InsertElementReference}"/>
+                    <RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.References.Remove}" SmallImageSource="..\..\Images\Ribbon\reference_16.png" Command="{Binding RemoveReference}"/>
+                    <RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.References.Overview}" SmallImageSource="..\..\Images\Ribbon\reference_16.png" Command="{Binding OverViewReferences}"/>
+                </RibbonGroup>
+
+                <RibbonGroup Header="{StaticResource SourceTextEditor.Ribbon.TextToSpeechGroup}">
+                    <RibbonComboBox>
+                        <RibbonGallery x:Name="LanguageCbx">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction Command="{Binding SetLanguageCommand}" CommandParameter="{Binding ElementName=LanguageCbx,Path=SelectedValue}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                            <RibbonGalleryCategory ItemsSource="{Binding AvailableLanguages.DataValue}" />
+                        </RibbonGallery>
+                    </RibbonComboBox>
+                    <RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.TextToSpeech.Mute}" 
+                                  LargeImageSource="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/Mute_32.png" 
+                                  SmallImageSource="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/Mute_16.png"
+                                  AutomationProperties.AutomationId="MuteTextToSpeech" 
+                                  IsEnabled="True"
+                                  Command="{Binding MuteTextToSpeech}"/>
+                    <RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.TextToSpeech.Alternative}" 
+                                  LargeImageSource="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/TTSAlternative_32.png" 
+                                  SmallImageSource="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/TTSAlternative_16.png"
+                                  AutomationProperties.AutomationId="AlternativeTextToSpeech" 
+                                  IsEnabled="True"
+                                  Command="{Binding AlternativeTextToSpeech}"/>
+                    <RibbonSplitButton Label="{StaticResource SourceTextEditor.Ribbon.TextToSpeech.Pause}" 
+                                       LargeImageSource="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/pause_32.png"      
+                                       SmallImageSource="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/pause_16.png"
+                                       ItemsSource="{Binding AvailableDefaultDurations.DataValue}"
+                                       IsEnabled="True"
+                                       Command="{Binding PauseTextToSpeech}"/>
+                    <RibbonButton Label="{StaticResource SourceTextEditor.Ribbon.TextToSpeech.Remove}" 
+                                  LargeImageSource="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/TTSRemove_32.png"   
+                                  SmallImageSource="pack://application:,,,/Questify.Builder.UI.Wpf;component/Presentation/Images/Ribbon/TTSRemove_16.png"
+                                  AutomationProperties.AutomationId="RemoveTextToSpeech" 
+                                  IsEnabled="{Binding RemoveTextToSpeech}"
+                                  Command="{Binding RemoveTextToSpeech}"/>
+                </RibbonGroup>
+            </RibbonTab>
+
+            <!-- jm: for now the Style sheets ribbontab is not used because of problems with routing the commands to the appropriate viewmodel.
+            <RibbonTab Header="Style sheets" Visibility="{Binding ElementName=StyleSheetsTabItem, Path=IsSelected, Converter={StaticResource ResourceKey=QuestifyBooleanToVisibilityConverter}}">
+                <RibbonGroup x:Name="AddRemoveCommandsGroup" Header="Add/Remove">
+                    <RibbonButton Label="Add" KeyTip="A" SmallImageSource="..\..\Images\Ribbon\cut_16.png" Command="{x:Static ccmds:SourceTextEditorCustomCommands.AddStyleSheetLink}" />
+                    <RibbonButton Label="Remove}" KeyTip="D" SmallImageSource="..\..\Images\Ribbon\copy_16.png" Command="EditingCommands.Delete" />
+                </RibbonGroup>
+            </RibbonTab-->
+
+            <RibbonTab Header="Debug" ContextualTabGroupHeader="Debug">
+                <!-- Contextual Menu (not always visible) -->
+                <RibbonGroup x:Name="Output" Header="Open Output">
+                    <RibbonButton Label="Questify Player" />
+                    <RibbonButton Label="Word" />
+                    <RibbonButton Label="Ces" />
+                </RibbonGroup>
+
+            </RibbonTab>
+
+            <Ribbon.ContextualTabGroups>
+                <RibbonContextualTabGroup Header="Debug" Visibility="hidden" Background="Crimson" />
+                <!--RibbonContextualTabGroup Header="StyleSheets" Visibility="{Binding ElementName=StyleSheetsTabItem, Path=IsSelected, Converter={StaticResource ResourceKey=QuestifyBooleanToVisibilityConverter}}" /-->
+            </Ribbon.ContextualTabGroups>
+        </Ribbon>
+        <!-- ROW 1 -->
+        <TabControl Grid.Row="1"  TabStripPlacement="Bottom" x:Name="TabCtrl" SelectedIndex="{Binding SelectedTab.DataValue, UpdateSourceTrigger=PropertyChanged}" AutomationProperties.AutomationId="MainTabControl">
+            <TabItem Header="{StaticResource SourceTextEditor.Tab.TextEditor}" AutomationProperties.AutomationId="Tab_TextEditor" >
+                <DockPanel LastChildFill="True">
+                    <CheckBox x:Name="IsTemplate" Visibility="{Binding GenericResourceEntity.DataValue.IsTemplate, Converter={StaticResource ResourceKey=QuestifyBooleanToVisibilityConverter}}" IsChecked="{Binding GenericResourceEntity.DataValue.IsTemplate}" Content="{StaticResource SourceTextEditor.CheckBox.IsTemplate}" DockPanel.Dock="Bottom" IsEnabled="False"/>
+                    <ContentControl Content="{Binding TextEditorWorkspace.DataValue}"/>
+                    <!--local:TextEditor EditControlUpdated="{Binding Path=DataContext.EditControl.DataValue, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Mode=TwoWay}" 
+                                      SourceTextEditorViewModel="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" /-->
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="{StaticResource SourceTextEditor.Tab.Metadata}" AutomationProperties.AutomationId="Tab_MetaData" >
+                <ContentControl Content="{Binding MetadataWorkspace.DataValue}"/>
+            </TabItem>
+            <TabItem x:Name="StyleSheetsTabItem" Header="{StaticResource SourceTextEditor.Tab.LinkedStyleSheets}" AutomationProperties.AutomationId="Tab_LinkedStyleSheets" Visibility="{Binding GenericResourceEntity.DataValue.IsTemplate, Converter={StaticResource ResourceKey=QuestifyBooleanToVisibilityConverter}}">
+                <ContentControl x:Name="LinkedStylesheets"  Content="{Binding LinkedStyleSheetsWorkspace.DataValue}"/>
+            </TabItem>
+        </TabControl>
+
+        <!-- ROW 2 -->
+        <StatusBar Grid.Row="2" x:Name="StatusBar" >
+            <DockPanel>
+                <Image Width="Auto" Height="16">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding HasError.DataValue}" Value="True">
+                                    <Setter Property="Source" Value="..\..\Images\ItemEditor\error_withItem_16.png" />
+                                    <Setter Property="ToolTip">
+                                        <Setter.Value>
+                                            <StackPanel>
+                                                <!-- Have to add image and other decorations here -->
+                                                <TextBlock Text = "{StaticResource SourceTextEditor.StatusBar.ImageToolTip.ItemHasError}"/>
+                                            </StackPanel>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                <ProgressBar x:Name="ProgressBarStatus"  Width="50" Height="10" IsIndeterminate="True"  Orientation="Horizontal" Visibility="Hidden" >
+                    <ProgressBar.Style>
+                        <Style TargetType="{x:Type ProgressBar}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsWorking.DataValue}" Value="True">
+                                    <DataTrigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard Duration="00:00:04">
+                                                <ObjectAnimationUsingKeyFrames                                                      
+                                                     Storyboard.TargetProperty="Visibility">
+                                                    <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}" KeyTime="00:00:00"/>
+                                                    <DiscreteObjectKeyFrame Value="{x:Static Visibility.Hidden}" KeyTime="00:00:04"/>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </DataTrigger.EnterActions>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ProgressBar.Style>
+                </ProgressBar>
+            </DockPanel>
+        </StatusBar>
+    </Grid>
+</RibbonWindow>

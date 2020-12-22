@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="InstructionsLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="InstructionsLabel.Text" xml:space="preserve">
+    <value>Select aspect in the grid below and press 'OK'</value>
+  </data>
+  <data name="&gt;&gt;InstructionsLabel.Name" xml:space="preserve">
+    <value>InstructionsLabel</value>
+  </data>
+  <data name="&gt;&gt;InstructionsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InstructionsLabel.Parent" xml:space="preserve">
+    <value>HeaderPanel</value>
+  </data>
+  <data name="&gt;&gt;InstructionsLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="GridBackgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="&gt;&gt;OkButton.Name" xml:space="preserve">
+    <value>OkButton</value>
+  </data>
+  <data name="&gt;&gt;OkButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OkButton.Parent" xml:space="preserve">
+    <value>FooterPanel</value>
+  </data>
+  <data name="&gt;&gt;OkButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CloseButton.Name" xml:space="preserve">
+    <value>CloseButton</value>
+  </data>
+  <data name="&gt;&gt;CloseButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CloseButton.Parent" xml:space="preserve">
+    <value>FooterPanel</value>
+  </data>
+  <data name="&gt;&gt;CloseButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AspectGrid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="AspectGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="AspectGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>519, 337</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AspectGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;AspectGrid.Name" xml:space="preserve">
+    <value>AspectGrid</value>
+  </data>
+  <data name="&gt;&gt;AspectGrid.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.AspectGrid, Questify.Builder.UI, Version=2.1.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;AspectGrid.Parent" xml:space="preserve">
+    <value>GridPlaceholderPanel</value>
+  </data>
+  <data name="&gt;&gt;AspectGrid.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;GridPlaceholderPanel.Name" xml:space="preserve">
+    <value>GridPlaceholderPanel</value>
+  </data>
+  <data name="&gt;&gt;GridPlaceholderPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GridPlaceholderPanel.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;GridPlaceholderPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;FooterPanel.Name" xml:space="preserve">
+    <value>FooterPanel</value>
+  </data>
+  <data name="&gt;&gt;FooterPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FooterPanel.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;FooterPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>535, 427</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        wA/wAAAP+AAAH/gAAB/8AAA//gAAP/4AAH8=
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Add Aspect to Item</value>
+  </data>
+  <data name="&gt;&gt;GridBackgroundWorker.Name" xml:space="preserve">
+    <value>GridBackgroundWorker</value>
+  </data>
+  <data name="&gt;&gt;GridBackgroundWorker.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SelectAspectResourceDialog</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.SelectResourceEntityDialogBase, Questify.Builder.UI, Version=2.1.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+</root>

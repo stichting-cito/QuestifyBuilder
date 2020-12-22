@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACustomPropertyWithTheSameCodeAlreadyExists" xml:space="preserve">
+    <value>Er is al een kenmerk met dezelfde code '{0}' in deze bankstructuur. Geef het kenmerk een andere code.</value>
+  </data>
+  <data name="AResourceWithTheSameCodeAlreadyExists" xml:space="preserve">
+    <value>Er bestaat al een bron met dezelfde code in de bank. Geef het een andere code.</value>
+  </data>
+  <data name="AuthenticationType_Default" xml:space="preserve">
+    <value>Standaard</value>
+  </data>
+  <data name="CannotDelete" xml:space="preserve">
+    <value>Het bestand '{1}' van het type '{0}' kan niet worden verwijderd omdat de volgende bestanden afhankelijkheden hebben naar dit bestand:{2}{2}</value>
+  </data>
+  <data name="CodeHasIllegalChars" xml:space="preserve">
+    <value>'Code' bevat niet toegestaande karakters. Deze zijn niet toegestaan: {0}</value>
+  </data>
+  <data name="CodeHasMultiplePeriodsInARow" xml:space="preserve">
+    <value>'Code' mag geen meerdere punten achter elkaar bevatten.</value>
+  </data>
+  <data name="CodeHasOnlySpaces" xml:space="preserve">
+    <value>'Code' kan niet alleen uit spaties bestaan.</value>
+  </data>
+  <data name="CodeIsRequired" xml:space="preserve">
+    <value>'Code' is verplicht.</value>
+  </data>
+  <data name="NameIsRequired" xml:space="preserve">
+    <value>'Naam' is verplicht.</value>
+  </data>
+  <data name="ConceptStructure" xml:space="preserve">
+    <value>Conceptstructuur</value>
+  </data>
+  <data name="CustomBankPropertyType_Concept" xml:space="preserve">
+    <value>Conceptstructuur</value>
+  </data>
+  <data name="CustomBankPropertyType_FreeValue" xml:space="preserve">
+    <value>Vrije waarde</value>
+  </data>
+  <data name="CustomBankPropertyType_ListMultipleSelect" xml:space="preserve">
+    <value>Lijst (meervoudig)</value>
+  </data>
+  <data name="CustomBankPropertyType_ListSingleSelect" xml:space="preserve">
+    <value>Lijst (enkelvoudig)</value>
+  </data>
+  <data name="CustomBankPropertyType_Tree" xml:space="preserve">
+    <value>Boomstructuur</value>
+  </data>
+  <data name="DeliveryResourceEntityType" xml:space="preserve">
+    <value>Afname</value>
+  </data>
+  <data name="FreeValue" xml:space="preserve">
+    <value>Vrije waarde</value>
+  </data>
+  <data name="ItemTypeEnum_Choice" xml:space="preserve">
+    <value>Meerkeuze</value>
+  </data>
+  <data name="ItemTypeEnum_Composite" xml:space="preserve">
+    <value>Samengesteld</value>
+  </data>
+  <data name="ItemTypeEnum_Error" xml:space="preserve">
+    <value>Fout</value>
+  </data>
+  <data name="ItemTypeEnum_Essay" xml:space="preserve">
+    <value>Open vraag</value>
+  </data>
+  <data name="ItemTypeEnum_Hotspot" xml:space="preserve">
+    <value>Hotspot</value>
+  </data>
+  <data name="ItemTypeEnum_Informational" xml:space="preserve">
+    <value>Informatie</value>
+  </data>
+  <data name="ItemTypeEnum_Inline" xml:space="preserve">
+    <value>Inline</value>
+  </data>
+  <data name="ItemTypeEnum_Likert" xml:space="preserve">
+    <value>Likert</value>
+  </data>
+  <data name="ItemTypeEnum_Order" xml:space="preserve">
+    <value>Volgorde</value>
+  </data>
+  <data name="ItemTypeEnum_Pause" xml:space="preserve">
+    <value>Pauze</value>
+  </data>
+  <data name="ItemTypeEnum_ShortAnswer" xml:space="preserve">
+    <value>Kort antwoord</value>
+  </data>
+  <data name="ItemTypeEnum_System" xml:space="preserve">
+    <value>Systeem</value>
+  </data>
+  <data name="ListMultiple" xml:space="preserve">
+    <value>Lijstwaarde (meervoudig)</value>
+  </data>
+  <data name="ListSingle" xml:space="preserve">
+    <value>Lijstwaarde (enkelvoudig)</value>
+  </data>
+  <data name="PasswordIsRequired" xml:space="preserve">
+    <value>'Wachtwoord' is verplicht.</value>
+  </data>
+  <data name="PublicationFormWizard_PasswordRules" xml:space="preserve">
+    <value>Het opgegeven wachtwoord voldoet niet aan de validatieregels. Geef een wachtwoord op die voldoet aan deze regels:
+
+Mogelijke karakters:
+
+- Kleine letters: abcdefghijklmnopqrstuvwxyz
+- Hoofdletters:   ABCDEFGHIJKLMNOPQRSTUVWXYZ
+- Numeriek: 0123456789
+- Symbolen: .-#@~!$^*()+={{}}[]
+
+Wachtwoord moet minimaal 1 teken uit drie categoriën bevatten.
+Wachtwoord moet bestaan uit minimaal 8 en maximaal 40 karakters.</value>
+  </data>
+  <data name="ResourceTypeEnum_Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="ResourceTypeEnum_Media" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="ResourceTypeEnum_Tests" xml:space="preserve">
+    <value>Toetsen</value>
+  </data>
+  <data name="ResourceType_ControlTemplate" xml:space="preserve">
+    <value>Controltemplate</value>
+  </data>
+  <data name="ResourceType_ItemLayoutTemplate" xml:space="preserve">
+    <value>Itemlay-outtemplate</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Toets</value>
+  </data>
+  <data name="TestTemplate" xml:space="preserve">
+    <value>Toetstemplate</value>
+  </data>
+  <data name="TitleIsRequired" xml:space="preserve">
+    <value>'Titel' is verplicht.</value>
+  </data>
+  <data name="TreeStructure" xml:space="preserve">
+    <value>Boomstructuur</value>
+  </data>
+  <data name="UsernameIsReuired" xml:space="preserve">
+    <value>'Gebruikersnaam' is verplicht</value>
+  </data>
+  <data name="User_Not_Unique" xml:space="preserve">
+    <value>Gebruikersnaam bestaat al: {0}</value>
+  </data>
+  <data name="Property_Username" xml:space="preserve">
+    <value>Gebruikersnaam</value>
+  </data>
+  <data name="CustomBankPropertyType_FreeValueRichText" xml:space="preserve">
+    <value>Vrije waarde (rijke tekst)</value>
+  </data>
+  <data name="FreeValueRichText" xml:space="preserve">
+    <value>Vrije waarde (rijke tekst)</value>
+  </data>
+  <data name="PrintFormType_CorrectionBooklet" xml:space="preserve">
+    <value>Correctieboekje</value>
+  </data>
+  <data name="PrintFormType_MultiMediaInstructionBooklet" xml:space="preserve">
+    <value>Instructieboekje voor MMS</value>
+  </data>
+  <data name="PrintFormType_QuestionBooklet" xml:space="preserve">
+    <value>Opgavenboekje</value>
+  </data>
+  <data name="PrintFormType_SourceBooklet" xml:space="preserve">
+    <value>Bronnenboekje</value>
+  </data>
+</root>

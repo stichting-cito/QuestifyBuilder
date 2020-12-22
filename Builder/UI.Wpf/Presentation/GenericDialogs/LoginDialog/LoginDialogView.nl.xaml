@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <s:String x:Key="Message.WrongCredentials">Ongeldige combinatie van gebruikersnaam en wachtwoord.</s:String>
+    <s:String x:Key="Message.EmptyUserName">Een gebruikersnaam is verplicht.</s:String>
+
+    <s:String x:Key="User.Label">Gebruikersnaam:</s:String>
+    <s:String x:Key="Password.Label">Wachtwoord:</s:String>
+    <s:String x:Key="Login.Header">Aanmelden bij Questify Builder</s:String>
+    
+</ResourceDictionary>

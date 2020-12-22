@@ -1,0 +1,77 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <!-- GENERAL WINDOW -->
+    <s:String x:Key="SourceTextEditor.Title">Media-editor</s:String>
+
+    <!-- COMMAND LABELS-->
+    <s:String x:Key="SourceTextEditor.Command.Save">Opslaan</s:String>
+    <s:String x:Key="SourceTextEditor.Command.SaveAs">Opslaan als</s:String>
+    <s:String x:Key="SourceTextEditor.Command.SaveAndClose">Opslaan en sluiten</s:String>
+
+    <!-- RIBBON TAB START -->
+    <s:String x:Key="SourceTextEditor.RibbonTab.Start">Start</s:String>
+
+    <s:String x:Key="SourceTextEditor.Ribbon.ClipboardGroup">Klembord</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.Paste">Plakken</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.Paste.ToolTipDescription">Plak tekst als content.</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.PasteAsText">Als tekst</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.PasteSpecial">Plak speciaal</s:String>
+
+    <s:String x:Key="SourceTextEditor.Ribbon.Cut">Knippen</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.Copy">Kopiëren</s:String>
+
+
+    <s:String x:Key="SourceTextEditor.Ribbon.FormatGroup">Opmaken</s:String>
+
+    <s:String x:Key="SourceTextEditor.Ribbon.InsertGroup">Invoegen</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.Insert.Image">Afbeelding</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.Insert.Video">Video</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.Insert.Audio">Audio</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.Insert.Table">Tabel</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.Insert.Formula">Formule</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.Insert.Symbol">Symbool</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.Insert.InlineControl">Inline control</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.Insert.Reference">Referentie</s:String>
+
+    <s:String x:Key="SourceTextEditor.Ribbon.ReferenceGroup">Referenties</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.References.Symbol">Symbool</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.References.Highlight">Arcering</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.References.Element">Element</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.References.Remove">Verwijder</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.References.Overview">Overzicht</s:String>
+    
+    <s:String x:Key="SourceTextEditor.Ribbon.TextToSpeechGroup">Verklanking</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.TextToSpeech.Mute">Niet verklanken</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.TextToSpeech.Pause">Pauze</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.TextToSpeech.PauseExtraShort">Extra kort</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.TextToSpeech.PauseShort">Kort</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.TextToSpeech.PauseNormal">Gewoon</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.TextToSpeech.PauseLong">Lang</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.TextToSpeech.PauseExtraLong">Extra lang</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.TextToSpeech.Alternative">Alternatief verklanken</s:String>
+    <s:String x:Key="SourceTextEditor.Ribbon.TextToSpeech.Remove">Verwijderen</s:String>
+
+    <!-- TAB -->
+    <s:String x:Key="SourceTextEditor.Tab.Metadata">Kenmerken</s:String>
+    <s:String x:Key="SourceTextEditor.Tab.TextEditor">Tekst</s:String>
+    <s:String x:Key="SourceTextEditor.Tab.LinkedStyleSheets">Stylesheets</s:String>
+
+    <!-- Checkbox -->
+    <s:String x:Key="SourceTextEditor.CheckBox.IsTemplate">Dit is een template</s:String>
+
+    <!-- DockPannel -->
+    <s:String x:Key="SourceTextEditor.StatusBar.ImageToolTip.ItemHasError">Dit item heeft onoverkomelijke problemen.</s:String>
+    <s:String x:Key="SourceTextEditor.StatusBar.ImageToolTip.ItemIsV1Model">Dit item is gebaseerd op een verouderd template.</s:String>
+
+    <!-- ViewModel Messages -->
+    <s:String x:Key="SourceTextEditor.SourceTextEditorViewModel.PendingRequiredFields">Niet alle velden hebben geldige waarden.</s:String>
+    <s:String x:Key="SourceTextEditor.SourceTextEditorViewModel.PendingChangesWishToLeave">U heeft uw wijzigingen nog niet opgeslagen, wilt u alsnog het dialoog verlaten?</s:String>
+
+    <s:String x:Key="SourceTextEditor.SourceTextEditorViewModel.PleaseNewItemCode">Geef een nieuwe code op</s:String>
+    <s:String x:Key="SourceTextEditor.SourceTextEditorViewModel.PleaseNewItemCodeDialogTitle">Opslaan als</s:String>
+    <s:String x:Key="SourceTextEditor.SourceTextEditorViewModel.DefaultPrefixNewCode">Kopie_van_{0}</s:String><!-- {0} = argument of current code -->
+    <s:String x:Key="SourceTextEditor.SourceTextEditorViewModel.NameNotUniqueInBank">De naam {0} is niet uniek in de bankhiërarchie.</s:String><!-- {0} = argument for name just given. -->
+
+</ResourceDictionary>

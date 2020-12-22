@@ -1,0 +1,452 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="CustomInteractions.Flow.AddTo"
+          xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+          xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:ctc="clr-namespace:Cito.Tester.ContentModel;assembly=Cito.Tester.ContentModel"
+          xmlns:ctlc="clr-namespace:Questify.Builder.Logic.CustomInteractions;assembly=Questify.Builder.Logic"
+          xmlns:local="clr-namespace:Questify.Builder.Logic.CodeActivities"
+          xmlns:local1="clr-namespace:Questify.Builder.Logic.CustomInteractions.Flow"
+          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+          xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+          xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+          xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+          xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+          xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+        <x:Property Name="ResourceName" Type="InArgument(x:String)" />
+        <x:Property Name="BankId" Type="InArgument(x:Int32)" />
+        <x:Property Name="parameters" Type="InArgument(ctc:ParameterSetCollection)" />
+        <x:Property Name="ItemSolution" Type="InArgument(ctc:Solution)" />
+        <x:Property Name="inlineParameters" Type="InArgument(ctc:ParameterSetCollection)" />
+        <x:Property Name="findingOverride" Type="InArgument(x:String)" />
+        <x:Property Name="scoringLabel" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap2010:WorkflowViewState.IdRef>Questify.Builder.Logic.CustomInteractions.Flow.AddToFlow_1</sap2010:WorkflowViewState.IdRef>
+    <TextExpression.NamespacesForImplementation>
+        <sco:Collection x:TypeArguments="x:String">
+            <x:String>System</x:String>
+            <x:String>System.Collections.Generic</x:String>
+            <x:String>System.Data</x:String>
+            <x:String>System.Linq</x:String>
+            <x:String>System.Text</x:String>
+            <x:String>Questify.Builder.Model.ContentModel.EntityClasses</x:String>
+            <x:String>Questify.Builder.Logic.CustomInteractions</x:String>
+            <x:String>Cito.Tester.ContentModel</x:String>
+        </sco:Collection>
+    </TextExpression.NamespacesForImplementation>
+    <TextExpression.ReferencesForImplementation>
+        <sco:Collection x:TypeArguments="AssemblyReference">
+            <AssemblyReference>Cito.Tester.Common</AssemblyReference>
+            <AssemblyReference>Cito.Tester.ContentModel</AssemblyReference>
+            <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+            <AssemblyReference>SD.LLBLGen.Pro.ORMSupportClasses</AssemblyReference>
+            <AssemblyReference>System</AssemblyReference>
+            <AssemblyReference>System.Activities</AssemblyReference>
+            <AssemblyReference>System.Core</AssemblyReference>
+            <AssemblyReference>System.Drawing</AssemblyReference>
+            <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+            <AssemblyReference>System.ServiceModel</AssemblyReference>
+            <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+            <AssemblyReference>System.Web</AssemblyReference>
+            <AssemblyReference>System.Xaml</AssemblyReference>
+            <AssemblyReference>System.Xml.Linq</AssemblyReference>
+            <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+            <AssemblyReference>System.Data</AssemblyReference>
+            <AssemblyReference>System.Xml</AssemblyReference>
+            <AssemblyReference>Questify.Builder.Model.ContentModel</AssemblyReference>
+            <AssemblyReference>Questify.Builder.Logic</AssemblyReference>
+            <AssemblyReference>Questify.Builder.Service</AssemblyReference>
+            <AssemblyReference>Questify.Builder.Model</AssemblyReference>
+            <AssemblyReference>mscorlib</AssemblyReference>
+            <AssemblyReference>Questify.Builder.Logic</AssemblyReference>
+        </sco:Collection>
+    </TextExpression.ReferencesForImplementation>
+    <Flowchart sap2010:WorkflowViewState.IdRef="Flowchart_1">
+        <Flowchart.Variables>
+            <Variable x:TypeArguments="x:String" Name="CustomInteractionTempFile" />
+            <Variable x:TypeArguments="ctlc:MetadataRoot" Name="Metadata" />
+            <Variable x:TypeArguments="x:Int32" Default="0" Name="Counter" />
+            <Variable x:TypeArguments="ctc:ParameterCollection" Name="parameterCollection" />
+            <Variable x:TypeArguments="x:String" Name="parameterCollectionName" />
+            <Variable x:TypeArguments="x:Boolean" Default="True" Name="isScorable" />
+            <Variable x:TypeArguments="x:String" Name="controllerId" />
+            <Variable x:TypeArguments="x:String" Name="typeOfCI" />
+        </Flowchart.Variables>
+        <Flowchart.StartNode>
+            <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+                <local:SaveResourceToFile sap2010:WorkflowViewState.IdRef="SaveResourceToFile_1">
+                    <local:SaveResourceToFile.BankIdentifier>
+                        <InArgument x:TypeArguments="x:Int32">
+                            [BankId]
+                        </InArgument>
+                    </local:SaveResourceToFile.BankIdentifier>
+                    <local:SaveResourceToFile.ResourceName>
+                        <InArgument x:TypeArguments="x:String">
+                            [ResourceName]
+                        </InArgument>
+                    </local:SaveResourceToFile.ResourceName>
+                    <local:SaveResourceToFile.Result>
+                        <OutArgument x:TypeArguments="x:String">
+                            [CustomInteractionTempFile]
+                        </OutArgument>
+                    </local:SaveResourceToFile.Result>
+                </local:SaveResourceToFile>
+                <FlowStep.Next>
+                    <FlowStep x:Name="__ReferenceID9" sap2010:WorkflowViewState.IdRef="FlowStep_12">
+                        <local1:GetTypeOfCustomInteraction sap2010:WorkflowViewState.IdRef="GetTypeOfCustomInteraction_1">
+                            <local1:GetTypeOfCustomInteraction.InlineParameters>
+                                <InArgument x:TypeArguments="ctc:ParameterSetCollection">
+                                    [inlineParameters]
+                                </InArgument>
+                            </local1:GetTypeOfCustomInteraction.InlineParameters>
+                            <local1:GetTypeOfCustomInteraction.ParameterSetCollection>
+                                <InArgument x:TypeArguments="ctc:ParameterSetCollection">
+                                    [parameters]
+                                </InArgument>
+                            </local1:GetTypeOfCustomInteraction.ParameterSetCollection>
+                            <local1:GetTypeOfCustomInteraction.Result>
+                                <OutArgument x:TypeArguments="x:String">
+                                    [typeOfCI]
+                                </OutArgument>
+                            </local1:GetTypeOfCustomInteraction.Result>
+                        </local1:GetTypeOfCustomInteraction>
+                        <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID8" sap2010:WorkflowViewState.IdRef="FlowStep_11">
+                                <local1:ExtractMetadata sap2010:WorkflowViewState.IdRef="ExtractMetadata_2">
+                                    <local1:ExtractMetadata.FileName>
+                                        <InArgument x:TypeArguments="x:String">
+                                            [CustomInteractionTempFile]
+                                        </InArgument>
+                                    </local1:ExtractMetadata.FileName>
+                                    <local1:ExtractMetadata.IsGeogebraFile>
+                                        <InArgument x:TypeArguments="x:Boolean">
+                                            [(typeOfCI = "ggb")]
+                                        </InArgument>
+                                    </local1:ExtractMetadata.IsGeogebraFile>
+                                    <local1:ExtractMetadata.Result>
+                                        <OutArgument x:TypeArguments="ctlc:MetadataRoot">
+                                            [Metadata]
+                                        </OutArgument>
+                                    </local1:ExtractMetadata.Result>
+                                </local1:ExtractMetadata>
+                                <FlowStep.Next>
+                                    <FlowDecision x:Name="__ReferenceID1" DisplayName="Has Metadata" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                                        <FlowDecision.Condition>
+                                            [Metadata IsNot Nothing]
+                                        </FlowDecision.Condition>
+                                        <FlowDecision.True>
+                                            <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_10">
+                                                <local1:GetVariableValues sap2010:WorkflowViewState.IdRef="GetVariableValues_1">
+                                                    <local1:GetVariableValues.InlineParameterSetCollection>
+                                                        <InArgument x:TypeArguments="ctc:ParameterSetCollection">
+                                                            [inlineParameters]
+                                                        </InArgument>
+                                                    </local1:GetVariableValues.InlineParameterSetCollection>
+                                                    <local1:GetVariableValues.MetaData>
+                                                        <InArgument x:TypeArguments="ctlc:MetadataRoot">
+                                                            [Metadata]
+                                                        </InArgument>
+                                                    </local1:GetVariableValues.MetaData>
+                                                    <local1:GetVariableValues.ParameterSetCollection>
+                                                        <InArgument x:TypeArguments="ctc:ParameterSetCollection">
+                                                            [parameters]
+                                                        </InArgument>
+                                                    </local1:GetVariableValues.ParameterSetCollection>
+                                                    <local1:GetVariableValues.ControllerId>
+                                                        <OutArgument x:TypeArguments="x:String">
+                                                            [controllerId]
+                                                        </OutArgument>
+                                                    </local1:GetVariableValues.ControllerId>
+                                                    <local1:GetVariableValues.IsScorable>
+                                                        <OutArgument x:TypeArguments="x:Boolean">
+                                                            [isScorable]
+                                                        </OutArgument>
+                                                    </local1:GetVariableValues.IsScorable>
+                                                    <local1:GetVariableValues.parameterCollectionName>
+                                                        <OutArgument x:TypeArguments="x:String">
+                                                            [parameterCollectionName]
+                                                        </OutArgument>
+                                                    </local1:GetVariableValues.parameterCollectionName>
+                                                </local1:GetVariableValues>
+                                                <FlowStep.Next>
+                                                    <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_4">
+                                                        <local1:RemoveCustomInteractionParameters DisplayName="Remove CI Parameters" sap2010:WorkflowViewState.IdRef="RemoveCustomInteractionParameters_1">
+                                                            <local1:RemoveCustomInteractionParameters.ParameterCollectionName>
+                                                                <InArgument x:TypeArguments="x:String">
+                                                                    [parameterCollectionName]
+                                                                </InArgument>
+                                                            </local1:RemoveCustomInteractionParameters.ParameterCollectionName>
+                                                            <local1:RemoveCustomInteractionParameters.ParameterSetCollection>
+                                                                <InArgument x:TypeArguments="ctc:ParameterSetCollection">
+                                                                    [parameters]
+                                                                </InArgument>
+                                                            </local1:RemoveCustomInteractionParameters.ParameterSetCollection>
+                                                            <local1:RemoveCustomInteractionParameters.Solution>
+                                                                <InArgument x:TypeArguments="ctc:Solution">
+                                                                    [ItemSolution]
+                                                                </InArgument>
+                                                            </local1:RemoveCustomInteractionParameters.Solution>
+                                                        </local1:RemoveCustomInteractionParameters>
+                                                        <FlowStep.Next>
+                                                            <FlowDecision x:Name="__ReferenceID7" DisplayName="Is Scorable ?" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                                                                <FlowDecision.Condition>
+                                                                    [isScorable]
+                                                                </FlowDecision.Condition>
+                                                                <FlowDecision.True>
+                                                                    <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_6">
+                                                                        <Assign DisplayName="Create Dynamic parameter collection" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                                                            <Assign.To>
+                                                                                <OutArgument x:TypeArguments="ctc:ParameterCollection">
+                                                                                    [parameterCollection]
+                                                                                </OutArgument>
+                                                                            </Assign.To>
+                                                                            <Assign.Value>
+                                                                                <InArgument x:TypeArguments="ctc:ParameterCollection">
+                                                                                    [New ParameterCollection () with { .Id = parameterCollectionName, .IsDynamicCollection=true }]
+                                                                                </InArgument>
+                                                                            </Assign.Value>
+                                                                        </Assign>
+                                                                        <FlowStep.Next>
+                                                                            <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_5">
+                                                                                <local1:AssignScoring sap2010:WorkflowViewState.IdRef="AssignScoring_1">
+                                                                                    <local1:AssignScoring.ItemSolution>
+                                                                                        <InArgument x:TypeArguments="ctc:Solution">
+                                                                                            [ItemSolution]
+                                                                                        </InArgument>
+                                                                                    </local1:AssignScoring.ItemSolution>
+                                                                                    <local1:AssignScoring.controllerId>
+                                                                                        <InArgument x:TypeArguments="x:String">
+                                                                                            [controllerId]
+                                                                                        </InArgument>
+                                                                                    </local1:AssignScoring.controllerId>
+                                                                                    <local1:AssignScoring.counter>
+                                                                                        <OutArgument x:TypeArguments="x:Int32">
+                                                                                            [Counter]
+                                                                                        </OutArgument>
+                                                                                    </local1:AssignScoring.counter>
+                                                                                    <local1:AssignScoring.findingOverride>
+                                                                                        <InArgument x:TypeArguments="x:String">
+                                                                                            [findingOverride]
+                                                                                        </InArgument>
+                                                                                    </local1:AssignScoring.findingOverride>
+                                                                                    <local1:AssignScoring.parameterCollection>
+                                                                                        <InArgument x:TypeArguments="ctc:ParameterCollection">
+                                                                                            [parameterCollection]
+                                                                                        </InArgument>
+                                                                                    </local1:AssignScoring.parameterCollection>
+                                                                                    <local1:AssignScoring.scoring>
+                                                                                        <InArgument x:TypeArguments="scg:IEnumerable(ctlc:ScoringTypeBase)">
+                                                                                            [Metadata.GetScoring()]
+                                                                                        </InArgument>
+                                                                                    </local1:AssignScoring.scoring>
+                                                                                    <local1:AssignScoring.scoringLabel>
+                                                                                        <InArgument x:TypeArguments="x:String">
+                                                                                            [scoringLabel]
+                                                                                        </InArgument>
+                                                                                    </local1:AssignScoring.scoringLabel>
+                                                                                </local1:AssignScoring>
+                                                                                <FlowStep.Next>
+                                                                                    <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_7">
+                                                                                        <local:AddParameterCollectionToSet sap2010:WorkflowViewState.IdRef="AddParameterCollectionToSet_1">
+                                                                                            <local:AddParameterCollectionToSet.Collection>
+                                                                                                <InArgument x:TypeArguments="ctc:ParameterCollection">
+                                                                                                    [parameterCollection]
+                                                                                                </InArgument>
+                                                                                            </local:AddParameterCollectionToSet.Collection>
+                                                                                            <local:AddParameterCollectionToSet.ToSet>
+                                                                                                <InArgument x:TypeArguments="ctc:ParameterSetCollection">
+                                                                                                    [parameters]
+                                                                                                </InArgument>
+                                                                                            </local:AddParameterCollectionToSet.ToSet>
+                                                                                        </local:AddParameterCollectionToSet>
+                                                                                    </FlowStep>
+                                                                                </FlowStep.Next>
+                                                                            </FlowStep>
+                                                                        </FlowStep.Next>
+                                                                    </FlowStep>
+                                                                </FlowDecision.True>
+                                                            </FlowDecision>
+                                                        </FlowStep.Next>
+                                                    </FlowStep>
+                                                </FlowStep.Next>
+                                            </FlowStep>
+                                        </FlowDecision.True>
+                                    </FlowDecision>
+                                </FlowStep.Next>
+                            </FlowStep>
+                        </FlowStep.Next>
+                    </FlowStep>
+                </FlowStep.Next>
+            </FlowStep>
+        </Flowchart.StartNode>
+        <x:Reference>__ReferenceID0</x:Reference>
+        <x:Reference>__ReferenceID1</x:Reference>
+        <x:Reference>__ReferenceID2</x:Reference>
+        <x:Reference>__ReferenceID3</x:Reference>
+        <x:Reference>__ReferenceID4</x:Reference>
+        <x:Reference>__ReferenceID5</x:Reference>
+        <x:Reference>__ReferenceID6</x:Reference>
+        <x:Reference>__ReferenceID7</x:Reference>
+        <x:Reference>__ReferenceID8</x:Reference>
+        <x:Reference>__ReferenceID9</x:Reference>
+        <sads:DebugSymbol.Symbol>d4IBQzpcVEZTLkFTNjMuUHJvamVjdHNcUHJvamVjdCBRdWVzdGlmeVxHZW5lcmljXFJlbGVhc2VzXHYyLjE0XFRlc3RCdWlsZGVyXFF1ZXN0aWZ5LkJ1aWxkZXIuTG9naWNcQ3VzdG9tSW50ZXJhY3Rpb25zXEZsb3dcQWRkVG8ueGFtbCpEA6kCDwIBAUgzSDYCAQNLNUs7AgECUQlhJAMBywNkDXQxAwGaA3cRhwEqAwHpAosBF4sBZgMB2QKPARmuATQDAfgBsQEdwQFIAwHHAcUBI8UBbAMBtwHJASXUAS4DAZYB1wEp+wFAAgEl/gEtiQJRAgEEWQ9ZWQMB7ANUD1RSAwHcA14PXm4DAcwDZxNncwMBuwNsE2xtAwGrA3ETcWEDAZsDfxd/aQMBigN6F3puAwH6AoQBF4QBbgMB6gKXAR+XAW4DAckCqwEfqwF8AwG5ApwBH5wBeQMBqQKhAR+hAXEDAZkCkgEfkgF/AwGJAqYBH6YBcAMB+QG0ASO0AXgDAegBuQEjuQF9AwHYAb4BI74BcQMByAHRASvRAcoBAwGnAcwBK8wBkwEDAZcB6QEv6QF8AwGGAeQBL+QBewIBdu4BL+4BjwECAWb4AS/4AXkCAVbzAS/zAZ8BAgFG2gEv2gF9AgE23wEv3wF5AgEmhgIzhgKNAQIBFYECM4ECkwECAQU=</sads:DebugSymbol.Symbol>
+    </Flowchart>
+    <sap2010:WorkflowViewState.ViewStateManager>
+        <sap2010:ViewStateManager>
+            <sap2010:ViewStateData Id="SaveResourceToFile_1" sap:VirtualizedContainerService.HintSize="200,22">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="GetTypeOfCustomInteraction_1" sap:VirtualizedContainerService.HintSize="200,22">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="ExtractMetadata_2" sap:VirtualizedContainerService.HintSize="200,22">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="GetVariableValues_1" sap:VirtualizedContainerService.HintSize="200,22">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="RemoveCustomInteractionParameters_1" sap:VirtualizedContainerService.HintSize="200,22">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="242,62" />
+            <sap2010:ViewStateData Id="AssignScoring_1" sap:VirtualizedContainerService.HintSize="200,22">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="AddParameterCollectionToSet_1" sap:VirtualizedContainerService.HintSize="200,22">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="FlowStep_7">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">30,689</av:Point>
+                        <av:Size x:Key="ShapeSize">200,22</av:Size>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="FlowStep_5">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">30,639</av:Point>
+                        <av:Size x:Key="ShapeSize">200,22</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">130,661 130,689</av:PointCollection>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="FlowStep_6">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">9,539</av:Point>
+                        <av:Size x:Key="ShapeSize">242,62</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">130,601 130,639</av:PointCollection>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="FlowDecision_2" sap:VirtualizedContainerService.HintSize="70,87">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <av:Point x:Key="ShapeLocation">175,426.5</av:Point>
+                        <av:Size x:Key="ShapeSize">70,87</av:Size>
+                        <av:PointCollection x:Key="TrueConnector">175,470 130,470 130,539</av:PointCollection>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="FlowStep_4">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">110,379</av:Point>
+                        <av:Size x:Key="ShapeSize">200,22</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">210,401 210,426.5</av:PointCollection>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="FlowStep_10">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">110,329</av:Point>
+                        <av:Size x:Key="ShapeSize">200,22</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">210,351 210,379</av:PointCollection>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="FlowDecision_1" sap:VirtualizedContainerService.HintSize="79,87">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <av:Point x:Key="ShapeLocation">260.5,226.5</av:Point>
+                        <av:Size x:Key="ShapeSize">79,87</av:Size>
+                        <av:PointCollection x:Key="TrueConnector">260.5,270 210,270 210,329</av:PointCollection>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="FlowStep_11">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">200,179</av:Point>
+                        <av:Size x:Key="ShapeSize">200,22</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">300,201 300,226.5</av:PointCollection>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="FlowStep_12">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">200,139</av:Point>
+                        <av:Size x:Key="ShapeSize">200,22</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">300,161 300,179</av:PointCollection>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="FlowStep_1">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:Point x:Key="ShapeLocation">200,99</av:Point>
+                        <av:Size x:Key="ShapeSize">200,22</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">300,121 300,139</av:PointCollection>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="Flowchart_1" sap:VirtualizedContainerService.HintSize="634,763">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+                        <av:Size x:Key="ShapeSize">60,75</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,99</av:PointCollection>
+                        <x:Double x:Key="Height">726.54</x:Double>
+                        <x:Double x:Key="Width">619.5</x:Double>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="Questify.Builder.Logic.CustomInteractions.Flow.AddToFlow_1" sap:VirtualizedContainerService.HintSize="674,843" />
+        </sap2010:ViewStateManager>
+    </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

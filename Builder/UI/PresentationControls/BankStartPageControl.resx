@@ -1,0 +1,879 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="UnusedItemTemplatesLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="RecentlyModifiedItemsGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 28</value>
+  </data>
+  <data name="&gt;&gt;TestsCreatedByMeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="UtraGroupboxItem.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="UnusedControlTemplatesLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="GroupboxTest.Text" xml:space="preserve">
+    <value>Tests</value>
+  </data>
+  <data name="MediaLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="UtraGroupboxItemTemplates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 127</value>
+  </data>
+  <data name="UnusedItemTemplatesLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 50</value>
+  </data>
+  <data name="&gt;&gt;TestsCreatedByMeLabel.Name" xml:space="preserve">
+    <value>TestsCreatedByMeLabel</value>
+  </data>
+  <data name="TableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>666, 305</value>
+  </data>
+  <data name="&gt;&gt;ControlTemplatesCreatedByMeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ItemsLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="UtraGroupboxItem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 43</value>
+  </data>
+  <data name="RecentlyModifiedItemsGrid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;UnusedMediaFilesLabel.Parent" xml:space="preserve">
+    <value>UtraGroupboxMedia</value>
+  </data>
+  <data name="ItemStateInformationGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="GroupboxMedia.Text" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="TestTemplatesLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;UnusedControlTemplatesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TestsCreatedByMeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;ItemsCreatedByMeLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ControlTemplatesCreatedByMeLabel.Text" xml:space="preserve">
+    <value>Created by me</value>
+  </data>
+  <data name="&gt;&gt;UtraGroupboxTestTemplate.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="UnusedItemTemplatesLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="WelcomeLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="UnusedMediaFilesLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="TableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="RecentlyModifiedItemsGrid" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="ItemStateInformationGrid" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,20,Percent,50,Absolute,20,Percent,50,Absolute,20" /&gt;&lt;Rows Styles="Percent,16,8,Percent,83,2" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="&gt;&gt;ControlTemplatesCreatedByMeLabel.Name" xml:space="preserve">
+    <value>ControlTemplatesCreatedByMeLabel</value>
+  </data>
+  <data name="ItemTemplatesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 13</value>
+  </data>
+  <data name="UtraGroupboxTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 43</value>
+  </data>
+  <data name="&gt;&gt;UnusedControlTemplatesLabel.Parent" xml:space="preserve">
+    <value>UtraGroupboxControlTemplate</value>
+  </data>
+  <data name="UnusedMediaFilesLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="TestsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="UtraGroupboxControlTemplate.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="ItemStateInformationGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>346, 28</value>
+  </data>
+  <data name="ControlTemplatesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 13</value>
+  </data>
+  <data name="&gt;&gt;UnusedItemTemplatesLabel.Parent" xml:space="preserve">
+    <value>UtraGroupboxItemTemplates</value>
+  </data>
+  <data name="&gt;&gt;UnusedItemTemplatesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ItemsLabel.Text" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="&gt;&gt;TestTemplatesLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ItemTemplatesLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="&gt;&gt;ItemStateInformationGrid.Parent" xml:space="preserve">
+    <value>TableLayoutPanel2</value>
+  </data>
+  <data name="MediaLabel.Text" xml:space="preserve">
+    <value>Media files</value>
+  </data>
+  <data name="ControlTemplatesLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="ItemsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="ItemsCreatedByMeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 75</value>
+  </data>
+  <data name="UtraGroupboxControlTemplate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TestTemplatesLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="TestsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;TestsCreatedByMeLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TestTemplatesCreatedByMeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 75</value>
+  </data>
+  <data name="WelcomeLabel.Text" xml:space="preserve">
+    <value>&lt;BankName&gt;</value>
+  </data>
+  <data name="UnusedControlTemplatesLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TestTemplatesLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ItemsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel2.Name" xml:space="preserve">
+    <value>TableLayoutPanel2</value>
+  </data>
+  <data name="UtraGroupboxControlTemplate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>342, 175</value>
+  </data>
+  <data name="MediaLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UtraGroupboxMedia.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="UnusedMediaFilesLabel.Text" xml:space="preserve">
+    <value>Not used</value>
+  </data>
+  <data name="UtraGroupboxTest.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="UnusedItemTemplatesLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;ItemStateInformationGrid.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;UnusedItemsLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ControlTemplatesCreatedByMeLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TestsCreatedByMeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 75</value>
+  </data>
+  <data name="TestsCreatedByMeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;ItemTemplatesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ItemStateInformationGrid.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="UnusedMediaFilesLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UtraGroupboxMedia.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;TestsCreatedByMeLabel.Parent" xml:space="preserve">
+    <value>UtraGroupboxTest</value>
+  </data>
+  <data name="&gt;&gt;ItemsLabel.Parent" xml:space="preserve">
+    <value>UtraGroupboxItem</value>
+  </data>
+  <data name="&gt;&gt;ItemTemplatesLabel.Parent" xml:space="preserve">
+    <value>UtraGroupboxItemTemplates</value>
+  </data>
+  <data name="UnusedItemsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="TableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="UtraGroupboxItem" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="UtraGroupboxTest" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="UtraGroupboxControlTemplate" Row="2" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="UtraGroupboxMedia" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="UtraGroupboxItemTemplates" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="UtraGroupboxTestTemplate" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,15,Percent,25,Absolute,15,Percent,25,Absolute,15,Percent,25,Absolute,15,Percent,25,Absolute,18" /&gt;&lt;Rows Styles="Absolute,40,Percent,50,Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="ItemTemplatesCreatedByMeLabel.Text" xml:space="preserve">
+    <value>Created by me</value>
+  </data>
+  <data name="UnusedItemsLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="&gt;&gt;WelcomeLabel.Name" xml:space="preserve">
+    <value>WelcomeLabel</value>
+  </data>
+  <data name="WelcomeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UnusedControlTemplatesLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 50</value>
+  </data>
+  <data name="&gt;&gt;TestTemplatesCreatedByMeLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="WelcomeLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="UtraGroupboxTest.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;UnusedMediaFilesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ItemsCreatedByMeLabel.Text" xml:space="preserve">
+    <value>Created by me</value>
+  </data>
+  <data name="&gt;&gt;ControlTemplatesLabel.Name" xml:space="preserve">
+    <value>ControlTemplatesLabel</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TestsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WelcomeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>666, 45</value>
+  </data>
+  <data name="&gt;&gt;TestsLabel.Name" xml:space="preserve">
+    <value>TestsLabel</value>
+  </data>
+  <data name="TestsCreatedByMeLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="&gt;&gt;ItemTemplatesLabel.Name" xml:space="preserve">
+    <value>ItemTemplatesLabel</value>
+  </data>
+  <data name="UnusedItemTemplatesLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UtraGroupboxTestTemplate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 175</value>
+  </data>
+  <data name="TestsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="&gt;&gt;UnusedItemTemplatesLabel.Name" xml:space="preserve">
+    <value>UnusedItemTemplatesLabel</value>
+  </data>
+  <data name="GroupboxItem.Text" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="&gt;&gt;TestTemplatesCreatedByMeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MediaLabel.Name" xml:space="preserve">
+    <value>MediaLabel</value>
+  </data>
+  <data name="&gt;&gt;UnusedControlTemplatesLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ItemTemplatesCreatedByMeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="UtraGroupboxItemTemplates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 175</value>
+  </data>
+  <data name="ControlTemplatesCreatedByMeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UtraGroupboxTestTemplate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;MediaLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ControlTemplatesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ItemsCreatedByMeLabel.Parent" xml:space="preserve">
+    <value>UtraGroupboxItem</value>
+  </data>
+  <data name="UtraGroupboxMedia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>342, 43</value>
+  </data>
+  <data name="UnusedMediaFilesLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 50</value>
+  </data>
+  <data name="GroupboxTestTemplate.Text" xml:space="preserve">
+    <value>Test template</value>
+  </data>
+  <data name="&gt;&gt;UnusedMediaFilesLabel.Name" xml:space="preserve">
+    <value>UnusedMediaFilesLabel</value>
+  </data>
+  <data name="TestTemplatesCreatedByMeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GroupboxControlTemplate.Text" xml:space="preserve">
+    <value>Control template</value>
+  </data>
+  <data name="UtraGroupboxItemTemplates.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TestsCreatedByMeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UtraGroupboxMedia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 126</value>
+  </data>
+  <data name="&gt;&gt;TestsLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ItemTemplatesLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;UnusedItemsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ItemsCreatedByMeLabel.Name" xml:space="preserve">
+    <value>ItemsCreatedByMeLabel</value>
+  </data>
+  <data name="ItemsCreatedByMeLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="UtraGroupboxTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 126</value>
+  </data>
+  <data name="&gt;&gt;ItemStateInformationGrid.Type" xml:space="preserve">
+    <value>Janus.Windows.GridEX.GridEX, Janus.Windows.GridEX.v3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf</value>
+  </data>
+  <data name="&gt;&gt;RecentlyModifiedItemsGrid.Parent" xml:space="preserve">
+    <value>TableLayoutPanel2</value>
+  </data>
+  <data name="WelcomeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TestsLabel.Text" xml:space="preserve">
+    <value>Tests</value>
+  </data>
+  <data name="ItemsCreatedByMeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="&gt;&gt;ItemsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MediaLabel.Parent" xml:space="preserve">
+    <value>UtraGroupboxMedia</value>
+  </data>
+  <data name="UnusedItemsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 50</value>
+  </data>
+  <data name="&gt;&gt;ItemsLabel.Name" xml:space="preserve">
+    <value>ItemsLabel</value>
+  </data>
+  <data name="ItemTemplatesCreatedByMeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UnusedItemsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UnusedItemsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;UnusedItemTemplatesLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ControlTemplatesLabel.Parent" xml:space="preserve">
+    <value>UtraGroupboxControlTemplate</value>
+  </data>
+  <data name="TestTemplatesLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="TestTemplatesCreatedByMeLabel.Text" xml:space="preserve">
+    <value>Created by me</value>
+  </data>
+  <data name="WelcomeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;ItemTemplatesCreatedByMeLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;UnusedItemsLabel.Name" xml:space="preserve">
+    <value>UnusedItemsLabel</value>
+  </data>
+  <data name="ItemTemplatesLabel.Text" xml:space="preserve">
+    <value>Item layout templates</value>
+  </data>
+  <data name="&gt;&gt;UnusedMediaFilesLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="UnusedMediaFilesLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ControlTemplatesLabel.Text" xml:space="preserve">
+    <value>Control templates</value>
+  </data>
+  <data name="&gt;&gt;TestTemplatesLabel.Name" xml:space="preserve">
+    <value>TestTemplatesLabel</value>
+  </data>
+  <data name="ControlTemplatesLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="MediaLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="UnusedItemTemplatesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="GroupboxItemTemplates.Text" xml:space="preserve">
+    <value>Item layout template</value>
+  </data>
+  <data name="ControlTemplatesLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="RecentlyModifiedItemsGrid_DesignTimeLayout.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Caption&gt;Recently changed items&lt;/Caption&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="title"&gt;&lt;Caption&gt;Code&lt;/Caption&gt;&lt;DataMember&gt;name&lt;/DataMember&gt;&lt;DefaultGroupPrefix&gt;Title:&lt;/DefaultGroupPrefix&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;title&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;116&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="modifiedDate"&gt;&lt;Caption&gt;Date modified&lt;/Caption&gt;&lt;DataMember&gt;modifiedDate&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;modifiedDate&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;104&lt;/Width&gt;&lt;/Column1&gt;&lt;Column2 ID="name"&gt;&lt;Caption&gt;Modified by&lt;/Caption&gt;&lt;DataMember&gt;fullName&lt;/DataMember&gt;&lt;Key&gt;name&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;73&lt;/Width&gt;&lt;/Column2&gt;&lt;Column3 ID="resourceId"&gt;&lt;Caption&gt;resourceId&lt;/Caption&gt;&lt;DataMember&gt;resourceId&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;resourceId&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column3&gt;&lt;/Columns&gt;&lt;SortKeys Collection="true" ElementName="SortKey"&gt;&lt;SortKey0 ID="SortKey0"&gt;&lt;ColIndex&gt;0&lt;/ColIndex&gt;&lt;/SortKey0&gt;&lt;/SortKeys&gt;&lt;GroupCondition /&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <data name="ItemsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;WelcomeLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;UnusedControlTemplatesLabel.Name" xml:space="preserve">
+    <value>UnusedControlTemplatesLabel</value>
+  </data>
+  <data name="&gt;&gt;ControlTemplatesLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ItemStateInformationGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 120</value>
+  </data>
+  <data name="&gt;&gt;ControlTemplatesCreatedByMeLabel.Parent" xml:space="preserve">
+    <value>UtraGroupboxControlTemplate</value>
+  </data>
+  <data name="UtraGroupboxTestTemplate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 127</value>
+  </data>
+  <data name="&gt;&gt;ItemsCreatedByMeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RecentlyModifiedItemsGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="UnusedItemsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="ItemStateInformationGrid_DesignTimeLayout.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Caption&gt;Item status information&lt;/Caption&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="name"&gt;&lt;Caption&gt;Status&lt;/Caption&gt;&lt;DataMember&gt;name&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;name&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;148&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="numberOfItem"&gt;&lt;Caption&gt;Number of items&lt;/Caption&gt;&lt;DataMember&gt;numberOfItem&lt;/DataMember&gt;&lt;EditType&gt;NoEdit&lt;/EditType&gt;&lt;Key&gt;numberOfItem&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;145&lt;/Width&gt;&lt;/Column1&gt;&lt;/Columns&gt;&lt;SortKeys Collection="true" ElementName="SortKey"&gt;&lt;SortKey0 ID="SortKey0"&gt;&lt;ColIndex&gt;1&lt;/ColIndex&gt;&lt;/SortKey0&gt;&lt;/SortKeys&gt;&lt;GroupCondition /&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <data name="&gt;&gt;MediaLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ItemTemplatesLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>BankStartPageControl</value>
+  </data>
+  <data name="TestTemplatesCreatedByMeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="UnusedItemsLabel.Text" xml:space="preserve">
+    <value>Not used</value>
+  </data>
+  <data name="ItemsCreatedByMeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="TestsCreatedByMeLabel.Text" xml:space="preserve">
+    <value>Created by me</value>
+  </data>
+  <data name="ItemTemplatesCreatedByMeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;TestTemplatesCreatedByMeLabel.Parent" xml:space="preserve">
+    <value>UtraGroupboxTestTemplate</value>
+  </data>
+  <data name="UnusedControlTemplatesLabel.Text" xml:space="preserve">
+    <value>Not used</value>
+  </data>
+  <data name="UtraGroupboxTestTemplate.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="ControlTemplatesLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ItemTemplatesLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="TableLayoutPanel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="TableLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="UtraGroupboxControlTemplate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 127</value>
+  </data>
+  <data name="&gt;&gt;UnusedItemsLabel.Parent" xml:space="preserve">
+    <value>UtraGroupboxItem</value>
+  </data>
+  <data name="&gt;&gt;ItemStateInformationGrid.Name" xml:space="preserve">
+    <value>ItemStateInformationGrid</value>
+  </data>
+  <data name="TableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="TestTemplatesCreatedByMeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;TestTemplatesCreatedByMeLabel.Name" xml:space="preserve">
+    <value>TestTemplatesCreatedByMeLabel</value>
+  </data>
+  <data name="UtraGroupboxItem.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Name" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="TableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="UtraGroupboxItemTemplates.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;ItemTemplatesCreatedByMeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ControlTemplatesCreatedByMeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 75</value>
+  </data>
+  <data name="&gt;&gt;ItemTemplatesCreatedByMeLabel.Name" xml:space="preserve">
+    <value>ItemTemplatesCreatedByMeLabel</value>
+  </data>
+  <data name="ItemTemplatesCreatedByMeLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="&gt;&gt;ItemTemplatesCreatedByMeLabel.Parent" xml:space="preserve">
+    <value>UtraGroupboxItemTemplates</value>
+  </data>
+  <data name="WelcomeLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;TestTemplatesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ControlTemplatesCreatedByMeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="ItemsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 25</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="ItemTemplatesCreatedByMeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 75</value>
+  </data>
+  <data name="UnusedMediaFilesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>666, 603</value>
+  </data>
+  <data name="ItemsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ControlTemplatesCreatedByMeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;RecentlyModifiedItemsGrid.Type" xml:space="preserve">
+    <value>Janus.Windows.GridEX.GridEX, Janus.Windows.GridEX.v3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf</value>
+  </data>
+  <data name="TestTemplatesCreatedByMeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="TestTemplatesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 13</value>
+  </data>
+  <data name="TableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="UtraGroupboxItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 126</value>
+  </data>
+  <data name="RecentlyModifiedItemsGrid.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="TableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>666, 151</value>
+  </data>
+  <data name="RecentlyModifiedItemsGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 120</value>
+  </data>
+  <data name="ItemTemplatesLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;WelcomeLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TestsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
+  </data>
+  <data name="ControlTemplatesCreatedByMeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="ItemsCreatedByMeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TestTemplatesCreatedByMeLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="TableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="TestsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ItemTemplatesCreatedByMeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="ItemStateInformationGrid.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="MediaLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="TableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 350</value>
+  </data>
+  <data name="&gt;&gt;RecentlyModifiedItemsGrid.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TestsLabel.Parent" xml:space="preserve">
+    <value>UtraGroupboxTest</value>
+  </data>
+  <data name="TableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="UnusedControlTemplatesLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="MediaLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UnusedControlTemplatesLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ItemsCreatedByMeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;RecentlyModifiedItemsGrid.Name" xml:space="preserve">
+    <value>RecentlyModifiedItemsGrid</value>
+  </data>
+  <data name="TestTemplatesLabel.Text" xml:space="preserve">
+    <value>Test templates</value>
+  </data>
+  <data name="ControlTemplatesCreatedByMeLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
+  </data>
+  <data name="UnusedItemTemplatesLabel.Text" xml:space="preserve">
+    <value>Not used</value>
+  </data>
+  <data name="TestsCreatedByMeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="UnusedControlTemplatesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="TableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 45</value>
+  </data>
+  <data name="&gt;&gt;WelcomeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TestTemplatesLabel.Parent" xml:space="preserve">
+    <value>UtraGroupboxTestTemplate</value>
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.Language" type="System.Globalization.CultureInfo, mscorlib">
+    <value>nl</value>
+  </data>
+  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
+    <value>73</value>
+  </data>
+</root>

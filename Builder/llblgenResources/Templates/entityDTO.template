@@ -1,0 +1,84 @@
+using System;
+using System.ComponentModel;
+using System.Collections;
+using System.Runtime.Serialization;
+using Questify.Builder.AppCommon.Messages;
+
+namespace <[RootNamespace]>.DTOClasses
+{
+    <[ UserCodeRegion "AdditionalNamespaces" ]>
+    // __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
+    // __LLBLGENPRO_USER_CODE_REGION_END
+    <[ EndUserCodeRegion ]> 
+    /// <summary>
+    /// DTO class for the entity '<[CurrentEntityName]>'.
+    /// </summary>    
+    public <[If UsePartialClasses]>partial <[EndIf]>class <[CurrentEntityName]>DTO : <[ If IsSubType ]><[ SuperTypeName ]>DTO<[Else]>DtoBase<[ EndIf]><[ UserCodeRegion "AdditionalInterfaces" ]>
+        // __LLBLGENPRO_USER_CODE_REGION_START AdditionalInterfaces
+        // __LLBLGENPRO_USER_CODE_REGION_END
+        <[ EndUserCodeRegion ]> 
+    {
+        #region Custom Fields
+        <[ UserCodeRegion "CustomFieldCode" ]>
+        // __LLBLGENPRO_USER_CODE_REGION_START CustomFieldCode
+        // __LLBLGENPRO_USER_CODE_REGION_END
+        <[ EndUserCodeRegion ]>
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public <[CurrentEntityName]>DTO()
+        {
+        }
+
+        #endregion
+		
+		#region Entity Field Public Properties
+
+<[Foreach EntityField CrLf]><[If EntityFieldOverrides]><[Else]>        /// <summary>Get or set the <[EntityFieldName]> property that maps to the Entity <[CurrentEntityName]></summary>
+        public virtual <[If GenerateAsNullableType]><[TypeOfField]>?<[Else]><[TypeOfField]><[EndIf]> <[EntityFieldName]> { get; set; }
+		<[EndIf]>
+<[NextForeach]>        
+        #endregion
+
+        #region Related Field Public Properties
+
+<[ Foreach RelatedEntityField CrLf]>        /// <summary>Get or set the <[MappedFieldNameRelatedField]> property that maps to the Entity <[CurrentEntityName]>'s <[ MappedFieldNameRelation ]>.<[ RelatedEntityFieldName ]></summary>
+        public virtual <[If GenerateAsNullableType]><[TypeOfField]>?<[Else]><[TypeOfField]><[EndIf]> <[ MappedFieldNameRelatedField ]> { get; private set; }<[NextForeach]>
+
+        #endregion
+
+        #region Relation Fields
+
+<[Foreach RelatedEntity OneToMany CrLf]><[If Not MappedFieldRelationIsHidden]>
+        /// <summary> Gets the EntityCollectionBase with the related entities of type '<[RelatedEntityName]>Entity' which are related to this entity via a relation of type '1:n'.
+        /// If the EntityCollectionBase hasn't been fetched yet, the collection returned will be empty.</summary>
+        public virtual <[RelatedEntityName]>DTO[] <[MappedFieldNameRelation]> { get; set; }<[EndIf]><[NextForeach]>
+<[Foreach RelatedEntity ManyToMany CrLf]><[If Not MappedFieldRelationIsHidden]>
+        /// <summary> Gets the EntityCollectionBase with the related entities of type '<[RelatedEntityName]>Entity' which are related to this entity via a relation of type 'm:n'.
+        /// If the EntityCollectionBase hasn't been fetched yet, the collection returned will be empty.</summary>
+        public virtual <[RelatedEntityName]>DTO[] <[MappedFieldNameRelation]> { get; set; }<[EndIf]><[NextForeach]>
+<[Foreach RelatedEntity ManyToOne CrLf]><[If Not MappedFieldRelationIsHidden]>
+        /// <summary> Gets / sets related entity of type '<[RelatedEntityName]>Entity' which has to be set using a fetch action earlier. If no related entity
+        /// is set for this property, null is returned. This property is not visible in databound grids.</summary>
+        [Browsable(false)]
+        public virtual <[RelatedEntityName]>DTO <[MappedFieldNameRelation]> { get; set; }<[EndIf]><[NextForeach]>
+<[Foreach RelatedEntity OneToOne CrLf]><[If Not MappedFieldRelationIsHidden]>
+        /// <summary> Gets / sets related entity of type '<[RelatedEntityName]>Entity' which has to be set using a fetch action earlier. If no related entity
+        /// is set for this property, null is returned. This property is not visible in databound grids.</summary>
+        [Browsable(false)]
+        public virtual <[RelatedEntityName]>DTO <[MappedFieldNameRelation]> { get; set; }<[EndIf]><[NextForeach]>
+
+        #endregion
+
+        #region Custom DTO code
+        <[ UserCodeRegion "CustomDTOCode" ]>
+        // __LLBLGENPRO_USER_CODE_REGION_START CustomDTOCode
+        // __LLBLGENPRO_USER_CODE_REGION_END
+        <[ EndUserCodeRegion ]>
+        #endregion
+    }
+}

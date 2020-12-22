@@ -1,0 +1,133 @@
+<assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="Test_MC" title="Test_MC" layoutTemplateSrc="Cito.Generic.MC.SC">
+  <solution>
+    <keyFindings>
+      <keyFinding id="mc" scoringMethod="Dichotomous">
+        <keyFact id="A-mc" score="1" xmlns="http://Cito.Tester.Server/xml/serialization">
+          <keyValue domain="mc" occur="1">
+            <stringValue>
+              <typedValue>A</typedValue>
+            </stringValue>
+          </keyValue>
+        </keyFact>
+      </keyFinding>
+    </keyFindings>
+	<conceptFindings>
+		<conceptFinding id="mc" scoringMethod="None">
+			<conceptFact id="B-mc" score="1" xmlns="http://Cito.Tester.Server/xml/serialization">
+				<conceptValue domain="mc" occur="1">
+					<stringValue>
+						<typedValue>B</typedValue>
+					</stringValue>
+				</conceptValue>
+			  <concepts>
+				  <concept value="1" code="CONCEPT1-1" />
+				  <concept value="1" code="CONCEPT1-1-1" />
+			  </concepts>
+      </conceptFact>
+		</conceptFinding>
+	</conceptFindings>
+    <aspectReferences />
+  </solution>
+  <parameters>
+    <parameterSet id="entireItem">
+      <booleanparameter name="isScoredItem">True</booleanparameter>
+      <booleanparameter name="dualColumnLayout">False</booleanparameter>
+      <booleanparameter name="showCalculatorButton" />
+      <texttospeechparameter name="verklankingLinks" />
+      <texttospeechparameter name="verklankingRechts" />
+      <xhtmlparameter name="leftBody" />
+      <booleanparameter name="isWordSourceText">False</booleanparameter>
+      <xhtmlresourceparameter name="leftSource" />
+      <resourceparameter name="wordSourceText" />
+      <integerparameter name="sourceHeight">200</integerparameter>
+      <integerparameter name="sourcePositionTop">0</integerparameter>
+      <xhtmlparameter name="itemBody" />
+      <xhtmlparameter name="itemQuestion">
+        <p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml">Wat is het juiste antwoord ?</p>
+      </xhtmlparameter>
+      <listedparameter name="expectedAnswers">1</listedparameter>
+      <booleanparameter name="showGroup">False</booleanparameter>
+      <integerparameter name="fixedHeightAlternatives">0</integerparameter>
+      <listedparameter name="nrAlternativesPerLine">1</listedparameter>
+      <booleanparameter name="horizontallyCenteredAlternatives">False</booleanparameter>
+      <booleanparameter name="hideRadiobuttons">False</booleanparameter>
+      <xhtmlparameter name="kolomtekst" />
+      <xhtmlparameter name="kolomtekst2" />
+      <collectionparameter name="multiChoice">
+        <subparameterset id="A">
+          <xhtmlparameter name="choice">
+            <p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml">Kies voor A</p>
+          </xhtmlparameter>
+          <xhtmlparameter name="choice2" />
+        </subparameterset>
+        <subparameterset id="B">
+          <xhtmlparameter name="choice">
+            <p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml">Nee, liever voor B</p>
+          </xhtmlparameter>
+          <xhtmlparameter name="choice2" />
+        </subparameterset>
+        <definition id="">
+          <xhtmlparameter name="choice" />
+          <xhtmlparameter name="choice2" />
+        </definition>
+      </collectionparameter>
+      <multichoicescoringparameter name="multiChoiceScoring" ControllerId="mc" findingOverride="mc" minChoices="1" maxChoices="1" multiChoice="Radio">
+        <subparameterset id="A">
+          <xhtmlparameter name="mcOption">
+            <p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml">Kies voor A</p>
+          </xhtmlparameter>
+          <xhtmlparameter name="mcOption2" />
+        </subparameterset>
+        <subparameterset id="B">
+          <xhtmlparameter name="mcOption">
+            <p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml">Nee, liever voor B</p>
+          </xhtmlparameter>
+          <xhtmlparameter name="mcOption2" />
+        </subparameterset>
+        <definition id="">
+          <xhtmlparameter name="mcOption" />
+          <xhtmlparameter name="mcOption2" />
+        </definition>
+      </multichoicescoringparameter>
+      <xhtmlparameter name="itemGeneral" />
+      <booleanparameter name="boldedMcLettersForWord">True</booleanparameter>
+    </parameterSet>
+    <parameterSet id="kenmerken">
+      <booleanparameter name="showCalculatorButton">False</booleanparameter>
+      <integerparameter name="hightOfScrollText" />
+      <booleanparameter name="showGroup">False</booleanparameter>
+      <plaintextparameter name="calculatorDescription" />
+      <listedparameter name="calculatorMode">basic</listedparameter>
+      <booleanparameter name="showReset" />
+      <booleanparameter name="showNotepad" />
+      <plaintextparameter name="notepadDescription" />
+      <booleanparameter name="showSymbolPicker" />
+      <plaintextparameter name="symbolPickerDescription" />
+      <plaintextparameter name="symbols" />
+      <booleanparameter name="showRuler" />
+      <plaintextparameter name="rulerDescription" />
+      <integerparameter name="rulerStart" />
+      <integerparameter name="rulerEnd" />
+      <integerparameter name="rulerStep" />
+      <integerparameter name="rulerStepSize" />
+      <listedparameter name="rulerLengthUnit">centimeter</listedparameter>
+      <booleanparameter name="showTriangle" />
+      <plaintextparameter name="trianglePickerDescription" />
+      <integerparameter name="triangleMinDegrees" />
+      <integerparameter name="triangleMaxDegrees" />
+      <booleanparameter name="showSpellCheck">False</booleanparameter>
+      <listedparameter name="spellCheckCulture">nl-NL</listedparameter>
+      <booleanparameter name="showFormulaEditor">False</booleanparameter>
+      <plaintextparameter name="formulaEditorDescription" />
+      <listedparameter name="formulaEditorType" />
+      <booleanparameter name="showTextMarker">False</booleanparameter>
+      <plaintextparameter name="textMarkerDescription" />
+      <integerparameter name="fixedHeightAlternatives">0</integerparameter>
+      <listedparameter name="foreignLanguage">0</listedparameter>
+      <listedparameter name="specialItemLayout">0</listedparameter>
+      <integerparameter name="fixedWidthAlternatives">100</integerparameter>
+      <listedparameter name="inputFilter" />
+      <integerparameter name="fixedWidthMatrixColumn">100</integerparameter>
+    </parameterSet>
+  </parameters>
+</assessmentItem>

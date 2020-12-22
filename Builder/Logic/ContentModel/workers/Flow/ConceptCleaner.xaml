@@ -1,0 +1,65 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="ConceptCleaner"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:ctc="clr-namespace:Cito.Tester.ContentModel;assembly=Cito.Tester.ContentModel"
+ xmlns:local="clr-namespace:Questify.Builder.Logic.ContentModel.workers.Flow"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Solution" Type="InArgument(ctc:Solution)" />
+    <x:Property Name="ScoringParameters" Type="InArgument(scg:IEnumerable(ctc:ScoringParameter))" />
+  </x:Members>
+  <sap2010:WorkflowViewState.IdRef>ConceptCleaner_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>Cito.Tester.ContentModel</x:String>
+      <x:String>System.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>Cito.Tester.ContentModel</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <ForEach x:TypeArguments="ctc:ConceptFinding" DisplayName="ForEach&lt;ConceptFinding&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Solution.ConceptFindings]">
+      <ActivityAction x:TypeArguments="ctc:ConceptFinding">
+        <ActivityAction.Argument>
+          <DelegateInArgument x:TypeArguments="ctc:ConceptFinding" Name="finding" />
+        </ActivityAction.Argument>
+        <local:RemoveFactsAlreadyInFactSet BaseFacts="[finding.Facts]" sap2010:WorkflowViewState.IdRef="RemoveFactsAlreadyInFactSet_1" ScoringParameters="[ScoringParameters]" Solution="[Solution]" />
+      </ActivityAction>
+    </ForEach>
+    <sads:DebugSymbol.Symbol>d4cBQzpcVEZTLkFTNjMuUHJvamVjdHNcUHJvamVjdCBRdWVzdGlmeVxHZW5lcmljXERldlxEZXYzXFRlc3RCdWlsZGVyXENpdG8uVGVzdEJ1aWxkZXIuTG9naWNcQ29udGVudE1vZGVsXHdvcmtlcnNcRmxvd1xDb25jZXB0Q2xlYW5lci54YW1sBygDMg4CAQEpBTAPAgECKZQBKbABAgEILgkuyAECAQMuNi5HAgEHLpoBLq8BAgEGLrkBLsUBAgEE</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="RemoveFactsAlreadyInFactSet_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="ForEach`1_1" sap:VirtualizedContainerService.HintSize="287,208" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="309,332">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ConceptCleaner_1" sap:VirtualizedContainerService.HintSize="349,412" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

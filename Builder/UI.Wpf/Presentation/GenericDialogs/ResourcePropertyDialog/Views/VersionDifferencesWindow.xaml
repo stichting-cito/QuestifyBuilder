@@ -1,0 +1,88 @@
+﻿<Window x:Class="Questify.Builder.UI.Wpf.Presentation.GenericDialogs.ResourcePropertyDialog.Views.VersionDifferencesWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	         xmlns:CinchV2="clr-namespace:Cinch;assembly=Cinch.WPF"
+             xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+             xmlns:gl="clr-namespace:System.Globalization;assembly=mscorlib"
+			 meffed:ViewModelLocator.ViewModel="ResourcePropertyDialog.VersionDifferencesViewModel" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+			 Title="{DynamicResource VersionDifferences.Title}" Height="600" Width="800" ResizeMode="CanResize"
+			 WindowStartupLocation="CenterScreen"
+			 MinWidth="800"
+			 MinHeight="600"
+			 Icon="../../../Images/QuestifyIcon.ico">
+
+	<Window.Resources>
+		<ResourceDictionary>
+			<BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <ResourceDictionary.MergedDictionaries>
+                <!--Please make sure that Resources are commented out-->
+                <ResourceDictionary Source="..\..\..\Styles\DefaultStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Window.Resources>
+
+	<Grid Name="masterGrid">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+		</Grid.RowDefinitions>
+
+		<ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" DataContext="{Binding VersionDifferences.DataValue}" Grid.Column="0" Grid.Row="0" Margin="0,8,0,31" Grid.RowSpan="2">
+			<ListView ItemsSource="{Binding}" ItemContainerStyle="{StaticResource alternatingStyle}" AlternationCount="2" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+				<ListView.View>
+					<GridView>
+						<GridViewColumn Header="{StaticResource VersionDifferences.ListView.Column.PropertyName}" Width="200" DisplayMemberBinding="{Binding LocalizedPropertyName}" HeaderContainerStyle="{StaticResource horizontalColumnHeaderStyle}" />
+						<GridViewColumn Header="{Binding ElementName=masterGrid, Path=DataContext.OldValueColumnTitle.DataValue}" Width="280" HeaderContainerStyle="{StaticResource horizontalColumnHeaderStyle}">
+							<GridViewColumn.CellTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding OldValue}" TextWrapping="Wrap" />
+								</DataTemplate>
+							</GridViewColumn.CellTemplate>
+						</GridViewColumn>
+						<GridViewColumn Header="{Binding ElementName=masterGrid, Path=DataContext.NewValueColumnTitle.DataValue}" Width="280" HeaderContainerStyle="{StaticResource horizontalColumnHeaderStyle}">
+							<GridViewColumn.CellTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding NewValue}" TextWrapping="Wrap" />
+								</DataTemplate>
+							</GridViewColumn.CellTemplate>
+						</GridViewColumn>
+					</GridView>
+				</ListView.View>
+				<ListView.GroupStyle>
+					<GroupStyle>
+						<GroupStyle.ContainerStyle>
+							<Style TargetType="{x:Type GroupItem}">
+								<Setter Property="Template">
+									<Setter.Value>
+										<ControlTemplate>
+											<Expander IsExpanded="True">
+												<Expander.Header>
+													<StackPanel Orientation="Horizontal">
+														<TextBlock Text="{Binding Name}" VerticalAlignment="Bottom" FontWeight="Bold" />
+														<TextBlock Text="{Binding ItemCount, StringFormat='({0})'}" VerticalAlignment="Bottom" FontWeight="Bold" Margin="5,0,0,0" />
+													</StackPanel>
+												</Expander.Header>
+												<ItemsPresenter />
+											</Expander>
+										</ControlTemplate>
+									</Setter.Value>
+								</Setter>
+							</Style>
+						</GroupStyle.ContainerStyle>
+					</GroupStyle>
+				</ListView.GroupStyle>
+			</ListView>
+		</ScrollViewer>
+		<Button Style="{StaticResource DialogButtonStyle}"
+            Content="{StaticResource VersionDifferences.Command.Ok}"
+            IsDefault="True" IsCancel="True" HorizontalAlignment="Right"
+            Command="{Binding Ok}" Grid.Column="0" Grid.Row="1" />
+	</Grid>
+</Window>

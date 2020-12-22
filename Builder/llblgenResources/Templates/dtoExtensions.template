@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using <[RootNamespace]>;
+using <[RootNamespace]>.EntityClasses;
+using <[RootNamespace]>.CollectionClasses;
+using <[RootNamespace]>.DTOClasses;
+using <[RootNamespace]>.HelperClasses;
+
+
+namespace <[RootNamespace]>.DTOClasses
+{
+    /// <summary>
+    /// Generates extension methods for converting Entities to DTOs
+    /// This class is generated. Do not modify.
+    /// </summary>
+    public static <[If UsePartialClasses]>partial <[EndIf]>class Extensions
+    {
+<[If HasEntity]><[Foreach Entity]>
+        /// <summary>Create a <[CurrentEntityName]> DTO from a <[CurrentEntityName]> entity</summary>
+        /// <returns>The DTO created</returns>
+        public static <[CurrentEntityName]>DTO ToDTO(this <[CurrentEntityName]>Entity entity)
+        {
+            <[CurrentEntityName]>DTO dto = null;
+            if (entity != null)
+                dto = new <[CurrentEntityName]>DTO(entity);
+            return dto;
+        }
+
+        /// <summary>Create a list of <[CurrentEntityName]>DTO from a <[CurrentEntityName]>Collection</summary>
+        /// <returns>The DTO list created</returns>
+        public static List<<[CurrentEntityName]>DTO> ToDTOs(this <[CurrentEntityName]>Collection collection)
+        {
+            List<<[CurrentEntityName]>DTO> dtoList = new List<<[CurrentEntityName]>DTO>(collection.Count);
+            foreach(<[CurrentEntityName]>Entity entity in collection)
+                dtoList.Add(new <[CurrentEntityName]>DTO(entity));
+            return dtoList;
+        }
+
+        /// <summary>Create a list of <[CurrentEntityName]>DTO from a List of <[CurrentEntityName]> entities</summary>
+        /// <returns>The DTO list created</returns>
+        public static List<<[CurrentEntityName]>DTO> ToDTOs(this List<<[CurrentEntityName]>Entity> entities)
+        {
+            return entities.ConvertAll<<[CurrentEntityName]>DTO>(e => new <[CurrentEntityName]>DTO(e));
+        }
+
+        /// <summary>From the queryable object, get a list of <[CurrentEntityName]>DTO</summary>
+        /// <returns>The DTO list created</returns>
+        public static List<<[CurrentEntityName]>DTO> ToDTOs(this IQueryable<<[CurrentEntityName]>Entity> queryableEntities)
+        {
+            return queryableEntities.ToList().ConvertAll<<[CurrentEntityName]>DTO>(e => new <[CurrentEntityName]>DTO(e));
+        }
+
+        /// <summary>From the queryable object, get a list of <[CurrentEntityName]>DTO</summary>
+        /// <returns>The DTO list created</returns>
+        public static <[CurrentEntityName]>DTO FirstDTO(this IQueryable<<[CurrentEntityName]>Entity> queryableEntities)
+        {
+            <[CurrentEntityName]>DTO dto = null;
+            <[CurrentEntityName]>Entity firstEntity = queryableEntities.First();
+            if (firstEntity != null)
+                dto = new <[CurrentEntityName]>DTO(firstEntity);
+            return dto;
+        }
+<[NextForeach]><[EndIf]>
+        #region Custom code
+        <[ UserCodeRegion "CustomDTOCode" ]>
+        // __LLBLGENPRO_USER_CODE_REGION_START CustomDTOCode
+        // __LLBLGENPRO_USER_CODE_REGION_END
+        <[ EndUserCodeRegion ]>
+        #endregion
+    }
+}

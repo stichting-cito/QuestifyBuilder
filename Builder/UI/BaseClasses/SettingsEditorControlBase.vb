@@ -1,0 +1,2 @@
+Public Class SettingsEditorControlBase
+End Class

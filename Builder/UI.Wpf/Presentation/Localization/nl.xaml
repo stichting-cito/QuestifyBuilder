@@ -1,0 +1,63 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Generic Resources that can be shared no matter what! -->
+    <s:String x:Key="Dialog.ErrorCaption">Fout</s:String>
+    <s:String x:Key="Dialog.PleaseConfirmCaption">Bevestig a.u.b.</s:String>
+    <s:String x:Key="Dialog.DoYouWantToSave">Wilt u de wijzigingen in '{0}' opslaan?</s:String>
+    <s:String x:Key="Dialog.DiscardChanges">De gedane wijzigingen in '{0}' zullen verloren gaan bij afsluiten!</s:String>
+    <s:String x:Key="Dialog.Ok">_OK</s:String>
+    <s:String x:Key="Dialog.Yes">_Ja</s:String>
+    <s:String x:Key="Dialog.No">_Nee</s:String>
+    <s:String x:Key="Dialog.Cancel">Annuleren</s:String>
+    <s:String x:Key="Dialog.Save">_Opslaan</s:String>
+    <s:String x:Key="Dialog.NotSave">_Niet opslaan</s:String>
+
+	<!-- DataViewModel -->
+	<s:String x:Key="DataViewModel.TestPackageResourceFilter">Toetspakketdatabestanden (*.xml)|*.xml|Alle bestanden (*.*)|*.*</s:String>
+	<s:String x:Key="DataViewModel.TestResourceFilter">Toetsdatabestanden (*.xml)|*.xml|Alle bestanden (*.*)|*.*</s:String>
+	<s:String x:Key="DataViewModel.ItemResourceFilter">Itemdatabestanden (*.xml)|*.xml|Alle bestanden (*.*)|*.*</s:String>
+    <s:String x:Key="DataViewModel.GenericResourceFilter">Alle bestanden (*.*)|*.*|Afbeeldingen (*.jpg, *.jpeg, *.gif, *.png, *.svg, *.bmp)|*.jpg;*.jpeg;*.gif;*.png;*.svg;*.bmp|Drukwerkafbeeldingen (*.eps, *.tiff, *.tif)|*.eps;*.tiff;*.tif|Style sheet-bestanden (*.css)|*.css|Audiobestanden (*.mp3, *.opus, *.ogg)|*.mp3;*.opus;*.ogg|Videobestanden (*.mp4, *.webm, *.mkv, *.mpg)|*.mp4;*.webm;*.mkv;*.mpg|Portable Document Format-bestanden (*.pdf)|*.pdf|MS Word-documenten (*.docx *.dotx)|*.docx;*.dotx|Custom Interactions (*.ci)|*.ci|Geogebra bestanden (*.ggb)|*.ggb</s:String><!--See also: AddGenericResourceWizardForm-->
+    <s:String x:Key="DataViewModel.ControlTemplateResourceFilter">Controltemplatebestanden (*.xHtml, *.code)|*.xhtml;*.code|Alle bestanden (*.*)|*.*</s:String>
+    <s:String x:Key="DataViewModel.ItemLayoutResourceFilter">Itemlay-outtemplatebestanden (*.xhtml)|*.xhtml|Alle bestanden (*.*)|*.*</s:String>
+	<s:String x:Key="DataViewModel.AspectResourceFilter">Alle bestanden (*.*)|*.*</s:String>
+	<s:String x:Key="DataViewModel.DeliveryResourceFilter">Alle bestanden (*.*)|*.*</s:String>
+	<s:String x:Key="DataViewModel.ResourceExported">De bron is geëxporteerd.</s:String>
+    <s:String x:Key="DataViewModel.IdentifierAndCodeFieldDiffer">De waarde van het Id veld ({0}) uit de xml komt niet overeen met de waarde van het Code veld ({1}) en zal worden gewijzigd naar '{1}'</s:String>
+
+    <!-- Specific resources PER screen -->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="..\ItemEditor\ItemEditor.nl.xaml" />
+        <ResourceDictionary Source="..\ItemEditor\ItemEditor.Metadata.nl.xaml" />
+
+        <ResourceDictionary Source="..\ItemEditor\ItemEditor.AspectEditor.nl.xaml" />
+        <ResourceDictionary Source="..\ItemEditor\ItemEditor.ScoreEditor.nl.xaml" />
+        <ResourceDictionary Source="..\ItemEditor\ItemEditor.ItemConceptStructure.nl.xaml"/>
+		<ResourceDictionary Source="..\ItemEditor\ItemEditor.ItemTreeStructure.nl.xaml"/>
+		<ResourceDictionary Source="..\ItemEditor\ItemEditor.ScoreTranslationTableEditor.nl.xaml" />
+        <ResourceDictionary Source="..\ItemEditor\ItemEditor.ParameterEditor.nl.xaml" />
+        
+        <ResourceDictionary Source="..\SourceTextEditor\SourceTextEditor.nl.xaml"/>
+        <ResourceDictionary Source="..\SourceTextEditor\SourceTextEditor.Metadata.nl.xaml"/>
+        <ResourceDictionary Source="..\SourceTextEditor\SourceTextEditor.LinkedStyleSheets.nl.xaml"/>
+        
+        <ResourceDictionary Source="..\GenericControls\GenericControl.Metadata.nl.xaml"/>
+        
+        <ResourceDictionary Source="..\GenericDialogs\ResourcePropertyDialog\ResourcePropertyDialog.nl.xaml" />
+		<ResourceDictionary Source="..\GenericDialogs\ResourcePropertyDialog\VersionDifferences.nl.xaml" />
+		<ResourceDictionary Source="..\GenericDialogs\VersionDialog\MajorVersionDialog.nl.xaml" />
+        <ResourceDictionary Source="..\GenericDialogs\GenericWizard\GenericWizard.nl.xaml" />
+        <ResourceDictionary Source="..\GenericDialogs\LoginDialog\LoginDialogView.nl.xaml" />
+
+        <ResourceDictionary Source="..\AnnouncementDialog\AnnouncementDialog.nl.xaml" />
+        
+        <ResourceDictionary Source="..\ResourceMoverWizard\Localization\ResourceMoverWizard.nl.xaml" />
+        <ResourceDictionary Source="..\ResourceMoverWizard\Localization\SelectDestinationBank.nl.xaml" />
+        <ResourceDictionary Source="..\ResourceMoverWizard\Localization\ViewResourceMovingDetails.nl.xaml" />
+        <ResourceDictionary Source="..\ResourceMoverWizard\Localization\AnimateResourceMovingProcess.nl.xaml" />
+        <ResourceDictionary Source="..\ResourceMoverWizard\Localization\ViewResourceMovingResults.nl.xaml" />
+
+        <ResourceDictionary Source="..\ValueConverters\Localization\EntityTypeToFriendlyNameConverter.nl.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

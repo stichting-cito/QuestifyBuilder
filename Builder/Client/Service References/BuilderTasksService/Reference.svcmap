@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8425c45e-d9f9-47a5-b2c1-335fa9173011" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/Questify.Builder.Services.TasksService/QuestifyBuilderTasksService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="QuestifyBuilderTasksService5.xsd" MetadataType="Schema" ID="30831db3-c0a5-442f-a463-4eabdea23a7f" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.TasksService/QuestifyBuilderTasksService.svc?xsd=xsd2" />
+    <MetadataFile FileName="QuestifyBuilderTasksService51.xsd" MetadataType="Schema" ID="6f7cb719-191e-42d3-840d-b55796130f7f" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.TasksService/QuestifyBuilderTasksService.svc?xsd=xsd4" />
+    <MetadataFile FileName="QuestifyBuilderTasksService52.xsd" MetadataType="Schema" ID="b19c2f68-2f20-4cb8-b77b-099badd0900a" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.TasksService/QuestifyBuilderTasksService.svc?xsd=xsd1" />
+    <MetadataFile FileName="QuestifyBuilderTasksService1.disco" MetadataType="Disco" ID="013225be-4666-4888-b80b-cb1fbb117f41" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.TasksService/QuestifyBuilderTasksService.svc?disco" />
+    <MetadataFile FileName="QuestifyBuilderTasksService53.xsd" MetadataType="Schema" ID="9965d387-81de-4aed-8524-ca617da4f64f" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.TasksService/QuestifyBuilderTasksService.svc?xsd=xsd3" />
+    <MetadataFile FileName="QuestifyBuilderTasksService1.wsdl" MetadataType="Wsdl" ID="4a7d1030-8607-4100-b69d-0f85fd68a62d" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.TasksService/QuestifyBuilderTasksService.svc?wsdl" />
+    <MetadataFile FileName="QuestifyBuilderTasksService54.xsd" MetadataType="Schema" ID="091483a9-2758-4772-b6e8-4eeda8cd38a6" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.TasksService/QuestifyBuilderTasksService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

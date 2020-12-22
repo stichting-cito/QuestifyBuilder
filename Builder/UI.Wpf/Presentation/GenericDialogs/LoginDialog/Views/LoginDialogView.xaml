@@ -1,0 +1,65 @@
+﻿<Window x:Class="Questify.Builder.UI.Wpf.Presentation.GenericDialogs.LoginDialog.Views.LoginDialogView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:behaviors="clr-namespace:Questify.Builder.UI.Wpf.Presentation.Behaviors"
+        xmlns:helpers="clr-namespace:Questify.Builder.UI.Wpf.Presentation.Helpers"
+        Title="Aanmelden" Width="342" SizeToContent="Height"
+        BorderThickness="1" BorderBrush="DarkGray" WindowStyle="None" ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen" Icon="../../../Resources/Icons/QuestifyIcon.ico"
+        FocusManager.FocusedElement="{Binding ElementName=UserNameTextBox}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>            
+        </ResourceDictionary>
+    </Window.Resources>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" >
+            <Image Source="../../../Resources/Images/login_banner.png" Width="342" Height="61" VerticalAlignment="Top"/>
+        </StackPanel>
+        <Grid DockPanel.Dock="Top" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{StaticResource Login.Header}" Grid.ColumnSpan="2" Margin="5 10" FontWeight="Bold"/>
+            <TextBlock Grid.Row="2" Text="{StaticResource User.Label}" Margin="5"/>
+            <TextBox x:Name="UserNameTextBox" Grid.Row="2" Grid.Column="1" Text="{Binding UserName.DataValue, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Margin="5" >
+                <i:Interaction.Behaviors>
+                    <behaviors:TextBoxSelectedTextBehavior/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+            <TextBlock Text="{StaticResource Password.Label}" Grid.Row="3" Grid.Column="0" Margin="5"/>
+            <PasswordBox x:Name="Password" Grid.Column="1" Grid.Row="3" Margin="5" helpers:PasswordHelper.Password="{Binding Password.DataValue, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                         helpers:PasswordHelper.Attach="True" >
+                <i:Interaction.Behaviors>
+                    <behaviors:PasswordBoxSelectedTextBehavior/>
+                </i:Interaction.Behaviors>
+            </PasswordBox>
+        </Grid>
+
+        <Grid Margin="5" DockPanel.Dock="Top" Visibility="{Binding InvalidCredentials, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="../../../Resources/Icons/Error.ico" Margin="5" Height="16" Width="16" VerticalAlignment="Top"/>
+            <TextBlock x:Name="AuthenthicateError" Grid.Column="1" Margin="5" Text="{Binding AuthenthicateError}" FontWeight="Bold" TextWrapping="Wrap" VerticalAlignment="Top" />
+        </Grid>
+
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5 7" >
+            <Button x:Name="ButtonOk" Content="{StaticResource Dialog.Ok}" Command="{Binding OkCommand}" IsDefault="True"
+                Style="{StaticResource DialogButtonStyle}"/>
+            <Button x:Name="ButtonCancel"  Content="{StaticResource Dialog.Cancel}" Command="{Binding CancelCommand}" IsCancel="True"
+                Style="{StaticResource DialogButtonStyle}"/>
+
+        </StackPanel>
+    </DockPanel>
+</Window>

@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefs.GroupHeader">Aspect references</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.MaxScoreLabel">Max score :</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.DescriptionLabel">Description :</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.Label">Selected aspects</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.NameLabel">Name</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.TitleLabel">Title</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.MaxScoreLabel">Max score</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.SumOfMaxScoreLabel">Sum of max score:</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.AddButton.Title">Add</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.RemoveButton.Title">Remove</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.EditButton.Title">Edit</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.UpButton.Title">Up</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.DownButton.Title">Down</s:String>
+
+</ResourceDictionary>

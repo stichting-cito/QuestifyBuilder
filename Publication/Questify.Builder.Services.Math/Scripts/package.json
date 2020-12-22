@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "name": "MathJaxTest",
+  "private": true,
+  "dependencies": {
+    "mathjax-node": "2.1.1"
+  }
+}

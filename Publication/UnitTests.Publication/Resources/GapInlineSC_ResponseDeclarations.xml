@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<responseDeclarations>
+  <responseDeclaration identifier="RESPONSE" cardinality="single" baseType="integer">
+    <correctResponse interpretation="(2&amp;3&amp;5)|(3&amp;2&amp;5)">
+      <value>2</value>
+    </correctResponse>
+  </responseDeclaration>
+  <responseDeclaration identifier="RESPONSE2" cardinality="single" baseType="integer">
+    <correctResponse>
+      <value>3</value>
+    </correctResponse>
+  </responseDeclaration>
+  <responseDeclaration identifier="RESPONSE3" cardinality="single" baseType="integer">
+    <correctResponse>
+      <value>5</value>
+    </correctResponse>
+  </responseDeclaration>
+</responseDeclarations>

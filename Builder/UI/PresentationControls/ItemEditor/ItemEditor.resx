@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="AssessmentItemBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="IdentifierLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="IdentifierLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="IdentifierLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="IdentifierLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 34</value>
+  </data>
+  <data name="IdentifierLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="IdentifierLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="IdentifierLabel.Text" xml:space="preserve">
+    <value>Code:</value>
+  </data>
+  <data name="&gt;&gt;IdentifierLabel.Name" xml:space="preserve">
+    <value>IdentifierLabel</value>
+  </data>
+  <data name="&gt;&gt;IdentifierLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IdentifierLabel.Parent" xml:space="preserve">
+    <value>AssessmentItemTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;IdentifierLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <metadata name="TitleLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="TitleLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="TitleLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TitleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 62</value>
+  </data>
+  <data name="TitleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="TitleLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TitleLabel.Text" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Name" xml:space="preserve">
+    <value>TitleLabel</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.Parent" xml:space="preserve">
+    <value>AssessmentItemTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;TitleLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="LayoutTemplateSourceNameLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="LayoutTemplateSourceNameLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="LayoutTemplateSourceNameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LayoutTemplateSourceNameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 90</value>
+  </data>
+  <data name="LayoutTemplateSourceNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="LayoutTemplateSourceNameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="LayoutTemplateSourceNameLabel.Text" xml:space="preserve">
+    <value>Template:</value>
+  </data>
+  <data name="&gt;&gt;LayoutTemplateSourceNameLabel.Name" xml:space="preserve">
+    <value>LayoutTemplateSourceNameLabel</value>
+  </data>
+  <data name="&gt;&gt;LayoutTemplateSourceNameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LayoutTemplateSourceNameLabel.Parent" xml:space="preserve">
+    <value>AssessmentItemTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;LayoutTemplateSourceNameLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ItemIdLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="ItemIdLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ItemIdLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ItemIdLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 6</value>
+  </data>
+  <data name="ItemIdLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="ItemIdLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ItemIdLabel.Text" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="&gt;&gt;ItemIdLabel.Name" xml:space="preserve">
+    <value>ItemIdLabel</value>
+  </data>
+  <data name="&gt;&gt;ItemIdLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ItemIdLabel.Parent" xml:space="preserve">
+    <value>AssessmentItemTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;ItemIdLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AssessmentItemTableLayoutPanel.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AssessmentItemTableLayoutPanel.AutoScrollMinSize" type="System.Drawing.Size, System.Drawing">
+    <value>200, 120</value>
+  </data>
+  <data name="AssessmentItemTableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="ItemIdTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="ItemIdTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ItemIdTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 3</value>
+  </data>
+  <data name="ItemIdTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 30, 3</value>
+  </data>
+  <data name="ItemIdTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 20</value>
+  </data>
+  <data name="ItemIdTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;ItemIdTextBox.Name" xml:space="preserve">
+    <value>ItemIdTextBox</value>
+  </data>
+  <data name="&gt;&gt;ItemIdTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ItemIdTextBox.Parent" xml:space="preserve">
+    <value>AssessmentItemTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;ItemIdTextBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SwitchItemTemplateButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="SwitchItemTemplateButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAkFJREFUOE9j+P//
+        Pxy3tLQz5+UX8KenZ6rm5OQKNTW1siHLY8NwRmNTq0RlZVVTQEBQe1x8YltMTHxbdlbWzIbGZktkDegY
+        TJSWVfLmZOdM//jx0+s/f/68AYrN/ffv35bfv/9sTkrOmFdZVW2KrAkZM6iqqjKlpqbVnz57eT5Q4MLf
+        f//6Hr/6Puf911/LgfyZv//83VhaWrGzsKiECVkjDDPYWFtz5xWUL/vy/ffJJ+9+9j18/XUCyICn774d
+        +fb739ZvP/9NLyip25iUlCSK1QAHBweFrr5Zm3/+/X8EpBGE77/4tgzGfvP59/aG1slbUlJStbEaYGVp
+        yd3dN/3kp2//Hz149+vg5Zc/1oA0Pnzz7eHfv/+Snr37dXbitEU3EhMTpbAaAARM8fEJcy7f+/Xl+Yff
+        H6+8+n3v4cuvZx69/f752cc/7/ac+/qks7v/FNALzFgNABMMDBIzZi18cPXhn/9P3vz+/+z97/9P3v7+
+        f+72z/8zZi34X1tb04iuEYbhDGZmJsWCgsIdfZNm/Zk8Y8X/idMW/uvvn3Ta3t5uXXVNzb8zZ8/tv3P3
+        rgCyZhBG4YCwt7c3h4mJkYKXlyd/QkICOOrc3Nx2FZeU/j9+4uS9R48eySOrR9GMD/v6+h6vra37D3TJ
+        mxs3b3LBxDEU4sNBwcEX2js6/t+4eevZ+fMXOEBiWBXiwkDAGBgYeK6/f8L/R48e37106bIkVoWEsH9A
+        wNn2js4Nrq6u7FgVEMI8PDzMQkJCrExMTEwAani5fdwBSQMAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="SwitchItemTemplateButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SwitchItemTemplateButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>426, 85</value>
+  </data>
+  <data name="SwitchItemTemplateButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 23</value>
+  </data>
+  <data name="SwitchItemTemplateButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;SwitchItemTemplateButton.Name" xml:space="preserve">
+    <value>SwitchItemTemplateButton</value>
+  </data>
+  <data name="&gt;&gt;SwitchItemTemplateButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SwitchItemTemplateButton.Parent" xml:space="preserve">
+    <value>AssessmentItemTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;SwitchItemTemplateButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TitleTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="TitleTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 59</value>
+  </data>
+  <data name="TitleTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 30, 3</value>
+  </data>
+  <data name="TitleTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 20</value>
+  </data>
+  <data name="TitleTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;TitleTextBox.Name" xml:space="preserve">
+    <value>TitleTextBox</value>
+  </data>
+  <data name="&gt;&gt;TitleTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TitleTextBox.Parent" xml:space="preserve">
+    <value>AssessmentItemTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;TitleTextBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="CodeTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="CodeTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 31</value>
+  </data>
+  <data name="CodeTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 30, 3</value>
+  </data>
+  <data name="CodeTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 20</value>
+  </data>
+  <data name="CodeTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;CodeTextBox.Name" xml:space="preserve">
+    <value>CodeTextBox</value>
+  </data>
+  <data name="&gt;&gt;CodeTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CodeTextBox.Parent" xml:space="preserve">
+    <value>AssessmentItemTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;CodeTextBox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="LayoutTemplateSourceNameTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="LayoutTemplateSourceNameTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="LayoutTemplateSourceNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 86</value>
+  </data>
+  <data name="LayoutTemplateSourceNameTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 30, 3</value>
+  </data>
+  <data name="LayoutTemplateSourceNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 20</value>
+  </data>
+  <data name="LayoutTemplateSourceNameTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;LayoutTemplateSourceNameTextBox.Name" xml:space="preserve">
+    <value>LayoutTemplateSourceNameTextBox</value>
+  </data>
+  <data name="&gt;&gt;LayoutTemplateSourceNameTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LayoutTemplateSourceNameTextBox.Parent" xml:space="preserve">
+    <value>AssessmentItemTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;LayoutTemplateSourceNameTextBox.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="ChangeCodeButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="ChangeCodeButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ChangeCodeButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAiNJREFUOE99Uk1o
+        E1EQTkJpe0iJ5KANoZAeuniyCYjxIBbprVI8NQVpEayYgKDVS9BL0psHD82lJxGhhZZ6KIo5pBUTlqCg
+        h9pITApWpWZX6W4Tm812u7/jvJXEpLt04Hsz8818s2/few4AOBF+v/9SIBC4bFcjsCUJ3G73YCKR/FQX
+        BGBZVuvr8ww0a2px7uPvzMNVEluETqezOxKJPC1vb2uYA03TIu5gqtXDPnmurl+Q1FzI3FWHOBQKTWVz
+        OQFj0HUdZEWBrUJBdnX1nDZ7uIVpLXtFV3Pnw01NS3xz5hZdYVgMAURRRByCoqpmPp9a+PwgNnoGStdV
+        Zf3sXaRaOnPx+XwXi6WSvl+tQqPRAAW/rOsGlv6ZJGtQXpuQK8vUCqYtMYG5uFwudyaT+YOxuXWLMc+A
+        p+8Z92dnz2FmHUAQDAajsixjeMyqWVDez0CtJgDP16RUKjWErHUAQTwez6P/b/I3EDbG4MvmO9iv1U1q
+        cWmJQWc/AK07nU6bv2LgEezRj6GYX4W6qGJugCQdkRKEw+Eb6KwDCLxe78jXnR1NOxKBYyug4JGQQz04
+        qMMex8H3H7tAUdS1Zr9lAEFwePiRgLdB7kEQGsDxPOz+rMDLV6/1q+PjL9p7O4TtSCSTRfIOGPYXvHmb
+        NSKTk/me3l7qeF9H0o5oNPZhc6sAt2OxssdzatSuh8CWxLd/Bwcw/f2+abt6O+xJh6PLjrcCHH8Bvrnx
+        GX0fzcUAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ChangeCodeButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ChangeCodeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>426, 29</value>
+  </data>
+  <data name="ChangeCodeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 24</value>
+  </data>
+  <data name="ChangeCodeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ChangeCodeButton.Name" xml:space="preserve">
+    <value>ChangeCodeButton</value>
+  </data>
+  <data name="&gt;&gt;ChangeCodeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChangeCodeButton.Parent" xml:space="preserve">
+    <value>AssessmentItemTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;ChangeCodeButton.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="AssessmentItemTableLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="AssessmentItemTableLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="AssessmentItemTableLayoutPanel.RowCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="AssessmentItemTableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>455, 141</value>
+  </data>
+  <data name="AssessmentItemTableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;AssessmentItemTableLayoutPanel.Name" xml:space="preserve">
+    <value>AssessmentItemTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;AssessmentItemTableLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AssessmentItemTableLayoutPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AssessmentItemTableLayoutPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AssessmentItemTableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="ItemIdLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ItemIdTextBox" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="SwitchItemTemplateButton" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="LayoutTemplateSourceNameLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="TitleLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="TitleTextBox" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="IdentifierLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="CodeTextBox" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LayoutTemplateSourceNameTextBox" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="ChangeCodeButton" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>455, 141</value>
+  </data>
+  <data name="&gt;&gt;AssessmentItemBindingSource.Name" xml:space="preserve">
+    <value>AssessmentItemBindingSource</value>
+  </data>
+  <data name="&gt;&gt;AssessmentItemBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ItemEditor</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.ItemEditorControlBase, Questify.Builder.UI, Version=2.16.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+</root>

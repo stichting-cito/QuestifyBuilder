@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [qb_usr]
+    WITH PASSWORD = N'PASSWORD',  DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

@@ -1,0 +1,64 @@
+﻿<Window x:Class="Questify.Builder.UI.Wpf.Presentation.GenericDialogs.ResourcePropertyDialog.Views.ResourcePropertyDialogWindow" x:Name="ResourcePropertyDialog" x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:CinchV2="clr-namespace:Cinch;assembly=Cinch.WPF"
+        Title="{Binding WindowTitle.DataValue}" 
+		WindowStartupLocation="CenterOwner"
+        MinHeight="650" Height="650" MinWidth="550" Width="600" ResizeMode="NoResize"
+		Icon="../../../Images/QuestifyIcon.ico">
+    <Window.Resources>
+        <ResourceDictionary>
+            
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+            <!-- Keep this (below) uncommented!-->
+            <!-- This is needed to create a view based on the bound workspace data -->
+            <DataTemplate DataType="{x:Type CinchV2:WorkspaceData}">
+                <AdornerDecorator>
+                    <Border HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        CinchV2:NavProps.ViewCreator="{Binding}"/>
+                </AdornerDecorator>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <CinchV2:EventToCommandTrigger Command="{Binding WindowClosing}" />
+        </i:EventTrigger>
+	</i:Interaction.Triggers>
+
+	<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0"  TabStripPlacement="Top" x:Name="TabCtrl" SelectedIndex="{Binding SelectedTab.DataValue,UpdateSourceTrigger=PropertyChanged}" AutomationProperties.AutomationId="MainTabControl">
+            <TabItem Header="{StaticResource ResourcePropertyDialog.Tab.General}" Height="23" VerticalAlignment="Top" AutomationProperties.AutomationId="Tab_General" Visibility="{Binding GeneralTabVisible.DataValue, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <ContentControl Content="{Binding GeneralWorkspace.DataValue}"/>
+            </TabItem>
+            <TabItem Header="{StaticResource ResourcePropertyDialog.Tab.Dependencies}" AutomationProperties.AutomationId="Tab_Dependencies" Visibility="{Binding DependenciesTabVisible.DataValue, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <ContentControl Content="{Binding DependenciesWorkspace.DataValue}"/>
+            </TabItem>
+            <TabItem Header="{StaticResource ResourcePropertyDialog.Tab.References}" AutomationProperties.AutomationId="Tab_References" Visibility="{Binding ReferencesTabVisible.DataValue, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <ContentControl Content="{Binding ReferencesWorkspace.DataValue}"/>
+            </TabItem>
+            <TabItem Header="{StaticResource ResourcePropertyDialog.Tab.Data}" AutomationProperties.AutomationId="Tab_Data" Visibility="{Binding DataTabVisible.DataValue, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <ContentControl Content="{Binding DataWorkspace.DataValue}"/>
+            </TabItem>
+            <TabItem Header="{StaticResource ResourcePropertyDialog.Tab.History}" AutomationProperties.AutomationId="Tab_History" Visibility="{Binding HistoryTabVisible.DataValue, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <ContentControl Content="{Binding HistoryWorkspace.DataValue}"/>
+            </TabItem>
+        </TabControl>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" Margin="5">
+            <Button Content="{StaticResource ResourcePropertyDialog.Command.Ok}" 
+					Command="{Binding Ok}" IsDefault="True" Style="{StaticResource DialogButtonStyle}"/>
+            <Button Content="{StaticResource ResourcePropertyDialog.Command.Cancel}" IsCancel="True" Style="{StaticResource DialogButtonStyle}"
+					Command="{Binding Cancel}" />
+            <Button Content="{StaticResource ResourcePropertyDialog.Command.Apply}" Style="{StaticResource DialogButtonStyle}"
+					Command="{Binding Apply}" />
+        </StackPanel>
+    </Grid>
+</Window>

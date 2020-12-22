@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="AddTestsetToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAJBSURBVDhPnZNdSFNhGMff6dxyExU5Bi7UQi8K+tzoY6G4IGUN7EOEVnctVIquhaLuCpdFozBK
+        sibZRlLbxRoYoV0FEoEoLUf7ig2VsJrpsrZ5zvvvnDMmZ+F20cXDy/Pw/H/v/3k/CACSL2gyUrHyZoeh
+        UE9esSBiV0Nt35/XPfkvAKXYBM4fXp44nv42wlTlg4gO6MLFEvrHVi5tYtNLt0CDSAWvIe7acr4ggJvt
+        7KK/B1ikns0jOfqB/rR6wS6s0VUP2LkzWBnXjhcGTGyTI2x+TxMPQH95gIQTNH4H3LwZXLQVKV97GnMd
+        lxPRc5uzIEKITIxsITnZVtvY34RscLF2cBEDuFALuAC/BkxgY+ake7jFeewIc7RELpML2pxbEMT22WER
+        gnATL2rmz/EwuE8Hwc3sA2b2AF/0cPQ1DqmUMuWGgHt+Rwbw+QAgCD/uBzetBXx7EfU2hFt1iuacMaS2
+        T7y0fL3rH0TP60vro4iw6d2IOTWLlaWkRtyVkOL1MxAanJHHsAcfYihwHwP+2+j33cCVqV5ceNedcTO1
+        HSGbekldTOp5YRkfon0RJnVgGbPA6uuF+dVZKq1jsgE/nlataSqIVgBIr5ToRk1qvbuT0btOMoJoMHJV
+        3FXn6mCM7lNMyl3Wg7c1NO3VYGe9wiRYzwFIE0HoWbyZsS39ZC+KDNxYdbzbWGr890Fl5ugjKnKd1Elt
+        8znD1xVZATtCKpftpGhjgJUo+ebqrY9qT2sdu7rUNtUhPi8nViI+lkLxF6E3fngmMRD8AAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <data name="AddTestsetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 22</value>
+  </data>
+  <data name="AddTestsetToolStripMenuItem.Text" xml:space="preserve">
+    <value>Voeg toetsset toe</value>
+  </data>
+  <data name="AddTestToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAJBSURBVDhPnZNdSFNhGMff6dxyExU5Bi7UQi8K+tzoY6G4IGUN7EOEVnctVIquhaLuCpdFozBK
+        sibZRlLbxRoYoV0FEoEoLUf7ig2VsJrpsrZ5zvvvnDMmZ+F20cXDy/Pw/H/v/3k/CACSL2gyUrHyZoeh
+        UE9esSBiV0Nt35/XPfkvAKXYBM4fXp44nv42wlTlg4gO6MLFEvrHVi5tYtNLt0CDSAWvIe7acr4ggJvt
+        7KK/B1ikns0jOfqB/rR6wS6s0VUP2LkzWBnXjhcGTGyTI2x+TxMPQH95gIQTNH4H3LwZXLQVKV97GnMd
+        lxPRc5uzIEKITIxsITnZVtvY34RscLF2cBEDuFALuAC/BkxgY+ake7jFeewIc7RELpML2pxbEMT22WER
+        gnATL2rmz/EwuE8Hwc3sA2b2AF/0cPQ1DqmUMuWGgHt+Rwbw+QAgCD/uBzetBXx7EfU2hFt1iuacMaS2
+        T7y0fL3rH0TP60vro4iw6d2IOTWLlaWkRtyVkOL1MxAanJHHsAcfYihwHwP+2+j33cCVqV5ceNedcTO1
+        HSGbekldTOp5YRkfon0RJnVgGbPA6uuF+dVZKq1jsgE/nlataSqIVgBIr5ToRk1qvbuT0btOMoJoMHJV
+        3FXn6mCM7lNMyl3Wg7c1NO3VYGe9wiRYzwFIE0HoWbyZsS39ZC+KDNxYdbzbWGr890Fl5ugjKnKd1Elt
+        8znD1xVZATtCKpftpGhjgJUo+ebqrY9qT2sdu7rUNtUhPi8nViI+lkLxF6E3fngmMRD8AAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <data name="AddTestToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 22</value>
+  </data>
+  <data name="AddTestToolStripMenuItem.Text" xml:space="preserve">
+    <value>Voeg toets toe</value>
+  </data>
+  <data name="ContextMenuToolStripSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 6</value>
+  </data>
+  <data name="DeleteTestsetComponentToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAJwSURBVDhPnZNfSFNRHMdv273q1JmNqYhKV10i/XNN3cZABauNfAhFhCKEFBZFQvgQET0EUvTS
+        g9RbUAli9AdEM+hBbaEtrQedKE0zp4gQuqnbzaXlPefb2RXB0TTowof7cM73c37nd87hAHB7QUJ92cGe
+        LPNuc/YMR0Kby/3vl56muf5LQOXgRcijkFw14cDzjMxYEqUCsnBdS9fuOiC3W0Ha86h0Y7+81pcD2R+A
+        7MGvSSdWuw427SqQP1pFunRrnYYfgm50EoSfBan0eBXED7rcAnm+FlJ/yYddBZEBechURVdaQKU20HAv
+        aJDJ/DdB5h0gc3b8/lJNyELtE4QuFe8URTWReOtb6ep90FAHaOAeyGw5iK8SZJr9v1aATNlB5+sw9q5q
+        uKlBdOpT1QeiT2GkSk1nrrrpIlvZd2orOFUG4rWBTFhAxk4Ao8cBnxmeV8YhMZPP+vsYv19oxEwlMG1T
+        oF7W1/FSEI8JGDfi51Dhj2t12svb21AEzfpEfbNOa7hdoMtf7C3rkdw2BAdsWOkrwcYnEwsbQdnKgTdi
+        qEjkSyMZ9qkY+xTBA40Ko1eccJ8/h4Hqs3CdrMDbQgM6eAGRMUwcA0YOY641SUpUcTksmMTQKJJtwewZ
+        O77ZrJg7WoDJNB08yRp8TtBsCTyFwPAhrLSl0lwdZ2bBFAavVKIIBJX4mldbOk/z9dYMvjGPF8ofaeKs
+        L9TxFk+DYMNg+jgdFLHZnQGzQahh4bioHvzrQdEuLoX0aLvRnw1HSbIz9j0wcQKKOB2KOREmLpehZ8Tv
+        nLz+MqHFfYc/EltgZGUZWcjI5TMMjHRGlCBWpX8AMCCRAJEG0ogAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="DeleteTestsetComponentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 22</value>
+  </data>
+  <data name="DeleteTestsetComponentToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verwijder toetspakketcomponent</value>
+  </data>
+  <data name="MoveTestUpMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAHnSURBVDhPY/j//z8DLixVY31SfUmgKD41uDXXWp28/fHuf++ZCX8VF3oJ4zIEqwFSNZbHr76/
+        9n/F3VX/r7y/+t9leuRf9SW+WA3BMEC61vL4+bfn/8+7Nff/7Buz/8+4PuP/2Tdn/ttPCfqrtcxXCN0l
+        KAbIN1ifOfvm1P/Zt6b8n3p94v/J1yb8n3C193/Plfb/h17s/W860fW/yeoglDCBG8CZozFft9v5nUG3
+        6xOxYsPPjedq/7ddqvtff77sv16vw3fVNuvHmp12z3nztD5qL/fihbkEboDmUhcmmCBjvOLhjCMZX2vP
+        5/2vv1DwX6bB7ApMTmupG6PuCm9GDAOQ/QYyoPBk7ue2y8X/O66W/ldosrhMUiyADKg4W/i570b5/wk3
+        K/8rN1uSbkD9hZLP0+5U/Z9xt+a/aos16Qa0XSn/PO9+3f8FDxr+a7TZkG5A7/Wqz8seN/5f8aT5v1a7
+        LekGTL1V+3ndi5b/G160/dfrtCfVAIXDSx61fd79rvv/3ve9/w27HHAbwNDBwAjELEDMDcSiDO0Mcoyp
+        MrPbrhR+W/Ko4f/yJy3/FZsN7jA0MSgC5RXAaiBqmcF6oQaAOFxALALEckCsyZwps5glS3YZCLP3ctgD
+        DdaAyoHUgNSCLGUEAAaBf7MxrrjfAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="MoveTestUpMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 22</value>
+  </data>
+  <data name="MoveTestUpMenuItem.Text" xml:space="preserve">
+    <value>Toets omhoog verplaatsen</value>
+  </data>
+  <data name="MoveTestDownMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAHYSURBVDhPY/j//z8DOuaYbMom12h3R7nV6alym9NLy9XhTdjUgcQwNIMF4xUOnXh9+M+Z1+f+
+        n3x1+r9ojdlVkg3ovdr0Y8KVKf+7L/X/F6s1J92AvmsgAyb+77nc+1+ijgwD+q8DDbja/7/3cvd/qXoL
+        Ul2geGgC0IBJ1/r+d11u/S/dQKIBjPFAA240/Gi7VPu/6mzBf5kGEgMRZED3tcof1edy/9eeL/gv10SG
+        C3qvV/1ovlT0v/VyyX95YgzgytKYJldndkC62mSnbK35vrZLNT/brxT/77xa+t98gsdrqSqTbbI1pruk
+        a0z3OW0K5YGlC3hCctwUImfQ5/jx9Nt9/6fcqvo/8Wbl/74b5f97gXjq7dr/p9/t/+81x/9/5N7EZciJ
+        CiUlem6PkTbqd3oz817N/6l3qoAaIXg6kO01x/d/3IGUmegpEiMpe26LkLKY6P5m0aPG/3Pu1/6f96Du
+        v//8gP8ZR7MxNOPMC3pLTCXNJ7q8Xvu843/wwuD/cftjpuDNCwwdDMxAzA3EIgxtDAoMLQyK3P18fhaT
+        nX75bnE/xtDOqMPQyqDB0A6UA6mBqGUBYkawF1AM6GCQB/K1gQbpMXey2jO2MZkDNRqDxSByKAYAAIEt
+        efL2TuwdAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="MoveTestDownMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 22</value>
+  </data>
+  <data name="MoveTestDownMenuItem.Text" xml:space="preserve">
+    <value>Toets omlaag verplaatsen</value>
+  </data>
+  <data name="MoveTestSetUpMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAHnSURBVDhPY/j//z8DLixVY31SfUmgKD41uDXXWp28/fHuf++ZCX8VF3oJ4zIEqwFSNZbHr76/
+        9n/F3VX/r7y/+t9leuRf9SW+WA3BMEC61vL4+bfn/8+7Nff/7Buz/8+4PuP/2Tdn/ttPCfqrtcxXCN0l
+        KAbIN1ifOfvm1P/Zt6b8n3p94v/J1yb8n3C193/Plfb/h17s/W860fW/yeoglDCBG8CZozFft9v5nUG3
+        6xOxYsPPjedq/7ddqvtff77sv16vw3fVNuvHmp12z3nztD5qL/fihbkEboDmUhcmmCBjvOLhjCMZX2vP
+        5/2vv1DwX6bB7ApMTmupG6PuCm9GDAOQ/QYyoPBk7ue2y8X/O66W/ldosrhMUiyADKg4W/i570b5/wk3
+        K/8rN1uSbkD9hZLP0+5U/Z9xt+a/aos16Qa0XSn/PO9+3f8FDxr+a7TZkG5A7/Wqz8seN/5f8aT5v1a7
+        LekGTL1V+3ndi5b/G160/dfrtCfVAIXDSx61fd79rvv/3ve9/w27HHAbwNDBwAjELEDMDcSiDO0Mcoyp
+        MrPbrhR+W/Ko4f/yJy3/FZsN7jA0MSgC5RXAaiBqmcF6oQaAOFxALALEckCsyZwps5glS3YZCLP3ctgD
+        DdaAyoHUgNSCLGUEAAaBf7MxrrjfAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="MoveTestSetUpMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 22</value>
+  </data>
+  <data name="MoveTestSetUpMenuItem.Text" xml:space="preserve">
+    <value>Toetset omhoog verplaatsen</value>
+  </data>
+  <data name="MoveTestSetDownMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAHYSURBVDhPY/j//z8DOuaYbMom12h3R7nV6alym9NLy9XhTdjUgcQwNIMF4xUOnXh9+M+Z1+f+
+        n3x1+r9ojdlVkg3ovdr0Y8KVKf+7L/X/F6s1J92AvmsgAyb+77nc+1+ijgwD+q8DDbja/7/3cvd/qXoL
+        Ul2geGgC0IBJ1/r+d11u/S/dQKIBjPFAA240/Gi7VPu/6mzBf5kGEgMRZED3tcof1edy/9eeL/gv10SG
+        C3qvV/1ovlT0v/VyyX95YgzgytKYJldndkC62mSnbK35vrZLNT/brxT/77xa+t98gsdrqSqTbbI1pruk
+        a0z3OW0K5YGlC3hCctwUImfQ5/jx9Nt9/6fcqvo/8Wbl/74b5f97gXjq7dr/p9/t/+81x/9/5N7EZciJ
+        CiUlem6PkTbqd3oz817N/6l3qoAaIXg6kO01x/d/3IGUmegpEiMpe26LkLKY6P5m0aPG/3Pu1/6f96Du
+        v//8gP8ZR7MxNOPMC3pLTCXNJ7q8Xvu843/wwuD/cftjpuDNCwwdDMxAzA3EIgxtDAoMLQyK3P18fhaT
+        nX75bnE/xtDOqMPQyqDB0A6UA6mBqGUBYkawF1AM6GCQB/K1gQbpMXey2jO2MZkDNRqDxSByKAYAAIEt
+        efL2TuwdAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="MoveTestSetDownMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 22</value>
+  </data>
+  <data name="MoveTestSetDownMenuItem.Text" xml:space="preserve">
+    <value>Toetsset omlaag verplaatsen</value>
+  </data>
+  <data name="InsertTestBeforeToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAJBSURBVDhPnZNdSFNhGMff6dxyExU5Bi7UQi8K+tzoY6G4IGUN7EOEVnctVIquhaLuCpdFozBK
+        sibZRlLbxRoYoV0FEoEoLUf7ig2VsJrpsrZ5zvvvnDMmZ+F20cXDy/Pw/H/v/3k/CACSL2gyUrHyZoeh
+        UE9esSBiV0Nt35/XPfkvAKXYBM4fXp44nv42wlTlg4gO6MLFEvrHVi5tYtNLt0CDSAWvIe7acr4ggJvt
+        7KK/B1ikns0jOfqB/rR6wS6s0VUP2LkzWBnXjhcGTGyTI2x+TxMPQH95gIQTNH4H3LwZXLQVKV97GnMd
+        lxPRc5uzIEKITIxsITnZVtvY34RscLF2cBEDuFALuAC/BkxgY+ake7jFeewIc7RELpML2pxbEMT22WER
+        gnATL2rmz/EwuE8Hwc3sA2b2AF/0cPQ1DqmUMuWGgHt+Rwbw+QAgCD/uBzetBXx7EfU2hFt1iuacMaS2
+        T7y0fL3rH0TP60vro4iw6d2IOTWLlaWkRtyVkOL1MxAanJHHsAcfYihwHwP+2+j33cCVqV5ceNedcTO1
+        HSGbekldTOp5YRkfon0RJnVgGbPA6uuF+dVZKq1jsgE/nlataSqIVgBIr5ToRk1qvbuT0btOMoJoMHJV
+        3FXn6mCM7lNMyl3Wg7c1NO3VYGe9wiRYzwFIE0HoWbyZsS39ZC+KDNxYdbzbWGr890Fl5ugjKnKd1Elt
+        8znD1xVZATtCKpftpGhjgJUo+ebqrY9qT2sdu7rUNtUhPi8nViI+lkLxF6E3fngmMRD8AAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <data name="InsertTestBeforeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 22</value>
+  </data>
+  <data name="InsertTestBeforeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Toets toevoegen</value>
+  </data>
+  <data name="CopyToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAIiSURBVDhPbZO5j9pAFMZXiCot3aahSpPt08SgcEgp6TjKSCh/wEaKUkRalD5tIq0EiGqXa4FA
+        kYItyEYgsn2ODeZIgbKKzWFjfIz9Mm+8ODhg6cnj8czvfe+bNwcAcLAdjznueTQafRGJRI4xwuEwjdBx
+        KPTkpc/ne/D/etdm/NlsNgl97zyWSeD6+gvx+/2BbYgDSKVSp5lM5nO73bb6/T70ej3odrtwdfUJOp0O
+        6LoOi/kchjxv3j88fLSBOIBWqyVgWsuyk1t0YBg6yJIE4/GIQabTKfyaTOBDo7EKBAKvEOIA6vUGAxBC
+        wDRNB4LfuPH29jdcXrbZ/M3NDxKPx9+7ALV6nQF03bAhGyl0ThRF4AcD+P7tK2B5g8EAAe9cgItajQE0
+        TfsHuVNil2SCLEtQKBRgPBqRRCLhBlSrFwJmXa9VUBlEd5WDEFVVbcB4vAuoVKoCISasFIVC1nshhmFA
+        Pp+H0T4F5UpF0OkCWV7dQTZKbE/sUzEgl8vBcDjcVVAqlwVV02FJj01yIG4lWFY2mwWe53dNLJZKAtY/
+        XyxhuZT2KkEPEPBz3ymcF4vCSlnDjHYbgzAlsssTTIAmTiYTkkwm3X2AAHmlgDhDwIKp2AAUaqpGy0OD
+        0+n0x1gsdkrvxFNXH5ydnQtLSYY/gkgbZ0aVLGDBlMisHIQg1OPxvN17mR4eHT0LBoNvOI47sSNwQvt9
+        K4I4fu31eu9tA/4CcQIueiNQR3EAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="CopyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 22</value>
+  </data>
+  <data name="CopyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kopiëren</value>
+  </data>
+  <data name="PasteToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAJ6SURBVDhPfdL9SxNxHAdw/6ToRyENrAxL0ugBHVqztQRR25yikkqsAiGZaJs6bg+atwxNmUgE
+        2W232crbzdWgNnqSEGfXNm/bucc79+l2MTO+1sGbO47vvXh/vvctA4Cyf0WvN1QaDBOn/rfm4OMK5YR8
+        bIHSDeOe+w9xl2788fMFyuv7LiYcCAQM9yzEcP+Uo3cQIweqO8zNJfQAqNNY+8WXOL8PtgjLPX3lIMG3
+        4YcN/ztwkGvCZpgdZxJ5bZgV1DUqqxIBzqvMHTm+YBcEARiGAQzDpJhMJuke3t4GPpeGzR0Or2w1NqKA
+        2tzGZYQn2WwW8nleSiQSgWg0CoVCQVwP4KXeQmiLM59QGhsQoLrDpGDYnDGTSUOmhPA8FBuVLpqmwf81
+        iZUrJq8iQLliosETjA9mMylIpzMSksvlgZeQfalFEfB9Th7doOLWlIwMxIbSqT3YSx2FCBJAf0pMn2zF
+        ZEiDqjasifBHtam9JHAciuTFJjTthfUgO1vVZm5CgDPt5uaXvp8POC4BiST3F1Lc2OI4NE2B58Ou7XS7
+        9RoC1Nyevv6CYoaTiTjE40Xkd5PUoXFo7zq438fmznbOyBGgtmtGvuLZGUnEd2GXZYE9hJT2pPgbnf7I
+        /DnV7A30JHbPttjd26MsG4NY7DDyZxyKegMEzSzWduE3EeBSr02x5NzSk85VIAgCnA4CSNIBLhcJbrcL
+        Xq+5gaY8sEr9WLmgsaFHuUW72Kl/9q3fYv84arEHxyzLwXHrckgvxiBm0rIcmrLYQ8ZH819GmoeWNEiD
+        Y40jdy73zvXVaXBVfTeuru/Buy722DRiukupF5+v9M0NHJfp7paAX5dGDH5WoUt8AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="PasteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 22</value>
+  </data>
+  <data name="PasteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Plakken</value>
+  </data>
+  <data name="TestPackageContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>253, 230</value>
+  </data>
+  <data name="RefreshSectionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sectie vernieuwen met automat. itemselectie</value>
+  </data>
+  <data name="SaveExcelFileDialog.Filter" xml:space="preserve">
+    <value>Excel bestanden (.xls)|*.xls|Alle bestanden (*.*)|*.*</value>
+  </data>
+  <data name="TestPackageHierarchyGrid_Layout_1.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Caption&gt;Toetspakket&lt;/Caption&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="Title"&gt;&lt;ButtonDisplayMode&gt;CurrentRow&lt;/ButtonDisplayMode&gt;&lt;Caption&gt;Titel&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Title&lt;/DataMember&gt;&lt;DefaultGroupPrefix&gt;Title:&lt;/DefaultGroupPrefix&gt;&lt;Key&gt;Title&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;422&lt;/Width&gt;&lt;/Column0&gt;&lt;/Columns&gt;&lt;ChildTables Collection="true" ElementName="Table"&gt;&lt;Table0 ID="Tests"&gt;&lt;DataMember&gt;TestSets&lt;/DataMember&gt;&lt;Key&gt;Tests&lt;/Key&gt;&lt;Caption&gt;Toetsset&lt;/Caption&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="Title"&gt;&lt;Caption&gt;Titel&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Title&lt;/DataMember&gt;&lt;Key&gt;Title&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;404&lt;/Width&gt;&lt;AutoSizeMode&gt;AllCells&lt;/AutoSizeMode&gt;&lt;/Column0&gt;&lt;/Columns&gt;&lt;ChildTables Collection="true" ElementName="Table"&gt;&lt;Table0 ID="Components"&gt;&lt;DataMember&gt;Components&lt;/DataMember&gt;&lt;Key&gt;Components&lt;/Key&gt;&lt;Caption&gt;Toetsen&lt;/Caption&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="Title"&gt;&lt;Caption&gt;Titel&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Title&lt;/DataMember&gt;&lt;Key&gt;Title&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;386&lt;/Width&gt;&lt;AutoSizeMode&gt;AllCells&lt;/AutoSizeMode&gt;&lt;/Column0&gt;&lt;/Columns&gt;&lt;GroupCondition /&gt;&lt;HierarchicalMode&gt;SelfReferencingChildList&lt;/HierarchicalMode&gt;&lt;RowFormatStyle&gt;&lt;BackColor&gt;186, 157, 129&lt;/BackColor&gt;&lt;ForeColor&gt;Black&lt;/ForeColor&gt;&lt;BackgroundGradientMode&gt;DiagonalBackwards&lt;/BackgroundGradientMode&gt;&lt;/RowFormatStyle&gt;&lt;SelfReferencingSettings ID="SelfReferencingSettings"&gt;&lt;ChildListMember&gt;Components&lt;/ChildListMember&gt;&lt;/SelfReferencingSettings&gt;&lt;/Table0&gt;&lt;/ChildTables&gt;&lt;GroupCondition /&gt;&lt;RowFormatStyle&gt;&lt;BackColor&gt;157, 129, 186&lt;/BackColor&gt;&lt;ForeColor&gt;Black&lt;/ForeColor&gt;&lt;BackgroundGradientMode&gt;DiagonalBackwards&lt;/BackgroundGradientMode&gt;&lt;/RowFormatStyle&gt;&lt;/Table0&gt;&lt;/ChildTables&gt;&lt;GroupCondition /&gt;&lt;RowHeaderWidth&gt;18&lt;/RowHeaderWidth&gt;&lt;RowFormatStyle&gt;&lt;BackColor&gt;57, 104, 80&lt;/BackColor&gt;&lt;BackgroundGradientMode&gt;DiagonalBackwards&lt;/BackgroundGradientMode&gt;&lt;/RowFormatStyle&gt;&lt;/RootTable&gt;&lt;TableHeaderFormatStyle&gt;&lt;FontBold&gt;True&lt;/FontBold&gt;&lt;PredefinedStyle&gt;TableHeaderFormatStyle&lt;/PredefinedStyle&gt;&lt;/TableHeaderFormatStyle&gt;&lt;RowWithErrorsFormatStyle&gt;&lt;ForeColor&gt;Black&lt;/ForeColor&gt;&lt;PredefinedStyle&gt;RowWithErrorsFormatStyle&lt;/PredefinedStyle&gt;&lt;/RowWithErrorsFormatStyle&gt;&lt;LinkFormatStyle&gt;&lt;PredefinedStyle&gt;LinkFormatStyle&lt;/PredefinedStyle&gt;&lt;/LinkFormatStyle&gt;&lt;CardCaptionFormatStyle&gt;&lt;PredefinedStyle&gt;CardCaptionFormatStyle&lt;/PredefinedStyle&gt;&lt;/CardCaptionFormatStyle&gt;&lt;GroupByBoxFormatStyle&gt;&lt;PredefinedStyle&gt;GroupByBoxFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupByBoxFormatStyle&gt;&lt;GroupByBoxInfoFormatStyle&gt;&lt;PredefinedStyle&gt;GroupByBoxInfoFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupByBoxInfoFormatStyle&gt;&lt;GroupRowFormatStyle&gt;&lt;PredefinedStyle&gt;GroupRowFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupRowFormatStyle&gt;&lt;HeaderFormatStyle&gt;&lt;PredefinedStyle&gt;HeaderFormatStyle&lt;/PredefinedStyle&gt;&lt;/HeaderFormatStyle&gt;&lt;PreviewRowFormatStyle&gt;&lt;PredefinedStyle&gt;PreviewRowFormatStyle&lt;/PredefinedStyle&gt;&lt;/PreviewRowFormatStyle&gt;&lt;RowFormatStyle&gt;&lt;PredefinedStyle&gt;RowFormatStyle&lt;/PredefinedStyle&gt;&lt;/RowFormatStyle&gt;&lt;SelectedFormatStyle&gt;&lt;BackColor&gt;Navy&lt;/BackColor&gt;&lt;ForeColor&gt;Black&lt;/ForeColor&gt;&lt;PredefinedStyle&gt;SelectedFormatStyle&lt;/PredefinedStyle&gt;&lt;/SelectedFormatStyle&gt;&lt;SelectedInactiveFormatStyle&gt;&lt;PredefinedStyle&gt;SelectedInactiveFormatStyle&lt;/PredefinedStyle&gt;&lt;/SelectedInactiveFormatStyle&gt;&lt;FocusCellFormatStyle&gt;&lt;BackColor&gt;Navy&lt;/BackColor&gt;&lt;ForeColor&gt;Black&lt;/ForeColor&gt;&lt;PredefinedStyle&gt;FocusCellFormatStyle&lt;/PredefinedStyle&gt;&lt;/FocusCellFormatStyle&gt;&lt;WatermarkImage /&gt;&lt;GridLineStyle&gt;Solid&lt;/GridLineStyle&gt;&lt;Font&gt;Microsoft Sans Serif, 8.25pt&lt;/Font&gt;&lt;VisualStyle&gt;Standard&lt;/VisualStyle&gt;&lt;AllowColumnDrag&gt;False&lt;/AllowColumnDrag&gt;&lt;AllowEdit&gt;False&lt;/AllowEdit&gt;&lt;AutomaticSort&gt;False&lt;/AutomaticSort&gt;&lt;ColumnAutoResize&gt;True&lt;/ColumnAutoResize&gt;&lt;ColumnHeaders&gt;False&lt;/ColumnHeaders&gt;&lt;GroupByBoxVisible&gt;False&lt;/GroupByBoxVisible&gt;&lt;HideSelection&gt;Highlight&lt;/HideSelection&gt;&lt;Hierarchical&gt;True&lt;/Hierarchical&gt;&lt;SelectionMode&gt;MultipleSelection&lt;/SelectionMode&gt;&lt;TabKeyBehavior&gt;ControlNavigation&lt;/TabKeyBehavior&gt;&lt;EnterKeyBehavior&gt;None&lt;/EnterKeyBehavior&gt;&lt;TableHeaders&gt;True&lt;/TableHeaders&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+</root>

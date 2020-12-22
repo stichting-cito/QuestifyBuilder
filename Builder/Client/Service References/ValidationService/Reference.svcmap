@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9ce71b31-561a-4e01-bfb6-de14cfa257c6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="Questify.Builder.Model.ContentModel" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ValidationService56.xsd" MetadataType="Schema" ID="78ecf66d-fa5e-409d-a333-7f3f81105044" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ValidationService11.disco" MetadataType="Disco" ID="13674f10-34f8-4b0a-ab99-81794325c88e" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?disco" />
+    <MetadataFile FileName="ValidationService57.xsd" MetadataType="Schema" ID="3f138d00-e7f6-46a0-860a-5236d42a3bbe" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ValidationService58.xsd" MetadataType="Schema" ID="8d5bc20a-06db-4aa4-88f8-b5d9bf971b42" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ValidationService59.xsd" MetadataType="Schema" ID="38c1a607-bcf3-4f1b-8e9c-c07506983f58" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ValidationService11.wsdl" MetadataType="Wsdl" ID="4d1ec332-6a8e-4549-bf77-6fe068156feb" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?wsdl" />
+    <MetadataFile FileName="ValidationService510.xsd" MetadataType="Schema" ID="641cd3a8-a4ca-43d7-80af-67db6cddf05e" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ValidationService511.xsd" MetadataType="Schema" ID="499adbb7-b5f3-4fbc-8ca9-4533e86a0eff" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ValidationService.xsd" MetadataType="Schema" ID="7006ede4-b99c-4a84-93a4-417d42800e0d" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

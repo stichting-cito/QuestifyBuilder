@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CitoGenericInteractionMc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CitoGenericInteractionMc.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="CitoGenericMcDc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CitoGenericMcDc.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="CitoGenericMcSc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CitoGenericMcSc.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Item1" xml:space="preserve">
+    <value>&lt;assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="Item01" title="Item 01" layoutTemplateSrc="Template"&gt;
+	&lt;parameters&gt;
+		&lt;parameterSet id="parameterSet1"&gt;
+			&lt;booleanparameter name="parameter1"/&gt;
+			&lt;plaintextparameter name="parameter2"&gt;SomeValue&lt;/plaintextparameter&gt;
+		&lt;/parameterSet&gt;
+	&lt;/parameters&gt;
+&lt;/assessmentItem&gt;</value>
+  </data>
+  <data name="Item2" xml:space="preserve">
+    <value>&lt;assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="Item02" title="Item 02" layoutTemplateSrc="Template2"&gt;
+	&lt;parameters&gt;
+		&lt;parameterSet id="parameterSet1"&gt;
+			&lt;booleanparameter name="parameter1"/&gt;
+			&lt;plaintextparameter name="parameter2"&gt;SomeValue&lt;/plaintextparameter&gt;
+			&lt;collectionparameter name="collection"&gt;
+				&lt;subparameterset id="A"&gt;
+					&lt;xhtmlparameter name="choice"&gt;
+						&lt;p&gt;sometext&lt;/p&gt;
+					&lt;/xhtmlparameter&gt;
+				&lt;/subparameterset&gt;
+				&lt;subparameterset id="B"&gt;
+					&lt;xhtmlparameter name="choice"&gt;
+						&lt;p&gt;sometext&lt;/p&gt;
+					&lt;/xhtmlparameter&gt;
+				&lt;/subparameterset&gt;
+				&lt;definition id=""&gt;
+					&lt;xhtmlparameter name="choice"/&gt;
+				&lt;/definition&gt;
+			&lt;/collectionparameter&gt;
+		&lt;/parameterSet&gt;
+	&lt;/parameters&gt;
+&lt;/assessmentItem&gt;</value>
+  </data>
+  <data name="ItemInline1" xml:space="preserve">
+    <value>&lt;assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="Item02" title="Item 02" layoutTemplateSrc="Template2"&gt;
+	&lt;parameters&gt;
+		&lt;parameterSet id="parameterSet1"&gt;
+			&lt;booleanparameter name="parameter1"/&gt;
+			&lt;plaintextparameter name="parameter2"&gt;SomeValue&lt;/plaintextparameter&gt;
+			&lt;collectionparameter name="collection"&gt;
+				&lt;subparameterset id="A"&gt;
+					&lt;xhtmlparameter name="choice"&gt;
+						&lt;p&gt;sometext and a image
+						&lt;cito:InlineElement id="Icb6c236c-43d0-443e-a25e-cff0a6704856" layoutTemplateSourceName="inlinetemplate" xmlns:cito="http://www.cito.nl/citotester"&gt;
+								&lt;cito:parameters&gt;
+									&lt;cito:parameterSet id="entireItem"&gt;
+										&lt;cito:resourceparameter name="source"&gt;someImage.png&lt;/cito:resourceparameter&gt;
+									&lt;/cito:parameterSet&gt;
+								&lt;/cito:parameters&gt;
+							&lt;/cito:InlineElement&gt;
+						&lt;/p&gt;
+					&lt;/xhtmlparameter&gt;
+				&lt;/subparameterset&gt;
+				&lt;subparameterset id="B"&gt;
+					&lt;xhtmlparameter name="choice"&gt;
+						&lt;p&gt;sometext&lt;/p&gt;
+					&lt;/xhtmlparameter&gt;
+				&lt;/subparameterset&gt;
+				&lt;definition id=""&gt;
+					&lt;xhtmlparameter name="choice"/&gt;
+				&lt;/definition&gt;
+			&lt;/collectionparameter&gt;
+		&lt;/parameterSet&gt;
+	&lt;/parameters&gt;
+&lt;/assessmentItem&gt;</value>
+  </data>
+  <data name="ItemWithAspect" xml:space="preserve">
+    <value>&lt;assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="Item02" title="Item 02" layoutTemplateSrc="Template2"&gt;
+	&lt;solution&gt;
+		&lt;keyFindings/&gt;
+		&lt;aspectReferences&gt;
+			&lt;aspectReferenceSet id="gapController"&gt;
+				&lt;aspectReference maxScore="0" src="Inhoud"&gt;
+&amp;lt;p&amp;gt;sometext and a image
+						&amp;lt;cito:InlineElement id=&amp;quot;Icb6c236c-43d0-443e-a25e-cff0a6704856&amp;quot; layoutTemplateSourceName=&amp;quot;inlinetemplate&amp;quot; xmlns:cito=&amp;quot;http://www.cito.nl/citotester&amp;quot;&amp;gt;
+								&amp;lt;cito:parameters&amp;gt;
+									&amp;lt;cito:parameterSet id=&amp;quot;parameterSet1&amp;quot;&amp;gt;
+										&amp;lt;cito:resourceparameter name=&amp;quot;source&amp;quot;&amp;gt;someImage.png&amp;lt;/cito:resourceparameter&amp;gt;
+									&amp;lt;/cito:parameterSet&amp;gt;
+								&amp;lt;/cito:parameters&amp;gt;
+							&amp;lt;/cito:InlineElement&amp;gt;
+						&amp;lt;/p&amp;gt;
+&lt;/aspectReference&gt;
+			&lt;/aspectReferenceSet&gt;
+		&lt;/aspectReferences&gt;
+		&lt;ItemScoreTranslationTable&gt;
+			&lt;ItemScoreTranslationTableEntry rawScore="0" translatedScore="0"/&gt;
+		&lt;/ItemScoreTranslationTable&gt;
+	&lt;/solution&gt;
+	&lt;parameters&gt;
+		&lt;parameterSet id="parameterSet1"&gt;
+			&lt;booleanparameter name="parameter1"/&gt;
+			&lt;plaintextparameter name="parameter2"&gt;SomeValue&lt;/plaintextparameter&gt;
+			&lt;collectionparameter name="collection"&gt;
+				&lt;subparameterset id="A"&gt;
+					&lt;xhtmlparameter name="choice"&gt;
+						&lt;p&gt;sometext&lt;/p&gt;
+					&lt;/xhtmlparameter&gt;
+				&lt;/subparameterset&gt;
+				&lt;subparameterset id="B"&gt;
+					&lt;xhtmlparameter name="choice"&gt;
+						&lt;p&gt;sometext&lt;/p&gt;
+					&lt;/xhtmlparameter&gt;
+				&lt;/subparameterset&gt;
+				&lt;definition id=""&gt;
+					&lt;xhtmlparameter name="choice"/&gt;
+				&lt;/definition&gt;
+			&lt;/collectionparameter&gt;
+		&lt;/parameterSet&gt;
+	&lt;/parameters&gt;
+&lt;/assessmentItem&gt;</value>
+  </data>
+  <data name="ItemWithConceptScoring" xml:space="preserve">
+    <value>&lt;assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="dtt-wi-hv-0001-F1" title="dtt-wi-hv-t13-001" layoutTemplateSrc="Cito.Generic.MC.DC"&gt;
+  &lt;solution&gt;
+    &lt;keyFindings&gt;
+      &lt;keyFinding id="mc" scoringMethod="Dichotomous"&gt;
+        &lt;keyFact id="C-mc" score="1" xmlns="http://Cito.Tester.Server/xml/serialization"&gt;
+          &lt;keyValue domain="mc" occur="1"&gt;
+            &lt;stringValue&gt;
+              &lt;typedValue&gt;C&lt;/typedValue&gt;
+            &lt;/stringValue&gt;
+          &lt;/keyValue&gt;
+        &lt;/keyFact&gt;
+      &lt;/keyFinding&gt;
+    &lt;/keyFindings&gt;
+    &lt;conceptFindings&gt;
+      &lt;conceptFinding id="mc" scoringMethod="None"&gt;
+        &lt;conceptFact id="C-mc" score="1" xmlns="http://Cito.Tester.Server/xml/serialization"&gt;
+          &lt;conceptValue domain="mc" occur="1"&gt;
+            &lt;stringValue&gt;
+              &lt;typedValue&gt;C&lt;/typedValue&gt;
+            &lt;/stringValue&gt;
+          &lt;/conceptValue&gt;
+          &lt;concepts&gt;
+            &lt;concept value="1" code="Part 1" /&gt;
+            &lt;concept value="5" code="Part 2" /&gt;
+            &lt;concept value="9" code="Part 2.1" /&gt;
+          &lt;/concepts&gt;
+        &lt;/conceptFact&gt;
+        &lt;conceptFact id="A[1]-mc" score="1" xmlns="http://Cito.Tester.Server/xml/serialization"&gt;
+          &lt;conceptValue domain="mc" occur="1"&gt;
+            &lt;stringValue&gt;
+              &lt;typedValue&gt;A&lt;/typedValue&gt;
+            &lt;/stringValue&gt;
+          &lt;/conceptValue&gt;
+          &lt;concepts&gt;
+            &lt;concept value="2" code="Part 1" /&gt;
+            &lt;concept value="6" code="Part 2" /&gt;
+            &lt;concept value="10" code="Part 2.1" /&gt;
+          &lt;/concepts&gt;
+        &lt;/conceptFact&gt;
+        &lt;conceptFact id="B[1]-mc" score="1" xmlns="http://Cito.Tester.Server/xml/serialization"&gt;
+          &lt;conceptValue domain="mc" occur="1"&gt;
+            &lt;stringValue&gt;
+              &lt;typedValue&gt;B&lt;/typedValue&gt;
+            &lt;/stringValue&gt;
+          &lt;/conceptValue&gt;
+          &lt;concepts&gt;
+            &lt;concept value="3" code="Part 1" /&gt;
+            &lt;concept value="7" code="Part 2" /&gt;
+            &lt;concept value="11" code="Part 2.1" /&gt;
+          &lt;/concepts&gt;
+        &lt;/conceptFact&gt;
+        &lt;conceptFact id="D[1]-mc" score="1" xmlns="http://Cito.Tester.Server/xml/serialization"&gt;
+          &lt;conceptValue domain="mc" occur="1"&gt;
+            &lt;stringValue&gt;
+              &lt;typedValue&gt;D&lt;/typedValue&gt;
+            &lt;/stringValue&gt;
+          &lt;/conceptValue&gt;
+          &lt;concepts&gt;
+            &lt;concept value="4" code="Part 1" /&gt;
+            &lt;concept value="8" code="Part 2" /&gt;
+            &lt;concept value="12" code="Part 2.1" /&gt;
+          &lt;/concepts&gt;
+        &lt;/conceptFact&gt;
+      &lt;/conceptFinding&gt;
+    &lt;/conceptFindings&gt;
+    &lt;aspectReferences /&gt;
+    &lt;ItemScoreTranslationTable&gt;
+      &lt;ItemScoreTranslationTableEntry rawScore="0" translatedScore="0" /&gt;
+      &lt;ItemScoreTranslationTableEntry rawScore="1" translatedScore="1" /&gt;
+    &lt;/ItemScoreTranslationTable&gt;
+  &lt;/solution&gt;
+  &lt;parameters&gt;
+    &lt;parameterSet id="entireItem"&gt;
+      &lt;booleanparameter name="isScoredItem"&gt;True&lt;/booleanparameter&gt;
+      &lt;booleanparameter name="dualColumnLayout"&gt;True&lt;/booleanparameter&gt;
+      &lt;booleanparameter name="showCalculatorButton"&gt;True&lt;/booleanparameter&gt;
+      &lt;booleanparameter name="displayVerklankingOnTheRight"&gt;True&lt;/booleanparameter&gt;
+      &lt;collectionparameter name="numberOfAudioContentItems"&gt;
+        &lt;definition id=""&gt;
+          &lt;resourceparameter name="audiocontent" /&gt;
+          &lt;xhtmlparameter name="description" /&gt;
+        &lt;/definition&gt;
+      &lt;/collectionparameter&gt;
+      &lt;texttospeechparameter name="verklankingLinks" /&gt;
+      &lt;texttospeechparameter name="verklankingRechts" /&gt;
+      &lt;xhtmlparameter name="leftBody"&gt;
+        &lt;p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml"&gt;Uit een groot nationaal onderzoek bleek onlangs dat 3,2% van alle ambtenaren en 5,2% van alle politici corrupt zijn. Een journalist concludeerde vervolgens dat gemiddeld 4,2% van de ambtenaren&lt;br id="c1-id-12" /&gt;en de politici corrupt is.&lt;/p&gt;
+      &lt;/xhtmlparameter&gt;
+      &lt;xhtmlresourceparameter name="leftSource" /&gt;
+      &lt;resourceparameter name="wordSourceText" /&gt;
+      &lt;integerparameter name="sourceHeight"&gt;200&lt;/integerparameter&gt;
+      &lt;integerparameter name="sourcePositionTop"&gt;0&lt;/integerparameter&gt;
+      &lt;xhtmlparameter name="itemBody"&gt;
+        &lt;p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml"&gt; &lt;/p&gt;
+      &lt;/xhtmlparameter&gt;
+      &lt;xhtmlparameter name="itemQuestion"&gt;
+        &lt;p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml"&gt;
+          &lt;strong id="c1-id-12"&gt;Kies de uitspraak die hierbij het beste past.&lt;/strong&gt;
+        &lt;/p&gt;
+      &lt;/xhtmlparameter&gt;
+      &lt;listedparameter name="expectedAnswers"&gt;1&lt;/listedparameter&gt;
+      &lt;integerparameter name="multiChoiceType"&gt;1&lt;/integerparameter&gt;
+      &lt;booleanparameter name="showGroup"&gt;False&lt;/booleanparameter&gt;
+      &lt;integerparameter name="fixedHeightAlternatives"&gt;0&lt;/integerparameter&gt;
+      &lt;listedparameter name="nrAlternativesPerLine"&gt;1&lt;/listedparameter&gt;
+      &lt;booleanparameter name="horizontallyCenteredAlternatives"&gt;False&lt;/booleanparameter&gt;
+      &lt;booleanparameter name="hideRadiobuttons"&gt;False&lt;/booleanparameter&gt;
+      &lt;xhtmlparameter name="kolomtekst" /&gt;
+      &lt;xhtmlparameter name="kolomtekst2" /&gt;
+      &lt;collectionparameter name="multiChoice"&gt;
+        &lt;definition id=""&gt;
+          &lt;xhtmlparameter name="choice" /&gt;
+          &lt;xhtmlparameter name="choice2" /&gt;
+        &lt;/definition&gt;
+      &lt;/collectionparameter&gt;
+      &lt;multichoicescoringparameter name="multiChoiceScoring" ControllerId="mc" findingOverride="mc" minChoices="1" maxChoices="1" multiChoice="Radio"&gt;
+        &lt;subparameterset id="A"&gt;
+          &lt;xhtmlparameter name="mcOption"&gt;
+            &lt;p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml"&gt;De journalist heeft gelijk.&lt;/p&gt;
+          &lt;/xhtmlparameter&gt;
+          &lt;xhtmlparameter name="mcOption2" /&gt;
+        &lt;/subparameterset&gt;
+        &lt;subparameterset id="B"&gt;
+          &lt;xhtmlparameter name="mcOption"&gt;
+            &lt;p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml"&gt;De journalist heeft ongelijk omdat gemiddeld gesproken 8,4% van alle ambtenaren en alle politici corrupt is.&lt;/p&gt;
+          &lt;/xhtmlparameter&gt;
+          &lt;xhtmlparameter name="mcOption2" /&gt;
+        &lt;/subparameterset&gt;
+        &lt;subparameterset id="C"&gt;
+          &lt;xhtmlparameter name="mcOption"&gt;
+            &lt;p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml"&gt;De journalist kan gelijk hebben maar je moet extra gegevens hebben om dit zeker te weten.&lt;/p&gt;
+          &lt;/xhtmlparameter&gt;
+          &lt;xhtmlparameter name="mcOption2" /&gt;
+        &lt;/subparameterset&gt;
+        &lt;subparameterset id="D"&gt;
+          &lt;xhtmlparameter name="mcOption"&gt;
+            &lt;p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml"&gt;De journalist heeft ongelijk omdat gemiddeld gesproken 2,0% van alle ambtenaren en alle politici corrupt is.&lt;/p&gt;
+          &lt;/xhtmlparameter&gt;
+          &lt;xhtmlparameter name="mcOption2" /&gt;
+        &lt;/subparameterset&gt;
+        &lt;definition id=""&gt;
+          &lt;xhtmlparameter name="mcOption" /&gt;
+          &lt;xhtmlparameter name="mcOption2" /&gt;
+        &lt;/definition&gt;
+      &lt;/multichoicescoringparameter&gt;
+      &lt;xhtmlparameter name="itemGeneral"&gt;
+        &lt;p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml"&gt; &lt;/p&gt;
+      &lt;/xhtmlparameter&gt;
+      &lt;booleanparameter name="boldedMcLettersForWord"&gt;True&lt;/booleanparameter&gt;
+    &lt;/parameterSet&gt;
+    &lt;parameterSet id="kenmerken"&gt;
+      &lt;booleanparameter name="showCalculatorButton"&gt;True&lt;/booleanparameter&gt;
+      &lt;integerparameter name="hightOfScrollText"&gt;200&lt;/integerparameter&gt;
+      &lt;integerparameter name="fixedWidthMatrixColumn"&gt;100&lt;/integerparameter&gt;
+      &lt;booleanparameter name="showChoicesBottomLayout"&gt;False&lt;/booleanparameter&gt;
+      &lt;integerparameter name="fixedHeightAlternatives"&gt;0&lt;/integerparameter&gt;
+      &lt;booleanparameter name="showGroup"&gt;True&lt;/booleanparameter&gt;
+      &lt;plaintextparameter name="calculatorDescription" /&gt;
+      &lt;listedparameter name="calculatorMode"&gt;scientific&lt;/listedparameter&gt;
+      &lt;booleanparameter name="showReset" /&gt;
+      &lt;booleanparameter name="showNotepad" /&gt;
+      &lt;plaintextparameter name="notepadDescription" /&gt;
+      &lt;booleanparameter name="showSymbolPicker"&gt;True&lt;/booleanparameter&gt;
+      &lt;plaintextparameter name="symbolPickerDescription" /&gt;
+      &lt;plaintextparameter name="symbols"&gt;€èéëêïöàá§±%²³°&lt;/plaintextparameter&gt;
+      &lt;booleanparameter name="showRuler" /&gt;
+      &lt;plaintextparameter name="rulerDescription" /&gt;
+      &lt;plaintextparameter name="rulerStartValue" /&gt;
+      &lt;plaintextparameter name="rulerEndValue" /&gt;
+      &lt;plaintextparameter name="rulerStepValue" /&gt;
+      &lt;integerparameter name="rulerStart" /&gt;
+      &lt;integerparameter name="rulerEnd" /&gt;
+      &lt;integerparameter name="rulerStep" /&gt;
+      &lt;integerparameter name="rulerStepSize" /&gt;
+      &lt;listedparameter name="rulerLengthUnit"&gt;centimeter&lt;/listedparameter&gt;
+      &lt;booleanparameter name="showProtractor" /&gt;
+      &lt;plaintextparameter name="protractorPickerDescription" /&gt;
+      &lt;booleanparameter name="protractorEnableRotation" /&gt;
+      &lt;booleanparameter name="showTriangle" /&gt;
+      &lt;plaintextparameter name="trianglePickerDescription" /&gt;
+      &lt;integerparameter name="triangleMinDegrees" /&gt;
+      &lt;integerparameter name="triangleMaxDegrees" /&gt;
+      &lt;booleanparameter name="showSpellCheck"&gt;False&lt;/booleanparameter&gt;
+      &lt;listedparameter name="spellCheckCulture"&gt;nl-NL&lt;/listedparameter&gt;
+      &lt;booleanparameter name="showFormulaList"&gt;False&lt;/booleanparameter&gt;
+      &lt;plaintextparameter name="formulaListDescription" /&gt;
+      &lt;listedparameter name="formulaType"&gt;default&lt;/listedparameter&gt;
+      &lt;booleanparameter name="showTextMarker"&gt;False&lt;/booleanparameter&gt;
+      &lt;plaintextparameter name="textMarkerDescription" /&gt;
+      &lt;listedparameter name="foreignLanguage"&gt;0&lt;/listedparameter&gt;
+      &lt;listedparameter name="specialItemLayout"&gt;0&lt;/listedparameter&gt;
+      &lt;integerparameter name="fixedWidthAlternatives"&gt;100&lt;/integerparameter&gt;
+      &lt;listedparameter name="inputFilter" /&gt;
+    &lt;/parameterSet&gt;
+  &lt;/parameters&gt;
+&lt;/assessmentItem&gt;</value>
+  </data>
+  <data name="ItemWithScoringAttrRefParameter" xml:space="preserve">
+    <value>&lt;assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="Item02" title="Item 02" layoutTemplateSrc="Template2"&gt;
+	&lt;parameters&gt;
+		&lt;parameterSet id="parameterSet1"&gt;
+			&lt;xhtmlparameter name="hottextInputold"&gt;OldValue&lt;/xhtmlparameter&gt;
+			&lt;hotTextScoringParameter name="hotTextScoring" findingOverride="hottextController" ControllerId="hottextController" HotTextText="&amp;lt;p&amp;gt;oldValue&amp;lt;/p&amp;gt;"&gt;
+				&lt;definition id=""&gt;
+					&lt;plainttextparameter name="contentLabel"/&gt;
+				&lt;/definition&gt;
+			&lt;/hotTextScoringParameter&gt;
+		&lt;/parameterSet&gt;
+	&lt;/parameters&gt;
+&lt;/assessmentItem&gt;</value>
+  </data>
+  <data name="item_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\item1.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-16</value>
+  </data>
+  <data name="ParameterSet1" xml:space="preserve">
+    <value>&lt;ArrayOfParameterCollection&gt;
+	&lt;ParameterCollection id="parameterSet1"&gt;
+		&lt;booleanparameter name="parameter1"&gt;&lt;/booleanparameter&gt;
+		&lt;plaintextparameter name="parameter2"&gt;&lt;/plaintextparameter&gt;
+		&lt;booleanparameter name="parameter3"&gt;true&lt;/booleanparameter&gt;
+	&lt;/ParameterCollection&gt;
+&lt;/ArrayOfParameterCollection&gt;</value>
+  </data>
+  <data name="ParameterSet2" xml:space="preserve">
+    <value>&lt;ArrayOfParameterCollection&gt;
+	&lt;ParameterCollection id="parameterSet1"&gt;
+		&lt;booleanparameter name="parameter1"&gt;
+		&lt;/booleanparameter&gt;
+		&lt;plaintextparameter name="parameter2"/&gt;
+		&lt;collectionparameter name="collection"&gt;
+			&lt;subparameterset id="A"&gt;
+				&lt;xhtmlparameter name="choice"/&gt;
+				&lt;xhtmlparameter name="choice2"/&gt;
+			&lt;/subparameterset&gt;
+			&lt;definition id=""&gt;
+				&lt;xhtmlparameter name="choice"/&gt;
+				&lt;xhtmlparameter name="choice2"/&gt;
+			&lt;/definition&gt;
+		&lt;/collectionparameter&gt;
+	&lt;/ParameterCollection&gt;
+&lt;/ArrayOfParameterCollection&gt;</value>
+  </data>
+  <data name="ParameterSetAttributeReference" xml:space="preserve">
+    <value>&lt;ArrayOfParameterCollection&gt;
+	&lt;ParameterCollection id="parameterSet1"&gt;
+		&lt;integerparameter name="referencedParameterold"/&gt;
+		&lt;integerparameter name="referencedParameternew"&gt;2&lt;/integerparameter&gt;
+		&lt;multichoicescoringparameter ControllerId="mc" name="multiChoiceScoring" label="mc" &gt;
+			&lt;subparameterset id="A"&gt;
+				&lt;xhtmlparameter name="choice"/&gt;
+			&lt;/subparameterset&gt;
+			&lt;definition id=""&gt;
+				&lt;xhtmlparameter name="choice"/&gt;
+			&lt;/definition&gt;
+		&lt;/multichoicescoringparameter&gt;
+	&lt;/ParameterCollection&gt;
+&lt;/ArrayOfParameterCollection&gt;</value>
+  </data>
+  <data name="ParameterSetInline1" xml:space="preserve">
+    <value>&lt;ArrayOfParameterCollection&gt;
+	&lt;ParameterCollection id="parameterSet1"&gt;
+		&lt;resourceparameter name="source"&gt;someImage.png&lt;/resourceparameter&gt;
+		&lt;booleanparameter name="border"&gt;false&lt;/booleanparameter&gt;
+	&lt;/ParameterCollection&gt;
+&lt;/ArrayOfParameterCollection&gt;</value>
+  </data>
+  <data name="assessment27624" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\assessment27624.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ParameterSet3" xml:space="preserve">
+    <value>&lt;ArrayOfParameterCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ParameterCollection id="kenmerken"&gt;
+    &lt;booleanparameter name="showCalculatorButton" /&gt;
+    &lt;integerparameter name="hightOfScrollText" /&gt;
+    &lt;integerparameter name="fixedWidthMatrixColumn"&gt;100&lt;/integerparameter&gt;
+    &lt;booleanparameter name="showChoicesBottomLayout" /&gt;
+    &lt;integerparameter name="fixedHeightAlternatives"&gt;0&lt;/integerparameter&gt;
+    &lt;plaintextparameter name="calculatorDescription" /&gt;
+    &lt;listedparameter name="calculatorMode"&gt;basic&lt;/listedparameter&gt;
+    &lt;booleanparameter name="showReset" /&gt;
+    &lt;booleanparameter name="showNotepad" /&gt;
+    &lt;plaintextparameter name="notepadDescription" /&gt;
+    &lt;booleanparameter name="showSymbolPicker" /&gt;
+    &lt;plaintextparameter name="symbolPickerDescription" /&gt;
+    &lt;plaintextparameter name="symbols" /&gt;
+    &lt;booleanparameter name="showRuler" /&gt;
+    &lt;plaintextparameter name="rulerDescription" /&gt;
+    &lt;plaintextparameter name="rulerStartValue" /&gt;
+    &lt;plaintextparameter name="rulerEndValue" /&gt;
+    &lt;plaintextparameter name="rulerStepValue" /&gt;
+    &lt;integerparameter name="rulerStart" /&gt;
+    &lt;integerparameter name="rulerEnd" /&gt;
+    &lt;integerparameter name="rulerStep" /&gt;
+    &lt;integerparameter name="rulerStepSize" /&gt;
+    &lt;listedparameter name="rulerLengthUnit"&gt;centimeter&lt;/listedparameter&gt;
+    &lt;booleanparameter name="showProtractor" /&gt;
+    &lt;plaintextparameter name="protractorPickerDescription" /&gt;
+    &lt;booleanparameter name="protractorEnableRotation"&gt;True&lt;/booleanparameter&gt;
+    &lt;booleanparameter name="showTriangle" /&gt;
+    &lt;plaintextparameter name="trianglePickerDescription" /&gt;
+    &lt;integerparameter name="triangleMinDegrees" /&gt;
+    &lt;integerparameter name="triangleMaxDegrees" /&gt;
+    &lt;booleanparameter name="showSpellCheck"&gt;False&lt;/booleanparameter&gt;
+    &lt;listedparameter name="spellCheckCulture"&gt;nl-NL&lt;/listedparameter&gt;
+    &lt;booleanparameter name="showFormulaList"&gt;False&lt;/booleanparameter&gt;
+    &lt;plaintextparameter name="formulaListDescription" /&gt;
+    &lt;listedparameter name="formulaType"&gt;default&lt;/listedparameter&gt;
+    &lt;booleanparameter name="showTextMarker"&gt;False&lt;/booleanparameter&gt;
+    &lt;plaintextparameter name="textMarkerDescription" /&gt;
+    &lt;listedparameter name="itemLanguage"&gt;nl-NL&lt;/listedparameter&gt;
+  &lt;/ParameterCollection&gt;
+  &lt;ParameterCollection id="entireItem"&gt;
+    &lt;booleanparameter name="dualColumnLayout"&gt;False&lt;/booleanparameter&gt;
+    &lt;xhtmlparameter name="leftBody" /&gt;
+    &lt;xhtmlresourceparameter name="leftSource" /&gt;
+    &lt;integerparameter name="sourcePositionTop"&gt;0&lt;/integerparameter&gt;
+    &lt;xhtmlparameter name="itemBody" /&gt;
+    &lt;xhtmlparameter name="itemQuestion" /&gt;
+    &lt;custominteractionresourceparameter name="cisource" scalable="false" interactioncount="0" /&gt;
+    &lt;integerparameter name="width"&gt;400&lt;/integerparameter&gt;
+    &lt;integerparameter name="height"&gt;400&lt;/integerparameter&gt;
+    &lt;xhtmlparameter name="itemGeneral" /&gt;
+  &lt;/ParameterCollection&gt;
+&lt;/ArrayOfParameterCollection&gt;</value>
+  </data>
+</root>

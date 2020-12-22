@@ -1,0 +1,1621 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="down_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConfirmDeletePackage" xml:space="preserve">
+    <value>Are you sure you want to delete package '{0}'?</value>
+  </data>
+  <data name="XhtmlParameterEditorControl_CantReadMathMLData" xml:space="preserve">
+    <value>Can't read math ML data from GIF resource</value>
+  </data>
+  <data name="EmptyReference" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="AlignLeft_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AlignLeft_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemTemplateControl_MoreTemplateRefs" xml:space="preserve">
+    <value>There are more than one template references found by this item.</value>
+  </data>
+  <data name="ValidateParametersCollectionParameterWillShrink" xml:space="preserve">
+    <value>CollectionParameter "{0}": Collection will shrink from {1} to {2} items. Loss of data starts at the last item.</value>
+  </data>
+  <data name="_109_AllAnnotations_Default_16x16_72" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\109_AllAnnotations_Default_16x16_72.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Underline_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Underline_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="General_TestSetPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>General test set properties</value>
+  </data>
+  <data name="PlayAudio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bPlay.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DesignMode_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DesignMode_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShowPasswordImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShowPassword.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>&amp;Close</value>
+  </data>
+  <data name="Delivery_PackagenameMustBeUnique" xml:space="preserve">
+    <value>There is already a package with name '{0}'</value>
+  </data>
+  <data name="Modify_User" xml:space="preserve">
+    <value>Edit user</value>
+  </data>
+  <data name="Message_CannotExecutePreview" xml:space="preserve">
+    <value>The preview can't be rendered. 
+Cause: {0}</value>
+  </data>
+  <data name="ValidateParametersParameterWillBeDeleted" xml:space="preserve">
+    <value>Parameter "{0}" will be deleted.</value>
+  </data>
+  <data name="ValidateParametersWhenOpeningEditorThisEditorCannotBeOpened" xml:space="preserve">
+    <value>This editor cannot be opened correctly.{0}{0}More detailed information:{0}{1}</value>
+  </data>
+  <data name="RemovePropertyConfirmation" xml:space="preserve">
+    <value>Are you sure you want to remove this value?</value>
+  </data>
+  <data name="AddCustomProperty_SaveChanges" xml:space="preserve">
+    <value>There are unsaved changes. Do you wish to save them?</value>
+  </data>
+  <data name="SearchToolStripButton.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SearchToolStripButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FieldsCannotBeEmpty" xml:space="preserve">
+    <value>At least one field contains invalid input</value>
+  </data>
+  <data name="shape_Rect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shape_Rect.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WithoutNavigationbar" xml:space="preserve">
+    <value>without navigationbar</value>
+  </data>
+  <data name="MediaFiles" xml:space="preserve">
+    <value>Media file(s)</value>
+  </data>
+  <data name="SimpleSearchControl_SearchTermTooShort" xml:space="preserve">
+    <value>The entered search term is too general. Make the search more specific.</value>
+  </data>
+  <data name="SelectAnalyseFiles" xml:space="preserve">
+    <value>Analysis (*.*)|*.*</value>
+  </data>
+  <data name="SelectTreeStructureValues" xml:space="preserve">
+    <value>Select tree structure values for {0}</value>
+  </data>
+  <data name="FilenameNotValid" xml:space="preserve">
+    <value>Please enter a valid package file name.</value>
+  </data>
+  <data name="MediaGridLayoutSimple" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;
+	&lt;RootTable&gt;
+		&lt;Columns Collection="true" ElementName="Column"&gt;
+			&lt;Column0 ID="BankId"&gt;
+				&lt;AllowGroup&gt;False&lt;/AllowGroup&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Bank id&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;BankId&lt;/DataMember&gt;
+				&lt;Key&gt;BankId&lt;/Key&gt;
+				&lt;Position&gt;0&lt;/Position&gt;
+				&lt;ShowInFieldChooser&gt;False&lt;/ShowInFieldChooser&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;61&lt;/Width&gt;
+			&lt;/Column0&gt;
+			&lt;Column1 ID="BankName"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Bank name&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;BankName&lt;/DataMember&gt;
+				&lt;Key&gt;BankName&lt;/Key&gt;
+				&lt;Position&gt;1&lt;/Position&gt;
+				&lt;Width&gt;78&lt;/Width&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column1&gt;
+			&lt;Column2 ID="Name"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Code&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Name&lt;/DataMember&gt;
+				&lt;Key&gt;Name&lt;/Key&gt;
+				&lt;Position&gt;2&lt;/Position&gt;
+				&lt;Width&gt;94&lt;/Width&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column2&gt;
+			&lt;Column3 ID="Title"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Title&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Title&lt;/DataMember&gt;
+				&lt;Key&gt;Title&lt;/Key&gt;
+				&lt;Position&gt;3&lt;/Position&gt;
+				&lt;Width&gt;156&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column3&gt;
+			&lt;Column4 ID="MediaType"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Media type&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;MediaType&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;MediaType&lt;/Key&gt;
+				&lt;Position&gt;4&lt;/Position&gt;
+				&lt;Width&gt;52&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column4&gt;
+			&lt;Column5 ID="Size"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Size&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Size&lt;/DataMember&gt;
+				&lt;FormatString&gt;{0} KB&lt;/FormatString&gt;
+				&lt;Key&gt;Size&lt;/Key&gt;
+				&lt;Position&gt;5&lt;/Position&gt;
+				&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;
+				&lt;Width&gt;66&lt;/Width&gt;
+				&lt;FormatMode&gt;UseStringFormat&lt;/FormatMode&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column5&gt;
+			&lt;Column6 ID="Dimensions"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Dimensions&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Dimensions&lt;/DataMember&gt;
+				&lt;Key&gt;Dimensions&lt;/Key&gt;
+				&lt;Position&gt;6&lt;/Position&gt;
+				&lt;Width&gt;66&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column6&gt;
+			&lt;Column7 ID="ReferenceCount"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Reference count&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;ReferenceCount&lt;/DataMember&gt;
+				&lt;Key&gt;ReferenceCount&lt;/Key&gt;
+				&lt;Position&gt;7&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;
+				&lt;Width&gt;86&lt;/Width&gt;
+			&lt;/Column7&gt;
+			&lt;Column8 ID="Version"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Version&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Version&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;Version&lt;/Key&gt;
+				&lt;Position&gt;8&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;40&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column8&gt;
+			&lt;Column9 ID="CreatedByFullName"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Created by&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;CreatedByFullName&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;CreatedByFullName&lt;/Key&gt;
+				&lt;Position&gt;9&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;92&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column9&gt;
+			&lt;Column10 ID="CreationDate"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Created on&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;DateTime&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;CreationDate&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;FormatString&gt;g&lt;/FormatString&gt;
+				&lt;Key&gt;CreationDate&lt;/Key&gt;
+				&lt;Position&gt;10&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;121&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column10&gt;
+			&lt;Column11 ID="ModifiedDate"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Date modified&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;DateTime&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;ModifiedDate&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;FormatString&gt;g&lt;/FormatString&gt;
+				&lt;Key&gt;ModifiedDate&lt;/Key&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Position&gt;11&lt;/Position&gt;
+				&lt;Width&gt;58&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column11&gt;
+			&lt;Column12 ID="ModifiedByFullName"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Modified by&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;ModifiedByFullName&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;ModifiedByFullName&lt;/Key&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Position&gt;12&lt;/Position&gt;
+				&lt;Width&gt;67&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column12&gt;
+			&lt;Column13 ID="Description"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Description&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Description&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;Description&lt;/Key&gt;
+				&lt;Position&gt;13&lt;/Position&gt;
+				&lt;Visible&gt;True&lt;/Visible&gt;
+			&lt;/Column13&gt;
+		&lt;/Columns&gt;
+		&lt;SortKeys Collection="true" ElementName="SortKey"&gt;
+			&lt;SortKey0 ID="SortKey0"&gt;
+				&lt;ColIndex&gt;2&lt;/ColIndex&gt;
+				&lt;SortOrder&gt;Ascending&lt;/SortOrder&gt;
+			&lt;/SortKey0&gt;
+		&lt;/SortKeys&gt;
+		&lt;GroupCondition/&gt;
+		&lt;Groups Collection="true" ElementName="Group"&gt;
+			&lt;Group0 ID="Group0"&gt;
+				&lt;ColumnCount&gt;2&lt;/ColumnCount&gt;
+				&lt;ColIndex1&gt;1&lt;/ColIndex1&gt;
+				&lt;CustomGroupIndex&gt;0&lt;/CustomGroupIndex&gt;
+				&lt;SortOrder&gt;Descending&lt;/SortOrder&gt;
+			&lt;/Group0&gt;
+		&lt;/Groups&gt;
+		&lt;CustomGroups Collection="true" ElementName="CustomGroup"&gt;
+			&lt;CustomGroup0 ID="CustomGroup0"&gt;
+				&lt;CompositeColumnsLength&gt;2&lt;/CompositeColumnsLength&gt;
+				&lt;CompositeColumn0&gt;0&lt;/CompositeColumn0&gt;
+				&lt;CompositeColumn1&gt;1&lt;/CompositeColumn1&gt;
+				&lt;CustomGroupType&gt;CompositeColumns&lt;/CustomGroupType&gt;
+				&lt;Key&gt;BankIdBankName&lt;/Key&gt;
+				&lt;HeaderCaption&gt;Bank name&lt;/HeaderCaption&gt;
+			&lt;/CustomGroup0&gt;
+		&lt;/CustomGroups&gt;
+	&lt;/RootTable&gt;
+&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <data name="ResolutionTypeKeepAspectRatioWithSmallDeformation" xml:space="preserve">
+    <value>Apply dimensions to item and screen (minor deviation, maintain aspect ratio with minor deviation)</value>
+  </data>
+  <data name="ValidateParametersWhenOpeningItemThisItemCannotBeOpenedPossibleLossOfData" xml:space="preserve">
+    <value>Possible loss of data. During the last time this item has been opened the item template has been changed.{0}Continue?{0}{0}More detailed information:{0}{1}</value>
+  </data>
+  <data name="TestPlayer_TestReferencePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>CBT - Questify Player - Test reference properties</value>
+  </data>
+  <data name="ToolsOptions_SelectPreviewer_RestoreDefaultButton_ToolTip" xml:space="preserve">
+    <value>Restore default</value>
+  </data>
+  <data name="ConceptType_PartPartAttribute" xml:space="preserve">
+    <value>Partpartattribute</value>
+  </data>
+  <data name="SimpleSearchControl_ResultsTextLabel" xml:space="preserve">
+    <value>Results for '{0}':</value>
+  </data>
+  <data name="NoRecordSelectedToEdit" xml:space="preserve">
+    <value>No row is selected.</value>
+  </data>
+  <data name="DynamicDimension" xml:space="preserve">
+    <value>Dynamic</value>
+  </data>
+  <data name="ImageFilter" xml:space="preserve">
+    <value>Image files (*.bmp; *.gif; *.jpg; *.png)|*.bmp;*.gif;*.jpg;*.png</value>
+  </data>
+  <data name="Delivery_SaveBeforeDownload" xml:space="preserve">
+    <value>The resource cannot be downloaded because it is not in the bank. Save the delivery and try again.</value>
+  </data>
+  <data name="ItemCannotBeAddedState" xml:space="preserve">
+    <value>Item has a state that prohibits adding to the test</value>
+  </data>
+  <data name="TheScoreCouldNotBeConvertedTheScoreWillSetToTheDefaultValue0" xml:space="preserve">
+    <value>The score could not be converted. The score will set to the default value "0"</value>
+  </data>
+  <data name="TemplateFieldClass_UnknownTemplateStructure" xml:space="preserve">
+    <value>A field in the template does have an unknown structure!</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Item(s)</value>
+  </data>
+  <data name="IncreaseIndent_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IncreaseIndent_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Not_Allowed" xml:space="preserve">
+    <value>Not allowed</value>
+  </data>
+  <data name="DeleteTreeWhenConnectedToOneOrMoreItems" xml:space="preserve">
+    <value>This tree structure value is connected to (among others) the following item(s): {0}
+{1}
+By removing this tree structure value, the value can no longer be applied in these resource(s) or any future resources.
+Are you sure you want to proceed?</value>
+  </data>
+  <data name="ClearHistoricalAssessmentWarning" xml:space="preserve">
+    <value>Existing historical assessment data for '{0}' will be cleared. Are you sure you want to proceed?</value>
+  </data>
+  <data name="CannotCopyPasteInlineControls" xml:space="preserve">
+    <value>Cannot paste inline control. It can only be pasted into the field it is copied from.</value>
+  </data>
+  <data name="VideoWebmFilter" xml:space="preserve">
+    <value>Video files (*.webm)|*.webm</value>
+  </data>
+  <data name="PathOrFilenameNotValid" xml:space="preserve">
+    <value>Please enter a valid directory and/or package file name.</value>
+  </data>
+  <data name="Network-Download-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Network-Download-icon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FetchingTextToSpeechSourceMessage" xml:space="preserve">
+    <value>Retrieving text-to-speech xml from item...</value>
+  </data>
+  <data name="preliminaryimplementation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\preliminaryimplementation.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OnlyImagesSupportCopyPaste" xml:space="preserve">
+    <value>Copy-paste of audio or video is not supported</value>
+  </data>
+  <data name="AddTreeValueWindowTitle" xml:space="preserve">
+    <value>Add tree structure value</value>
+  </data>
+  <data name="StateProhibts" xml:space="preserve">
+    <value>{0} have a state that prohibits adding to the test</value>
+  </data>
+  <data name="Q32_32trans" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Q32-32trans.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PauseAudio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bPause.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectValueFor0" xml:space="preserve">
+    <value>Select value for '{0}'</value>
+  </data>
+  <data name="ErrorParsingDesignerSettingsForParameterSetting" xml:space="preserve">
+    <value>Error parsing designer settings for parameter '{0}'. Setting: {1}</value>
+  </data>
+  <data name="ChoicesParameterEditorControl_NrOfAlternativesComboBox_SelectedIndexChanged_ValuesLostWarning" xml:space="preserve">
+    <value>Making the number of alternatives lower can result that option values can be lost. Continue?</value>
+  </data>
+  <data name="logo_browser_ie8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo-browser-ie8.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MathML_LayoutError" xml:space="preserve">
+    <value>Error with math ML/formula layout.</value>
+  </data>
+  <data name="CustomPropertiesNewFree" xml:space="preserve">
+    <value>New free value</value>
+  </data>
+  <data name="Qti_AssessmentTestPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Qti - Test properties</value>
+  </data>
+  <data name="TreeStructureViewer_UnusedStructures" xml:space="preserve">
+    <value>The following values are defined but not used: {0}.</value>
+  </data>
+  <data name="TestPartValidationRulesRemoved_Message" xml:space="preserve">
+    <value>{0} validationrules have been removed, because no category is set or the category (property) used is no longer available in the bank.</value>
+  </data>
+  <data name="XhtmlEditor_NotAddedImagesAfterPaste" xml:space="preserve">
+    <value>The following images are not pasted because they don't exist in the bank hierarchy: {0}{0}{1}</value>
+  </data>
+  <data name="PlaceHolderSpacer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\placeholderspacer.gif;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ConceptType_Bottleneck" xml:space="preserve">
+    <value>Bottleneck</value>
+  </data>
+  <data name="linked_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\linked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_AddOplmFile" xml:space="preserve">
+    <value>Add OPLM file</value>
+  </data>
+  <data name="StatusBar_GettingData" xml:space="preserve">
+    <value>Getting data ({0} tasks executing).....</value>
+  </data>
+  <data name="TestsCreatedByMe" xml:space="preserve">
+    <value>Tests created by me</value>
+  </data>
+  <data name="TestTemplates" xml:space="preserve">
+    <value>Test templates</value>
+  </data>
+  <data name="BankNameMaxLenghtExceeded" xml:space="preserve">
+    <value>Maximum length of 'Bankname' is {0}</value>
+  </data>
+  <data name="Numbering_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Numbering_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AllFilesFilter" xml:space="preserve">
+    <value>All files (*.*)|*.*</value>
+  </data>
+  <data name="seperator" xml:space="preserve">
+    <value>;</value>
+  </data>
+  <data name="NotAllowedToChangeResourceWithState" xml:space="preserve">
+    <value>You are not allowed to change resource with name '{0}' because it has '{1}'-status.</value>
+  </data>
+  <data name="InvalidTreeStructure" xml:space="preserve">
+    <value>Not all tree structures are valid. A sub element can only occur once per tree value.</value>
+  </data>
+  <data name="RemoveUnavailableCutOffScoreConditionsFromAssessmentTestModel" xml:space="preserve">
+    <value>The following values are used in the AssessmentTest but not available in Custom Properties: '{0}'
+Most likely these cutoff scores were removed.</value>
+  </data>
+  <data name="SvgFilter" xml:space="preserve">
+    <value>SVG files (*.svg)|*.svg</value>
+  </data>
+  <data name="XhtmlEditor_TextSplitAlgo_ErrMarkup" xml:space="preserve">
+    <value>This selection contains markup that can not be handled.</value>
+  </data>
+  <data name="text-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\text-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FetchingAudioFileMessage" xml:space="preserve">
+    <value>Retrieving audio file...</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_AddPackage" xml:space="preserve">
+    <value>Add Package</value>
+  </data>
+  <data name="customInteraction_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customInteraction_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemLayoutTemplateSimple" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;GridEXLayoutData&gt;
+	&lt;RootTable&gt;
+		&lt;Columns Collection="true" ElementName="Column"&gt;
+			&lt;Column0 ID="BankId"&gt;
+				&lt;AllowGroup&gt;False&lt;/AllowGroup&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Bank id&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;BankId&lt;/DataMember&gt;
+				&lt;Key&gt;BankId&lt;/Key&gt;
+				&lt;Position&gt;0&lt;/Position&gt;
+				&lt;ShowInFieldChooser&gt;False&lt;/ShowInFieldChooser&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;61&lt;/Width&gt;
+			&lt;/Column0&gt;
+			&lt;Column1 ID="BankName"&gt;
+				&lt;Caption&gt;Bank name&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;BankName&lt;/DataMember&gt;
+				&lt;Key&gt;BankName&lt;/Key&gt;
+				&lt;Position&gt;1&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;86&lt;/Width&gt;
+			&lt;/Column1&gt;
+			&lt;Column2 ID="Name"&gt;
+				&lt;Caption&gt;Code&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Name&lt;/DataMember&gt;
+				&lt;Key&gt;Name&lt;/Key&gt;
+				&lt;Position&gt;2&lt;/Position&gt;
+				&lt;Width&gt;175&lt;/Width&gt;
+			&lt;/Column2&gt;
+			&lt;Column3 ID="Title"&gt;
+				&lt;Caption&gt;Title&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Title&lt;/DataMember&gt;
+				&lt;Key&gt;Title&lt;/Key&gt;
+				&lt;Position&gt;3&lt;/Position&gt;
+				&lt;Width&gt;224&lt;/Width&gt;
+			&lt;/Column3&gt;
+			&lt;Column4 ID="ItemType"&gt;
+				&lt;Caption&gt;Item type&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;ItemTypeString&lt;/DataMember&gt;
+				&lt;Key&gt;ItemTypeString&lt;/Key&gt;
+				&lt;Position&gt;4&lt;/Position&gt;
+				&lt;Width&gt;78&lt;/Width&gt;
+			&lt;/Column4&gt;
+			&lt;Column5 ID="ItemReferenceCount"&gt;
+				&lt;Caption&gt;Reference count&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;ReferenceCount&lt;/DataMember&gt;
+				&lt;Key&gt;ItemReferenceCount&lt;/Key&gt;
+				&lt;Position&gt;5&lt;/Position&gt;
+				&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;
+				&lt;Width&gt;80&lt;/Width&gt;
+			&lt;/Column5&gt;
+			&lt;Column6 ID="Version"&gt;
+				&lt;Caption&gt;Version&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Version&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;Version&lt;/Key&gt;
+				&lt;Position&gt;6&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;186&lt;/Width&gt;
+			&lt;/Column6&gt;
+			&lt;Column7 ID="CreatedByFullName"&gt;
+				&lt;Caption&gt;Created by&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;CreatedByFullName&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;CreatedByFullName&lt;/Key&gt;
+				&lt;Position&gt;7&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;89&lt;/Width&gt;
+			&lt;/Column7&gt;
+			&lt;Column8 ID="CreationDate"&gt;
+				&lt;Caption&gt;Created on&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;DateTime&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;CreationDate&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;FormatString&gt;g&lt;/FormatString&gt;
+				&lt;Key&gt;CreationDate&lt;/Key&gt;
+				&lt;Position&gt;8&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;102&lt;/Width&gt;
+			&lt;/Column8&gt;
+			&lt;Column9 ID="ModifiedDate"&gt;
+				&lt;Caption&gt;Date modified&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;DateTime&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;ModifiedDate&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;FormatString&gt;g&lt;/FormatString&gt;
+				&lt;Key&gt;ModifiedDate&lt;/Key&gt;
+				&lt;Position&gt;9&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;63&lt;/Width&gt;
+			&lt;/Column9&gt;
+			&lt;Column10 ID="ModifiedByFullName"&gt;
+				&lt;Caption&gt;Modified by&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;ModifiedByFullName&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;ModifiedByFullName&lt;/Key&gt;
+				&lt;Position&gt;10&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;63&lt;/Width&gt;
+			&lt;/Column10&gt;
+			&lt;Column11 ID="Description"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Description&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Description&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;Description&lt;/Key&gt;
+				&lt;Position&gt;11&lt;/Position&gt;
+				&lt;Visible&gt;True&lt;/Visible&gt;
+			&lt;/Column11&gt;
+		&lt;/Columns&gt;
+				&lt;SortKeys Collection="true" ElementName="SortKey"&gt;
+			&lt;SortKey0 ID="SortKey0"&gt;
+				&lt;ColIndex&gt;2&lt;/ColIndex&gt;
+				&lt;SortOrder&gt;Ascending&lt;/SortOrder&gt;
+			&lt;/SortKey0&gt;
+		&lt;/SortKeys&gt;
+		&lt;GroupCondition/&gt;
+		&lt;Groups Collection="true" ElementName="Group"&gt;
+			&lt;Group0 ID="Group0"&gt;
+				&lt;ColumnCount&gt;2&lt;/ColumnCount&gt;
+				&lt;ColIndex1&gt;1&lt;/ColIndex1&gt;
+				&lt;CustomGroupIndex&gt;0&lt;/CustomGroupIndex&gt;
+				&lt;SortOrder&gt;Descending&lt;/SortOrder&gt;
+			&lt;/Group0&gt;
+		&lt;/Groups&gt;
+		&lt;CustomGroups Collection="true" ElementName="CustomGroup"&gt;
+			&lt;CustomGroup0 ID="CustomGroup0"&gt;
+				&lt;CompositeColumnsLength&gt;2&lt;/CompositeColumnsLength&gt;
+				&lt;CompositeColumn0&gt;0&lt;/CompositeColumn0&gt;
+				&lt;CompositeColumn1&gt;1&lt;/CompositeColumn1&gt;
+				&lt;CustomGroupType&gt;CompositeColumns&lt;/CustomGroupType&gt;
+				&lt;Key&gt;BankIdBankName&lt;/Key&gt;
+				&lt;HeaderCaption&gt;Bank name&lt;/HeaderCaption&gt;
+			&lt;/CustomGroup0&gt;
+		&lt;/CustomGroups&gt;
+	&lt;/RootTable&gt;
+&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <data name="ScoreEditorCaption" xml:space="preserve">
+    <value>Score editor for [{0}]</value>
+  </data>
+  <data name="AspectReferencesEditorControlBase_MulitpleNotAddedAspectsBecauseOfStatus" xml:space="preserve">
+    <value>One or multiple aspects could not be added because of its status.</value>
+  </data>
+  <data name="Network-Download-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Network-Download-icon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InlineGap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineGap.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="APopupWindowCanOnlyBeLinkedToASelectedImage" xml:space="preserve">
+    <value>A popup window can only be linked to a selected image.</value>
+  </data>
+  <data name="Allow" xml:space="preserve">
+    <value>Allow</value>
+  </data>
+  <data name="VideoMpegFilter" xml:space="preserve">
+    <value>Video files (*.m1v,*.m2v,*.mod,*.mp2,*.mp2v,*.mpa,*.mpe,*.mpeg,*.mpg,*.mpv2,*.vbk)|*.m1v;*.m2v;*.mod;*.mp2;*.mp2v;*.mpa;*.mpe;*.mpeg;*.mpg;*.mpv2;*.vbk</value>
+  </data>
+  <data name="BankBrowser_BankTreeControl_DragDrop_IsParentBank" xml:space="preserve">
+    <value>Move operation cannot be completed: the dragged bank is a parent of the bank where it's dropped.</value>
+  </data>
+  <data name="reload_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reload_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GridBase_DeleteNoEntitySelected_Title" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="nowyoudontseeme_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nowyoudontseeme_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClearFormats_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClearFormats_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InlineHTSC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineHotText.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RefreshDataSourcesDialog_InstructionsLabelMultipleRefreshMode" xml:space="preserve">
+    <value>You are about to generate proposals based on the selected template.{0}This template contains sections that are filled by data sources, that {0}could have additional settings. The settings are shown below.</value>
+  </data>
+  <data name="SourceMode_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SourceMode_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="General_TestSectionPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>General test section properties</value>
+  </data>
+  <data name="ErrorGeneratingIdentifierForItemInCollectionparameterGeneratingType" xml:space="preserve">
+    <value>Error generating identifier for item in collectionparameter. Generating type: {0}.</value>
+  </data>
+  <data name="BankBrowser_BankTreeControl_DragDrop_CannotBeDroppedHere" xml:space="preserve">
+    <value>This item cannot be dropped here!</value>
+  </data>
+  <data name="ConceptType_Domain" xml:space="preserve">
+    <value>Domain</value>
+  </data>
+  <data name="DependencyType_Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="RequestConfirmation" xml:space="preserve">
+    <value>Request confirmation</value>
+  </data>
+  <data name="StopAudio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bStop.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TemplateFieldClass_OnlyNumericValuesAllowed" xml:space="preserve">
+    <value>Only numeric values are allowed.</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_DeletePackage" xml:space="preserve">
+    <value>Delete package</value>
+  </data>
+  <data name="Superscript_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Superscript_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Off" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="AddListValueWindowTitle" xml:space="preserve">
+    <value>Add list value</value>
+  </data>
+  <data name="Undo_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Undo_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NonReferencedItems" xml:space="preserve">
+    <value>non referenced items</value>
+  </data>
+  <data name="LinkPopupWndow_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LinkPopupWndow_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectMediaResourceDialog_ShowThePreview_HidePreviewButtonCaption" xml:space="preserve">
+    <value>Hide preview</value>
+  </data>
+  <data name="FolderOpen_16x16_72" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FolderOpen_16x16_72.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MathML_Syntax_Error" xml:space="preserve">
+    <value>Syntax error in formula.</value>
+  </data>
+  <data name="ClearFormatting_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClearFormatting_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AllowOldModel" xml:space="preserve">
+    <value>Allow temp in 1.x, allow 2.x</value>
+  </data>
+  <data name="Subscript_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Subscript_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectPreviewer_Filter" xml:space="preserve">
+    <value>executables (*.exe)|*.exe|All files (*.*)|*.*</value>
+  </data>
+  <data name="TTS_ItemNotSaved" xml:space="preserve">
+    <value>The item should be save first before text to speech can be generated.</value>
+  </data>
+  <data name="AudioOggFilter" xml:space="preserve">
+    <value>Audio files (*.opus; *.ogg)|*.opus;*.ogg</value>
+  </data>
+  <data name="sAlignmentCenter" xml:space="preserve">
+    <value>center</value>
+  </data>
+  <data name="PleaseSelectAtLeastOneColumn" xml:space="preserve">
+    <value>Please select at least one column.</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_EditTiaColumnMapping" xml:space="preserve">
+    <value>Edit TIA column mapping</value>
+  </data>
+  <data name="Create_User" xml:space="preserve">
+    <value>Create new user</value>
+  </data>
+  <data name="AlignCenter_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AlignCenter_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GgbFilter" xml:space="preserve">
+    <value>Geogebra files (*.ggb)|*.ggb</value>
+  </data>
+  <data name="TestPlayer_AssessmentTestPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>CBT - Questify Player - Test properties</value>
+  </data>
+  <data name="ItemPreview_RenderError_MessageBoxTitle" xml:space="preserve">
+    <value>Render Error</value>
+  </data>
+  <data name="Word_TestPackagePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>PBT - MS Word - Test package properties</value>
+  </data>
+  <data name="customInteraction_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customInteraction_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TestPlayer_TestSectionPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>CBT - Questify Player - Test section properties</value>
+  </data>
+  <data name="TestEditor_v2_EditNotAllowed" xml:space="preserve">
+    <value>Modification of test '{0}' is with status '{1}' not possible.</value>
+  </data>
+  <data name="XhtmlEditor_NotAddedImagesAfterPasteDialogTitle" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="Delivery_AnalysisnameMustBeUnique" xml:space="preserve">
+    <value>There is already an analysis with name '{0}'</value>
+  </data>
+  <data name="TestPartValidationCustomBankPropertyValueConflict" xml:space="preserve">
+    <value>Conflict in custom property '{0}'. One or more values might be unavailable.</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>PDF files (*.pdf)|*.pdf</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_DownloadTiaFile" xml:space="preserve">
+    <value>Download TIA File</value>
+  </data>
+  <data name="Word_TestSectionPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>PBT - MS Word - Test section properties</value>
+  </data>
+  <data name="SelectMultipleValuesFor0" xml:space="preserve">
+    <value>Select multiple values for '{0}'</value>
+  </data>
+  <data name="NewGenericResourceDialogTitle" xml:space="preserve">
+    <value>Browse for resource</value>
+  </data>
+  <data name="GenericResourceEditorControl_DataBind_NotImplementedResourceMediatype" xml:space="preserve">
+    <value>Not implemented resource media type.</value>
+  </data>
+  <data name="MandatoryParameterMessage" xml:space="preserve">
+    <value>A required field is not filled.</value>
+  </data>
+  <data name="GridBase_DeleteNoEntitySelected_Text" xml:space="preserve">
+    <value>Cannot delete because no rows are selected.</value>
+  </data>
+  <data name="PathNotValid" xml:space="preserve">
+    <value>Please enter a valid directory.</value>
+  </data>
+  <data name="AddConceptValueWindowTitle" xml:space="preserve">
+    <value>Add concept structure value</value>
+  </data>
+  <data name="AttentionTheScoringRulesHaveChanged" xml:space="preserve">
+    <value>Attention! The scoring rules have changed.</value>
+  </data>
+  <data name="ttsDeleteResource" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ttsDeleteResource.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemsCannotBeAdded" xml:space="preserve">
+    <value>Items are not added to the test.</value>
+  </data>
+  <data name="InvisibleParameterHasAChangedValue" xml:space="preserve">
+    <value>Invisible parameter "{0}" has a changed value.</value>
+  </data>
+  <data name="sPixels" xml:space="preserve">
+    <value>pixel</value>
+  </data>
+  <data name="Copy_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Copy_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WouldYouLikeToOpenTheFileInExcelNow" xml:space="preserve">
+    <value>Would you like to open the file?</value>
+  </data>
+  <data name="TargetSupport" xml:space="preserve">
+    <value>{0} do not support all targets the test does support</value>
+  </data>
+  <data name="ConceptType_Attribute" xml:space="preserve">
+    <value>Attribute</value>
+  </data>
+  <data name="NotUsed" xml:space="preserve">
+    <value>Not used</value>
+  </data>
+  <data name="ConfirmDeleteAnalysisFile" xml:space="preserve">
+    <value>Are you sure you want to delete file '{0}'?</value>
+  </data>
+  <data name="NoTestsInPlannableUnit" xml:space="preserve">
+    <value>A test set has to contain tests to be marked as a plannable unit.</value>
+  </data>
+  <data name="BankBrowser_BankTreeControl_DragDrop_SameBank" xml:space="preserve">
+    <value>Move operation cannot be completed: the dragged bank is the same as where it is dropped</value>
+  </data>
+  <data name="sAlignmentMiddle" xml:space="preserve">
+    <value>middle</value>
+  </data>
+  <data name="MoreRetriesThanChainLength" xml:space="preserve">
+    <value>Retries of tests will be cleared where there are more than {0}. Are you sure you want to proceed?</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>&amp;Cancel</value>
+  </data>
+  <data name="ItemCannotBeAddedTarget" xml:space="preserve">
+    <value>Item does not support all target the test does.</value>
+  </data>
+  <data name="Facet_TestSectionPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>CBT - Facet - Test section properties</value>
+  </data>
+  <data name="PleaseSelectItemsFirst" xml:space="preserve">
+    <value>Please select items first</value>
+  </data>
+  <data name="CodeFieldNotUnique" xml:space="preserve">
+    <value>Code must be unique.
+Also keep in mind that characters '.' and '_' are treated the as being the same character.</value>
+  </data>
+  <data name="IsBeingEditedInSizableWindow" xml:space="preserve">
+    <value>Is being edited in sizable window</value>
+  </data>
+  <data name="ErrorsOccurred" xml:space="preserve">
+    <value>The following errors occurred:</value>
+  </data>
+  <data name="DependencyType_Package" xml:space="preserve">
+    <value>Package</value>
+  </data>
+  <data name="sAlignmentBottom" xml:space="preserve">
+    <value>bottom</value>
+  </data>
+  <data name="Exception_GridLayoutNotFoundInResX" xml:space="preserve">
+    <value>Please add layout XML to control resource file with key : 'gridLayout'</value>
+  </data>
+  <data name="InlineTabular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineTabular.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_RemoveAnalysis" xml:space="preserve">
+    <value>Delete analysis</value>
+  </data>
+  <data name="OnlyItemsThatUseTheSameItemlayouttemplateCanBeSelectedAtOnes" xml:space="preserve">
+    <value>Only items that use the same item layout template can be selected at ones.</value>
+  </data>
+  <data name="SelectDependentResourceDialog_NoResourceSelectedMessage" xml:space="preserve">
+    <value>There is no resource selected. Please select a resource and press 'OK'.</value>
+  </data>
+  <data name="InlineEssay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineEssay.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Word_AssessmentTestPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>PBT - MS Word - Test properties</value>
+  </data>
+  <data name="TTS_CannotGenerateTTSMessage" xml:space="preserve">
+    <value>Unable to generate text-to-speech.
+Please make sure the item is saved before trying to generate the text-to-speech resource. 
+
+The (error)message is:
+{0}</value>
+  </data>
+  <data name="AudioError" xml:space="preserve">
+    <value>Audio error: {0}</value>
+  </data>
+  <data name="Bullets_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bullets_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XhtmlViewerErrorReadingHtml" xml:space="preserve">
+    <value>An error occured while reading the (x)html/xml.</value>
+  </data>
+  <data name="General_TestPartPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>General test part properties</value>
+  </data>
+  <data name="Questify" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Questify.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UnlockForEdit" xml:space="preserve">
+    <value>Unlock</value>
+  </data>
+  <data name="DeleteCutOffScoreConfirm" xml:space="preserve">
+    <value>Are you sure you want to delete this cut off score?</value>
+  </data>
+  <data name="sPercent" xml:space="preserve">
+    <value>percent</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_AddAnalysis" xml:space="preserve">
+    <value>Add analysis</value>
+  </data>
+  <data name="CustomPropertiesNewSingle" xml:space="preserve">
+    <value>New single</value>
+  </data>
+  <data name="ValidateParametersParameterHasADifferentType" xml:space="preserve">
+    <value>Parameter "{0}" has a different type in current and new item template. Current value will be deleted.</value>
+  </data>
+  <data name="RequiredEntry" xml:space="preserve">
+    <value>Required entry</value>
+  </data>
+  <data name="ErrorParsingDesignerSettingsForParameter" xml:space="preserve">
+    <value>Error parsing designer settings for parameter '{0}'.</value>
+  </data>
+  <data name="Italic_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Italic_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="LockChildrenForEdit" xml:space="preserve">
+    <value>Do you also want to {0} all child components?</value>
+  </data>
+  <data name="SelectResourceEntityDialogBase_OkButton_NoResourceSelectedMessage" xml:space="preserve">
+    <value>There is no resource selected. Please select a resource and press 'OK'</value>
+  </data>
+  <data name="CodeFieldCannotBeEmpty" xml:space="preserve">
+    <value>Field 'Code' cannot be empty</value>
+  </data>
+  <data name="RichTextValueEditorText" xml:space="preserve">
+    <value>Rich text value for '{0}'</value>
+  </data>
+  <data name="ThisEditorMustBeFilledPleaseEnterContent" xml:space="preserve">
+    <value>'{0}' is a mandatory field.</value>
+  </data>
+  <data name="NoMoreConceptstructuresToAdd" xml:space="preserve">
+    <value>No more values to add</value>
+  </data>
+  <data name="ShowPassword" xml:space="preserve">
+    <value>Show or hide password</value>
+  </data>
+  <data name="TheValueMustBeLowerThen" xml:space="preserve">
+    <value>The value must be the same or lower then {0}</value>
+  </data>
+  <data name="Cut_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cut_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NonReferencedMediafiles" xml:space="preserve">
+    <value>non referenced media files</value>
+  </data>
+  <data name="sAlignmentLeft" xml:space="preserve">
+    <value>left</value>
+  </data>
+  <data name="Word_TestOutcomePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>PBT - MS Word - Scoring result properties</value>
+  </data>
+  <data name="ResolutionTypeMaintainScreenResolution" xml:space="preserve">
+    <value>Apply dimensions to item</value>
+  </data>
+  <data name="app" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\app.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GroupNameConstant_General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="TitleFieldCannotBeEmpty" xml:space="preserve">
+    <value>Field 'Title' cannot be empty</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_AddTiaFile" xml:space="preserve">
+    <value>Add TIA file</value>
+  </data>
+  <data name="Forbid" xml:space="preserve">
+    <value>Forbid</value>
+  </data>
+  <data name="ResourceParameterContainsValueNotInBank" xml:space="preserve">
+    <value>Resource parameter '{0}' contains the default value '{1}', which isn't available in the bank!</value>
+  </data>
+  <data name="Bold_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bold_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TemplateFieldClass_FieldNotFilled" xml:space="preserve">
+    <value>This field is not filled.</value>
+  </data>
+  <data name="NonReferencedItemTemplates" xml:space="preserve">
+    <value>non referenced item templates</value>
+  </data>
+  <data name="Word_TestSetPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>PBT - MS Word - Test set properties</value>
+  </data>
+  <data name="up_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\up_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MultipleSelectionIsOnlySupportedForItems" xml:space="preserve">
+    <value>Multiple selection is only supported for items</value>
+  </data>
+  <data name="TemplateFieldClass_UnknownTemplateFieldType" xml:space="preserve">
+    <value>Type of field '{0}' is not implemented.</value>
+  </data>
+  <data name="ItemDataSourcePreview_CannotPreviewBecauseNoContext" xml:space="preserve">
+    <value>This selection can only be executed in context of a section. A preview is therefore not available!</value>
+  </data>
+  <data name="Redo_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Redo_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NotAllItemsCannotBeAdded" xml:space="preserve">
+    <value>Not all items are added to the test.</value>
+  </data>
+  <data name="DependencyType_AnalysisFile" xml:space="preserve">
+    <value>AnalysisFile</value>
+  </data>
+  <data name="Delivery_AnalysisFilenameMustBeUnique" xml:space="preserve">
+    <value>There is already an analysis file with name '{0}'</value>
+  </data>
+  <data name="shape_Circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shape_Circle.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResolutionTypeKeepAspectRatio" xml:space="preserve">
+    <value>Apply dimensions to item and screen (maintain aspect ratio)</value>
+  </data>
+  <data name="InMinutes" xml:space="preserve">
+    <value> in minutes</value>
+  </data>
+  <data name="NoValidHandlerFound" xml:space="preserve">
+    <value>No handler found that could parse the imported file</value>
+  </data>
+  <data name="ConfirmDeleteSubElementWithChildren" xml:space="preserve">
+    <value>This structure contains one or more sub-structures. These will also be removed. Are you sure?</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_EditOplmColumnMapping" xml:space="preserve">
+    <value>Edit OPLM column mapping</value>
+  </data>
+  <data name="NoTestsInPlannableUnit_Title" xml:space="preserve">
+    <value>Test set does not contain tests.</value>
+  </data>
+  <data name="TheValueMustBeHigherThen" xml:space="preserve">
+    <value>The value must be the same or higher then {0}</value>
+  </data>
+  <data name="ErrorParsingAttributeReferencesForParameter" xml:space="preserve">
+    <value>Error parsing attribute references for parameter '{0}'.</value>
+  </data>
+  <data name="ValueAlreadyUsed" xml:space="preserve">
+    <value>This value is already used.</value>
+  </data>
+  <data name="ConceptType_SubDomain" xml:space="preserve">
+    <value>Subdomain</value>
+  </data>
+  <data name="Word_TestReferencePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>PBT - MS Word - Test reference properties</value>
+  </data>
+  <data name="NewToolStripMenuItem.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BankSecurityControl_AddUserButton_Click_UserAlreadyExists" xml:space="preserve">
+    <value>User already exists.</value>
+  </data>
+  <data name="RemoveChildrenConfirmation" xml:space="preserve">
+    <value>This value contains subvalues and will also be removed. Are you sure you want to do this?</value>
+  </data>
+  <data name="SelectItemResourceDialog_FailedAdding" xml:space="preserve">
+    <value>It was not possitble to add this item. It's already in the test or it's not suitable for this test.</value>
+  </data>
+  <data name="InlineChoice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineChoice.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sAlignmentTop" xml:space="preserve">
+    <value>top</value>
+  </data>
+  <data name="SimpleSearchControl_SearchInAllTestsDropDownListOption" xml:space="preserve">
+    <value>(all)</value>
+  </data>
+  <data name="InsertFormula_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InsertFormula_small.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tests" xml:space="preserve">
+    <value>Tests</value>
+  </data>
+  <data name="HandlerForItemAndTestMustBeTheSame" xml:space="preserve">
+    <value>Handler for item and test must be the same</value>
+  </data>
+  <data name="ItemTemplates" xml:space="preserve">
+    <value>Item layout templates</value>
+  </data>
+  <data name="DocumentFilter" xml:space="preserve">
+    <value>Documents (*.docx *.dotx)|*.docx;*.dotx</value>
+  </data>
+  <data name="NoMoreTreeStructuresToAdd" xml:space="preserve">
+    <value>No more values to add</value>
+  </data>
+  <data name="AudioFilter" xml:space="preserve">
+    <value>Audio files (*.mp3)|*.mp3</value>
+  </data>
+  <data name="BooleanTemplateField_ComboboxListValues" xml:space="preserve">
+    <value>0=False,1=True</value>
+  </data>
+  <data name="FieldEmpty" xml:space="preserve">
+    <value>Please fill in field {0}</value>
+  </data>
+  <data name="OnlyNumericValueIsValid" xml:space="preserve">
+    <value>Only numeric input is valid</value>
+  </data>
+  <data name="General_TestOutcomePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>General scoring result properties</value>
+  </data>
+  <data name="InSeconds" xml:space="preserve">
+    <value> in seconds</value>
+  </data>
+  <data name="InsertSymbol_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InsertSymbol_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectUserDialog_PlzSelectUser" xml:space="preserve">
+    <value>Please select an user.</value>
+  </data>
+  <data name="SplitMode_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SplitMode_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Word_ItemReferencePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>PBT - MS Word - Item properties</value>
+  </data>
+  <data name="SelectTestResourceDialog_AddButton_NoResourceSelectedMessage" xml:space="preserve">
+    <value>There is no test selected. Please select a test and press 'Add'</value>
+  </data>
+  <data name="Facet_TestSetPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>CBT - Facet - Test set properties</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_DeleteOplmFile" xml:space="preserve">
+    <value>Delete OPLM file</value>
+  </data>
+  <data name="remove16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\remove16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InlineGapMatch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineGapMatch.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConceptType_ResponseStrategy" xml:space="preserve">
+    <value>Response Strategy</value>
+  </data>
+  <data name="ErrorWhileRenderingScoreEditors" xml:space="preserve">
+    <value>Error while rendering score editors</value>
+  </data>
+  <data name="InlineMC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineMC.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectMediaResourceDialog_ShowThePreview_PreviewButtonCaption" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="AlreadyInTest" xml:space="preserve">
+    <value>{0} are already added to the test</value>
+  </data>
+  <data name="DependencyType_Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="Editor_Dialog_SaveChangesQuestionMessage" xml:space="preserve">
+    <value>Do you want to save changes?</value>
+  </data>
+  <data name="RefreshDataSourceMaxNrOfVariantsLabel" xml:space="preserve">
+    <value>of max {0}</value>
+  </data>
+  <data name="ThereIsNoApplicationAssociatedToThisFileExcelIsProbablyNotInstalled" xml:space="preserve">
+    <value>There is no application associated to this file. MS Excel is probably not installed.</value>
+  </data>
+  <data name="GridBase_EditNoEntitySelected_Title" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Message_CannotExecutePreviewCaption" xml:space="preserve">
+    <value>Preview aborted</value>
+  </data>
+  <data name="ConvertToRoman_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ConvertToRoman_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MandatoryEmptyShapelistMessage" xml:space="preserve">
+    <value>At least one shape should be defined for field '{0}'.</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_DownloadPackage" xml:space="preserve">
+    <value>Download package</value>
+  </data>
+  <data name="ConceptType_PartAttribute" xml:space="preserve">
+    <value>Part attribute</value>
+  </data>
+  <data name="ResolutionTypeScale" xml:space="preserve">
+    <value>Apply dimensions to screen</value>
+  </data>
+  <data name="General_ItemReferencePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>General item properties</value>
+  </data>
+  <data name="ConfirmDeleteSubElement" xml:space="preserve">
+    <value>Are you sure you want to remove this sub-element?</value>
+  </data>
+  <data name="CannotPasteImagesOutsideBankHierarchy" xml:space="preserve">
+    <value>Can't paste image {0} because it does not exist in the current bank hierarchy</value>
+  </data>
+  <data name="BankBrowser_BankTreeControl_DragDrop_Title" xml:space="preserve">
+    <value>Move bank</value>
+  </data>
+  <data name="ItemEditor_ValidateItem_ValidationErrors" xml:space="preserve">
+    <value>Cannot update changes of this item because of the following validation errors:{0}{0}</value>
+  </data>
+  <data name="ControlTemplate" xml:space="preserve">
+    <value>Control template(s)</value>
+  </data>
+  <data name="DependencyType_AssessmentTest" xml:space="preserve">
+    <value>AssessmentTest</value>
+  </data>
+  <data name="DesignMode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DesignMode.GIF;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlignRight_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AlignRight_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Qti_TestPartPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Qti - Test part properties</value>
+  </data>
+  <data name="CustomPropertiesNewMulti" xml:space="preserve">
+    <value>New multi</value>
+  </data>
+  <data name="LockForEdit" xml:space="preserve">
+    <value>Lock</value>
+  </data>
+  <data name="AllowTemporary" xml:space="preserve">
+    <value>Temporary allow</value>
+  </data>
+  <data name="SaveChangesForResourceWithState" xml:space="preserve">
+    <value>Resource with name '{0}' has '{1}'-status, are you sure you want to save changes</value>
+  </data>
+  <data name="ThisParameterMustBeFilledPleaseSelectAMediaObject" xml:space="preserve">
+    <value>This parameter must be filled. Please select a media object.</value>
+  </data>
+  <data name="ValidateParametersCollectionWillBeDeleted" xml:space="preserve">
+    <value>Collection "{0}" will be deleted</value>
+  </data>
+  <data name="seeding_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seeding-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FieldIsRequired" xml:space="preserve">
+    <value>'{0}' is required.</value>
+  </data>
+  <data name="Facet_TestPackagePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>CBT - Facet - Test package properties</value>
+  </data>
+  <data name="General_AssessmentTestPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>General test properties</value>
+  </data>
+  <data name="InlineMR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InlineMR.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SimpleSearchControl_SearchTermTooShortTitle" xml:space="preserve">
+    <value>Search term too general</value>
+  </data>
+  <data name="sAlignmentRight" xml:space="preserve">
+    <value>right</value>
+  </data>
+  <data name="PortableCiFilter" xml:space="preserve">
+    <value>Portable Custom Interaction files (*.pci)|*.pci</value>
+  </data>
+  <data name="shape_Ellipse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shape_Ellipse.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ParameterSetsEditor_RenderEditors_NoEditors" xml:space="preserve">
+    <value>The presentation of this item cannot be customized.</value>
+  </data>
+  <data name="delete_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete_16x.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DecreaseIndent_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DecreaseIndent_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConceptType_Part" xml:space="preserve">
+    <value>Part</value>
+  </data>
+  <data name="Qti_TestSectionPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Qti - Test section properties</value>
+  </data>
+  <data name="FileExists" xml:space="preserve">
+    <value>File already exists</value>
+  </data>
+  <data name="ThisParameterContainsSomeInputErrors" xml:space="preserve">
+    <value>This parameter contains some input errors.</value>
+  </data>
+  <data name="ItemTemplateControl_ItemIsNothing" xml:space="preserve">
+    <value>Template is not known for this item or item is nothing!</value>
+  </data>
+  <data name="CreatedByMe" xml:space="preserve">
+    <value>Created by me</value>
+  </data>
+  <data name="ItemCannotBeAddedAlreadyInTest" xml:space="preserve">
+    <value>Item is already in the test</value>
+  </data>
+  <data name="SearchToolStripMenuItem.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SearchToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CiFilter" xml:space="preserve">
+    <value>Custom Interaction files (*.ci)|*.ci</value>
+  </data>
+  <data name="HtmlFilesFilter" xml:space="preserve">
+    <value>HTML files (*.html, *.htm)|*.html;*.htm</value>
+  </data>
+  <data name="NoValidScoreEntered" xml:space="preserve">
+    <value>{0} is not a valid value.</value>
+  </data>
+  <data name="ConfirmDeleteAnalysis" xml:space="preserve">
+    <value>Are you sure you want to delete analysis '{0}'?</value>
+  </data>
+  <data name="Strikethrough_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Strikethrough_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sAlignmentDefault" xml:space="preserve">
+    <value>default</value>
+  </data>
+  <data name="MandatoryEmptyParameterMessage" xml:space="preserve">
+    <value>"{0}" is a required field. ({1})</value>
+  </data>
+  <data name="SimpleSearchControl_NoSearchTermProvidedErrorTitle" xml:space="preserve">
+    <value>Fast search</value>
+  </data>
+  <data name="PlannableUnitRemovesRetries" xml:space="preserve">
+    <value>Retries of all tests in the test package have been cleared.</value>
+  </data>
+  <data name="Sort" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="ChoicesParameterEditorControl_ValidateParameter_NotAllValuesFilled" xml:space="preserve">
+    <value>Not all values of the alternatives are filled!</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_DeleteTiaFile" xml:space="preserve">
+    <value>Delete TIA File</value>
+  </data>
+  <data name="ErrorWhileExportingToExcelFileMightBeInUse" xml:space="preserve">
+    <value>Error while exporting to excel. File might be in use.</value>
+  </data>
+  <data name="anchor_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\anchor-icon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StatusBar_RowsSelected" xml:space="preserve">
+    <value>Rows selected...</value>
+  </data>
+  <data name="SimpleSearchControl_NoSearchTermProvidedError" xml:space="preserve">
+    <value>Please enter a search term, select the areas to search in under 'Options' and press 'Search'</value>
+  </data>
+  <data name="InvalidConceptStructure" xml:space="preserve">
+    <value>Not all concept structures are valid. A sub-element can only occur once per concept value.</value>
+  </data>
+  <data name="ErrorThrown" xml:space="preserve">
+    <value>Error: </value>
+  </data>
+  <data name="StatusBar_Ready" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="ttsEditResource" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ttsEditResource.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteTreeWhenConnectedToOneOrMoreTests" xml:space="preserve">
+    <value>
+And is also used in the scoring result properties of test(s): {0}
+</value>
+  </data>
+  <data name="WarningDeleteCustomProperties" xml:space="preserve">
+    <value>The value to be removed is used by items or other resources. 
+When you continue, the property values of these resources will be removed!</value>
+  </data>
+  <data name="Facet_TestReferencePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>CBT - Facet - Test reference properties</value>
+  </data>
+  <data name="SelectPreviewer_Title" xml:space="preserve">
+    <value>Select the program that previews the test</value>
+  </data>
+  <data name="Paste_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paste_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OnlyAValueWithinTheRangeOfTillIsAllowed" xml:space="preserve">
+    <value>Only a value within the range of {0} to {1} is allowed</value>
+  </data>
+  <data name="Editor_SaveChangesQuestionMessage" xml:space="preserve">
+    <value>There are changes that are not saved yet! Save them before closing this editor?</value>
+  </data>
+  <data name="NoScoreDesignerSpecifiedForControllerWithId" xml:space="preserve">
+    <value>No score designer specified for controller with id:</value>
+  </data>
+  <data name="SelectResourceDialog_CannotSelectBecauseOfStatus" xml:space="preserve">
+    <value>Cannot use this resource, because of it's workflow status.</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_DownloadOplmFile" xml:space="preserve">
+    <value>Download OPLM file</value>
+  </data>
+  <data name="ItemsCreatedByMe" xml:space="preserve">
+    <value>Items created by me</value>
+  </data>
+  <data name="insert-audio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\insert-audio.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="General_TestPackagePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>General test package properties</value>
+  </data>
+  <data name="TTS_CannotGenerateTTSCaption" xml:space="preserve">
+    <value>Could not generate text-to-speech</value>
+  </data>
+  <data name="General_TestReferencePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>General test reference properties</value>
+  </data>
+  <data name="VideoMp4Filter" xml:space="preserve">
+    <value>Video files (*.mp4,*.mp4v)|*.mp4;*.mp4v</value>
+  </data>
+  <data name="CannotStartExport" xml:space="preserve">
+    <value>The export cannot be executed {0}</value>
+  </data>
+  <data name="ErrorAccessingExcel" xml:space="preserve">
+    <value>Error accessing MS Excel: </value>
+  </data>
+  <data name="ToolTip_RefreshDataSource" xml:space="preserve">
+    <value>Add new selection or refresh the current one</value>
+  </data>
+  <data name="MathML_NoPlugin" xml:space="preserve">
+    <value>There is no plugin for editing MathML available.</value>
+  </data>
+  <data name="NoCommonTargetFound" xml:space="preserve">
+    <value>No common target found.</value>
+  </data>
+  <data name="FieldMustBeFilled" xml:space="preserve">
+    <value>Field '{0}' must be filled.</value>
+  </data>
+  <data name="FileAlreadyExist" xml:space="preserve">
+    <value>The file already exists on the specified location.</value>
+  </data>
+  <data name="PleaseEnterACompleteAndValidPath" xml:space="preserve">
+    <value>Please enter a complete and valid path</value>
+  </data>
+  <data name="PleaseEnterAValidExportFilename" xml:space="preserve">
+    <value>Please enter a valid export file name.</value>
+  </data>
+  <data name="Publication" xml:space="preserve">
+    <value>Publication</value>
+  </data>
+  <data name="PublicationLocationText" xml:space="preserve">
+    <value>Location of {0}:</value>
+  </data>
+  <data name="PublicationOptions" xml:space="preserve">
+    <value>Choose publication options</value>
+  </data>
+  <data name="SpecifyPackageName" xml:space="preserve">
+    <value>Specify package name</value>
+  </data>
+  <data name="TheFilenameCannotContainIllegalCharacters" xml:space="preserve">
+    <value>The file name cannot contain illegal characters</value>
+  </data>
+  <data name="ItemLayoutTemplateInlineMultimediaMissing" xml:space="preserve">
+    <value>Item layout template {0} must be available in the bank</value>
+  </data>
+  <data name="add_icon_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-icon_161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LockedForEditImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LockedForEdit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemLayoutTemplateInlineMultimediaMissing1" xml:space="preserve">
+    <value>Item layout template {0} must be available in the bank</value>
+  </data>
+  <data name="TTSMuteCouldNotBeApplied" xml:space="preserve">
+    <value>'Mute Text-to-speech' could not be applied to the current selection. Reason: {0}</value>
+  </data>
+  <data name="TTSRemovesMarkupConfirmationMessage" xml:space="preserve">
+    <value>Setting a text-to-speech marker on the current selection will result in a loss of existing text formatting. Do you want to continue?</value>
+  </data>
+  <data name="TTSRemovesMarkupConfirmationTitle" xml:space="preserve">
+    <value>This action will remove markup</value>
+  </data>
+  <data name="XhtmlEditor_MergeCellError" xml:space="preserve">
+    <value>Unable to merge the selected cells (rectangular selection? / All cells contained in selection?)</value>
+  </data>
+</root>

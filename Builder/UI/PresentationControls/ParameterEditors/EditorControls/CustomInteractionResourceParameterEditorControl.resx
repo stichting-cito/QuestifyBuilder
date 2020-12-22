@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="ParameterBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="ParameterEditorTooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>203, 17</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="SelectResourceButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="SelectResourceButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAkFJREFUOE9j+P//
+        Pxy3tLQz5+UX8KenZ6rm5OQKNTW1siHLY8NwRmNTq0RlZVVTQEBQe1x8YltMTHxbdlbWzIbGZktkDegY
+        TJSWVfLmZOdM//jx0+s/f/68AYrN/ffv35bfv/9sTkrOmFdZVW2KrAkZM6iqqjKlpqbVnz57eT5Q4MLf
+        f//6Hr/6Puf911/LgfyZv//83VhaWrGzsKiECVkjDDPYWFtz5xWUL/vy/ffJJ+9+9j18/XUCyICn774d
+        +fb739ZvP/9NLyip25iUlCSK1QAHBweFrr5Zm3/+/X8EpBGE77/4tgzGfvP59/aG1slbUlJStbEaYGVp
+        yd3dN/3kp2//Hz149+vg5Zc/1oA0Pnzz7eHfv/+Snr37dXbitEU3EhMTpbAaAARM8fEJcy7f+/Xl+Yff
+        H6+8+n3v4cuvZx69/f752cc/7/ac+/qks7v/FNALzFgNABMMDBIzZi18cPXhn/9P3vz+/+z97/9P3v7+
+        f+72z/8zZi34X1tb04iuEYbhDGZmJsWCgsIdfZNm/Zk8Y8X/idMW/uvvn3Ta3t5uXXVNzb8zZ8/tv3P3
+        rgCyZhBG4YCwt7c3h4mJkYKXlyd/QkICOOrc3Nx2FZeU/j9+4uS9R48eySOrR9GMD/v6+h6vra37D3TJ
+        mxs3b3LBxDEU4sNBwcEX2js6/t+4eevZ+fMXOEBiWBXiwkDAGBgYeK6/f8L/R48e37106bIkVoWEsH9A
+        wNn2js4Nrq6u7FgVEMI8PDzMQkJCrExMTEwAani5fdwBSQMAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="SelectResourceButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SelectResourceButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 0</value>
+  </data>
+  <data name="SelectResourceButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 0</value>
+  </data>
+  <data name="SelectResourceButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="SelectResourceButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="SelectResourceButton.ToolTip" xml:space="preserve">
+    <value>Browse for a resource in the bank</value>
+  </data>
+  <data name="&gt;&gt;SelectResourceButton.Name" xml:space="preserve">
+    <value>SelectResourceButton</value>
+  </data>
+  <data name="&gt;&gt;SelectResourceButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelectResourceButton.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;SelectResourceButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="DeleteResourceButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="DeleteResourceButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAjVJREFUOE91kMtr
+        E1EUxm9MH4EihCiaiqDEByiiaaNY0FpKIBMVmkkVCy5aBJcVXViwe/+B6L6bQF4LKRa66MpFa1qhUTAv
+        a0mDIaNjqELMTOaZ45nJYzI2fvBx7x3O+c35DgGAjp1O53AwGJxum6bppgOBaa/Xe8dqtfZ312s2Pfx+
+        f0BFybKsKoqiWxRFleNqauUnKzyZn3/ZXa/Z9EAAjSeoagMaDe3WFDLhT7UKkiTC4uILE6QnQJJlkBVF
+        b2xLEATY2fkCe3sFmJudXcBPBwEU1QSIooR/kwEj6NO0hdF0aDgcXsVnLwClA+p1AQRRRIhkmqTRyhWJ
+        RJbx6A3Qani+boI0JzHixGKx3gCfj6IVLKxxHHA83wUxx0kkEr0Bkz7flIIj1LCZw2YeF/fvJJri8bgB
+        eOqwHX3usB2fsQ0ee3CbmvtVqQBbLgNbKsE+y+Ik5jgHAKv3ppgPjx+JyYczwvp9Wn53l4K1ayPwxmGH
+        5cmbUK3XgUdAG6LJtIOtMQ9X8E7A7vVR+HreBZ/sQ5Dqt8A2pkuOeeA37kOP1NqJpmg0agCW7IevvO2z
+        XA1ZDnmejd9YqKS24cfWJrCbSWAzaWxuRRBEEI0IKx1A+6L58vitidRu4dv7dK60kcmXN9J55uPnNJPO
+        ZJhsNsvkcnmmWCx+D4VeLRmAUWJBD6FP5C+Qi+vniHvtDHGtuMiR1yeJ7fQAGSDE5EF0nwFwI8CNgBEy
+        jD4Ll8gptAPdKfq/gfwFvADjv8owHxcAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="DeleteResourceButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="DeleteResourceButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>371, 0</value>
+  </data>
+  <data name="DeleteResourceButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 0, 0</value>
+  </data>
+  <data name="DeleteResourceButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 23</value>
+  </data>
+  <data name="DeleteResourceButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="DeleteResourceButton.ToolTip" xml:space="preserve">
+    <value>Remove resource reference from this parameter</value>
+  </data>
+  <data name="&gt;&gt;DeleteResourceButton.Name" xml:space="preserve">
+    <value>DeleteResourceButton</value>
+  </data>
+  <data name="&gt;&gt;DeleteResourceButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DeleteResourceButton.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;DeleteResourceButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="EditResourceButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="EditResourceButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAepJREFUOE+Nk9tO
+        E1EUhvsyFt6hFzIzxStvJL6Hd2qVaYFaehBITEw03vgO3ODhyigxyk3RACGmQoFOB6btnCidY3/XXhUr
+        6Wj4d1b2ZM/83/xZOyt1qanpaWSzWSiyxDs/KwpkWaaScCOdxu9PWd7OMxy9ez4+q1UrAIZA6NM+VhSG
+        8LwL7O3uIJPJsEHbqiD+cAsv1bkxoFhcQhhFaDd+IIiHCGNiUflhhL7no2easC0TG+uvMXibuWoWml9Y
+        hOF4DNBsH7rj49QNuHTXx95BC83mPoKPdyfNQgLwYlVlwDBhBZ6B4ec7bF4slScBj/ILlGDAgLY1gG4P
+        cEqJDPq75eiINm+zWehJdWUSoP4jQeB30HuTZXMQhdynUm01KUGBElwwoNXro232Ybk2tPVZNm98qqPR
+        6nKC8tO1ScBDtXAlQX37O16tlXEvV8LX+i6iOOZzoeUkQI4AuukyoGk4+PJtH+83t3FCaTRKM+qLx4BS
+        EuD+4/x/b+FyCS1VEnrwgADHhs2Ahm7hJ9XBmY1DStPsuDjunnMaoWI1AZCbV6+VQKzkW1Dz0LujBIdn
+        Jo6oTgwLrY4DrUe9Mc+hW6MEy0kAtVDgl9dRbSWhiWkaV0WRIc3chCxJPMJilJW/i97P0phP/RntVOoX
+        N7J51zyiQM8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="EditResourceButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="EditResourceButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>339, 0</value>
+  </data>
+  <data name="EditResourceButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 0, 3, 0</value>
+  </data>
+  <data name="EditResourceButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 23</value>
+  </data>
+  <data name="EditResourceButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="EditResourceButton.ToolTip" xml:space="preserve">
+    <value>View/Edit the current resource</value>
+  </data>
+  <data name="&gt;&gt;EditResourceButton.Name" xml:space="preserve">
+    <value>EditResourceButton</value>
+  </data>
+  <data name="&gt;&gt;EditResourceButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EditResourceButton.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;EditResourceButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="TableLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TableLayoutPanel1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="TableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="ScorableCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ScorableCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ScorableCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 99</value>
+  </data>
+  <data name="ScorableCheckBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 3, 3, 0</value>
+  </data>
+  <data name="ScorableCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 17</value>
+  </data>
+  <data name="ScorableCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ScorableCheckBox.Text" xml:space="preserve">
+    <value>Part of answer</value>
+  </data>
+  <data name="&gt;&gt;ScorableCheckBox.Name" xml:space="preserve">
+    <value>ScorableCheckBox</value>
+  </data>
+  <data name="&gt;&gt;ScorableCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ScorableCheckBox.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;ScorableCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ResourceParameterTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="ResourceParameterTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ResourceParameterTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ResourceParameterTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 3, 0</value>
+  </data>
+  <data name="ResourceParameterTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ResourceParameterTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 23</value>
+  </data>
+  <data name="ResourceParameterTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ResourceParameterTextBox.Name" xml:space="preserve">
+    <value>ResourceParameterTextBox</value>
+  </data>
+  <data name="&gt;&gt;ResourceParameterTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ResourceParameterTextBox.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;ResourceParameterTextBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="DimensionsPanel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="DimensionsPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="DimensionsTableLayoutPanel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="DimensionsTableLayoutPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="DimensionsTableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="WidthLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="WidthLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WidthLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WidthLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 6</value>
+  </data>
+  <data name="WidthLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 3, 0</value>
+  </data>
+  <data name="WidthLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="WidthLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="WidthLabel.Text" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="&gt;&gt;WidthLabel.Name" xml:space="preserve">
+    <value>WidthLabel</value>
+  </data>
+  <data name="&gt;&gt;WidthLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WidthLabel.Parent" xml:space="preserve">
+    <value>DimensionsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;WidthLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="HeightLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="HeightLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="HeightLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="HeightLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 29</value>
+  </data>
+  <data name="HeightLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 3, 0</value>
+  </data>
+  <data name="HeightLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="HeightLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="HeightLabel.Text" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="&gt;&gt;HeightLabel.Name" xml:space="preserve">
+    <value>HeightLabel</value>
+  </data>
+  <data name="&gt;&gt;HeightLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HeightLabel.Parent" xml:space="preserve">
+    <value>DimensionsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;HeightLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="WidthTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 3</value>
+  </data>
+  <data name="WidthTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 0</value>
+  </data>
+  <data name="WidthTextBox.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 0</value>
+  </data>
+  <data name="WidthTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="WidthTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;WidthTextBox.Name" xml:space="preserve">
+    <value>WidthTextBox</value>
+  </data>
+  <data name="&gt;&gt;WidthTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WidthTextBox.Parent" xml:space="preserve">
+    <value>DimensionsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;WidthTextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="HeightTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 26</value>
+  </data>
+  <data name="HeightTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 0</value>
+  </data>
+  <data name="HeightTextBox.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 0</value>
+  </data>
+  <data name="HeightTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="HeightTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;HeightTextBox.Name" xml:space="preserve">
+    <value>HeightTextBox</value>
+  </data>
+  <data name="&gt;&gt;HeightTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HeightTextBox.Parent" xml:space="preserve">
+    <value>DimensionsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;HeightTextBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="KeepAspectRatioCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="KeepAspectRatioCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="KeepAspectRatioCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 49</value>
+  </data>
+  <data name="KeepAspectRatioCheckBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 3, 3, 0</value>
+  </data>
+  <data name="KeepAspectRatioCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 17</value>
+  </data>
+  <data name="KeepAspectRatioCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="KeepAspectRatioCheckBox.Text" xml:space="preserve">
+    <value>Keep aspect ratio</value>
+  </data>
+  <data name="&gt;&gt;KeepAspectRatioCheckBox.Name" xml:space="preserve">
+    <value>KeepAspectRatioCheckBox</value>
+  </data>
+  <data name="&gt;&gt;KeepAspectRatioCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;KeepAspectRatioCheckBox.Parent" xml:space="preserve">
+    <value>DimensionsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;KeepAspectRatioCheckBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="DimensionsTableLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="DimensionsTableLayoutPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 3, 3</value>
+  </data>
+  <data name="DimensionsTableLayoutPanel.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="DimensionsTableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 66</value>
+  </data>
+  <data name="DimensionsTableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;DimensionsTableLayoutPanel.Name" xml:space="preserve">
+    <value>DimensionsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;DimensionsTableLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DimensionsTableLayoutPanel.Parent" xml:space="preserve">
+    <value>DimensionsPanel</value>
+  </data>
+  <data name="&gt;&gt;DimensionsTableLayoutPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="DimensionsTableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="WidthLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="HeightLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="WidthTextBox" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="HeightTextBox" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="KeepAspectRatioCheckBox" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,60,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="DimensionsPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="DimensionsPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="DimensionsPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 1, 3, 3</value>
+  </data>
+  <data name="DimensionsPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 69</value>
+  </data>
+  <data name="DimensionsPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;DimensionsPanel.Name" xml:space="preserve">
+    <value>DimensionsPanel</value>
+  </data>
+  <data name="&gt;&gt;DimensionsPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DimensionsPanel.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;DimensionsPanel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="TableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="TableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="TableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>397, 116</value>
+  </data>
+  <data name="TableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Name" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="ScorableCheckBox" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ResourceParameterTextBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="SelectResourceButton" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="DeleteResourceButton" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="EditResourceButton" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="DimensionsPanel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>397, 116</value>
+  </data>
+  <data name="&gt;&gt;ParameterBindingSource.Name" xml:space="preserve">
+    <value>ParameterBindingSource</value>
+  </data>
+  <data name="&gt;&gt;ParameterBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ParameterEditorTooltip.Name" xml:space="preserve">
+    <value>ParameterEditorTooltip</value>
+  </data>
+  <data name="&gt;&gt;ParameterEditorTooltip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>CustomInteractionResourceParameterEditorControl</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.ParameterEditorControlBase, Questify.Builder.UI, Version=2.14.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+</root>

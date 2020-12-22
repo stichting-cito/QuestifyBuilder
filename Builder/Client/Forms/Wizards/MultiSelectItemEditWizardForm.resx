@@ -1,0 +1,921 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="UltraTabSharedControlsPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-10000, -10000</value>
+  </data>
+  <data name="UltraTabSharedControlsPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>680, 426</value>
+  </data>
+  <data name="&gt;&gt;UltraTabSharedControlsPage1.Name" xml:space="preserve">
+    <value>UltraTabSharedControlsPage1</value>
+  </data>
+  <data name="&gt;&gt;UltraTabSharedControlsPage1.Type" xml:space="preserve">
+    <value>Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage, Infragistics2.Win.UltraWinTabControl.v6.3, Version=6.3.20063.53, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;UltraTabSharedControlsPage1.Parent" xml:space="preserve">
+    <value>WizardTabControl</value>
+  </data>
+  <data name="&gt;&gt;UltraTabSharedControlsPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="EditTabContent.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PanelEditPreProcessingRules.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 79</value>
+  </data>
+  <data name="PanelEditPreProcessingRules.Size" type="System.Drawing.Size, System.Drawing">
+    <value>647, 303</value>
+  </data>
+  <data name="PanelEditPreProcessingRules.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;PanelEditPreProcessingRules.Name" xml:space="preserve">
+    <value>PanelEditPreProcessingRules</value>
+  </data>
+  <data name="&gt;&gt;PanelEditPreProcessingRules.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelEditPreProcessingRules.Parent" xml:space="preserve">
+    <value>EditTabContent</value>
+  </data>
+  <data name="&gt;&gt;PanelEditPreProcessingRules.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="paramSetsEditor.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="paramSetsEditor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="paramSetsEditor.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="paramSetsEditor.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="paramSetsEditor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="paramSetsEditor.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 100</value>
+  </data>
+  <data name="paramSetsEditor.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
+  </data>
+  <data name="paramSetsEditor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>647, 303</value>
+  </data>
+  <data name="paramSetsEditor.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;paramSetsEditor.Name" xml:space="preserve">
+    <value>paramSetsEditor</value>
+  </data>
+  <data name="&gt;&gt;paramSetsEditor.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.ParameterSetsEditor, Questify.Builder.UI, Version=2.12.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;paramSetsEditor.Parent" xml:space="preserve">
+    <value>PanelEditPE</value>
+  </data>
+  <data name="&gt;&gt;paramSetsEditor.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PanelEditPE.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 79</value>
+  </data>
+  <data name="PanelEditPE.Size" type="System.Drawing.Size, System.Drawing">
+    <value>647, 303</value>
+  </data>
+  <data name="PanelEditPE.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;PanelEditPE.Name" xml:space="preserve">
+    <value>PanelEditPE</value>
+  </data>
+  <data name="&gt;&gt;PanelEditPE.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelEditPE.Parent" xml:space="preserve">
+    <value>EditTabContent</value>
+  </data>
+  <data name="&gt;&gt;PanelEditPE.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TableLayoutPanelEditCP.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="resourceCustomPropsEditor.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="resourceCustomPropsEditor.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="resourceCustomPropsEditor.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="resourceCustomPropsEditor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="resourceCustomPropsEditor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>646, 343</value>
+  </data>
+  <data name="resourceCustomPropsEditor.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;resourceCustomPropsEditor.Name" xml:space="preserve">
+    <value>resourceCustomPropsEditor</value>
+  </data>
+  <data name="&gt;&gt;resourceCustomPropsEditor.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.ResourceCustomProperties, Questify.Builder.UI, Version=2.12.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;resourceCustomPropsEditor.Parent" xml:space="preserve">
+    <value>TableLayoutPanelEditCP</value>
+  </data>
+  <data name="&gt;&gt;resourceCustomPropsEditor.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TableLayoutPanelEditCP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 80</value>
+  </data>
+  <data name="TableLayoutPanelEditCP.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TableLayoutPanelEditCP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>652, 349</value>
+  </data>
+  <data name="TableLayoutPanelEditCP.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanelEditCP.Name" xml:space="preserve">
+    <value>TableLayoutPanelEditCP</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanelEditCP.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanelEditCP.Parent" xml:space="preserve">
+    <value>EditTabContent</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanelEditCP.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="TableLayoutPanelEditCP.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="resourceCustomPropsEditor" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="Absolute,17" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="TableLayoutPanelEditMD.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="ResourceMetaDataMultiEditInstance.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="ResourceMetaDataMultiEditInstance.Size" type="System.Drawing.Size, System.Drawing">
+    <value>431, 200</value>
+  </data>
+  <data name="ResourceMetaDataMultiEditInstance.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;ResourceMetaDataMultiEditInstance.Name" xml:space="preserve">
+    <value>ResourceMetaDataMultiEditInstance</value>
+  </data>
+  <data name="&gt;&gt;ResourceMetaDataMultiEditInstance.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.ResourceMetaDataMultiEdit, Questify.Builder.UI, Version=2.12.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;ResourceMetaDataMultiEditInstance.Parent" xml:space="preserve">
+    <value>TableLayoutPanelEditMD</value>
+  </data>
+  <data name="&gt;&gt;ResourceMetaDataMultiEditInstance.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ResourceCustomProperties1.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ResourceCustomProperties1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="ResourceCustomProperties1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ResourceCustomProperties1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>440, 3</value>
+  </data>
+  <data name="ResourceCustomProperties1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 337</value>
+  </data>
+  <data name="ResourceCustomProperties1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ResourceCustomProperties1.Name" xml:space="preserve">
+    <value>ResourceCustomProperties1</value>
+  </data>
+  <data name="&gt;&gt;ResourceCustomProperties1.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.ResourceCustomProperties, Questify.Builder.UI, Version=2.12.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;ResourceCustomProperties1.Parent" xml:space="preserve">
+    <value>TableLayoutPanelEditMD</value>
+  </data>
+  <data name="&gt;&gt;ResourceCustomProperties1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TableLayoutPanelEditMD.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 79</value>
+  </data>
+  <data name="TableLayoutPanelEditMD.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TableLayoutPanelEditMD.Size" type="System.Drawing.Size, System.Drawing">
+    <value>652, 343</value>
+  </data>
+  <data name="TableLayoutPanelEditMD.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanelEditMD.Name" xml:space="preserve">
+    <value>TableLayoutPanelEditMD</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanelEditMD.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanelEditMD.Parent" xml:space="preserve">
+    <value>EditTabContent</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanelEditMD.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="TableLayoutPanelEditMD.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="ResourceMetaDataMultiEditInstance" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ResourceCustomProperties1" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="Absolute,17" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="EditTabContent.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="EditTabContent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="EditTabContent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>680, 426</value>
+  </data>
+  <data name="EditTabContent.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;EditTabContent.Name" xml:space="preserve">
+    <value>EditTabContent</value>
+  </data>
+  <data name="&gt;&gt;EditTabContent.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.WizardTabContentControl, Questify.Builder.UI, Version=2.12.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;EditTabContent.Parent" xml:space="preserve">
+    <value>FileSelectionTabPageControl</value>
+  </data>
+  <data name="&gt;&gt;EditTabContent.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="FileSelectionTabPageControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="FileSelectionTabPageControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>680, 426</value>
+  </data>
+  <data name="&gt;&gt;FileSelectionTabPageControl.Name" xml:space="preserve">
+    <value>FileSelectionTabPageControl</value>
+  </data>
+  <data name="&gt;&gt;FileSelectionTabPageControl.Type" xml:space="preserve">
+    <value>Infragistics.Win.UltraWinTabControl.UltraTabPageControl, Infragistics2.Win.UltraWinTabControl.v6.3, Version=6.3.20063.53, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;FileSelectionTabPageControl.Parent" xml:space="preserve">
+    <value>WizardTabControl</value>
+  </data>
+  <data name="&gt;&gt;FileSelectionTabPageControl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SelectEditTabContent.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TableLayoutPanelSelectEdit.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="LabelCustomProperties.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelCustomProperties.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelCustomProperties.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 0</value>
+  </data>
+  <data name="LabelCustomProperties.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 13</value>
+  </data>
+  <data name="LabelCustomProperties.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="LabelCustomProperties.Text" xml:space="preserve">
+    <value>Custom properties:</value>
+  </data>
+  <data name="&gt;&gt;LabelCustomProperties.Name" xml:space="preserve">
+    <value>LabelCustomProperties</value>
+  </data>
+  <data name="&gt;&gt;LabelCustomProperties.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelCustomProperties.Parent" xml:space="preserve">
+    <value>TableLayoutPanelSelectEdit</value>
+  </data>
+  <data name="&gt;&gt;LabelCustomProperties.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AvailableParametersGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="AvailableParametersGrid.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="AvailableParametersGrid_Layout_0.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Key&gt;CustomPropertyEntity&lt;/Key&gt;&lt;Caption&gt;CustomPropertyEntity&lt;/Caption&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="group"&gt;&lt;Caption&gt;Groep&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;group&lt;/DataMember&gt;&lt;Key&gt;group&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;155&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="label"&gt;&lt;Caption&gt;Label&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;label&lt;/DataMember&gt;&lt;Key&gt;label&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;161&lt;/Width&gt;&lt;/Column1&gt;&lt;/Columns&gt;&lt;SortKeys Collection="true" ElementName="SortKey"&gt;&lt;SortKey0 ID="SortKey0"&gt;&lt;ColIndex&gt;0&lt;/ColIndex&gt;&lt;/SortKey0&gt;&lt;/SortKeys&gt;&lt;GroupCondition /&gt;&lt;/RootTable&gt;&lt;RowWithErrorsFormatStyle&gt;&lt;PredefinedStyle&gt;RowWithErrorsFormatStyle&lt;/PredefinedStyle&gt;&lt;/RowWithErrorsFormatStyle&gt;&lt;LinkFormatStyle&gt;&lt;PredefinedStyle&gt;LinkFormatStyle&lt;/PredefinedStyle&gt;&lt;/LinkFormatStyle&gt;&lt;CardCaptionFormatStyle&gt;&lt;PredefinedStyle&gt;CardCaptionFormatStyle&lt;/PredefinedStyle&gt;&lt;/CardCaptionFormatStyle&gt;&lt;GroupByBoxFormatStyle&gt;&lt;PredefinedStyle&gt;GroupByBoxFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupByBoxFormatStyle&gt;&lt;GroupByBoxInfoFormatStyle&gt;&lt;PredefinedStyle&gt;GroupByBoxInfoFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupByBoxInfoFormatStyle&gt;&lt;GroupRowFormatStyle&gt;&lt;PredefinedStyle&gt;GroupRowFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupRowFormatStyle&gt;&lt;HeaderFormatStyle&gt;&lt;PredefinedStyle&gt;HeaderFormatStyle&lt;/PredefinedStyle&gt;&lt;/HeaderFormatStyle&gt;&lt;PreviewRowFormatStyle&gt;&lt;PredefinedStyle&gt;PreviewRowFormatStyle&lt;/PredefinedStyle&gt;&lt;/PreviewRowFormatStyle&gt;&lt;RowFormatStyle&gt;&lt;PredefinedStyle&gt;RowFormatStyle&lt;/PredefinedStyle&gt;&lt;/RowFormatStyle&gt;&lt;SelectedFormatStyle&gt;&lt;PredefinedStyle&gt;SelectedFormatStyle&lt;/PredefinedStyle&gt;&lt;/SelectedFormatStyle&gt;&lt;SelectedInactiveFormatStyle&gt;&lt;PredefinedStyle&gt;SelectedInactiveFormatStyle&lt;/PredefinedStyle&gt;&lt;/SelectedInactiveFormatStyle&gt;&lt;FocusCellFormatStyle&gt;&lt;BackColor&gt;Highlight&lt;/BackColor&gt;&lt;ForeColor&gt;HighlightText&lt;/ForeColor&gt;&lt;PredefinedStyle&gt;FocusCellFormatStyle&lt;/PredefinedStyle&gt;&lt;/FocusCellFormatStyle&gt;&lt;WatermarkImage /&gt;&lt;Font&gt;Microsoft Sans Serif, 8.25pt&lt;/Font&gt;&lt;VisualStyle&gt;Standard&lt;/VisualStyle&gt;&lt;AllowEdit&gt;False&lt;/AllowEdit&gt;&lt;ColumnAutoResize&gt;True&lt;/ColumnAutoResize&gt;&lt;GroupByBoxVisible&gt;False&lt;/GroupByBoxVisible&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <data name="AvailableParametersGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 20</value>
+  </data>
+  <data name="AvailableParametersGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 256</value>
+  </data>
+  <data name="AvailableParametersGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;AvailableParametersGrid.Name" xml:space="preserve">
+    <value>AvailableParametersGrid</value>
+  </data>
+  <data name="&gt;&gt;AvailableParametersGrid.Type" xml:space="preserve">
+    <value>Janus.Windows.GridEX.GridEX, Janus.Windows.GridEX.v4, Version=4.0.36.0, Culture=neutral, PublicKeyToken=21d5517571b185bf</value>
+  </data>
+  <data name="&gt;&gt;AvailableParametersGrid.Parent" xml:space="preserve">
+    <value>TableLayoutPanelSelectEdit</value>
+  </data>
+  <data name="&gt;&gt;AvailableParametersGrid.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LabelParameters.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelParameters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="LabelParameters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 13</value>
+  </data>
+  <data name="LabelParameters.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="LabelParameters.Text" xml:space="preserve">
+    <value>Correspondig parameters:</value>
+  </data>
+  <data name="&gt;&gt;LabelParameters.Name" xml:space="preserve">
+    <value>LabelParameters</value>
+  </data>
+  <data name="&gt;&gt;LabelParameters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelParameters.Parent" xml:space="preserve">
+    <value>TableLayoutPanelSelectEdit</value>
+  </data>
+  <data name="&gt;&gt;LabelParameters.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="AvailablePropertiesGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="AvailablePropertiesGrid_DesignTimeLayout.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Key&gt;CustomPropertyEntity&lt;/Key&gt;&lt;Caption&gt;CustomPropertyEntity&lt;/Caption&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="Name"&gt;&lt;Caption&gt;Code&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Name&lt;/DataMember&gt;&lt;Key&gt;Name&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;155&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="Title"&gt;&lt;Caption&gt;Titel&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Title&lt;/DataMember&gt;&lt;Key&gt;Title&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;156&lt;/Width&gt;&lt;/Column1&gt;&lt;/Columns&gt;&lt;SortKeys Collection="true" ElementName="SortKey"&gt;&lt;SortKey0 ID="SortKey0"&gt;&lt;ColIndex&gt;0&lt;/ColIndex&gt;&lt;/SortKey0&gt;&lt;/SortKeys&gt;&lt;GroupCondition /&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <data name="AvailablePropertiesGrid.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="AvailablePropertiesGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 20</value>
+  </data>
+  <data name="AvailablePropertiesGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 110</value>
+  </data>
+  <data name="AvailablePropertiesGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;AvailablePropertiesGrid.Name" xml:space="preserve">
+    <value>AvailablePropertiesGrid</value>
+  </data>
+  <data name="&gt;&gt;AvailablePropertiesGrid.Type" xml:space="preserve">
+    <value>Janus.Windows.GridEX.GridEX, Janus.Windows.GridEX.v4, Version=4.0.36.0, Culture=neutral, PublicKeyToken=21d5517571b185bf</value>
+  </data>
+  <data name="&gt;&gt;AvailablePropertiesGrid.Parent" xml:space="preserve">
+    <value>TableLayoutPanelSelectEdit</value>
+  </data>
+  <data name="&gt;&gt;AvailablePropertiesGrid.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="MetaDataGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="MetaDataGrid.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="MetaDataGrid_Layout_0.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Key&gt;MetaDataProperties&lt;/Key&gt;&lt;Caption&gt;MetaDataProperties&lt;/Caption&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="name"&gt;&lt;Caption&gt;Naam&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;name&lt;/DataMember&gt;&lt;Key&gt;name&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;311&lt;/Width&gt;&lt;/Column0&gt;&lt;/Columns&gt;&lt;SortKeys Collection="true" ElementName="SortKey"&gt;&lt;SortKey0 ID="SortKey0"&gt;&lt;ColIndex&gt;0&lt;/ColIndex&gt;&lt;/SortKey0&gt;&lt;/SortKeys&gt;&lt;GroupCondition /&gt;&lt;/RootTable&gt;&lt;RowWithErrorsFormatStyle&gt;&lt;PredefinedStyle&gt;RowWithErrorsFormatStyle&lt;/PredefinedStyle&gt;&lt;/RowWithErrorsFormatStyle&gt;&lt;LinkFormatStyle&gt;&lt;PredefinedStyle&gt;LinkFormatStyle&lt;/PredefinedStyle&gt;&lt;/LinkFormatStyle&gt;&lt;CardCaptionFormatStyle&gt;&lt;PredefinedStyle&gt;CardCaptionFormatStyle&lt;/PredefinedStyle&gt;&lt;/CardCaptionFormatStyle&gt;&lt;GroupByBoxFormatStyle&gt;&lt;PredefinedStyle&gt;GroupByBoxFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupByBoxFormatStyle&gt;&lt;GroupByBoxInfoFormatStyle&gt;&lt;PredefinedStyle&gt;GroupByBoxInfoFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupByBoxInfoFormatStyle&gt;&lt;GroupRowFormatStyle&gt;&lt;PredefinedStyle&gt;GroupRowFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupRowFormatStyle&gt;&lt;HeaderFormatStyle&gt;&lt;PredefinedStyle&gt;HeaderFormatStyle&lt;/PredefinedStyle&gt;&lt;/HeaderFormatStyle&gt;&lt;PreviewRowFormatStyle&gt;&lt;PredefinedStyle&gt;PreviewRowFormatStyle&lt;/PredefinedStyle&gt;&lt;/PreviewRowFormatStyle&gt;&lt;RowFormatStyle&gt;&lt;PredefinedStyle&gt;RowFormatStyle&lt;/PredefinedStyle&gt;&lt;/RowFormatStyle&gt;&lt;SelectedFormatStyle&gt;&lt;PredefinedStyle&gt;SelectedFormatStyle&lt;/PredefinedStyle&gt;&lt;/SelectedFormatStyle&gt;&lt;SelectedInactiveFormatStyle&gt;&lt;PredefinedStyle&gt;SelectedInactiveFormatStyle&lt;/PredefinedStyle&gt;&lt;/SelectedInactiveFormatStyle&gt;&lt;FocusCellFormatStyle&gt;&lt;BackColor&gt;Highlight&lt;/BackColor&gt;&lt;ForeColor&gt;HighlightText&lt;/ForeColor&gt;&lt;PredefinedStyle&gt;FocusCellFormatStyle&lt;/PredefinedStyle&gt;&lt;/FocusCellFormatStyle&gt;&lt;WatermarkImage /&gt;&lt;Font&gt;Microsoft Sans Serif, 8.25pt&lt;/Font&gt;&lt;VisualStyle&gt;Standard&lt;/VisualStyle&gt;&lt;AllowEdit&gt;False&lt;/AllowEdit&gt;&lt;ColumnAutoResize&gt;True&lt;/ColumnAutoResize&gt;&lt;GroupByBoxVisible&gt;False&lt;/GroupByBoxVisible&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <data name="MetaDataGrid.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 156</value>
+  </data>
+  <data name="MetaDataGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 144</value>
+  </data>
+  <data name="MetaDataGrid.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;MetaDataGrid.Name" xml:space="preserve">
+    <value>MetaDataGrid</value>
+  </data>
+  <data name="&gt;&gt;MetaDataGrid.Type" xml:space="preserve">
+    <value>Janus.Windows.GridEX.GridEX, Janus.Windows.GridEX.v4, Version=4.0.36.0, Culture=neutral, PublicKeyToken=21d5517571b185bf</value>
+  </data>
+  <data name="&gt;&gt;MetaDataGrid.Parent" xml:space="preserve">
+    <value>TableLayoutPanelSelectEdit</value>
+  </data>
+  <data name="&gt;&gt;MetaDataGrid.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LabelMetaDataProperties.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LabelMetaDataProperties.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LabelMetaDataProperties.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 133</value>
+  </data>
+  <data name="LabelMetaDataProperties.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="LabelMetaDataProperties.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="LabelMetaDataProperties.Text" xml:space="preserve">
+    <value>Meta Data:</value>
+  </data>
+  <data name="&gt;&gt;LabelMetaDataProperties.Name" xml:space="preserve">
+    <value>LabelMetaDataProperties</value>
+  </data>
+  <data name="&gt;&gt;LabelMetaDataProperties.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LabelMetaDataProperties.Parent" xml:space="preserve">
+    <value>TableLayoutPanelSelectEdit</value>
+  </data>
+  <data name="&gt;&gt;LabelMetaDataProperties.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="CheckBoxEditPreprocessingRules.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CheckBoxEditPreprocessingRules.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 282</value>
+  </data>
+  <data name="CheckBoxEditPreprocessingRules.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 17</value>
+  </data>
+  <data name="CheckBoxEditPreprocessingRules.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="CheckBoxEditPreprocessingRules.Text" xml:space="preserve">
+    <value>Edit preprocessing rules</value>
+  </data>
+  <data name="&gt;&gt;CheckBoxEditPreprocessingRules.Name" xml:space="preserve">
+    <value>CheckBoxEditPreprocessingRules</value>
+  </data>
+  <data name="&gt;&gt;CheckBoxEditPreprocessingRules.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CheckBoxEditPreprocessingRules.Parent" xml:space="preserve">
+    <value>TableLayoutPanelSelectEdit</value>
+  </data>
+  <data name="&gt;&gt;CheckBoxEditPreprocessingRules.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="TableLayoutPanelSelectEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 79</value>
+  </data>
+  <data name="TableLayoutPanelSelectEdit.RowCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="TableLayoutPanelSelectEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>647, 303</value>
+  </data>
+  <data name="TableLayoutPanelSelectEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanelSelectEdit.Name" xml:space="preserve">
+    <value>TableLayoutPanelSelectEdit</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanelSelectEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanelSelectEdit.Parent" xml:space="preserve">
+    <value>SelectEditTabContent</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanelSelectEdit.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TableLayoutPanelSelectEdit.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="LabelCustomProperties" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="AvailableParametersGrid" Row="1" RowSpan="3" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="LabelParameters" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="AvailablePropertiesGrid" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="MetaDataGrid" Row="3" RowSpan="2" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LabelMetaDataProperties" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="CheckBoxEditPreprocessingRules" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="Absolute,17,Absolute,116,Absolute,20,Absolute,126,Absolute,12,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="SelectEditTabContent.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="SelectEditTabContent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="SelectEditTabContent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>680, 426</value>
+  </data>
+  <data name="SelectEditTabContent.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SelectEditTabContent.Name" xml:space="preserve">
+    <value>SelectEditTabContent</value>
+  </data>
+  <data name="&gt;&gt;SelectEditTabContent.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.WizardTabContentControl, Questify.Builder.UI, Version=2.12.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;SelectEditTabContent.Parent" xml:space="preserve">
+    <value>UltraTabPageControl1</value>
+  </data>
+  <data name="&gt;&gt;SelectEditTabContent.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="UltraTabPageControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-10000, -10000</value>
+  </data>
+  <data name="UltraTabPageControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>680, 426</value>
+  </data>
+  <data name="&gt;&gt;UltraTabPageControl1.Name" xml:space="preserve">
+    <value>UltraTabPageControl1</value>
+  </data>
+  <data name="&gt;&gt;UltraTabPageControl1.Type" xml:space="preserve">
+    <value>Infragistics.Win.UltraWinTabControl.UltraTabPageControl, Infragistics2.Win.UltraWinTabControl.v6.3, Version=6.3.20063.53, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;UltraTabPageControl1.Parent" xml:space="preserve">
+    <value>WizardTabControl</value>
+  </data>
+  <data name="&gt;&gt;UltraTabPageControl1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="OverwriteTabContent.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="OverwriteExistingCPListMultiValuesCheckbox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="OverwriteExistingCPListMultiValuesCheckbox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="OverwriteExistingCPListMultiValuesCheckbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 105</value>
+  </data>
+  <data name="OverwriteExistingCPListMultiValuesCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>342, 17</value>
+  </data>
+  <data name="OverwriteExistingCPListMultiValuesCheckbox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="OverwriteExistingCPListMultiValuesCheckbox.Text" xml:space="preserve">
+    <value>Overwrite existing values for custom properties of type 'list (multiple)'</value>
+  </data>
+  <data name="&gt;&gt;OverwriteExistingCPListMultiValuesCheckbox.Name" xml:space="preserve">
+    <value>OverwriteExistingCPListMultiValuesCheckbox</value>
+  </data>
+  <data name="&gt;&gt;OverwriteExistingCPListMultiValuesCheckbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OverwriteExistingCPListMultiValuesCheckbox.Parent" xml:space="preserve">
+    <value>OverwriteTabContent</value>
+  </data>
+  <data name="&gt;&gt;OverwriteExistingCPListMultiValuesCheckbox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="OverwriteTabContent.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="OverwriteTabContent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="OverwriteTabContent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>680, 426</value>
+  </data>
+  <data name="OverwriteTabContent.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;OverwriteTabContent.Name" xml:space="preserve">
+    <value>OverwriteTabContent</value>
+  </data>
+  <data name="&gt;&gt;OverwriteTabContent.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.WizardTabContentControl, Questify.Builder.UI, Version=2.12.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;OverwriteTabContent.Parent" xml:space="preserve">
+    <value>UltraTabPageControl2</value>
+  </data>
+  <data name="&gt;&gt;OverwriteTabContent.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="UltraTabPageControl2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-10000, -10000</value>
+  </data>
+  <data name="UltraTabPageControl2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>680, 426</value>
+  </data>
+  <data name="&gt;&gt;UltraTabPageControl2.Name" xml:space="preserve">
+    <value>UltraTabPageControl2</value>
+  </data>
+  <data name="&gt;&gt;UltraTabPageControl2.Type" xml:space="preserve">
+    <value>Infragistics.Win.UltraWinTabControl.UltraTabPageControl, Infragistics2.Win.UltraWinTabControl.v6.3, Version=6.3.20063.53, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;UltraTabPageControl2.Parent" xml:space="preserve">
+    <value>WizardTabControl</value>
+  </data>
+  <data name="&gt;&gt;UltraTabPageControl2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="WizardTabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="WizardTabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>680, 426</value>
+  </data>
+  <data name="&gt;&gt;WizardTabControl.Name" xml:space="preserve">
+    <value>WizardTabControl</value>
+  </data>
+  <data name="&gt;&gt;WizardTabControl.Type" xml:space="preserve">
+    <value>Infragistics.Win.UltraWinTabControl.UltraTabControl, Infragistics2.Win.UltraWinTabControl.v6.3, Version=6.3.20063.53, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;WizardTabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;WizardTabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="CustomPropertyCollectionBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>TableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 100</value>
+  </data>
+  <data name="TableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel2.Name" xml:space="preserve">
+    <value>TableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="" /&gt;&lt;Rows Styles="" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="TextBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TextBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="TextBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TextBox1.Name" xml:space="preserve">
+    <value>TextBox1</value>
+  </data>
+  <data name="&gt;&gt;TextBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ScoreEditorInstance.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ScoreEditorInstance.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ScoreEditorInstance.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="ScoreEditorInstance.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-18, -40</value>
+  </data>
+  <data name="ScoreEditorInstance.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>100, 100</value>
+  </data>
+  <data name="ScoreEditorInstance.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 100</value>
+  </data>
+  <data name="ScoreEditorInstance.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="ScoreEditorInstance.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;ScoreEditorInstance.Name" xml:space="preserve">
+    <value>ScoreEditorInstance</value>
+  </data>
+  <data name="&gt;&gt;ScoreEditorInstance.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.ScoreEditor, Questify.Builder.UI, Version=2.12.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;ScoreEditorInstance.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ScoreEditorInstance.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ExportOptionControlBase1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>317, 0</value>
+  </data>
+  <data name="ExportOptionControlBase1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>410, 270</value>
+  </data>
+  <data name="ExportOptionControlBase1.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;ExportOptionControlBase1.Name" xml:space="preserve">
+    <value>ExportOptionControlBase1</value>
+  </data>
+  <data name="&gt;&gt;ExportOptionControlBase1.Type" xml:space="preserve">
+    <value>Questify.Builder.Client.ExportOptionControlBase, TestBuilderClient, Version=2.12.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;ExportOptionControlBase1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ExportOptionControlBase1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>707, 442</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Batch edit item parameter, custom property or metadata</value>
+  </data>
+  <data name="&gt;&gt;CustomPropertyCollectionBindingSource.Name" xml:space="preserve">
+    <value>CustomPropertyCollectionBindingSource</value>
+  </data>
+  <data name="&gt;&gt;CustomPropertyCollectionBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MultiSelectItemEditWizardForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.WizardBase, Questify.Builder.UI, Version=2.12.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+</root>

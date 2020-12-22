@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GridControl.AccessibleName" xml:space="preserve">
+    <value>Grid Control</value>
+  </data>
+  <data name="GridControl_DesignTimeLayout.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;
+    &lt;RootTable&gt;
+      &lt;Caption&gt;ItemResourceEntity&lt;/Caption&gt;
+      &lt;Columns Collection="true" ElementName="Column"&gt;
+        &lt;Column0 ID="BankId"&gt;
+          &lt;AllowGroup&gt;False&lt;/AllowGroup&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Bank id&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;BankId&lt;/DataMember&gt;
+          &lt;EditType&gt;NoEdit&lt;/EditType&gt;
+          &lt;Key&gt;BankId&lt;/Key&gt;
+          &lt;Position&gt;0&lt;/Position&gt;
+          &lt;ShowInFieldChooser&gt;False&lt;/ShowInFieldChooser&gt;
+          &lt;Visible&gt;False&lt;/Visible&gt;
+          &lt;Width&gt;88&lt;/Width&gt;
+        &lt;/Column0&gt;
+        &lt;Column1 ID="BankName"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Bank name&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;BankName&lt;/DataMember&gt;
+          &lt;Key&gt;BankName&lt;/Key&gt;
+          &lt;Position&gt;1&lt;/Position&gt;
+          &lt;ShowInFieldChooser&gt;False&lt;/ShowInFieldChooser&gt;
+          &lt;Visible&gt;False&lt;/Visible&gt;
+          &lt;Width&gt;88&lt;/Width&gt;
+          &lt;CustomGroupIndex&gt;0&lt;/CustomGroupIndex&gt;
+          &lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+        &lt;/Column1&gt;
+        &lt;Column2 ID="ItemId"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Item id&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;ItemId&lt;/DataMember&gt;
+          &lt;Key&gt;ItemId&lt;/Key&gt;
+          &lt;Position&gt;2&lt;/Position&gt;
+          &lt;Width&gt;30&lt;/Width&gt;
+          &lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+        &lt;/Column2&gt;
+        &lt;Column3 ID="Name"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Code&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;Name&lt;/DataMember&gt;
+          &lt;Key&gt;Name&lt;/Key&gt;
+          &lt;Position&gt;3&lt;/Position&gt;
+          &lt;Width&gt;88&lt;/Width&gt;
+          &lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+        &lt;/Column3&gt;
+        &lt;Column4 ID="Title"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Title&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;Title&lt;/DataMember&gt;
+          &lt;Key&gt;Title&lt;/Key&gt;
+          &lt;Position&gt;4&lt;/Position&gt;
+          &lt;Width&gt;88&lt;/Width&gt;
+          &lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+        &lt;/Column4&gt;
+        &lt;Column5 ID="ReferenceCount"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Reference count&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;ReferenceCount&lt;/DataMember&gt;
+          &lt;Key&gt;ReferenceCount&lt;/Key&gt;
+          &lt;Position&gt;5&lt;/Position&gt;
+          &lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;
+          &lt;Width&gt;104&lt;/Width&gt;
+        &lt;/Column5&gt;
+        &lt;Column6 ID="ItemLayoutTemplateUsedName"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Item layout template&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;ItemLayoutTemplateUsedName&lt;/DataMember&gt;
+          &lt;Key&gt;ItemLayoutTemplateUsedName&lt;/Key&gt;
+          &lt;Position&gt;6&lt;/Position&gt;
+          &lt;Width&gt;118&lt;/Width&gt;
+          &lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+        &lt;/Column6&gt;
+        &lt;Column7 ID="StateName"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Status&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;StateName&lt;/DataMember&gt;
+          &lt;DefaultGroupPrefix&gt;State:&lt;/DefaultGroupPrefix&gt;
+          &lt;Key&gt;StateName&lt;/Key&gt;
+          &lt;Position&gt;7&lt;/Position&gt;
+          &lt;Width&gt;88&lt;/Width&gt;
+        &lt;/Column7&gt;
+        &lt;Column8 ID="ItemTypeFromItemLayoutTemplateString"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Item type&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;ItemTypeFromItemLayoutTemplateString&lt;/DataMember&gt;
+          &lt;Key&gt;ItemTypeFromItemLayoutTemplateString&lt;/Key&gt;
+          &lt;Position&gt;8&lt;/Position&gt;
+          &lt;Width&gt;88&lt;/Width&gt;
+        &lt;/Column8&gt;
+        &lt;Column9 ID="AlternativesCount"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;No. alternatives&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;AlternativesCount&lt;/DataMember&gt;
+          &lt;Key&gt;AlternativesCount&lt;/Key&gt;
+          &lt;Position&gt;9&lt;/Position&gt;
+          &lt;Width&gt;98&lt;/Width&gt;
+          &lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+        &lt;/Column9&gt;
+        &lt;Column10 ID="ResponseCount"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;No. responses&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;ResponseCount&lt;/DataMember&gt;
+          &lt;Key&gt;ResponseCount&lt;/Key&gt;
+          &lt;Position&gt;10&lt;/Position&gt;
+          &lt;Width&gt;92&lt;/Width&gt;
+          &lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+        &lt;/Column10&gt;
+        &lt;Column11 ID="Version"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Version&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;Version&lt;/DataMember&gt;
+          &lt;Key&gt;Version&lt;/Key&gt;
+          &lt;Position&gt;11&lt;/Position&gt;
+          &lt;Width&gt;88&lt;/Width&gt;
+          &lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+        &lt;/Column11&gt;
+        &lt;Column12 ID="CreationDate"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Created on&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;DateTime&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;CreationDate&lt;/DataMember&gt;
+          &lt;DefaultGroupInterval&gt;Date&lt;/DefaultGroupInterval&gt;
+          &lt;EditType&gt;CalendarCombo&lt;/EditType&gt;
+          &lt;FormatString&gt;g&lt;/FormatString&gt;
+          &lt;Key&gt;CreationDate&lt;/Key&gt;
+          &lt;Position&gt;12&lt;/Position&gt;
+          &lt;Width&gt;88&lt;/Width&gt;
+          &lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+        &lt;/Column12&gt;
+        &lt;Column13 ID="CreatedByFullName"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Created by&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;CreatedByFullName&lt;/DataMember&gt;
+          &lt;EditType&gt;NoEdit&lt;/EditType&gt;
+          &lt;Key&gt;CreatedByFullName&lt;/Key&gt;
+          &lt;Position&gt;13&lt;/Position&gt;
+          &lt;Width&gt;88&lt;/Width&gt;
+          &lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+        &lt;/Column13&gt;
+        &lt;Column14 ID="ModifiedByFullName"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Modified by&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;ModifiedByFullName&lt;/DataMember&gt;
+          &lt;EditType&gt;NoEdit&lt;/EditType&gt;
+          &lt;Key&gt;ModifiedByFullName&lt;/Key&gt;
+          &lt;Position&gt;14&lt;/Position&gt;
+          &lt;Width&gt;88&lt;/Width&gt;
+          &lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+        &lt;/Column14&gt;
+        &lt;Column15 ID="ModifiedDate"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Date modified&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;DateTime&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;ModifiedDate&lt;/DataMember&gt;
+          &lt;DefaultGroupInterval&gt;Date&lt;/DefaultGroupInterval&gt;
+          &lt;EditType&gt;CalendarCombo&lt;/EditType&gt;
+          &lt;FormatString&gt;g&lt;/FormatString&gt;
+          &lt;Key&gt;ModifiedDate&lt;/Key&gt;
+          &lt;Position&gt;15&lt;/Position&gt;
+          &lt;Width&gt;89&lt;/Width&gt;
+          &lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+        &lt;/Column15&gt;
+        &lt;Column16 ID="KeyValues"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Key values&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;KeyValues&lt;/DataMember&gt;
+          &lt;Key&gt;KeyValues&lt;/Key&gt;
+          &lt;Position&gt;16&lt;/Position&gt;
+          &lt;Width&gt;88&lt;/Width&gt;
+          &lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+        &lt;/Column16&gt;
+        &lt;Column17 ID="MaxScore"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Max. score&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;Decimal&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;MaxScore&lt;/DataMember&gt;
+          &lt;Key&gt;MaxScore&lt;/Key&gt;
+          &lt;Position&gt;17&lt;/Position&gt;
+          &lt;Width&gt;88&lt;/Width&gt;
+          &lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+        &lt;/Column17&gt;
+        &lt;Column18 ID="InclusionGroupCode"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Inclusion group&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;InclusionGroupCode&lt;/DataMember&gt;
+          &lt;Key&gt;InclusionGroupCode&lt;/Key&gt;
+          &lt;Position&gt;18&lt;/Position&gt;
+          &lt;Width&gt;88&lt;/Width&gt;
+          &lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+        &lt;/Column18&gt;
+	&lt;Column19 ID="ExclusionGroupCode"&gt;
+          &lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+          &lt;Caption&gt;Exclusion group&lt;/Caption&gt;
+          &lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+          &lt;DataMember&gt;ExclusionGroupCode&lt;/DataMember&gt;
+          &lt;Key&gt;ExclusionGroupCode&lt;/Key&gt;
+          &lt;Position&gt;19&lt;/Position&gt;
+          &lt;Width&gt;88&lt;/Width&gt;
+          &lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+         &lt;/Column19&gt;
+      &lt;/Columns&gt;
+      &lt;SortKeys Collection="true" ElementName="SortKey"&gt;
+        &lt;SortKey0 ID="SortKey0"&gt;
+          &lt;ColIndex&gt;3&lt;/ColIndex&gt;
+        &lt;/SortKey0&gt;
+      &lt;/SortKeys&gt;
+      &lt;GroupCondition /&gt;
+      &lt;Groups Collection="true" ElementName="Group"&gt;
+        &lt;Group0 ID="Group0"&gt;
+          &lt;ColumnCount&gt;2&lt;/ColumnCount&gt;
+          &lt;ColIndex1&gt;2&lt;/ColIndex1&gt;
+          &lt;SortOrder&gt;Descending&lt;/SortOrder&gt;
+          &lt;CustomGroupIndex&gt;0&lt;/CustomGroupIndex&gt;
+        &lt;/Group0&gt;
+      &lt;/Groups&gt;
+      &lt;CustomGroups Collection="true" ElementName="CustomGroup"&gt;
+        &lt;CustomGroup0 ID="CustomGroup0"&gt;
+          &lt;CompositeColumnsLength&gt;2&lt;/CompositeColumnsLength&gt;
+          &lt;CompositeColumn0&gt;0&lt;/CompositeColumn0&gt;
+          &lt;CompositeColumn1&gt;1&lt;/CompositeColumn1&gt;
+          &lt;CustomGroupType&gt;CompositeColumns&lt;/CustomGroupType&gt;
+          &lt;Key&gt;BankIdBankName&lt;/Key&gt;
+          &lt;HeaderCaption&gt;Bank name&lt;/HeaderCaption&gt;
+        &lt;/CustomGroup0&gt;
+      &lt;/CustomGroups&gt;
+    &lt;/RootTable&gt;
+  &lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GridControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="GridControl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="GridControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 31</value>
+  </data>
+  <data name="GridControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1325, 396</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GridControl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;GridControl.Name" xml:space="preserve">
+    <value>GridControl</value>
+  </data>
+  <data name="&gt;&gt;GridControl.Type" xml:space="preserve">
+    <value>Janus.Windows.GridEX.GridEX, Janus.Windows.GridEX.v4, Version=4.0.47.0, Culture=neutral, PublicKeyToken=21d5517571b185bf</value>
+  </data>
+  <data name="&gt;&gt;GridControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GridControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ItemSearchControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="ItemSearchControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ItemSearchControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1325, 31</value>
+  </data>
+  <data name="ItemSearchControl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ItemSearchControl.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;ItemSearchControl.Name" xml:space="preserve">
+    <value>ItemSearchControl</value>
+  </data>
+  <data name="&gt;&gt;ItemSearchControl.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.SimpleSearchControl, Questify.Builder.UI, Version=2.12.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+  <data name="&gt;&gt;ItemSearchControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ItemSearchControl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1325, 427</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ItemGrid</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.GridBase, Questify.Builder.UI, Version=2.12.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
+  </data>
+</root>

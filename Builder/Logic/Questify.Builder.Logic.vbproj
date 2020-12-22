@@ -1,0 +1,1290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C4AB026E-B1E2-4D1E-A857-4CA29BAA9981}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Questify.Builder.Logic</RootNamespace>
+    <AssemblyName>Questify.Builder.Logic</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\TestBuilder.snk</AssemblyOriginatorKeyFile>
+    <OptionStrict>On</OptionStrict>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Any CPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Cito.TestBuilder.Logic.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxMin, Version=5.14.5506.26196, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AjaxMin.5.14.5506.26202\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinch.WPF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Cinch.2.0.70832\lib\net40\Cinch.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.7.2.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\HtmlAgilityPack.1.7.2\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlToOpenXml, Version=1.6.0.0, Culture=neutral, PublicKeyToken=6ad79d83e2b60e63, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\HtmlToOpenXml.1.6.1\lib\net40\HtmlToOpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="MediaInfoDotNet, Version=0.7.5249.23704, Culture=neutral, PublicKeyToken=5ebfbae752b4bdc1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3rdPartyComponents\MediaInfoDotNet\MediaInfoDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="MEFedMVVM.WPF, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b6db3dc4f5fba1e3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Cinch.2.0.70832\lib\net40\MEFedMVVM.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.2.8.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NLog.4.4.11\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RestSharp, Version=100.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RestSharpSigned.105.2.3\lib\net46\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.2.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.2.1\lib\net45\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Cito.TestBuilder.ContentModel" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Versioning\GeneralInfo.vb">
+      <Link>GeneralInfo.vb</Link>
+    </Compile>
+    <Compile Include="..\..\Versioning\TestBuilder_VersionInfo.vb">
+      <Link>My Project\TestBuilder_VersionInfo.vb</Link>
+    </Compile>
+    <Compile Include="Annotations.vb" />
+    <Compile Include="Chain\ChainHandlerBase.vb" />
+    <Compile Include="Chain\ChainHandlerException.vb" />
+    <Compile Include="Chain\ChainManager.vb" />
+    <Compile Include="Chain\ChainHandlerResult.vb" />
+    <Compile Include="Chain\IChainHandler.vb" />
+    <Compile Include="Chain\ChainHandlerRequest.vb" />
+    <Compile Include="Chain\ProcessStrategyEnum.vb" />
+    <Compile Include="Cloning\TestPackageResourceCloner.vb" />
+    <Compile Include="Cloning\AssessmentTestResourceCloner.vb" />
+    <Compile Include="Cloning\BaseResourceCloner.vb" />
+    <Compile Include="Cloning\DefaultResourceCloner.vb" />
+    <Compile Include="Cloning\ICloneResourceFactory.vb" />
+    <Compile Include="Cloning\ItemResourceCloner.vb" />
+    <Compile Include="CodeActivities\AddParameterCollectionToSet.vb" />
+    <Compile Include="CodeActivities\AddParameterToCollection.vb" />
+    <Compile Include="CodeActivities\SaveResourceToFile.vb" />
+    <Compile Include="Common\GroupedPropertyReader.vb" />
+    <Compile Include="Common\Filtering\FilterRequestTypeEnum.vb" />
+    <Compile Include="Common\Filtering\ModifyRequestHandler.vb" />
+    <Compile Include="Common\Filtering\ModifyResourceRefRequestHandler.vb" />
+    <Compile Include="Common\MultiType.vb" />
+    <Compile Include="Common\NoValueType.vb" />
+    <Compile Include="ContentModel\AssessmentTestExtensions.vb" />
+    <Compile Include="ContentModel\AssessmentTestDtoExtensions.vb" />
+    <Compile Include="ContentModel\CombinedScoringMapKeyExtensions.vb" />
+    <Compile Include="ContentModel\CustomBankPropertyValueEntityExtensions.vb" />
+    <Compile Include="ContentModel\DatasourceExtension.vb" />
+    <Compile Include="ContentModel\GeneralExtensions.vb" />
+    <Compile Include="ContentModel\ItemLayoutTemplateResourceExtension.vb" />
+    <Compile Include="ContentModel\ParameterSetCollectionExtensions.vb" />
+    <Compile Include="ContentModel\ParamValidator\AreaParameterValidator.vb" />
+    <Compile Include="ContentModel\ParamValidator\GapImageParameterValidator.vb" />
+    <Compile Include="ContentModel\ParamValidator\GapMatchScoringParameterValidator.vb" />
+    <Compile Include="ContentModel\ParamValidator\GraphGapMatchScoringParameterValidator.vb" />
+    <Compile Include="ContentModel\ParamValidator\HotspotScoringParameterValidator.vb" />
+    <Compile Include="ContentModel\ParamValidator\MatrixScoringParameterValidator.vb" />
+    <Compile Include="ContentModel\ResourceRefExtensions.vb" />
+    <Compile Include="ContentModel\Scoring\BaseScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\AddInteractionToGroup.vb" />
+    <Compile Include="ContentModel\Scoring\BooleanScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\ChoiceFactMover.vb" />
+    <Compile Include="ContentModel\Scoring\ChoiceScoringManipulatorDecorator.vb" />
+    <Compile Include="ContentModel\Scoring\ConceptIdSorter.vb" />
+    <Compile Include="ContentModel\Scoring\DefaultFindingToFindingManipulatorLogic.vb" />
+    <Compile Include="ContentModel\Scoring\FactEqualityComparer.vb" />
+    <Compile Include="ContentModel\Scoring\FactMoverFactory.vb" />
+    <Compile Include="ContentModel\Scoring\FactSetEqualityComparer.vb" />
+    <Compile Include="ContentModel\Scoring\FactValueDomainNameGenerators.vb" />
+    <Compile Include="ContentModel\Scoring\FindingToFindingComparer.vb" />
+    <Compile Include="ContentModel\Scoring\FindingToFindingManipulatorLogicDecorator.vb" />
+    <Compile Include="ContentModel\Scoring\GapMatchRichTextScoringNonTransformedManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\GapMatchScoringNonTransformedManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\GapScoringManipulatorDecorator.vb" />
+    <Compile Include="ContentModel\Scoring\GeogebraScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\IFindingToFindingManipulatorLogic.vb" />
+    <Compile Include="ContentModel\Scoring\MultiTypeScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\SkipAnswerCategoriesAsTarget.vb" />
+    <Compile Include="ContentModel\Scoring\ValidatingChoiceArrayScoringManipulatorDecorator.vb" />
+    <Compile Include="ContentModel\Scoring\IChoiceArrayScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\InlineChoiceScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\IOrderScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\MathScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\MatrixScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\OrderScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\ConceptScoringMap.vb" />
+    <Compile Include="ContentModel\Scoring\GraphGapMatchScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\GapMatchScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\CombinedScoringMapKey.vb" />
+    <Compile Include="ContentModel\Scoring\ConceptScoreInSetsManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\DateScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\DefaultValuesSetter.vb" />
+    <Compile Include="ContentModel\Scoring\FactSetManipulatorTarget.vb" />
+    <Compile Include="ContentModel\Scoring\FactTargetManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\FindingManipulatorTarget.vb" />
+    <Compile Include="ContentModel\Scoring\FactMover.vb" />
+    <Compile Include="ContentModel\Scoring\IFactMover.vb" />
+    <Compile Include="ContentModel\Scoring\IFindingManipulatorTarget.vb" />
+    <Compile Include="ContentModel\Scoring\IValidatingChoiceArrayScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\MultiResponseScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\PreProcessingHelper.vb" />
+    <Compile Include="ContentModel\Scoring\ScoringDisplayValueCalculator.vb" />
+    <Compile Include="ContentModel\Scoring\ScoreEditorForAttribute.vb" />
+    <Compile Include="ContentModel\Scoring\ScoringManipulatorDecorator.vb" />
+    <Compile Include="ContentModel\Scoring\ScoringMapKey.vb" />
+    <Compile Include="ContentModel\Scoring\ScoringMap.vb" />
+    <Compile Include="ContentModel\Scoring\GraphGapMatchScoringTransformedManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\Validator\ConceptEncodingOutOfSync.vb" />
+    <Compile Include="ContentModel\Scoring\Validator\ConceptEncodingValidator.vb" />
+    <Compile Include="ContentModel\Scoring\Validator\EachInteractionHasScoringDefinition.vb" />
+    <Compile Include="ContentModel\Scoring\Validator\Fact.vb" />
+    <Compile Include="ContentModel\Scoring\Validator\FactEqualityComparer.vb" />
+    <Compile Include="ContentModel\Scoring\Validator\Factset.vb" />
+    <Compile Include="ContentModel\Scoring\Validator\GroupConsistsOfMultipleDifferentInteractions.vb" />
+    <Compile Include="ContentModel\Scoring\Validator\GroupsWithSameInteractionsAreEqual.vb" />
+    <Compile Include="ContentModel\Scoring\Validator\InteractionOfGroupCannotExistOutsideAGroup.vb" />
+    <Compile Include="ContentModel\Scoring\Validator\NoAndOnSameInteraction.vb" />
+    <Compile Include="ContentModel\Scoring\Validator\NoOrBetweenSingleInteractions.vb" />
+    <Compile Include="ContentModel\Scoring\Validator\OtherGroupWithSameInteractionsExists.vb" />
+    <Compile Include="ContentModel\Scoring\Validator\ScoringValidator.vb" />
+    <Compile Include="ContentModel\Scoring\Validator\ValidationRuleProcessor.vb" />
+    <Compile Include="ContentModel\Scoring\Validator\Value.vb" />
+    <Compile Include="ContentModel\Scoring\Validator\ValueEqualityComparer.vb" />
+    <Compile Include="ContentModel\StringExtension.vb" />
+    <Compile Include="ContentModel\TreeStructureCustomBankPropertyEntityExtensions.vb" />
+    <Compile Include="ContentModel\workers\ConceptFactsSetLogic.vb" />
+    <Compile Include="ContentModel\workers\ConceptRenameLogic.vb" />
+    <Compile Include="ContentModel\workers\DefaultStringOperations.vb" />
+    <Compile Include="ContentModel\workers\FactIdEqualityComparer.vb" />
+    <Compile Include="ContentModel\workers\Flow\AddFactsToScoreParameter.vb" />
+    <Compile Include="ContentModel\workers\Flow\AddCatchAll.vb" />
+    <Compile Include="ContentModel\workers\Flow\AddMissingAnswerCatagoryToMC.vb" />
+    <Compile Include="ContentModel\workers\Flow\ClearConceptIfRequired.vb" />
+    <Compile Include="ContentModel\workers\Flow\GetFactsIdsPerScoringParameter.vb" />
+    <Compile Include="ContentModel\workers\Flow\MakeConceptSetsDeletable.vb" />
+    <Compile Include="ContentModel\workers\Flow\MoveFactFromSetToFinding.vb" />
+    <Compile Include="ContentModel\workers\Flow\MoveSingleFactsFromFactSetsToFinding.vb" />
+    <Compile Include="ContentModel\workers\Flow\RemoveAutoScoringOffAspectRefs.vb" />
+    <Compile Include="ContentModel\workers\Flow\RemoveDuplicatedKeysInConcept.vb" />
+    <Compile Include="ContentModel\workers\Flow\RemoveEmptyKeyFactSets.vb" />
+    <Compile Include="ContentModel\workers\Flow\RemoveEmptyValues.vb" />
+    <Compile Include="ContentModel\workers\Flow\RemoveEmtpyFacts.vb" />
+    <Compile Include="ContentModel\workers\Flow\RemoveFactsAlreadyInFactSet.vb" />
+    <Compile Include="ContentModel\workers\Flow\RemoveFactsOfWrongType.vb" />
+    <Compile Include="ContentModel\workers\Flow\RemoveOrphanConceptFact.vb" />
+    <Compile Include="ContentModel\workers\Flow\RemoveOutOfBoundsValues.vb" />
+    <Compile Include="ContentModel\workers\Flow\RemoveUnusedFacts.vb" />
+    <Compile Include="ContentModel\workers\Flow\RemoveFindings.vb" />
+    <Compile Include="ContentModel\workers\Flow\RemoveUnusedFindings.vb" />
+    <Compile Include="ContentModel\workers\Flow\EnforceSingleChoiceScore.vb" />
+    <Compile Include="ContentModel\workers\Flow\SynchronizeKeyFindingToConceptFindingActivity.vb" />
+    <Compile Include="ContentModel\workers\GetIdForAnswerCategory.vb" />
+    <Compile Include="ContentModel\workers\ParameterCollectionCloner.vb" />
+    <Compile Include="ContentModel\workers\ParameterCollectionClonerBase.vb" />
+    <Compile Include="ContentModel\workers\PokIdentifierGenerator.vb" />
+    <Compile Include="ContentModel\workers\ScoringParameterFactory.vb" />
+    <Compile Include="ContentModel\workers\ScoringParameterLogic.vb" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ContentModel\workers\SolutionFixer.vb" />
+    <Compile Include="ContentModel\workers\StringRegexOp.vb" />
+    <Compile Include="Conversion\ExcelDocument.vb" />
+    <Compile Include="Conversion\ExtensionMethods.vb" />
+    <Compile Include="Conversion\OpenXmlExcelGenerator.vb" />
+    <Compile Include="Conversion\OpenXmlExcelReader.vb" />
+    <Compile Include="CustomEnumAttributes.vb" />
+    <Compile Include="CustomInteractions\BaseAdapter.vb" />
+    <Compile Include="CustomInteractions\ChoiceAdapter.vb" />
+    <Compile Include="CustomInteractions\CiPackageValidator.vb" />
+    <Compile Include="CustomInteractions\CoordinateAdapter.vb" />
+    <Compile Include="CustomInteractions\CustomInteraction.vb" />
+    <Compile Include="CustomInteractions\DecimalAdapter.vb" />
+    <Compile Include="CustomInteractions\Flow\CreateKeyFact.vb" />
+    <Compile Include="CustomInteractions\Flow\CreateScoringParameter.vb" />
+    <Compile Include="CustomInteractions\Flow\ExtractMetadata.vb" />
+    <Compile Include="CustomInteractions\Flow\GetTypeOfCustomInteraction.vb" />
+    <Compile Include="CustomInteractions\Flow\GetVariableValues.vb" />
+    <Compile Include="CustomInteractions\Flow\RemoveCustomInteractionParameters.vb" />
+    <Compile Include="CustomInteractions\GeogebraAdapter.vb" />
+    <Compile Include="CustomInteractions\GeogebraPackageValidator.vb" />
+    <Compile Include="CustomInteractions\GeogebraScoring.vb" />
+    <Compile Include="CustomInteractions\GeogebraScoringValidation.vb" />
+    <Compile Include="CustomInteractions\InlineCustomInteraction.vb" />
+    <Compile Include="CustomInteractions\IntegerAdapter.vb" />
+    <Compile Include="CustomInteractions\IntegerScoringValidation.vb" />
+    <Compile Include="CustomInteractions\DecimalScoringValidation.vb" />
+    <Compile Include="CustomInteractions\ChoiceScoringValidation.vb" />
+    <Compile Include="CustomInteractions\IScoreParameterFactory.vb" />
+    <Compile Include="CustomInteractions\IScoringValidation.vb" />
+    <Compile Include="CustomInteractions\MathMlFactory.vb" />
+    <Compile Include="CustomInteractions\MathMlScoringValidation.vb" />
+    <Compile Include="CustomInteractions\CoordinateScoringValidation.vb" />
+    <Compile Include="CustomInteractions\MetadataPciModules.vb" />
+    <Compile Include="CustomInteractions\PackageValidator.vb" />
+    <Compile Include="CustomInteractions\PciPackageValidator.vb" />
+    <Compile Include="CustomInteractions\ScoreParameterAdapter.vb" />
+    <Compile Include="CustomProperties\Helpers\CustomPropertyHelper.vb" />
+    <Compile Include="CustomProperties\Interfaces\ICustomPropertyValueConverter.vb" />
+    <Compile Include="CustomProperties\ValueConverters\ConceptStructureCustomPropertyValueConverter.vb" />
+    <Compile Include="CustomProperties\ValueConverters\FreeCustomPropertyValueConverter.vb" />
+    <Compile Include="CustomProperties\ValueConverters\ListCustomPropertyValueConverter.vb" />
+    <Compile Include="CustomProperties\ValueConverters\RichTextCustomPropertyValueConverter.vb" />
+    <Compile Include="CustomProperties\ValueConverters\TreeStructureCustomPropertyValueConverter.vb" />
+    <Compile Include="CustomProperties\TreeStructureCustomProperties\AssessmentTestCutOffScoringHelper.vb" />
+    <Compile Include="Decorators\BaseDecorators\HarmonizerDecoratorBase.vb" />
+    <Compile Include="DtoService\AspectResourceDtoWcfServiceAdapter.vb" />
+    <Compile Include="DtoService\BankDtoWcfServiceAdapter.vb" />
+    <Compile Include="DtoService\CacheResourceWcfServiceDecorator.vb" />
+    <Compile Include="DtoService\ControlTemplateResourceDtoWcfServiceAdapter.vb" />
+    <Compile Include="DtoService\CustomBankPropertyDtoWcfServiceAdapter.vb" />
+    <Compile Include="DtoService\CustomBankPropertyResourceDtoWcfServiceAdapter.vb" />
+    <Compile Include="DtoService\DataSourceResourceDtoWcfServiceAdapter.vb" />
+    <Compile Include="DtoService\DataSourceTemplateResourceDtoWcfServiceAdapter.vb" />
+    <Compile Include="DtoService\DtoServiceFactory.vb" />
+    <Compile Include="DtoService\GenericResourceDtoWcfServiceAdapter.vb" />
+    <Compile Include="DtoService\Helper\WcfServiceAdapterHelperClass.vb" />
+    <Compile Include="DtoService\IDtoServiceFactory.vb" />
+    <Compile Include="DtoService\ItemLayoutTemplateResourceDtoWcfServiceAdapter.vb" />
+    <Compile Include="DtoService\ItemResourceDtoWcfServiceAdapter.vb" />
+    <Compile Include="DtoService\OpenChannelToBankDtoServiceLazy.vb" />
+    <Compile Include="DtoService\OpenChannelToCustomBankPropertyDtoServiceLazy.vb" />
+    <Compile Include="DtoService\OpenChannelToDataSourceResourceDtoServiceLazy.vb" />
+    <Compile Include="DtoService\OpenChannelToDtoServiceLazy.vb" />
+    <Compile Include="DtoService\OpenChannelToGenericResourceDtoServiceLazy.vb" />
+    <Compile Include="DtoService\OpenChannelToItemlayoutTemplateResourceDtoServiceLazy.vb" />
+    <Compile Include="DtoService\OpenChannelToItemResourceDtoServiceLazy.vb" />
+    <Compile Include="DtoService\OpenChannelToResourceDtoServiceLazy.vb" />
+    <Compile Include="DtoService\OpenChannelToTestResourceDtoServiceLazy.vb" />
+    <Compile Include="DtoService\TestPackageResourceDtoWcfServiceAdapter.vb" />
+    <Compile Include="DtoService\TestResourceDtoWcfServiceAdapter.vb" />
+    <Compile Include="DtoService\TestTemplateResourceDtoWcfServiceAdapter.vb" />
+    <Compile Include="DtoService\WcfDtoServiceFactory.vb" />
+    <Compile Include="Enums\Enums.vb" />
+    <Compile Include="CustomInteractions\CustomInterActionDimensionsHelper.vb" />
+    <Compile Include="HelperClasses\AspectHelper.vb" />
+    <Compile Include="HelperClasses\DataTableConvertHelper.vb" />
+    <Compile Include="HelperClasses\DataTableConvertHelperExtensions.vb" />
+    <Compile Include="HelperClasses\HtmlContentHelper.vb" />
+    <Compile Include="HelperClasses\ShapeHelper.vb" />
+    <Compile Include="HtmlHelpers\InlineTemplateNames\InlineChoiceOptionHtmlInlineTemplateNames.vb" />
+    <Compile Include="HtmlHelpers\InlineMediaTemplateHelper.vb" />
+    <Compile Include="HtmlHelpers\InlineTemplateNames\PopupHtmlInlineTemplateNames.vb" />
+    <Compile Include="ImageGenerator\GapMatchImageGenerator.vb" />
+    <Compile Include="ImageGenerator\ImageGenerator.vb" />
+    <Compile Include="ImageGenerator\NotSupportedPlaceholderGenerator.vb" />
+    <Compile Include="HelperClasses\MathMLHelper.vb" />
+    <Compile Include="HelperClasses\MediaDimensionsHelper.vb" />
+    <Compile Include="HelperClasses\SolutionHelper.vb" />
+    <Compile Include="HtmlHelpers\InlineTemplateNames\DefaultHtmlInlineTemplateNames.vb" />
+    <Compile Include="HtmlHelpers\InlineTemplateNames\IHtmlInlineTemplateNames.vb" />
+    <Compile Include="HtmlHelpers\HtmlInlineConverter.vb" />
+    <Compile Include="HtmlHelpers\InlineElementHelper.vb" />
+    <Compile Include="HtmlHelpers\PlaceHolderHelper.vb" />
+    <Compile Include="HelperClasses\BinarySerializationHelper.vb" />
+    <Compile Include="HelperClasses\LogicFileHelper.vb" />
+    <Compile Include="HelperClasses\XmlElementSerializationSurrogate.vb" />
+    <Compile Include="ContentModel\AspectExtensions.vb" />
+    <Compile Include="ContentModel\AspectReferenceExtensions.vb" />
+    <Compile Include="HelperClasses\XMLExtensions.vb" />
+    <Compile Include="HtmlHelpers\ResourceManagerWithEmbeddedResources.vb" />
+    <Compile Include="ItemEditor\AlphabeticIdGenerator.vb" />
+    <Compile Include="ItemEditor\CollectionParameterEvaluator.vb" />
+    <Compile Include="ItemEditor\CollectionParameterNamingFactory.vb" />
+    <Compile Include="ItemEditor\Group.vb" />
+    <Compile Include="ItemEditor\GroupConditionalEnabled.vb" />
+    <Compile Include="ItemEditor\GroupInfluenceFactory.vb" />
+    <Compile Include="ItemEditor\ICollectionParameterNaming.vb" />
+    <Compile Include="ItemEditor\IGroup.vb" />
+    <Compile Include="ItemEditor\IGroupConditionalEnabled.vb" />
+    <Compile Include="ItemEditor\IGroupInfluence.vb" />
+    <Compile Include="ItemEditor\IHasGroupInfluence.vb" />
+    <Compile Include="ItemEditor\IHasGroups.vb" />
+    <Compile Include="ItemEditor\IParameterEvaluator.vb" />
+    <Compile Include="ItemEditor\NumericIdGenerator.vb" />
+    <Compile Include="ItemEditor\ParameterEvaluator.vb" />
+    <Compile Include="ItemEditor\ParameterEvaluatorBase.vb" />
+    <Compile Include="ItemEditor\ParameterEvaluatorFactory.vb" />
+    <Compile Include="ItemEditor\ParameterViewFactory.vb" />
+    <Compile Include="ItemEditor\SubParameterViewFactory.vb" />
+    <Compile Include="ItemHarmonization\Factory\Harmonizer.vb" />
+    <Compile Include="ItemHarmonization\Implementation\BaseTemplateHarmonization.vb" />
+    <Compile Include="ItemHarmonization\Implementation\Base\BaseHarmonization.vb" />
+    <Compile Include="ItemHarmonization\Implementation\InlineElementHarmonization.vb" />
+    <Compile Include="ItemHarmonization\Interface\IHarmonize.vb" />
+    <Compile Include="ItemProcessing\AssessmentItemRenderer.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\CustomInteractionResourceParameterHandler.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\ResourceParameterHandler.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\GapMatchRichTextScoringParameterHandler.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\HotTextScoringParameterHandler.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\GapMatchScoringParameterHandler.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\GapImageParameterHandler.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\GapTextParameterHandler.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\MatrixScoringParameterHandler.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\HotspotScoringParameterHandler.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\GraphGapMatchScoringParameterHandler.vb" />
+    <Compile Include="CustomInteractions\ChoiceScoring.vb" />
+    <Compile Include="CustomInteractions\DecimalScoring.vb" />
+    <Compile Include="CustomInteractions\IntegerScoring.vb" />
+    <Compile Include="CustomInteractions\MathMlScoring.vb" />
+    <Compile Include="CustomInteractions\CoordinateScoring.vb" />
+    <Compile Include="CustomInteractions\MetadataScoring.vb" />
+    <Compile Include="CustomInteractions\MetadataRoot.vb" />
+    <Compile Include="CustomInteractions\ScoringTypeBase.vb" />
+    <Compile Include="CustomInteractions\SubChoice.vb" />
+    <Compile Include="ItemSelector\DefaultItemSelector.vb" />
+    <Compile Include="ItemSelector\Interfaces\IItemSelectorV2.vb" />
+    <Compile Include="ItemSelector\ItemSelectorManagerBase.vb" />
+    <Compile Include="ItemSelector\ItemSelectorV2NeededEventArgs.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.nl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.nl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PluginExtensibility\CommandExecuteRequestEventArgs.vb" />
+    <Compile Include="PluginExtensibility\Html\Constants\Constants.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\C1HtmlConverter.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverterBase.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_AddContextNumber.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_AssignDivId.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_C1RefToCitoRef.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_Cito2Inline.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_CitoRefToC1Ref.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_ConvertForCalculationOfHtmlSize.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_DealWithMovedInline.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_DealWithMovedInlineControl.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_DealWithMovedInlineElement.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_FullToPartial.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_HandleNULLString.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_HtmlToTextToSpeech.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_Inline2Cito.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_MathImageToMathML.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_MathMLToMathImage.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_OldHtmlToInline.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_OldInlineToHtml.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_PartialToFull.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_RemoveContextNumber.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_RemoveFontInSpan.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_RemoveHyperlinks.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_RepairElementReference.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\HtmlConverter_TextToSpeechToHtml.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\IHtmlConverter.vb" />
+    <Compile Include="PluginExtensibility\Html\Converters\IInlineRetriever.vb" />
+    <Compile Include="PluginExtensibility\Html\EditBehavior\AspectEditorBehavior.vb" />
+    <Compile Include="PluginExtensibility\Html\EditBehavior\AspectReferenceEditorBehavior.vb" />
+    <Compile Include="PluginExtensibility\Html\EditBehavior\BaseHtmlEditorBehavior.vb" />
+    <Compile Include="PluginExtensibility\Html\EditBehavior\CustomPropertyRichTextBehavior.vb" />
+    <Compile Include="PluginExtensibility\Html\EditBehavior\GapTextRichTextBehavior.vb" />
+    <Compile Include="PluginExtensibility\Html\EditBehavior\GenericResourceEditorBehavior.vb" />
+    <Compile Include="PluginExtensibility\Html\EditBehavior\InlineChoiceOptionBehavior.vb" />
+    <Compile Include="PluginExtensibility\Html\EditBehavior\PopupContentBehavior.vb" />
+    <Compile Include="PluginExtensibility\Html\EditBehavior\PopupTriggerBehavior.vb" />
+    <Compile Include="PluginExtensibility\Html\EditBehavior\XHtmlParameterBehavior.vb" />
+    <Compile Include="PluginExtensibility\Html\EditBehavior\XHtmlParameterBehaviorBase.vb" />
+    <Compile Include="PluginExtensibility\Html\EditBehavior\XhtmlParameterBehaviorDefault.vb" />
+    <Compile Include="PluginExtensibility\Html\EditBehavior\XOldHtmlParameterBehavior.vb" />
+    <Compile Include="PluginExtensibility\Html\EmptyInlineHtmlEditBehavior.vb" />
+    <Compile Include="PluginExtensibility\Html\Factory\ResourceFactory.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\HtmlFormulaHandler.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\HtmlHandlerBase.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\HtmlInlineHandler.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\HtmlReferencesHandler.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\HtmlTableHandler.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\BaseHtmlSplitter.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\BaseMerger.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\CellStyleDeterminator_collapse.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\CellStyleDeterminator_seperated.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\CssBorder.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\CssBorderCollapsed.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\CssStyleList.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\Enums.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\ICellStyleDeterminator.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\IInlineTextSplitter.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\ISetTableBorderStyleStrategy.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\ITableMergeStrategy.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\ParagraphHtmlSplitter.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\RegExHtmlSplitter.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\SelectionHtmlSplitter.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\SentenceHtmlSplitter.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\SetCellBorderStyleHandler_CollapsedStrategy.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\SetCellBordeStyleHandler_SeperatedStrategy.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\Table.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\TableBorderStyleWorker.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\TableBounds.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\TableCell.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\TableCellMerger.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\TableColumn.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\TableItem.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\TableRow.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\TableStyleDeterminator.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\TableStyleDto.vb" />
+    <Compile Include="PluginExtensibility\Html\Handlers\Logic\WordHtmlSplitter.vb" />
+    <Compile Include="PluginExtensibility\Html\HtmlEditorBehaviorDecorator.vb" />
+    <Compile Include="PluginExtensibility\Html\Interfaces\IHtmlEditorBehavior.vb" />
+    <Compile Include="PluginExtensibility\Html\Interfaces\IInlineHtmlEditBehavior.vb" />
+    <Compile Include="PluginExtensibility\Html\Interfaces\ISelection.vb" />
+    <Compile Include="PluginExtensibility\Html\Interfaces\ITextRange.vb" />
+    <Compile Include="PluginExtensibility\Html\Interfaces\IXHtmlEditor.vb" />
+    <Compile Include="PluginExtensibility\Html\StyleType.vb" />
+    <Compile Include="PluginExtensibility\InlineElementEventArgs.vb" />
+    <Compile Include="PluginExtensibility\MathML\IMathMlEditorControl.vb" />
+    <Compile Include="PluginExtensibility\MathML\IMathMlEditorPlugin.vb" />
+    <Compile Include="PluginExtensibility\PluginHelper.vb" />
+    <Compile Include="PluginExtensibility\ResourceDialogRequestEventArgs.vb" />
+    <Compile Include="PluginExtensibility\ResourceEventArgs.vb" />
+    <Compile Include="PluginExtensibility\ResourceNameEventArgs.vb" />
+    <Compile Include="PluginExtensibility\SectionLogicSettingsDependencyChangedEventArgs.vb" />
+    <Compile Include="PluginExtensibility\TestPackages\GenericTestPackageModelPlugin.vb" />
+    <Compile Include="PluginExtensibility\TestPackages\ITestPackageEditorPlugin.vb" />
+    <Compile Include="PluginExtensibility\TestPackages\ITestPackageEditorPropertyEditor.vb" />
+    <Compile Include="PluginExtensibility\TestPackages\ITestPackageModelPlugin.vb" />
+    <Compile Include="PluginExtensibility\TestPackages\ITestPackagePropertyEditor.vb" />
+    <Compile Include="PluginExtensibility\TestPackages\ITestReferenceEditorPropertyEditor.vb" />
+    <Compile Include="PluginExtensibility\TestPackages\ITestSetEditorPropertyEditor.vb" />
+    <Compile Include="PluginExtensibility\TestPackages\TestPackageFactory.vb" />
+    <Compile Include="PluginExtensibility\Tests\AssessmentTestv2Factory.vb" />
+    <Compile Include="PluginExtensibility\Tests\GenericTestModelPlugin.vb" />
+    <Compile Include="PluginExtensibility\Tests\IAssessmentTestPropertyEditor.vb" />
+    <Compile Include="PluginExtensibility\Tests\IItemReferencePropertyEditor.vb" />
+    <Compile Include="PluginExtensibility\Tests\ITestEditorPlugin.vb" />
+    <Compile Include="PluginExtensibility\Tests\ITestEditorPropertyEditor.vb" />
+    <Compile Include="PluginExtensibility\Tests\ITestModelPlugin.vb" />
+    <Compile Include="PluginExtensibility\Tests\ITestOutcomePropertyEditor.vb" />
+    <Compile Include="PluginExtensibility\Tests\ITestPartPropertyEditor.vb" />
+    <Compile Include="PluginExtensibility\Tests\ITestResourcesEvents.vb" />
+    <Compile Include="PluginExtensibility\Tests\ITestSectionPropertyEditor.vb" />
+    <Compile Include="PluginExtensibility\Tests\TestEditorCommands.vb" />
+    <Compile Include="ProtocolManager\TestBuilderAsyncProtocolContextManager.vb" />
+    <Compile Include="Publication\ExtensionMethod.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI30\AssessmentInitialiseTestHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI30\AssessmentItemHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI30\AssessmentSectionHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI30\AssessmentTestPartHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI30\ChainHandlerBase.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI30\CreateAssessmentItemAndResourcesHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI30\PackageZipFileCreatorHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI30\SaveTestAndManifestHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI30\SetupXsdHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI30\TestReferenceHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\ProgressHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI22\QTI22_ChainHandlerBase.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI22\QTI22_AssessmentInitialiseTestHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI22\QTI22_AssessmentItemHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI22\QTI22_AssessmentSectionHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI22\QTI22_AssessmentTestPartHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI22\QTI22_CreateAssessmentItemAndResourcesHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI22\QTI22_PackageZipFileCreatorHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI22\QTI22_SaveTestAndManifestHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI22\QTI22_SetupXsdHandler.vb" />
+    <Compile Include="QTI\ChainHandlers\Processing\QTI22\QTI22_TestReferenceHandler.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI30\ResponseDeclaration.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI30\ResponseDeclarationCas.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI30\ResponseDeclarationChoice.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI30\ResponseDeclarationEssay.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI30\ResponseDeclarationGapMatch.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI30\ResponseDeclarationGraphicGapMatch.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI30\ResponseDeclarationHottext.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI30\ResponseDeclarationInput.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI30\ResponseDeclarationMatrix.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI30\ResponseDeclarationMultipleResponse.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI30\ResponseDeclarationOrder.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI30\ResponseDeclarationPerTypeBase.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI30\ResponseDeclarationSelectPoint.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ConceptResponseProcessing.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ConceptResponseProcessingChoice.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ConceptResponseProcessingGapMatch.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ConceptResponseProcessingGeogebra.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ConceptResponseProcessingGraphicGapMatch.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ConceptResponseProcessingInput.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ConceptResponseProcessingInputFormula.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ConceptResponseProcessingMatrix.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ConceptResponseProcessingMultipleResponse.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ConceptResponseProcessingOrder.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ConceptResponseProcessingSelectPoint.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ResponseProcessing.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ResponseProcessingChoice.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ResponseProcessingCustomOperators.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ResponseProcessingGapMatch.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ResponseProcessingGeogebra.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ResponseProcessingGraphicGapMatch.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ResponseProcessingHottext.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ResponseProcessingInput.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ResponseProcessingInputFormula.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ResponseProcessingMatrix.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ResponseProcessingMultipleResponse.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ResponseProcessingOrder.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ResponseProcessingPerTypeBase.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI30\ResponseProcessingSelectPoint.vb" />
+    <Compile Include="QTI\Converters\ScoringConverter\QTI30\CombinedScoringConverter.vb" />
+    <Compile Include="QTI\Converters\XhtmlConverter\QTI30\XhtmlConverter.vb" />
+    <Compile Include="QTI\Facade\Factories\QTI30\ResponseTypeFactory.vb" />
+    <Compile Include="QTI\Facade\QTI30\PackageCreatorFacade.vb" />
+    <Compile Include="QTI\Helpers\ConverterHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI22\DocumentHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI22\NamespaceHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\AspectScoringHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\CombinedScoringHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\DocumentHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\HottextScoringHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\NamespaceHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\ResponseIdentifierHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\StyleSheetHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\ResponseDeclarationHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\ResponseProcessingHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\ScoringHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\QtiModelHelpers\ItemHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\QtiModelHelpers\ItemRefHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\QtiModelHelpers\TestHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\QtiModelHelpers\TestPartHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\QtiModelHelpers\TestSectionHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\ResourceHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\TemplateHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\TimeLimitsHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\XsdHelper.vb" />
+    <Compile Include="QTI\Interfaces\IXhtmlConverter.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI22\ResponseDeclaration.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI22\ResponseDeclarationCas.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI22\ResponseDeclarationChoice.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI22\ResponseDeclarationEssay.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI22\ResponseDeclarationGapMatch.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI22\ResponseDeclarationGraphicGapMatch.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI22\ResponseDeclarationHottext.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI22\ResponseDeclarationInput.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI22\ResponseDeclarationMatrix.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI22\ResponseDeclarationMultipleResponse.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI22\ResponseDeclarationOrder.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI22\ResponseDeclarationPerTypeBase.vb" />
+    <Compile Include="QTI\Converters\Declaration\QTI22\ResponseDeclarationSelectPoint.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ConceptResponseProcessing.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ConceptResponseProcessingChoice.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ConceptResponseProcessingGapMatch.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ConceptResponseProcessingGeogebra.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ConceptResponseProcessingGraphicGapMatch.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ConceptResponseProcessingInput.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ConceptResponseProcessingInputFormula.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ConceptResponseProcessingMatrix.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ConceptResponseProcessingMultipleResponse.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ConceptResponseProcessingOrder.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ConceptResponseProcessingSelectPoint.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ResponseProcessing.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ResponseProcessingChoice.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ResponseProcessingCustomOperators.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ResponseProcessingGapMatch.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ResponseProcessingGeogebra.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ResponseProcessingGraphicGapMatch.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ResponseProcessingHottext.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ResponseProcessingInput.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ResponseProcessingInputFormula.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ResponseProcessingMatrix.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ResponseProcessingMultipleResponse.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ResponseProcessingOrder.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ResponseProcessingPerTypeBase.vb" />
+    <Compile Include="QTI\Converters\Processing\QTI22\ResponseProcessingSelectPoint.vb" />
+    <Compile Include="QTI\Interfaces\QTI22\IScoringConverterQTI22.vb" />
+    <Compile Include="QTI\Converters\ScoringConverter\QTI22\QTI22CombinedScoringConverter.vb" />
+    <Compile Include="QTI\Converters\XhtmlConverter\QTI_Base\XhtmlConverter.vb" />
+    <Compile Include="QTI\Helpers\ResponseHelper.vb" />
+    <Compile Include="QTI\Converters\XhtmlConverter\QTI_Base\XHtmlConverterBase.vb" />
+    <Compile Include="QTI\Facade\Factories\QTI22\ResponseTypeFactory.vb" />
+    <Compile Include="QTI\Facade\QTI22\QTI22PackageCreatorFacade.vb" />
+    <Compile Include="QTI\Helpers\ChainHandlerHelper.vb" />
+    <Compile Include="QTI\Helpers\CustomXmlTextWriter.vb" />
+    <Compile Include="QTI\Helpers\IPostPackageHelper.vb" />
+    <Compile Include="QTI\Helpers\ITimeStamp.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\NamespaceHelper.vb" />
+    <Compile Include="QTI\Helpers\PostPackageHelper.vb" />
+    <Compile Include="QTI\Helpers\PreventLoadingExternalXsdXmlResolver.vb" />
+    <Compile Include="QTI\Helpers\PublicationError.vb" />
+    <Compile Include="QTI\Helpers\QTI22\AspectScoringHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\CasEvaluateHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI22\QTI22ScoringHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\CombinedScoringHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\ENums.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\FileMimeTypeHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\GapDateScoringHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\GapTimeScoringHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI22\HottextScoringHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\HtmlHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\DocumentHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\IdentifierHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\QTIScoringHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\FixAspects.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\FixDiv.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\FixIds.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\FixInteractions.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\FixOpenBrTag.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\FixParagraphInTag.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\FixTable.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\Interfaces\IModifyDocument.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\Interfaces\IModifyExtensionDocument.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\Interfaces\IModifyItemDocument.vb" />
+    <Compile Include="QTI\Helpers\QTI22\QtiModelHelpers\ItemHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI22\QtiModelHelpers\ItemRefHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI22\QtiModelHelpers\TestHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI22\QtiModelHelpers\TestPartHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI22\QtiModelHelpers\TestSectionHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI22\ResourceHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\ResourceNameHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI22\ResponseDeclarationHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\ResponseGroupingHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\ResponseIdentifierHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI22\ResponseProcessingHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\ResponseProcessingInputFormulaHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\ScoreTemplates.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\SolutionIdentifierHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI22\QTI22StyleSheetHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI22\TemplateHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\StyleSheetHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI_Base\TextToSpeechHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI22\TimeLimitsHelper.vb" />
+    <Compile Include="QTI\Helpers\ScriptHelper.vb" />
+    <Compile Include="QTI\Helpers\TimeStamp.vb" />
+    <Compile Include="QTI\Helpers\XmlStreamHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI22\XsdHelper.vb" />
+    <Compile Include="QTI\Interfaces\QTI22\IResponseDeclaration.vb" />
+    <Compile Include="QTI\Interfaces\IResponseProcessing.vb" />
+    <Compile Include="QTI\Interfaces\IResponseProcessingCustomOperators.vb" />
+    <Compile Include="QTI\Interfaces\QTI30\IResponseDeclaration.vb" />
+    <Compile Include="QTI\Interfaces\QTI30\IScoringConverter.vb" />
+    <Compile Include="QTI\ItemSelectorManager.vb" />
+    <Compile Include="QTI\ItemSelector\QTIItemSelector.vb" />
+    <Compile Include="QTI\Model\QTI30\PublishedItem.vb" />
+    <Compile Include="QTI\Model\QTI30\QtixHtml.vb" />
+    <Compile Include="QTI\Model\QTI30\TestDocumentSet.vb" />
+    <Compile Include="QTI\PackageCreators\BaseClasses\PackageCreatorBase.vb" />
+    <Compile Include="QTI\PackageCreators\QTI22\QTI22PackageCreator.vb" />
+    <Compile Include="QTI\PackageCreators\QTI30\PackageCreator.vb" />
+    <Compile Include="QTI\PackageCreators\QTI_Base\PackageCreatorConstants.vb" />
+    <Compile Include="QTI\PreviewHandlers\QTI22\QTI22ItemPreviewHandlerBase.vb" />
+    <Compile Include="QTI\Model\QTI22\ExtensionDocumentData.vb" />
+    <Compile Include="QTI\Model\QTI22\PublishedItem.vb" />
+    <Compile Include="QTI\Model\QTI22\QtixHtml.vb" />
+    <Compile Include="QTI\Model\QTI22\TestDocumentSet.vb" />
+    <Compile Include="QTI\PreviewHandlers\QTI30\ItemPreviewHandlerBase.vb" />
+    <Compile Include="QTI\Requests\BaseClasses\PublicationRequestBase.vb" />
+    <Compile Include="QTI\Requests\QTI22\QTI22PublicationRequest.vb" />
+    <Compile Include="QTI\Requests\QTI30\PublicationRequest.vb" />
+    <Compile Include="QTI\Xsd\QTI22_Final\customExtensions.vb" />
+    <Compile Include="QTI\Xsd\QTI22_Final\imscp_v1p2.vb" />
+    <Compile Include="QTI\Xsd\QTI22_Final\imsqti_metadata_v2p2.vb" />
+    <Compile Include="QTI\Xsd\QTI22_Final\imsqti_result_v2p2.vb" />
+    <Compile Include="QTI\Xsd\QTI22_Final\imsqti_usagedata_v2p2.vb" />
+    <Compile Include="QTI\Xsd\QTI22_Final\imsqti_v2p2p1.vb" />
+    <Compile Include="QTI\Xsd\QTI30\customExtensions.vb" />
+    <Compile Include="QTI\Xsd\QTI30\imsmd_loose_v1p3p2.vb" />
+    <Compile Include="QTI\Xsd\QTI30\imsqtiv3p0_imscpv1p2_v1p0.vb" />
+    <Compile Include="QTI\Xsd\QTI30\imsqti_asiv3p0_v1p0.vb" />
+    <Compile Include="QTI\Xsd\QTI30\imsqti_metadatav3p0_v1p0.vb" />
+    <Compile Include="RefreshUsingDataSources\Implementation\ProposalCreator.vb" />
+    <Compile Include="RefreshUsingDataSources\Interface\IDataSourceActions.vb" />
+    <Compile Include="Reports\OptionValidatorExportBase.vb" />
+    <Compile Include="Reports\OptionValidatorImageExport.vb" />
+    <Compile Include="Reports\ReportHelperClass.vb" />
+    <Compile Include="Reports\OptionsValidatorBase.vb" />
+    <Compile Include="Reports\ReportBase.vb" />
+    <Compile Include="Reports\Screenshot\ScreenshotCompletedEventArgs.vb" />
+    <Compile Include="Reports\Screenshot\ScreenshotHelper.vb" />
+    <Compile Include="ResourceManager\Managers\DataBaseResourceManager.vb" />
+    <Compile Include="ResourceManager\Managers\DatabaseResourceManagerOptionalBinData.vb" />
+    <Compile Include="ResourceManager\Managers\DatabaseResourceManagerWrapper.vb" />
+    <Compile Include="ResourceManager\Managers\MetaDataType.vb" />
+    <Compile Include="ResourceManager\ResourceVersionConverter.vb" />
+    <Compile Include="Resources\ResourceManagerHolder.vb" />
+    <Compile Include="Scoring\ConceptScoringBrowser\ConceptScoringBrowser.vb" />
+    <Compile Include="Scoring\ConceptScoringBrowser\Interface\IConceptScoringBrowserDataProvider.vb" />
+    <Compile Include="Scoring\ConceptScoringBrowser\Interface\IConceptScoringBrowserHierarchyPart.vb" />
+    <Compile Include="Scoring\ConceptScoringBrowser\Interface\IConceptScoringBrowserObjectFactory.vb" />
+    <Compile Include="Scoring\ConceptScoringBrowser\Interface\IConceptScoringBrowserScoreContainer.vb" />
+    <Compile Include="Scoring\ConceptScoringBrowser\ScorableItemColumn.vb" />
+    <Compile Include="Scoring\Reporting\ConceptScoringReportHierarchyPart.vb" />
+    <Compile Include="Scoring\Reporting\ConceptScoringReportHierarchyPartScoreContainer.vb" />
+    <Compile Include="Scoring\Reporting\Interface\IItemConceptScoringReportData.vb" />
+    <Compile Include="Scoring\Reporting\ItemConceptScoringReportData.vb" />
+    <Compile Include="Scoring\Reporting\ItemScoringDataFetcher.vb" />
+    <Compile Include="Service References\PublicationService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SkipNativeDll.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Validating\ItemContainsSupportedTestViewsValidationHandler.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Validating\ItemSupportedViewsValidator.vb" />
+    <Compile Include="Validation\BaseValidator.vb" />
+    <Compile Include="Validation\ItemKeyValidator.vb" />
+    <Compile Include="Validation\QuestifyThemeValidator.vb" />
+    <Compile Include="Validation\ResourceStateValidator.vb" />
+    <Compile Include="Validation\TestConstructionValidator.vb" />
+    <Compile Include="Versioning\Comparers\AspectComparer.vb" />
+    <Compile Include="Versioning\Comparers\AssessmentItemComparer.vb" />
+    <Compile Include="Versioning\Comparers\AssessmentTest2Comparer.vb" />
+    <Compile Include="Versioning\Comparers\TreeStructuresComparer.vb" />
+    <Compile Include="Versioning\Comparers\ConceptStructuresComparer.vb" />
+    <Compile Include="Versioning\Comparers\CustomPropertiesComparer.vb" />
+    <Compile Include="Versioning\Comparers\DataSourceComparer.vb" />
+    <Compile Include="Versioning\Comparers\DependentResourceComparer.vb" />
+    <Compile Include="Versioning\Comparers\MetaDataComparerBase.vb" />
+    <Compile Include="Versioning\Comparers\PropertyEntityComparer.vb" />
+    <Compile Include="Versioning\MetaDataDeserializationException.vb" />
+    <Compile Include="Versioning\VersionReverter.vb" />
+    <Compile Include="Versioning\XmlSerializerMetaDataDeserializer.vb" />
+    <Compile Include="Versioning\MetaDataDeserializerBase.vb" />
+    <Compile Include="Versioning\ResourceHistoryComparer.vb" />
+    <Compile Include="Versioning\Comparers\SourceComparer.vb" />
+    <Compile Include="Versioning\Comparers\TestPackageComparer.vb" />
+    <Compile Include="ContentModel\AssessmentTestResourceEntityExtensions.vb" />
+    <Compile Include="ContentModel\AssessmentItemExtensions.vb" />
+    <Compile Include="ContentModel\BankExtensions.vb" />
+    <Compile Include="ContentModel\GenericResourceExtension.vb" />
+    <Compile Include="ContentModel\ItemResourceExtension.vb" />
+    <Compile Include="ContentModel\ParametersExtension.vb" />
+    <Compile Include="ContentModel\ParamValidator\baseParamValidator.vb" />
+    <Compile Include="ContentModel\ParamValidator\CollectionParameterValidator.vb" />
+    <Compile Include="ContentModel\ParamValidator\DefaultParamValidator.vb" />
+    <Compile Include="ContentModel\ParamValidator\HtmlContentValidator.vb" />
+    <Compile Include="ContentModel\ParamValidator\IntegerParameterValidator.vb" />
+    <Compile Include="ContentModel\ParamValidator\IParamValidator.vb" />
+    <Compile Include="ContentModel\ParamValidator\PlainTextParameterValidator.vb" />
+    <Compile Include="ContentModel\ParamValidator\ResourceParameterValidator.vb" />
+    <Compile Include="ContentModel\ParamValidator\ValueParameterValidator.vb" />
+    <Compile Include="ContentModel\ParamValidator\XHtmlParameterValidator.vb" />
+    <Compile Include="ContentModel\ResourceEntityExtension.vb" />
+    <Compile Include="ContentModel\ScoringParameterExtension.vb" />
+    <Compile Include="ContentModel\Scoring\BaseGapScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\ChoiceScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\ConceptScoreInFindingManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\ConceptManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\DecimalScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\GapComparisonType.vb" />
+    <Compile Include="ContentModel\Scoring\IConceptScoreManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\GapValue.vb" />
+    <Compile Include="ContentModel\Scoring\IScoreManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\FindingToFindingManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\ScoringPropertiesCalculator.vb" />
+    <Compile Include="ContentModel\Scoring\StringScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\IChoiceScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\IGapScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\IFindingManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\KeyManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\FindingManipulatorBase.vb" />
+    <Compile Include="ContentModel\SolutionExtension.vb" />
+    <Compile Include="ContentModel\TestPackageExtensions.vb" />
+    <Compile Include="ContentModel\workers\HierarchicalParameterSetCollectionValidator.vb" />
+    <Compile Include="ContentModel\workers\ItemManipulationInAssessment.vb" />
+    <Compile Include="ContentModel\workers\ParameterCollectionResourceExtractor.vb" />
+    <Compile Include="ContentModel\workers\ParameterSetCollectionCloner.vb" />
+    <Compile Include="ContentModel\workers\ParameterSetCollectionResourceExtractor.vb" />
+    <Compile Include="ContentModel\workers\ResourceMover\BankHierarchy.vb" />
+    <Compile Include="ContentModel\workers\ResourceMover\BankHierarchyNode.vb" />
+    <Compile Include="ContentModel\workers\ResourceMover\ResourceAndCustomBankPropertyMover.vb" />
+    <Compile Include="ContentModel\workers\ResourceMover\ResourceAndCustomBankPropertyMoveResult.vb" />
+    <Compile Include="ContentModel\workers\ResourceMover\ResourceAndCustomBankPropertyMoveResultDetail.vb" />
+    <Compile Include="ContentModel\workers\ResourceEntityCopier.vb" />
+    <Compile Include="ContentModel\workers\XHtmlInlineElementsManipulator.vb" />
+    <Compile Include="ContentModel\workers\XHtmlResourceExtractor.vb" />
+    <Compile Include="ContentModel\XHtmlParameterExtensions.vb" />
+    <Compile Include="DataSourceConstruction\ChainHandlers\Filtering\ModifyDataSourceRequestHandler.vb" />
+    <Compile Include="DataSourceConstruction\ChainHandlers\Validating\DataSourceAlreadyInInclusionGoup.vb" />
+    <Compile Include="DataSourceConstruction\ChainHandlers\Validating\DataSourceValidationException.vb" />
+    <Compile Include="DataSourceConstruction\Helpers\DataSourceConstructionFacade.vb" />
+    <Compile Include="DataSourceConstruction\Request\DataSourceConstructionRequest.vb" />
+    <Compile Include="DependencyManagement\DependencyManagement.vb" />
+    <Compile Include="HelperClasses\GeneralHelper.vb" />
+    <Compile Include="ItemPreview\ItemPreviewHandlerBase.vb" />
+    <Compile Include="HelperClasses\NativeMethods.vb" />
+    <Compile Include="ItemProcessing\AssessmentItemHelper.vb" />
+    <Compile Include="ItemProcessing\InMemoryParameterSetCacheByBank.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\AreaParameterHandler.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\ChoiceCollectionParameterHandler.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\CollectionParameterHandler.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\DefaultParameterHandler.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\ParameterCollectionHandler.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\ScoringParameterHandler.vb" />
+    <Compile Include="ItemProcessing\IITemSetupCacheHelper.vb" />
+    <Compile Include="ItemProcessing\ItemProcessing.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemProcessing.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ItemProcessing\ParameterSetCollectionHelper.vb" />
+    <Compile Include="ItemProcessing\ItemTemplateSwitching.vb" />
+    <Compile Include="ItemProcessing\ParameterHandler.vb" />
+    <Compile Include="ItemProcessing\concreteHandler\ParameterSetHandler.vb" />
+    <Compile Include="ItemProcessing\WarningAndErrors.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="HelperClasses\ParameterHelper.vb" />
+    <Compile Include="Parsers.vb" />
+    <Compile Include="Specialized\HelperClasses\XmlResourceResolver.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Filtering\ModifyItemsInRequestHandler.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Filtering\ModifyTargetSection.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Processing\AddDependenciesToAssessmentTest.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Processing\AddNonExistingSectionsToAssessment.vb" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QTI\Resources\Schemas.zip" />
+    <None Include="QTI\Resources\schema_qti22.zip" />
+    <None Include="QTI\Resources\schema_qti30.zip" />
+    <None Include="Service References\PublicationService\PublicationService1.wsdl" />
+    <None Include="Service References\PublicationService\PublicationService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicationService\PublicationService73.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicationService\PublicationService74.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicationService\PublicationService75.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicationService\PublicationService76.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PublicationService\Questify.Builder.Logic.PublicationService.ConceptProcessingLabelEntry.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PublicationService\Questify.Builder.Logic.PublicationService.PublicationHandlerIdentifier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PublicationService\Questify.Builder.Logic.PublicationService.PublicationTaskProgress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PublicationService\Questify.Builder.Logic.PublicationService.TestPreviewHandlerIdentifier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="TestConstruction\ChainHandlers\Processing\AddSectionWithDSToAssesmentTestHandler.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Processing\AddToAssessmentTestHandler.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Processing\NOOP.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Processing\ProcessingHelpers.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Processing\RemoveDependenciesFromAssessmentTest.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Processing\RemoveFromAssessmentTestHandler.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Validating\exceptions\ExceptionMessages.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TestConstruction\ChainHandlers\Validating\exceptions\InvalidRequestException.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Validating\exceptions\ItemDatasourceUsedElsewhereException.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Validating\exceptions\SuggestDatasourceBindingException.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Validating\ItemHelpers.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Validating\exceptions\ItemRelationshipException.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Validating\ItemInDatasourceTargetValidation.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Validating\exceptions\NoItemsInRequestException.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Validating\PreferDatabindingValidation.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Validating\RequestContainsItemsAlreadyInContextValidationHandler.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Validating\RequestContainsItemsValidationHandler.vb" />
+    <Compile Include="TestConstruction\ChainHandlers\Validating\ItemRelationshipValidationHandler.vb" />
+    <Compile Include="TestConstruction\Helpers\TestConstructionFacade.ItemDatasourceUsedElsewhereException.vb">
+      <DependentUpon>TestConstructionFacade.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TestConstruction\Helpers\TestConstructionFacade.SuggestDatasourceBindingException.vb">
+      <DependentUpon>TestConstructionFacade.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TestConstruction\Helpers\TestConstructionFacade.vb" />
+    <Compile Include="TestConstruction\Helpers\TestConstructionValidationEventArgs.vb" />
+    <Compile Include="TestConstruction\Requests\TestConstructionRequest.vb" />
+    <Compile Include="RefreshUsingDataSources\RefreshUsingDataSources.vb" />
+    <Compile Include="TestConstruction\TestConstructionOp.vb" />
+    <Compile Include="TestPackageConstruction\ChainHandlers\Processing\AddDependenciesToTestPackage.vb" />
+    <Compile Include="TestPackageConstruction\ChainHandlers\Processing\AddToTestPackageHandler.vb" />
+    <Compile Include="TestPackageConstruction\ChainHandlers\Processing\NOOPTestPackage.vb" />
+    <Compile Include="TestPackageConstruction\ChainHandlers\Processing\RemoveDependenciesFromTestPackage.vb" />
+    <Compile Include="TestPackageConstruction\ChainHandlers\Processing\RemoveFromTestPackageHandler.vb" />
+    <Compile Include="TestPackageConstruction\ChainHandlers\Processing\TestPackageProcessingHelpers.vb" />
+    <Compile Include="TestPackageConstruction\ChainHandlers\Validating\Exceptions\NoTestsInRequestException.vb" />
+    <Compile Include="TestPackageConstruction\ChainHandlers\Validating\Exceptions\RemoveTestIsUsedAsRetryException.vb" />
+    <Compile Include="TestPackageConstruction\ChainHandlers\Validating\RequestContainsTestsAlreadyInContextValidationHandler.vb" />
+    <Compile Include="TestPackageConstruction\ChainHandlers\Validating\RequestContainsTestsValidationHandler.vb" />
+    <Compile Include="TestPackageConstruction\ChainHandlers\Validating\RequestContainsTestThatAreReferencedAsRetryTestValidationHandler.vb" />
+    <Compile Include="TestPackageConstruction\TestPackageConstructionFacade.vb" />
+    <Compile Include="TestPackageConstruction\Requests\TestPackageConstructionRequest.vb" />
+    <Compile Include="TestPackageConstruction\TestPackageConstruction.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ItemProcessing\ItemProcessing.nl.resx">
+      <DependentUpon>ItemProcessing.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemProcessing\ItemProcessing.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ItemProcessing.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.nl.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.nl.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestConstruction\ChainHandlers\Validating\exceptions\ExceptionMessages.nl.resx">
+      <DependentUpon>ExceptionMessages.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestConstruction\ChainHandlers\Validating\exceptions\ExceptionMessages.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionMessages.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cito.ItemViewer.AsyncPluggableProtocol\Cito.ItemViewer.AsyncPluggableProtocol.csproj">
+      <Project>{C8641177-A9A2-4D02-839B-74DFBD67DEBB}</Project>
+      <Name>Cito.ItemViewer.AsyncPluggableProtocol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cito.Tester.Common\Cito.Tester.Common.vbproj">
+      <Project>{9a0bd8fe-d6f6-4ce5-9a0b-877610b00deb}</Project>
+      <Name>Cito.Tester.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cito.Tester.ContentModel\Cito.Tester.ContentModel.vbproj">
+      <Project>{94ee8d6c-5c52-4f34-9e61-e407b3240004}</Project>
+      <Name>Cito.Tester.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Configuration\Questify.Builder.Configuration.vbproj">
+      <Project>{c38faa1f-f9ca-415e-99ea-56370b9207d8}</Project>
+      <Name>Questify.Builder.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Service\Questify.Builder.Logic.Service.csproj">
+      <Project>{885875bf-3e90-4b06-b1fb-a7883e54e391}</Project>
+      <Name>Questify.Builder.Logic.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.ContentModel.DatabaseSpecific\Questify.Builder.Model.ContentModel.DatabaseSpecific.vbproj">
+      <Project>{a1ab6724-a8e0-4064-8f51-49bfb8eb8b31}</Project>
+      <Name>Questify.Builder.Model.ContentModel.DatabaseSpecific</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.ContentModel\Questify.Builder.Model.ContentModel.vbproj">
+      <Project>{44EAFD1E-6CC9-4A94-B6F6-A78734C7AAE5}</Project>
+      <Name>Questify.Builder.Model.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Packaging\Questify.Builder.Packaging.vbproj">
+      <Project>{56c0d819-f3ed-48ce-8f1f-07e415103f46}</Project>
+      <Name>Questify.Builder.Packaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security\Questify.Builder.Security.vbproj">
+      <Project>{30b8e255-bb43-4f43-8dd1-387988e33af3}</Project>
+      <Name>Questify.Builder.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="ContentModel\workers\Flow\ConceptInitiFlow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="ContentModel\workers\Flow\SolutionCleaner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineChoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineEssay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineGap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineGapMatch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineHotText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineMR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineTabular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineImageParameterSet.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="ContentModel\workers\Flow\ConceptCleaner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PublicationService\PublicationService1.disco" />
+    <None Include="Service References\PublicationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\PublicationService\configuration.svcinfo" />
+    <None Include="Service References\PublicationService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PublicationService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="CustomInteractions\Flow\AddTo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="CustomInteractions\Flow\AssignScoring.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <XamlAppDef Include="CustomInteractions\Flow\RemoveFrom.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\placeholderspacer.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QTI\Resources\_halve spatie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QTI\Resources\109_AllAnnotations_Default_16x16_72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QTI\Resources\chrome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QTI\Resources\FolderOpen_16x16_72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QTI\Resources\icon-firefox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QTI\Resources\logo-browser-ie8.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

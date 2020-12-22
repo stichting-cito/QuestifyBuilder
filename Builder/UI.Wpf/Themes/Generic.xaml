@@ -1,0 +1,21 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Questify.Builder.UI.Wpf;component/Themes/BlockGrid.xaml" />
+        
+        <!--presenters, Converts item to visual -->
+        <ResourceDictionary Source="/Questify.Builder.UI.Wpf;component/Themes/BlockGridHeaderPresenter.xaml" />
+
+        <!-- Items list-->
+        <ResourceDictionary Source="/Questify.Builder.UI.Wpf;component/Themes/BlockGridBlockRow.xaml" />
+        <ResourceDictionary Source="/Questify.Builder.UI.Wpf;component/Themes/BlockRow.xaml" />
+        <ResourceDictionary Source="/Questify.Builder.UI.Wpf;component/Themes/BlockRowsPresenter.xaml" />
+
+        <!-- Visuals -->
+        <ResourceDictionary Source="/Questify.Builder.UI.Wpf;component/Themes/BlockGridColumnHeader.xaml" />
+        <ResourceDictionary Source="/Questify.Builder.UI.Wpf;component/Themes/BlockInRow.xaml" />
+        <ResourceDictionary Source="/Questify.Builder.UI.Wpf;component/Themes/BlockGridCell.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

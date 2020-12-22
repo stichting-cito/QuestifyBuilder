@@ -1,0 +1,1304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5786158C-19CC-4C3F-A19E-9F8948F9F69A}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Questify.Builder.UI.Wpf</RootNamespace>
+    <AssemblyName>Questify.Builder.UI.Wpf</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <WarningsNotAsErrors>618,1030,1701,1702</WarningsNotAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\TestBuilder.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <WarningsNotAsErrors>618,1030,1701,1702</WarningsNotAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cinch.WPF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Cinch.2.0.70832\lib\net40\Cinch.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\ControlzEx.3.0.2.4\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Fluent, Version=6.1.0.233, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Fluent.Ribbon.6.1.0.233\lib\net45\Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="MEFedMVVM.WPF, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b6db3dc4f5fba1e3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Cinch.2.0.70832\lib\net40\MEFedMVVM.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\MicrosoftExpressionInteractions.3.0.40218.0\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.2.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.2.1\lib\net45\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="system.windows.controls.ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Versioning\GeneralInfo.cs">
+      <Link>Properties\GeneralInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Versioning\TestBuilder_VersionInfo.cs">
+      <Link>TestBuilder_VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Controls\BlockGrid.cs" />
+    <Compile Include="Controls\BlockGridBeginningEditEventArgs.cs" />
+    <Compile Include="Controls\BlockGridBlockRow.cs" />
+    <Compile Include="Controls\BlockGridBlockRowsPanel.cs" />
+    <Compile Include="Controls\BlockGridCanDeleteElementEventArgs.cs" />
+    <Compile Include="Controls\BlockGridCanInsertElementEventArgs.cs" />
+    <Compile Include="Controls\BlockGridCell.cs" />
+    <Compile Include="Controls\BlockGridCellBoundColumn.cs" />
+    <Compile Include="Controls\BlockGridCellColumn.cs" />
+    <Compile Include="Controls\BlockGridCellEditEndingEventArgs.cs" />
+    <Compile Include="Controls\BlockGridCellsPanel.cs" />
+    <Compile Include="Controls\BlockGridCellTemplateColumn.cs" />
+    <Compile Include="Controls\BlockGridCellTextColumn.cs" />
+    <Compile Include="Controls\BlockGridColumnCollection.cs" />
+    <Compile Include="Controls\BlockGridColumnHeader.cs" />
+    <Compile Include="Controls\BlockGridCommands.cs" />
+    <Compile Include="Controls\BlockGridContentColumn.cs" />
+    <Compile Include="Controls\BlockGridDeleteElementEventArgs.cs" />
+    <Compile Include="Controls\BlockGridEditAction.cs" />
+    <Compile Include="Controls\BlockGridEditingUnit.cs" />
+    <Compile Include="Controls\BlockGridHeaderPresenter.cs" />
+    <Compile Include="Controls\BlockGridHelper.cs" />
+    <Compile Include="Controls\BlockGridInsertElementEventArgs.cs" />
+    <Compile Include="Controls\BlockGridNotificationTarget.cs" />
+    <Compile Include="Controls\BlockGridRowEditEndingEventArgs.cs" />
+    <Compile Include="Controls\BlockGridSeparatorColumn.cs" />
+    <Compile Include="Controls\BlockInRow.cs" />
+    <Compile Include="Controls\BlockInRowFullRowSelector.cs" />
+    <Compile Include="Controls\BlockInRowSeparator.cs" />
+    <Compile Include="Controls\BlockRow.cs" />
+    <Compile Include="Controls\BlockRowDataCoordinates.cs" />
+    <Compile Include="Controls\BlockRowEqualizationCollection.cs" />
+    <Compile Include="Controls\BlockRowsPresenter.cs" />
+    <Compile Include="Controls\BlockGridColumn.cs" />
+    <Compile Include="Controls\ContainerTrackingOfT.cs" />
+    <Compile Include="Controls\DoubleUtil.cs" />
+    <Compile Include="Controls\IBlockGridSelectionHandler.cs" />
+    <Compile Include="Controls\MultipleCopiesCollection.cs" />
+    <Compile Include="Controls\RepeatedBlockGridColumnCollection.cs" />
+    <Compile Include="Presentation\Helpers\FocusedControlHelper.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\EditorViewModelBase.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\IAspectReferencesViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\SelectPointBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\AspectReferencesScoringViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\AspectReferenceScoringViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\AspectReferenceViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\Aspects\AspectEditorMultipleView.xaml.cs">
+      <DependentUpon>AspectEditorMultipleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\Aspects\AspectEditorSingleView.xaml.cs">
+      <DependentUpon>AspectEditorSingleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Bootstrapper.cs" />
+    <Compile Include="Service\Interfaces\IWindowFacade.cs" />
+    <Compile Include="Service\WindowFacade.cs" />
+    <Compile Include="Presentation\Bootstrapper.cs" />
+    <Compile Include="Presentation\Factory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Presentation\AnnouncementDialog\Constants.cs" />
+    <Compile Include="Presentation\AnnouncementDialog\ViewModels\AnnouncementDialogViewModel.cs" />
+    <Compile Include="Presentation\AnnouncementDialog\ViewModels\IAnnouncementViewModel.cs" />
+    <Compile Include="Presentation\AnnouncementDialog\ViewModels\SendAnnouncementViewModel.cs" />
+    <Compile Include="Presentation\AnnouncementDialog\Views\AnnouncementDialog.xaml.cs">
+      <DependentUpon>AnnouncementDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AnnouncementDialog\Views\SendAnnouncementView.xaml.cs">
+      <DependentUpon>SendAnnouncementView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Behaviors\ColumnsBindingBehavior.cs" />
+    <Compile Include="Presentation\Behaviors\ComboBoxBaseBehaviour.cs" />
+    <Compile Include="Presentation\Behaviors\ComboBoxMCRestrictionBehaviour.cs" />
+    <Compile Include="Presentation\Behaviors\DocumentEditor.cs" />
+    <Compile Include="Presentation\Behaviors\DocumentEditorCommands.cs" />
+    <Compile Include="Presentation\Behaviors\FloatingNumericTextBoxBehavior.cs" />
+    <Compile Include="Presentation\Behaviors\PasswordBoxSelectedTextBehavior.cs" />
+    <Compile Include="Presentation\Behaviors\Strategies\AlphaNumericRangeValidator.cs" />
+    <Compile Include="Presentation\Behaviors\Strategies\DecimalIntervalValidator.cs" />
+    <Compile Include="Presentation\Behaviors\Strategies\DecimalValidator.cs" />
+    <Compile Include="Presentation\Behaviors\Strategies\IInputValidationStrategy.cs" />
+    <Compile Include="Presentation\Behaviors\Strategies\IntegerIntervalValidator.cs" />
+    <Compile Include="Presentation\Behaviors\Strategies\IntegerValidator.cs" />
+    <Compile Include="Presentation\Behaviors\Strategies\TimeValidator.cs" />
+    <Compile Include="Presentation\Behaviors\TextBoxBaseBehavior.cs" />
+    <Compile Include="Presentation\Behaviors\TextboxDecimalBehavior.cs" />
+    <Compile Include="Presentation\Behaviors\TextBoxDecimalIntervalBehavior.cs" />
+    <Compile Include="Presentation\Behaviors\TextBoxIntegerBehavior.cs" />
+    <Compile Include="Presentation\Behaviors\TextBoxIntegerIntervalBehavior.cs" />
+    <Compile Include="Presentation\Behaviors\TextBoxMCRestrictionBehaviour.cs" />
+    <Compile Include="Presentation\Behaviors\TextBoxSelectedTextBehavior.cs" />
+    <Compile Include="Presentation\Behaviors\TextboxTimeBehavior.cs" />
+    <Compile Include="Presentation\Behaviors\WindowBehavior.cs" />
+    <Compile Include="Presentation\Behaviors\WindowPreviewKeyToRoutedUICommand.cs" />
+    <Compile Include="Presentation\Controls\CustomMessageBox.xaml.cs">
+      <DependentUpon>CustomMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GenericControls\Constants.cs" />
+    <Compile Include="Presentation\GenericControls\ConsumerInterfaces\IMetadataViewConsumer.cs" />
+    <Compile Include="Presentation\GenericControls\ViewModels\MetaDataViewModel.cs" />
+    <Compile Include="Presentation\GenericControls\Views\MetaData.xaml.cs">
+      <DependentUpon>MetaData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GenericDialogs\ChooseDialog\ViewModels\ChooseDialogViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\ChooseDialog\Views\ChooseDialogWindow.xaml.cs">
+      <DependentUpon>ChooseDialogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\Constants.cs" />
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\ViewModels\BaseWizardPageViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\ViewModels\BaseWizardSubPageViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\ViewModels\IWizardPage.cs" />
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\ViewModels\IWizardParentPageViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\ViewModels\IWizardViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\ViewModels\WizardDefaultPageViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\ViewModels\WizardDefaultPageWorkspaceData.cs" />
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\ViewModels\WizardPageWorkspaceData.cs" />
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\ViewModels\WizardParentPageViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\ViewModels\WizardParentPageWorkspaceData.cs" />
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\ViewModels\WizardStartPageViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\ViewModels\WizardStartPageWorkspaceData.cs" />
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\ViewModels\WizardSubPageWorkspaceData.cs" />
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\ViewModels\WizardViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\Views\CloseMethodToVisbilityConverter.cs" />
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\Views\WizardDefaultPage.xaml.cs">
+      <DependentUpon>WizardDefaultPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\Views\WizardStartPage.xaml.cs">
+      <DependentUpon>WizardStartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GenericDialogs\GenericWizard\Views\WizardView.xaml.cs">
+      <DependentUpon>WizardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GenericDialogs\LoginDialog\ViewModels\LoginViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\LoginDialog\Views\LoginDialogView.xaml.cs">
+      <DependentUpon>LoginDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\Constants.cs" />
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\ViewModels\DataViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\ViewModels\DependenciesViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\ViewModels\DependentResourceViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\ViewModels\History.cs" />
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\ViewModels\HistoryViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\ViewModels\IResourcePropertyDialogViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\ViewModels\ReferencedEntityViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\ViewModels\ReferencesViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\ViewModels\ResourcePropertyDialogViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\ViewModels\VersionDifferencesViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\Views\Data.xaml.cs">
+      <DependentUpon>Data.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\Views\Dependencies.xaml.cs">
+      <DependentUpon>Dependencies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\Views\History.xaml.cs">
+      <DependentUpon>History.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\Views\References.xaml.cs">
+      <DependentUpon>References.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\Views\ResourcePropertyDialogWindow.xaml.cs">
+      <DependentUpon>ResourcePropertyDialogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GenericDialogs\ResourcePropertyDialog\Views\VersionDifferencesWindow.xaml.cs">
+      <DependentUpon>VersionDifferencesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GenericDialogs\VersionDialog\Constants.cs" />
+    <Compile Include="Presentation\GenericDialogs\VersionDialog\ViewModels\IMajorVersionDialogViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\VersionDialog\ViewModels\MajorVersionDialogViewModel.cs" />
+    <Compile Include="Presentation\GenericDialogs\VersionDialog\Views\MajorVersionDialogWindow.xaml.cs">
+      <DependentUpon>MajorVersionDialogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Helpers\CultureAwareBinding.cs" />
+    <Compile Include="Presentation\Helpers\GridViewSort.cs" />
+    <Compile Include="Presentation\Helpers\PasswordHelper.cs" />
+    <Compile Include="Presentation\Helpers\RibbonWindowService.cs" />
+    <Compile Include="Presentation\Helpers\UserAuthentication.cs" />
+    <Compile Include="Presentation\Helpers\WpfHelper.cs" />
+    <Compile Include="Presentation\Interfaces\IRibbonFocus.cs" />
+    <Compile Include="Presentation\ItemEditor\AutoGreyableImage.cs" />
+    <Compile Include="Presentation\ItemEditor\Constants.cs" />
+    <Compile Include="Presentation\ItemEditor\DebugItemEditorCommands.cs" />
+    <Compile Include="Presentation\ItemEditor\SimpleCommand.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\IItemEditorViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\IOnSwitchTabItemVMTasks.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ItemConceptStructureViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ItemEditorViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ItemEditorWorkspaceFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ItemTreeStructureViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\IViewModel2ViewCommandSupport.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\MenuViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\MetaDataViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\PresentationDataContext.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\PresentationViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\BlockRowViewModelBase.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\BooleanBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\ChoiceBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\ChoiceOptionViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\CurrencyBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\DateBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\DecimalBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\GapBlockRowViewModelBase.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\GapMatchBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\GapMatchRichTextBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\GeogebraBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\GraphGapMatchBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\GraphGapMatchVar2BlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\HotTextBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\HotTextCorrectionBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\IBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\InlineChoiceBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\IntegerBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\MathBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\MathCasDependencyBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\MathCasEqualBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\MatrixBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\MultiResponseBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\OrderBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\StringBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concreteAdv\TimeBlockRowViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\AddAnswerCategoryImpl.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\BaseGapViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\CasVariableViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\CheckableValueViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\ChoiceViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\CurrencyGapViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\DateGapViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\DecimalGapViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\EncodingDataGridHeaderVM.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\EncodingScoreHierarchyPartVM.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\EncodingScoringViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\GapsAndPreprocessing.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\GapValueViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\InlineChoiceScoringViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\IntegerGapViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\MathGapValueViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\MathGapViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\MCScoringViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\ScoreEditorForEncodingViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\SingleConceptScoreVM.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\StringGapViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\concrete\TimeGapViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\BaseBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\BlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\BooleanBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\ChoiceBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\CurrencyBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\DateBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\DecimalBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\GapBlockRowViewModelFactoryBase.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\GapMatchBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\GapMatchRichTextBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\GeogebraBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\GraphGapMatchBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\HotTextBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\HotTextCorrectionBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\IBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\InlineChoiceBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\IntegerBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\MathBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\MathCasDependencyBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\MathCasEqualBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\MatrixBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\OrderBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\StringBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\FactoriesAdv\TimeBlockRowViewModelFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\Factories\ConceptScoringFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\Factories\CurrencyScoringFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\Factories\DateScoringFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\Factories\DecimalScoringFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\Factories\DefaultScoreParameterEditorFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\Factories\GapMatchScoringVMFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\Factories\InlineChoiceScoringVMFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\Factories\IntegerScoringFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\Factories\MathScoringFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\Factories\MCScoringVWFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\Factories\StringScoringFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\Factories\TimeScoringFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\IConceptScoringWorkspaceFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\IScoringParameterWorkspaceFactory.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\IScoringViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\KeyFindingGroupScoreViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\ScoringHostViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\ScoringViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\V2AdvResponseCategoryScoringVM.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\V2AdvScoringFindingVM.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\V2AdvScoringFindingVMBase.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\V2ScoringBase.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\V2ScoringViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreEditors\V2_Advanced_ScoringViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\ScoreTranslationTableEditorViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\SourceViewerViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\ViewModels\TreeStructurePartCustomBankPropertyViewModel.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ICommandSupport.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\IItemEditorWindow.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\IMetaDataControl.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\IOnSwitchTabItemTasks.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\IPresentationControl.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ISourceControl.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ItemConceptStructureView.xaml.cs">
+      <DependentUpon>ItemConceptStructureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ItemEditorFluentWindow.xaml.cs">
+      <DependentUpon>ItemEditorFluentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ItemTreeStructureView.xaml.cs">
+      <DependentUpon>ItemTreeStructureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\MetaData.xaml.cs">
+      <DependentUpon>MetaData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ParameterSetControl.xaml.cs">
+      <DependentUpon>ParameterSetControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ParameterSetRoutedCommands.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\Presentation.xaml.cs">
+      <DependentUpon>Presentation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\AdornedTextBlock.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\BlockGridSelectedItemsBehaviour.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\CasVariableEditor.xaml.cs">
+      <DependentUpon>CasVariableEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\ComparisonTypeToVisbilityConverter.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\CurrencyGapScoreEditor.xaml.cs">
+      <DependentUpon>CurrencyGapScoreEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\DateGapScoreEditor.xaml.cs">
+      <DependentUpon>DateGapScoreEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\DecimalGapScoreEditor.xaml.cs">
+      <DependentUpon>DecimalGapScoreEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\EncodingScoringEditor.xaml.cs">
+      <DependentUpon>EncodingScoringEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\GapMatchScoreEditor.xaml.cs">
+      <DependentUpon>GapMatchScoreEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\InlineChoiceScoreEditor.xaml.cs">
+      <DependentUpon>InlineChoiceScoreEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\IntegerGapScoreEditor.xaml.cs">
+      <DependentUpon>IntegerGapScoreEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\MathGapScoreEditor.xaml.cs">
+      <DependentUpon>MathGapScoreEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\MCScoreEditor.xaml.cs">
+      <DependentUpon>MCScoreEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\ScoreEditorForEncodingWindow.xaml.cs">
+      <DependentUpon>ScoreEditorForEncodingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\StringGapScoreEditor.xaml.cs">
+      <DependentUpon>StringGapScoreEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\TimeGapScoreEditor.xaml.cs">
+      <DependentUpon>TimeGapScoreEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\DataTemplates\DataTemplateSelectorByTypeName.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\DataTemplates\OperatorEditorSelector.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\DataTemplates\ScoreEditors.xaml.cs">
+      <DependentUpon>ScoreEditors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\DataTemplates\ScoreEditorSelector.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\DataTemplates\ScoreViewerSelector.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\DataTemplates\SeparatorColumnTemplateSelector.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\RoutedCommand\Mvvm.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\RoutedCommand\MvvmCommandBinding.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\RoutedCommand\MvvmCommandBindingCollection.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\ScoreEditorCommands.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\ScoringHost.xaml.cs">
+      <DependentUpon>ScoringHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\TextBlockAdorner.cs" />
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\V2Scoring.xaml.cs">
+      <DependentUpon>V2Scoring.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\V2_Advanced_Scoring.xaml.cs">
+      <DependentUpon>V2_Advanced_Scoring.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\ScoreEditors\ScoreTranslationTableEditorView.xaml.cs">
+      <DependentUpon>ScoreTranslationTableEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ItemEditor\Views\SourceViewerControl.xaml.cs">
+      <DependentUpon>SourceViewerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\MarkupExtensions\AutoResizeParentGridView.cs" />
+    <Compile Include="Presentation\MarkupExtensions\EnumExtension.cs" />
+    <Compile Include="Presentation\ResourceMoverWizard\Constants.cs" />
+    <Compile Include="Presentation\ResourceMoverWizard\Model\IResourceMoverParams.cs" />
+    <Compile Include="Presentation\ResourceMoverWizard\Model\ResourceMoverParams.cs" />
+    <Compile Include="Presentation\ResourceMoverWizard\ViewModels\AnimateResourceMovingProcessViewModel.cs" />
+    <Compile Include="Presentation\ResourceMoverWizard\ViewModels\SelectDestinationBankViewModel.cs" />
+    <Compile Include="Presentation\ResourceMoverWizard\ViewModels\ViewResourceMovingDetailsViewModel.cs" />
+    <Compile Include="Presentation\ResourceMoverWizard\ViewModels\ViewResourceMovingResultsViewModel.cs" />
+    <Compile Include="Presentation\ResourceMoverWizard\Views\AnimateResourceMovingProcess.xaml.cs">
+      <DependentUpon>AnimateResourceMovingProcess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ResourceMoverWizard\Views\SelectDestinationBank.xaml.cs">
+      <DependentUpon>SelectDestinationBank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ResourceMoverWizard\Views\ViewResourceMovingDetails.xaml.cs">
+      <DependentUpon>ViewResourceMovingDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ResourceMoverWizard\Views\ViewResourceMovingResults.xaml.cs">
+      <DependentUpon>ViewResourceMovingResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Services\AnnouncementService.cs" />
+    <Compile Include="Presentation\Services\BusinessExceptionManager.cs" />
+    <Compile Include="Presentation\Services\ChooseDialogService.cs" />
+    <Compile Include="Presentation\Services\CurrentItemEditorContext.cs" />
+    <Compile Include="Presentation\Services\CustomMessageBoxService.cs" />
+    <Compile Include="Presentation\Services\HistoryService.cs" />
+    <Compile Include="Presentation\Services\IAddAnswerCategory.cs" />
+    <Compile Include="Presentation\Services\IAnnouncementService.cs" />
+    <Compile Include="Presentation\Services\IChooseDialogService.cs" />
+    <Compile Include="Presentation\Services\ICurrentItemEditorContext.cs" />
+    <Compile Include="Presentation\Services\ICustomMessageBoxService.cs" />
+    <Compile Include="Presentation\Services\IHistoryService.cs" />
+    <Compile Include="Presentation\Services\IItemEditorService.cs" />
+    <Compile Include="Presentation\Services\IMajorVersionDialogService.cs" />
+    <Compile Include="Presentation\Services\IResourceMoverWizardService.cs" />
+    <Compile Include="Presentation\Services\IResourcePropertyDialogService.cs" />
+    <Compile Include="Presentation\Services\ISelectDialogFactory.cs" />
+    <Compile Include="Presentation\Services\ISourceTextEditorService.cs" />
+    <Compile Include="Presentation\Services\IWinFormsWindowService.cs" />
+    <Compile Include="Presentation\Services\MajorVersionDialogService.cs" />
+    <Compile Include="Presentation\Services\MediatorMessages.cs" />
+    <Compile Include="Presentation\Services\MultipleItemEditorService.cs" />
+    <Compile Include="Presentation\Services\ResourceMoverWizardService.cs" />
+    <Compile Include="Presentation\Services\ResourcePropertyDialogService.cs" />
+    <Compile Include="Presentation\Services\SelectDialogFactory.cs" />
+    <Compile Include="Presentation\Services\SourceTextEditorService.cs" />
+    <Compile Include="Presentation\Services\TestCustomMessageBoxService.cs" />
+    <Compile Include="Presentation\Services\WinFormsWindowService.cs" />
+    <Compile Include="Presentation\SourceTextEditor\Constants.cs" />
+    <Compile Include="Presentation\SourceTextEditor\SourceTextEditorCustomCommands.cs" />
+    <Compile Include="Presentation\SourceTextEditor\ViewModels\ISourceTextEditorViewModel.cs" />
+    <Compile Include="Presentation\SourceTextEditor\ViewModels\LinkedStyleSheetsViewModel.cs" />
+    <Compile Include="Presentation\SourceTextEditor\ViewModels\MetaDataViewModel.cs" />
+    <Compile Include="Presentation\SourceTextEditor\ViewModels\SourceTextEditorViewModel.cs" />
+    <Compile Include="Presentation\SourceTextEditor\ViewModels\TextEditorViewModel.cs" />
+    <Compile Include="Presentation\SourceTextEditor\Views\IMetaDataControl.cs" />
+    <Compile Include="Presentation\SourceTextEditor\Views\ITextEditorControl.cs" />
+    <Compile Include="Presentation\SourceTextEditor\Views\LinkedStyleSheets.xaml.cs">
+      <DependentUpon>LinkedStyleSheets.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\SourceTextEditor\Views\MetaData.xaml.cs">
+      <DependentUpon>MetaData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\SourceTextEditor\Views\SourceTextEditorWindow.xaml.cs">
+      <DependentUpon>SourceTextEditorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\SourceTextEditor\Views\TextEditor.xaml.cs">
+      <DependentUpon>TextEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Types\ApplicationExtensions.cs" />
+    <Compile Include="Presentation\Types\BaseUIContext of T.cs" />
+    <Compile Include="Presentation\Types\CustomBoundColumn.cs" />
+    <Compile Include="Presentation\Types\DesignTimeResourceDictionary.cs" />
+    <Compile Include="Presentation\Types\EditorFactoryForTypeAttribute.cs" />
+    <Compile Include="Presentation\Types\IdChangedEventArgs.cs" />
+    <Compile Include="Presentation\Types\IEditorForType.cs" />
+    <Compile Include="Presentation\Types\KeyComparer.cs" />
+    <Compile Include="Presentation\Types\ObservableSortedDictionary.cs" />
+    <Compile Include="Presentation\Types\RoutedEventHandler Of T.cs" />
+    <Compile Include="Presentation\Types\ScoreEditorFactoryForTypeAttribute.cs" />
+    <Compile Include="Presentation\Types\StringEventArgs.cs" />
+    <Compile Include="Presentation\Types\UIContext of T.cs" />
+    <Compile Include="Presentation\ValueConverters\CasOperatorVisibilityConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\CasVariableValueConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\ComparisonTypeNotEqualsParametersConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\DateStringConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\EntityTypeToFriendlyNameConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\GapComparisonTypeConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\IntegerToBooleanConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\IntegerToVisibilityConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\InverseBooleanConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\ListHasItemsToVisibilityConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\ListHasNoItemsToVisibilityConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\MultiTypeStringConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\NoValueStringConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\NullToBooleanConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\NumberToDash.cs" />
+    <Compile Include="Presentation\ValueConverters\ObjectEqualsParameterConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\ObjectNotEqualsParameterConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\QuestifyBooleanToVisibilityConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\RangeConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\StateEntityConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\StringNullOrEmptyToVisibilityConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\StringTrimConverter.cs" />
+    <Compile Include="Presentation\ValueConverters\ToUppercaseConverter.cs" />
+    <Compile Include="Presentation\Watermark\WatermarkAdorner.cs" />
+    <Compile Include="Presentation\Watermark\WatermarkService.cs" />
+    <Compile Include="Presentation\WinformsInterop\IWPF2WinVisualizerService.cs" />
+    <Compile Include="Presentation\WinformsInterop\Win.cs" />
+    <Compile Include="Presentation\WinformsInterop\WPF2WinVisualizerService.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.nl.resx" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Questify.Builder.IoC\Questify.Builder.IoC.csproj">
+      <Project>{63ce1dee-458d-47a3-82fd-78e0132b536b}</Project>
+      <Name>Questify.Builder.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cito.Tester.Common\Cito.Tester.Common.vbproj">
+      <Project>{9a0bd8fe-d6f6-4ce5-9a0b-877610b00deb}</Project>
+      <Name>Cito.Tester.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cito.Tester.ContentModel\Cito.Tester.ContentModel.vbproj">
+      <Project>{94ee8d6c-5c52-4f34-9e61-e407b3240004}</Project>
+      <Name>Cito.Tester.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Configuration\Questify.Builder.Configuration.vbproj">
+      <Project>{c38faa1f-f9ca-415e-99ea-56370b9207d8}</Project>
+      <Name>Questify.Builder.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.ContentModel\Questify.Builder.Model.ContentModel.vbproj">
+      <Project>{44eafd1e-6cc9-4a94-b6f6-a78734c7aae5}</Project>
+      <Name>Questify.Builder.Model.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Questify.Builder.Logic.vbproj">
+      <Project>{3a707189-b5de-439d-91d3-fa20ce79e8bf}</Project>
+      <Name>Questify.Builder.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security.ActiveDirectory\Questify.Builder.Security.ActiveDirectory.csproj">
+      <Project>{929de55d-69b6-41cf-bbeb-12230210daf3}</Project>
+      <Name>Questify.Builder.Security.ActiveDirectory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security\Questify.Builder.Security.vbproj">
+      <Project>{F7B4A532-DDCC-47F5-BB20-A7AE6F1D47B5}</Project>
+      <Name>Questify.Builder.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UI\Questify.Builder.UI.vbproj">
+      <Project>{d35f44ec-b3c4-48df-9bec-76da023b393a}</Project>
+      <Name>Questify.Builder.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Service\Questify.Builder.Logic.Service.csproj">
+      <Project>{F8D65F41-D624-4343-8733-778BC0B4FF9E}</Project>
+      <Name>Questify.Builder.Logic.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Presentation\ItemEditor\ItemEditor.AspectEditor.en.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\ItemEditor\ItemEditor.AspectEditor.nl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\Aspects\AspectEditorMultipleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\Aspects\AspectEditorSingleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\BlockGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\BlockGridBlockRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\BlockGridCell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\BlockGridColumnHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\BlockGridHeaderPresenter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\BlockInRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\BlockRow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\BlockRowsPresenter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\AnnouncementDialog\AnnouncementDialog.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\AnnouncementDialog\AnnouncementDialog.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\AnnouncementDialog\Views\AnnouncementDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\AnnouncementDialog\Views\SendAnnouncementView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\Controls\CustomMessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericControls\GenericControl.Metadata.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericControls\GenericControl.Metadata.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericControls\Views\MetaData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\ChooseDialog\Views\ChooseDialogWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\GenericWizard\GenericWizard.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\GenericWizard\GenericWizard.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\GenericWizard\Views\WizardDefaultPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\GenericWizard\Views\WizardStartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\GenericWizard\Views\WizardView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\LoginDialog\LoginDialogView.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\LoginDialog\LoginDialogView.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\LoginDialog\Views\LoginDialogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\ResourcePropertyDialog\ResourcePropertyDialog.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\ResourcePropertyDialog\ResourcePropertyDialog.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\ResourcePropertyDialog\VersionDifferences.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\ResourcePropertyDialog\VersionDifferences.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\ResourcePropertyDialog\Views\Data.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\ResourcePropertyDialog\Views\Dependencies.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\ResourcePropertyDialog\Views\History.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\ResourcePropertyDialog\Views\References.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\ResourcePropertyDialog\Views\ResourcePropertyDialogWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\ResourcePropertyDialog\Views\VersionDifferencesWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\VersionDialog\MajorVersionDialog.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\VersionDialog\MajorVersionDialog.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\GenericDialogs\VersionDialog\Views\MajorVersionDialogWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\ItemEditor.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\ItemEditor.ItemConceptStructure.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\ItemEditor.ItemConceptStructure.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\ItemEditor.ItemTreeStructure.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\ItemEditor.ItemTreeStructure.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\ItemEditor.Metadata.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\ItemEditor.Metadata.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\ItemEditor.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\ItemEditor.ParameterEditor.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\ItemEditor.ParameterEditor.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\ItemEditor.ScoreEditor.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\ItemEditor.ScoreEditor.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\ItemEditor.ScoreEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\ItemEditor.ScoreTranslationTableEditor.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\ItemEditor.ScoreTranslationTableEditor.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ItemConceptStructureView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ItemEditorFluentWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ItemTreeStructureView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\MetaData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ParameterSetControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\Presentation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\CasVariableEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\CurrencyGapScoreEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\DateGapScoreEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\DecimalGapScoreEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\EncodingScoringEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\GapMatchScoreEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\InlineChoiceScoreEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\IntegerGapScoreEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\MathGapScoreEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\MCScoreEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\ScoreEditorForEncodingWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\StringGapScoreEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\concrete\TimeGapScoreEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\DataTemplates\OperatorEditors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\DataTemplates\ScoreEditors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\DataTemplates\ScoreEditorsResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\DataTemplates\ScoreViewers.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\DataTemplates\SeperatorColum.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\DataTemplates\SharedDataTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\ScoringHost.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\V2Scoring.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\V2_Advanced_Scoring.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\ScoreEditors\ScoreTranslationTableEditorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ItemEditor\Views\SourceViewerControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\Localization\en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Presentation\Localization\languageIndependent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Presentation\Localization\nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Presentation\ResourceMoverWizard\Localization\AnimateResourceMovingProcess.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ResourceMoverWizard\Localization\AnimateResourceMovingProcess.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ResourceMoverWizard\Localization\ResourceMoverWizard.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ResourceMoverWizard\Localization\ResourceMoverWizard.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ResourceMoverWizard\Localization\SelectDestinationBank.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ResourceMoverWizard\Localization\SelectDestinationBank.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ResourceMoverWizard\Localization\ViewResourceMovingDetails.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ResourceMoverWizard\Localization\ViewResourceMovingDetails.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ResourceMoverWizard\Localization\ViewResourceMovingResults.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ResourceMoverWizard\Localization\ViewResourceMovingResults.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ResourceMoverWizard\Views\AnimateResourceMovingProcess.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ResourceMoverWizard\Views\SelectDestinationBank.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ResourceMoverWizard\Views\ViewResourceMovingDetails.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ResourceMoverWizard\Views\ViewResourceMovingResults.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\SourceTextEditor\SourceTextEditor.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\SourceTextEditor\SourceTextEditor.LinkedStyleSheets.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\SourceTextEditor\SourceTextEditor.LinkedStyleSheets.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\SourceTextEditor\SourceTextEditor.Metadata.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\SourceTextEditor\SourceTextEditor.Metadata.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\SourceTextEditor\SourceTextEditor.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\SourceTextEditor\Views\LinkedStyleSheets.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\SourceTextEditor\Views\MetaData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\SourceTextEditor\Views\SourceTextEditorWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\SourceTextEditor\Views\TextEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\Styles\BlockGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\Styles\DefaultStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\Styles\Ribbon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ValueConverters\Localization\EntityTypeToFriendlyNameConverter.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Presentation\ValueConverters\Localization\EntityTypeToFriendlyNameConverter.nl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presentation\Resources\Fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Presentation\GenericDialogs\ReadMe.txt" />
+    <Resource Include="Presentation\Images\ItemEditor\error_withItem_16.png" />
+    <Resource Include="Presentation\Images\ItemEditor\ScoreEditor\add_16.png" />
+    <Resource Include="Presentation\Images\ItemEditor\ScoreEditor\error_16.png" />
+    <Resource Include="Presentation\Images\ItemEditor\ScoreEditor\new_formula_32.png" />
+    <Resource Include="Presentation\Images\ItemEditor\ScoreEditor\reload_16.png" />
+    <Resource Include="Presentation\Images\ItemEditor\ScoreEditor\remove_16.png" />
+    <Resource Include="Presentation\Images\ItemEditor\ScoreEditor\warning_16.png" />
+    <Resource Include="Presentation\Images\ItemEditor\score_notok_16x16.png" />
+    <Resource Include="Presentation\Images\ItemEditor\score_ok_16x16.png" />
+    <Resource Include="Presentation\Images\ItemEditor\warning_oldItem_16.png" />
+    <Resource Include="Presentation\Images\QuestifyIcon.ico" />
+    <Resource Include="Presentation\Images\Ribbon\audio_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\audio_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\blockDelete_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\blockDelete_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\blockNew_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\blockNew_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\bold_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\copy_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\customInteraction_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\customInteraction_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\cut_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\eraseformat_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\formula_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\formula_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\groupAddTo_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\groupAddTo_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\groupNew_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\groupNew_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\groupUngroup_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\groupUngroup_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\image_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\image_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\indentdecrease_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\indentincrease_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\inlineControl_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\inlineControl_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\interactionAdd_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\interactionAdd_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\interactionDelete_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\interactionDelete_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\italic_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\LockedForEdit_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\Mute_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\Mute_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\nextItem_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\orderedlist_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\orderedromanlist_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\paste_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\pause_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\pause_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\popup_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\popup_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\previousItem_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\reference_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\reference_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\ribbon_2Collapse.png" />
+    <Resource Include="Presentation\Images\Ribbon\ribbon_2Expand.png" />
+    <Resource Include="Presentation\Images\Ribbon\saveAndClose_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\saveAs_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\save_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\strikethrough_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\subindex_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\superindex_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\symbol_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\symbol_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\table_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\table_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\textaligncenter_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\textAlignLeft_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\textAlignRight_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\TTSAlternative_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\TTSAlternative_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\TTSRemove_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\TTSRemove_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\underline_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\unorderedlist_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\video_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\video_32.png" />
+    <Resource Include="Presentation\Resources\Icons\Empty.ico" />
+    <Resource Include="Presentation\Resources\Icons\Error.ico" />
+    <Resource Include="Presentation\Resources\Icons\QuestifyIcon.ico" />
+    <Resource Include="Presentation\Resources\Icons\Warning.ico" />
+    <Resource Include="Presentation\Resources\Images\Exception.png" />
+    <Resource Include="Presentation\Resources\Images\login_banner.png" />
+    <Resource Include="Presentation\Resources\Images\Questify.gif" />
+    <Resource Include="Presentation\Resources\Images\revert_16.png" />
+    <Resource Include="Presentation\Resources\Images\Search.png" />
+    <Resource Include="Presentation\Resources\Images\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Presentation\Images\Ribbon\autoScoringOff_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\autoScoringOff_32.png" />
+    <Resource Include="Presentation\Images\Ribbon\autoScoringOn_16.png" />
+    <Resource Include="Presentation\Images\Ribbon\autoScoringOn_32.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

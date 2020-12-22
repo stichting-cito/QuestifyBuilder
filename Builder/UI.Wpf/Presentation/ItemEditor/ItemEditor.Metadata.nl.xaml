@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <s:String x:Key="ItemEditor.Metadata.InfoGroup">Informatie over het item</s:String>
+    <s:String x:Key="ItemEditor.Metadata.ConceptGroup">Concepten</s:String>
+    <s:String x:Key="ItemEditor.Metadata.TreeGroup">Boomstructuren</s:String>
+    <s:String x:Key="ItemEditor.Metadata.CustomPropertiesGroup">Kenmerken</s:String>
+
+    <s:String x:Key="ItemEditor.MetaDataViewModel.ActionNotAllowedWhenNew">Deze actie kan alleen uitgevoerd worden als de bron niet nieuw is.</s:String>
+    <s:String x:Key="ItemEditor.MetaDataViewModel.ActionNotAllowedNeedSave">Deze actie kan alleen uitgevoerd worden als er geen openstaande wijzigingen zijn.</s:String>
+    <s:String x:Key="ItemEditor.MetaDataViewModel.TemlateSwitchingDialogTitle">Waarschuwing</s:String>
+    <s:String x:Key="ItemEditor.MetaDataViewModel.TemlateSwitchingWithWarnings">Dit template kan alleen worden toegepast met de volgende consequenties:</s:String>
+
+</ResourceDictionary>

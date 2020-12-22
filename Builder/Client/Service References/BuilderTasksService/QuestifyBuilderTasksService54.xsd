@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/Questify.Builder.Services.TasksService/QuestifyBuilderTasksService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.TasksService.TaskClasses" />
+  <xs:import schemaLocation="http://localhost/Questify.Builder.Services.TasksService/QuestifyBuilderTasksService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/Message" />
+  <xs:import schemaLocation="http://localhost/Questify.Builder.Services.TasksService/QuestifyBuilderTasksService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="PollProgress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.TasksService.TaskClasses" minOccurs="0" name="builderTaskSessionTicket" nillable="true" type="q1:BuilderTaskSessionTicket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PollProgressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.TasksService.TaskClasses" minOccurs="0" name="PollProgressResult" nillable="true" type="q2:BuilderTaskProgress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RequestCancellation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.TasksService.TaskClasses" minOccurs="0" name="builderTaskSessionTicket" nillable="true" type="q3:BuilderTaskSessionTicket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RequestCancellationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLogFileStream">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.TasksService.TaskClasses" minOccurs="0" name="builderTaskSessionTicket" nillable="true" type="q4:BuilderTaskSessionTicket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLogFileStreamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/Message" name="GetLogFileStreamResult" type="q5:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.TasksService.TaskClasses" minOccurs="0" name="builderTaskSessionTicket" nillable="true" type="q6:BuilderTaskSessionTicket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.TasksService.TaskClasses" minOccurs="0" name="GetTaskResultResult" nillable="true" type="q7:BuilderTaskResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Cleanup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.TasksService.TaskClasses" minOccurs="0" name="builderTaskSessionTicket" nillable="true" type="q8:BuilderTaskSessionTicket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CleanupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HarmonizeWithItemLayoutTemplates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="templateGuids" nillable="true" type="q9:ArrayOfguid" />
+        <xs:element minOccurs="0" name="logTheActions" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HarmonizeWithItemLayoutTemplatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.TasksService.TaskClasses" minOccurs="0" name="HarmonizeWithItemLayoutTemplatesResult" nillable="true" type="q10:BuilderTaskSessionTicket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HarmonizeItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="itemResourceIds" nillable="true" type="q11:ArrayOfguid" />
+        <xs:element minOccurs="0" name="logTheActions" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HarmonizeItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.TasksService.TaskClasses" minOccurs="0" name="HarmonizeItemsResult" nillable="true" type="q12:BuilderTaskSessionTicket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HarmonizeAfterImport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bankId" type="xs:int" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="templateGuids" nillable="true" type="q13:ArrayOfguid" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="itemCodes" nillable="true" type="q14:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HarmonizeAfterImportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.TasksService.TaskClasses" minOccurs="0" name="HarmonizeAfterImportResult" nillable="true" type="q15:BuilderTaskSessionTicket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

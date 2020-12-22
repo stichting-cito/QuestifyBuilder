@@ -1,0 +1,72 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <!-- GENERAL WINDOW -->
+    <s:String x:Key="ResourcePropertyDialog.Title">Bronkenmerken-editor</s:String>
+
+    <!-- COMMANDS -->
+    <s:String x:Key="ResourcePropertyDialog.Command.Ok">OK</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Command.Ok.Error" xml:space="preserve">Er is een fout opgetreden bij het opslaan.&#x0d;&#x0a;Fout: {0}</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Command.Cancel">Annuleren</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Command.Apply">Toepassen</s:String>
+
+    <!-- TAB -->
+    <s:String x:Key="ResourcePropertyDialog.Tab.General">Algemeen</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.References">Referenties</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies">Afhankelijkheden</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Data">Data</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History">Geschiedenis</s:String>
+
+    <!-- General Tab -->
+    <s:String x:Key="ResourcePropertyDialog.Tab.General.Header">Eigenschappen</s:String>
+
+    <!-- Dependencies Tab -->
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.Header">Afhankelijkheden</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.Description">Andere bronnen waar deze bron afhankelijk van is.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.AddButton.Title">Toevoegen</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.RemoveButton.Title">Verwijderen</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.RemoveButton.Confirm">De bron zal worden verwijderd. Weet u het zeker?</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.ListView.Name">Code</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.ListView.Title">Titel</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.ListView.Bank">Bank</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Dependencies.ListView.Version">Versie</s:String>
+
+    <!-- References Tab -->
+    <s:String x:Key="ResourcePropertyDialog.Tab.References.Header">Verwijzingen</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.References.Description">Andere bronnen die verwijzen naar deze bron.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.References.ListView.Name">Code</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.References.ListView.Title">Titel</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.References.ListView.Bank">Bank</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.References.ListView.Version">Versie</s:String>
+
+    <!-- Data Tab -->
+    <s:String x:Key="ResourcePropertyDialog.Tab.Data.ReplaceSource.GroupBox.Title">Vervang bron</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Data.ReplaceSource.Description">Vervang huidige bron vanaf het lokale bestandssysteem. Deze actie wordt pas uitgevoerd nadat de wijzigingen in deze dialoog bevestigd zijn.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Data.ReplaceSource.BrowseButton.Title">Bladeren...</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Data.ExportSource.GroupBox.Title">Exporteer bron</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Data.ExportSource.GroupBox.Description">Exporteer huidige bron naar een bestand.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.Data.ReplaceSource.ExportButton.Title">Exporteren...</s:String>
+
+    <!-- History Tab -->
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.GroupBox.Title">Wijzigingen</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.Command.Compare">Vergelijk</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.Version">Versie</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.ModifiedDate">Gewijzigd op</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.ModifiedBy">Gewijzigd door</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.Label">Label</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.Revert">Terugdraaien</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.Compare">Vergelijk</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.RevertButton.Confirm">Weet u zeker dat u terug wilt gaan naar deze versie?</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.RevertButton.CloseOpenEditors">Alle openstaande editors moeten eerst gesloten worden. Wilt u doorgaan?</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.RevertButton.Enabled.ToolTip">Terugdraaien naar deze versie.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.RevertButton.Disabled.ToolTip">Niet mogelijk om naar deze versie terug te draaien vanwege conflicterende wijzigingen tussen de geselecteerde versie en de meest recente versie.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.RevertButton.Disabled.ToolTipMedia">Niet mogelijk om naar deze versie terug te draaien, omdat inhoud van media niet wordt opgeslagen.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.RevertButton.NoChangesBetweenVersions">Er zijn geen wijzigingen tussen de geselecteerde versie en de meest recente versie.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.Tab.History.RevertButton.ReinitiateRevert">Door het opslaan van de openstaande wijzigingen is een nieuwe versie ({0}) ontstaan. U moet het terugdraaien naar een vorige versie opnieuw uitvoeren.</s:String>
+
+    <!-- ViewModel Messages -->
+    <s:String x:Key="ResourcePropertyDialog.ResourcePropertyDialogViewModel.PendingChangesWishToLeave">Er zijn niet opgeslagen wijzigingen. Wilt u ze alsnog opslaan?</s:String>
+    <s:String x:Key="ResourcePropertyDialog.ResourcePropertyDialogViewModel.HasErrors">Niet alle invoer is geldig.</s:String>
+    <s:String x:Key="ResourcePropertyDialog.ResourcePropertyDialogViewModel.PropertiesOf">Eigenschappen van {0}</s:String>
+</ResourceDictionary>

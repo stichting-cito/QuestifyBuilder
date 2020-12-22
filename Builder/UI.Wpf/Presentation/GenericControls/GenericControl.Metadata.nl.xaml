@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+	<s:String x:Key="GenericControls.Metadata.Name">Code:</s:String>
+	<s:String x:Key="GenericControls.Metadata.Title">Titel:</s:String>
+	<s:String x:Key="GenericControls.Metadata.Version">Versie:</s:String>
+    <s:String x:Key="GenericControls.Metadata.ResourceType">Type:</s:String>
+    <s:String x:Key="GenericControls.Metadata.State">Status:</s:String>
+    <s:String x:Key="GenericControls.Metadata.CreatedBy">Gemaakt door:</s:String>
+    <s:String x:Key="GenericControls.Metadata.CreationDate">Gemaakt op:</s:String>
+    <s:String x:Key="GenericControls.Metadata.ModifiedBy">Gewijzigd door:</s:String>
+    <s:String x:Key="GenericControls.Metadata.ModifiedDate">Gewijzigd op:</s:String>
+    <s:String x:Key="GenericControls.Metadata.CopyFromString">Kopie van:</s:String>
+    <s:String x:Key="GenericControls.Metadata.Description">Omschrijving:</s:String>
+	<s:String x:Key="GenericControls.Metadata.Rule.Name.Required">Code mag niet leeg zijn.</s:String>
+    <s:String x:Key="GenericControls.Metadata.Rule.Name.NoDoubleDots">Code mag geen opeenvolgende punten bevatten.</s:String>
+    <s:String x:Key="GenericControls.Metadata.Rule.Name.NoIllegalCharacters">Code mag geen van de volgende karakters bevatten: <![CDATA[ "<>""#%{}|\/^~[]';?:@=&^$+()!,`*"']]></s:String>
+    <s:String x:Key="GenericControls.Metadata.Rule.Title.Required">Titel mag niet leeg zijn.</s:String>
+	<s:String x:Key="GenericControls.Metadata.ActionNotAllowedWhenNew">Deze actie kan alleen uitgevoerd worden als de bron niet nieuw is.</s:String>
+</ResourceDictionary>

@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 13</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>Publicatiemethode:</value>
+  </data>
+  <data name="PublicationBrowseButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAPFJREFUOE9joBo4
+        t0jxPzKGChMHQBrQwbFZEsQZAlIIAXPQMMQQbBiqFQJAAv8/AzV87sHEWABI/dwqSYQhYANet/x/dNAf
+        wyZ8eGkRD8QQEOf/9Raw4K392VB7gOD3dygDDTxvAVMoBvy9mg824PuHTqAUelig4eNR/3//nIZqwKPN
+        Tv9PLlAAKlj6///3KXjx831B/8/tiUY14Pwi1f/Xd9hDbACGB04MdP77XU4IzSAAMuDYLMn/H55UQgx4
+        XI0b36/+f28TFgOOz5GGaL4ODEQCeP9MDVQDQODANIn/xOI5lThSKEiCGAxVPmgAAwMA5E/nFPhI1WEA
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="ApplyBrandingLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
+  </data>
+  <data name="ApplyBrandingLabel.Text" xml:space="preserve">
+    <value>Branding toepassen:</value>
+  </data>
+  <data name="PublicationNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 4</value>
+  </data>
+  <data name="PublicationNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>496, 20</value>
+  </data>
+  <data name="PublicationNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
+  </data>
+  <data name="PublicationNameLabel.Text" xml:space="preserve">
+    <value>Publicatienaam:</value>
+  </data>
+  <data name="PrintformLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
+  </data>
+  <data name="PrintformLabel.Text" xml:space="preserve">
+    <value>Formaat:</value>
+  </data>
+  <data name="PrintFormListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 32</value>
+  </data>
+  <data name="PrintFormListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>496, 109</value>
+  </data>
+  <data name="PublicationServerApplicationsListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 194</value>
+  </data>
+  <data name="PublicationServerApplicationsListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>496, 64</value>
+  </data>
+  <data name="PublicationServerApplicationsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
+  </data>
+  <data name="PublicationServerApplicationsLabel.Text" xml:space="preserve">
+    <value>Doelapplicatie:</value>
+  </data>
+  <data name="PublicationServerComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 167</value>
+  </data>
+  <data name="PublicationServerComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>496, 21</value>
+  </data>
+  <data name="ApplyBrandingCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 147</value>
+  </data>
+  <data name="ApplyBrandingCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>496, 14</value>
+  </data>
+  <data name="PublicationServerLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
+  </data>
+  <data name="PublicationServerLabel.Text" xml:space="preserve">
+    <value>Publicatieserver:</value>
+  </data>
+  <data name="OptionsGroupBox.Text" xml:space="preserve">
+    <value>Publicatie-opties:</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 13</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Wachtwoord voor het encrypten van het package:</value>
+  </data>
+  <data name="ReTypePasswordTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>256, 35</value>
+  </data>
+  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 13</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>Voer wachtwoord nogmaals in:</value>
+  </data>
+  <data name="PackagePasswordTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>256, 5</value>
+  </data>
+  <data name="EncryptionOptionsGroupBox.Text" xml:space="preserve">
+    <value>Beveiligingsopties:</value>
+  </data>
+  <data name="ValidatorProgressLabel.Text" xml:space="preserve">
+    <value>Voortgang validatie</value>
+  </data>
+  <data name="ConnectPackageToDeliveryCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 17</value>
+  </data>
+  <data name="ConnectPackageToDeliveryCheckBox.Text" xml:space="preserve">
+    <value>Koppel het pakket aan de afname</value>
+  </data>
+  <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 13</value>
+  </data>
+  <data name="Label6.Text" xml:space="preserve">
+    <value>Selecteer de afname:</value>
+  </data>
+  <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 13</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>Titel:</value>
+  </data>
+  <data name="DeliveriesComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 28</value>
+  </data>
+  <data name="DeliveriesComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>474, 21</value>
+  </data>
+  <data name="DeliveryTitleTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 57</value>
+  </data>
+  <data name="DeliveryTitleTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>474, 20</value>
+  </data>
+  <data name="NewDeliveryButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAGZSURBVDhPlZC9T8JAHIa7uBgH/xf/igZDdGDEzU0IkwOS
+        QKOSRiQEjR/EzZmEpAwmTA5ODhJNowZMgAXhoCRKoaVfP3vHAa0FjE/y5nK99/fkrsw8fD7ftk3AGb/f
+        H2BZdss+Xhu3ltDpdPpSr2dJkkTSQchqNptWvVbTE4nEDa0tpitJA7CxLAsvBMs0QZb7oCoKZNLp5RKE
+        kGzYA7quA14nIryvVivQaNQhHN7jad1Lq92WcXmkaQ4JcYBpGvhqkM/n72ndC2ohWdN0UFV1KjGxZOwg
+        FAqFEq17eRbF4degD4qieiX0KoIgzBew1zswiakaMLR/2kxiEAmmWCwuFqRfskQAKoCmaJ6b/C0Q00RQ
+        QR9Q/hSh+91zSTCuJ+CyM+dvKdcex5g+Z0QErp+IC7lqCrJvR3D6GgNe3IdYOQTRpxBEHneJYDTUYDAY
+        EslcgTOp94hrj/Obu1LpgY7P2BA2V3H5thknQ8l48uzw4PiCi3KXHDcLz/NXwWAwRMfc4MECOiEC+ul/
+        4MFJmAyzzuSYFXo0B4b5AW0Q7r2eFJg0AAAAAElFTkSuQmCC
+</value>
+  </data>
+</root>

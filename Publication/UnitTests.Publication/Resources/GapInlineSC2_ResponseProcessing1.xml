@@ -1,0 +1,186 @@
+<responseProcessing xmlns="http://www.imsglobal.org/xsd/imsqti_v2p2">
+  <responseCondition>
+    <responseIf>
+      <or>
+        <and>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE"/>
+            <baseValue baseType="integer">19</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE2"/>
+            <baseValue baseType="integer">9</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE3"/>
+            <baseValue baseType="integer">10</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE4"/>
+            <baseValue baseType="integer">3</baseValue>
+          </equal>          
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE5"/>
+            <baseValue baseType="integer">6</baseValue>
+          </equal>          
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE6"/>
+            <baseValue baseType="integer">4</baseValue>
+          </equal>
+        </and>
+        <and>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE"/>
+            <baseValue baseType="integer">19</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE2"/>
+            <baseValue baseType="integer">10</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE3"/>
+            <baseValue baseType="integer">9</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE4"/>
+            <baseValue baseType="integer">4</baseValue>
+          </equal>          
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE5"/>
+            <baseValue baseType="integer">6</baseValue>
+          </equal>          
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE6"/>
+            <baseValue baseType="integer">3</baseValue>
+          </equal>
+        </and>
+        <and>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE"/>
+            <baseValue baseType="integer">17</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE2"/>
+            <baseValue baseType="integer">10</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE3"/>
+            <baseValue baseType="integer">7</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE4"/>
+            <baseValue baseType="integer">6</baseValue>
+          </equal>          
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE5"/>
+            <baseValue baseType="integer">4</baseValue>
+          </equal>          
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE6"/>
+            <baseValue baseType="integer">3</baseValue>
+          </equal>
+        </and>
+        <and>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE"/>
+            <baseValue baseType="integer">17</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE2"/>
+            <baseValue baseType="integer">7</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE3"/>
+            <baseValue baseType="integer">10</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE4"/>
+            <baseValue baseType="integer">3</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE5"/>
+            <baseValue baseType="integer">4</baseValue>
+          </equal>          
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE6"/>
+            <baseValue baseType="integer">6</baseValue>
+          </equal>
+        </and>
+        <and>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE"/>
+            <baseValue baseType="integer">16</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE2"/>
+            <baseValue baseType="integer">9</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE3"/>
+            <baseValue baseType="integer">7</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE4"/>
+            <baseValue baseType="integer">6</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE5"/>
+            <baseValue baseType="integer">3</baseValue>
+          </equal>          
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE6"/>
+            <baseValue baseType="integer">4</baseValue>
+          </equal>
+        </and>
+        <and>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE"/>
+            <baseValue baseType="integer">16</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE2"/>
+            <baseValue baseType="integer">7</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE3"/>
+            <baseValue baseType="integer">9</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE4"/>
+            <baseValue baseType="integer">4</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE5"/>
+            <baseValue baseType="integer">3</baseValue>
+          </equal>          
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE6"/>
+            <baseValue baseType="integer">6</baseValue>
+          </equal>
+        </and>
+      </or>
+      <setOutcomeValue identifier="SCORE">
+        <sum>
+          <baseValue baseType="float">1</baseValue>
+          <variable identifier="SCORE" />
+        </sum>
+      </setOutcomeValue>
+    </responseIf>
+  </responseCondition>
+  <responseCondition>
+    <responseIf>
+      <gte>
+        <variable identifier="SCORE" />
+        <baseValue baseType="float">1</baseValue>
+      </gte>
+      <setOutcomeValue identifier="SCORE">
+        <baseValue baseType="float">1</baseValue>
+      </setOutcomeValue>
+    </responseIf>
+    <responseElse>
+      <setOutcomeValue identifier="SCORE">
+        <baseValue baseType="float">0</baseValue>
+      </setOutcomeValue>
+    </responseElse>
+  </responseCondition>
+</responseProcessing>

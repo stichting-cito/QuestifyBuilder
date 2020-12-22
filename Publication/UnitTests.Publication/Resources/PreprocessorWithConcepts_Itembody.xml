@@ -1,0 +1,14 @@
+  <itemBody class="defaultBody">
+    <div class="content">
+      <div>
+        <div id="itemquestion">
+          <p>ToLower, Trim, ToAscii <textEntryInteraction patternMask="^.{0,10}$" responseIdentifier="d8a12ec3-e934-48e7-8e67-814db27baa4a" expectedLength="10" /> </p>
+        </div>
+        <div id="questionwithinlinecontrol">
+          <p>Bla</p>
+        </div>
+        <div id="answer">
+        </div>
+      </div>
+    </div>
+  </itemBody>

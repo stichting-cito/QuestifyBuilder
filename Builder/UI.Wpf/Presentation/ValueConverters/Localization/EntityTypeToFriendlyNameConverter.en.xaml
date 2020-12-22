@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Friendly names for the QB entities -->
+    <s:String x:Key="EntityTypeToFriendlyNameConverter.Item">Item</s:String>
+
+    <s:String x:Key="EntityTypeToFriendlyNameConverter.ItemLayoutTemplate">Item layout template</s:String>
+    <s:String x:Key="EntityTypeToFriendlyNameConverter.ControlTemplate">Control template</s:String>
+
+    <s:String x:Key="EntityTypeToFriendlyNameConverter.Test">Test</s:String>
+    <s:String x:Key="EntityTypeToFriendlyNameConverter.TestPackage">Test package</s:String>
+
+    <s:String x:Key="EntityTypeToFriendlyNameConverter.Media">Media</s:String>
+
+    <s:String x:Key="EntityTypeToFriendlyNameConverter.ListCustomBankProperty">List property</s:String>
+    <s:String x:Key="EntityTypeToFriendlyNameConverter.FreeValueCustomBankProperty">Free value property</s:String>
+    <s:String x:Key="EntityTypeToFriendlyNameConverter.ConceptStructure">Concept structure</s:String>
+
+    <s:String x:Key="EntityTypeToFriendlyNameConverter.Delivery">Delivery</s:String>
+    <s:String x:Key="EntityTypeToFriendlyNameConverter.Aspect">Aspect</s:String>
+</ResourceDictionary>

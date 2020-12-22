@@ -1,0 +1,148 @@
+<assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="GapDateSC" title="GapDateSC" layoutTemplateSrc="Cito.Generic.Gap.Date.SC">
+  <solution>
+    <keyFindings>
+      <keyFinding id="gapController" scoringMethod="Dichotomous">
+        <keyFact id="DateInputA" score="1" xmlns="http://Cito.Tester.Server/xml/serialization">
+          <keyValue domain="DateInputA" occur="1">
+            <stringValue>
+              <typedValue>07/04/2013</typedValue>
+            </stringValue>
+          </keyValue>
+        </keyFact>
+        <keyFact id="DateInputB" score="1" xmlns="http://Cito.Tester.Server/xml/serialization">
+          <keyValue domain="DateInputB" occur="1">
+            <stringValue>
+              <typedValue>07/04/2013</typedValue>
+            </stringValue>
+          </keyValue>
+        </keyFact>
+        <keyFact id="DateInputC" score="1" xmlns="http://Cito.Tester.Server/xml/serialization">
+          <keyValue domain="DateInputC" occur="1">
+            <stringValue>
+              <typedValue>07/04/2013</typedValue>
+            </stringValue>
+          </keyValue>
+        </keyFact>
+      </keyFinding>
+    </keyFindings>
+    <aspectReferences />
+  </solution>
+  <parameters>
+    <parameterSet id="entireItem">
+      <booleanparameter name="dualColumnLayout">False</booleanparameter>
+      <booleanparameter name="displayVerklankingOnTheRight">True</booleanparameter>
+      <booleanparameter name="showCalculatorButton" />
+      <collectionparameter name="numberOfAudioContentItems">
+        <definition id="">
+          <resourceparameter name="audiocontent" />
+          <xhtmlparameter name="description" />
+        </definition>
+      </collectionparameter>
+      <xhtmlparameter name="leftBody" />
+      <xhtmlresourceparameter name="leftSource" />
+      <integerparameter name="sourceHeight">200</integerparameter>
+      <integerparameter name="sourcePositionTop">0</integerparameter>
+      <xhtmlparameter name="itemBody" />
+      <xhtmlparameter name="itemQuestion">
+        <p id="c1-id-12" xmlns="http://www.w3.org/1999/xhtml">Een vraag met een datum gap</p>
+      </xhtmlparameter>
+      <booleanparameter name="questionInFrontOfFirstGap" />
+      <listedparameter name="gapAlignment">bottom</listedparameter>
+      <listedparameter name="nrGapsPerLine">1</listedparameter>
+      <plaintextparameter name="gapMaskCharacter">_</plaintextparameter>
+      <collectionparameter name="multiGap">
+        <subparameterset id="A">
+          <listedparameter name="gapType">Date</listedparameter>
+          <listedparameter name="timeSubType">hhmm</listedparameter>
+          <listedparameter name="dateSubType">dutch</listedparameter>
+          <listedparameter name="autoInputProcessing">None</listedparameter>
+          <booleanparameter name="isUnsignedEntry">False</booleanparameter>
+          <listedparameter name="nrOfDigits">5</listedparameter>
+          <listedparameter name="nrOfDecimals">0</listedparameter>
+          <xhtmlparameter name="textBeforeGap">
+            <p id="c1-id-12" xmlns="http://www.w3.org/1999/xhtml">Tekst voor de datum</p>
+          </xhtmlparameter>
+          <xhtmlparameter name="textAfterGap">
+            <p id="c1-id-12" xmlns="http://www.w3.org/1999/xhtml">tekst achter de datum. Het goede antwoord is 01-01-2013</p>
+          </xhtmlparameter>
+          <integerparameter name="nrOfCharacters">5</integerparameter>
+        </subparameterset>
+        <subparameterset id="B">
+          <listedparameter name="gapType">Date</listedparameter>
+          <listedparameter name="timeSubType">hhmm</listedparameter>
+          <listedparameter name="dateSubType">american</listedparameter>
+          <listedparameter name="autoInputProcessing">None</listedparameter>
+          <booleanparameter name="isUnsignedEntry">False</booleanparameter>
+          <listedparameter name="nrOfDigits">5</listedparameter>
+          <listedparameter name="nrOfDecimals">0</listedparameter>
+          <xhtmlparameter name="textBeforeGap" />
+          <xhtmlparameter name="textAfterGap" />
+          <integerparameter name="nrOfCharacters">5</integerparameter>
+        </subparameterset>
+        <subparameterset id="C">
+          <listedparameter name="gapType">Date</listedparameter>
+          <listedparameter name="timeSubType">hhmm</listedparameter>
+          <listedparameter name="dateSubType">scandinavian</listedparameter>
+          <listedparameter name="autoInputProcessing">None</listedparameter>
+          <booleanparameter name="isUnsignedEntry">False</booleanparameter>
+          <listedparameter name="nrOfDigits">5</listedparameter>
+          <listedparameter name="nrOfDecimals">0</listedparameter>
+          <xhtmlparameter name="textBeforeGap" />
+          <xhtmlparameter name="textAfterGap" />
+          <integerparameter name="nrOfCharacters">5</integerparameter>
+        </subparameterset>
+        <definition id="">
+          <listedparameter name="gapType" />
+          <listedparameter name="timeSubType" />
+          <listedparameter name="dateSubType" />
+          <listedparameter name="autoInputProcessing" />
+          <booleanparameter name="isUnsignedEntry" />
+          <listedparameter name="nrOfDigits" />
+          <listedparameter name="nrOfDecimals" />
+          <xhtmlparameter name="textBeforeGap" />
+          <xhtmlparameter name="textAfterGap" />
+          <integerparameter name="nrOfCharacters" />
+        </definition>
+      </collectionparameter>
+      <booleanparameter name="inlineGaps">False</booleanparameter>
+      <xhtmlparameter name="textAfterGaps" />
+      <xhtmlparameter name="itemGeneral" />
+    </parameterSet>
+    <parameterSet id="kenmerken">
+      <booleanparameter name="showCalculatorButton">False</booleanparameter>
+      <integerparameter name="hightOfScrollText" />
+      <booleanparameter name="showGroup">False</booleanparameter>
+      <plaintextparameter name="calculatorDescription" />
+      <listedparameter name="calculatorMode">basic</listedparameter>
+      <booleanparameter name="showNotepad" />
+      <plaintextparameter name="notepadDescription" />
+      <booleanparameter name="showSymbolPicker" />
+      <plaintextparameter name="symbolPickerDescription" />
+      <plaintextparameter name="symbols" />
+      <booleanparameter name="showRuler" />
+      <plaintextparameter name="rulerDescription" />
+      <integerparameter name="rulerStart" />
+      <integerparameter name="rulerEnd" />
+      <integerparameter name="rulerStep" />
+      <integerparameter name="rulerStepSize" />
+      <listedparameter name="rulerLengthUnit">centimeter</listedparameter>
+      <booleanparameter name="showTriangle" />
+      <plaintextparameter name="trianglePickerDescription" />
+      <integerparameter name="triangleMinDegrees" />
+      <integerparameter name="triangleMaxDegrees" />
+      <booleanparameter name="showSpellCheck">False</booleanparameter>
+      <listedparameter name="spellCheckCulture">nl-NL</listedparameter>
+      <booleanparameter name="showFormulaEditor">False</booleanparameter>
+      <plaintextparameter name="formulaEditorDescription" />
+      <listedparameter name="formulaEditorType" />
+      <booleanparameter name="showTextMarker">False</booleanparameter>
+      <plaintextparameter name="textMarkerDescription" />
+      <integerparameter name="fixedHeightAlternatives">0</integerparameter>
+      <listedparameter name="foreignLanguage">0</listedparameter>
+      <listedparameter name="specialItemLayout">0</listedparameter>
+      <integerparameter name="fixedWidthAlternatives">100</integerparameter>
+      <listedparameter name="inputFilter" />
+      <integerparameter name="fixedWidthMatrixColumn">100</integerparameter>
+    </parameterSet>
+  </parameters>
+</assessmentItem>

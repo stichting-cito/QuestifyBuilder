@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{94EE8D6C-5C52-4F34-9E61-E407B3240004}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Cito.Tester.ContentModel</RootNamespace>
+    <AssemblyName>Cito.Tester.ContentModel</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <OptionStrict>On</OptionStrict>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\Shared\Cito.Shared.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>40000</WarningsNotAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>40000</WarningsNotAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>40000</WarningsNotAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>40000</WarningsNotAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Versioning\Shared_VersionInfo.vb">
+      <Link>My Project\Shared_VersionInfo.vb</Link>
+    </Compile>
+    <Compile Include="BaseClasses\TestNodeBase.vb" />
+    <Compile Include="Collections\NamedDecimalMap.vb" />
+    <Compile Include="Context\ISessionContext.vb" />
+    <Compile Include="Context\SessionContext.vb" />
+    <Compile Include="Context\SessionContextProvider.vb" />
+    <Compile Include="Context\TestSessionContext.vb" />
+    <Compile Include="EventArgs\AdjustVolumeEventArgs.vb" />
+    <Compile Include="EventArgs\TestPackageComponentAddedEventArgs.vb" />
+    <Compile Include="Collections\ExtendedNamedDecimalMap.vb" />
+    <Compile Include="Extensions.vb" />
+    <Compile Include="GenericEntities\InlineElement.vb" />
+    <Compile Include="GenericEntities\TestSectionDefaultSettings.vb" />
+    <Compile Include="ItemTemplates_V2\ItemLayoutTemplate\Constants.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="My Project\Resources.nl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.nl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Parametermodel\AreaParameter.vb" />
+    <Compile Include="Parametermodel\AttributeReference.vb" />
+    <Compile Include="Parametermodel\AttributeReferenceCollection.vb" />
+    <Compile Include="Parametermodel\CollectionParameter.vb" />
+    <Compile Include="Parametermodel\CustomInteractionResourceParameter.vb" />
+    <Compile Include="Parametermodel\Enums\MultiChoiceType.vb" />
+    <Compile Include="Parametermodel\GapImageParameter.vb" />
+    <Compile Include="Parametermodel\GapTextRichTextParameter.vb" />
+    <Compile Include="Parametermodel\GapTextParameter.vb" />
+    <Compile Include="Parametermodel\Group.vb" />
+    <Compile Include="Parametermodel\GroupCollection.vb" />
+    <Compile Include="Parametermodel\IAssociableHotspot.vb" />
+    <Compile Include="Parametermodel\ICollectionParameter.vb" />
+    <Compile Include="Parametermodel\IGapChoice.vb" />
+    <Compile Include="Parametermodel\MathMLParameter.vb" />
+    <Compile Include="Parametermodel\ParameterSetCollectionFlattener.vb" />
+    <Compile Include="Parametermodel\ResizableParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\AspectScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\Cas\MathCasDependencyScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\BooleanScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\Cas\EqualStepsScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\Cas\MathCasEvaluateScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\GapMatchRichTextScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\GeogebraScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\HotTextCorrectionScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\HotTextScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\Cas\MathCasEqualScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\MatrixScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\HotspotScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\OrderScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\ChoiceScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\CurrencyScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\DateScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\DecimalScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\GraphGapMatchScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\GapMatchScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\InlineChoiceScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\IntegerScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\ITransformable.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\ParameterControlAttribute.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\MathScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\MultiChoiceScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\ScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\SelectPointScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\StringScoringParameter.vb" />
+    <Compile Include="Parametermodel\ScoringParameters\TimeScoringParameter.vb" />
+    <Compile Include="Parametermodel\Shapes\CircleShape.vb" />
+    <Compile Include="Parametermodel\Shapes\EllipseShape.vb" />
+    <Compile Include="Parametermodel\Shapes\PointDownTriangleShape.vb" />
+    <Compile Include="Parametermodel\Shapes\PointUpTriangleShape.vb" />
+    <Compile Include="Parametermodel\Shapes\PolygonShape.vb" />
+    <Compile Include="Parametermodel\Shapes\RectangleShape.vb" />
+    <Compile Include="Parametermodel\Shapes\Shape.vb" />
+    <Compile Include="Parametermodel\Shapes\ShapeList.vb" />
+    <Compile Include="Parametermodel\Shapes\TriangleShape.vb" />
+    <Compile Include="Parametermodel\SimpleChoiceCollection.vb" />
+    <Compile Include="ResponseAndScoringModel\CutOffScore\CutOffScoreCondition.vb" />
+    <Compile Include="ResponseAndScoringModel\CutOffScore\CutOffScoreConditionUnit.vb" />
+    <Compile Include="ResponseAndScoringModel\CutOffScore\CutOffScore.vb" />
+    <Compile Include="ResponseAndScoringModel\Preprocessors\PreProcessingRules\ConvertToLower.vb" />
+    <Compile Include="ResponseAndScoringModel\Preprocessors\PreProcessingRules\ConvertYToIJ.vb" />
+    <Compile Include="ResponseAndScoringModel\Preprocessors\PreProcessingRules\RemoveAllSpaces.vb" />
+    <Compile Include="ResponseAndScoringModel\Preprocessors\PreProcessingRules\RemoveApostrophs.vb" />
+    <Compile Include="ResponseAndScoringModel\Preprocessors\PreProcessingRules\RemoveDiacritics.vb" />
+    <Compile Include="ResponseAndScoringModel\Preprocessors\PreProcessingRules\RemoveHyphens.vb" />
+    <Compile Include="ResponseAndScoringModel\Preprocessors\PreProcessingRules\RemoveLeadingTrailingSpaces.vb" />
+    <Compile Include="ResponseAndScoringModel\Preprocessors\PreProcessingRules\ResponseKeyValuePreProcessorFactory.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\ConceptCollection.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\ConceptFact.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\ConceptFactsSet.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\ConceptFinding.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\Concept.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\ConceptFindingCollection.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\ConceptValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\ConcreteScoring\baseScoring.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\ConcreteScoring\ScoringFactory.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\ConcreteScoring\ScoringFactSetsAndFacts.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\ConcreteScoring\ScoringV23.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\IScoringFindingStrategy.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\ConcreteScoring\AdminKeyFact.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\KeyFindingCollection.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\ConcreteScoring\AdminKeyFinding.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\ConcreteScoring\AdminKeyFindingSet.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\Types\BooleanValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\TypedComparisonValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\Types\CatchAllValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\Types\DecimalComparisonValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\Types\IntegerComparisonValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\Types\NoValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\Types\StringComparisonValue.vb" />
+    <Compile Include="TestDefinition_v2\BaseClasses\QTIAssessmentTestBase.vb" />
+    <Compile Include="TestDefinition_v2\BaseClasses\Validators\QTI21AssessmentTestValidator.vb" />
+    <Compile Include="TestDefinition_v2\BaseClasses\QTIItemReferenceBase.vb" />
+    <Compile Include="TestDefinition_v2\BaseClasses\Validators\QTI21ItemReferenceValidator.vb" />
+    <Compile Include="TestDefinition_v2\BaseClasses\QTITestPartBase.vb" />
+    <Compile Include="TestDefinition_v2\BaseClasses\Validators\QTI21TestPartValidator.vb" />
+    <Compile Include="TestDefinition_v2\BaseClasses\QTITestSectionBase.vb" />
+    <Compile Include="TestDefinition_v2\BaseClasses\Validators\QTI21TestSectionValidator.vb" />
+    <Compile Include="TestPackage\BaseClasses\QTI21TestPackage.vb" />
+    <Compile Include="TestPackage\BaseClasses\QTI21TestReference.vb" />
+    <Compile Include="TestPackage\BaseClasses\QTI21TestSet.vb" />
+    <Compile Include="TestPackage\BaseClasses\QTI21TestPackageValidator.vb" />
+    <Compile Include="TestPackage\BaseClasses\QTI21TestReferenceValidator.vb" />
+    <Compile Include="TestPackage\CreatedTestPackageNodeAndViews.vb" />
+    <Compile Include="TestPackage\BaseClasses\QTI21TestSetValidator.vb" />
+    <Compile Include="TestPackage\GenericModel\TestPackageComponent.vb" />
+    <Compile Include="TestPackage\GenericModel\TestPackageComponentCollection.vb" />
+    <Compile Include="TestPackage\GenericModel\TestPackageNode.vb" />
+    <Compile Include="Collections\PickedItemsCollectionV2.vb" />
+    <Compile Include="DataSources\BaseClasses and Interfaces\DataSource.vb" />
+    <Compile Include="DataSources\BaseClasses and Interfaces\DataSourceConfig.vb" />
+    <Compile Include="DataSources\BaseClasses and Interfaces\DataSourceReportingResult.vb" />
+    <Compile Include="DataSources\BaseClasses and Interfaces\IDataSource.vb" />
+    <Compile Include="DataSources\BaseClasses and Interfaces\IDataSourceSettings.vb" />
+    <Compile Include="DataSources\BaseClasses and Interfaces\IDataSourceWithContext.vb" />
+    <Compile Include="DataSources\BaseClasses and Interfaces\IDataSourceWithManyOutputSupport.vb" />
+    <Compile Include="DataSources\GroupResourceRef.vb" />
+    <Compile Include="DataSources\ItemDataSource.vb" />
+    <Compile Include="DataSources\ItemDataSourceManyOutput.vb" />
+    <Compile Include="DataSources\ItemDataSourceConfig.vb" />
+    <Compile Include="DataSources\BaseClasses and Interfaces\DataSourceSettings.vb" />
+    <Compile Include="DataSources\ResourceRef.vb" />
+    <Compile Include="EventArgs\SectionChangeEventArgs.vb" />
+    <Compile Include="EventArgs\TestComponentAddedEventArgs.vb" />
+    <Compile Include="EventArgs\TestPartChangeEventArgs.vb" />
+    <Compile Include="Collections\TestResponseCollection.vb" />
+    <Compile Include="ContentModelHelper.vb" />
+    <Compile Include="TestDefinition_v2\CreatedTestNodeAndViews.vb" />
+    <Compile Include="TestDefinition_v2\AssessmentTest2.vb" />
+    <Compile Include="TestDefinition_v2\AssessmentTestNode.vb" />
+    <Compile Include="TestDefinition_v2\DynamicProperty.vb" />
+    <Compile Include="TestDefinition_v2\DynamicPropertyCollection.vb" />
+    <Compile Include="TestDefinition_v2\ItemReference2.vb" />
+    <Compile Include="TestDefinition_v2\Settings2.vb" />
+    <Compile Include="TestDefinition_v2\SettingsCollection2.vb" />
+    <Compile Include="TestDefinition_v2\TestComponent2.vb" />
+    <Compile Include="TestDefinition_v2\TestComponentCollection2.vb" />
+    <Compile Include="TestDefinition_v2\TestPart2.vb" />
+    <Compile Include="TestDefinition_v2\TestPartCollection2.vb" />
+    <Compile Include="TestDefinition_v2\TestSection2.vb" />
+    <Compile Include="TestDefinition_v2\TestSectionCollection2.vb" />
+    <Compile Include="TestDefinition_v2\ReturnedAssessmentTestModelInfo.vb" />
+    <Compile Include="TestDefinition_v2\ViewBaseClasses\TestComponentBase.vb" />
+    <Compile Include="TestDefinition_v2\ItemSessionControl.vb" />
+    <Compile Include="TestDefinition_v2\SectionPart.vb" />
+    <Compile Include="TestDefinition_v2\TimeLimits.vb" />
+    <Compile Include="GenericEntities\Aspect.vb" />
+    <Compile Include="GenericEntities\TestSectionAdaptiveItemSelectorSettings.vb" />
+    <Compile Include="GenericEntities\TestSectionInsertionGrpSettings.vb" />
+    <Compile Include="TestDefinition_v2\ViewBaseClasses\AssessmentTestViewBase.vb" />
+    <Compile Include="TestDefinition_v2\ViewBaseClasses\TestComponentViewBaseCollection.vb" />
+    <Compile Include="TestDefinition_v2\ViewBaseClasses\TestSectionViewBaseCollection.vb" />
+    <Compile Include="TestDefinition_v2\ViewBaseClasses\ItemReferenceViewBase.vb" />
+    <Compile Include="TestDefinition_v2\ViewBaseClasses\TestPartViewBaseCollection.vb" />
+    <Compile Include="TestDefinition_v2\ViewBaseClasses\TestSectionViewBase.vb" />
+    <Compile Include="TestDefinition_v2\ViewBaseClasses\TestComponentViewBase.vb" />
+    <Compile Include="TestDefinition_v2\ViewBaseClasses\TestPartViewBase.vb" />
+    <Compile Include="TestDefinition_v2\General\GeneralAssessmentTest.vb" />
+    <Compile Include="TestDefinition_v2\General\Validators\GeneralAssessmentTestValidator.vb" />
+    <Compile Include="TestDefinition_v2\General\GeneralItemReference.vb" />
+    <Compile Include="TestDefinition_v2\General\Validators\GeneralItemReferenceValidator.vb" />
+    <Compile Include="TestDefinition_v2\General\GeneralTestPart.vb" />
+    <Compile Include="TestDefinition_v2\General\Validators\GeneralTestPartValidator.vb" />
+    <Compile Include="TestDefinition_v2\General\GeneralTestSection.vb" />
+    <Compile Include="TestDefinition_v2\General\Validators\GeneralTestSectionValidator.vb" />
+    <Compile Include="EventArgs\TitleBarButtonStateEventArgs.vb" />
+    <Compile Include="EventArgs\GotoItemEventArgs.vb" />
+    <Compile Include="EventArgs\HandInTestEventArgs.vb" />
+    <Compile Include="EventArgs\ReportValueEventArgs.vb" />
+    <Compile Include="EventArgs\ResponseEvenArgs.vb" />
+    <Compile Include="EventArgs\ToggleNavigationBarEventArgs.vb" />
+    <Compile Include="EventArgs\UIButtonClickedEventArgs.vb" />
+    <Compile Include="ResponseAndScoringModel\Preprocessors\IResponseKeyValuePreprocessor.vb" />
+    <Compile Include="ItemTemplates_V2\ControlTemplate\ControlAdapter.vb" />
+    <Compile Include="ItemTemplates_V2\ControlTemplate\ControlTemplateFactory.vb" />
+    <Compile Include="ItemTemplates_V2\ControlTemplate\ControlTemplate.vb" />
+    <Compile Include="ItemTemplates_V2\ControlTemplate\ControlTemplateTarget.vb" />
+    <Compile Include="ItemTemplates_V2\ItemLayoutTemplate\ItemLayoutAdapter.vb" />
+    <Compile Include="ItemTemplates_V2\ItemLayoutTemplate\ItemLayoutTemplate.vb" />
+    <Compile Include="ItemTemplates_V2\ItemLayoutTemplate\ItemLayoutTemplateFactory.vb" />
+    <Compile Include="ItemTemplates_V2\ItemLayoutTemplate\ItemLayoutTemplateTarget.vb" />
+    <Compile Include="ItemTemplates_V2\Shared\CDATA.vb" />
+    <Compile Include="ItemTemplates_V2\Shared\ControlInfoBase.vb" />
+    <Compile Include="ItemTemplates_V2\Shared\InteractionControlInfo.vb" />
+    <Compile Include="ItemTemplates_V2\Shared\InteractionControlInfoCollection.vb" />
+    <Compile Include="ItemTemplates_V2\Shared\InteractionControllerInfo.vb" />
+    <Compile Include="ItemTemplates_V2\Shared\InteractionControllerInfoCollection.vb" />
+    <Compile Include="ItemTemplates_V2\Shared\TargetBase.vb" />
+    <Compile Include="ItemTemplates_V2\Shared\TargetCollection.vb" />
+    <Compile Include="ItemTemplates_V2\Shared\TemplateBase.vb" />
+    <Compile Include="ItemTemplates_V2\TemplateScript\AspV3StyleParser.vb" />
+    <Compile Include="ItemTemplates_V2\TemplateScript\CompileEngine.vb" />
+    <Compile Include="ItemTemplates_V2\TemplateScript\TemplateCacheItem.vb" />
+    <Compile Include="ItemTemplates_V2\TemplateScript\TemplateCacheManager.vb" />
+    <Compile Include="Parametermodel\BooleanParameter.vb" />
+    <Compile Include="Parametermodel\DesignerSetting.vb" />
+    <Compile Include="Parametermodel\DesignerSettingCollection.vb" />
+    <Compile Include="Parametermodel\ListedParameter.vb" />
+    <Compile Include="Parametermodel\ListValue.vb" />
+    <Compile Include="Parametermodel\ParameterList.vb" />
+    <Compile Include="Parametermodel\PlainTextParameter.vb" />
+    <Compile Include="Parametermodel\XhtmlResourceParameter.vb" />
+    <Compile Include="ResponseAndScoringModel\Preprocessors\SelectedPreprocessor.vb" />
+    <Compile Include="ResponseAndScoringModel\Preprocessors\SelectedPreprocessorCollection.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\AspectReference.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\AspectReferenceCollection.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\AspectReferenceSetCollection.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\KeyFactSet.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\Types\BinaryValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\Types\DecimalRangeValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\Types\DecimalValue.vb" />
+    <Compile Include="Structures\Resolution.vb" />
+    <Compile Include="TestPackage\GenericModel\TestPackage.vb" />
+    <Compile Include="TestPackage\GenericModel\TestReference.vb" />
+    <Compile Include="TestPackage\GenericModel\TestSet.vb" />
+    <Compile Include="TestPackage\GenericModel\TestsetCollection.vb" />
+    <Compile Include="TestPackage\ViewBaseClasses\TestPackageComponentBase.vb" />
+    <Compile Include="TestPackage\ViewBaseClasses\TestPackageComponentViewBase.vb" />
+    <Compile Include="TestPackage\ViewBaseClasses\TestPackageComponentViewBaseCollection.vb" />
+    <Compile Include="TestPackage\ViewBaseClasses\TestPackageViewBase.vb" />
+    <Compile Include="TestPackage\ViewBaseClasses\TestReferenceViewBase.vb" />
+    <Compile Include="TestPackage\ViewBaseClasses\TestSetViewBase.vb" />
+    <Compile Include="TestPackage\ViewBaseClasses\TestSetViewBaseCollection.vb" />
+    <Compile Include="TestDefinition_v2\TestPartCalculatorMode.vb" />
+    <Compile Include="TestPackage\View_General\GeneralTestPackage.vb" />
+    <Compile Include="TestPackage\View_General\GeneralTestPackageValidator.vb" />
+    <Compile Include="TestPackage\View_General\GeneralTestReference.vb" />
+    <Compile Include="TestPackage\View_General\GeneralTestReferenceValidator.vb" />
+    <Compile Include="TestPackage\View_General\GeneralTestSet.vb" />
+    <Compile Include="TestPackage\View_General\GeneralTestSetValidator.vb" />
+    <Compile Include="Transactions\DictionaryTransaction.vb" />
+    <Compile Include="Transactions\ItemRefTransaction2.vb" />
+    <Compile Include="Transactions\SessionRestartedTransaction.vb" />
+    <Compile Include="Transactions\RestartTestTransaction.vb" />
+    <Compile Include="ValidationClasses\IValidatingEntity.vb" />
+    <Compile Include="ValidationClasses\ValidatingEntityBase.vb" />
+    <Compile Include="GenericEntities\AssessmentItem.vb" />
+    <Compile Include="GenericEntities\XmlResource.vb" />
+    <Compile Include="ENums.vb" />
+    <Compile Include="EventArgs\PersistTransactionEventArgs.vb" />
+    <Compile Include="EventArgs\ItemPickedInTransactionEventArgs.vb" />
+    <Compile Include="EventArgs\PersistStateEventArgs.vb" />
+    <Compile Include="EventArgs\ResourceCacheLocationNeededEventArgs.vb" />
+    <Compile Include="EventArgs\ResourceNeededEventArgs.vb" />
+    <Compile Include="EventArgs\StateNeededEventArgs.vb" />
+    <Compile Include="GlobalSuppressions.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Parametermodel\ChoiceCollectionParameter.vb" />
+    <Compile Include="Parametermodel\IntegerParameter.vb" />
+    <Compile Include="Parametermodel\Parameter.vb" />
+    <Compile Include="Parametermodel\ParameterBase.vb" />
+    <Compile Include="Parametermodel\ParameterCollection.vb" />
+    <Compile Include="Parametermodel\ParameterHelper.vb" />
+    <Compile Include="Parametermodel\ParameterSetCollection.vb" />
+    <Compile Include="Parametermodel\ResourceParameter.vb" />
+    <Compile Include="Parametermodel\SimpleChoice.vb" />
+    <Compile Include="Parametermodel\XHtmlParameter.vb" />
+    <Compile Include="ResponseAndScoringModel\BaseClasses\BaseFact.vb" />
+    <Compile Include="ResponseAndScoringModel\BaseClasses\BaseFactValue.vb" />
+    <Compile Include="ResponseAndScoringModel\BaseClasses\BaseFinding.vb" />
+    <Compile Include="ResponseAndScoringModel\BaseClasses\BaseValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Enumerators\EnumScoringsMethod.vb" />
+    <Compile Include="ResponseAndScoringModel\Response\Response.vb" />
+    <Compile Include="ResponseAndScoringModel\Response\ResponseCollection.vb" />
+    <Compile Include="ResponseAndScoringModel\Response\ResponseFact.vb" />
+    <Compile Include="ResponseAndScoringModel\Response\ResponseFinding.vb" />
+    <Compile Include="ResponseAndScoringModel\Response\ResponseFindingCollection.vb" />
+    <Compile Include="ResponseAndScoringModel\Response\ResponseValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\KeyFact.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\KeyFinding.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\KeyFindingCollectionBase.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\KeyValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Solution\Solution.vb" />
+    <Compile Include="ResponseAndScoringModel\Translation\ItemScoreTranslationTable.vb" />
+    <Compile Include="ResponseAndScoringModel\Translation\ItemScoreTranslationTableEntry.vb" />
+    <Compile Include="ResponseAndScoringModel\Translation\TestOutcome.vb" />
+    <Compile Include="ResponseAndScoringModel\Translation\TestOutcomeCollection.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\KeyValueCollection.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\TypedRangeValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\TypedValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\Types\IntegerRangeValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\Types\IntegerValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\Types\StringValue.vb" />
+    <Compile Include="ResponseAndScoringModel\Values\ValueCollection.vb" />
+    <Compile Include="Structures\TestState.vb" />
+    <Compile Include="Transactions\AttributeTransaction.vb" />
+    <Compile Include="Transactions\MethodTransaction.vb" />
+    <Compile Include="Transactions\TransactionBase.vb" />
+    <Compile Include="Transactions\TransactionData.vb" />
+    <Compile Include="Transactions\TransactionDataCollection.vb" />
+    <Compile Include="ValidationClasses\ValidatingEntityCollectionBase.vb" />
+    <Compile Include="ValidationClasses\ValidationValue.vb" />
+    <Compile Include="ValidationClasses\ValidationValueCollection.vb" />
+    <Compile Include="ValidationModel_v1\AspectValidator.vb" />
+    <Compile Include="ValidationModel_v1\AssessmentItemValidator.vb" />
+    <Compile Include="ValidationModel_v1\AspectReferenceValidator.vb" />
+    <Compile Include="ValidationModel_v1\InlineElementValidator.vb" />
+    <Compile Include="ValidationModel_v1\ItemScoreTranslationTableEntryValidator.vb" />
+    <Compile Include="ValidationModel_v1\TestOutcomeValidator.vb" />
+    <Compile Include="ValidationModel_v1\EntityValidationBase.vb" />
+    <Compile Include="ValidationModel_v1\IEntityValidation.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.nl.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.nl.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataSources\Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cito.Tester.Common\Cito.Tester.Common.vbproj">
+      <Project>{9a0bd8fe-d6f6-4ce5-9a0b-877610b00deb}</Project>
+      <Name>Cito.Tester.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

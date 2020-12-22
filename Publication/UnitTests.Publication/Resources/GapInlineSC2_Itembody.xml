@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itemBody class="defaultBody">
+	<div class="content">
+		<div class="questify_div_center">
+			<div class="questify_div_center_inner">
+				<div class="questify_itemtitle">
+					<p>Number wall</p>
+				</div>
+				<div class="questify_prompt">
+					<p>Build a number wall with the numbers 6, 4 and 3 in the bottom row.</p>
+				</div>
+				<div id="questify_questionwithinlinecontrol">
+					<p>Write the solutions in the boxes.</p>
+ <p/>
+					<table class="cito_genclass_Example4_Alternative_Answers_1">
+						<colgroup>
+							<col class="cito_genclass_Example4_Alternative_Answers_2"/>
+							<col class="cito_genclass_Example4_Alternative_Answers_3"/>
+							<col/>
+							<col/>
+							<col class="cito_genclass_Example4_Alternative_Answers_4"/>
+							<col class="cito_genclass_Example4_Alternative_Answers_5"/>
+						</colgroup>
+						<tbody>
+							<tr>
+								<td class="cito_genclass_Example4_Alternative_Answers_6 cito_genclass_Example4_Alternative_Answers_7">
+									<p class="cito_genclass_Example4_Alternative_Answers_8"> </p>
+								</td>
+								<td class="cito_genclass_Example4_Alternative_Answers_6 cito_genclass_Example4_Alternative_Answers_9">
+									<p class="cito_genclass_Example4_Alternative_Answers_10"> </p>
+								</td>
+								<td colspan="2" class="cito_genclass_Example4_Alternative_Answers_6 cito_genclass_Example4_Alternative_Answers_11">
+									<p class="cito_genclass_Example4_Alternative_Answers_12">
+										<strong>
+											<textEntryInteraction patternMask="^-?([0-9]{1,2})?$" responseIdentifier="444fa55c-1220-4186-8909-b4c4d2149d1c" expectedLength="3"/>
+										</strong>
+									</p>
+								</td>
+								<td class="cito_genclass_Example4_Alternative_Answers_6 cito_genclass_Example4_Alternative_Answers_13">
+									<p class="cito_genclass_Example4_Alternative_Answers_14"> </p>
+								</td>
+								<td class="cito_genclass_Example4_Alternative_Answers_6 cito_genclass_Example4_Alternative_Answers_15">
+									<p class="cito_genclass_Example4_Alternative_Answers_16"> </p>
+								</td>
+							</tr>
+							<tr>
+								<td class="cito_genclass_Example4_Alternative_Answers_17 cito_genclass_Example4_Alternative_Answers_18">
+									<p class="cito_genclass_Example4_Alternative_Answers_19"> </p>
+								</td>
+								<td colspan="2" class="cito_genclass_Example4_Alternative_Answers_17 cito_genclass_Example4_Alternative_Answers_20">
+									<p class="cito_genclass_Example4_Alternative_Answers_21">
+										<strong>
+											<textEntryInteraction patternMask="^-?([0-9]{1,2})?$" responseIdentifier="f0513e5d-523f-40be-af90-03389f6030b7" expectedLength="3"/>
+										</strong>
+									</p>
+								</td>
+								<td colspan="2" class="cito_genclass_Example4_Alternative_Answers_17 cito_genclass_Example4_Alternative_Answers_22">
+									<p class="cito_genclass_Example4_Alternative_Answers_23">
+										<textEntryInteraction patternMask="^-?([0-9]{1,2})?$" responseIdentifier="7f1aa663-c9b3-4add-9a4c-c4886cd91380" expectedLength="3"/>
+ </p>
+								</td>
+								<td class="cito_genclass_Example4_Alternative_Answers_17 cito_genclass_Example4_Alternative_Answers_24">
+									<p class="cito_genclass_Example4_Alternative_Answers_25"> </p>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" class="cito_genclass_Example4_Alternative_Answers_26 cito_genclass_Example4_Alternative_Answers_27">
+									<p class="cito_genclass_Example4_Alternative_Answers_28">
+										<strong>
+											<textEntryInteraction patternMask="^-?([0-9]{1,1})?$" responseIdentifier="7d815719-c3cb-4de5-a669-eabfbc8fbfc2" expectedLength="2"/>
+										</strong>
+									</p>
+								</td>
+								<td colspan="2" class="cito_genclass_Example4_Alternative_Answers_26 cito_genclass_Example4_Alternative_Answers_29">
+									<p class="cito_genclass_Example4_Alternative_Answers_30">
+										<strong>
+											<textEntryInteraction patternMask="^-?([0-9]{1,1})?$" responseIdentifier="a1b384d8-4253-4ffb-a77f-7133b501e9a5" expectedLength="2"/>
+										</strong>
+									</p>
+								</td>
+								<td colspan="2" class="cito_genclass_Example4_Alternative_Answers_26 cito_genclass_Example4_Alternative_Answers_31">
+									<p class="cito_genclass_Example4_Alternative_Answers_32">
+										<strong>
+											<textEntryInteraction patternMask="^-?([0-9]{1,1})?$" responseIdentifier="6530bcc6-ab15-4963-8abc-d099279f7989" expectedLength="2"/>
+										</strong>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="answer"/>
+			</div>
+		</div>
+	</div>
+</itemBody>

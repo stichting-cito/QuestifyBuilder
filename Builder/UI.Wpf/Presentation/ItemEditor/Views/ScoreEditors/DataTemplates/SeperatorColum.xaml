@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<!--
+	
+	These are the data templates for the seperator column of the blockgrid. The Column know if it is the last column and if so the display differently.
+	  
+   
+	-->
+	<DataTemplate x:Key="BlockInRowSeparatorInBetweenBlocks">
+		<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{StaticResource ItemEditor.ScoreEditor.ColumnSeparatorText}" FontStyle="Italic" Foreground="#ADADAD"></TextBlock>
+	</DataTemplate>
+
+	<DataTemplate x:Key="BlockInRowSeparatorEndingBlock">
+		<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="" Foreground="#ADADAD"></TextBlock>
+	</DataTemplate>
+	
+</ResourceDictionary>

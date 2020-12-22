@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82D3535C-4F99-4F9B-B576-743961EA20C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Questify.Builder.Model.LlblGen.Proxy</RootNamespace>
+    <AssemblyName>Questify.Builder.Model.LlblGen.Proxy</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Any CPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\TestBuilder.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.2.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.2.1\lib\net45\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomFactories\BankFactoryWithoutPermissionCheck.cs" />
+    <Compile Include="CustomFactories\PermissionServiceWithoutPermissionCheck.cs" />
+    <Compile Include="CustomFactories\ResourceFactoryWithoutPermissionCheck.cs" />
+    <Compile Include="CustomProperties\LlblGenCustomPropertyProxy.cs" />
+    <Compile Include="Entities\LlblGenAspectProxy.cs" />
+    <Compile Include="Entities\LlblGenAssessmentTestProxy.cs" />
+    <Compile Include="Entities\LlblGenBankProxy.cs" />
+    <Compile Include="Entities\LlblGenControlTemplateProxy.cs" />
+    <Compile Include="Entities\LlblGenDatasourceProxy.cs" />
+    <Compile Include="Entities\LlblGenGenericProxy.cs" />
+    <Compile Include="Entities\LlblGenItemLayoutTemplateProxy.cs" />
+    <Compile Include="Entities\LlblGenItemProxy.cs" />
+    <Compile Include="Entities\LlblGenPackageProxy.cs" />
+    <Compile Include="Entities\LlblGenResourceBaseProxy.cs" />
+    <Compile Include="Entities\LlblGenResourceProxy.cs" />
+    <Compile Include="Entities\LlblGenTestPackage.cs" />
+    <Compile Include="Factory\LlblGenBankProxyFactory.cs" />
+    <Compile Include="Factory\LlblGenResourceProxyFactory.cs" />
+    <Compile Include="HelperFunctions\ResourceExtensions.cs" />
+    <Compile Include="Interface\IConvertBank.cs" />
+    <Compile Include="Interface\IConvertResource.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\LlblGenControlTemplateResourceDtoServiceAdapter.cs" />
+    <Compile Include="Services\LlblGenAssessmentTestTemplateResourceDtoServiceAdapter.cs" />
+    <Compile Include="Services\LlblGenCustomBankPropertyResourceDtoService.cs" />
+    <Compile Include="Services\LlblGenDatasourceTemplateResourceDtoServiceAdapter.cs" />
+    <Compile Include="Services\LlblGenItemLayoutTemplateResourceDtoService.cs" />
+    <Compile Include="Services\LlblGenGenericResourceDtoService.cs" />
+    <Compile Include="Services\LlblGenCustomBankPropertyDtoService.cs" />
+    <Compile Include="Services\LlblGenBankDtoService.cs" />
+    <Compile Include="Services\LlblGenAssessmentTestResourceDtoServiceAdapter.cs" />
+    <Compile Include="Services\LlblGenAspectResourceDtoService.cs" />
+    <Compile Include="Services\LlblGenTestPackageResourceDtoServiceAdapter.cs" />
+    <Compile Include="Services\LlblGenDatasourceResourceDtoService.cs" />
+    <Compile Include="Services\LlblGenResourceDtoService.cs" />
+    <Compile Include="Services\LlblGenItemResourceDtoServiceAdapter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cito.Tester.Common\Cito.Tester.Common.vbproj">
+      <Project>{9A0BD8FE-D6F6-4CE5-9A0B-877610B00DEB}</Project>
+      <Name>Cito.Tester.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.ContentModel\Questify.Builder.Model.ContentModel.vbproj">
+      <Project>{44eafd1e-6cc9-4a94-b6f6-a78734c7aae5}</Project>
+      <Name>Questify.Builder.Model.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Questify.Builder.Logic.vbproj">
+      <Project>{3a707189-b5de-439d-91d3-fa20ce79e8bf}</Project>
+      <Name>Questify.Builder.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security\Questify.Builder.Security.vbproj">
+      <Project>{F7B4A532-DDCC-47F5-BB20-A7AE6F1D47B5}</Project>
+      <Name>Questify.Builder.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Service\Questify.Builder.Logic.Service.csproj">
+      <Project>{885875bf-3e90-4b06-b1fb-a7883e54e391}</Project>
+      <Name>Questify.Builder.Logic.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

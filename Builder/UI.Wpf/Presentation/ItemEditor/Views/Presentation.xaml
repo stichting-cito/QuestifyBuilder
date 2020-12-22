@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.Presentation" x:ClassModifier="internal"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"              
+			 xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+             xmlns:ui="clr-namespace:Questify.Builder.UI;assembly=Questify.Builder.UI"
+             xmlns:views="clr-namespace:Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views"
+             meffed:ViewModelLocator.ViewModel="ItemEditor.PresentationVM"
+			 mc:Ignorable="d"
+			 d:DesignHeight="432" d:DesignWidth="930">
+
+	<UserControl.CommandBindings>
+		<CommandBinding Command="NavigationCommands.Refresh"
+                        Executed="Command_RefreshPreview"
+                        CanExecute="Command_CanRefreshPreview"/>
+	</UserControl.CommandBindings>
+	<!-- 
+	This control has been made to re-use old Testbuilder controls (winforms)
+	Please replace as much as needed to make it *Pure* WPF.
+	-->
+	<Grid x:Name="PresentationContentGrid">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="{Binding ItemEditorLeftColumnWidth.DataValue, FallbackValue=*}" MinWidth="400px"/>
+			<ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="{Binding ItemEditorRightColumnWidth.DataValue, FallbackValue=*}"/>
+		</Grid.ColumnDefinitions>
+		<DockPanel Dock="Top" LastChildFill="True" Grid.Column="0" 
+                   x:Name="ParameterSetEditorDock" AutomationProperties.AutomationId="ParameterSetEditorDock">
+			<views:ParameterSetControl
+				x:Name="ParameterSetEditor" AutomationProperties.AutomationId="ParameterSetEditor"
+				ResourceManagerBase="{Binding ResourceManager.DataValue,UpdateSourceTrigger=PropertyChanged}"
+				ResourceEntity="{Binding ItemResourceEntity.DataValue, UpdateSourceTrigger=PropertyChanged}"
+				ContextIdentifier="{Binding ContextIdentifier.DataValue, UpdateSourceTrigger=PropertyChanged}"
+				ParameterSetCollection="{Binding ParameterSetCollection.DataValue,UpdateSourceTrigger=PropertyChanged,Delay=50}" 
+				IsOldItem="{Binding IsOldItem.DataValue, UpdateSourceTrigger=PropertyChanged}"
+				EditControlUpdated="{Binding EditControl.DataValue, Mode=TwoWay}"
+				LaunchGenericResourceEditorCommand="{Binding EditGenericResource}"/>
+		</DockPanel>
+		<GridSplitter Grid.Column="1" Width="10" BorderBrush="#a5acb5" BorderThickness="1" Background="#FFBCC3CD" GotKeyboardFocus="GridSplitter_GotKeyboardFocus" VerticalAlignment="Stretch" HorizontalAlignment="Center">
+			<GridSplitter.Template>
+				<ControlTemplate TargetType="{x:Type GridSplitter}">
+					<Grid ClipToBounds="True">
+						<Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2,0,2,0">
+							<Grid VerticalAlignment="Center">
+								<Border Background="{TemplateBinding BorderBrush}" CornerRadius="3" Height="22" Width="6" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,6,0,0" />
+								<Label Content="⁞" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="WhiteSmoke" Padding="0" />
+							</Grid>
+						</Border>
+					</Grid>
+				</ControlTemplate>
+			</GridSplitter.Template>
+		</GridSplitter>
+		<DockPanel LastChildFill="True" Grid.Column="2" x:Name="PreviewerHostPanel">
+			<WindowsFormsHost x:Name="PreviewHost">
+				<ui:ItemPreviewContainer x:Name="preview" Dock="Fill"  />
+			</WindowsFormsHost>
+		</DockPanel>
+	</Grid>
+</UserControl>

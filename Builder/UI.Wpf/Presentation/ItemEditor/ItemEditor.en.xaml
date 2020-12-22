@@ -1,0 +1,97 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <!-- GENERAL WINDOW -->
+    <s:String x:Key="ItemEditor.Title">Item Editor</s:String>
+
+    <!-- COMMAND LABELS-->
+    <s:String x:Key="ItemEditor.Command.New">New Item</s:String>
+    <s:String x:Key="ItemEditor.Command.Save">Save</s:String>
+    <s:String x:Key="ItemEditor.Command.SaveAs">Save as</s:String>
+    <s:String x:Key="ItemEditor.Command.SaveAsNewVersion">Save as new version</s:String>
+    <s:String x:Key="ItemEditor.Command.SaveAndClose">Save and close</s:String>
+    <s:String x:Key="ItemEditor.Command.BrowseBack">Previous</s:String>
+    <s:String x:Key="ItemEditor.Command.BrowseForward">Next</s:String>
+
+    <!-- RIBBON TAB START -->
+    <s:String x:Key="ItemEditor.RibbonTab.Start">Start</s:String>
+
+    <s:String x:Key="ItemEditor.Ribbon.ClipboardGroup">Clipboard</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.Paste">Paste</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.Paste.ToolTipDescription">Paste your content as text.</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.PasteAsText">As text</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.PasteSpecial">Paste special</s:String>
+
+    <s:String x:Key="ItemEditor.Ribbon.Cut">Cut</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.Copy">Copy</s:String>
+
+    <s:String x:Key="ItemEditor.Ribbon.FormatGroup">Formatting</s:String>
+
+    <s:String x:Key="ItemEditor.Ribbon.InsertGroup">Insert</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.Insert.Image">Image</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.Insert.Video">Video</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.Insert.Audio">Audio</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.Insert.Table">Table</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.Insert.Formula">Formula</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.Insert.Symbol">Symbol</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.Insert.InlineControl">Inline control</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.Insert.Reference">Reference</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.Insert.CustomInteraction">Custom interaction</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.Insert.Popup">Popup</s:String>
+    
+    <s:String x:Key="ItemEditor.Ribbon.TextToSpeechGroup">Text to speech</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.TextToSpeech.Mute">Mute</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.TextToSpeech.Pause">Pause</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.TextToSpeech.PauseExtraShort">Extra short</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.TextToSpeech.PauseShort">Short</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.TextToSpeech.PauseNormal">Normal</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.TextToSpeech.PauseLong">Long</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.TextToSpeech.PauseExtraLong">Extra long</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.TextToSpeech.Alternative">Alternative pronunciation</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.TextToSpeech.Remove">Remove</s:String>
+
+        <!-- TAB -->
+    <s:String x:Key="ItemEditor.Tab.Presentation">Presentation</s:String>
+    <s:String x:Key="ItemEditor.Tab.Metadata">Metadata</s:String>
+    <s:String x:Key="ItemEditor.Tab.Score">Score</s:String>
+    <s:String x:Key="ItemEditor.Tab.Analysis">Analysis</s:String>
+    <s:String x:Key="ItemEditor.Tab.Source">Source</s:String>
+
+    <!-- DockPannel -->
+    <s:String x:Key="ItemEditor.StatusBar.ImageToolTip.ItemHasError">This item failed to open.</s:String>
+    <s:String x:Key="ItemEditor.StatusBar.ImageToolTip.ItemHasKeyDefined">This item has a key or scoring instruction defined.</s:String>
+    <s:String x:Key="ItemEditor.StatusBar.ImageToolTip.ItemHasNoKeyDefined">This item does not have a key or scoring instruction defined.</s:String>
+    <s:String x:Key="ItemEditor.StatusBar.ImageToolTip.ItemIsV1Model">This item is based on an outdated template.</s:String>
+
+    <!-- ViewModel Messages -->
+    <s:String x:Key="ItemEditor.ItemEditorViewModel.PendingRequiredFields">Some fields do not have valid values.</s:String>
+    <s:String x:Key="ItemEditor.ItemEditorViewModel.PendingChangesWishToLeave">You have unsaved changes, are you sure you wish to leave?</s:String>
+    <s:String x:Key="ItemEditor.ItemEditorViewModel.ScoringChangedSaveYesNo">Your change has modified the scoring rule. Check the tab score if the rule is still valid. Are you sure you want to continue saving the changes?</s:String>
+    <s:String x:Key="ItemEditor.ItemEditorViewModel.ConceptEncodingOutOfSync">The encoding editor has not been updated after the last updates in the score editor. Click button 'Refresh score' to be able to save the item.</s:String>
+
+    <s:String x:Key="ItemEditor.ItemEditorViewModel.PleaseNewItemCode">Please provide a new item code</s:String>
+    <s:String x:Key="ItemEditor.ItemEditorViewModel.PleaseNewItemCodeDialogTitle">Save As</s:String>
+    <s:String x:Key="ItemEditor.ItemEditorViewModel.DefaultPrefixNewCode">Copy_Of_{0}</s:String><!-- {0} = argument of current code -->
+    <s:String x:Key="ItemEditor.ItemEditorViewModel.NameNotUniqueInBank">The name '{0}' is not unique in the bank hierarchy.</s:String><!-- {0} = argument for name just given. -->
+    <s:String x:Key="ItemEditor.ItemEditorViewModel.NotAllowedToChangeResourceWithState">You are not allowed to change resource with name '{0}' because it has '{1}'-status.</s:String>
+    <s:String x:Key="ItemEditor.ItemEditorViewModel.SaveChangesForResourceWithState">Resource with name '{0}' has '{1}'-status, are you sure you want to save changes?</s:String>
+    <s:String x:Key="ItemEditor.ItemEditorViewModel.SaveCaption">Save</s:String>
+    <s:String x:Key="ItemEditor.ItemEditorViewModel.UnSavedItem">[new item]</s:String>
+
+    <!-- Ribbon Tab Score Editor -->
+    <s:String x:Key="ItemEditor.Ribbon.ScoreEditor.TabName">Score editor</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.ScoreEditor.InteractionsGroup">Interaction</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.ScoreEditor.Interactions.Add">Add alternative</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.ScoreEditor.Interactions.Remove">Remove alternative</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.ScoreEditor.GroupsGroup">Group</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.ScoreEditor.Groups.Group">Group interaction</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.ScoreEditor.Groups.Ungroup">Ungroup interaction</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.ScoreEditor.SetGroup">Set</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.ScoreEditor.Set.New">New set</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.ScoreEditor.Set.Delete">Delete set</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.ScoreEditor.AutoScoringGroup">Auto scoring</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.ScoreEditor.AutoScoring.On">On</s:String>
+    <s:String x:Key="ItemEditor.Ribbon.ScoreEditor.AutoScoring.Off">Off</s:String>
+
+</ResourceDictionary>

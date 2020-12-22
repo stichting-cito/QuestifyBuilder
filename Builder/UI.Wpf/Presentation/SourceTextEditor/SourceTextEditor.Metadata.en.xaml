@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <s:String x:Key="SourceTextEditor.Metadata.InfoGroup">Information about the source text item</s:String>
+    <s:String x:Key="SourceTextEditor.Metadata.CustomPropertiesGroup">Properties</s:String>
+
+    <s:String x:Key="SourceTextEditor.MetaDataViewModel.ActionNotAllowedNeedSave">This action not permitted when the source text has not been saved.</s:String>
+
+</ResourceDictionary>

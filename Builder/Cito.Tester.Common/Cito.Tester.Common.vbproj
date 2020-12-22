@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A0BD8FE-D6F6-4CE5-9A0B-877610B00DEB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Cito.Tester.Common</RootNamespace>
+    <AssemblyName>Cito.Tester.Common</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <OptionStrict>On</OptionStrict>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\Shared\Cito.Shared.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <CodeAnalysisRuleAssemblies>
+    </CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Versioning\Shared_VersionInfo.vb">
+      <Link>My Project\Shared_VersionInfo.vb</Link>
+    </Compile>
+    <Compile Include="Collections\DependentResourceCollection.vb" />
+    <Compile Include="Collections\MetaDataCollection.vb" />
+    <Compile Include="Collections\ResourceEntriesInCacheCollection.vb" />
+    <Compile Include="Collections\ResourceEntryCollection.vb" />
+    <Compile Include="Controls\Canvas\Canvas.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Canvas\Drawable\ShapePainter\HollowPolygonPainter.vb" />
+    <Compile Include="Controls\Canvas\Drawable\ShapePainter\HollowTrianglePainter.vb" />
+    <Compile Include="Controls\Canvas\Drawable\ShapePainter\LabeledPolygonPainter.vb" />
+    <Compile Include="Controls\Canvas\Drawable\ShapePainter\LabeledTrianglePainter.vb" />
+    <Compile Include="Controls\Canvas\Drawable\ShapePainter\TransparantPolygonPainter.vb" />
+    <Compile Include="Controls\Canvas\Drawable\ShapePainter\TransparantTrianglePainter.vb" />
+    <Compile Include="Controls\Canvas\Drawable\Shapes\EllipseShape.vb" />
+    <Compile Include="Controls\Canvas\Drawable\ShapePainter\HollowCirclePainter.vb" />
+    <Compile Include="Controls\Canvas\Drawable\ShapePainter\HollowEllipsePainter.vb" />
+    <Compile Include="Controls\Canvas\Drawable\ShapePainter\HollowRectanglePainter.vb" />
+    <Compile Include="Controls\Canvas\Drawable\ShapePainter\LabeledCirclePainter.vb" />
+    <Compile Include="Controls\Canvas\Drawable\ShapePainter\LabeledEllipsePainter.vb" />
+    <Compile Include="Controls\Canvas\Drawable\ShapePainter\LabeledRectanglePainter.vb" />
+    <Compile Include="Controls\Canvas\Drawable\Shapes\PointDownTriangleShape.vb" />
+    <Compile Include="Controls\Canvas\Drawable\Shapes\PointUpTriangleShape.vb" />
+    <Compile Include="Controls\Canvas\Drawable\Shapes\PolygonShape.vb" />
+    <Compile Include="Controls\Canvas\Drawable\Shapes\RectangleShape.vb" />
+    <Compile Include="Controls\Canvas\Drawable\ShapePainter\TransparantCirclePainter.vb" />
+    <Compile Include="Controls\Canvas\Drawable\ShapePainter\TransparantEllipsePainter.vb" />
+    <Compile Include="Controls\Canvas\Drawable\ShapePainter\TransparantRectanglePainter.vb" />
+    <Compile Include="Controls\Canvas\Drawable\Shapes\TriangleShape.vb" />
+    <Compile Include="Controls\Canvas\Factory\DrawableShapeFactory\DefaultShapeFactory.vb" />
+    <Compile Include="Controls\Canvas\Factory\DrawableShapeFactory\LabeledShapeFactory.vb" />
+    <Compile Include="Controls\Canvas\Factory\DrawableShapeFactory\ShapeFactoryBase.vb" />
+    <Compile Include="Controls\Canvas\Factory\DrawableShapeFactory\SimpleShapeFactory.vb" />
+    <Compile Include="Controls\Canvas\Factory\IShapeConstructorFactory.vb" />
+    <Compile Include="Controls\Canvas\Factory\ShapeCreator\ByMidPointFactory.vb" />
+    <Compile Include="Controls\Canvas\interfaces\IDrawableItemPainter.vb" />
+    <Compile Include="Controls\Canvas\interfaces\NotifyCollectionChangedAction.vb" />
+    <Compile Include="Controls\Canvas\interfaces\NotifyCollectionChangedEventArgs.vb" />
+    <Compile Include="Controls\Canvas\LabelGenerator\AlphabeticIdentifierGenerator.vb" />
+    <Compile Include="Controls\Canvas\LabelGenerator\IIdentifierGenerator.vb" />
+    <Compile Include="Controls\Canvas\ShapeConstructor\CircleByMidPointConstructor.vb" />
+    <Compile Include="Controls\Canvas\ShapeConstructor\DrawingExtensions.vb" />
+    <Compile Include="Controls\Canvas\Factory\DrawableShapeFactory\HollowShapeFactory.vb" />
+    <Compile Include="Controls\Canvas\Factory\IDrawableShapeFactory.vb" />
+    <Compile Include="Controls\Canvas\Factory\ToolFactory.vb" />
+    <Compile Include="Controls\Canvas\interfaces\IShapeConstructor.vb" />
+    <Compile Include="Controls\Canvas\ShapeConstructor\EllipseByMidPointConstructor.vb" />
+    <Compile Include="Controls\Canvas\ShapeConstructor\PointDownTriangleByMidPointConstructor.vb" />
+    <Compile Include="Controls\Canvas\ShapeConstructor\RectangleByMidPointConstructor.vb" />
+    <Compile Include="Controls\Canvas\ShapeConstructor\PointUpTriangleByMidPointConstructor.vb" />
+    <Compile Include="Controls\Canvas\ShapeConstructor\TwoPointConstructorbase.vb" />
+    <Compile Include="Controls\Canvas\Tools\CanvasTool.vb" />
+    <Compile Include="Controls\Canvas\Tools\CreateTool.vb" />
+    <Compile Include="Controls\Canvas\Tools\SimpleTool.vb" />
+    <Compile Include="Controls\Canvas\Tools\MoveTool.vb" />
+    <Compile Include="Controls\Canvas\Tools\SelectDragTool.vb" />
+    <Compile Include="Controls\Canvas\Tools\SelectTool.vb" />
+    <Compile Include="Controls\Canvas\Tools\SizeTool.vb" />
+    <Compile Include="Controls\Canvas\Tools\ToolAdapter.vb" />
+    <Compile Include="Controls\Canvas\Tools\ToolBase.vb" />
+    <Compile Include="Controls\Canvas\Drawable\Ardorner\SelectArdorner.vb" />
+    <Compile Include="Controls\Canvas\Drawable\Shapes\DrawableShapeBase.vb" />
+    <Compile Include="Controls\Canvas\Drawable\Shapes\CircleShape.vb" />
+    <Compile Include="Controls\Canvas\interfaces\Enum.vb" />
+    <Compile Include="Controls\Canvas\interfaces\IAdorner.vb" />
+    <Compile Include="Controls\Canvas\interfaces\ICanvas.vb" />
+    <Compile Include="Controls\Canvas\interfaces\IDimensionManipulator.vb" />
+    <Compile Include="Controls\Canvas\interfaces\IDrawableItem.vb" />
+    <Compile Include="Controls\Canvas\interfaces\IShape.vb" />
+    <Compile Include="Controls\Canvas\interfaces\ITool.vb" />
+    <Compile Include="Controls\Canvas\Tools\ToolState\CanvasToolState.vb" />
+    <Compile Include="Controls\Canvas\Tools\ToolState\FirstPointState.vb" />
+    <Compile Include="Controls\Canvas\Tools\ToolState\IToolStateHandler.vb" />
+    <Compile Include="Controls\Canvas\Tools\ToolState\IToolState.vb" />
+    <Compile Include="Controls\Canvas\Tools\ToolState\NextPointState.vb" />
+    <Compile Include="Controls\Canvas\Tools\WithinBoundsTool.vb" />
+    <Compile Include="DTO\ItemResourceRequestDTO.vb" />
+    <Compile Include="DTO\SerializationRequestDTO.vb" />
+    <Compile Include="Entities\BinaryResource.vb" />
+    <Compile Include="Entities\DependentResource.vb" />
+    <Compile Include="Entities\ItemExclusionList.vb" />
+    <Compile Include="Entities\ItemInfo.vb" />
+    <Compile Include="Entities\MetaData.vb" />
+    <Compile Include="Entities\MetaDataCode.vb" />
+    <Compile Include="Entities\MetaDataConceptStructure.vb" />
+    <Compile Include="Entities\MetaDataConceptStructurePart.vb" />
+    <Compile Include="Entities\MetaDataMultiValue.vb" />
+    <Compile Include="Entities\MetaDataRichText.vb" />
+    <Compile Include="Entities\MetaDataStructureBase.vb" />
+    <Compile Include="Entities\MetaDataTreeStructure.vb" />
+    <Compile Include="Entities\MetaDataTreeStructurePart.vb" />
+    <Compile Include="Entities\ResourceEntry.vb" />
+    <Compile Include="Entities\StreamResource.vb" />
+    <Compile Include="Entities\XhtmlReferenceList.vb" />
+    <Compile Include="EventArgs\ProgressEventArgs.vb" />
+    <Compile Include="EventArgs\StartEventArgs.vb" />
+    <Compile Include="Exceptions\LogicFatalException.vb" />
+    <Compile Include="Exceptions\ItemControllerException.vb" />
+    <Compile Include="Exceptions\LoaderExceptionsException.vb" />
+    <Compile Include="Exceptions\DisplayException.vb" />
+    <Compile Include="Exceptions\DuplicateResourceException.vb" />
+    <Compile Include="Exceptions\SecurityException.vb" />
+    <Compile Include="Exceptions\ContentModelException.vb" />
+    <Compile Include="Exceptions\ControlTemplateException.vb" />
+    <Compile Include="Exceptions\ControlTemplateScriptException.vb" />
+    <Compile Include="Exceptions\InteractionControlException.vb" />
+    <Compile Include="Exceptions\ItemTemplateException.vb" />
+    <Compile Include="Exceptions\ResourceException.vb" />
+    <Compile Include="Exceptions\TestViewerException.vb" />
+    <Compile Include="Exceptions\TesterException.vb" />
+    <Compile Include="Exceptions\ResourceManagerException.vb" />
+    <Compile Include="HelperClasses\AlphabeticIdentifierHelper.vb" />
+    <Compile Include="HelperClasses\ArrayHelper.vb" />
+    <Compile Include="HelperClasses\BinaryCloner.vb" />
+    <Compile Include="HelperClasses\PublicationRegExHelper.vb" />
+    <Compile Include="HelperClasses\FileHelper.vb" />
+    <Compile Include="HelperClasses\FrameworkChecker.vb" />
+    <Compile Include="HelperClasses\HtmlHelper.vb" />
+    <Compile Include="HelperClasses\IdentifierHelper.vb" />
+    <Compile Include="HelperClasses\InvalidCharactersHelper.vb" />
+    <Compile Include="HelperClasses\KnownResourceXmlResolver.vb" />
+    <Compile Include="HelperClasses\ListManipulation.vb" />
+    <Compile Include="HelperClasses\MathMLValidator.vb" />
+    <Compile Include="HelperClasses\MimeTypeRetriever.vb" />
+    <Compile Include="HelperClasses\ReflectionHelper.vb" />
+    <Compile Include="HelperClasses\PluginHelper.vb" />
+    <Compile Include="HelperClasses\RegexpHelper.vb" />
+    <Compile Include="HelperClasses\ResourceEnumConverter.vb" />
+    <Compile Include="HelperClasses\SerializableGenericDictionary.vb" />
+    <Compile Include="HelperClasses\SerializableUri.vb" />
+    <Compile Include="HelperClasses\SerializeHelper.vb" />
+    <Compile Include="HelperClasses\SetOperations.vb" />
+    <Compile Include="HelperClasses\ShapeHelper.vb" />
+    <Compile Include="HelperClasses\StreamConverters.vb" />
+    <Compile Include="Entities\XhtmlReference.vb" />
+    <Compile Include="HelperClasses\StringManipulationHelper.vb" />
+    <Compile Include="HelperClasses\TemplateHelper.vb" />
+    <Compile Include="HelperClasses\TempStorageHelper.vb" />
+    <Compile Include="HelperClasses\TypeSwitch.vb" />
+    <Compile Include="HelperClasses\VersionHelper.vb" />
+    <Compile Include="HelperClasses\XhtmlReferenceFactory.vb" />
+    <Compile Include="InputBox.vb" />
+    <Compile Include="Interfaces\Delegates.vb" />
+    <Compile Include="Interfaces\IResourceManagerFactory.vb" />
+    <Compile Include="Interfaces\IResourceManagerForceBinData.vb" />
+    <Compile Include="Interfaces\IResourceManagerWrapper.vb" />
+    <Compile Include="Interfaces\IResourceReader.vb" />
+    <Compile Include="Interfaces\IResourceWriter.vb" />
+    <Compile Include="Interfaces\ResourceManagerBase.vb" />
+    <Compile Include="Interfaces\ResourceManagerDecorator.vb" />
+    <Compile Include="Logging\Log.vb" />
+    <Compile Include="Logging\LogListeners\ILogListener.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="HelperClasses\XHtmlDocument.vb" />
+    <Compile Include="ProtectedSection.vb" />
+    <Compile Include="QbProtectedConfigurationProvider.vb" />
+    <Compile Include="ValidationHelper.vb" />
+    <Compile Include="WeakEventHandler\IWeakGenericEventHandler.vb" />
+    <Compile Include="WeakEventHandler\IWeakVanillaEventHandler.vb" />
+    <Compile Include="WeakEventHandler\UnregisterDelegate.vb" />
+    <Compile Include="WeakEventHandler\WeakEventHandler.vb" />
+    <Compile Include="WeakEventHandler\WeakEventHandlerGeneric.vb" />
+    <Compile Include="WeakEventHandler\WeakEventUtils.vb" />
+    <Compile Include="WindowsNativeMethods.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DTD\xhtml1-frameset.dtd" />
+    <EmbeddedResource Include="DTD\xhtml1-strict.dtd" />
+    <EmbeddedResource Include="DTD\xhtml1-transitional.dtd" />
+    <EmbeddedResource Include="DTD\xhtml11-flat.dtd" />
+    <EmbeddedResource Include="DTD\Mathml2\mathml2.dtd" />
+    <EmbeddedResource Include="DTD\Mathml2\isoamsa.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isoamsb.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isoamsc.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isoamsn.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isoamso.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isoamsr.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isogrk3.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isomfrk.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isomopf.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isomscr.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isotech.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isobox.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isocyr1.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isodia.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isolat1.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isolat2.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isonum.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isopub.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\isocyr2.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\mmlextra.ent" />
+    <EmbeddedResource Include="DTD\Mathml2\mmlalias.ent" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Resources\mathml3-common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\mathml3-content.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\mathml3-presentation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\mathml3-strict-content.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\mathml3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DTD\xhtml-lat1.ent" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DTD\xhtml-special.ent" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DTD\xhtml-symbol.ent" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DTD\frameset.dtd" />
+    <EmbeddedResource Include="DTD\HTMLlat1.ent" />
+    <EmbeddedResource Include="DTD\HTMLspecial.ent" />
+    <EmbeddedResource Include="DTD\HTMLsymbol.ent" />
+    <EmbeddedResource Include="DTD\loose.dtd" />
+    <EmbeddedResource Include="DTD\strict.dtd" />
+    <EmbeddedResource Include="My Project\Resources.nl.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DTD\Mathml2\mathml2-qname-1.mod" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTO\ResourceRequestDTO.vb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

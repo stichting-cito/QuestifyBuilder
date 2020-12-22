@@ -1,0 +1,125 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.ScoreEditors.concrete.EncodingScoringEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             xmlns:CinchV2="clr-namespace:Cinch;assembly=Cinch.WPF"
+             xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+             xmlns:valueConverters="clr-namespace:Questify.Builder.UI.Wpf.Presentation.ValueConverters"
+             xmlns:scoreEditors1="clr-namespace:Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.ScoreEditors"
+             xmlns:behaviors="clr-namespace:Questify.Builder.UI.Wpf.Presentation.Behaviors"
+             meffed:ViewModelLocator.ViewModel="ItemEditor.ScoreEditors.EncodingScoringVM"             
+             d:DesignHeight="300" d:DesignWidth="800">
+    <UserControl.Resources>
+        <valueConverters:NumberToDash x:Key="Depth" />
+        <valueConverters:QuestifyBooleanToVisibilityConverter x:Key="bool2VisibilityConverter" />
+
+        <!--Columns of DataGrid -->
+        <DataTemplate x:Key="PartSelector">
+            <CheckBox IsChecked="{Binding Path=Selected.DataValue,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                      IsEnabled="{Binding Path=CanSelect.DataValue,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                      Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"
+                      Content="{Binding Depth,Converter={StaticResource Depth}}" FlowDirection="RightToLeft">
+                <CheckBox.Resources>
+                    <Style TargetType="{x:Type Path}">
+                        <Setter Property="FlowDirection" Value="LeftToRight" />
+                    </Style>
+                </CheckBox.Resources>
+            </CheckBox>
+        </DataTemplate>
+
+        <DataTemplate x:Key="AddAnswerCategory">
+            <Button Width="24" Height="24"
+                    Command="{Binding Path=DataContext.AddAnswerCategory, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}">
+                <Image Source="{StaticResource ItemEditor.ScoreEditor.ScoreEditor_AddImage}" />
+            </Button>
+        </DataTemplate>
+
+        <DataTemplate x:Key="AnswerCategory">
+            <StackPanel Orientation="Horizontal" MinWidth="30">
+                <scoreEditors1:AdornedTextBlock Text="{Binding HeaderText}"
+                                               ShowAdorner="{Binding HasPreProcessingRules}"
+                                               ToolTipService.ToolTip="{Binding ToolTipText}"
+                                                Visibility="{Binding HasHeaderImage,Converter={StaticResource bool2VisibilityConverter}, ConverterParameter=InvertBooleanValue}"
+                                               />
+                <Image  Source="{Binding HeaderImage}"
+                        VerticalAlignment="Center" 
+                        HorizontalAlignment="Center" 
+                        Visibility="{Binding HasHeaderImage,Converter={StaticResource bool2VisibilityConverter}}">
+                </Image>
+                <Button Template="{StaticResource SquareButton}"
+                        Margin="4,0,0,0"
+                        Width="16" Height="16"
+                        Visibility="{Binding CanDelete,Converter={StaticResource bool2VisibilityConverter}}"
+                        Command="{Binding Path=DataContext.RemoveAnswerCategory, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" 
+                        CommandParameter="{Binding}">
+                    <Image Source="{StaticResource ItemEditor.ScoreEditor.ScoreEditor_RemoveImage}"
+                           RenderOptions.BitmapScalingMode="HighQuality" />
+                </Button>
+            </StackPanel>
+        </DataTemplate>
+
+        <!-- Cell Template -->
+        <DataTemplate x:Key="PartName">
+            <Label Content="{Binding PartName}" />
+        </DataTemplate>
+
+        <DataTemplate x:Key="ScoreCell">
+            <TextBox Text="{Binding Path=Score.DataValue,UpdateSourceTrigger=PropertyChanged}"
+                     IsEnabled="{Binding Path=InputEnabled.DataValue}">
+                <i:Interaction.Behaviors>
+                    <behaviors:TextBoxIntegerBehavior MaxLength="4" PositiveValueOnly="True" />
+                </i:Interaction.Behaviors>
+            </TextBox>
+        </DataTemplate>
+
+        <DataTemplate x:Key="Empty" />
+
+        <!--End Columns of DataGrid -->
+
+
+    </UserControl.Resources>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="19,0,0,5">
+            <ComboBox ItemsSource="{Binding AvailableParams}" DisplayMemberPath="Value" SelectedValuePath="Key"
+                      SelectedValue="{Binding CurrentScoringMap}" />
+            <Button Command="{Binding RefreshScore}">
+                <Button.ToolTip>
+                    <TextBlock Text="{StaticResource ItemEditor.ScoreEditor.ReloadScore}" />
+                </Button.ToolTip>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{StaticResource ItemEditor.ScoreEditor.ScoreEditor_ReloadImage}" Width="16"
+                           Height="16" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <DataGrid x:Name="_dataGrid" ItemsSource="{Binding Data}" CanUserAddRows="False" CanUserDeleteRows="False"
+                  RowDetailsVisibilityMode="Visible" AutoGenerateColumns="False" Margin="19,0,0,0">
+
+            <DataGrid.RowStyle>
+                <!--This part governs if rows are viewable.-->
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding CanSelect.DataValue}" Value="True">
+                            <Setter Property="IsEnabled" Value="True" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding CanSelect.DataValue}" Value="False">
+                            <!--Disabled en hide de row-->
+                            <Setter Property="IsEnabled" Value="False" />
+                            <Setter Property="Background" Value="LightGray" />
+                            <Setter Property="Height" Value="0" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+
+            <!--Construct for dynamic Columns-->
+            <i:Interaction.Behaviors>
+                <behaviors:ColumnsBindingBehavior Columns="{Binding DataGridColumns}" />
+            </i:Interaction.Behaviors>
+
+        </DataGrid>
+    </StackPanel>
+</UserControl>

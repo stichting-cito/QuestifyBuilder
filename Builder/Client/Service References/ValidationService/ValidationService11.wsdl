@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ValidationService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.PublicationService.Validation" />
+      <xsd:import schemaLocation="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.PublicationService" />
+      <xsd:import schemaLocation="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Enums" />
+      <xsd:import schemaLocation="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IValidationService_AtLeastOneHandlerAvailable_InputMessage">
+    <wsdl:part name="parameters" element="tns:AtLeastOneHandlerAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IValidationService_AtLeastOneHandlerAvailable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AtLeastOneHandlerAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IValidationService_Validate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Validate" />
+  </wsdl:message>
+  <wsdl:message name="IValidationService_Validate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IValidationService_GetProgress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProgress" />
+  </wsdl:message>
+  <wsdl:message name="IValidationService_GetProgress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProgressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IValidationService_FinishValidation_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinishValidation" />
+  </wsdl:message>
+  <wsdl:message name="IValidationService_FinishValidation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinishValidationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IValidationService_GetCurrentVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentVersion" />
+  </wsdl:message>
+  <wsdl:message name="IValidationService_GetCurrentVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentVersionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IValidationService">
+    <wsdl:operation name="AtLeastOneHandlerAvailable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IValidationService/AtLeastOneHandlerAvailable" message="tns:IValidationService_AtLeastOneHandlerAvailable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IValidationService/AtLeastOneHandlerAvailableResponse" message="tns:IValidationService_AtLeastOneHandlerAvailable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Validate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IValidationService/Validate" message="tns:IValidationService_Validate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IValidationService/ValidateResponse" message="tns:IValidationService_Validate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IValidationService/GetProgress" message="tns:IValidationService_GetProgress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IValidationService/GetProgressResponse" message="tns:IValidationService_GetProgress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinishValidation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IValidationService/FinishValidation" message="tns:IValidationService_FinishValidation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IValidationService/FinishValidationResponse" message="tns:IValidationService_FinishValidation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentVersion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IValidationService/GetCurrentVersion" message="tns:IValidationService_GetCurrentVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IValidationService/GetCurrentVersionResponse" message="tns:IValidationService_GetCurrentVersion_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IValidationService" type="tns:IValidationService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AtLeastOneHandlerAvailable">
+      <soap:operation soapAction="http://tempuri.org/IValidationService/AtLeastOneHandlerAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Validate">
+      <soap:operation soapAction="http://tempuri.org/IValidationService/Validate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgress">
+      <soap:operation soapAction="http://tempuri.org/IValidationService/GetProgress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishValidation">
+      <soap:operation soapAction="http://tempuri.org/IValidationService/FinishValidation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentVersion">
+      <soap:operation soapAction="http://tempuri.org/IValidationService/GetCurrentVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ValidationService">
+    <wsdl:port name="BasicHttpBinding_IValidationService" binding="tns:BasicHttpBinding_IValidationService">
+      <soap:address location="http://localhost/Questify.Builder.Services.PublicationService/Validation/ValidationService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

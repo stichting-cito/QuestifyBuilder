@@ -1,0 +1,2 @@
+Licensing
+This project is licensed under MIT License with portions of code licensed under New BSD License.

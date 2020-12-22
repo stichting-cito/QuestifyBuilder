@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.ScoreEditors.concrete.CasVariableEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:CinchV2="clr-namespace:Cinch;assembly=Cinch.WPF"
+             xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+             xmlns:behaviors="clr-namespace:Questify.Builder.UI.Wpf.Presentation.Behaviors"
+             meffed:ViewModelLocator.ViewModel="ItemEditor.ScoreEditors.CasVariableVM"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+
+        <DataTemplate x:Key="CasVariableLabel">
+            <TextBox Text="{Binding Name}"
+                     IsEnabled="False">
+            </TextBox>
+        </DataTemplate>
+
+    </UserControl.Resources>
+
+    <Border BorderBrush="Black" BorderThickness="1" Padding="3">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <DockPanel Grid.Row="0" Grid.Column="0" LastChildFill="True" Background="White">
+                <TextBlock DockPanel.Dock="Left" Text="{StaticResource ItemEditor.ScoreEditor.CasEditor.NrVariable}" Width="100" Height="22" HorizontalAlignment="Left" Margin="3,0,0,0" />
+                <ComboBox Width="50" ItemsSource="{Binding NrOfParamsList}" SelectedValue="{Binding CurrentNrOfParams.DataValue}" HorizontalAlignment="Left" />
+            </DockPanel>
+
+            <DockPanel Grid.Row="0" Grid.Column="1" LastChildFill="True" Background="White">
+                <TextBlock DockPanel.Dock="Left" Text="{StaticResource ItemEditor.ScoreEditor.CasEditor.NrSolutions}" Width="120" HorizontalAlignment="Left"/>
+                <ComboBox Width="50" ItemsSource="{Binding NrOfSolutionsList}" SelectedValue="{Binding CurrentNrOfSolutions.DataValue}" HorizontalAlignment="Left" />
+            </DockPanel>
+        
+            <Border Grid.ColumnSpan="2" Grid.Row="1">
+                <DataGrid 
+                    ItemsSource="{Binding DataRows, UpdateSourceTrigger=PropertyChanged}"
+                    CanUserDeleteRows="False"
+                    CanUserReorderColumns="False"
+                    CanUserAddRows="False"
+                    RowDetailsVisibilityMode="Visible" 
+                    AutoGenerateColumns="False">
+
+                    <!--Construct for dynamic Columns-->
+                    <i:Interaction.Behaviors>
+                        <behaviors:ColumnsBindingBehavior Columns="{Binding DataGridColumns, UpdateSourceTrigger=PropertyChanged}" />
+                    </i:Interaction.Behaviors>
+
+                </DataGrid>
+            </Border>
+
+            <DockPanel Grid.Row="2" Grid.ColumnSpan="2" LastChildFill="True" Background="White">
+                <TextBlock DockPanel.Dock="Left" Text="{StaticResource ItemEditor.ScoreEditor.CasEditor.Degree}" Width="100" Margin="3,0,0,0"/>
+                <ComboBox Width="50" ItemsSource="{Binding DegreesList}" SelectedValue="{Binding CurrentDegree.DataValue}" HorizontalAlignment="Left" />
+            </DockPanel>
+        </Grid>
+    </Border>
+</UserControl>

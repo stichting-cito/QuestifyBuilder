@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.PublicationService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.PublicationService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="TaskProgress">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Finished" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Progress" type="xs:int" />
+      <xs:element minOccurs="0" name="ProgressString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Total" type="xs:int" />
+      <xs:element minOccurs="0" name="Warnings" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskProgress" nillable="true" type="tns:TaskProgress" />
+</xs:schema>

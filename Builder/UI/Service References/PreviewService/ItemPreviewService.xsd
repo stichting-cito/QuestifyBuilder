@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/Questify.Builder.Services.PublicationService/ItemPreview/ItemPreviewService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Questify.Builder.Logic.Service.Classes" />
+  <xs:element name="PreviewItemByCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="itemHandlerType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bankId" type="xs:int" />
+        <xs:element minOccurs="0" name="itemCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isDebug" type="xs:boolean" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Questify.Builder.Logic.Service.Classes" minOccurs="0" name="publicationProperties" nillable="true" type="q1:ArrayOfPublicationProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreviewItemByCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Questify.Builder.Logic.Service.Classes" minOccurs="0" name="PreviewItemByCodeResult" nillable="true" type="q2:PublicationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreviewItemByAssessmentItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="itemHandlerType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bankId" type="xs:int" />
+        <xs:element minOccurs="0" name="assessmentItem" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="isDebug" type="xs:boolean" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Questify.Builder.Logic.Service.Classes" minOccurs="0" name="publicationProperties" nillable="true" type="q3:ArrayOfPublicationProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreviewItemByAssessmentItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Questify.Builder.Logic.Service.Classes" minOccurs="0" name="PreviewItemByAssessmentItemResult" nillable="true" type="q4:PublicationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

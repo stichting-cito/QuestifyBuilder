@@ -1,0 +1,362 @@
+﻿
+Imports System.Xml.Serialization
+Imports Cito.Tester.ContentModel
+Imports Questify.Builder.Logic.ContentModel.Scoring.Validator
+Imports Questify.Builder.UnitTests.Framework
+
+<TestClass()>
+Public Class ScoringValidatorTests
+
+    <TestMethod(), TestCategory("ScoringValidation_Invalid"), TestCategory("Scoring")>
+    Public Sub OrBetweenSingleInteractions_IsNotValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.NoOrBetweenSingleInteractions)
+        Dim validator As New NoOrBetweenSingleInteractions()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.ProcessValidationRule(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNotNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Invalid"), TestCategory("Scoring")>
+    Public Sub AndOnSameInteraction_IsNotValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.NoAndOnSameInteraction)
+        Dim validator As New NoAndOnSameInteraction()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.ProcessValidationRule(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNotNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Invalid"), TestCategory("Scoring")>
+    Public Sub ScoringParameterChoiceHasNoScoringDefinition_IsNotValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.EachInteractionHasScoringDefinition_Choice)
+        Dim validator As New EachInteractionHasScoringDefinition()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.ProcessValidationRule(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNotNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Invalid"), TestCategory("Scoring")>
+    Public Sub ScoringParameterStringHasNoScoringDefinition_IsNotValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.EachInteractionHasScoringDefinition_String)
+        Dim validator As New EachInteractionHasScoringDefinition()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.ProcessValidationRule(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNotNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Invalid"), TestCategory("Scoring")>
+    Public Sub ScoringParameterIntegerHasNoScoringDefinition_IsNotValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.EachInteractionHasScoringDefinition_Integer)
+        Dim validator As New EachInteractionHasScoringDefinition()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.ProcessValidationRule(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNotNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Invalid"), TestCategory("Scoring")>
+    Public Sub ScoringParameterDecimalHasNoScoringDefinition_IsNotValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.EachInteractionHasScoringDefinition_Decimal)
+        Dim validator As New EachInteractionHasScoringDefinition()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.ProcessValidationRule(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNotNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Invalid"), TestCategory("Scoring")>
+    Public Sub ScoringParameterDateHasNoScoringDefinition_IsNotValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.EachInteractionHasScoringDefinition_Date)
+        Dim validator As New EachInteractionHasScoringDefinition()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.ProcessValidationRule(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNotNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Invalid"), TestCategory("Scoring")>
+    Public Sub ScoringParameterTimeHasNoScoringDefinition_IsNotValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.EachInteractionHasScoringDefinition_Time)
+        Dim validator As New EachInteractionHasScoringDefinition()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.ProcessValidationRule(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNotNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Invalid"), TestCategory("Scoring")>
+    Public Sub ScoringParameterMathHasNoScoringDefinition_IsNotValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.EachInteractionHasScoringDefinition_Math)
+        Dim validator As New EachInteractionHasScoringDefinition()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.ProcessValidationRule(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNotNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Invalid"), TestCategory("Scoring")>
+    Public Sub GroupConsistsOfMultipleSameInteractionsChoice_IsNotValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.GroupConsistsOfMultipleDifferentInteractions_Choice)
+        Dim validator As New GroupConsistsOfMultipleDifferentInteractions()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.ProcessValidationRule(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNotNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Invalid"), TestCategory("Scoring")>
+    Public Sub GroupConsistsOfMultipleSameInteractionsChoiceInline_IsNotValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.GroupConsistsOfMultipleDifferentInteractions_ChoiceInline)
+        Dim validator As New GroupConsistsOfMultipleDifferentInteractions()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.ProcessValidationRule(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNotNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Invalid"), TestCategory("Scoring")>
+    Public Sub OtherGroupWithSameInteractionsDoesNotExists_Zero_IsNotValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.OtherGroupWithSameInteractionsExists_Zero)
+        Dim validator As New OtherGroupWithSameInteractionsExists()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.ProcessValidationRule(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNotNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Invalid"), TestCategory("Scoring")>
+    Public Sub OtherGroupWithSameInteractionsDoesNotExists_Wrong_IsNotValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.OtherGroupWithSameInteractionsExists_Wrong)
+        Dim validator As New OtherGroupWithSameInteractionsExists()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.ProcessValidationRule(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNotNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Invalid"), TestCategory("Scoring")>
+    Public Sub InteractionOfGroupExistOutsideAGroup_IsNotValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.InteractionOfGroupCannotExistOutsideAGroup)
+        Dim validator As New InteractionOfGroupCannotExistOutsideAGroup()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.ProcessValidationRule(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNotNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Invalid"), TestCategory("Scoring")>
+    Public Sub GroupsWithSameInteractionsDiffer_IsNotValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.GroupsWithSameInteractionsAreEqual)
+        Dim validator As New GroupsWithSameInteractionsAreEqual()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.ProcessValidationRule(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNotNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Valid"), TestCategory("Scoring")>
+    Public Sub SingleInteraction_IsValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.Valid_SingleInteraction)
+        Dim validator As New ScoringValidator()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.Validate(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Valid"), TestCategory("Scoring")>
+    Public Sub SingleInteractionWithOr_IsValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.Valid_SingleInteractionWithOr)
+        Dim validator As New ScoringValidator()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.Validate(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Valid"), TestCategory("Scoring")>
+    Public Sub MultipleInteractionsWithAnd_IsValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.Valid_MulitpleInteractionWithAnd)
+        Dim validator As New ScoringValidator()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.Validate(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Valid"), TestCategory("Scoring")>
+    Public Sub MultipleInteractionsWithAndInOrGroup_IsValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.Valid_MulitpleInteractionsWithAndInOrGroups)
+        Dim validator As New ScoringValidator()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.Validate(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Valid"), TestCategory("Scoring")>
+    Public Sub MultipleInteractionsWithAndInOrGroup_PlusSingleInteraction_IsValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.Valid_MulitpleInteractionsWithAndInOrGroups_PlusSingleInteraction)
+        Dim validator As New ScoringValidator()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.Validate(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Valid"), TestCategory("Scoring")>
+    Public Sub MultipleRepsonsesWithOr_IsValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.Valid_MulitpleResponsesWithOr)
+        Dim validator As New ScoringValidator()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.Validate(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNull(exception)
+    End Sub
+
+    <TestMethod(), TestCategory("ScoringValidation_Valid"), TestCategory("Scoring")>
+    Public Sub TwoSetsOfIndependentGroups_IsValid()
+        Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
+        Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.Valid_TwoSetsOfIndependentGroups)
+        Dim validator As New ScoringValidator()
+        Dim exception As Exception = Nothing
+
+        Try
+            validator.Validate(item)
+        Catch ex As Exception
+            exception = ex
+        End Try
+
+        Assert.IsNull(exception)
+    End Sub
+
+End Class

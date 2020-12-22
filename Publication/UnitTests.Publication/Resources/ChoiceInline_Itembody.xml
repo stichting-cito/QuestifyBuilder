@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itemBody class="defaultBody">
+	<div class="content">
+		<div>
+			<div id="questionwithinlinecontrol">
+				<p>1 m = <inlineChoiceInteraction responseIdentifier="I258154ed-d63c-4408-b475-5a70acb58d71" shuffle="false" required="true">
+						<inlineChoice identifier="A">100</inlineChoice>
+						<inlineChoice identifier="B">1000</inlineChoice>
+						<inlineChoice identifier="C">1</inlineChoice>
+					</inlineChoiceInteraction>
+ <inlineChoiceInteraction responseIdentifier="Iba9a61f1-618c-4b49-aa6e-b6b32fe27e50" shuffle="false" required="true">
+						<inlineChoice identifier="A">cm</inlineChoice>
+						<inlineChoice identifier="B">mm</inlineChoice>
+						<inlineChoice identifier="C">km</inlineChoice>
+					</inlineChoiceInteraction>
+ </p>
+			</div>
+			<div id="answer"/>
+		</div>
+	</div>
+</itemBody>

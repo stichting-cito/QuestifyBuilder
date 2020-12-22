@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{885875BF-3E90-4B06-B1FB-A7883E54E391}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Questify.Builder.Logic.Service</RootNamespace>
+    <AssemblyName>Questify.Builder.Logic.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Any CPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.2.8.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NLog.4.4.11\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=5.2.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SD.LLBLGen.Pro.ORMSupportClasses.5.2.1\lib\net45\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Versioning\GeneralInfo.cs">
+      <Link>Properties\GeneralInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Versioning\TestBuilder_VersionInfo.cs">
+      <Link>TestBuilder_VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Cache\CacheBankDtoService.cs" />
+    <Compile Include="Cache\CacheBankService.cs" />
+    <Compile Include="Cache\CacheAspectResourceDtoService .cs" />
+    <Compile Include="Cache\CacheDataSourceTemplateResourceDtoService.cs" />
+    <Compile Include="Cache\CacheDtoService.cs" />
+    <Compile Include="Cache\CacheEntities\EntityCache.cs" />
+    <Compile Include="Cache\CacheControlTemplateResourceDtoService.cs" />
+    <Compile Include="Cache\CacheItemLayoutResourceDtoService.cs" />
+    <Compile Include="Cache\CacheCustomBankPropertyResourceDtoService.cs" />
+    <Compile Include="Cache\CacheGenericResourceDtoService.cs" />
+    <Compile Include="Cache\CacheService.cs" />
+    <Compile Include="Cache\CacheTestTemplateResourceDtoService.cs" />
+    <Compile Include="Cache\CacheTestPackageResourceDtoService.cs" />
+    <Compile Include="Cache\CacheEntities\BankDtoCache.cs" />
+    <Compile Include="Cache\CacheEntities\CustomBankPropertyDtoCache.cs" />
+    <Compile Include="Cache\CacheEntities\ResourceDtoCache.cs" />
+    <Compile Include="Cache\CacheDataSourceResourceDtoService.cs" />
+    <Compile Include="Cache\CacheTestResourceDtoService.cs" />
+    <Compile Include="Cache\CacheItemResourceDtoService.cs" />
+    <Compile Include="Cache\CacheResourceDtoService.cs" />
+    <Compile Include="Cache\CacheEntities\BankHierarchyCache.cs" />
+    <Compile Include="Cache\CacheEntities\BaseClass\CachePerUserBase.cs" />
+    <Compile Include="Cache\CacheEntities\BaseClass\EntityCollectionCacheBase.cs" />
+    <Compile Include="Cache\CacheEntities\DtoCache.cs" />
+    <Compile Include="Cache\CacheEntities\GenericCache.cs" />
+    <Compile Include="Cache\CacheEntities\PermissionCache.cs" />
+    <Compile Include="Cache\CachePermissionService.cs" />
+    <Compile Include="Cache\CacheSecurityService.cs" />
+    <Compile Include="Cache\CacheEntities\BaseClass\CacheBase.cs" />
+    <Compile Include="Cache\CacheEntities\CustomPropertyEntityCollectionCache.cs" />
+    <Compile Include="Cache\CacheEntities\TestBuilderPermissionCache.cs" />
+    <Compile Include="Cache\CacheResourceService.cs" />
+    <Compile Include="Cache\CacheCustomBankPropertyDtoService.cs" />
+    <Compile Include="Classes\PauseDuration.cs" />
+    <Compile Include="Classes\PublicationProperty.cs" />
+    <Compile Include="Classes\PublicationResult.cs" />
+    <Compile Include="Decorators\BaseBankServiceDecorator.cs" />
+    <Compile Include="Decorators\BaseCacheDtoServiceDecorator.cs" />
+    <Compile Include="Decorators\BaseCustomPropertyDtoServiceDecorator.cs" />
+    <Compile Include="Decorators\BaseDatasourceResourceDtoServiceDecorator.cs" />
+    <Compile Include="Decorators\BaseGenericResourceDtoServiceDecorator.cs" />
+    <Compile Include="Decorators\BasePermissionServiceDecorator.cs" />
+    <Compile Include="Decorators\BaseResourceServiceDecorator.cs" />
+    <Compile Include="Decorators\BaseSecurityServiceDecorator.cs" />
+    <Compile Include="Decorators\BaseTestResourceDtoServiceDecorator.cs" />
+    <Compile Include="Decorators\BaseItemResourceDtoServiceDecorator.cs" />
+    <Compile Include="Decorators\BaseItemLayoutTemplateDtoServiceDecorator.cs" />
+    <Compile Include="Decorators\BaseBankDtoServiceDecorator.cs" />
+    <Compile Include="Decorators\BaseDtoServiceDecorator.cs" />
+    <Compile Include="Decorators\BaseResourceDtoServiceDecorator.cs" />
+    <Compile Include="Direct\AuthorizationService.cs" />
+    <Compile Include="Direct\BankService.cs" />
+    <Compile Include="Direct\DataSetToBanklStatistics.cs" />
+    <Compile Include="Direct\ExcludeIncludeFieldsHelper.cs" />
+    <Compile Include="Direct\PermissionService.cs" />
+    <Compile Include="Direct\ResourceHistoryCreator.cs" />
+    <Compile Include="Direct\ResourceService.cs" />
+    <Compile Include="Direct\SplitSqlQueryBankServiceDecorator.cs" />
+    <Compile Include="Direct\SplitSqlQueryDecorator.cs" />
+    <Compile Include="Domain\AppServices\Container.cs" />
+    <Compile Include="Domain\AppServices\GlobalContext.cs" />
+    <Compile Include="Domain\AppServices\IBusinessNotifier.cs" />
+    <Compile Include="Domain\AppServices\IGlobalContext.cs" />
+    <Compile Include="Domain\AppServices\IRequestContext.cs" />
+    <Compile Include="Domain\Repository\IRepository.cs" />
+    <Compile Include="Domain\Repository\IRepositoryLocator.cs" />
+    <Compile Include="Domain\Repository\RepositoryLocatorBase.cs" />
+    <Compile Include="Domain\Services\ServiceBase.cs" />
+    <Compile Include="Domain\TransManager\ITransFactory.cs" />
+    <Compile Include="Domain\TransManager\ITransManager.cs" />
+    <Compile Include="Domain\TransManager\TransManagerBase.cs" />
+    <Compile Include="DTO\ItemEditorObjectFactoryResult.cs" />
+    <Compile Include="Enums\Enums.cs" />
+    <Compile Include="EventArguments\ItemValidationRequiredEventArgs.cs" />
+    <Compile Include="Exceptions\AppLogicException.cs" />
+    <Compile Include="Exceptions\ServiceException.cs" />
+    <Compile Include="Exceptions\TestBuilderException.cs" />
+    <Compile Include="Exceptions\UIException.cs" />
+    <Compile Include="Factories\AuthorizationFactory.cs" />
+    <Compile Include="Factories\BankFactory.cs" />
+    <Compile Include="Factories\CompositionInitializer.cs" />
+    <Compile Include="Factories\DtoFactory.cs" />
+    <Compile Include="Factories\ResourceFactory.cs" />
+    <Compile Include="HelperFunctions\BankBranchIdHelper.cs" />
+    <Compile Include="HelperFunctions\BankResourcePropertyBuilder.cs" />
+    <Compile Include="HelperFunctions\ConfigPluginHelper.cs" />
+    <Compile Include="HelperFunctions\CreateObjectJIT.cs" />
+    <Compile Include="HelperFunctions\Extensions.cs" />
+    <Compile Include="HelperFunctions\Helper.cs" />
+    <Compile Include="HelperFunctions\ItemIdHelper.cs" />
+    <Compile Include="HelperFunctions\ReflectionHelper.cs" />
+    <Compile Include="HelperFunctions\Symbols\SpecialSymbol.cs" />
+    <Compile Include="HelperFunctions\Symbols\SpecialSymbolEventArgs.cs" />
+    <Compile Include="HelperFunctions\Symbols\SpecialSymbolGroup.cs" />
+    <Compile Include="HelperFunctions\XElementExtensions.cs" />
+    <Compile Include="Interfaces\IAspectEditorObjectFactory.cs" />
+    <Compile Include="Interfaces\IAssessmentTestEditorObjectFactory.cs" />
+    <Compile Include="Interfaces\IAuthorizationService.cs" />
+    <Compile Include="Interfaces\IBankService.cs" />
+    <Compile Include="Interfaces\ICacheServiceDto.cs" />
+    <Compile Include="Interfaces\ICacheServiceHandler.cs" />
+    <Compile Include="Interfaces\IControlTemplateEditorObjectFactory.cs" />
+    <Compile Include="Interfaces\ICustomBankPropertyEditorObjectFactory.cs" />
+    <Compile Include="Interfaces\IDataSourceEditorObjectFactorycs.cs" />
+    <Compile Include="Interfaces\IControlTemplateResourceDtoRepository.cs" />
+    <Compile Include="Interfaces\ICustomBankPropertyResourceDtoRepository.cs" />
+    <Compile Include="Interfaces\ICustomBankPropertyDtoRepository.cs" />
+    <Compile Include="Interfaces\IBankDtoRepository.cs" />
+    <Compile Include="Interfaces\IAspectResourceDtoRepository.cs" />
+    <Compile Include="Interfaces\IGenericResourceEditorObjectFactory.cs" />
+    <Compile Include="Interfaces\IHarmonizer.cs" />
+    <Compile Include="Interfaces\IItemEditorObjectFactory.cs" />
+    <Compile Include="Interfaces\IItemLayoutTemplateEditorObjectFactory.cs" />
+    <Compile Include="Interfaces\IItemPreviewer.cs" />
+    <Compile Include="Interfaces\IItemPreviewHandler.cs" />
+    <Compile Include="Interfaces\ILegacyInputBox.cs" />
+    <Compile Include="Interfaces\IMajorVersionDialogObjectFactory.cs" />
+    <Compile Include="Interfaces\InputBox.cs" />
+    <Compile Include="Interfaces\IPublicationHandler.cs" />
+    <Compile Include="Interfaces\IPublicationOptionsControl.cs" />
+    <Compile Include="Interfaces\IQTI21PublicationHandlerExtensions.cs" />
+    <Compile Include="Interfaces\IReportHandler.cs" />
+    <Compile Include="Interfaces\IReportHandlerAsync.cs" />
+    <Compile Include="Interfaces\IReportHandlerWithConfig.cs" />
+    <Compile Include="Interfaces\IReportValidationBase.cs" />
+    <Compile Include="Interfaces\IResourceEditorService.cs" />
+    <Compile Include="Interfaces\IResourcePropertyDialogObjectFactory.cs" />
+    <Compile Include="Interfaces\IResourceService.cs" />
+    <Compile Include="Interfaces\ISelectIltDialog.cs" />
+    <Compile Include="Interfaces\ISourceTextEditorObjectFactory.cs" />
+    <Compile Include="Interfaces\IStartItemPreview.cs" />
+    <Compile Include="Interfaces\ITestPackageEditorObjectFactory.cs" />
+    <Compile Include="Interfaces\ITestPackageResourceDtoRepository.cs" />
+    <Compile Include="Interfaces\IDtoRepository.cs" />
+    <Compile Include="Interfaces\IResourceDtoRepository.cs" />
+    <Compile Include="Interfaces\IItemlayoutTemplateResourceDtoRepository.cs" />
+    <Compile Include="Interfaces\IItemResourceDtoRepository.cs" />
+    <Compile Include="Interfaces\IDataSourceResourceDtoRepository.cs" />
+    <Compile Include="Interfaces\IGenericResourceDtoRepository.cs" />
+    <Compile Include="Interfaces\IDataSourceTemplateResourceDtoRepository.cs" />
+    <Compile Include="Interfaces\ITestTemplateResourceDtoRepository.cs" />
+    <Compile Include="Interfaces\ITestResourceDtoRepository.cs" />
+    <Compile Include="Interfaces\ITypeInPluginFinder.cs" />
+    <Compile Include="Interfaces\IValidateHandler.cs" />
+    <Compile Include="Interfaces\PublicationHandlerConfigurationOptions.cs" />
+    <Compile Include="Interfaces\ReportCompletedEventArgs.cs" />
+    <Compile Include="Interfaces\ServerInfo.cs" />
+    <Compile Include="Interfaces\UI\Button.cs" />
+    <Compile Include="Interfaces\UI\ButtonCheckChangedEventArgs.cs" />
+    <Compile Include="Interfaces\UI\Handlers.cs" />
+    <Compile Include="Interfaces\UI\IAddSymbolDialog.cs" />
+    <Compile Include="Interfaces\UI\ICutPaste.cs" />
+    <Compile Include="Interfaces\UI\IInline.cs" />
+    <Compile Include="Interfaces\UI\IMedia.cs" />
+    <Compile Include="Interfaces\UI\IRichText.cs" />
+    <Compile Include="Interfaces\UI\IViewCommands.cs" />
+    <Compile Include="InvalidateCache\Helper\InvalidateCacheHelper.cs" />
+    <Compile Include="InvalidateCache\Helper\NotifyCacheAfterBatch.cs" />
+    <Compile Include="InvalidateCache\Helper\StopUsingBankCache.cs" />
+    <Compile Include="InvalidateCache\Helper\StopUsingPermissionCache.cs" />
+    <Compile Include="InvalidateCache\InvalidateCacheBankService.cs" />
+    <Compile Include="InvalidateCache\InvalidateCacheResourceService.cs" />
+    <Compile Include="Localization\TransferCultureBehavior.cs" />
+    <Compile Include="Localization\TransferCultureServiceBehavior.cs" />
+    <Compile Include="Logging\CustomTelemetryInitializer.cs" />
+    <Compile Include="Logging\EventsToTrack.cs" />
+    <Compile Include="Logging\LogHelper.cs" />
+    <Compile Include="MathClient.cs" />
+    <Compile Include="Messages\BusinessException.cs" />
+    <Compile Include="Messages\BusinessExceptionDto.cs" />
+    <Compile Include="Messages\BusinessExceptionEnum.cs" />
+    <Compile Include="Messages\BusinessWarning.cs" />
+    <Compile Include="Messages\BusinessWarningEnum.cs" />
+    <Compile Include="Messages\DtoBase.cs" />
+    <Compile Include="Messages\IBusinessExceptionManager.cs" />
+    <Compile Include="Messages\IBusinessWarningManager.cs" />
+    <Compile Include="Messages\IDtoResponseEnvelop.cs" />
+    <Compile Include="Messages\Response.cs" />
+    <Compile Include="Model\Entities\Action.cs" />
+    <Compile Include="Model\Entities\AspectResourceDto.cs" />
+    <Compile Include="Model\Entities\AssessmentTestResourceDto.cs" />
+    <Compile Include="Model\Entities\BankDto.cs" />
+    <Compile Include="Model\Entities\ControlTemplateResourceDto.cs" />
+    <Compile Include="Model\Entities\CustomBankPropertyDto.cs" />
+    <Compile Include="Model\Entities\CustomBankPropertyValue.cs" />
+    <Compile Include="Model\Entities\Custom\CustomPropertyDisplayValueDto.cs" />
+    <Compile Include="Model\Entities\Custom\CustomPropertyResourceDto.cs" />
+    <Compile Include="Model\Entities\Custom\CustomPropertyValueDto.cs" />
+    <Compile Include="Model\Entities\DataSourceResourceDto.cs" />
+    <Compile Include="Model\Entities\GenericResourceDto.cs" />
+    <Compile Include="Model\Entities\ItemLayoutTemplateResourceDto.cs" />
+    <Compile Include="Model\Entities\ItemResourceDto.cs" />
+    <Compile Include="Model\Entities\PackageResourceDto.cs" />
+    <Compile Include="Model\Entities\ResourceDto.cs" />
+    <Compile Include="Model\Entities\StateAction.cs" />
+    <Compile Include="Model\Entities\StateDto.cs" />
+    <Compile Include="Model\Entities\TestPackageResourceDto.cs" />
+    <Compile Include="Model\Entities\UserDto.cs" />
+    <Compile Include="Model\Enums.cs" />
+    <Compile Include="ProgressIndicator\ProgressHandler.cs" />
+    <Compile Include="ProgressIndicator\ProgressWindow.xaml.cs">
+      <DependentUpon>ProgressWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cito.Tester.Common\Cito.Tester.Common.vbproj">
+      <Project>{9a0bd8fe-d6f6-4ce5-9a0b-877610b00deb}</Project>
+      <Name>Cito.Tester.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cito.Tester.ContentModel\Cito.Tester.ContentModel.vbproj">
+      <Project>{94ee8d6c-5c52-4f34-9e61-e407b3240004}</Project>
+      <Name>Cito.Tester.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Configuration\Questify.Builder.Configuration.vbproj">
+      <Project>{c38faa1f-f9ca-415e-99ea-56370b9207d8}</Project>
+      <Name>Questify.Builder.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.ContentModel.DatabaseSpecific\Questify.Builder.Model.ContentModel.DatabaseSpecific.vbproj">
+      <Project>{A1AB6724-A8E0-4064-8F51-49BFB8EB8B31}</Project>
+      <Name>Questify.Builder.Model.ContentModel.DatabaseSpecific</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.ContentModel\Questify.Builder.Model.ContentModel.vbproj">
+      <Project>{44eafd1e-6cc9-4a94-b6f6-a78734c7aae5}</Project>
+      <Name>Questify.Builder.Model.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security\Questify.Builder.Security.vbproj">
+      <Project>{30b8e255-bb43-4f43-8dd1-387988e33af3}</Project>
+      <Name>Questify.Builder.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.nl.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Direct\DTO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ProgressIndicator\ProgressWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\IPublicationSelection.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ItemPreview_RenderError_MessageBoxTitle" xml:space="preserve">
+    <value>Renderfout</value>
+  </data>
+  <data name="MediaFiles" xml:space="preserve">
+    <value>Mediabestand(en)</value>
+  </data>
+  <data name="Not_Allowed" xml:space="preserve">
+    <value>Niet toegestaan</value>
+  </data>
+  <data name="GridBase_DeleteNoEntitySelected_Title" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="OnlyAValueWithinTheRangeOfTillIsAllowed" xml:space="preserve">
+    <value>Waarde moet binnen het bereik van {0} en {1} vallen.</value>
+  </data>
+  <data name="SelectMediaResourceDialog_ShowThePreview_PreviewButtonCaption" xml:space="preserve">
+    <value>Voorbeeld</value>
+  </data>
+  <data name="AllowTemporary" xml:space="preserve">
+    <value>Tijdelijk toestaan</value>
+  </data>
+  <data name="Allow" xml:space="preserve">
+    <value>Toestaan</value>
+  </data>
+  <data name="BankBrowser_BankTreeControl_DragDrop_SameBank" xml:space="preserve">
+    <value>Kan bank niet verplaatsen: Bron en doel bestemming zijn hetzelfde.</value>
+  </data>
+  <data name="XhtmlParameterEditorControl_CantReadMathMLData" xml:space="preserve">
+    <value>Kan geen MathML data lezen uit een GIF bestand</value>
+  </data>
+  <data name="NonReferencedItemTemplates" xml:space="preserve">
+    <value>Niet gerefereerde item templates</value>
+  </data>
+  <data name="Modify_User" xml:space="preserve">
+    <value>Wijzig gebruiker</value>
+  </data>
+  <data name="TemplateFieldClass_UnknownTemplateFieldType" xml:space="preserve">
+    <value>Type van veld '{0}' is niet geïmplementeerd.</value>
+  </data>
+  <data name="GridBase_DeleteNoEntitySelected_Text" xml:space="preserve">
+    <value>Er zijn geen rijen geselecteerd om te verwijderen.</value>
+  </data>
+  <data name="NonReferencedMediafiles" xml:space="preserve">
+    <value>Niet gerefereerde mediabestanden</value>
+  </data>
+  <data name="ChoicesParameterEditorControl_ValidateParameter_NotAllValuesFilled" xml:space="preserve">
+    <value>Nog niet alle alternatieven zijn gevuld!</value>
+  </data>
+  <data name="ParameterSetsEditor_RenderEditors_NoEditors" xml:space="preserve">
+    <value>De presentatie van dit item kan niet worden aangepast.</value>
+  </data>
+  <data name="SelectMediaResourceDialog_ShowThePreview_HidePreviewButtonCaption" xml:space="preserve">
+    <value>Voorbeeld verbergen</value>
+  </data>
+  <data name="StatusBar_RowsSelected" xml:space="preserve">
+    <value>rij(en) geselecteerd</value>
+  </data>
+  <data name="Forbid" xml:space="preserve">
+    <value>Verbieden</value>
+  </data>
+  <data name="RequestConfirmation" xml:space="preserve">
+    <value>Vragen</value>
+  </data>
+  <data name="ErrorThrown" xml:space="preserve">
+    <value>Fout: </value>
+  </data>
+  <data name="GenericResourceEditorControl_DataBind_NotImplementedResourceMediatype" xml:space="preserve">
+    <value>Niet geïmplementeerd mediatype</value>
+  </data>
+  <data name="Create_User" xml:space="preserve">
+    <value>Nieuwe gebruiker aanmaken.</value>
+  </data>
+  <data name="NonReferencedItems" xml:space="preserve">
+    <value>Niet gerefereerde items</value>
+  </data>
+  <data name="ThisParameterContainsSomeInputErrors" xml:space="preserve">
+    <value>Deze parameter bevat enkele invoer fouten.</value>
+  </data>
+  <data name="ItemTemplateControl_MoreTemplateRefs" xml:space="preserve">
+    <value>Bij dit item zijn er meer dan één item lay-out template gevonden.</value>
+  </data>
+  <data name="BankSecurityControl_AddUserButton_Click_UserAlreadyExists" xml:space="preserve">
+    <value>Gebruiker bestaat al.</value>
+  </data>
+  <data name="TheValueMustBeLowerThen" xml:space="preserve">
+    <value>De waarde moet gelijk zijn aan of lager zijn dan {0}</value>
+  </data>
+  <data name="TemplateFieldClass_FieldNotFilled" xml:space="preserve">
+    <value>Dit veld is niet gevuld.</value>
+  </data>
+  <data name="ChoicesParameterEditorControl_NrOfAlternativesComboBox_SelectedIndexChanged_ValuesLostWarning" xml:space="preserve">
+    <value>Bij het verlagen van het aantal alternatieven gaan de waarden van de te verwijderen alternatieven verloren. Wilt u doorgaan?</value>
+  </data>
+  <data name="SelectResourceEntityDialogBase_OkButton_NoResourceSelectedMessage" xml:space="preserve">
+    <value>Er is geen bron geselecteerd. Selecteer een bron en klik op 'OK'</value>
+  </data>
+  <data name="NotUsed" xml:space="preserve">
+    <value>Niet in gebruik</value>
+  </data>
+  <data name="BankBrowser_BankTreeControl_DragDrop_Title" xml:space="preserve">
+    <value>Verplaats bank</value>
+  </data>
+  <data name="ItemsCreatedByMe" xml:space="preserve">
+    <value>Door mij aangemaakt items</value>
+  </data>
+  <data name="TheValueMustBeHigherThen" xml:space="preserve">
+    <value>De waarde moet gelijk zijn aan of hoger zijn dan {0}</value>
+  </data>
+  <data name="TemplateFieldClass_OnlyNumericValuesAllowed" xml:space="preserve">
+    <value>Alleen numerieke waarden zijn toegestaan.</value>
+  </data>
+  <data name="ErrorWhileExportingToExcelFileMightBeInUse" xml:space="preserve">
+    <value>Er is een fout opgetreden tijdens de export naar Excel. Waarschijnlijk is het bestand geblokkeerd.</value>
+  </data>
+  <data name="TestsCreatedByMe" xml:space="preserve">
+    <value>Door mij aangemaakte toetsen</value>
+  </data>
+  <data name="WouldYouLikeToOpenTheFileInExcelNow" xml:space="preserve">
+    <value>Wilt u het bestand openen?</value>
+  </data>
+  <data name="TemplateFieldClass_UnknownTemplateStructure" xml:space="preserve">
+    <value>Een veld in de template heeft een onbekende structuur!</value>
+  </data>
+  <data name="ErrorAccessingExcel" xml:space="preserve">
+    <value>Fout tijdens het aanroepen van Excel: </value>
+  </data>
+  <data name="ErrorGeneratingIdentifierForItemInCollectionparameterGeneratingType" xml:space="preserve">
+    <value>Fout tijdens het genereren van een id voor het item in de collectieparameter. Type: {0}.</value>
+  </data>
+  <data name="CreatedByMe" xml:space="preserve">
+    <value>Door mij gemaakt</value>
+  </data>
+  <data name="BankBrowser_BankTreeControl_DragDrop_CannotBeDroppedHere" xml:space="preserve">
+    <value>Kan de bank hier niet naar toe verplaatsen!</value>
+  </data>
+  <data name="Tests" xml:space="preserve">
+    <value>Toets(en)</value>
+  </data>
+  <data name="BankBrowser_BankTreeControl_DragDrop_IsParentBank" xml:space="preserve">
+    <value>Kan bank niet verplaatsen: Doelbestemming is een subbank van de te verplaatsen bank. Dit is niet toegestaan.</value>
+  </data>
+  <data name="EmptyReference" xml:space="preserve">
+    <value>Geen</value>
+  </data>
+  <data name="AudioError" xml:space="preserve">
+    <value>Audio fout: {0}</value>
+  </data>
+  <data name="NewGenericResourceDialogTitle" xml:space="preserve">
+    <value>Bladeren</value>
+  </data>
+  <data name="FieldIsRequired" xml:space="preserve">
+    <value>'{0}' is verplicht.</value>
+  </data>
+  <data name="OnlyItemsThatUseTheSameItemlayouttemplateCanBeSelectedAtOnes" xml:space="preserve">
+    <value>Alleen de items welke dezelfde item lay-out template gebruiken kunnen tegelijk bekeken worden.</value>
+  </data>
+  <data name="ThereIsNoApplicationAssociatedToThisFileExcelIsProbablyNotInstalled" xml:space="preserve">
+    <value>Er is geen applicatie aan deze bestandsextentie gekoppeld. Excel is waarschijnlijk niet geinstalleerd.</value>
+  </data>
+  <data name="ImageFilter" xml:space="preserve">
+    <value>Afbeeldingbestanden (*.bmp; *.gif; *.jpg; *.png)|*.bmp;*.gif;*.jpg;*.png</value>
+  </data>
+  <data name="SvgFilter" xml:space="preserve">
+    <value>SVG bestanden (*.svg)|*.svg</value>
+  </data>
+  <data name="AudioFilter" xml:space="preserve">
+    <value>Audiobestanden (*.mp3)|*.mp3</value>
+  </data>
+  <data name="AllFilesFilter" xml:space="preserve">
+    <value>Alle bestanden (*.*)|*.*</value>
+  </data>
+  <data name="CustomPropertiesNewFree" xml:space="preserve">
+    <value>&lt;&lt; nieuwe waarde &gt;&gt;</value>
+  </data>
+  <data name="CustomPropertiesNewSingle" xml:space="preserve">
+    <value>&lt;&lt; nieuwe enkelvoudige waarde &gt;&gt; </value>
+  </data>
+  <data name="CustomPropertiesNewMulti" xml:space="preserve">
+    <value>&lt;&lt; nieuwe meervoudige waarde &gt;&gt; </value>
+  </data>
+  <data name="ThisParameterMustBeFilledPleaseSelectAMediaObject" xml:space="preserve">
+    <value>Deze parameter heeft een waarde nodig. Selecteer een mediaobject.</value>
+  </data>
+  <data name="ErrorParsingDesignerSettingsForParameterSetting" xml:space="preserve">
+    <value>Er is een fout opgetreden bij het parsen van de designerinstellingen van parameter '{0}'. Setting: '{1}'</value>
+  </data>
+  <data name="NotAllowedToChangeResourceWithState" xml:space="preserve">
+    <value>U bent niet gemachtigd om bron '{0}' te wijzigen met de status '{1}' .</value>
+  </data>
+  <data name="SaveChangesForResourceWithState" xml:space="preserve">
+    <value>Bron '{0}' heeft de status '{1}', weet u zeker dat u de wijzigingen wil opslaan.</value>
+  </data>
+  <data name="NoScoreDesignerSpecifiedForControllerWithId" xml:space="preserve">
+    <value>Er is geen scoredesigner aangewezen voor de controller met id:</value>
+  </data>
+  <data name="ErrorWhileRenderingScoreEditors" xml:space="preserve">
+    <value>Er is een fout opgetreden bij het opbouwen van de score-editors</value>
+  </data>
+  <data name="Off" xml:space="preserve">
+    <value>Uit</value>
+  </data>
+  <data name="ResolutionTypeScale" xml:space="preserve">
+    <value>Dimensie toepassen op scherm</value>
+  </data>
+  <data name="ResolutionTypeKeepAspectRatio" xml:space="preserve">
+    <value>Dimensie toepassen op item en scherm (met behoud van aspectratio)</value>
+  </data>
+  <data name="ResolutionTypeMaintainScreenResolution" xml:space="preserve">
+    <value>Dimensie toepassen op item</value>
+  </data>
+  <data name="ThisEditorMustBeFilledPleaseEnterContent" xml:space="preserve">
+    <value>'{0}' is een verplicht veld.</value>
+  </data>
+  <data name="IsBeingEditedInSizableWindow" xml:space="preserve">
+    <value>Wijziging vind plaats in een extern venster</value>
+  </data>
+  <data name="TheScoreCouldNotBeConvertedTheScoreWillSetToTheDefaultValue0" xml:space="preserve">
+    <value>Er is geen numerieke waarde ingevoerd als score. De score zal worden gezet op de standaard waarde "0"</value>
+  </data>
+  <data name="AttentionTheScoringRulesHaveChanged" xml:space="preserve">
+    <value>Let op! Het scorevoorschrift is aangepast.</value>
+  </data>
+  <data name="DynamicDimension" xml:space="preserve">
+    <value>Dynamisch</value>
+  </data>
+  <data name="WithoutNavigationbar" xml:space="preserve">
+    <value>zonder navigatiebalk</value>
+  </data>
+  <data name="GroupNameConstant_General" xml:space="preserve">
+    <value>Algemeen</value>
+  </data>
+  <data name="SelectMultipleValuesFor0" xml:space="preserve">
+    <value>Selecteer meerdere waardes voor '{0}'</value>
+  </data>
+  <data name="SelectValueFor0" xml:space="preserve">
+    <value>Selecteer waarde voor  '{0}'</value>
+  </data>
+  <data name="ItemLayoutTemplateSimple" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;GridEXLayoutData&gt;
+	&lt;RootTable&gt;
+		&lt;Columns Collection="true" ElementName="Column"&gt;
+			&lt;Column0 ID="BankId"&gt;
+				&lt;AllowGroup&gt;False&lt;/AllowGroup&gt;
+				&lt;Caption&gt;Bank Id&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;BankId&lt;/DataMember&gt;
+				&lt;Key&gt;BankId&lt;/Key&gt;
+				&lt;Position&gt;0&lt;/Position&gt;
+				&lt;ShowInFieldChooser&gt;False&lt;/ShowInFieldChooser&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;61&lt;/Width&gt;
+			&lt;/Column0&gt;
+			&lt;Column1 ID="BankName"&gt;
+				&lt;Caption&gt;Banknaam&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;BankName&lt;/DataMember&gt;
+				&lt;Key&gt;BankName&lt;/Key&gt;
+				&lt;Position&gt;1&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;86&lt;/Width&gt;
+			&lt;/Column1&gt;
+			&lt;Column2 ID="Name"&gt;
+				&lt;Caption&gt;Code&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Name&lt;/DataMember&gt;
+				&lt;Key&gt;Name&lt;/Key&gt;
+				&lt;Position&gt;2&lt;/Position&gt;
+				&lt;Width&gt;175&lt;/Width&gt;
+			&lt;/Column2&gt;
+			&lt;Column3 ID="Title"&gt;
+				&lt;Caption&gt;Titel&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Title&lt;/DataMember&gt;
+				&lt;Key&gt;Title&lt;/Key&gt;
+				&lt;Position&gt;3&lt;/Position&gt;
+				&lt;Width&gt;224&lt;/Width&gt;
+			&lt;/Column3&gt;
+			&lt;Column4 ID="ItemType"&gt;
+				&lt;Caption&gt;Itemtype&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;ItemTypeString&lt;/DataMember&gt;
+				&lt;Key&gt;ItemTypeString&lt;/Key&gt;
+				&lt;Position&gt;4&lt;/Position&gt;
+				&lt;Width&gt;78&lt;/Width&gt;
+			&lt;/Column4&gt;
+			&lt;Column5 ID="ItemReferenceCount"&gt;
+				&lt;Caption&gt;Aantal referenties&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;ReferenceCount&lt;/DataMember&gt;
+				&lt;Key&gt;ItemReferenceCount&lt;/Key&gt;
+				&lt;Position&gt;5&lt;/Position&gt;
+				&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;
+				&lt;Width&gt;80&lt;/Width&gt;
+			&lt;/Column5&gt;
+			&lt;Column6 ID="Version"&gt;
+				&lt;Caption&gt;Versie&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Version&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;Version&lt;/Key&gt;
+				&lt;Position&gt;6&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;186&lt;/Width&gt;
+			&lt;/Column6&gt;
+			&lt;Column7 ID="CreatedByFullName"&gt;
+				&lt;Caption&gt;Aangemaakt door&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;CreatedByFullName&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;CreatedByFullName&lt;/Key&gt;
+				&lt;Position&gt;7&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;89&lt;/Width&gt;
+			&lt;/Column7&gt;
+			&lt;Column8 ID="CreationDate"&gt;
+				&lt;Caption&gt;Datum aangemaakt&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;DateTime&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;CreationDate&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;FormatString&gt;g&lt;/FormatString&gt;
+				&lt;Key&gt;CreationDate&lt;/Key&gt;
+				&lt;Position&gt;8&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;102&lt;/Width&gt;
+			&lt;/Column8&gt;
+			&lt;Column9 ID="ModifiedDate"&gt;
+				&lt;Caption&gt;Datum gewijzigd&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;DateTime&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;ModifiedDate&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;FormatString&gt;g&lt;/FormatString&gt;
+				&lt;Key&gt;ModifiedDate&lt;/Key&gt;
+				&lt;Position&gt;9&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;63&lt;/Width&gt;
+			&lt;/Column9&gt;
+			&lt;Column10 ID="ModifiedByFullName"&gt;
+				&lt;Caption&gt;Gewijzigd door&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;ModifiedByFullName&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;ModifiedByFullName&lt;/Key&gt;
+				&lt;Position&gt;10&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;63&lt;/Width&gt;
+			&lt;/Column10&gt;
+			&lt;Column11 ID="Description"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Beschrijving&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Description&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;Description&lt;/Key&gt;
+				&lt;Position&gt;11&lt;/Position&gt;
+				&lt;Visible&gt;True&lt;/Visible&gt;
+			&lt;/Column11&gt;
+		&lt;/Columns&gt;
+				&lt;SortKeys Collection="true" ElementName="SortKey"&gt;
+			&lt;SortKey0 ID="SortKey0"&gt;
+				&lt;ColIndex&gt;2&lt;/ColIndex&gt;
+				&lt;SortOrder&gt;Ascending&lt;/SortOrder&gt;
+			&lt;/SortKey0&gt;
+		&lt;/SortKeys&gt;
+		&lt;GroupCondition/&gt;
+		&lt;Groups Collection="true" ElementName="Group"&gt;
+			&lt;Group0 ID="Group0"&gt;
+				&lt;ColumnCount&gt;2&lt;/ColumnCount&gt;
+				&lt;ColIndex1&gt;1&lt;/ColIndex1&gt;
+				&lt;CustomGroupIndex&gt;0&lt;/CustomGroupIndex&gt;
+				&lt;SortOrder&gt;Descending&lt;/SortOrder&gt;
+			&lt;/Group0&gt;
+		&lt;/Groups&gt;
+		&lt;CustomGroups Collection="true" ElementName="CustomGroup"&gt;
+			&lt;CustomGroup0 ID="CustomGroup0"&gt;
+				&lt;CompositeColumnsLength&gt;2&lt;/CompositeColumnsLength&gt;
+				&lt;CompositeColumn0&gt;0&lt;/CompositeColumn0&gt;
+				&lt;CompositeColumn1&gt;1&lt;/CompositeColumn1&gt;
+				&lt;CustomGroupType&gt;CompositeColumns&lt;/CustomGroupType&gt;
+				&lt;Key&gt;BankIdBankName&lt;/Key&gt;
+				&lt;HeaderCaption&gt;Banknaam&lt;/HeaderCaption&gt;
+			&lt;/CustomGroup0&gt;
+		&lt;/CustomGroups&gt;
+	&lt;/RootTable&gt;
+&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <data name="MediaGridLayoutSimple" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;GridEXLayoutData&gt;
+	&lt;RootTable&gt;
+		&lt;Columns Collection="true" ElementName="Column"&gt;
+			&lt;Column0 ID="BankId"&gt;
+				&lt;AllowGroup&gt;False&lt;/AllowGroup&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Bank id&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;BankId&lt;/DataMember&gt;
+				&lt;Key&gt;BankId&lt;/Key&gt;
+				&lt;Position&gt;0&lt;/Position&gt;
+				&lt;ShowInFieldChooser&gt;False&lt;/ShowInFieldChooser&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;61&lt;/Width&gt;
+			&lt;/Column0&gt;
+			&lt;Column1 ID="BankName"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Naam bank&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;BankName&lt;/DataMember&gt;
+				&lt;Key&gt;BankName&lt;/Key&gt;
+				&lt;Position&gt;1&lt;/Position&gt;
+				&lt;Width&gt;78&lt;/Width&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column1&gt;
+			&lt;Column2 ID="Name"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Code&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Name&lt;/DataMember&gt;
+				&lt;Key&gt;Name&lt;/Key&gt;
+				&lt;Position&gt;2&lt;/Position&gt;
+				&lt;Width&gt;94&lt;/Width&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column2&gt;
+			&lt;Column3 ID="Title"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Titel&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Title&lt;/DataMember&gt;
+				&lt;Key&gt;Title&lt;/Key&gt;
+				&lt;Position&gt;3&lt;/Position&gt;
+				&lt;Width&gt;156&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column3&gt;
+			&lt;Column4 ID="MediaType"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Mediatype&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;MediaType&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;MediaType&lt;/Key&gt;
+				&lt;Position&gt;4&lt;/Position&gt;
+				&lt;Width&gt;52&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column4&gt;
+			&lt;Column5 ID="Size"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Grootte&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Size&lt;/DataMember&gt;
+				&lt;FormatString&gt;{0} KB&lt;/FormatString&gt;
+				&lt;Key&gt;Size&lt;/Key&gt;
+				&lt;Position&gt;5&lt;/Position&gt;
+				&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;
+				&lt;Width&gt;66&lt;/Width&gt;
+				&lt;FormatMode&gt;UseStringFormat&lt;/FormatMode&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column5&gt;
+			&lt;Column6 ID="Dimensions"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Dimensies&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Dimensions&lt;/DataMember&gt;
+				&lt;Key&gt;Dimensions&lt;/Key&gt;
+				&lt;Position&gt;6&lt;/Position&gt;
+				&lt;Width&gt;66&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column6&gt;
+			&lt;Column7 ID="ReferenceCount"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Aantal referenties&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;ReferenceCount&lt;/DataMember&gt;
+				&lt;Key&gt;ReferenceCount&lt;/Key&gt;
+				&lt;Position&gt;7&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;
+				&lt;Width&gt;86&lt;/Width&gt;
+			&lt;/Column7&gt;
+			&lt;Column8 ID="Version"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Versie&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Version&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;Version&lt;/Key&gt;
+				&lt;Position&gt;8&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;40&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column8&gt;
+			&lt;Column9 ID="CreatedByFullName"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Gemaakt door&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;CreatedByFullName&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;CreatedByFullName&lt;/Key&gt;
+				&lt;Position&gt;9&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;92&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column9&gt;
+			&lt;Column10 ID="CreationDate"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Gemaakt op&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;DateTime&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;CreationDate&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;FormatString&gt;g&lt;/FormatString&gt;
+				&lt;Key&gt;CreationDate&lt;/Key&gt;
+				&lt;Position&gt;10&lt;/Position&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Width&gt;121&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column10&gt;
+			&lt;Column11 ID="ModifiedDate"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Gewijzigd op&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;DateTime&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;ModifiedDate&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;FormatString&gt;g&lt;/FormatString&gt;
+				&lt;Key&gt;ModifiedDate&lt;/Key&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Position&gt;11&lt;/Position&gt;
+				&lt;Width&gt;58&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column11&gt;
+			&lt;Column12 ID="ModifiedByFullName"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Gewijzigd door&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;ModifiedByFullName&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;ModifiedByFullName&lt;/Key&gt;
+				&lt;Visible&gt;False&lt;/Visible&gt;
+				&lt;Position&gt;12&lt;/Position&gt;
+				&lt;Width&gt;67&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCellsAndHeader&lt;/AutoSizeMode&gt;
+			&lt;/Column12&gt;
+			&lt;Column13 ID="Description"&gt;
+				&lt;AllowRemove&gt;True&lt;/AllowRemove&gt;
+				&lt;Caption&gt;Beschrijving&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Description&lt;/DataMember&gt;
+				&lt;EditType&gt;NoEdit&lt;/EditType&gt;
+				&lt;Key&gt;Description&lt;/Key&gt;
+				&lt;Position&gt;13&lt;/Position&gt;
+				&lt;Visible&gt;True&lt;/Visible&gt;
+			&lt;/Column13&gt;
+		&lt;/Columns&gt;
+		&lt;SortKeys Collection="true" ElementName="SortKey"&gt;
+			&lt;SortKey0 ID="SortKey0"&gt;
+				&lt;ColIndex&gt;2&lt;/ColIndex&gt;
+				&lt;SortOrder&gt;Ascending&lt;/SortOrder&gt;
+			&lt;/SortKey0&gt;
+		&lt;/SortKeys&gt;
+		&lt;GroupCondition/&gt;
+		&lt;Groups Collection="true" ElementName="Group"&gt;
+			&lt;Group0 ID="Group0"&gt;
+				&lt;ColumnCount&gt;2&lt;/ColumnCount&gt;
+				&lt;ColIndex1&gt;1&lt;/ColIndex1&gt;
+				&lt;CustomGroupIndex&gt;0&lt;/CustomGroupIndex&gt;
+				&lt;SortOrder&gt;Descending&lt;/SortOrder&gt;
+			&lt;/Group0&gt;
+		&lt;/Groups&gt;
+		&lt;CustomGroups Collection="true" ElementName="CustomGroup"&gt;
+			&lt;CustomGroup0 ID="CustomGroup0"&gt;
+				&lt;CompositeColumnsLength&gt;2&lt;/CompositeColumnsLength&gt;
+				&lt;CompositeColumn0&gt;0&lt;/CompositeColumn0&gt;
+				&lt;CompositeColumn1&gt;1&lt;/CompositeColumn1&gt;
+				&lt;CustomGroupType&gt;CompositeColumns&lt;/CustomGroupType&gt;
+				&lt;Key&gt;BankIdBankName&lt;/Key&gt;
+				&lt;HeaderCaption&gt;Naam bank&lt;/HeaderCaption&gt;
+			&lt;/CustomGroup0&gt;
+		&lt;/CustomGroups&gt;
+	&lt;/RootTable&gt;
+&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <data name="ResolutionTypeKeepAspectRatioWithSmallDeformation" xml:space="preserve">
+    <value>Dimensie toepassen op item en scherm (met kleine afwijking en behoud van aspectratio met kleine afwijking)</value>
+  </data>
+  <data name="APopupWindowCanOnlyBeLinkedToASelectedImage" xml:space="preserve">
+    <value>Een popupvenster kan alleen aan een afbeelding gekoppeld worden.</value>
+  </data>
+  <data name="RequiredEntry" xml:space="preserve">
+    <value>Invoer verplicht</value>
+  </data>
+  <data name="OnlyNumericValueIsValid" xml:space="preserve">
+    <value>Er mogen alleen numerieke waarden in dit veld ingevoerd worden!</value>
+  </data>
+  <data name="ControlTemplate" xml:space="preserve">
+    <value>Controltemplate(s)</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Item(s)</value>
+  </data>
+  <data name="ItemTemplates" xml:space="preserve">
+    <value>Itemlay-outtemplate(s)</value>
+  </data>
+  <data name="TestTemplates" xml:space="preserve">
+    <value>Toetstemplate(s)</value>
+  </data>
+  <data name="PleaseSelectItemsFirst" xml:space="preserve">
+    <value>Er zijn geen items geselecteerd.</value>
+  </data>
+  <data name="XhtmlEditor_NotAddedImagesAfterPaste" xml:space="preserve">
+    <value>De volgende plaatjes worden niet geplakt, omdat ze niet in de huidige bankhierarchie bestaan: {0}{0}{1}</value>
+  </data>
+  <data name="XhtmlEditor_NotAddedImagesAfterPasteDialogTitle" xml:space="preserve">
+    <value>Plakken</value>
+  </data>
+  <data name="SelectResourceDialog_CannotSelectBecauseOfStatus" xml:space="preserve">
+    <value>Deze bron kan niet gebruikt worden door zijn status.</value>
+  </data>
+  <data name="AspectReferencesEditorControlBase_MulitpleNotAddedAspectsBecauseOfStatus" xml:space="preserve">
+    <value>Één of meerdere aspecten kon niet toegevoegd:{0}{0}{1}{0}Deze aspecten zijn reeds toegevoegd of kunnen niet toegevoegd worden door hun status.</value>
+  </data>
+  <data name="SimpleSearchControl_ResultsTextLabel" xml:space="preserve">
+    <value>De zoekresultaten voor '{0}':</value>
+  </data>
+  <data name="SimpleSearchControl_NoSearchTermProvidedError" xml:space="preserve">
+    <value>Voer eerst een zoekterm in, selecteer de gebieden waar je wilt zoeken onder 'Opties' en druk daarna op 'Zoeken'.</value>
+  </data>
+  <data name="SimpleSearchControl_NoSearchTermProvidedErrorTitle" xml:space="preserve">
+    <value>Snel zoeken</value>
+  </data>
+  <data name="SimpleSearchControl_SearchInAllTestsDropDownListOption" xml:space="preserve">
+    <value>(alle)</value>
+  </data>
+  <data name="GridBase_EditNoEntitySelected_Title" xml:space="preserve">
+    <value>Bewerken</value>
+  </data>
+  <data name="NoRecordSelectedToEdit" xml:space="preserve">
+    <value>Er is geen rij geselecteerd om te bewerken.</value>
+  </data>
+  <data name="General_AssessmentTestPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Algemene toetseigenschappen</value>
+  </data>
+  <data name="Word_AssessmentTestPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Papieren toets - MS Word - Toetseigenschappen</value>
+  </data>
+  <data name="General_ItemReferencePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Algemene itemeigenschappen</value>
+  </data>
+  <data name="General_TestOutcomePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Algemene score-eigenschappen</value>
+  </data>
+  <data name="General_TestPartPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Algemene toetsdeeleigenschappen</value>
+  </data>
+  <data name="General_TestSectionPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Algemene toetssectie-eigenschappen</value>
+  </data>
+  <data name="Word_ItemReferencePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Papieren toets - MS Word - Itemeigenschappen</value>
+  </data>
+  <data name="Word_TestOutcomePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Papieren toets - MS Word - Score-eigenschappen</value>
+  </data>
+  <data name="Word_TestPartPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Papieren toets - MS Word - Toetsdeeleigenschappen</value>
+  </data>
+  <data name="Word_TestSectionPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Papieren toets - MS Word - Toetssectie-eigenschappen</value>
+  </data>
+  <data name="DocumentFilter" xml:space="preserve">
+    <value>Documenten (*.docx *.dotx)|*.docx;*.dotx</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>&amp;Annuleren</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>&amp;Sluiten</value>
+  </data>
+  <data name="SimpleSearchControl_SearchTermTooShort" xml:space="preserve">
+    <value>De ingevoerde zoekterm is te algemeen. Maak de zoekterm specifieker.</value>
+  </data>
+  <data name="SimpleSearchControl_SearchTermTooShortTitle" xml:space="preserve">
+    <value>Zoekterm te algemeen</value>
+  </data>
+  <data name="ItemDataSourcePreview_CannotPreviewBecauseNoContext" xml:space="preserve">
+    <value>Deze selectie kan alleen uitgevoerd worden vanuit een sectie. Een voorbeeld kan daarom niet getoond worden.</value>
+  </data>
+  <data name="RefreshDataSourcesDialog_InstructionsLabelMultipleRefreshMode" xml:space="preserve">
+    <value>U staat op het punt om voorstellen te genereren op basis van het gekozen toetstemplate.{0}Dit toetstemplate bevat één of meer secties die gevuld worden door middel van een selectie. Deze selecties {0}kunnen nog enkele instellingsmogelijkheden hebben die hieronder worden weergegeven.</value>
+  </data>
+  <data name="Ces_AssessmentTestPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>CBT - Facet - Toetseigenschappen</value>
+  </data>
+  <data name="Ces_ItemReferencePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>CBT - Facet - Itemeigenschappen</value>
+  </data>
+  <data name="Ces_TestOutcomePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>CBT - Facet - Score-eigenschappen</value>
+  </data>
+  <data name="Ces_TestPartPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>CBT - Facet - Toetsdeeleigenschappen</value>
+  </data>
+  <data name="Ces_TestSectionPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>CBT - Facet - Toetssectie-eigenschappen</value>
+  </data>
+  <data name="Message_CannotExecutePreview" xml:space="preserve">
+    <value>Het voorbeeld kan niet gemaakt worden.
+Oorzaak: {0}</value>
+  </data>
+  <data name="Message_CannotExecutePreviewCaption" xml:space="preserve">
+    <value>Voorbeeld afgebroken</value>
+  </data>
+  <data name="CES_TestPackagePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Digitale toets - Facet - Toetspakketeigenschappen</value>
+  </data>
+  <data name="CES_TestReferencePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Digitale toets - Facet - Toetsreferentie-eigenschappen</value>
+  </data>
+  <data name="CES_TestSetPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Digitale toets - Facet - Toetsset-eigenschappen</value>
+  </data>
+  <data name="General_TestPackagePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Algemene toetspakketeigenschappen</value>
+  </data>
+  <data name="General_TestReferencePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Algemene toetsreferentie-eigenschappen</value>
+  </data>
+  <data name="General_TestSetPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Algemene toetsseteigenschappen</value>
+  </data>
+  <data name="Word_TestPackagePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Papieren toets - MS Word - Toetspakketeigenschappen</value>
+  </data>
+  <data name="Word_TestReferencePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Papieren toets - MS Word - Toetsreferentie-eigenschappen</value>
+  </data>
+  <data name="Word_TestSetPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>Papieren toets - MS Word - Toetsseteigenschappen</value>
+  </data>
+  <data name="ItemLayoutTemplateInlineMultimediaMissing" xml:space="preserve">
+    <value>Itemlay-outtemplate {0} moet beschikbaar zijn in de bank</value>
+  </data>
+  <data name="Editor_SaveChangesQuestionMessage" xml:space="preserve">
+    <value>Nog niet alle wijzigingen zijn opgeslagen! Wilt u deze opslaan, voordat de editor gesloten wordt?</value>
+  </data>
+  <data name="InvisibleParameterHasAChangedValue" xml:space="preserve">
+    <value>Onzichtbare parameter "{0}" is gewijzigd.</value>
+  </data>
+  <data name="ItemEditor_ValidateItem_ValidationErrors" xml:space="preserve">
+    <value>Vanwege de volgende validatiefouten kan het item niet worden geüpdated:{0}{0}</value>
+  </data>
+  <data name="ResourceParameterContainsValueNotInBank" xml:space="preserve">
+    <value>Bron parameter '{0}' bevat de standaard waarde '{1}', die niet aanwezig is in de bank!</value>
+  </data>
+  <data name="ValidateParametersCollectionParameterWillShrink" xml:space="preserve">
+    <value>Collectieparameter '{0}': Collectie wordt verkleind van {1} naar {2} items. Dataverlies start bij het laatste item.</value>
+  </data>
+  <data name="ValidateParametersCollectionWillBeDeleted" xml:space="preserve">
+    <value>Collectie '{0}' wordt verwijderd.</value>
+  </data>
+  <data name="ValidateParametersParameterHasADifferentType" xml:space="preserve">
+    <value>Parameter '{0}' is van een afwijkend type t.o.v. het nieuwe itemlay-outtemplate. De huidige waarde zal worden verwijderd.</value>
+  </data>
+  <data name="ValidateParametersParameterWillBeDeleted" xml:space="preserve">
+    <value>Parameter '{0}' wordt verwijderd.</value>
+  </data>
+  <data name="ValidateParametersWhenOpeningEditorThisEditorCannotBeOpened" xml:space="preserve">
+    <value>Deze editor kan niet correct geopend worden.{0}{0}Details:{0}{1}</value>
+  </data>
+  <data name="ValidateParametersWhenOpeningItemThisItemCannotBeOpenedPossibleLossOfData" xml:space="preserve">
+    <value>Mogelijk gegevensverlies. Tussen nu en de laatste keer dat dit item geopend was is het itemlay-outtemplate gewijzigd.{0}Doorgaan?{0}{0}Details:{0}{1}</value>
+  </data>
+  <data name="StatusBar_GettingData" xml:space="preserve">
+    <value>Verzamelen gegevens ({0} taken bezig).....</value>
+  </data>
+  <data name="StatusBar_Ready" xml:space="preserve">
+    <value>Klaar</value>
+  </data>
+  <data name="SelectUserDialog_PlzSelectUser" xml:space="preserve">
+    <value>Selecteer a.u.b. een gebruiker.</value>
+  </data>
+  <data name="InMinutes" xml:space="preserve">
+    <value> in minuten</value>
+  </data>
+  <data name="InSeconds" xml:space="preserve">
+    <value> in seconden</value>
+  </data>
+  <data name="ScoreEditorCaption" xml:space="preserve">
+    <value>Score-editor voor [{0}]</value>
+  </data>
+  <data name="MandatoryEmptyParameterMessage" xml:space="preserve">
+    <value>"{0}" is een verplicht veld. ({1})</value>
+  </data>
+  <data name="MandatoryParameterMessage" xml:space="preserve">
+    <value>Een verplicht veld is niet gevuld.</value>
+  </data>
+  <data name="ErrorParsingDesignerSettingsForParameter" xml:space="preserve">
+    <value>Er is een fout opgetreden bij het parsen van de designerinstellingen van parameter '{0}'.</value>
+  </data>
+  <data name="sPixels" xml:space="preserve">
+    <value>pixel</value>
+  </data>
+  <data name="UnlockForEdit" xml:space="preserve">
+    <value>Deblokkeren</value>
+  </data>
+  <data name="seperator" xml:space="preserve">
+    <value>;</value>
+  </data>
+  <data name="sPercent" xml:space="preserve">
+    <value>procent</value>
+  </data>
+  <data name="sAlignmentBottom" xml:space="preserve">
+    <value>Onder</value>
+  </data>
+  <data name="sAlignmentMiddle" xml:space="preserve">
+    <value>Midden</value>
+  </data>
+  <data name="sAlignmentDefault" xml:space="preserve">
+    <value>Standaard</value>
+  </data>
+  <data name="sAlignmentTop" xml:space="preserve">
+    <value>Boven</value>
+  </data>
+  <data name="sAlignmentRight" xml:space="preserve">
+    <value>Rechts</value>
+  </data>
+  <data name="sAlignmentLeft" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="sAlignmentCenter" xml:space="preserve">
+    <value>Centreer</value>
+  </data>
+  <data name="LockForEdit" xml:space="preserve">
+    <value>Blokkeren</value>
+  </data>
+  <data name="LockChildrenForEdit" xml:space="preserve">
+    <value>Wilt u ook alle onderliggende onderdelen {0}?</value>
+  </data>
+  <data name="SelectItemResourceDialog_FailedAdding" xml:space="preserve">
+    <value>Het is niet mogelijk om dit item toe te voegen. Het item bestaat mogelijk al in de toets of het item is niet geschikt voor deze toets.</value>
+  </data>
+  <data name="CannotPasteImagesOutsideBankHierarchy" xml:space="preserve">
+    <value>Kan plaatje {0} niet plakken omdat het niet bestaat in de huidige bankhiërarchie.</value>
+  </data>
+  <data name="OnlyImagesSupportCopyPaste" xml:space="preserve">
+    <value>Kopiëren-plakken wordt niet ondersteund voor video of audio.</value>
+  </data>
+  <data name="MultipleSelectionIsOnlySupportedForItems" xml:space="preserve">
+    <value>Meervoudige selecties worden alleen ondersteund voor items.</value>
+  </data>
+  <data name="AllowOldModel" xml:space="preserve">
+    <value>Tijdelijk toestaan in 1.x, toestaan in 2.x</value>
+  </data>
+  <data name="XhtmlEditor_MergeCellError" xml:space="preserve">
+    <value>Mergen van cellen niet geslaagd (selectie niet rechthoekig? / niet alle cellen volledig in selectie?)</value>
+  </data>
+  <data name="Delivery_AnalysisFilenameMustBeUnique" xml:space="preserve">
+    <value>Er is al een analysebestand aanwezig met naam '{0}'</value>
+  </data>
+  <data name="Delivery_PackagenameMustBeUnique" xml:space="preserve">
+    <value>Er is al een package met naam '{0}'</value>
+  </data>
+  <data name="Delivery_AnalysisnameMustBeUnique" xml:space="preserve">
+    <value>Er is al een analyse met naam '{0}'</value>
+  </data>
+  <data name="Delivery_SaveBeforeDownload" xml:space="preserve">
+    <value>De resource kan niet gedownload worden omdat het niet in de bank aanwezig is. Sla de afname op en probeer het opnieuw.</value>
+  </data>
+  <data name="NoValidHandlerFound" xml:space="preserve">
+    <value>Het bestand kan niet geïmporteerd.</value>
+  </data>
+  <data name="HandlerForItemAndTestMustBeTheSame" xml:space="preserve">
+    <value>Handler voor item en toets moeten gelijk zijn.</value>
+  </data>
+  <data name="ConfirmDeleteAnalysis" xml:space="preserve">
+    <value>Weet u zeker dat u analyse '{0}' wilt verwijderen?</value>
+  </data>
+  <data name="ConfirmDeleteAnalysisFile" xml:space="preserve">
+    <value>Weet u zeker dat u bestand '{0}' wilt verwijderen?</value>
+  </data>
+  <data name="ConfirmDeletePackage" xml:space="preserve">
+    <value>Weet u zeker dat u toetspakket '{0}' wilt verwijderen?</value>
+  </data>
+  <data name="DependencyType_AnalysisFile" xml:space="preserve">
+    <value>Analysebestand</value>
+  </data>
+  <data name="DependencyType_AssessmentTest" xml:space="preserve">
+    <value>Toets</value>
+  </data>
+  <data name="DependencyType_Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="DependencyType_Package" xml:space="preserve">
+    <value>Toetspakket</value>
+  </data>
+  <data name="DependencyType_Unknown" xml:space="preserve">
+    <value>Onbekend</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_AddAnalysis" xml:space="preserve">
+    <value>Toevoegen analyse</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_AddOplmFile" xml:space="preserve">
+    <value>Toevoegen OPLM-bestand</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_AddPackage" xml:space="preserve">
+    <value>Toevoegen pakket</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_AddTiaFile" xml:space="preserve">
+    <value>Toevoegen TIA bestand</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_DeleteOplmFile" xml:space="preserve">
+    <value>Verwijderen OPLM bestand</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_DeletePackage" xml:space="preserve">
+    <value>Verwijderen pakket</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_DeleteTiaFile" xml:space="preserve">
+    <value>Verwijderen TIA bestand</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_DownloadOplmFile" xml:space="preserve">
+    <value>Downloaden OPLM bestand</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_DownloadPackage" xml:space="preserve">
+    <value>Downloaden pakket</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_DownloadTiaFile" xml:space="preserve">
+    <value>Downloaden TIA-bestand</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_EditOplmColumnMapping" xml:space="preserve">
+    <value>Aanpassen OPLM kolom-mapping</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_EditTiaColumnMapping" xml:space="preserve">
+    <value>Aanpassen TIA kolom-mapping</value>
+  </data>
+  <data name="DeliveryEditor_Tooltip_RemoveAnalysis" xml:space="preserve">
+    <value>Verwijderen analyse</value>
+  </data>
+  <data name="FetchingAudioFileMessage" xml:space="preserve">
+    <value>Bezig met ophalen van audio-bestand...</value>
+  </data>
+  <data name="FetchingTextToSpeechSourceMessage" xml:space="preserve">
+    <value>Bezig met ophalen van teksten uit item...</value>
+  </data>
+  <data name="ConceptType_Attribute" xml:space="preserve">
+    <value>Attribuut</value>
+  </data>
+  <data name="ConceptType_Part" xml:space="preserve">
+    <value>Onderdeel</value>
+  </data>
+  <data name="ConceptType_PartAttribute" xml:space="preserve">
+    <value>Deelattribuut</value>
+  </data>
+  <data name="ConceptType_ResponseStrategy" xml:space="preserve">
+    <value>Antwoordstrategie</value>
+  </data>
+  <data name="TTS_CannotGenerateTTSCaption" xml:space="preserve">
+    <value>Kan geen verklanking aanmaken</value>
+  </data>
+  <data name="NoMoreConceptstructuresToAdd" xml:space="preserve">
+    <value>Er zijn geen waarden meer om toe te voegen.</value>
+  </data>
+  <data name="CodeFieldNotUnique" xml:space="preserve">
+    <value>De code moet uniek zijn.
+Houdt er rekening mee dat de karakters '.' en '_' als identieke karakters behandeld worden.</value>
+  </data>
+  <data name="RemoveChildrenConfirmation" xml:space="preserve">
+    <value>Dit kenmerk bevat subwaarden. Deze zullen ook worden verwijderd. Weet u het zeker?</value>
+  </data>
+  <data name="RemovePropertyConfirmation" xml:space="preserve">
+    <value>Weet u zeker dat u deze waarde wilt verwijderen?</value>
+  </data>
+  <data name="InvalidConceptStructure" xml:space="preserve">
+    <value>Niet alle conceptstructuren zijn valide. Een onderliggend element mag maar één keer voorkomen per conceptwaarde.</value>
+  </data>
+  <data name="CodeFieldCannotBeEmpty" xml:space="preserve">
+    <value>Het veld 'Code' mag niet leeg zijn.</value>
+  </data>
+  <data name="ErrorsOccurred" xml:space="preserve">
+    <value>De volgende fouten zijn opgetreden:</value>
+  </data>
+  <data name="TitleFieldCannotBeEmpty" xml:space="preserve">
+    <value>Het veld 'Title' mag niet leeg zijn.</value>
+  </data>
+  <data name="AddCustomProperty_SaveChanges" xml:space="preserve">
+    <value>Er zijn niet opgeslagen wijzigingen. Wilt u ze alsnog opslaan?</value>
+  </data>
+  <data name="FieldsCannotBeEmpty" xml:space="preserve">
+    <value>Tenminste één veld bevat ongeldige invoer.</value>
+  </data>
+  <data name="ConfirmDeleteSubElement" xml:space="preserve">
+    <value>Weet u zeker dat u dit subelement wilt verwijderen?</value>
+  </data>
+  <data name="ConceptType_Bottleneck" xml:space="preserve">
+    <value>Knelpunt</value>
+  </data>
+  <data name="ConceptType_Domain" xml:space="preserve">
+    <value>Domein</value>
+  </data>
+  <data name="ConceptType_PartPartAttribute" xml:space="preserve">
+    <value>Deeldeelattribuut</value>
+  </data>
+  <data name="ConceptType_SubDomain" xml:space="preserve">
+    <value>Subdomein</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>Bestand</value>
+  </data>
+  <data name="SelectDependentResourceDialog_NoResourceSelectedMessage" xml:space="preserve">
+    <value>Er is nog geen bron geselecteerd. Selecteer een bron en druk op 'OK'</value>
+  </data>
+  <data name="ErrorParsingAttributeReferencesForParameter" xml:space="preserve">
+    <value>Er is een fout opgetreden bij het parsen van de attribute referenties van parameter '{0}'.</value>
+  </data>
+  <data name="XhtmlEditor_TextSplitAlgo_ErrMarkup" xml:space="preserve">
+    <value>Deze selectie bevat opmaak dat niet verwerkt kan worden.</value>
+  </data>
+  <data name="MathML_Syntax_Error" xml:space="preserve">
+    <value>Syntax fout in formule.</value>
+  </data>
+  <data name="MathML_LayoutError" xml:space="preserve">
+    <value>Fout met MathML/Formule opmaak.</value>
+  </data>
+  <data name="TestEditor_v2_EditNotAllowed" xml:space="preserve">
+    <value>Wijzigingen aanbrengen in toets '{0}' met de status '{1}' is niet mogelijk.</value>
+  </data>
+  <data name="InvalidTreeStructure" xml:space="preserve">
+    <value>Niet alle boomstructuren zijn valide. Een onderliggend element mag maar één keer voorkomen per boomwaarde.</value>
+  </data>
+  <data name="NoMoreTreeStructuresToAdd" xml:space="preserve">
+    <value>Er zijn geen waarden meer om toe te voegen.</value>
+  </data>
+  <data name="TreeStructureViewer_UnusedStructures" xml:space="preserve">
+    <value>De volgende waarden zijn wel gedefinieerd maar worden niet gebruikt: {0}.</value>
+  </data>
+  <data name="ConfirmDeleteSubElementWithChildren" xml:space="preserve">
+    <value>Deze structuur bevat één of meer substructuren en deze zullen ook worden verwijderd. Wilt u doorgaan?</value>
+  </data>
+  <data name="Editor_Dialog_SaveChangesQuestionMessage" xml:space="preserve">
+    <value>Wilt u de wijzigingen bewaren?</value>
+  </data>
+  <data name="DeleteCutOffScoreConfirm" xml:space="preserve">
+    <value>Weet u zeker dat u deze cesuur wilt verwijderen?</value>
+  </data>
+  <data name="ValueAlreadyUsed" xml:space="preserve">
+    <value>Deze waarde wordt al gebruikt.</value>
+  </data>
+  <data name="NoValidScoreEntered" xml:space="preserve">
+    <value>{0} is geen geldige waarde.</value>
+  </data>
+  <data name="AddConceptValueWindowTitle" xml:space="preserve">
+    <value>Conceptstructuurwaarde toevoegen</value>
+  </data>
+  <data name="AddListValueWindowTitle" xml:space="preserve">
+    <value>Lijstwaarde toevoegen</value>
+  </data>
+  <data name="AddTreeValueWindowTitle" xml:space="preserve">
+    <value>Boomstructuur waarde toevoegen</value>
+  </data>
+  <data name="DeleteTreeWhenConnectedToOneOrMoreItems" xml:space="preserve">
+    <value>Deze boomstructuurwaarde is gekoppeld aan o.a. de volgende item(s): {0}
+{1}
+Door deze boomstructuurwaarde te verwijderen is de waarde niet langer in deze bron(nen) en toekomstige bronnen toe te passen.
+Weet u zeker dat u door wilt gaan?</value>
+  </data>
+  <data name="SelectTreeStructureValues" xml:space="preserve">
+    <value>Selecteer boomstructuurwaarden voor {0}</value>
+  </data>
+  <data name="SelectPreviewer_Filter" xml:space="preserve">
+    <value>applicaties (*.exe)|*.exe|Alle bestanden (*.*)|*.*</value>
+  </data>
+  <data name="SelectPreviewer_Title" xml:space="preserve">
+    <value>Selecteer de applicatie waarin de voorbeeldweergave wordt afgespeeld</value>
+  </data>
+  <data name="ToolsOptions_SelectPreviewer_RestoreDefaultButton_ToolTip" xml:space="preserve">
+    <value>Herstel standaardinstelling</value>
+  </data>
+  <data name="TTS_CannotGenerateTTSMessage" xml:space="preserve">
+    <value>Kan verklanking voor item niet aanmaken.
+Dit kan mogelijk veroorzaakt worden doordat wijzigingen in het item nog niet zijn opgeslagen.
+
+De (fout)melding is:
+{0}</value>
+  </data>
+  <data name="SelectAnalyseFiles" xml:space="preserve">
+    <value>Analysebestanden (*.*)|*.*</value>
+  </data>
+  <data name="Qti_AssessmentTestPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>QTI - Toetseigenschappen</value>
+  </data>
+  <data name="Qti_TestPartPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>QTI - Toetsdeeleigenschappen</value>
+  </data>
+  <data name="Qti_TestSectionPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>QTI - Toetssectie-eigenschappen</value>
+  </data>
+  <data name="WarningDeleteCustomProperties" xml:space="preserve">
+    <value>De kenmerkwaarde die u wilt verwijderen wordt gebruikt door één of meer items of andere objecten. 
+Weet u zeker dat u dit wilt doen?</value>
+  </data>
+  <data name="MandatoryEmptyShapelistMessage" xml:space="preserve">
+    <value>Er moet minimaal één gebied worden opgegeven voor veld '{0}' .</value>
+  </data>
+  <data name="RemoveUnavailableCutOffScoreConditionsFromAssessmentTestModel" xml:space="preserve">
+    <value>De volgende waarden zijn gebruikt in de toets maar komen niet voor in de kenmerken: '{0}'
+Hoogswaarschijnlijk zijn deze waarden verwijderd.</value>
+  </data>
+  <data name="AlreadyInTest" xml:space="preserve">
+    <value>{0} zijn al aanwezig in de toets.</value>
+  </data>
+  <data name="ItemCannotBeAddedAlreadyInTest" xml:space="preserve">
+    <value>Item mag slechts één keer voorkomen in de toets.</value>
+  </data>
+  <data name="ItemCannotBeAddedState" xml:space="preserve">
+    <value>Item heeft een status die toevoegen aan de toets verbiedt.</value>
+  </data>
+  <data name="ItemCannotBeAddedTarget" xml:space="preserve">
+    <value>Item ondersteunt niet alle targets die de toets ondersteunt.</value>
+  </data>
+  <data name="ItemsCannotBeAdded" xml:space="preserve">
+    <value>Items zijn niet toegevoegd aan de toets.</value>
+  </data>
+  <data name="NotAllItemsCannotBeAdded" xml:space="preserve">
+    <value>Niet alle items zijn toegevoegd aan de toets.</value>
+  </data>
+  <data name="StateProhibts" xml:space="preserve">
+    <value>{0} hebben een status die toevoegen aan de toets verbiedt.</value>
+  </data>
+  <data name="TargetSupport" xml:space="preserve">
+    <value>{0} ondersteunt niet alle targets die de toets ondersteunt.</value>
+  </data>
+  <data name="ClearHistoricalAssessmentWarning" xml:space="preserve">
+    <value>Reeds ingevoerde historische afnames voor '{0}' zullen worden verwijderd. Wilt u doorgaan?</value>
+  </data>
+  <data name="VideoMp4Filter" xml:space="preserve">
+    <value>Videobestanden (*.mp4,*.mp4v)|*.mp4;*.mp4v</value>
+  </data>
+  <data name="VideoMpegFilter" xml:space="preserve">
+    <value>Videobestanden (*.m1v,*.m2v,*.mod,*.mp2,*.mp2v,*.mpa,*.mpe,*.mpeg,*.mpg,*.mpv2,*.vbk)|*.m1v;*.m2v;*.mod;*.mp2;*.mp2v;*.mpa;*.mpe;*.mpeg;*.mpg;*.mpv2;*.vbk</value>
+  </data>
+  <data name="VideoWebmFilter" xml:space="preserve">
+    <value>Videobestanden (*.webm)|*.webm</value>
+  </data>
+  <data name="TTS_ItemNotSaved" xml:space="preserve">
+    <value>Het item moet eerst opgeslagen worden voordat de verklanking gegenereerd kan worden.</value>
+  </data>
+  <data name="CannotCopyPasteInlineControls" xml:space="preserve">
+    <value>Het is niet mogelijk om het inline control in dit veld te plakken. Het kan alleen geplakt in het veld waaruit het geknipt of gekopieerd is.</value>
+  </data>
+  <data name="TestPartValidationRulesRemoved_Message" xml:space="preserve">
+    <value>Er zijn {0} validatieregels verwijderd, omdat er geen categorie geselecteerd is of omdat de daarin geselecteerde categorie niet meer bestaat.</value>
+  </data>
+  <data name="ChoosePrintFormControl_LabelIsRequired" xml:space="preserve">
+    <value>Veld is verplicht.</value>
+  </data>
+  <data name="ChoosePrintFormControl_LabelMayNotContainFollowingCharacters" xml:space="preserve">
+    <value>Dit veld mag geen van de volgende tekens bevatten: {0}</value>
+  </data>
+  <data name="BankNameMaxLenghtExceeded" xml:space="preserve">
+    <value>De maximale lengte van de banknaam is {0}</value>
+  </data>
+  <data name="ChoosePrintFormControl_LabelMaxLength" xml:space="preserve">
+    <value>De maximaal toegestane lengte is  {0} tekens.</value>
+  </data>
+  <data name="ShowPassword" xml:space="preserve">
+    <value>Wachtwoord tonen of verbergen</value>
+  </data>
+  <data name="ChoosePrintFormControl_TemplateIsRequired" xml:space="preserve">
+    <value>MS Word sjabloon is verplicht.</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>PDF-bestanden (*.pdf)|*.pdf</value>
+  </data>
+  <data name="TestPartValidationCustomBankPropertyValueConflict" xml:space="preserve">
+    <value>Er is een conflict met kenmerk '{0}'. Niet alle waardes zijn beschikbaar.</value>
+  </data>
+  <data name="HtmlFilesFilter" xml:space="preserve">
+    <value>HTML-bestanden (*.html, *.htm)|*.html;*.htm</value>
+  </data>
+  <data name="XhtmlViewerErrorReadingHtml" xml:space="preserve">
+    <value>Er is een fout opgetreden bij het lezen van de (x)html/xml.</value>
+  </data>
+  <data name="CiFilter" xml:space="preserve">
+    <value>Custom Interaction bestanden (*.ci)|*.ci</value>
+  </data>
+  <data name="GgbFilter" xml:space="preserve">
+    <value>Geogebra bestanden (*.ggb)|*.ggb</value>
+  </data>
+  <data name="SelectTestResourceDialog_AddButton_NoResourceSelectedMessage" xml:space="preserve">
+    <value>Er is geen toets geselecteerd. Selecteer een toets en klik op 'Toevoegen'</value>
+  </data>
+  <data name="RefreshDataSourceMaxNrOfVariantsLabel" xml:space="preserve">
+    <value>van maximaal {0}</value>
+  </data>
+  <data name="AudioOggFilter" xml:space="preserve">
+    <value>Audiobestanden (*.opus; *.ogg)|*.opus;*.ogg</value>
+  </data>
+  <data name="RichTextValueEditorText" xml:space="preserve">
+    <value>Vrije waarde (rijke tekst) voor '{0}'</value>
+  </data>
+  <data name="TTSMuteCouldNotBeApplied" xml:space="preserve">
+    <value>'Niet verklanken' kon niet toegepast worden op de huidige selectie. Reden: {0}</value>
+  </data>
+  <data name="TTSRemovesMarkupConfirmationMessage" xml:space="preserve">
+    <value>Het invoegen van een verklankingsinstelling op de huidige selectie resulteert in het verlies van bestaande tekstopmaak. Weet u zeker dat u wilt doorgaan?</value>
+  </data>
+  <data name="TTSRemovesMarkupConfirmationTitle" xml:space="preserve">
+    <value>Deze aktie resulteert in opmaakverlies</value>
+  </data>
+  <data name="DeleteTreeWhenConnectedToOneOrMoreTests" xml:space="preserve">
+    <value>
+En wordt verder gebruikt in de score eigenschappen van de toets(en): {0}
+</value>
+  </data>
+  <data name="CannotStartExport" xml:space="preserve">
+    <value>Het overzicht kan nog niet worden gemaakt. {0}</value>
+  </data>
+  <data name="FieldEmpty" xml:space="preserve">
+    <value>Het veld '{0}' is niet gevuld.</value>
+  </data>
+  <data name="FileExists" xml:space="preserve">
+    <value>Bestand bestaat al.</value>
+  </data>
+  <data name="FilenameNotValid" xml:space="preserve">
+    <value>Kies een geldige bestandsnaam.</value>
+  </data>
+  <data name="PathNotValid" xml:space="preserve">
+    <value>Opgegeven bestandsnaam is ongeldig.</value>
+  </data>
+  <data name="PathOrFilenameNotValid" xml:space="preserve">
+    <value>Kies een geldig pad en/of bestandsnaam.</value>
+  </data>
+  <data name="PleaseSelectAtLeastOneColumn" xml:space="preserve">
+    <value>Selecteer alstublieft minimaal één kolom</value>
+  </data>
+  <data name="Sort" xml:space="preserve">
+    <value>Sorteer</value>
+  </data>
+  <data name="ToolTip_RefreshDataSource" xml:space="preserve">
+    <value>Voeg een nieuwe selectie toe of vernieuw de huidige</value>
+  </data>
+  <data name="MathML_NoPlugin" xml:space="preserve">
+    <value>Er is geen plugin beschikbaar om MathML te kunnen bewerken.</value>
+  </data>
+  <data name="NoCommonTargetFound" xml:space="preserve">
+    <value>Er is geen gemeenschappelijke target gevonden.</value>
+  </data>
+  <data name="FieldMustBeFilled" xml:space="preserve">
+    <value>Veld '{0}' moet worden gevuld.</value>
+  </data>
+  <data name="FileAlreadyExist" xml:space="preserve">
+    <value>Het bestand bestaat reeds op de opgegeven locatie.</value>
+  </data>
+  <data name="PleaseEnterACompleteAndValidPath" xml:space="preserve">
+    <value>Voer aub een compleet en geldig pad in</value>
+  </data>
+  <data name="PleaseEnterAValidExportFilename" xml:space="preserve">
+    <value>Selecteer een geldig exportbestand.</value>
+  </data>
+  <data name="Publication" xml:space="preserve">
+    <value>Publicatie</value>
+  </data>
+  <data name="PublicationLocationText" xml:space="preserve">
+    <value>Locatie van {0}:</value>
+  </data>
+  <data name="PublicationOptions" xml:space="preserve">
+    <value>Kies publicatie opties</value>
+  </data>
+  <data name="SpecifyPackageName" xml:space="preserve">
+    <value>Geef de package naam op</value>
+  </data>
+  <data name="TheFilenameCannotContainIllegalCharacters" xml:space="preserve">
+    <value>De bestandsnaam bevat ongeldige tekens</value>
+  </data>
+  <data name="PortableCiFilter" xml:space="preserve">
+    <value>Portable Custom Interaction bestanden (*.pci)|*.pci</value>
+  </data>
+</root>

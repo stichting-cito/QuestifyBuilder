@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9B7022E-528B-461B-A4D8-70A63DEB10A2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Questify.Builder.Plugins.Html.ComponentOne</RootNamespace>
+    <AssemblyName>Questify.Builder.Plugins.Html.ComponentOne</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Questify.Builder.Plugins.Html.ComponentOne.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Questify.Builder.Plugins.Html.ComponentOne.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>Questify.Builder.Plugins.Html.ComponentOne.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>Questify.Builder.Plugins.Html.ComponentOne.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Win.C1Editor.4, Version=4.0.20121.85, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\3rdPartyComponents\ComponentOne\C1.Win.C1Editor.4.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\..\..\packages\NLog.4.4.11\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialogs\AddTableDialog.designer.vb">
+      <DependentUpon>AddTableDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AddTableDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DialogEditCellProperties.Designer.vb">
+      <DependentUpon>DialogEditCellProperties.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DialogEditCellProperties.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DialogEditTableProperties.Designer.vb">
+      <DependentUpon>DialogEditTableProperties.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DialogEditTableProperties.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EditCellInnerMarginPropertiesDialog.Designer.vb">
+      <DependentUpon>EditCellInnerMarginPropertiesDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EditCellInnerMarginPropertiesDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="My Project\TestBuilder_VersionInfo.vb" />
+    <Compile Include="XhtmlEditor\XHtmlEditor.Designer.vb">
+      <DependentUpon>XHtmlEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XhtmlEditor\XHtmlEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XhtmlEditor\XHtmlSelection.vb" />
+    <Compile Include="XhtmlEditor\XHtmlSourceCodeViewer.Designer.vb">
+      <DependentUpon>XHtmlSourceCodeViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XhtmlEditor\XHtmlSourceCodeViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XhtmlEditor\XhtmlTextRange.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dialogs\AddTableDialog.nl.resx">
+      <DependentUpon>AddTableDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddTableDialog.resx">
+      <DependentUpon>AddTableDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DialogEditCellProperties.nl.resx">
+      <DependentUpon>DialogEditCellProperties.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DialogEditCellProperties.resx">
+      <DependentUpon>DialogEditCellProperties.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DialogEditTableProperties.nl.resx">
+      <DependentUpon>DialogEditTableProperties.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DialogEditTableProperties.resx">
+      <DependentUpon>DialogEditTableProperties.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EditCellInnerMarginPropertiesDialog.nl.resx">
+      <DependentUpon>EditCellInnerMarginPropertiesDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EditCellInnerMarginPropertiesDialog.resx">
+      <DependentUpon>EditCellInnerMarginPropertiesDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.nl.resx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XhtmlEditor\XHtmlEditor.nl.resx">
+      <DependentUpon>XHtmlEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XhtmlEditor\XHtmlEditor.resx">
+      <DependentUpon>XHtmlEditor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XhtmlEditor\XHtmlSourceCodeViewer.resx">
+      <DependentUpon>XHtmlSourceCodeViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Cito.Tester.Common\Cito.Tester.Common.vbproj">
+      <Project>{9a0bd8fe-d6f6-4ce5-9a0b-877610b00deb}</Project>
+      <Name>Cito.Tester.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Cito.Tester.ContentModel\Cito.Tester.ContentModel.vbproj">
+      <Project>{94ee8d6c-5c52-4f34-9e61-e407b3240004}</Project>
+      <Name>Cito.Tester.ContentModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Logic.Service\Questify.Builder.Logic.Service.csproj">
+      <Project>{885875bf-3e90-4b06-b1fb-a7883e54e391}</Project>
+      <Name>Questify.Builder.Logic.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Logic\Questify.Builder.Logic.vbproj">
+      <Project>{c4ab026e-b1e2-4d1e-a857-4ca29baa9981}</Project>
+      <Name>Questify.Builder.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\UI\Questify.Builder.UI.vbproj">
+      <Project>{d35f44ec-b3c4-48df-9bec-76da023b393a}</Project>
+      <Name>Questify.Builder.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\109_AllAnnotations_Default_16x16_72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-icon_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlignCenter_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlignLeft_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlignRight_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anchor-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bold_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bullets_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClearFormats_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClearFormatting_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ConvertToRoman_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customInteraction_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customInteraction_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cut_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DecreaseIndent_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_16x.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DesignMode.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DesignMode_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FitToContent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FolderOpen_16x16_72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IncreaseIndent_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineChoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineEssay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineGap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineGapMatch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineHotText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineMR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InlineTabular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert-audio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InsertFormula_small.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InsertImage_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InsertSymbol_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InsertTable_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert-video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Italic_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LinkPopupWndow_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LockedForEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-browser-ie8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mute_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Network-Download-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Network-Download-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewToolStripMenuItem.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nowyoudontseeme_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Numbering_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paste_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PastFromWord_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bPause.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\placeholderspacer.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bPlay.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preliminaryimplementation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Questify.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Redo_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchToolStripButton.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchToolStripMenuItem.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seeding-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shape_Circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shape_Ellipse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shape_Rect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowPassword.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SourceMode_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SplitMode_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bStop.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Strikethrough_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Subscript_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Superscript_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TTSAlternative_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ttsDeleteResource.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ttsEditResource.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TTSRemove_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Underline_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Q32-32trans.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InsertTable_small1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PastFromWord_small1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InsertImage_small1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InsertImage_small2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert-video1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert-audio1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InsertFormula_small1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InsertSymbol_small1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-icon_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mute_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TTSAlternative_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TTSRemove_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LockedForEdit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FitToContent1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>IF $(PlatformName) == x86 (
+   SET PLATFORM=$(PlatformName)
+)
+robocopy "$(TargetDir)\" "$(SolutionDir)\Builder\Client\bin\%25PLATFORM%25\$(ConfigurationName)\Plugins" "$(TargetName).dll" "$(TargetName).pdb" "$(TargetName).resources.dll" /R:5 /S /njh /njs /nfl /ndl /nc /ns
+robocopy "$(TargetDir)\" "$(SolutionDir)\Builder\Client\bin\%25PLATFORM%25\$(ConfigurationName)" "C1.Win.C1Editor.4.dll" /R:5 /S /njh /njs /nfl /ndl /nc /ns
+exit /b 0</PostBuildEvent>
+  </PropertyGroup>
+</Project>

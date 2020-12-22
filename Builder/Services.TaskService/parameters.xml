@@ -1,0 +1,18 @@
+﻿<parameters>
+  <!--appSettings-->
+  <parameter name="LLBLGenConnectionString" description="doesn't matter" defaultvalue="data source=__qbDatabaseServer__;User ID=__qbUser__;Password=__qbPassword__;persist security info=False;packet size=4096;Max Pool Size=__taskServiceMaxPoolSize__;" tags="">
+    <parameterentry kind="XmlFile" scope="\\web.config$" match="/configuration/appSettings/add[@key='Main.ConnectionString']/@value">
+    </parameterentry>
+  </parameter>
+  
+  <parameter name="LLBLGenDatabaseOverride" description="doesn't matter" defaultvalue="__qbDatabase__" tags="">
+    <parameterentry kind="XmlFile" scope="\\web.config$" match="/configuration/sqlServerCatalogNameOverwrites/add[@key='QuestifyBuilder']/@value">
+    </parameterentry>
+  </parameter>
+  
+  <parameter name="HarmonizationBatchSize" description="doesn't matter" defaultvalue="__harmonizationItemBatchSize__" tags="">
+    <parameterentry kind="XmlFile" scope="\\web.config$" match="/configuration/appSettings/add[@key='HarmonizationItemBatchSize']/@value">
+    </parameterentry>
+  </parameter>
+  
+</parameters>

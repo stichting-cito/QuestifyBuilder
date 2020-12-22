@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.MetaData"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:TbUI="clr-namespace:Questify.Builder.UI;assembly=Questify.Builder.UI"
+             xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+             meffed:ViewModelLocator.ViewModel="ItemEditor.MetaDataVM" 
+             mc:Ignorable="d" 
+             d:DesignHeight="448" d:DesignWidth="930">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <ResourceDictionary.MergedDictionaries>
+                <!--Please make sure that Resources are commented out-->
+                <!--<ResourceDictionary Source="..\ItemEditor.Metadata.nl.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid x:Name="BigGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" MinWidth="225px"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="5*" MinWidth="225px"/>
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Header="{StaticResource ItemEditor.Metadata.InfoGroup}" Margin="5 0">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="136px"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <WindowsFormsHost x:Name="ItemInfoHost" Grid.Row="0">
+                    <TbUI:ItemEditor x:Name="ItemNameCtrl" Text="ItemNameCtrl" />
+                </WindowsFormsHost>
+
+                <WindowsFormsHost x:Name="ItemMetaInfoHost" Grid.Row="1">
+                    <TbUI:ResourceMetaData x:Name="ResourceNameCtrl" Text="ResourceNameCtrl"/>
+                </WindowsFormsHost>
+            </Grid>
+        </GroupBox>
+
+        <GridSplitter Width="10" Grid.Column="1" BorderBrush="#a5acb5" BorderThickness="1" Background="#FFBCC3CD" GotKeyboardFocus="GridSplitter_GotKeyboardFocus" VerticalAlignment="Stretch" HorizontalAlignment="Center">
+            <GridSplitter.Template>
+                <ControlTemplate TargetType="{x:Type GridSplitter}">
+                    <Grid ClipToBounds="True">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="2,0,2,0">
+                            <Grid VerticalAlignment="Center">
+                                <Border Background="{TemplateBinding BorderBrush}" CornerRadius="3" Height="22" Width="6" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,6,0,0" />
+                                <Label Content="⁞" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="WhiteSmoke" Padding="0" />
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </GridSplitter.Template>
+        </GridSplitter>
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <GroupBox Header="{StaticResource ItemEditor.Metadata.ConceptGroup}" Margin="5 0 5 5" Grid.Row="0" 
+                      Visibility="{Binding CanAddConceptStructures.DataValue, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <ContentControl Content="{Binding ConceptStructureWorkspace.DataValue}"/>
+            </GroupBox>
+
+            <GroupBox Header="{StaticResource ItemEditor.Metadata.TreeGroup}" Margin="5 0 5 5" Grid.Row="1" Visibility="{Binding CanAddTreeStructures.DataValue, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <ContentControl Content="{Binding TreeStructureWorkspace.DataValue}"/>
+            </GroupBox>
+
+            <GroupBox Header="{StaticResource ItemEditor.Metadata.CustomPropertiesGroup}" Margin="5 0" Grid.Row="2">
+                <WindowsFormsHost x:Name="CustomPropertiesHost" Grid.Row="1">
+                    <TbUI:ResourceCustomProperties x:Name="ResourceCustomPropsCtrl" Dock="Fill"/>
+                </WindowsFormsHost>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</UserControl>

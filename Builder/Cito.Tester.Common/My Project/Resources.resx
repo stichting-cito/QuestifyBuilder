@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Error_ExceptionListenerConfigSection_GetListeners_ConfigurationException" xml:space="preserve">
+    <value>An CitoTester exceptionlisteners configuration exception did occur.</value>
+  </data>
+  <data name="Error_XHtmlDocument_GetEntity_CannotGetEntity" xml:space="preserve">
+    <value>Error: cannot get entity while resolving XHTML-document</value>
+  </data>
+  <data name="Error_XHtmlDocument_LoadXML_CannotLoadXML" xml:space="preserve">
+    <value>Internal error: cannot load XHTML-document</value>
+  </data>
+  <data name="Error_XHtmlDocument_LoadXML_DocumentIsNothing" xml:space="preserve">
+    <value>Error: supplied XML document is nothing/empty</value>
+  </data>
+  <data name="Error_XHtmlDocument_ResolveUri_URIisNothing" xml:space="preserve">
+    <value>Error: Cannot resolve an URI while loading an XHTML-document, because the URI is nothing</value>
+  </data>
+  <data name="Trace_XHtmlDocument_GetEntity_NoEntityAvailable" xml:space="preserve">
+    <value>CustomXmlResolver.GetEntity: '{0}' no entity available!</value>
+  </data>
+  <data name="Trace_XHtmlDocument_GetEntity_StreamReturnedSuccesfully" xml:space="preserve">
+    <value>CustomXmlResolver.GetEntity: '{0}' stream returned successfully.</value>
+  </data>
+  <data name="Trace_XHtmlDocument_ResolveUri_ResolvedSuccessFully" xml:space="preserve">
+    <value>CustomXmlResolver.ResolveUri: '{0}' Resolved successfully.</value>
+  </data>
+  <data name="Trace_XHtmlDocument_ResolveUri_Unresolved" xml:space="preserve">
+    <value>CustomXmlResolver.ResolveUri: '{0}' UNRESOLVED.</value>
+  </data>
+  <data name="Error_ContentModelException_UserFriendlyErrorMessage_Message" xml:space="preserve">
+    <value>Item cannot be displayed, because an object in the contentmodel raised an unhandled error.</value>
+  </data>
+  <data name="Error_ControlTemplateException_UserFriendlyErrorMessage_Message" xml:space="preserve">
+    <value>Item cannot be displayed, because an unhandled error is raised, while rendering a controltemplate.</value>
+  </data>
+  <data name="Error_ControlTemplateScriptException_GetObjectData_CannotGetData" xml:space="preserve">
+    <value>Error: cannot get object data from ControlTemplateScriptException</value>
+  </data>
+  <data name="Error_ControlTemplateScriptException_UserFriendlyErrorMessage_Message" xml:space="preserve">
+    <value>Item cannot be displayed, because an unhandled error is raised, while executing the controltemplate-script.</value>
+  </data>
+  <data name="Error_InteractionControlException_UserFriendlyErrorMessage_Message" xml:space="preserve">
+    <value>Item cannot be displayed, because an unhandled error is raised inside an interactioncontrol.</value>
+  </data>
+  <data name="Error_InteractionControllerException_UserFriendlyErrorMessage_Message" xml:space="preserve">
+    <value>Item cannot be displayed, because an unhandled error is raised inside an interactioncontroller.</value>
+  </data>
+  <data name="Error_ItemTemplateException_UserFriendlyErrorMessage_Message" xml:space="preserve">
+    <value>Item cannot be displayed, because an unhandled error is raised while rendering the itemtemplate.</value>
+  </data>
+  <data name="Error_LabelControlException_UserFriendlyErrorMessage_Message" xml:space="preserve">
+    <value>Item cannot be displayed, because an unhandled error is raised inside a labelcontrol.</value>
+  </data>
+  <data name="Error_ResourceException_UserFriendlyErrorMessage_Message" xml:space="preserve">
+    <value>Item cannot be displayed, because an unhandled error is raised, while trying to get a resource.</value>
+  </data>
+  <data name="Error_TesterException_UserFriendlyErrorMessage_Message" xml:space="preserve">
+    <value>Item cannot be displayed, because of a general application error, which cannot be specified.</value>
+  </data>
+  <data name="Error_TestStateException_UserFriendlyErrorMessage_Message" xml:space="preserve">
+    <value>Item cannot be displayed, because an unhandled error is raised on the statehandler or statemanager.</value>
+  </data>
+  <data name="Error_TestViewerException_UserFriendlyErrorMessage_Message" xml:space="preserve">
+    <value>Item cannot be displayed, because an unhandled error is raised inside the testviewer.</value>
+  </data>
+  <data name="Error_PluginHelper_CheckExpectedType_NotExpectedType" xml:space="preserve">
+    <value>Error: {0} is not of the expected type '{1}'</value>
+  </data>
+  <data name="Error_PluginHelper_CheckExpectedType_ObjectParameterNotSet" xml:space="preserve">
+    <value>Error: tries to check an expected type, while not supplying the object to be checked</value>
+  </data>
+  <data name="Error_PluginHelper_CheckExpectedType_TypeParameterNotSet" xml:space="preserve">
+    <value>Error: tries to check an expected type, while not supplying the type to be expected</value>
+  </data>
+  <data name="Error_PluginHelper_CheckIsNotNothing_ObjectIsNothing" xml:space="preserve">
+    <value>Error: object '{0}' is nothing, while it's not expected</value>
+  </data>
+  <data name="Error_PluginHelper_CreateInstance_TypeNameParameterNotKnown" xml:space="preserve">
+    <value>Error: typeName parameter cannot be Null or Empty.</value>
+  </data>
+  <data name="Error_SerializeHelper_XmlSerializeTo_ObjectIsNothing" xml:space="preserve">
+    <value>Error: cannot serialize an object because it's empty</value>
+  </data>
+  <data name="Error_ControlTemplateScriptException_Constructor_CannotCreate" xml:space="preserve">
+    <value>Error: cannot create ControlTemplateScriptException.</value>
+  </data>
+  <data name="Error_ControlTemplateScriptException_Constructor_Obsolete" xml:space="preserve">
+    <value>Error: this constructor cannot be called.</value>
+  </data>
+  <data name="Error_FileHelper_MakeFileFromStream_ParameterFileNameIsNothing" xml:space="preserve">
+    <value>Error: parameter 'filename' is not supplied!</value>
+  </data>
+  <data name="Error_FileHelper_MakeFileFromStream_ParameterFileStreamIsNothing" xml:space="preserve">
+    <value>Error: parameter 'readFileStream' is not supplied!</value>
+  </data>
+  <data name="Error_StreamConverters_ConvertStreamToByteArray_ErrorOccurred" xml:space="preserve">
+    <value>Error: cannot convert stream to byte array, because of the following error: {0}</value>
+  </data>
+  <data name="Error_StreamConverters_ConvertStreamToString_ErrorOccurred" xml:space="preserve">
+    <value>Error: cannot convert stream to string, because of the following error: {0}</value>
+  </data>
+  <data name="Error_Serializable_Constructor" xml:space="preserve">
+    <value>Invalid Uri parameter.</value>
+  </data>
+  <data name="Error_ExceptionHandler_HandleException_NotHandled" xml:space="preserve">
+    <value>An exception is not handled by the listeners!</value>
+  </data>
+  <data name="Error_ExceptionDialog_Load_TitleBarText" xml:space="preserve">
+    <value>{0} has encountered a problem and will be closed!</value>
+  </data>
+  <data name="Error_PopUpLinkControlException_UserFriendlyErrorMessage_Message" xml:space="preserve">
+    <value>Item cannot be displayed, because an unhandled error is raised inside a popup-link-control!</value>
+  </data>
+  <data name="Error_UserFriendlyErrorOccurredException_UserFriendlyErrorMessage_Message" xml:space="preserve">
+    <value>Error_ContentModelException_UserFriendlyErrorMessage_Message</value>
+  </data>
+  <data name="Error_ItemLogicControllerException_UserFriendlyErrorMessage_Message" xml:space="preserve">
+    <value>Item cannot be displayed, because the item logic controller raised an unhandled error.</value>
+  </data>
+  <data name="Error_UICommandHandlerException_UserFriendlyErrorMessage" xml:space="preserve">
+    <value>Item cannot be displayed, because an UI command handler raised an unhandled error.</value>
+  </data>
+  <data name="ValidationHelper_CodeCannotContainIllegalCharacters" xml:space="preserve">
+    <value>'Code' cannot contain any of the following characters: &lt;&gt;"#%{}|\/~[]';?:@=&amp;^$+()!,`*</value>
+  </data>
+  <data name="ValidationHelper_CodeRequiredField" xml:space="preserve">
+    <value>'Code' is a required field</value>
+  </data>
+  <data name="ValidationHelper_CodeCannotContainMoreThen255Characters" xml:space="preserve">
+    <value>'Code' cannot contain more then 255 characters</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>&amp;Cancel</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>&amp;OK</value>
+  </data>
+  <data name="ValidationHelper_CodeNotOnlyWhiteSpaces" xml:space="preserve">
+    <value>'Code' cannot contain only whitespaces.</value>
+  </data>
+  <data name="Error_LogicException_UserFriendlyErrorMessage_Message" xml:space="preserve">
+    <value>Item cannot be displayed, because an object in the logic layer raised an unhandled error.</value>
+  </data>
+  <data name="Canvas_RemoveShapeConfirmation" xml:space="preserve">
+    <value>Are you sure you want to remove this object?</value>
+  </data>
+  <data name="Error_SqlException_UserFriendlyErrorMessage_Message" xml:space="preserve">
+    <value>Error while connecting to or executing command on database</value>
+  </data>
+  <data name="ValidationHelper_CodeCannotContainMultiplePeriodsInARow" xml:space="preserve">
+    <value>'Code' cannot contain multiple periods in a row</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="mathml3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mathml3.xsd;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="mathml3_common" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mathml3-common.xsd;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="mathml3_content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mathml3-content.xsd;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="mathml3_presentation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mathml3-presentation.xsd;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="mathml3_strict_content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mathml3-strict-content.xsd;System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="RemoveAllShapesConfirm" xml:space="preserve">
+    <value>Are you sure you want to remove all shapes?</value>
+  </data>
+  <data name="RemoveShapeConfirm" xml:space="preserve">
+    <value>Are you sure you want to remove this shape?</value>
+  </data>
+  <data name="ValidationHelper_CodeIsNotAValidNcName" xml:space="preserve">
+    <value>'Code' is not a valid NCName. </value>
+  </data>
+  <data name="Error_ResourceEntriesInCacheCollection_itemParNotSet" xml:space="preserve">
+    <value>Error: parameter 'item' is not set</value>
+  </data>
+  <data name="Error_ResourceEntry_Constructor_DependentResources_Empty" xml:space="preserve">
+    <value>Error: parameter 'dependentResources' is Null</value>
+  </data>
+  <data name="Error_ResourceEntry_Constructor_Name_Empty" xml:space="preserve">
+    <value>Error: parameter 'name' is Null Or Empty</value>
+  </data>
+  <data name="Error_ResourceEntry_Constructor_Type_Empty" xml:space="preserve">
+    <value>Error: parameter 'Type' is Null Or Empty</value>
+  </data>
+  <data name="Error_ResourceEntry_Constructor_Uri_Empty" xml:space="preserve">
+    <value>Error: parameter 'Uri' is Null Or Empty</value>
+  </data>
+</root>

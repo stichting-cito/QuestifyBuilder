@@ -1,0 +1,22 @@
+<itemBody class="defaultBody">
+    <div class="content">
+      <div>
+        <div id="question">
+          <p>Wat is het juiste antwoord ?</p>
+        </div>
+        <div>
+          <choiceInteraction id="choiceInteraction1" class="" maxChoices="1" shuffle="false" responseIdentifier="mc">
+            <simpleChoice identifier="A">
+              <p>Kies voor A</p>
+            </simpleChoice>
+            <simpleChoice identifier="B">
+              <p>Nee, liever voor B</p>
+            </simpleChoice>
+			  <simpleChoice identifier="C">
+				  <p>Nee, liever voor C</p>
+			  </simpleChoice>
+          </choiceInteraction>
+        </div>
+      </div>
+    </div>
+  </itemBody>

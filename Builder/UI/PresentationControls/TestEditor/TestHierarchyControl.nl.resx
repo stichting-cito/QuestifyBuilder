@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LockedForEditMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAJ5SURBVDhPdZFbSFNxHMdHBT1E74FPvUQPktAFuqDUQ22+RIYgRdBEGMYq7EEq9dhqs8RNl21j
+        czZz2nTOEzN1ZccLeWGpmJu3zTG7zOlubpDpTEr7tmNtnePl4cP/+//x/X7Pj/PnANjCkeTkvVwuV5nN
+        5xtkMhkuZ2QormRl7dvOu2VAw+dnv56d9cLr/UsgEESJpGT0lvBm0mYv60KTk5OjokMURSEzM1Mtl8vR
+        198v9fn869Iy6cBmP+tCQxDEO7qADsdntPb7A9o6fT1e1NTsYfoTIo5YLOn8V0DGZ3RBKLRwyWg0wWKx
+        7Gf6EyKO6OEjyh8IhJgFAoGADIcjXFPzKwwPj7D+Q0LQaIWHxR2myukyccGqxyp73qm5Wj5KaSB6QMwv
+        hr2iJrIVbod95wJDwbkPM30VmOosxZytCsEpHeZt6g3U0rz1GUd7d/394wpmhlXQWHjW6uqpQGSmET/C
+        b/DrezfWlnoQdhkwZnmCLyOVMEvTPzIzrIJq4VHrhJlA0KHHerQb+Nm7cfrsOkx3yWJlFMjSC8PMDKug
+        PPfE0LgpH+63RViwPcPS5zpE55rgGVRiol2CiLMabWW898xMQpw8k7pLfiOtd8pcGPuiFlEfiWWPAd+c
+        WrgsxRisESJoV8EoSt15A8Ud3uAkeQ/ujmJExpRY+lQbK2nAV2sl7OZizA/J0fL4/PYb0FTf5Wko1TVE
+        3A1YDbVgZc6IRZcOzrYiWKsEmLWWw0Cc3nkDmmZ1fpK+KE3X+vTipMem9Kwtd634J2ox3iaJPafG/7Lw
+        lJLpZ4WZ/I527VYIDuYpcg/ptXkp7drbKQMV1w+oiHTOsf8+cP4Aaf7ZaqLzup8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="LockedForEditMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 22</value>
+  </data>
+  <data name="LockedForEditMenuItem.Text" xml:space="preserve">
+    <value>(De)blokkeren</value>
+  </data>
+  <data name="ContextMenuToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 6</value>
+  </data>
+  <data name="AddTestPartToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAJJSURBVDhPdZJfSFNhGMa/6Zy5iYocAw210IuC/m70Z5G4IGUN7I8Ire5aqBRdC0XdFS6LpDBK
+        siaZIyl3YYIR2lUgEojScjTdYqISVjM1a5vn+57O+dYnx5gXv/fwPu/7PN93DocA2BAWC+cuvd1hSzUT
+        pBQF8spU9fcXJU9TzQQpRRXGsAk0EFocOpH41iXlp9pR4YXNXcpgf1pztAM5sXAbbBLxyeuI9m65oJ1p
+        4YVO1NWz320y4s9nEev5wH66+yHPrbKVPsgzZ7E0aB783yjghQ5t0yPkHGHLD8F+9QHLXrDoXdBZJ2ik
+        CnF/TQIztVeWI+c3rxkJ0XGEEBuuLi5vOQIBna4BDdtApypBg8oz6IA87Yz5Oiu9x49KxzL0Oj0PEgEq
+        qtEz0ckDEFJCghXKdzwM+ukg6Pg+YHwP8MWK7ubyDmOmLjNlwP1AdzLg8wFANX7cDzpmBvx7EekvC1VZ
+        DBVin7+Cuiw4+cr19V6gHY1vLq9pKhjbjWlv0XxeFin8Z0znZhHgDT+BZ/IROoIP0Ba4gxb/TVwdbcLF
+        9w3JgNHtmGo1LZjSSaliylbg1+dh2pNcAy64/U1wvj7HtDqGy/DjWf5qUS4xqwHCzAMsPQ6T1VcnWXtP
+        Sepye/gaN1l6ayW777QU92U34l0hS/QXYWepwaFee12AtlGNffO3kqdqdLxMs9GBgmiDPcu+TldIlmZi
+        JDdIiWoUKL2k6AaxKHeRvEUPSRO9IFncJFNZLtj6uPiMuXtXvanVeEjpcxSd/ywbA/IXoTd+eJHHTxIA
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="AddTestPartToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 22</value>
+  </data>
+  <data name="AddTestPartToolStripMenuItem.Text" xml:space="preserve">
+    <value>Voeg toetsdeel toe</value>
+  </data>
+  <data name="AddSectionToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAJJSURBVDhPdZJfSFNhGMa/6Zy5iYocAw210IuC/m70Z5G4IGUN7I8Ire5aqBRdC0XdFS6LpDBK
+        siaZIyl3YYIR2lUgEojScjTdYqISVjM1a5vn+57O+dYnx5gXv/fwPu/7PN93DocA2BAWC+cuvd1hSzUT
+        pBQF8spU9fcXJU9TzQQpRRXGsAk0EFocOpH41iXlp9pR4YXNXcpgf1pztAM5sXAbbBLxyeuI9m65oJ1p
+        4YVO1NWz320y4s9nEev5wH66+yHPrbKVPsgzZ7E0aB783yjghQ5t0yPkHGHLD8F+9QHLXrDoXdBZJ2ik
+        CnF/TQIztVeWI+c3rxkJ0XGEEBuuLi5vOQIBna4BDdtApypBg8oz6IA87Yz5Oiu9x49KxzL0Oj0PEgEq
+        qtEz0ckDEFJCghXKdzwM+ukg6Pg+YHwP8MWK7ubyDmOmLjNlwP1AdzLg8wFANX7cDzpmBvx7EekvC1VZ
+        DBVin7+Cuiw4+cr19V6gHY1vLq9pKhjbjWlv0XxeFin8Z0znZhHgDT+BZ/IROoIP0Ba4gxb/TVwdbcLF
+        9w3JgNHtmGo1LZjSSaliylbg1+dh2pNcAy64/U1wvj7HtDqGy/DjWf5qUS4xqwHCzAMsPQ6T1VcnWXtP
+        Sepye/gaN1l6ayW777QU92U34l0hS/QXYWepwaFee12AtlGNffO3kqdqdLxMs9GBgmiDPcu+TldIlmZi
+        JDdIiWoUKL2k6AaxKHeRvEUPSRO9IFncJFNZLtj6uPiMuXtXvanVeEjpcxSd/ywbA/IXoTd+eJHHTxIA
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="AddSectionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 22</value>
+  </data>
+  <data name="AddSectionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Voeg sectie toe</value>
+  </data>
+  <data name="AddItemToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAJJSURBVDhPdZJfSFNhGMa/6Zy5iYocAw210IuC/m70Z5G4IGUN7I8Ire5aqBRdC0XdFS6LpDBK
+        siaZIyl3YYIR2lUgEojScjTdYqISVjM1a5vn+57O+dYnx5gXv/fwPu/7PN93DocA2BAWC+cuvd1hSzUT
+        pBQF8spU9fcXJU9TzQQpRRXGsAk0EFocOpH41iXlp9pR4YXNXcpgf1pztAM5sXAbbBLxyeuI9m65oJ1p
+        4YVO1NWz320y4s9nEev5wH66+yHPrbKVPsgzZ7E0aB783yjghQ5t0yPkHGHLD8F+9QHLXrDoXdBZJ2ik
+        CnF/TQIztVeWI+c3rxkJ0XGEEBuuLi5vOQIBna4BDdtApypBg8oz6IA87Yz5Oiu9x49KxzL0Oj0PEgEq
+        qtEz0ckDEFJCghXKdzwM+ukg6Pg+YHwP8MWK7ubyDmOmLjNlwP1AdzLg8wFANX7cDzpmBvx7EekvC1VZ
+        DBVin7+Cuiw4+cr19V6gHY1vLq9pKhjbjWlv0XxeFin8Z0znZhHgDT+BZ/IROoIP0Ba4gxb/TVwdbcLF
+        9w3JgNHtmGo1LZjSSaliylbg1+dh2pNcAy64/U1wvj7HtDqGy/DjWf5qUS4xqwHCzAMsPQ6T1VcnWXtP
+        Sepye/gaN1l6ayW777QU92U34l0hS/QXYWepwaFee12AtlGNffO3kqdqdLxMs9GBgmiDPcu+TldIlmZi
+        JDdIiWoUKL2k6AaxKHeRvEUPSRO9IFncJFNZLtj6uPiMuXtXvanVeEjpcxSd/ywbA/IXoTd+eJHHTxIA
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="AddItemToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 22</value>
+  </data>
+  <data name="AddItemToolStripMenuItem.Text" xml:space="preserve">
+    <value>Item toevoegen</value>
+  </data>
+  <data name="AddItemsFromCodesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAJJSURBVDhPdZJfSFNhGMa/6Zy5iYocAw210IuC/m70Z5G4IGUN7I8Ire5aqBRdC0XdFS6LpDBK
+        siaZIyl3YYIR2lUgEojScjTdYqISVjM1a5vn+57O+dYnx5gXv/fwPu/7PN93DocA2BAWC+cuvd1hSzUT
+        pBQF8spU9fcXJU9TzQQpRRXGsAk0EFocOpH41iXlp9pR4YXNXcpgf1pztAM5sXAbbBLxyeuI9m65oJ1p
+        4YVO1NWz320y4s9nEev5wH66+yHPrbKVPsgzZ7E0aB783yjghQ5t0yPkHGHLD8F+9QHLXrDoXdBZJ2ik
+        CnF/TQIztVeWI+c3rxkJ0XGEEBuuLi5vOQIBna4BDdtApypBg8oz6IA87Yz5Oiu9x49KxzL0Oj0PEgEq
+        qtEz0ckDEFJCghXKdzwM+ukg6Pg+YHwP8MWK7ubyDmOmLjNlwP1AdzLg8wFANX7cDzpmBvx7EekvC1VZ
+        DBVin7+Cuiw4+cr19V6gHY1vLq9pKhjbjWlv0XxeFin8Z0znZhHgDT+BZ/IROoIP0Ba4gxb/TVwdbcLF
+        9w3JgNHtmGo1LZjSSaliylbg1+dh2pNcAy64/U1wvj7HtDqGy/DjWf5qUS4xqwHCzAMsPQ6T1VcnWXtP
+        Sepye/gaN1l6ayW777QU92U34l0hS/QXYWepwaFee12AtlGNffO3kqdqdLxMs9GBgmiDPcu+TldIlmZi
+        JDdIiWoUKL2k6AaxKHeRvEUPSRO9IFncJFNZLtj6uPiMuXtXvanVeEjpcxSd/ywbA/IXoTd+eJHHTxIA
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="AddItemsFromCodesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 22</value>
+  </data>
+  <data name="AddItemsFromCodesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Items toevoegen a.d.h.v. itemcodes </value>
+  </data>
+  <data name="ContextMenuToolStripSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 6</value>
+  </data>
+  <data name="DeleteTestComponentToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAJ2SURBVDhPhZBdSFNhGMdP25k6dWZjOkSloy6RvlxTtzFQwUrJi1BEKEJIYVEkhBcR0UUgRTdd
+        iN0FlSBGHyCaQRdqhra0LnSiNM2cMoRQp24nl5bnff+954hr2qiL33Me3uf5/d9zDgfgn5BgX0agJ90a
+        bSYT9TCSrZX+d0tPUgaizWSiHu5ApcBFSGMQB6pD/mfGtGg7SiEL13V0/W4FpHY7SHs2FW/sl9b7MiEt
+        +yG58XPKibWug417ZRmlSB/sAl26tUFDD0A3OwlCTwNUfLQGsgy60gzJVwOxv/D9Xlkm3EjDlkq62gwq
+        toGGekEDLGz5JoivAmS+HL8+VxGyUPMYwUsFUQNkiKeuha7dBw12gPrvgcyVgHjLQGbY80spyHQ5qK8W
+        428rRxrrBachWX1gVwBGK9V09qqLLrKbvae2xeliEI8DZNIGMn4CGDsOeK1wvzQPC2l8+u4AmW8XGjBb
+        Bsw4FKiH/deJIhC3BZgw48dw3vdrtbrLO/tKaTLEG5r0OtPtXH3OYm9xj+hyIDDowGpfITY/WphsBmU3
+        +18LwXyBL1JEjlMx9ikBrVoVxq444Tp/DoNVZzFwshRv8kzo4DWQZ5g8BowexnxLghiv4jKZmMDQKiE7
+        AXNnyvHVYcf80VxMpejhTtTiU5x2O8CdB4wcwmpbMs3Sc1YmJjH48Ce0alTCK15t6zzN19mNfEM2ryl5
+        qI2xP1fH2tz1GgeGUifokICtbiOsJk01k2NkLxzwP2gXl0R6dN3oz0BFYaIzcvZn0cJpkM/pUcAJrM9i
+        GBixkcsbL+KaXXf4I5Fn4QZm9lpmJpm5HIaJkcrYFfA34H4DMCCRAC4wpf8AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="DeleteTestComponentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 22</value>
+  </data>
+  <data name="DeleteTestComponentToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verwijder toetscomponent</value>
+  </data>
+  <data name="MoveItemUpMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAHtSURBVDhPY/j//z9OLFVjfVJ9SaAoNjkYxioIwlK1Vidvf7z733tmwl/FhV7C2NSAMFZBqRrL
+        41ffX/u/4u6q/1feX/3vMj3yr/oSX6yGYAhI11oeP//2/P95t+b+n31j9v8Z12f8P/vmzH/7KUF/tZb5
+        CqGrR+HIN1ifOfvm1P/Zt6b8n3p94v/J1yb8n3C193/Plfb/h17s/W860fW/yeoglDCBMzhzNObrdju/
+        M+h2fSJWbPi58Vzt/7ZLdf/rz5f91+t1+K7aZv1Ys9PuOW+e1kft5V68GAZoLnVhgrEZ4xUPZxzJ+Fp7
+        Pu9//YWC/zINZldgclpL3Rh1V3gzwvhwA5AxyIDCk7mf2y4X/++4WvpfocniMjZ1IIxVEGRAxdnCz303
+        yv9PuFn5X7nZknQD6i+UfJ52p+r/jLs1/1VbrEk3oO1K+ed59+v+L3jQ8F+jzYZ0A3qvV31e9rjx/4on
+        zf+12m1JN2DqrdrP6160/N/wou2/Xqc9qQYoHF7yqO3z7nfd//e+7/1v2OWA2wCGDgZGIGYBYm4gFmVo
+        Z5BjTJWZ3Xal8NuSRw3/lz9p+a/YbHCHoYlBESivAFYDUcsMxIwwA0AcLiAWAWI5INZkzpRZzJIluwyE
+        2Xs57IEGa0DlQGpAaoGWMjACAAaBf7OKTZMeAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="MoveItemUpMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 22</value>
+  </data>
+  <data name="MoveItemUpMenuItem.Text" xml:space="preserve">
+    <value>Item omhoog verplaatsen</value>
+  </data>
+  <data name="MoveItemDownMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAHcSURBVDhPY/j//z8G5phsyibXaHdHudXpqXKb00vL1eFN2NSBMHbBeIVDJ14f/nPm9bn/J1+d
+        /i9aY3YVmzoQxi4INKD3atOPCVem/O++1P9frNacdAP6roEMmPi/53Lvf4k6Mgzovw404Gr//97L3f+l
+        6i1INUDx0ASgAZOu9f3vutz6X7qBRAMYQQbcaPjRdqn2f9XZgv8yDSQGIsiA7muVP6rP5f6vPV/wX66J
+        DBf0Xq/60Xyp6H/r5ZL/8sQYwJWlMU2uzuyAdLXJTtla831tl2p+tl8p/t95tfS/+QSP11JVJttka0x3
+        SdeY7nPaFMqDYYDjphA5gz7Hj6ff7vs/5VbV/4k3K//33Sj/3wvEU2/X/j/9bv9/rzn+/yP3Ji6D6UEx
+        AIQ9t8dIG/U7vZl5r+b/1DtVQI0QPB3I9prj+z/uQMpMZPUgjMIBYc9tEVIWE93fLHrU+H/O/dr/8x7U
+        /fefH/A/42g2hmYQxhAAYb0lppLmE11er33e8T94YfD/uP0xU7CpA2EI0cHADMTcQCzC0MagwNDCoMjd
+        z+dnMdnpl+8W92MM7Yw6DK0MGgztQDmQGohaFiBmxDSgg0EeiLWBBukxd7LaM7YxmQM1GoPFIHJIBjAw
+        AgCBLXny9ToJsgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="MoveItemDownMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 22</value>
+  </data>
+  <data name="MoveItemDownMenuItem.Text" xml:space="preserve">
+    <value>Item omlaag verplaatsen</value>
+  </data>
+  <data name="MoveSectionUpMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAHtSURBVDhPY/j//z9OLFVjfVJ9SaAoNjkYxioIwlK1Vidvf7z733tmwl/FhV7C2NSAMFZBqRrL
+        41ffX/u/4u6q/1feX/3vMj3yr/oSX6yGYAhI11oeP//2/P95t+b+n31j9v8Z12f8P/vmzH/7KUF/tZb5
+        CqGrR+HIN1ifOfvm1P/Zt6b8n3p94v/J1yb8n3C193/Plfb/h17s/W860fW/yeoglDCBMzhzNObrdju/
+        M+h2fSJWbPi58Vzt/7ZLdf/rz5f91+t1+K7aZv1Ys9PuOW+e1kft5V68GAZoLnVhgrEZ4xUPZxzJ+Fp7
+        Pu9//YWC/zINZldgclpL3Rh1V3gzwvhwA5AxyIDCk7mf2y4X/++4WvpfocniMjZ1IIxVEGRAxdnCz303
+        yv9PuFn5X7nZknQD6i+UfJ52p+r/jLs1/1VbrEk3oO1K+ed59+v+L3jQ8F+jzYZ0A3qvV31e9rjx/4on
+        zf+12m1JN2DqrdrP6160/N/wou2/Xqc9qQYoHF7yqO3z7nfd//e+7/1v2OWA2wCGDgZGIGYBYm4gFmVo
+        Z5BjTJWZ3Xal8NuSRw3/lz9p+a/YbHCHoYlBESivAFYDUcsMxIwwA0AcLiAWAWI5INZkzpRZzJIluwyE
+        2Xs57IEGa0DlQGpAaoGWMjACAAaBf7OKTZMeAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="MoveSectionUpMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 22</value>
+  </data>
+  <data name="MoveSectionUpMenuItem.Text" xml:space="preserve">
+    <value>Sectie omhoog verplaatsen</value>
+  </data>
+  <data name="MoveSectionDownMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAHcSURBVDhPY/j//z8G5phsyibXaHdHudXpqXKb00vL1eFN2NSBMHbBeIVDJ14f/nPm9bn/J1+d
+        /i9aY3YVmzoQxi4INKD3atOPCVem/O++1P9frNacdAP6roEMmPi/53Lvf4k6Mgzovw404Gr//97L3f+l
+        6i1INUDx0ASgAZOu9f3vutz6X7qBRAMYQQbcaPjRdqn2f9XZgv8yDSQGIsiA7muVP6rP5f6vPV/wX66J
+        DBf0Xq/60Xyp6H/r5ZL/8sQYwJWlMU2uzuyAdLXJTtla831tl2p+tl8p/t95tfS/+QSP11JVJttka0x3
+        SdeY7nPaFMqDYYDjphA5gz7Hj6ff7vs/5VbV/4k3K//33Sj/3wvEU2/X/j/9bv9/rzn+/yP3Ji6D6UEx
+        AIQ9t8dIG/U7vZl5r+b/1DtVQI0QPB3I9prj+z/uQMpMZPUgjMIBYc9tEVIWE93fLHrU+H/O/dr/8x7U
+        /fefH/A/42g2hmYQxhAAYb0lppLmE11er33e8T94YfD/uP0xU7CpA2EI0cHADMTcQCzC0MagwNDCoMjd
+        z+dnMdnpl+8W92MM7Yw6DK0MGgztQDmQGohaFiBmxDSgg0EeiLWBBukxd7LaM7YxmQM1GoPFIHJIBjAw
+        AgCBLXny9ToJsgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="MoveSectionDownMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 22</value>
+  </data>
+  <data name="MoveSectionDownMenuItem.Text" xml:space="preserve">
+    <value>Sectie omlaag verplaatsen</value>
+  </data>
+  <data name="MoveTestPartUpMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAHtSURBVDhPY/j//z9OLFVjfVJ9SaAoNjkYxioIwlK1Vidvf7z733tmwl/FhV7C2NSAMFZBqRrL
+        41ffX/u/4u6q/1feX/3vMj3yr/oSX6yGYAhI11oeP//2/P95t+b+n31j9v8Z12f8P/vmzH/7KUF/tZb5
+        CqGrR+HIN1ifOfvm1P/Zt6b8n3p94v/J1yb8n3C193/Plfb/h17s/W860fW/yeoglDCBMzhzNObrdju/
+        M+h2fSJWbPi58Vzt/7ZLdf/rz5f91+t1+K7aZv1Ys9PuOW+e1kft5V68GAZoLnVhgrEZ4xUPZxzJ+Fp7
+        Pu9//YWC/zINZldgclpL3Rh1V3gzwvhwA5AxyIDCk7mf2y4X/++4WvpfocniMjZ1IIxVEGRAxdnCz303
+        yv9PuFn5X7nZknQD6i+UfJ52p+r/jLs1/1VbrEk3oO1K+ed59+v+L3jQ8F+jzYZ0A3qvV31e9rjx/4on
+        zf+12m1JN2DqrdrP6160/N/wou2/Xqc9qQYoHF7yqO3z7nfd//e+7/1v2OWA2wCGDgZGIGYBYm4gFmVo
+        Z5BjTJWZ3Xal8NuSRw3/lz9p+a/YbHCHoYlBESivAFYDUcsMxIwwA0AcLiAWAWI5INZkzpRZzJIluwyE
+        2Xs57IEGa0DlQGpAaoGWMjACAAaBf7OKTZMeAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="MoveTestPartUpMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 22</value>
+  </data>
+  <data name="MoveTestPartUpMenuItem.Text" xml:space="preserve">
+    <value>Toetsdeel omhoog verplaatsen</value>
+  </data>
+  <data name="MoveTestPartDownMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAHcSURBVDhPY/j//z8G5phsyibXaHdHudXpqXKb00vL1eFN2NSBMHbBeIVDJ14f/nPm9bn/J1+d
+        /i9aY3YVmzoQxi4INKD3atOPCVem/O++1P9frNacdAP6roEMmPi/53Lvf4k6Mgzovw404Gr//97L3f+l
+        6i1INUDx0ASgAZOu9f3vutz6X7qBRAMYQQbcaPjRdqn2f9XZgv8yDSQGIsiA7muVP6rP5f6vPV/wX66J
+        DBf0Xq/60Xyp6H/r5ZL/8sQYwJWlMU2uzuyAdLXJTtla831tl2p+tl8p/t95tfS/+QSP11JVJttka0x3
+        SdeY7nPaFMqDYYDjphA5gz7Hj6ff7vs/5VbV/4k3K//33Sj/3wvEU2/X/j/9bv9/rzn+/yP3Ji6D6UEx
+        AIQ9t8dIG/U7vZl5r+b/1DtVQI0QPB3I9prj+z/uQMpMZPUgjMIBYc9tEVIWE93fLHrU+H/O/dr/8x7U
+        /fefH/A/42g2hmYQxhAAYb0lppLmE11er33e8T94YfD/uP0xU7CpA2EI0cHADMTcQCzC0MagwNDCoMjd
+        z+dnMdnpl+8W92MM7Yw6DK0MGgztQDmQGohaFiBmxDSgg0EeiLWBBukxd7LaM7YxmQM1GoPFIHJIBjAw
+        AgCBLXny9ToJsgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="MoveTestPartDownMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 22</value>
+  </data>
+  <data name="MoveTestPartDownMenuItem.Text" xml:space="preserve">
+    <value>Toetsdeel omlaag verplaatsen</value>
+  </data>
+  <data name="InsertItemBeforeToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAJJSURBVDhPdZJfSFNhGMa/6Zy5iYocAw210IuC/m70Z5G4IGUN7I8Ire5aqBRdC0XdFS6LpDBK
+        siaZIyl3YYIR2lUgEojScjTdYqISVjM1a5vn+57O+dYnx5gXv/fwPu/7PN93DocA2BAWC+cuvd1hSzUT
+        pBQF8spU9fcXJU9TzQQpRRXGsAk0EFocOpH41iXlp9pR4YXNXcpgf1pztAM5sXAbbBLxyeuI9m65oJ1p
+        4YVO1NWz320y4s9nEev5wH66+yHPrbKVPsgzZ7E0aB783yjghQ5t0yPkHGHLD8F+9QHLXrDoXdBZJ2ik
+        CnF/TQIztVeWI+c3rxkJ0XGEEBuuLi5vOQIBna4BDdtApypBg8oz6IA87Yz5Oiu9x49KxzL0Oj0PEgEq
+        qtEz0ckDEFJCghXKdzwM+ukg6Pg+YHwP8MWK7ubyDmOmLjNlwP1AdzLg8wFANX7cDzpmBvx7EekvC1VZ
+        DBVin7+Cuiw4+cr19V6gHY1vLq9pKhjbjWlv0XxeFin8Z0znZhHgDT+BZ/IROoIP0Ba4gxb/TVwdbcLF
+        9w3JgNHtmGo1LZjSSaliylbg1+dh2pNcAy64/U1wvj7HtDqGy/DjWf5qUS4xqwHCzAMsPQ6T1VcnWXtP
+        Sepye/gaN1l6ayW777QU92U34l0hS/QXYWepwaFee12AtlGNffO3kqdqdLxMs9GBgmiDPcu+TldIlmZi
+        JDdIiWoUKL2k6AaxKHeRvEUPSRO9IFncJFNZLtj6uPiMuXtXvanVeEjpcxSd/ywbA/IXoTd+eJHHTxIA
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="InsertItemBeforeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 22</value>
+  </data>
+  <data name="InsertItemBeforeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Item toevoegen</value>
+  </data>
+  <data name="RefreshItemDataSourceToolStripMenuItem.Text" xml:space="preserve">
+    <value>Item selectie vernieuwen</value>
+  </data>
+  <data name="CopyToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAIiSURBVDhPbZO7j9pAEIdPiCot3aWhSpPr0wSj8JBS0vEoI6H8ARcpShHpUPq0iXQSIKo7XgcE
+        ihRcQS4CkevzuNg8UqCcYh5+gLHXnuysD4hjVhrPrD377W92xwcA4LDHgcDzaDT6IhKJHKOFw2FqoeNQ
+        6MlLn8/34P98xwSt2WwS6l3DMglcX38hfr+fo9Nt/jZIpVKnmUzmc7vdtvr9PvR6Peh2u3B19Qk6nQ7o
+        ug6L+RwGgmDePzx85AK0Wi2RerAsfKK3wDB0UGQZRqMhg0wmE/g1HsOHRkPlOO4VTdsB6vUGAxBCwDRN
+        DBkE57jw9vY3XF622fubmx8kHo+/p+EOUKvXGUDXDRuykULHdDoFgefh+7evgOXxPI+Ad/TTDnBRqzHA
+        er3eQe6U4LAsExRFhkKhAKPhkCQSCSegWr0QcdfVSgONQXQXRNM0GzAauQGVSlUkxAR1uaSQ1V6IYRiQ
+        z+dhuE9BuVIRdZqgKOodZKPELse+FQNyuRwMBgM3oFQui9paB4lem7yFOJWgz2azIAiC+xCLpZKIu84X
+        EkiSvFcJngECfu67hfNiUVSXK5jRbmMQpkRxKEEYHuJ4PCbJZNLZBwhQ1CVMZwhYMBUbwJIC1rQ8jNPp
+        9MdYLHZK/4mnDsDZ2bkoyQr8Eae0cWZUyQIWTInCykEIQj0ez9vNGgfg4dHRs2Aw+CYQCJzYxp3Qfv/H
+        guhfe73eezsAHPwFcQIuemmYG6YAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="CopyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 22</value>
+  </data>
+  <data name="CopyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kopiëren</value>
+  </data>
+  <data name="PasteToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAJ7SURBVDhPddL/SxNhHAdw/6ToRyENrAxL0ugLKlqztQRRm06ZkkpYwSBRtG1u3L5o3jI0ZSIR
+        ZLfdZitvN1eD3OibhDi7tnnbbt/v3Ke7k5lydvDmuePuefF+nufKAOC/0Wp1lTqd/txJ70o5vKlQ6GUT
+        C8SYBvU8foq6xiafv14gvL5ffMKBQED3yIJpBgwO9RCCD1Z3mlskQJ3KOsCPKLsPtgjNvHznwMG34YcN
+        /ydw4GvcVpiepBKFkTDNddcorQoJcFlp7syzRTvHcUBRFCAIIsZkMoljeGcH2HwGtnYZtLLN2CgFus3t
+        TJZ7kcvloFBgxUQiEYhGo1AsFvlPALzERwhtM+YzCmNDad4hUN1pklN03pjNZiBbQlgWhEaliyRJ8P9I
+        IuXyqZv843GgXK5v8ATjQ7lsGjKZrIjk8wVgRWRfbCEAvm/JkxtU3DM04YHYcCadglT6JIQTAfJrYvps
+        G9IkAarakWbMHx1Jp5LAMFJEWA5JemE9SM9WtZubJcCFDnPLW9+fJwyTgESSOYYIGysgJEmA58ue7XyH
+        9ZYEqLk/ffsNQWmSiTjE4wJy0CR9pAnpXQf359jcxa4ZmQSo7ZmRrXh2RxPxPdijaaCPIKUmwjE6/ZH5
+        S8rZOxKgrne21e7eGafpGMRiR5F/yyGID4CR1GJtD3pXAlxT2+RLzm0t7lwFDMPA6cAAxx3gcuHgdrvg
+        /ZobSMIDq8TvlSsqm/RXbh1Z7NK++jlgsW+OW+zBCctycNK6HNLy0fGZsiyHDBZ7yPhs/vtoy/CSSgKc
+        ahx9cF0911+nQpX1vWh3fR/ac7XPpuLTW0o9nxv9c4Onm8YeHsyDsr+XRgx+UP8I1gAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
+  <data name="PasteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 22</value>
+  </data>
+  <data name="PasteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Plakken</value>
+  </data>
+  <data name="TestContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 390</value>
+  </data>
+  <data name="TestHierarchyGrid_Layout_0.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Caption&gt;Toets&lt;/Caption&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="Title"&gt;&lt;ButtonDisplayMode&gt;CurrentRow&lt;/ButtonDisplayMode&gt;&lt;Caption&gt;Titel&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Title&lt;/DataMember&gt;&lt;Key&gt;Title&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;292&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="MaxTestScore"&gt;&lt;Caption&gt;Max Toets Score&lt;/Caption&gt;&lt;DataTypeCode&gt;Double&lt;/DataTypeCode&gt;&lt;DataMember&gt;MaxTestScore&lt;/DataMember&gt;&lt;Key&gt;MaxTestScore&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;113&lt;/Width&gt;&lt;/Column1&gt;&lt;/Columns&gt;&lt;ChildTables Collection="true" ElementName="Table"&gt;&lt;Table0 ID="TestParts"&gt;&lt;DataMember&gt;TestParts&lt;/DataMember&gt;&lt;Key&gt;TestParts&lt;/Key&gt;&lt;Caption&gt;Test parts&lt;/Caption&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="Title"&gt;&lt;Caption&gt;Titel&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Title&lt;/DataMember&gt;&lt;Key&gt;Title&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;215&lt;/Width&gt;&lt;AutoSizeMode&gt;AllCells&lt;/AutoSizeMode&gt;&lt;/Column0&gt;&lt;Column1 ID="NavigationMode"&gt;&lt;Caption&gt;Navigation Mode&lt;/Caption&gt;&lt;DataTypeCode&gt;Int32&lt;/DataTypeCode&gt;&lt;DataMember&gt;NavigationMode&lt;/DataMember&gt;&lt;Key&gt;NavigationMode&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;86&lt;/Width&gt;&lt;/Column1&gt;&lt;Column2 ID="MaxScore"&gt;&lt;Caption&gt;Max. score&lt;/Caption&gt;&lt;DataTypeCode&gt;Double&lt;/DataTypeCode&gt;&lt;DataMember&gt;MaxScore&lt;/DataMember&gt;&lt;Key&gt;MaxScore&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;86&lt;/Width&gt;&lt;/Column2&gt;&lt;/Columns&gt;&lt;ChildTables Collection="true" ElementName="Table"&gt;&lt;Table0 ID="Sections"&gt;&lt;DataMember&gt;Sections&lt;/DataMember&gt;&lt;Key&gt;Sections&lt;/Key&gt;&lt;Caption&gt;Secties&lt;/Caption&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="Title"&gt;&lt;Caption&gt;Titel&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Title&lt;/DataMember&gt;&lt;Key&gt;Title&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;205&lt;/Width&gt;&lt;AutoSizeMode&gt;AllCells&lt;/AutoSizeMode&gt;&lt;/Column0&gt;&lt;Column1 ID="MaxScore"&gt;&lt;Caption&gt;Max. score&lt;/Caption&gt;&lt;DataTypeCode&gt;Double&lt;/DataTypeCode&gt;&lt;DataMember&gt;MaxScore&lt;/DataMember&gt;&lt;Key&gt;MaxScore&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;82&lt;/Width&gt;&lt;/Column1&gt;&lt;Column2 ID="Shuffle"&gt;&lt;Caption&gt;Shuffle&lt;/Caption&gt;&lt;DataTypeCode&gt;Boolean&lt;/DataTypeCode&gt;&lt;ColumnType&gt;CheckBox&lt;/ColumnType&gt;&lt;DataMember&gt;Shuffle&lt;/DataMember&gt;&lt;EditType&gt;CheckBox&lt;/EditType&gt;&lt;Key&gt;Shuffle&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;82&lt;/Width&gt;&lt;/Column2&gt;&lt;/Columns&gt;&lt;ChildTables Collection="true" ElementName="Table"&gt;&lt;Table0 ID="Components"&gt;&lt;DataMember&gt;Components&lt;/DataMember&gt;&lt;Key&gt;Components&lt;/Key&gt;&lt;Caption&gt;Componenten&lt;/Caption&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="Title"&gt;&lt;Caption&gt;Titel&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Title&lt;/DataMember&gt;&lt;Key&gt;Title&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;250&lt;/Width&gt;&lt;AutoSizeMode&gt;AllCells&lt;/AutoSizeMode&gt;&lt;/Column0&gt;&lt;Column1 ID="MaxScore"&gt;&lt;Caption&gt;Max. score&lt;/Caption&gt;&lt;DataTypeCode&gt;Double&lt;/DataTypeCode&gt;&lt;DataMember&gt;MaxScore&lt;/DataMember&gt;&lt;Key&gt;MaxScore&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;101&lt;/Width&gt;&lt;/Column1&gt;&lt;/Columns&gt;&lt;GroupCondition /&gt;&lt;TableHeaderFormatStyle&gt;&lt;FontBold&gt;True&lt;/FontBold&gt;&lt;FontSize&gt;10&lt;/FontSize&gt;&lt;/TableHeaderFormatStyle&gt;&lt;RowFormatStyle&gt;&lt;ForeColor&gt;Black&lt;/ForeColor&gt;&lt;BackgroundGradientMode&gt;DiagonalBackwards&lt;/BackgroundGradientMode&gt;&lt;/RowFormatStyle&gt;&lt;/Table0&gt;&lt;/ChildTables&gt;&lt;GroupCondition /&gt;&lt;TableHeaderFormatStyle&gt;&lt;FontBold&gt;True&lt;/FontBold&gt;&lt;FontSize&gt;10&lt;/FontSize&gt;&lt;/TableHeaderFormatStyle&gt;&lt;RowFormatStyle&gt;&lt;BackColor&gt;186, 157, 129&lt;/BackColor&gt;&lt;ForeColor&gt;Black&lt;/ForeColor&gt;&lt;BackgroundGradientMode&gt;DiagonalBackwards&lt;/BackgroundGradientMode&gt;&lt;/RowFormatStyle&gt;&lt;/Table0&gt;&lt;/ChildTables&gt;&lt;GroupCondition /&gt;&lt;RowHeaders&gt;False&lt;/RowHeaders&gt;&lt;TableHeaderFormatStyle&gt;&lt;FontBold&gt;True&lt;/FontBold&gt;&lt;FontSize&gt;10&lt;/FontSize&gt;&lt;/TableHeaderFormatStyle&gt;&lt;RowFormatStyle&gt;&lt;BackColor&gt;157, 129, 186&lt;/BackColor&gt;&lt;ForeColor&gt;Black&lt;/ForeColor&gt;&lt;BackgroundGradientMode&gt;DiagonalBackwards&lt;/BackgroundGradientMode&gt;&lt;/RowFormatStyle&gt;&lt;HeaderFormatStyle&gt;&lt;FontBold&gt;False&lt;/FontBold&gt;&lt;/HeaderFormatStyle&gt;&lt;/Table0&gt;&lt;/ChildTables&gt;&lt;GroupCondition /&gt;&lt;RowHeaderWidth&gt;18&lt;/RowHeaderWidth&gt;&lt;TableHeaderFormatStyle&gt;&lt;FontBold&gt;True&lt;/FontBold&gt;&lt;FontSize&gt;10&lt;/FontSize&gt;&lt;/TableHeaderFormatStyle&gt;&lt;RowFormatStyle&gt;&lt;BackColor&gt;57, 104, 80&lt;/BackColor&gt;&lt;BackgroundGradientMode&gt;DiagonalBackwards&lt;/BackgroundGradientMode&gt;&lt;/RowFormatStyle&gt;&lt;/RootTable&gt;&lt;RowWithErrorsFormatStyle&gt;&lt;PredefinedStyle&gt;RowWithErrorsFormatStyle&lt;/PredefinedStyle&gt;&lt;/RowWithErrorsFormatStyle&gt;&lt;LinkFormatStyle&gt;&lt;PredefinedStyle&gt;LinkFormatStyle&lt;/PredefinedStyle&gt;&lt;/LinkFormatStyle&gt;&lt;CardCaptionFormatStyle&gt;&lt;PredefinedStyle&gt;CardCaptionFormatStyle&lt;/PredefinedStyle&gt;&lt;/CardCaptionFormatStyle&gt;&lt;GroupByBoxFormatStyle&gt;&lt;PredefinedStyle&gt;GroupByBoxFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupByBoxFormatStyle&gt;&lt;GroupByBoxInfoFormatStyle&gt;&lt;PredefinedStyle&gt;GroupByBoxInfoFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupByBoxInfoFormatStyle&gt;&lt;GroupRowFormatStyle&gt;&lt;PredefinedStyle&gt;GroupRowFormatStyle&lt;/PredefinedStyle&gt;&lt;/GroupRowFormatStyle&gt;&lt;HeaderFormatStyle&gt;&lt;PredefinedStyle&gt;HeaderFormatStyle&lt;/PredefinedStyle&gt;&lt;/HeaderFormatStyle&gt;&lt;PreviewRowFormatStyle&gt;&lt;PredefinedStyle&gt;PreviewRowFormatStyle&lt;/PredefinedStyle&gt;&lt;/PreviewRowFormatStyle&gt;&lt;RowFormatStyle&gt;&lt;PredefinedStyle&gt;RowFormatStyle&lt;/PredefinedStyle&gt;&lt;/RowFormatStyle&gt;&lt;SelectedFormatStyle&gt;&lt;BackColor&gt;Purple&lt;/BackColor&gt;&lt;ForeColor&gt;White&lt;/ForeColor&gt;&lt;PredefinedStyle&gt;SelectedFormatStyle&lt;/PredefinedStyle&gt;&lt;/SelectedFormatStyle&gt;&lt;SelectedInactiveFormatStyle&gt;&lt;PredefinedStyle&gt;SelectedInactiveFormatStyle&lt;/PredefinedStyle&gt;&lt;/SelectedInactiveFormatStyle&gt;&lt;FocusCellFormatStyle&gt;&lt;BackColor&gt;Navy&lt;/BackColor&gt;&lt;ForeColor&gt;Black&lt;/ForeColor&gt;&lt;PredefinedStyle&gt;FocusCellFormatStyle&lt;/PredefinedStyle&gt;&lt;/FocusCellFormatStyle&gt;&lt;WatermarkImage /&gt;&lt;Font&gt;Microsoft Sans Serif, 8.25pt&lt;/Font&gt;&lt;VisualStyle&gt;Standard&lt;/VisualStyle&gt;&lt;AllowColumnDrag&gt;False&lt;/AllowColumnDrag&gt;&lt;AllowEdit&gt;False&lt;/AllowEdit&gt;&lt;AutomaticSort&gt;False&lt;/AutomaticSort&gt;&lt;ColumnAutoResize&gt;True&lt;/ColumnAutoResize&gt;&lt;GroupByBoxVisible&gt;False&lt;/GroupByBoxVisible&gt;&lt;HideSelection&gt;Highlight&lt;/HideSelection&gt;&lt;Hierarchical&gt;True&lt;/Hierarchical&gt;&lt;TabKeyBehavior&gt;ControlNavigation&lt;/TabKeyBehavior&gt;&lt;TableHeaders&gt;True&lt;/TableHeaders&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <data name="TestHierarchyGrid_Layout_1.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;
+	&lt;RootTable&gt;
+		&lt;Caption&gt;Toets&lt;/Caption&gt;
+		&lt;Columns Collection="true" ElementName="Column"&gt;
+			&lt;Column0 ID="Title"&gt;
+				&lt;ButtonDisplayMode&gt;CurrentRow&lt;/ButtonDisplayMode&gt;
+				&lt;Caption&gt;Titel&lt;/Caption&gt;
+				&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+				&lt;DataMember&gt;Title&lt;/DataMember&gt;
+				&lt;Key&gt;Title&lt;/Key&gt;
+				&lt;Position&gt;0&lt;/Position&gt;
+				&lt;Width&gt;405&lt;/Width&gt;
+				&lt;AutoSizeMode&gt;AllCells&lt;/AutoSizeMode&gt;
+			&lt;/Column0&gt;
+		&lt;/Columns&gt;
+		&lt;ChildTables Collection="true" ElementName="Table"&gt;
+			&lt;Table0 ID="TestParts"&gt;
+				&lt;DataMember&gt;TestParts&lt;/DataMember&gt;
+				&lt;Key&gt;TestParts&lt;/Key&gt;
+				&lt;Caption&gt;Toetsonderdelen&lt;/Caption&gt;
+				&lt;Columns Collection="true" ElementName="Column"&gt;
+					&lt;Column0 ID="Title"&gt;
+						&lt;Caption&gt;Titel&lt;/Caption&gt;
+						&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+						&lt;DataMember&gt;Title&lt;/DataMember&gt;
+						&lt;Key&gt;Title&lt;/Key&gt;
+						&lt;Position&gt;0&lt;/Position&gt;
+						&lt;Width&gt;387&lt;/Width&gt;
+						&lt;AutoSizeMode&gt;AllCells&lt;/AutoSizeMode&gt;
+					&lt;/Column0&gt;
+				&lt;/Columns&gt;
+				&lt;ChildTables Collection="true" ElementName="Table"&gt;
+					&lt;Table0 ID="Sections"&gt;
+						&lt;DataMember&gt;Sections&lt;/DataMember&gt;
+						&lt;Key&gt;Sections&lt;/Key&gt;
+						&lt;Caption&gt;Secties&lt;/Caption&gt;
+						&lt;Columns Collection="true" ElementName="Column"&gt;
+							&lt;Column0 ID="Title"&gt;
+								&lt;Caption&gt;Titel&lt;/Caption&gt;
+								&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+								&lt;DataMember&gt;Title&lt;/DataMember&gt;
+								&lt;Key&gt;Title&lt;/Key&gt;
+								&lt;Position&gt;0&lt;/Position&gt;
+								&lt;Width&gt;369&lt;/Width&gt;
+								&lt;AutoSizeMode&gt;AllCells&lt;/AutoSizeMode&gt;
+							&lt;/Column0&gt;
+						&lt;/Columns&gt;
+						&lt;ChildTables Collection="true" ElementName="Table"&gt;
+							&lt;Table0 ID="Components"&gt;
+								&lt;DataMember&gt;Components&lt;/DataMember&gt;
+								&lt;Key&gt;Components&lt;/Key&gt;
+								&lt;Caption&gt;Componenten&lt;/Caption&gt;
+								&lt;Columns Collection="true" ElementName="Column"&gt;
+									&lt;Column0 ID="Title"&gt;
+										&lt;Caption&gt;Titel&lt;/Caption&gt;
+										&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;
+										&lt;DataMember&gt;Title&lt;/DataMember&gt;
+										&lt;Key&gt;Title&lt;/Key&gt;
+										&lt;Position&gt;0&lt;/Position&gt;
+										&lt;AutoSizeMode&gt;AllCells&lt;/AutoSizeMode&gt;
+									&lt;/Column0&gt;
+									&lt;Column1 ID="StatusIconAnchor"&gt;
+										&lt;Key&gt;StatusIconAnchor&lt;/Key&gt;
+										&lt;Position&gt;1&lt;/Position&gt;
+										&lt;Visible&gt;False&lt;/Visible&gt;
+									&lt;/Column1&gt;
+									&lt;Column2 ID="StatusIconSeeding"&gt;
+										&lt;Key&gt;StatusIconSeeding&lt;/Key&gt;
+										&lt;Position&gt;2&lt;/Position&gt;
+										&lt;Visible&gt;False&lt;/Visible&gt;
+									&lt;/Column2&gt;
+								&lt;/Columns&gt;
+								&lt;GroupCondition/&gt;
+								&lt;HierarchicalMode&gt;SelfReferencingChildList&lt;/HierarchicalMode&gt;
+								&lt;RowFormatStyle&gt;
+									&lt;BackColor&gt;216, 237, 250&lt;/BackColor&gt;
+								&lt;/RowFormatStyle&gt;
+								&lt;SelfReferencingSettings ID="SelfReferencingSettings"&gt;
+									&lt;ChildListMember&gt;Components&lt;/ChildListMember&gt;
+								&lt;/SelfReferencingSettings&gt;
+							&lt;/Table0&gt;
+						&lt;/ChildTables&gt;
+						&lt;GroupCondition/&gt;
+						&lt;RowFormatStyle&gt;
+							&lt;BackColor&gt;230, 195, 221&lt;/BackColor&gt;
+							&lt;ForeColor&gt;Black&lt;/ForeColor&gt;
+							&lt;BackgroundGradientMode&gt;Solid&lt;/BackgroundGradientMode&gt;
+						&lt;/RowFormatStyle&gt;
+					&lt;/Table0&gt;
+				&lt;/ChildTables&gt;
+				&lt;GroupCondition/&gt;
+				&lt;TableHeader&gt;True&lt;/TableHeader&gt;
+				&lt;RowFormatStyle&gt;
+					&lt;BackColor&gt;203, 239, 221&lt;/BackColor&gt;
+					&lt;ForeColor&gt;Black&lt;/ForeColor&gt;
+					&lt;BackgroundGradientMode&gt;Solid&lt;/BackgroundGradientMode&gt;
+				&lt;/RowFormatStyle&gt;
+			&lt;/Table0&gt;
+		&lt;/ChildTables&gt;
+		&lt;GroupCondition/&gt;
+		&lt;RowHeaderWidth&gt;18&lt;/RowHeaderWidth&gt;
+		&lt;RowFormatStyle&gt;
+			&lt;BackColor&gt;190, 192, 220&lt;/BackColor&gt;
+			&lt;BackgroundGradientMode&gt;Solid&lt;/BackgroundGradientMode&gt;
+		&lt;/RowFormatStyle&gt;
+	&lt;/RootTable&gt;
+	&lt;RowWithErrorsFormatStyle&gt;
+		&lt;ForeColor&gt;Black&lt;/ForeColor&gt;
+		&lt;PredefinedStyle&gt;RowWithErrorsFormatStyle&lt;/PredefinedStyle&gt;
+	&lt;/RowWithErrorsFormatStyle&gt;
+	&lt;LinkFormatStyle&gt;
+		&lt;PredefinedStyle&gt;LinkFormatStyle&lt;/PredefinedStyle&gt;
+	&lt;/LinkFormatStyle&gt;
+	&lt;CardCaptionFormatStyle&gt;
+		&lt;PredefinedStyle&gt;CardCaptionFormatStyle&lt;/PredefinedStyle&gt;
+	&lt;/CardCaptionFormatStyle&gt;
+	&lt;GroupByBoxFormatStyle&gt;
+		&lt;PredefinedStyle&gt;GroupByBoxFormatStyle&lt;/PredefinedStyle&gt;
+	&lt;/GroupByBoxFormatStyle&gt;
+	&lt;GroupByBoxInfoFormatStyle&gt;
+		&lt;PredefinedStyle&gt;GroupByBoxInfoFormatStyle&lt;/PredefinedStyle&gt;
+	&lt;/GroupByBoxInfoFormatStyle&gt;
+	&lt;GroupRowFormatStyle&gt;
+		&lt;BackColor/&gt;
+		&lt;BackColorGradient/&gt;
+		&lt;PredefinedStyle&gt;GroupRowFormatStyle&lt;/PredefinedStyle&gt;
+	&lt;/GroupRowFormatStyle&gt;
+	&lt;HeaderFormatStyle&gt;
+		&lt;Appearance&gt;Flat&lt;/Appearance&gt;
+		&lt;BackColor/&gt;
+		&lt;BackColorGradient/&gt;
+		&lt;PredefinedStyle&gt;HeaderFormatStyle&lt;/PredefinedStyle&gt;
+	&lt;/HeaderFormatStyle&gt;
+	&lt;PreviewRowFormatStyle&gt;
+		&lt;PredefinedStyle&gt;PreviewRowFormatStyle&lt;/PredefinedStyle&gt;
+	&lt;/PreviewRowFormatStyle&gt;
+	&lt;RowFormatStyle&gt;
+		&lt;BackColor/&gt;
+		&lt;PredefinedStyle&gt;RowFormatStyle&lt;/PredefinedStyle&gt;
+	&lt;/RowFormatStyle&gt;
+	&lt;SelectedFormatStyle&gt;
+		&lt;BackColor&gt;51, 153, 255&lt;/BackColor&gt;
+		&lt;ForeColor&gt;White&lt;/ForeColor&gt;
+		&lt;BackColorGradient/&gt;
+		&lt;PredefinedStyle&gt;SelectedFormatStyle&lt;/PredefinedStyle&gt;
+	&lt;/SelectedFormatStyle&gt;
+	&lt;SelectedInactiveFormatStyle&gt;
+		&lt;PredefinedStyle&gt;SelectedInactiveFormatStyle&lt;/PredefinedStyle&gt;
+	&lt;/SelectedInactiveFormatStyle&gt;
+	&lt;FocusCellFormatStyle&gt;
+		&lt;BackColor&gt;51, 153, 255&lt;/BackColor&gt;
+		&lt;ForeColor&gt;White&lt;/ForeColor&gt;
+		&lt;PredefinedStyle&gt;FocusCellFormatStyle&lt;/PredefinedStyle&gt;
+	&lt;/FocusCellFormatStyle&gt;
+	&lt;WatermarkImage/&gt;
+	&lt;GridLineColor&gt;White&lt;/GridLineColor&gt;
+	&lt;Font&gt;Microsoft Sans Serif, 8.25pt&lt;/Font&gt;
+	&lt;VisualStyle&gt;Standard&lt;/VisualStyle&gt;
+	&lt;VisualStyleAreas&gt;
+		&lt;HeadersStyle&gt;Standard&lt;/HeadersStyle&gt;
+	&lt;/VisualStyleAreas&gt;
+	&lt;AllowColumnDrag&gt;False&lt;/AllowColumnDrag&gt;
+	&lt;AllowEdit&gt;False&lt;/AllowEdit&gt;
+	&lt;AutomaticSort&gt;False&lt;/AutomaticSort&gt;
+	&lt;ColumnAutoResize&gt;True&lt;/ColumnAutoResize&gt;
+	&lt;ColumnHeaders&gt;False&lt;/ColumnHeaders&gt;
+	&lt;GridLines&gt;None&lt;/GridLines&gt;
+	&lt;GroupByBoxVisible&gt;False&lt;/GroupByBoxVisible&gt;
+	&lt;HideSelection&gt;Highlight&lt;/HideSelection&gt;
+	&lt;Hierarchical&gt;True&lt;/Hierarchical&gt;
+	&lt;SelectionMode&gt;MultipleSelection&lt;/SelectionMode&gt;
+	&lt;TabKeyBehavior&gt;ControlNavigation&lt;/TabKeyBehavior&gt;
+	&lt;EnterKeyBehavior&gt;None&lt;/EnterKeyBehavior&gt;
+	&lt;TableHeaders&gt;True&lt;/TableHeaders&gt;
+&lt;/GridEXLayoutData&gt;</value>
+  </data>
+  <data name="RefreshSectionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sectie vernieuwen met automat. itemselectie</value>
+  </data>
+  <data name="SaveExcelFileDialog.Filter" xml:space="preserve">
+    <value>Excel bestanden (.xls)|*.xls|Alle bestanden (*.*)|*.*</value>
+  </data>
+</root>

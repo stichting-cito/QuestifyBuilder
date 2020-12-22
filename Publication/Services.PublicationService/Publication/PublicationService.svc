@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Questify.Builder.Services.PublicationService.Publication.PublicationService" CodeBehind="PublicationService.svc.cs" %>

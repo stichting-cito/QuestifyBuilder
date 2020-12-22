@@ -1,0 +1,1 @@
+<Assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords", Scope:="namespace", Target:="Questify.Builder.Security.Shared", MessageId:="Shared")>

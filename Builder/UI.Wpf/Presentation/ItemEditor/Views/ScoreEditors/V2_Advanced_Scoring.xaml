@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.ScoreEditors.V2_Advanced_Scoring"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF" 
+			 meffed:ViewModelLocator.ViewModel="ItemEditor.V2_Advanced_Scoring"
+			 mc:Ignorable="d"              
+			 d:DesignHeight="200" d:DesignWidth="700"
+			 x:Name="V2_Advanced_Scoring_Control">
+
+	<UserControl.Resources>
+		<ResourceDictionary>
+			
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="DataTemplates\SharedDataTemplates.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+
+			<BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+		</ResourceDictionary>
+	</UserControl.Resources>
+
+
+    <StackPanel Visibility="{Binding ScoreVisibility.DataValue}">
+        <Expander IsExpanded="True" Style="{StaticResource EditorExpander}" Header="{StaticResource ItemEditor.ScoreEditor.ExpanderScoringHeader}">
+			<!--When there are multiple findings, this construct will show them one by one.-->
+			<ItemsControl x:Name="scoreEditorsPerFindingList" ItemTemplate="{StaticResource KeyFindingTemplate}"
+						ItemsSource="{Binding FindingGroups}" Focusable="True" />
+		</Expander>
+
+
+        <Expander IsExpanded="True" Header="{StaticResource ItemEditor.ScoreEditor.ExpanderEncodingHeader}"
+            Style="{StaticResource EditorExpander}" Visibility="{Binding ConceptParametersPresent, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="0,10,0,0">
+			<ItemsControl x:Name="conceptEditorsList" ItemsSource="{Binding ConceptEditorsViews}" />
+		</Expander>
+
+		</StackPanel>
+
+</UserControl>

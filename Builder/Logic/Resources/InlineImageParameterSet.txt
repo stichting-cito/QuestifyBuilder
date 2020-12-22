@@ -1,0 +1,27 @@
+<ArrayOfParameterCollection>
+	<ParameterCollection id="mediaparameters">
+		<resourceparameter name="source">
+		  <designersetting key="label">Image file</designersetting>
+		  <designersetting key="label-NL">Afbeelding bestand</designersetting>
+		  <designersetting key="description">Select the image</designersetting>
+		  <designersetting key="description-NL">Selecteer de afbeelding</designersetting>
+		  <designersetting key="required">true</designersetting>
+		  <designersetting key="filter">image</designersetting>
+		  <designersetting key="group">Image</designersetting>
+		  <designersetting key="group-NL">Afbeelding</designersetting>
+		  <designersetting key="editbuttonVisible">false</designersetting>
+		  <designersetting key="deletebuttonVisible">false</designersetting>
+		  <designersetting key="sortkey">1</designersetting>
+		</resourceparameter>
+		<booleanparameter name="useBorder">
+		  <designersetting key="label">Add border</designersetting>
+		  <designersetting key="label-NL">Rand toepassen</designersetting>
+		  <designersetting key="group">Image</designersetting>
+		  <designersetting key="group-NL">Afbeelding</designersetting>
+		  <designersetting key="defaultvalue">False</designersetting>
+		  <designersetting key="visible">True</designersetting>
+		  <designersetting key="required">False</designersetting>
+		  <designersetting key="sortkey">5</designersetting>
+		</booleanparameter>
+	</ParameterCollection>
+</ArrayOfParameterCollection>

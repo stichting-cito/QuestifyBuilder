@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<AssessmentTest2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Identifier="Oefentoets_v2" LockedForEdit="false" Title="Oefentoets volgens nieuw model2">
+  <DynamicProperties>
+    <Property MappedToViews="" Name="settingsCollection" TypeName="Cito.Tester.ContentModel.SettingsCollection2">
+      <CustomSettingsCollection>
+        <CustomSettingSet Name="LOVSStandardSettings">
+          <LOVSStandardSettings>
+            <UIStyle>Entreetoets</UIStyle>
+          </LOVSStandardSettings>
+        </CustomSettingSet>
+      </CustomSettingsCollection>
+    </Property>
+    <Property MappedToViews="Word" Name="printForm" TypeName="System.Collections.Generic.List`1[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+      <ArrayOfString />
+    </Property>
+  </DynamicProperties>
+  <IncludedViews>
+    <ViewType>Word</ViewType>
+  </IncludedViews>
+  <TestOutcomeTranslationTable minValue="0" maxValue="0">
+    <outComes />
+  </TestOutcomeTranslationTable>
+  <TestParts>
+    <Part Identifier="c3a02dc6-dca5-4c93-939a-665d7021d1e5" LockedForEdit="false" Title="Intro deel">
+      <DynamicProperties>
+        <Property MappedToViews="" Name="settingsCollection" TypeName="Cito.Tester.ContentModel.SettingsCollection2">
+          <CustomSettingsCollection />
+        </Property>
+      </DynamicProperties>
+      <TestSections>
+        <Section Identifier="487cac4c-59ec-4cb7-b03f-76b3f1f198df" LockedForEdit="false" Title="Intro sectie" ItemSelectorSrc="Generic.ItemSelector.Linear" SectionType="normal">
+          <DynamicProperties>
+            <Property MappedToViews="" Name="settingsCollection" TypeName="Cito.Tester.ContentModel.SettingsCollection2">
+              <CustomSettingsCollection />
+            </Property>
+          </DynamicProperties>
+          <Components>
+            <ItemReference Identifier="36ca38b1-563a-486a-83bf-19b0a49c3bd1" LockedForEdit="false" Title="E861FDDD-FC72-4D81-A796-D8E612B977F3" Active="false" ItemFunctionalType="Informational" Src="E861FDDD-FC72-4D81-A796-D8E612B977F3">
+              <DynamicProperties>
+                <Property MappedToViews="" Name="settingsCollection" TypeName="Cito.Tester.ContentModel.SettingsCollection2">
+                  <CustomSettingsCollection />
+                </Property>
+              </DynamicProperties>
+              <ItemScoreTranslationTable>
+                <ItemScoreTranslationTableEntry rawScore="0" translatedScore="0" />
+              </ItemScoreTranslationTable>
+            </ItemReference>
+          </Components>
+        </Section>
+      </TestSections>
+    </Part>
+    <Part Identifier="b0a608e2-8732-4c8f-b3cf-55e9850de007" LockedForEdit="false" Title="Toets deel">
+      <DynamicProperties>
+        <Property MappedToViews="" Name="settingsCollection" TypeName="Cito.Tester.ContentModel.SettingsCollection2">
+          <CustomSettingsCollection />
+        </Property>
+      </DynamicProperties>
+      <TestSections>
+        <Section Identifier="3904d53e-faf0-49f1-8490-8ea06b5b9520" LockedForEdit="false" Title="Toets sectie" ItemSelectorSrc="Generic.ItemSelector.Linear" SectionType="normal">
+          <DynamicProperties>
+            <Property MappedToViews="" Name="settingsCollection" TypeName="Cito.Tester.ContentModel.SettingsCollection2">
+              <CustomSettingsCollection />
+            </Property>
+          </DynamicProperties>
+          <Components>
+            <ItemReference Identifier="6433a632-3904-4604-b322-bea0d3a8fcc7" LockedForEdit="false" Title="07216" Active="true" ItemFunctionalType="Regular" Src="07216">
+              <DynamicProperties>
+                <Property MappedToViews="" Name="settingsCollection" TypeName="Cito.Tester.ContentModel.SettingsCollection2">
+                  <CustomSettingsCollection />
+                </Property>
+              </DynamicProperties>
+              <ItemScoreTranslationTable>
+                <ItemScoreTranslationTableEntry rawScore="0" translatedScore="0" />
+              </ItemScoreTranslationTable>
+            </ItemReference>
+            <ItemReference Identifier="a41ecc08-4977-496d-9a0f-beeb6212707d" LockedForEdit="false" Title="Bestanië" Active="true" ItemFunctionalType="Regular" Src="Bestanië">
+              <DynamicProperties>
+                <Property MappedToViews="" Name="settingsCollection" TypeName="Cito.Tester.ContentModel.SettingsCollection2">
+                  <CustomSettingsCollection />
+                </Property>
+              </DynamicProperties>
+              <ItemScoreTranslationTable>
+                <ItemScoreTranslationTableEntry rawScore="0" translatedScore="0" />
+                <ItemScoreTranslationTableEntry rawScore="1" translatedScore="1" />
+              </ItemScoreTranslationTable>
+            </ItemReference>
+            <ItemReference Identifier="1be6a870-5dd0-4658-a820-b1063decb380" LockedForEdit="false" Title="Blauwe rolstoel" Active="true" ItemFunctionalType="Regular" Src="Blauwe rolstoel">
+              <DynamicProperties>
+                <Property MappedToViews="" Name="settingsCollection" TypeName="Cito.Tester.ContentModel.SettingsCollection2">
+                  <CustomSettingsCollection />
+                </Property>
+              </DynamicProperties>
+              <ItemScoreTranslationTable>
+                <ItemScoreTranslationTableEntry rawScore="0" translatedScore="0" />
+                <ItemScoreTranslationTableEntry rawScore="1" translatedScore="1" />
+              </ItemScoreTranslationTable>
+            </ItemReference>
+            <ItemReference Identifier="7d8f506b-d1ef-4c2a-b77d-ca928c71f136" LockedForEdit="false" Title="Chimpansee" Active="true" ItemFunctionalType="Regular" Src="Chimpansee">
+              <DynamicProperties>
+                <Property MappedToViews="" Name="settingsCollection" TypeName="Cito.Tester.ContentModel.SettingsCollection2">
+                  <CustomSettingsCollection />
+                </Property>
+              </DynamicProperties>
+              <ItemScoreTranslationTable>
+                <ItemScoreTranslationTableEntry rawScore="0" translatedScore="0" />
+                <ItemScoreTranslationTableEntry rawScore="1" translatedScore="1" />
+              </ItemScoreTranslationTable>
+            </ItemReference>
+            <ItemReference Identifier="8b33ee53-b899-412e-b1f0-d7e177edc62a" LockedForEdit="false" Title="Fietsclub" Active="true" ItemFunctionalType="Regular" Src="Fietsclub">
+              <DynamicProperties>
+                <Property MappedToViews="" Name="settingsCollection" TypeName="Cito.Tester.ContentModel.SettingsCollection2">
+                  <CustomSettingsCollection />
+                </Property>
+              </DynamicProperties>
+              <ItemScoreTranslationTable>
+                <ItemScoreTranslationTableEntry rawScore="0" translatedScore="0" />
+              </ItemScoreTranslationTable>
+            </ItemReference>
+            <ItemReference Identifier="fd39272d-9e14-4ea2-8c63-601bbbe514fe" LockedForEdit="false" Title="Lampetstel" Active="true" ItemFunctionalType="Regular" Src="Lampetstel">
+              <DynamicProperties>
+                <Property MappedToViews="" Name="settingsCollection" TypeName="Cito.Tester.ContentModel.SettingsCollection2">
+                  <CustomSettingsCollection />
+                </Property>
+              </DynamicProperties>
+              <ItemScoreTranslationTable>
+                <ItemScoreTranslationTableEntry rawScore="0" translatedScore="0" />
+              </ItemScoreTranslationTable>
+            </ItemReference>
+            <ItemReference Identifier="73c163ff-9e9b-4907-b7a2-b87fa8dc8b9a" LockedForEdit="false" Title="Lampetstel_nosound" Active="true" ItemFunctionalType="Regular" Src="Lampetstel_nosound">
+              <DynamicProperties>
+                <Property MappedToViews="" Name="settingsCollection" TypeName="Cito.Tester.ContentModel.SettingsCollection2">
+                  <CustomSettingsCollection />
+                </Property>
+              </DynamicProperties>
+              <ItemScoreTranslationTable>
+                <ItemScoreTranslationTableEntry rawScore="0" translatedScore="0" />
+              </ItemScoreTranslationTable>
+            </ItemReference>
+          </Components>
+        </Section>
+        <Section Identifier="8baf8661-b58b-4e95-bff7-bf7489d8b8d6" LockedForEdit="false" Title="Einde sectie" ItemSelectorSrc="Generic.ItemSelector.Linear" SectionType="normal">
+          <DynamicProperties>
+            <Property MappedToViews="" Name="settingsCollection" TypeName="Cito.Tester.ContentModel.SettingsCollection2">
+              <CustomSettingsCollection />
+            </Property>
+          </DynamicProperties>
+          <Components>
+            <ItemReference Identifier="19214054-28dc-44e1-a3e2-fc1b0882228a" LockedForEdit="false" Title="POVO_StopItem_NietGeleidetoetsafname" Active="true" ItemFunctionalType="Regular" Src="POVO_StopItem_NietGeleidetoetsafname">
+              <DynamicProperties>
+                <Property MappedToViews="" Name="settingsCollection" TypeName="Cito.Tester.ContentModel.SettingsCollection2">
+                  <CustomSettingsCollection />
+                </Property>
+              </DynamicProperties>
+              <ItemScoreTranslationTable>
+                <ItemScoreTranslationTableEntry rawScore="0" translatedScore="0" />
+              </ItemScoreTranslationTable>
+            </ItemReference>
+          </Components>
+        </Section>
+      </TestSections>
+    </Part>
+  </TestParts>
+</AssessmentTest2>

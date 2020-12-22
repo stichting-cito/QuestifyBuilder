@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="2001" title="2001" layoutTemplateSrc="ilt.integer">
+  <solution>
+    <keyFindings>
+      <keyFinding id="sharedIntegerFinding" scoringMethod="Dichotomous">
+        <keyFact id="5-integerScore" score="1" xmlns="http://Cito.Tester.Server/xml/serialization">
+          <keyValue domain="integerScore" occur="1">
+            <integerValue>
+              <typedValue>42</typedValue>
+            </integerValue>
+          </keyValue>
+        </keyFact>
+        <keyFactSet>
+          <keyFact id="1-integerScore" score="1" xmlns="http://Cito.Tester.Server/xml/serialization">
+            <keyValue domain="integerScore" occur="1">
+              <integerValue>
+                <typedValue>6</typedValue>
+              </integerValue>
+            </keyValue>
+          </keyFact>
+          <keyFact id="2-integerScore" score="1" xmlns="http://Cito.Tester.Server/xml/serialization">
+            <keyValue domain="integerScore" occur="1">
+              <integerValue>
+                <typedValue>14</typedValue>
+              </integerValue>
+            </keyValue>
+          </keyFact>
+        </keyFactSet>
+        <keyFactSet>
+          <keyFact id="1-integerScore" score="1" xmlns="http://Cito.Tester.Server/xml/serialization">
+            <keyValue domain="integerScore" occur="1">
+              <integerValue>
+                <typedValue>14</typedValue>
+              </integerValue>
+            </keyValue>
+          </keyFact>
+          <keyFact id="2-integerScore" score="1" xmlns="http://Cito.Tester.Server/xml/serialization">
+            <keyValue domain="integerScore" occur="1">
+              <integerValue>
+                <typedValue>6</typedValue>
+              </integerValue>
+            </keyValue>
+          </keyFact>
+        </keyFactSet>
+        <keyFactSet>
+          <keyFact id="3-integerScore" score="1" xmlns="http://Cito.Tester.Server/xml/serialization">
+            <keyValue domain="integerScore" occur="1">
+              <integerValue>
+                <typedValue>3</typedValue>
+              </integerValue>
+            </keyValue>
+          </keyFact>
+          <keyFact id="4-integerScore" score="1" xmlns="http://Cito.Tester.Server/xml/serialization">
+            <keyValue domain="integerScore" occur="1">
+              <integerValue>
+                <typedValue>7</typedValue>
+              </integerValue>
+            </keyValue>
+          </keyFact>
+        </keyFactSet>
+        <keyFactSet>
+          <keyFact id="3-integerScore" score="1" xmlns="http://Cito.Tester.Server/xml/serialization">
+            <keyValue domain="integerScore" occur="1">
+              <integerValue>
+                <typedValue>7</typedValue>
+              </integerValue>
+            </keyValue>
+          </keyFact>
+          <keyFact id="4-integerScore" score="1" xmlns="http://Cito.Tester.Server/xml/serialization">
+            <keyValue domain="integerScore" occur="1">
+              <integerValue>
+                <typedValue>3</typedValue>
+              </integerValue>
+            </keyValue>
+          </keyFact>
+        </keyFactSet>
+      </keyFinding>
+    </keyFindings>
+    <aspectReferences />
+  </solution>
+  <parameters>
+    <parameterSet id="invoer">
+      <integerparameter name="max">4</integerparameter>
+      <integerScoringParameter name="Antwoord" ControllerId="integerScore" findingOverride="sharedIntegerFinding" maxLength="4">
+        <subparameterset id="1">
+          <xhtmlparameter name="option-int">
+            <p id="c1-id-8" xmlns="http://www.w3.org/1999/xhtml">a</p>
+          </xhtmlparameter>
+        </subparameterset>
+        <subparameterset id="2">
+          <xhtmlparameter name="option-int">
+            <p id="c1-id-8" xmlns="http://www.w3.org/1999/xhtml">b</p>
+          </xhtmlparameter>
+        </subparameterset>
+        <subparameterset id="3">
+          <xhtmlparameter name="option-int">
+            <p id="c1-id-8" xmlns="http://www.w3.org/1999/xhtml">c</p>
+          </xhtmlparameter>
+        </subparameterset>
+        <definition id="">
+          <xhtmlparameter name="option-int" />
+        </definition>
+      </integerScoringParameter>
+    </parameterSet>
+  </parameters>
+</assessmentItem>

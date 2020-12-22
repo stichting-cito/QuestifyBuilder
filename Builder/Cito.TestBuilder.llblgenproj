@@ -1,0 +1,2347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--LLBLGen Pro v5.2 project file. Do not manually edit this file. Incorrect references could lead to an unloadable project file.-->
+<Project Version="5.2" TargetFrameworkName="LLBLGen Pro Runtime Framework">
+  <Properties>
+    <Abbreviations />
+    <Property Name="AdditionalTaskPerformerFolder" Value="" />
+    <Property Name="AdditionalTasksFolder" Value="" />
+    <Property Name="AdditionalTemplatesFolder" Value="" />
+    <Property Name="AdditionalTypeConverterFolder" Value="" />
+    <Property Name="AddNewElementsAfterRefresh_v5" Value="false" />
+    <Property Name="AddNewElementsAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="AddNewFieldsAfterRefresh_v5" Value="true" />
+    <Property Name="AddNewFieldsAfterRelationalModelDataSync_v5" Value="true" />
+    <Property Name="AddNewViewsAsEntitiesAfterRefresh_v5" Value="false" />
+    <Property Name="AddNewViewsAsEntitiesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="AutoAddManyToManyRelationships" Value="false" />
+    <Property Name="AutoAssignSequencesToIntegerPks" Value="true" />
+    <Property Name="AutoAssignTypeConverterToFieldMapping" Value="true" />
+    <Property Name="CleanUpVsNetProjects" Value="false" />
+    <Property Name="ConnectionStringKeyNamePattern" Value="Main.ConnectionString" />
+    <Property Name="DefaultDeleteRuleAction" Value="1" />
+    <Property Name="DefaultUpdateRuleAction" Value="0" />
+    <Property Name="EncodingToUse" Value="0" />
+    <Property Name="EntityActionCombinationDefaultForTable" Value="0" />
+    <Property Name="EntityActionCombinationDefaultForView" Value="4" />
+    <Property Name="EntityFieldNameStripPattern" Value="{}{}" />
+    <Property Name="EntityNameStripPattern" Value="{tbl_}{}" />
+    <Property Name="ExcludableOrphanedElementDetectedAction" Value="3" />
+    <Property Name="FailCodeGenerationOnWriteError" Value="true" />
+    <Property Name="FieldMappedOntoRelatedFieldPattern" Value="{$RelatedFieldName}" />
+    <Property Name="FkFieldsAreNamedAfterTargetField" Value="true" />
+    <Property Name="ForeignKeyConstraintPattern" Value="FK_{$Guid}" />
+    <Property Name="ForeignKeyFieldPattern" Value="{$NavigatorName}{$RelatedFieldName}" />
+    <Property Name="GroupUsage" Value="0" />
+    <Property Name="IdentifyingFieldsFollowDBPrimaryKeyConstraints_v5" Value="true" />
+    <Property Name="InsertUnderscoreAtWordBreakCaseInsensitiveDBs" Value="false" />
+    <Property Name="InsertUnderscoreAtWordBreakCaseSensitiveDBs" Value="false" />
+    <Property Name="LengthPrecisionScaleFollowDBLengthPrecisionScale_v5" Value="true" />
+    <Property Name="MakeElementNamePascalCasing" Value="true" />
+    <Property Name="NavigatorMappedOntoManyToManyPattern" Value="{$EndEntityName}CollectionVia{$IntermediateEntityName}" />
+    <Property Name="NavigatorMappedOntoOneManyToOnePattern" Value="{$EndEntityName}" />
+    <Property Name="NavigatorMappedOntoOneToManyPattern" Value="{$EndEntityName}Collection" />
+    <Property Name="NonExcludableOrphanedElementDetectedAction" Value="3" />
+    <Property Name="PreferDecimalOverCurrencyTypes" Value="true" />
+    <Property Name="PreferNaturalCharacterTypes" Value="true" />
+    <Property Name="PreferSystemSequencesOverSchemaSequencesIfApplicable" Value="true" />
+    <Property Name="PreferVariableLengthTypes" Value="true" />
+    <Property Name="PrimaryKeyConstraintPattern" Value="PK_{$Guid}" />
+    <Property Name="ProjectCreator" Value="Team Constructie" />
+    <Property Name="ProjectName" Value="Questify.Builder.Model.ContentModel" />
+    <Property Name="ReflectNullabilityOfElementFieldInTargetField_v5" Value="false" />
+    <Property Name="ReflectTypeOfElementFieldInTargetField_v5" Value="true" />
+    <Property Name="RelationalModelDataElementNameCasingCaseInsensitiveDBs" Value="3" />
+    <Property Name="RelationalModelDataElementNameCasingCaseSensitiveDBs" Value="3" />
+    <Property Name="RelationshipsFollowDBForeignKeyConstraints_v5" Value="true" />
+    <Property Name="RemoveUnderscoresFromElementName" Value="true" />
+    <Property Name="RemoveUnmappedElementsAfterRefresh_v5" Value="false" />
+    <Property Name="RemoveUnmappedElementsAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="ResetFieldOrderBasedOnTargetOrderAtRefresh" Value="false" />
+    <Property Name="ResetFieldOrderBasedOnTargetOrderAtRelationalModelDataSync" Value="false" />
+    <Property Name="RetrieveDBCustomProperties" Value="false" />
+    <Property Name="RootNamespace" Value="" />
+    <Property Name="SequenceNameMatchingPattern" Value="SEQ_{$TableName}" />
+    <Property Name="SequencePattern" Value="SEQ_{$EntityName}" />
+    <Property Name="SetGroupNameAfterSchemaName" Value="true" />
+    <Property Name="SetSchemaNameAfterGroupName" Value="true" />
+    <Property Name="SingularizeElementNames" Value="true" />
+    <Property Name="StoredProcNameStripPattern" Value="{pr_, sp_}{}" />
+    <Property Name="StoreTimeLastGeneratedIntoProject" Value="false" />
+    <Property Name="SyncMappedElementNamesAfterRefresh_v5" Value="false" />
+    <Property Name="SyncMappedElementNamesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="SyncRelationalModelDataElementNameWithModelElementName_v5" Value="false" />
+    <Property Name="SyncRenamedMappedElementNamesAfterRefresh_v5" Value="false" />
+    <Property Name="SyncRenamedMappedElementNamesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="TableValuedFunctionNameStripPattern" Value="{fn_, pr_, sp_}{}" />
+    <Property Name="TargetPerEntityEdgesRequireBackingFkConstraint" Value="true" />
+    <Property Name="TypedViewFieldNameStripPattern" Value="{}{}" />
+    <Property Name="TypedViewMappedOnResultsetPattern" Value="{$ProcFunctionName}{$ResultsetName}Result" />
+    <Property Name="TypedViewNameStripPattern" Value="{vw_}{}" />
+    <Property Name="UniqueConstraintPattern" Value="UC_{$Guid}" />
+    <Property Name="UniqueConstraintsFollowDBUniqueConstraints_v5" Value="true" />
+    <Property Name="UpdateCustomPropertiesAfterRefresh_v5" Value="false" />
+    <Property Name="UpdateCustomPropertiesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="UseCustomFieldOrderingOnNewElements" Value="true" />
+  </Properties>
+  <TypeShortcuts />
+  <IgnoredWarnings />
+  <SavedSearchQueries />
+  <CodeGenerationCyclePreferences>
+    <OutputType Value="3">
+      <LastUsedPreferences>
+        <DestinationRootFolder Value="C:\Git\Builder" />
+        <FrameworkName Value="LLBLGen Pro Runtime Framework" />
+        <LanguageName Value="VB.NET" />
+        <PlatformName Value=".NET 4.5" />
+        <PresetName Value="SD.Presets.Adapter.General" />
+        <RootNamespace Value="Questify.Builder.Model.ContentModel" />
+        <TemplateGroup Value="Adapter" />
+        <TemplateBindings>
+          <Binding Name="SD.TemplateBindings.SharedTemplates.Deprecated" />
+          <Binding Name="SD.TemplateBindings.SharedTemplates.NET45x" />
+          <Binding Name="SD.TemplateBindings.SharedTemplates" />
+          <Binding Name="SD.TemplateBindings.SqlServerSpecific" />
+          <Binding Name="SD.TemplateBindings.General" />
+        </TemplateBindings>
+      </LastUsedPreferences>
+    </OutputType>
+  </CodeGenerationCyclePreferences>
+  <OutputSettingValues>
+    <SettingValues>
+      <SettingValue Name="1:AdapterDbGenericProjectFileSuffix" Value="" Type="18" />
+      <SettingValue Name="1:AdapterDbGenericSubFolderName" Value="Cito.TestBuilder.ContentModel" Type="18" />
+      <SettingValue Name="1:AdapterDbSpecificNamespaceSuffix" Value="DatabaseSpecific" Type="18" />
+      <SettingValue Name="1:AdapterDbSpecificProjectFileSuffix" Value=".DatabaseSpecific" Type="18" />
+      <SettingValue Name="1:AdapterDbSpecificSubFolderName" Value="Cito.TestBuilder.ContentModel.DatabaseSpecific" Type="18" />
+      <SettingValue Name="1:ConvertNulledReferenceTypesToDefaultValue" Value="true" Type="3" />
+      <SettingValue Name="1:GenerateAsNullableTypeDefault" Value="true" Type="3" />
+      <SettingValue Name="1:LazyLoadingWithoutResultReturnsNew" Value="true" Type="3" />
+      <SettingValue Name="1:TdlEmitTimeDateInOutputFiles" Value="true" Type="3" />
+    </SettingValues>
+  </OutputSettingValues>
+  <CodeGenerationMetaDataDefaults>
+    <TargetElement Type="256">
+      <Defaults>
+        <Attributes>
+          <Attribute Value="Browsable($true)" />
+        </Attributes>
+      </Defaults>
+    </TargetElement>
+  </CodeGenerationMetaDataDefaults>
+  <EntityModel>
+    <ValueTypeDefinitions />
+    <EntityDefinitions>
+      <EntityDefinition Name="Action" ObjectID="b26ace66-49c8-4198-8b91-b8a59514afe3">
+        <Fields>
+          <Field Name="ActionId" Type="int" IsReadOnly="true" IsPrimaryKey="true" FieldIndex="0" />
+          <Field Name="Name" Type="string" MaxLength="50" FieldIndex="1" />
+          <Field Name="Title" Type="string" IsOptional="true" MaxLength="50" FieldIndex="2" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="AspectResource" ObjectID="66090f5b-ce85-4df0-81f6-1c66980eacd2" InheritanceType="2">
+        <Fields>
+          <Field Name="RawScore" Type="int" FieldIndex="0" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="AssessmentTestResource" ObjectID="0ef6fb11-fa37-4162-a885-5cb30a1f6d71" InheritanceType="2">
+        <Fields>
+          <Field Name="IsTemplate" Type="bool" FieldIndex="0" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="Bank" ObjectID="0f952891-fb44-4029-a014-cb97f2e5714c">
+        <Fields>
+          <Field Name="CreatedBy" Type="int" IsAutoCreated="true" FieldIndex="5" />
+          <Field Name="CreationDate" Type="datetime" FieldIndex="4" />
+          <Field Name="Id" Type="int" IsReadOnly="true" IsPrimaryKey="true" FieldIndex="0" />
+          <Field Name="ModifiedBy" Type="int" IsAutoCreated="true" FieldIndex="7" />
+          <Field Name="ModifiedDate" Type="datetime" FieldIndex="6" />
+          <Field Name="Name" Type="string" MaxLength="50" FieldIndex="2" />
+          <Field Name="ParentBankId" Type="int" IsOptional="true" IsAutoCreated="true" FieldIndex="1" />
+          <Field Name="Type" Type="string" IsOptional="true" MaxLength="50" FieldIndex="3" />
+        </Fields>
+        <Forfs>
+          <Forf Name="CreatedByFullName" MappedField=":User:FullName" RelationshipName="Bank.CreatedByUser-User." ViaStartNavigator="true" />
+          <Forf Name="ModifiedByFullName" MappedField=":User:FullName" RelationshipName="Bank.ModifiedByUser-User." ViaStartNavigator="true" />
+        </Forfs>
+      </EntityDefinition>
+      <EntityDefinition Name="ChildConceptStructurePartCustomBankProperty" ObjectID="3bea3f2c-8d21-4a61-99e6-19488ae47693">
+        <Fields>
+          <Field Name="ChildConceptStructurePartCustomBankPropertyId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="2" />
+          <Field Name="ConceptStructurePartCustomBankPropertyId" Type="guid" IsPrimaryKey="true" FieldIndex="1" />
+          <Field Name="Id" Type="guid" IsPrimaryKey="true" FieldIndex="0" />
+          <Field Name="VisualOrder" Type="int" FieldIndex="3" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="ChildTreeStructurePartCustomBankProperty" ObjectID="9342e518-ea61-44eb-8d23-fb4556b7aabb">
+        <Fields>
+          <Field Name="ChildTreeStructurePartCustomBankPropertyId" Type="guid" IsPrimaryKey="true" FieldIndex="1" />
+          <Field Name="Id" Type="guid" IsPrimaryKey="true" FieldIndex="0" />
+          <Field Name="TreeStructurePartCustomBankPropertyId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="2" />
+          <Field Name="VisualOrder" Type="int" FieldIndex="3" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="ConceptStructureCustomBankProperty" ObjectID="07148c21-09c0-4d2d-84e0-a1134e84bc2d" InheritanceType="2" />
+      <EntityDefinition Name="ConceptStructureCustomBankPropertySelectedPart" ObjectID="29c8bdf0-0783-4813-b16f-04a21dd7bfd3">
+        <Fields>
+          <Field Name="ConceptStructurePartId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="0" />
+          <Field Name="CustomBankPropertyId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="2" />
+          <Field Name="ResourceId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="1" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="ConceptStructureCustomBankPropertyValue" ObjectID="47b5e173-335f-45a6-99fc-cfdc8cf2ca1c" InheritanceType="2" />
+      <EntityDefinition Name="ConceptStructurePartCustomBankProperty" ObjectID="07039509-7e86-4da4-9c17-9e995609f19b">
+        <Fields>
+          <Field Name="Code" Type="guid" FieldIndex="4" />
+          <Field Name="ConceptStructurePartCustomBankPropertyId" Type="guid" IsPrimaryKey="true" FieldIndex="0" />
+          <Field Name="ConceptTypeId" Type="int" IsAutoCreated="true" FieldIndex="5" />
+          <Field Name="CustomBankPropertyId" Type="guid" IsAutoCreated="true" FieldIndex="1" />
+          <Field Name="Name" Type="string" MaxLength="50" FieldIndex="2" />
+          <Field Name="Title" Type="string" IsOptional="true" MaxLength="255" FieldIndex="3" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="ConceptType" ObjectID="3b136309-d37c-427f-83a7-a83de371748a">
+        <Fields>
+          <Field Name="ApplicableToMask" Type="int" FieldIndex="2" />
+          <Field Name="ConceptTypeId" Type="int" IsPrimaryKey="true" FieldIndex="0" />
+          <Field Name="Name" Type="string" MaxLength="255" FieldIndex="1" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="ControlTemplateResource" ObjectID="1b44886e-66de-45da-81c6-4f49ff0d8122" InheritanceType="2" />
+      <EntityDefinition Name="CustomBankProperty" ObjectID="ed1c07d9-1d77-4884-a216-9d02f79db3f2" InheritanceType="2">
+        <Fields>
+          <Field Name="ApplicableToMask" Type="int" IsOptional="true" FieldIndex="2" />
+          <Field Name="BankId" Type="int" IsAutoCreated="true" FieldIndex="1" />
+          <Field Name="Code" Type="guid" FieldIndex="11" />
+          <Field Name="CreatedBy" Type="int" IsAutoCreated="true" FieldIndex="8" />
+          <Field Name="CreationDate" Type="datetime" FieldIndex="7" />
+          <Field Name="CustomBankPropertyId" Type="guid" IsPrimaryKey="true" FieldIndex="0" />
+          <Field Name="Description" Type="string" IsOptional="true" MaxLength="2147483647" FieldIndex="6" />
+          <Field Name="ModifiedBy" Type="int" IsAutoCreated="true" FieldIndex="10" />
+          <Field Name="ModifiedDate" Type="datetime" FieldIndex="9" />
+          <Field Name="Name" Type="string" MaxLength="50" FieldIndex="4" />
+          <Field Name="Publishable" Type="bool" FieldIndex="3" />
+          <Field Name="StateId" Type="int" IsOptional="true" IsAutoCreated="true" FieldIndex="12" />
+          <Field Name="Title" Type="string" IsOptional="true" MaxLength="255" FieldIndex="5" />
+          <Field Name="Version" Type="string" MaxLength="20" FieldIndex="13" />
+        </Fields>
+        <Forfs>
+          <Forf Name="BankName" MappedField=":Bank:Name" RelationshipName="CustomBankProperty.Bank-Bank.CustomBankPropertyCollection" ViaStartNavigator="true" IsReadOnly="true" />
+          <Forf Name="CreatedByFullName" MappedField=":User:FullName" RelationshipName="CustomBankProperty.CreatedByUser-User.CustomBankPropertyCollection_" ViaStartNavigator="true" IsReadOnly="true" />
+          <Forf Name="ModifiedByFullName" MappedField=":User:FullName" RelationshipName="CustomBankProperty.ModifiedByUser-User.CustomBankPropertyCollection" ViaStartNavigator="true" IsReadOnly="true" />
+          <Forf Name="StateName" MappedField=":State:Name" RelationshipName="CustomBankProperty.State-State.CustomBankPropertyCollection" ViaStartNavigator="true" IsReadOnly="true" />
+        </Forfs>
+      </EntityDefinition>
+      <EntityDefinition Name="CustomBankPropertyValue" ObjectID="bdb7601f-6c7f-45f5-a0f5-3b1d05562bcb" InheritanceType="2">
+        <Fields>
+          <Field Name="CustomBankPropertyId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="1" />
+          <Field Name="DisplayValue" Type="string" IsOptional="true" MaxLength="255" FieldIndex="2" />
+          <Field Name="ResourceId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="0" />
+        </Fields>
+        <Forfs>
+          <Forf Name="ApplicableToMask" MappedField=":CustomBankProperty:ApplicableToMask" RelationshipName="CustomBankPropertyValue.CustomBankProperty-CustomBankProperty.CustomBankPropertyValueCollection" ViaStartNavigator="true" />
+        </Forfs>
+      </EntityDefinition>
+      <EntityDefinition Name="DataSourceResource" ObjectID="84e4db71-0458-4ebf-9e01-3df8aa90202d" InheritanceType="2">
+        <Fields>
+          <Field Name="DataSourceType" Type="string" MaxLength="255" FieldIndex="0" />
+          <Field Name="IsTemplate" Type="bool" FieldIndex="1" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="DependentResource" ObjectID="6b026b72-b17d-4e8a-8369-8b7cd0bc3ded">
+        <Fields>
+          <Field Name="DependentResourceId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="1" />
+          <Field Name="ResourceId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="0" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="FreeValueCustomBankProperty" ObjectID="3424ff02-7610-4b83-82cb-7891b7887357" InheritanceType="2" />
+      <EntityDefinition Name="FreeValueCustomBankPropertyValue" ObjectID="66bbf7ea-635e-4001-99b1-2fee34cac838" InheritanceType="2">
+        <Fields>
+          <Field Name="FreeValueCustomBankPropertyValueId" Type="int" IsReadOnly="true" FieldIndex="1" />
+          <Field Name="Value" Type="string" IsOptional="true" MaxLength="255" FieldIndex="0" />
+        </Fields>
+        <UniqueConstraints>
+          <UniqueConstraint Name="IXFreeValueCustomBankPropertyValueId">
+            <Field Name="FreeValueCustomBankPropertyValueId" />
+          </UniqueConstraint>
+        </UniqueConstraints>
+      </EntityDefinition>
+      <EntityDefinition Name="GenericResource" ObjectID="d2e03df2-aaf1-4e43-8dfb-5e59f7913fee" InheritanceType="2">
+        <Fields>
+          <Field Name="Dimensions" Type="string" IsOptional="true" MaxLength="50" FieldIndex="2" />
+          <Field Name="IsTemplate" Type="bool" FieldIndex="3" />
+          <Field Name="MediaType" Type="string" MaxLength="255" FieldIndex="0" />
+          <Field Name="Size" Type="int" FieldIndex="1" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="HiddenResource" ObjectID="80b8c0b4-5d34-4ae4-851d-49763365c69a">
+        <Fields>
+          <Field Name="BankId" Type="int" IsPrimaryKey="true" FieldIndex="1" />
+          <Field Name="ResourceId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="0" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="ItemLayoutTemplateResource" ObjectID="f6d2a7bb-e9ac-4b29-9602-4eb47bbda700" InheritanceType="2">
+        <Fields>
+          <Field Name="ItemType" Type="string" IsOptional="true" MaxLength="50" FieldIndex="0" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="ItemResource" ObjectID="905f087f-8b95-4f16-9d78-0942f3eb80ec" InheritanceType="2">
+        <Fields>
+          <Field Name="AlternativesCount" Type="int" IsOptional="true" FieldIndex="1" />
+          <Field Name="Iltname" Type="string" IsOptional="true" MaxLength="255" FieldIndex="6" />
+          <Field Name="Iltversion" Type="int" IsOptional="true" FieldIndex="7" />
+          <Field Name="IsSystemItem" Type="bool" FieldIndex="0" />
+          <Field Name="ItemAutoId" Type="int" IsReadOnly="true" FieldIndex="9" />
+          <Field Name="ItemId" Type="string" IsOptional="true" MaxLength="6" FieldIndex="10" />
+          <Field Name="KeyValues" Type="string" IsOptional="true" MaxLength="500" FieldIndex="2" />
+          <Field Name="MaxScore" Type="decimal" IsOptional="true" Precision="9" Scale="2" FieldIndex="8" />
+          <Field Name="RawScore" Type="int" IsOptional="true" FieldIndex="4" />
+          <Field Name="ResponseCount" Type="int" IsOptional="true" FieldIndex="3" />
+          <Field Name="TesterSchemaVersion" Type="int" IsOptional="true" FieldIndex="5" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="ListCustomBankProperty" ObjectID="0b8283ce-ff0c-4782-a042-1e0d0a5cdc76" InheritanceType="2">
+        <Fields>
+          <Field Name="MultipleSelect" Type="bool" FieldIndex="0" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="ListCustomBankPropertySelectedValue" ObjectID="e256e08e-5a81-4268-b083-f60f012d6439">
+        <Fields>
+          <Field Name="CustomBankPropertyId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="1" />
+          <Field Name="ListValueBankCustomPropertyId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="2" />
+          <Field Name="ResourceId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="0" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="ListCustomBankPropertyValue" ObjectID="91cc1353-aa48-41b2-b356-e4e89a2b6297" InheritanceType="2" />
+      <EntityDefinition Name="ListValueCustomBankProperty" ObjectID="88ca3c58-2a7a-4024-8d79-5b6e76fd04fb">
+        <Fields>
+          <Field Name="Code" Type="guid" FieldIndex="4" />
+          <Field Name="CustomBankPropertyId" Type="guid" IsAutoCreated="true" FieldIndex="1" />
+          <Field Name="ListValueBankCustomPropertyId" Type="guid" IsPrimaryKey="true" FieldIndex="0" />
+          <Field Name="Name" Type="string" MaxLength="50" FieldIndex="2" />
+          <Field Name="Title" Type="string" IsOptional="true" MaxLength="255" FieldIndex="3" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="PackageResource" ObjectID="0bc1fbca-1f68-48e0-bf1d-d95c016109f8" InheritanceType="2" />
+      <EntityDefinition Name="Permission" ObjectID="94ab0502-1f16-408d-9b27-6c26604b6c30">
+        <Fields>
+          <Field Name="CreatedBy" Type="int" FieldIndex="5" />
+          <Field Name="CreationDate" Type="datetime" FieldIndex="4" />
+          <Field Name="Description" Type="string" IsOptional="true" MaxLength="50" FieldIndex="2" />
+          <Field Name="Id" Type="int" IsPrimaryKey="true" FieldIndex="0" />
+          <Field Name="ModifiedBy" Type="int" FieldIndex="7" />
+          <Field Name="ModifiedDate" Type="datetime" FieldIndex="6" />
+          <Field Name="Name" Type="string" MaxLength="20" FieldIndex="1" />
+          <Field Name="WhenOwnerCondition" Type="bool" FieldIndex="3" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="PermissionTarget" ObjectID="e815c0c3-6cdd-47d8-87be-609d8b55e64d">
+        <Fields>
+          <Field Name="CreatedBy" Type="int" FieldIndex="5" />
+          <Field Name="CreationDate" Type="datetime" FieldIndex="4" />
+          <Field Name="Id" Type="int" IsPrimaryKey="true" FieldIndex="0" />
+          <Field Name="IsApplicationTarget" Type="bool" FieldIndex="3" />
+          <Field Name="ModifiedBy" Type="int" FieldIndex="7" />
+          <Field Name="ModifiedDate" Type="datetime" FieldIndex="6" />
+          <Field Name="Name" Type="string" MaxLength="50" FieldIndex="1" />
+          <Field Name="TargettedNamedTask" Type="string" IsOptional="true" MaxLength="50" FieldIndex="2" />
+        </Fields>
+        <UniqueConstraints>
+          <UniqueConstraint Name="IXPermissionTarget">
+            <Field Name="Name" />
+            <Field Name="TargettedNamedTask" />
+          </UniqueConstraint>
+        </UniqueConstraints>
+      </EntityDefinition>
+      <EntityDefinition Name="PlugInResource" ObjectID="e9a7cff8-0cb1-4ac8-8185-f92db1ee5edd" InheritanceType="2">
+        <Fields>
+          <Field Name="PlugInType" Type="string" MaxLength="50" FieldIndex="0" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="Resource" ObjectID="29770897-29cd-49fd-8ad8-d8ec052decc9" InheritanceType="2">
+        <Fields>
+          <Field Name="BankId" Type="int" IsAutoCreated="true" FieldIndex="2" />
+          <Field Name="CreatedBy" Type="int" IsAutoCreated="true" FieldIndex="8" />
+          <Field Name="CreationDate" Type="datetime" FieldIndex="7" />
+          <Field Name="Description" Type="string" IsOptional="true" MaxLength="2147483647" FieldIndex="5" />
+          <Field Name="ModifiedBy" Type="int" IsAutoCreated="true" FieldIndex="10" />
+          <Field Name="ModifiedDate" Type="datetime" FieldIndex="9" />
+          <Field Name="Name" Type="string" MaxLength="255" FieldIndex="3" />
+          <Field Name="OriginalName" Type="string" IsOptional="true" MaxLength="255" FieldIndex="12" />
+          <Field Name="OriginalVersion" Type="string" IsOptional="true" MaxLength="20" FieldIndex="11" />
+          <Field Name="ResourceId" Type="guid" IsPrimaryKey="true" FieldIndex="0" />
+          <Field Name="StateId" Type="int" IsOptional="true" IsAutoCreated="true" FieldIndex="6" />
+          <Field Name="Title" Type="string" IsOptional="true" MaxLength="255" FieldIndex="4" />
+          <Field Name="Version" Type="string" MaxLength="20" FieldIndex="1" />
+        </Fields>
+        <Forfs>
+          <Forf Name="BankName" MappedField=":Bank:Name" RelationshipName="Resource.Bank-Bank." ViaStartNavigator="true" IsReadOnly="true" />
+          <Forf Name="CreatedByFullName" MappedField=":User:FullName" RelationshipName="Resource.CreatedByUser-User." ViaStartNavigator="true" IsReadOnly="true" />
+          <Forf Name="ModifiedByFullName" MappedField=":User:FullName" RelationshipName="Resource.ModifiedByUser-User." ViaStartNavigator="true" IsReadOnly="true" />
+          <Forf Name="StateName" MappedField=":State:Name" RelationshipName="Resource.State-State.ResourceCollection" ViaStartNavigator="true" IsReadOnly="true" />
+        </Forfs>
+      </EntityDefinition>
+      <EntityDefinition Name="ResourceData" ObjectID="40c50261-1c00-4ee6-b37d-b4c52e0d34e1">
+        <Fields>
+          <Field Name="BinData" Type="byte[]" IsOptional="true" MaxLength="2147483647" FieldIndex="1" />
+          <Field Name="FileExtension" Type="string" IsOptional="true" MaxLength="8" FieldIndex="3" />
+          <Field Name="Ident" Type="long" IsReadOnly="true" FieldIndex="4" />
+          <Field Name="ResourceId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="0" />
+          <Field Name="Url" Type="string" IsOptional="true" MaxLength="500" FieldIndex="2" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="ResourceHistory" ObjectID="3ab9fd20-8b53-4d6f-97bd-097ee6de86ba">
+        <Fields>
+          <Field Name="BinData" Type="byte[]" IsOptional="true" MaxLength="2147483647" FieldIndex="7" />
+          <Field Name="Id" Type="int" IsReadOnly="true" IsPrimaryKey="true" FieldIndex="0" />
+          <Field Name="Label" Type="string" IsOptional="true" MaxLength="4000" FieldIndex="6" />
+          <Field Name="MajorVersion" Type="short" FieldIndex="2" />
+          <Field Name="MetaData" Type="byte[]" IsOptional="true" MaxLength="2147483647" FieldIndex="8" />
+          <Field Name="MinorVersion" Type="short" FieldIndex="3" />
+          <Field Name="ModifiedBy" Type="string" MaxLength="255" FieldIndex="4" />
+          <Field Name="ModifiedDate" Type="datetime" FieldIndex="5" />
+          <Field Name="ResourceId" Type="guid" IsAutoCreated="true" FieldIndex="1" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="RichTextValueCustomBankProperty" ObjectID="22d5f260-362f-4b4c-ad24-77dd3ed1dc06" InheritanceType="2" />
+      <EntityDefinition Name="RichTextValueCustomBankPropertyValue" ObjectID="eef00021-2436-43ed-8ca4-04b781d36887" InheritanceType="2">
+        <Fields>
+          <Field Name="RichTextValueCustomBankPropertyValueId" Type="int" IsReadOnly="true" FieldIndex="1" />
+          <Field Name="Value" Type="string" IsOptional="true" MaxLength="2147483647" FieldIndex="0" />
+        </Fields>
+        <UniqueConstraints>
+          <UniqueConstraint Name="IXRichTextValueCustomBankPropertyValueId">
+            <Field Name="RichTextValueCustomBankPropertyValueId" />
+          </UniqueConstraint>
+        </UniqueConstraints>
+      </EntityDefinition>
+      <EntityDefinition Name="Role" ObjectID="1d9f6766-a6c3-492b-938b-372c6734931a">
+        <Fields>
+          <Field Name="CreatedBy" Type="int" IsAutoCreated="true" FieldIndex="5" />
+          <Field Name="CreationDate" Type="datetime" FieldIndex="4" />
+          <Field Name="Description" Type="string" IsOptional="true" MaxLength="50" FieldIndex="2" />
+          <Field Name="Id" Type="int" IsReadOnly="true" IsPrimaryKey="true" FieldIndex="0" />
+          <Field Name="IsApplicationRole" Type="bool" IsOptional="true" FieldIndex="3" />
+          <Field Name="ModifiedBy" Type="int" IsAutoCreated="true" FieldIndex="7" />
+          <Field Name="ModifiedDate" Type="datetime" FieldIndex="6" />
+          <Field Name="Name" Type="string" MaxLength="50" FieldIndex="1" />
+        </Fields>
+        <Forfs>
+          <Forf Name="CreatedByFullName" MappedField=":User:FullName" RelationshipName="Role.CreatedByUser-User." ViaStartNavigator="true" IsReadOnly="true" />
+          <Forf Name="ModifiedByFullName" MappedField=":User:FullName" RelationshipName="Role.ModifiedByUser-User." ViaStartNavigator="true" IsReadOnly="true" />
+        </Forfs>
+      </EntityDefinition>
+      <EntityDefinition Name="RolePermission" ObjectID="ce2339c5-0378-4478-b64c-70150292d9b1">
+        <Fields>
+          <Field Name="CreatedBy" Type="int" FieldIndex="4" />
+          <Field Name="CreationDate" Type="datetime" FieldIndex="3" />
+          <Field Name="ModifiedBy" Type="int" FieldIndex="6" />
+          <Field Name="ModifiedDate" Type="datetime" FieldIndex="5" />
+          <Field Name="PermissionId" Type="int" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="2" />
+          <Field Name="PermissionTargetId" Type="int" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="1" />
+          <Field Name="RoleId" Type="int" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="0" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="State" ObjectID="d0be7e05-1fa1-442c-ad0b-8b375fb7012f">
+        <Fields>
+          <Field Name="Description" Type="string" IsOptional="true" MaxLength="4000" FieldIndex="3" />
+          <Field Name="Name" Type="string" MaxLength="50" FieldIndex="1" />
+          <Field Name="StateId" Type="int" IsReadOnly="true" IsPrimaryKey="true" FieldIndex="0" />
+          <Field Name="Title" Type="string" IsOptional="true" MaxLength="50" FieldIndex="2" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="StateAction" ObjectID="76f7f948-166f-45bd-9b40-ee8854864f9a">
+        <Fields>
+          <Field Name="ActionId" Type="int" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="2" />
+          <Field Name="StateId" Type="int" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="1" />
+          <Field Name="Target" Type="string" MaxLength="50" IsPrimaryKey="true" FieldIndex="0" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="TestPackageResource" ObjectID="d9434086-5fd1-4963-ad25-ede331ce34ee" InheritanceType="2" />
+      <EntityDefinition Name="TreeStructureCustomBankProperty" ObjectID="fdb4939c-026e-4533-a079-aeaf711c5873" InheritanceType="2" />
+      <EntityDefinition Name="TreeStructureCustomBankPropertySelectedPart" ObjectID="570c45d9-fad8-4cfb-911f-497e58ea466b">
+        <Fields>
+          <Field Name="CustomBankPropertyId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="2" />
+          <Field Name="ResourceId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="1" />
+          <Field Name="TreeStructurePartId" Type="guid" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="0" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="TreeStructureCustomBankPropertyValue" ObjectID="cfaa66eb-610e-4662-96cf-044d08326ead" InheritanceType="2" />
+      <EntityDefinition Name="TreeStructurePartCustomBankProperty" ObjectID="32c1318f-e4ea-4c4a-a235-3ebbd27753d8">
+        <Fields>
+          <Field Name="Code" Type="guid" FieldIndex="4" />
+          <Field Name="CustomBankPropertyId" Type="guid" IsAutoCreated="true" FieldIndex="1" />
+          <Field Name="Name" Type="string" MaxLength="50" FieldIndex="2" />
+          <Field Name="Title" Type="string" IsOptional="true" MaxLength="255" FieldIndex="3" />
+          <Field Name="TreeStructurePartCustomBankPropertyId" Type="guid" IsPrimaryKey="true" FieldIndex="0" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="User" ObjectID="fb882a1b-68c6-4928-b674-f8d9f3356a2a">
+        <Fields>
+          <Field Name="Active" Type="bool" FieldIndex="4" />
+          <Field Name="AllowedFeatures" Type="string" IsOptional="true" MaxLength="2000" FieldIndex="12" />
+          <Field Name="AuthenticationType" Type="string" MaxLength="50" FieldIndex="9" />
+          <Field Name="ChangePassword" Type="bool" FieldIndex="11" />
+          <Field Name="CreatedBy" Type="int" IsAutoCreated="true" FieldIndex="6" />
+          <Field Name="CreationDate" Type="datetime" FieldIndex="5" />
+          <Field Name="FullName" Type="string" MaxLength="50" FieldIndex="3" />
+          <Field Name="Id" Type="int" IsReadOnly="true" IsPrimaryKey="true" FieldIndex="0" />
+          <Field Name="ModifiedBy" Type="int" IsAutoCreated="true" FieldIndex="8" />
+          <Field Name="ModifiedDate" Type="datetime" FieldIndex="7" />
+          <Field Name="Password" Type="string" MaxLength="2147483647" FieldIndex="2" />
+          <Field Name="UserName" Type="string" MaxLength="50" FieldIndex="1" />
+          <Field Name="UserSettings" Type="string" MaxLength="2147483647" FieldIndex="10" />
+        </Fields>
+        <Forfs>
+          <Forf Name="CreatedByFullName" MappedField=":User:FullName" RelationshipName="User.CreatedByUser-User." ViaStartNavigator="true" />
+          <Forf Name="ModifiedByFullName" MappedField=":User:FullName" RelationshipName="User.ModifiedByUser-User." ViaStartNavigator="true" />
+        </Forfs>
+      </EntityDefinition>
+      <EntityDefinition Name="UserApplicationRole" ObjectID="648b9369-f63d-416e-b43d-f04d066b1240">
+        <Fields>
+          <Field Name="ApplicationRoleId" Type="int" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="1" />
+          <Field Name="CreatedBy" Type="int" FieldIndex="3" />
+          <Field Name="CreationDate" Type="datetime" FieldIndex="2" />
+          <Field Name="ModifiedBy" Type="int" FieldIndex="5" />
+          <Field Name="ModifiedDate" Type="datetime" FieldIndex="4" />
+          <Field Name="UserId" Type="int" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="0" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="UserBankRole" ObjectID="1dca763f-31fb-4aed-9b67-6592269b4267">
+        <Fields>
+          <Field Name="BankId" Type="int" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="1" />
+          <Field Name="BankRoleId" Type="int" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="2" />
+          <Field Name="CreatedBy" Type="int" FieldIndex="4" />
+          <Field Name="CreationDate" Type="datetime" FieldIndex="3" />
+          <Field Name="ModifiedBy" Type="int" FieldIndex="6" />
+          <Field Name="ModifiedDate" Type="datetime" FieldIndex="5" />
+          <Field Name="UserId" Type="int" IsPrimaryKey="true" IsAutoCreated="true" FieldIndex="0" />
+        </Fields>
+      </EntityDefinition>
+    </EntityDefinitions>
+    <Relationships>
+      <NormalRelationship Name="Bank.CreatedByUser-User." Start=":Bank" End=":User" StartNavigator="CreatedByUser" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CreatedBy" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Bank.ModifiedByUser-User." Start=":Bank" End=":User" StartNavigator="ModifiedByUser" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ModifiedBy" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Bank.ParentBank-Bank.BankCollection" Start=":Bank" End=":Bank" StartNavigator="ParentBank" EndNavigator="BankCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ParentBankId" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="ChildConceptStructurePartCustomBankProperty.ChildConceptStructurePartCustomBankProperty-ConceptStructurePartCustomBankProperty.ReferencedConceptStructurePartCustomBankPropertyCollection" Start=":ChildConceptStructurePartCustomBankProperty" End=":ConceptStructurePartCustomBankProperty" StartNavigator="ChildConceptStructurePartCustomBankProperty" EndNavigator="ReferencedConceptStructurePartCustomBankPropertyCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ChildConceptStructurePartCustomBankPropertyId" PkField="ConceptStructurePartCustomBankPropertyId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="ChildTreeStructurePartCustomBankProperty.TreeStructurePartCustomBankProperty-TreeStructurePartCustomBankProperty.ChildTreeStructurePartCustomBankPropertyCollection" Start=":ChildTreeStructurePartCustomBankProperty" End=":TreeStructurePartCustomBankProperty" StartNavigator="TreeStructurePartCustomBankProperty" EndNavigator="ChildTreeStructurePartCustomBankPropertyCollection" Type="4" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="TreeStructurePartCustomBankPropertyId" PkField="TreeStructurePartCustomBankPropertyId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="ConceptStructureCustomBankPropertySelectedPart.ConceptStructureCustomBankPropertyValue-ConceptStructureCustomBankPropertyValue.ConceptStructureCustomBankPropertySelectedPartCollection" Start=":ConceptStructureCustomBankPropertySelectedPart" End=":ConceptStructureCustomBankPropertyValue" StartNavigator="ConceptStructureCustomBankPropertyValue" EndNavigator="ConceptStructureCustomBankPropertySelectedPartCollection" Type="4" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CustomBankPropertyId" PkField="CustomBankPropertyId" />
+          <FieldFieldRelationship FkField="ResourceId" PkField="ResourceId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="ConceptStructureCustomBankPropertySelectedPart.ConceptStructurePartCustomBankProperty-ConceptStructurePartCustomBankProperty.ConceptStructureCustomBankPropertySelectedPartCollection" Start=":ConceptStructureCustomBankPropertySelectedPart" End=":ConceptStructurePartCustomBankProperty" StartNavigator="ConceptStructurePartCustomBankProperty" EndNavigator="ConceptStructureCustomBankPropertySelectedPartCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ConceptStructurePartId" PkField="ConceptStructurePartCustomBankPropertyId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="ConceptStructureCustomBankPropertyValue.ConceptStructureCustomBankProperty-ConceptStructureCustomBankProperty.ConceptStructureCustomBankPropertyValueCollection" Start=":ConceptStructureCustomBankPropertyValue" End=":ConceptStructureCustomBankProperty" StartNavigator="ConceptStructureCustomBankProperty" EndNavigator="ConceptStructureCustomBankPropertyValueCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CustomBankPropertyId" PkField="CustomBankPropertyId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="ConceptStructurePartCustomBankProperty.ChildConceptStructurePartCustomBankPropertyCollection-ChildConceptStructurePartCustomBankProperty." Start=":ConceptStructurePartCustomBankProperty" End=":ChildConceptStructurePartCustomBankProperty" StartNavigator="ChildConceptStructurePartCustomBankPropertyCollection" Type="2" StartIsPkSide="true" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ConceptStructurePartCustomBankPropertyId" PkField="ConceptStructurePartCustomBankPropertyId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="ConceptStructurePartCustomBankProperty.ConceptStructureCustomBankProperty-ConceptStructureCustomBankProperty.ConceptStructurePartCustomBankPropertyCollection" Start=":ConceptStructurePartCustomBankProperty" End=":ConceptStructureCustomBankProperty" StartNavigator="ConceptStructureCustomBankProperty" EndNavigator="ConceptStructurePartCustomBankPropertyCollection" Type="4" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CustomBankPropertyId" PkField="CustomBankPropertyId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="ConceptStructurePartCustomBankProperty.ConceptType-ConceptType.ConceptStructurePartCustomBankPropertyCollection" Start=":ConceptStructurePartCustomBankProperty" End=":ConceptType" StartNavigator="ConceptType" EndNavigator="ConceptStructurePartCustomBankPropertyCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ConceptTypeId" PkField="ConceptTypeId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="CustomBankProperty.Bank-Bank.CustomBankPropertyCollection" Start=":CustomBankProperty" End=":Bank" StartNavigator="Bank" EndNavigator="CustomBankPropertyCollection" Type="4" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="BankId" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="CustomBankProperty.CreatedByUser-User.CustomBankPropertyCollection_" Start=":CustomBankProperty" End=":User" StartNavigator="CreatedByUser" EndNavigator="CustomBankPropertyCollection_" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CreatedBy" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="CustomBankProperty.ModifiedByUser-User.CustomBankPropertyCollection" Start=":CustomBankProperty" End=":User" StartNavigator="ModifiedByUser" EndNavigator="CustomBankPropertyCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ModifiedBy" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="CustomBankProperty.State-State.CustomBankPropertyCollection" Start=":CustomBankProperty" End=":State" StartNavigator="State" EndNavigator="CustomBankPropertyCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="StateId" PkField="StateId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="CustomBankPropertyValue.CustomBankProperty-CustomBankProperty.CustomBankPropertyValueCollection" Start=":CustomBankPropertyValue" End=":CustomBankProperty" StartNavigator="CustomBankProperty" EndNavigator="CustomBankPropertyValueCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CustomBankPropertyId" PkField="CustomBankPropertyId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="CustomBankPropertyValue.Resource-Resource.CustomBankPropertyValueCollection" Start=":CustomBankPropertyValue" End=":Resource" StartNavigator="Resource" EndNavigator="CustomBankPropertyValueCollection" Type="4" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ResourceId" PkField="ResourceId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="DependentResource.DependentResource-Resource.ReferencedResourceCollection" Start=":DependentResource" End=":Resource" StartNavigator="DependentResource" EndNavigator="ReferencedResourceCollection" Type="4" ModelOnly="true">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="DependentResourceId" PkField="ResourceId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="DependentResource.Resource-Resource.DependentResourceCollection" Start=":DependentResource" End=":Resource" StartNavigator="Resource" EndNavigator="DependentResourceCollection" Type="4" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ResourceId" PkField="ResourceId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="FreeValueCustomBankPropertyValue.FreeValueCustomBankProperty-FreeValueCustomBankProperty.FreeValueCustomBankPropertyValueCollection" Start=":FreeValueCustomBankPropertyValue" End=":FreeValueCustomBankProperty" StartNavigator="FreeValueCustomBankProperty" EndNavigator="FreeValueCustomBankPropertyValueCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CustomBankPropertyId" PkField="CustomBankPropertyId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="HiddenResource.Resource-Resource.HiddenResourceCollection" Start=":HiddenResource" End=":Resource" StartNavigator="Resource" EndNavigator="HiddenResourceCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ResourceId" PkField="ResourceId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="ListCustomBankPropertySelectedValue.ListCustomBankPropertyValue-ListCustomBankPropertyValue.ListCustomBankPropertySelectedValueCollection" Start=":ListCustomBankPropertySelectedValue" End=":ListCustomBankPropertyValue" StartNavigator="ListCustomBankPropertyValue" EndNavigator="ListCustomBankPropertySelectedValueCollection" Type="4" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CustomBankPropertyId" PkField="CustomBankPropertyId" />
+          <FieldFieldRelationship FkField="ResourceId" PkField="ResourceId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="ListCustomBankPropertySelectedValue.ListValueCustomBankProperty-ListValueCustomBankProperty.ListCustomBankPropertySelectedValueCollection" Start=":ListCustomBankPropertySelectedValue" End=":ListValueCustomBankProperty" StartNavigator="ListValueCustomBankProperty" EndNavigator="ListCustomBankPropertySelectedValueCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ListValueBankCustomPropertyId" PkField="ListValueBankCustomPropertyId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="ListCustomBankPropertyValue.ListCustomBankProperty-ListCustomBankProperty.ListCustomBankPropertyValueCollection" Start=":ListCustomBankPropertyValue" End=":ListCustomBankProperty" StartNavigator="ListCustomBankProperty" EndNavigator="ListCustomBankPropertyValueCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CustomBankPropertyId" PkField="CustomBankPropertyId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="ListValueCustomBankProperty.ListCustomBankProperty-ListCustomBankProperty.ListValueCustomBankPropertyCollection" Start=":ListValueCustomBankProperty" End=":ListCustomBankProperty" StartNavigator="ListCustomBankProperty" EndNavigator="ListValueCustomBankPropertyCollection" Type="4" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CustomBankPropertyId" PkField="CustomBankPropertyId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Resource.Bank-Bank." Start=":Resource" End=":Bank" StartNavigator="Bank" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="BankId" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Resource.CreatedByUser-User." Start=":Resource" End=":User" StartNavigator="CreatedByUser" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CreatedBy" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Resource.ModifiedByUser-User." Start=":Resource" End=":User" StartNavigator="ModifiedByUser" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ModifiedBy" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Resource.State-State.ResourceCollection" Start=":Resource" End=":State" StartNavigator="State" EndNavigator="ResourceCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="StateId" PkField="StateId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="ResourceData.Resource-Resource.ResourceData" Start=":ResourceData" End=":Resource" StartNavigator="Resource" EndNavigator="ResourceData" Type="1" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ResourceId" PkField="ResourceId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="ResourceHistory.Resource-Resource.ResourceHistoryCollection" Start=":ResourceHistory" End=":Resource" StartNavigator="Resource" EndNavigator="ResourceHistoryCollection" Type="4" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ResourceId" PkField="ResourceId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="RichTextValueCustomBankPropertyValue.RichTextValueCustomBankProperty-RichTextValueCustomBankProperty.RichTextValueCustomBankPropertyValueCollection" Start=":RichTextValueCustomBankPropertyValue" End=":RichTextValueCustomBankProperty" StartNavigator="RichTextValueCustomBankProperty" EndNavigator="RichTextValueCustomBankPropertyValueCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CustomBankPropertyId" PkField="CustomBankPropertyId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Role.CreatedByUser-User." Start=":Role" End=":User" StartNavigator="CreatedByUser" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CreatedBy" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Role.ModifiedByUser-User." Start=":Role" End=":User" StartNavigator="ModifiedByUser" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ModifiedBy" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="RolePermission.Permission-Permission.RolePermissionCollection" Start=":RolePermission" End=":Permission" StartNavigator="Permission" EndNavigator="RolePermissionCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="PermissionId" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="RolePermission.PermissionTarget-PermissionTarget.RolePermissionCollection" Start=":RolePermission" End=":PermissionTarget" StartNavigator="PermissionTarget" EndNavigator="RolePermissionCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="PermissionTargetId" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="RolePermission.Role-Role.RolePermissionCollection" Start=":RolePermission" End=":Role" StartNavigator="Role" EndNavigator="RolePermissionCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="RoleId" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="StateAction.Action-Action.StateActionCollection" Start=":StateAction" End=":Action" StartNavigator="Action" EndNavigator="StateActionCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ActionId" PkField="ActionId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="StateAction.State-State.StateActionCollection" Start=":StateAction" End=":State" StartNavigator="State" EndNavigator="StateActionCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="StateId" PkField="StateId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="TreeStructureCustomBankPropertySelectedPart.TreeStructureCustomBankPropertyValue-TreeStructureCustomBankPropertyValue.TreeStructureCustomBankPropertySelectedPartCollection" Start=":TreeStructureCustomBankPropertySelectedPart" End=":TreeStructureCustomBankPropertyValue" StartNavigator="TreeStructureCustomBankPropertyValue" EndNavigator="TreeStructureCustomBankPropertySelectedPartCollection" Type="4" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CustomBankPropertyId" PkField="CustomBankPropertyId" />
+          <FieldFieldRelationship FkField="ResourceId" PkField="ResourceId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="TreeStructureCustomBankPropertySelectedPart.TreeStructurePartCustomBankProperty-TreeStructurePartCustomBankProperty.TreeStructureCustomBankPropertySelectedPartCollection" Start=":TreeStructureCustomBankPropertySelectedPart" End=":TreeStructurePartCustomBankProperty" StartNavigator="TreeStructurePartCustomBankProperty" EndNavigator="TreeStructureCustomBankPropertySelectedPartCollection" Type="4" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="TreeStructurePartId" PkField="TreeStructurePartCustomBankPropertyId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="TreeStructureCustomBankPropertyValue.TreeStructureCustomBankProperty-TreeStructureCustomBankProperty.TreeStructureCustomBankPropertyValueCollection" Start=":TreeStructureCustomBankPropertyValue" End=":TreeStructureCustomBankProperty" StartNavigator="TreeStructureCustomBankProperty" EndNavigator="TreeStructureCustomBankPropertyValueCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CustomBankPropertyId" PkField="CustomBankPropertyId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="TreeStructurePartCustomBankProperty.TreeStructureCustomBankProperty-TreeStructureCustomBankProperty.TreeStructurePartCustomBankPropertyCollection" Start=":TreeStructurePartCustomBankProperty" End=":TreeStructureCustomBankProperty" StartNavigator="TreeStructureCustomBankProperty" EndNavigator="TreeStructurePartCustomBankPropertyCollection" Type="4" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CustomBankPropertyId" PkField="CustomBankPropertyId" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="User.CreatedByUser-User." Start=":User" End=":User" StartNavigator="CreatedByUser" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="CreatedBy" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="User.ModifiedByUser-User." Start=":User" End=":User" StartNavigator="ModifiedByUser" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ModifiedBy" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="UserApplicationRole.Role-Role.UserApplicationRoleCollection" Start=":UserApplicationRole" End=":Role" StartNavigator="Role" EndNavigator="UserApplicationRoleCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ApplicationRoleId" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="UserApplicationRole.User-User.UserApplicationRoleCollection" Start=":UserApplicationRole" End=":User" StartNavigator="User" EndNavigator="UserApplicationRoleCollection" Type="4" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="UserId" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="UserBankRole.Bank-Bank." Start=":UserBankRole" End=":Bank" StartNavigator="Bank" Type="4" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="BankId" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="UserBankRole.Role-Role.UserBankRoleCollection" Start=":UserBankRole" End=":Role" StartNavigator="Role" EndNavigator="UserBankRoleCollection" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="BankRoleId" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="UserBankRole.User-User.UserBankRoleCollection" Start=":UserBankRole" End=":User" StartNavigator="User" EndNavigator="UserBankRoleCollection" Type="4" DeleteRuleAction="1">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="UserId" PkField="Id" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <IndirectRelationship Start=":Action" End=":State" StartNavigator="StateCollectionViaStateAction" EndNavigator="ActionCollectionViaStateAction" Relationship1="StateAction.Action-Action.StateActionCollection" Relationship2="StateAction.State-State.StateActionCollection" />
+      <IndirectRelationship Start=":Bank" End=":State" EndNavigator="BankCollectionViaResource" Relationship1="Resource.Bank-Bank." Relationship2="Resource.State-State.ResourceCollection" />
+      <IndirectRelationship Start=":Bank" End=":User" Relationship1="Bank.ParentBank-Bank.BankCollection" Relationship2="Bank.CreatedByUser-User." />
+      <IndirectRelationship Start=":Bank" End=":User" Relationship1="Bank.ParentBank-Bank.BankCollection" Relationship2="Bank.ModifiedByUser-User." />
+      <IndirectRelationship Start=":Bank" End=":User" Relationship1="Resource.Bank-Bank." Relationship2="Resource.CreatedByUser-User." />
+      <IndirectRelationship Start=":Bank" End=":User" Relationship1="Resource.Bank-Bank." Relationship2="Resource.ModifiedByUser-User." />
+      <IndirectRelationship Start=":Bank" End=":Role" StartNavigator="RoleCollectionViaUserBankRole" Relationship1="UserBankRole.Bank-Bank." Relationship2="UserBankRole.Role-Role.UserBankRoleCollection" />
+      <IndirectRelationship Start=":Bank" End=":State" StartNavigator="StateCollectionViaCustomBankProperty" EndNavigator="BankCollectionViaCustomBankProperty" Relationship1="CustomBankProperty.Bank-Bank.CustomBankPropertyCollection" Relationship2="CustomBankProperty.State-State.CustomBankPropertyCollection" />
+      <IndirectRelationship Start=":Bank" End=":User" StartNavigator="UserCollectionViaCustomBankProperty" EndNavigator="BankCollectionViaCustomBankProperty" Relationship1="CustomBankProperty.Bank-Bank.CustomBankPropertyCollection" Relationship2="CustomBankProperty.ModifiedByUser-User.CustomBankPropertyCollection" />
+      <IndirectRelationship Start=":Bank" End=":User" StartNavigator="UserCollectionViaCustomBankProperty_" EndNavigator="BankCollectionViaCustomBankProperty_" Relationship1="CustomBankProperty.Bank-Bank.CustomBankPropertyCollection" Relationship2="CustomBankProperty.CreatedByUser-User.CustomBankPropertyCollection_" />
+      <IndirectRelationship Start=":Bank" End=":User" StartNavigator="UsersWithPermissionsCollection" Relationship1="UserBankRole.Bank-Bank." Relationship2="UserBankRole.User-User.UserBankRoleCollection" />
+      <IndirectRelationship Start=":ConceptStructureCustomBankProperty" End=":ConceptType" StartNavigator="ConceptTypeCollectionViaConceptStructurePartCustomBankProperty" EndNavigator="ConceptStructureCustomBankPropertyCollectionViaConceptStructurePartCustomBankProperty" Relationship1="ConceptStructurePartCustomBankProperty.ConceptStructureCustomBankProperty-ConceptStructureCustomBankProperty.ConceptStructurePartCustomBankPropertyCollection" Relationship2="ConceptStructurePartCustomBankProperty.ConceptType-ConceptType.ConceptStructurePartCustomBankPropertyCollection" />
+      <IndirectRelationship Start=":ConceptStructureCustomBankPropertyValue" End=":ConceptStructurePartCustomBankProperty" StartNavigator="ConceptStructurePartCustomBankPropertyCollectionViaConceptStructureCustomBankPropertySelectedPart" Relationship1="ConceptStructureCustomBankPropertySelectedPart.ConceptStructureCustomBankPropertyValue-ConceptStructureCustomBankPropertyValue.ConceptStructureCustomBankPropertySelectedPartCollection" Relationship2="ConceptStructureCustomBankPropertySelectedPart.ConceptStructurePartCustomBankProperty-ConceptStructurePartCustomBankProperty.ConceptStructureCustomBankPropertySelectedPartCollection" />
+      <IndirectRelationship Start=":ListValueCustomBankProperty" End=":ListCustomBankPropertyValue" EndNavigator="ListValueCustomBankPropertyCollectionViaListCustomBankPropertySelectedValue" Relationship1="ListCustomBankPropertySelectedValue.ListValueCustomBankProperty-ListValueCustomBankProperty.ListCustomBankPropertySelectedValueCollection" Relationship2="ListCustomBankPropertySelectedValue.ListCustomBankPropertyValue-ListCustomBankPropertyValue.ListCustomBankPropertySelectedValueCollection" />
+      <IndirectRelationship Start=":PermissionTarget" End=":Permission" StartNavigator="PermissionCollectionViaRolePermission" EndNavigator="PermissionTargetCollectionViaRolePermission" Relationship1="RolePermission.PermissionTarget-PermissionTarget.RolePermissionCollection" Relationship2="RolePermission.Permission-Permission.RolePermissionCollection" />
+      <IndirectRelationship Start=":Resource" End=":CustomBankProperty" StartNavigator="CustomBankPropertyCollectionViaCustomBankPropertyValue" Relationship1="CustomBankPropertyValue.Resource-Resource.CustomBankPropertyValueCollection" Relationship2="CustomBankPropertyValue.CustomBankProperty-CustomBankProperty.CustomBankPropertyValueCollection" />
+      <IndirectRelationship Start=":Role" End=":Permission" StartNavigator="PermissionCollectionViaRolePermission" EndNavigator="RoleCollectionViaRolePermission" Relationship1="RolePermission.Role-Role.RolePermissionCollection" Relationship2="RolePermission.Permission-Permission.RolePermissionCollection" />
+      <IndirectRelationship Start=":Role" End=":PermissionTarget" StartNavigator="PermissionTargetCollectionViaRolePermission" EndNavigator="RoleCollectionViaRolePermission" Relationship1="RolePermission.Role-Role.RolePermissionCollection" Relationship2="RolePermission.PermissionTarget-PermissionTarget.RolePermissionCollection" />
+      <IndirectRelationship Start=":TreeStructurePartCustomBankProperty" End=":TreeStructureCustomBankPropertyValue" StartNavigator="TreeStructureCustomBankPropertyValueCollectionViaTreeStructureCustomBankPropertySelectedPart" EndNavigator="TreeStructurePartCustomBankPropertyCollectionViaTreeStructureCustomBankPropertySelectedPart" Relationship1="TreeStructureCustomBankPropertySelectedPart.TreeStructurePartCustomBankProperty-TreeStructurePartCustomBankProperty.TreeStructureCustomBankPropertySelectedPartCollection" Relationship2="TreeStructureCustomBankPropertySelectedPart.TreeStructureCustomBankPropertyValue-TreeStructureCustomBankPropertyValue.TreeStructureCustomBankPropertySelectedPartCollection" />
+      <IndirectRelationship Start=":User" End=":State" EndNavigator="UserCollectionViaResource" Relationship1="Resource.CreatedByUser-User." Relationship2="Resource.State-State.ResourceCollection" />
+      <IndirectRelationship Start=":User" End=":State" EndNavigator="UserCollectionViaResource_" Relationship1="Resource.ModifiedByUser-User." Relationship2="Resource.State-State.ResourceCollection" />
+      <IndirectRelationship Start=":User" End=":Role" StartNavigator="RoleCollectionViaUserApplicationRole" Relationship1="UserApplicationRole.User-User.UserApplicationRoleCollection" Relationship2="UserApplicationRole.Role-Role.UserApplicationRoleCollection" />
+      <IndirectRelationship Start=":User" End=":Role" StartNavigator="RoleCollectionViaUserBankRole" Relationship1="UserBankRole.User-User.UserBankRoleCollection" Relationship2="UserBankRole.Role-Role.UserBankRoleCollection" />
+      <IndirectRelationship Start=":User" End=":State" StartNavigator="StateCollectionViaCustomBankProperty" EndNavigator="UserCollectionViaCustomBankProperty" Relationship1="CustomBankProperty.CreatedByUser-User.CustomBankPropertyCollection_" Relationship2="CustomBankProperty.State-State.CustomBankPropertyCollection" />
+      <IndirectRelationship Start=":User" End=":State" StartNavigator="StateCollectionViaCustomBankProperty_" EndNavigator="UserCollectionViaCustomBankProperty_" Relationship1="CustomBankProperty.ModifiedByUser-User.CustomBankPropertyCollection" Relationship2="CustomBankProperty.State-State.CustomBankPropertyCollection" />
+    </Relationships>
+    <InheritanceHierarchies>
+      <InheritanceHierarchy SuperType=":Resource" SubType=":AspectResource" />
+      <InheritanceHierarchy SuperType=":Resource" SubType=":AssessmentTestResource" />
+      <InheritanceHierarchy SuperType=":CustomBankProperty" SubType=":ConceptStructureCustomBankProperty" />
+      <InheritanceHierarchy SuperType=":CustomBankPropertyValue" SubType=":ConceptStructureCustomBankPropertyValue" />
+      <InheritanceHierarchy SuperType=":Resource" SubType=":ControlTemplateResource" />
+      <InheritanceHierarchy SuperType=":Resource" SubType=":DataSourceResource" />
+      <InheritanceHierarchy SuperType=":CustomBankProperty" SubType=":FreeValueCustomBankProperty" />
+      <InheritanceHierarchy SuperType=":CustomBankPropertyValue" SubType=":FreeValueCustomBankPropertyValue" />
+      <InheritanceHierarchy SuperType=":Resource" SubType=":GenericResource" />
+      <InheritanceHierarchy SuperType=":Resource" SubType=":ItemLayoutTemplateResource" />
+      <InheritanceHierarchy SuperType=":Resource" SubType=":ItemResource" />
+      <InheritanceHierarchy SuperType=":CustomBankProperty" SubType=":ListCustomBankProperty" />
+      <InheritanceHierarchy SuperType=":CustomBankPropertyValue" SubType=":ListCustomBankPropertyValue" />
+      <InheritanceHierarchy SuperType=":Resource" SubType=":PackageResource" />
+      <InheritanceHierarchy SuperType=":Resource" SubType=":PlugInResource" />
+      <InheritanceHierarchy SuperType=":CustomBankProperty" SubType=":RichTextValueCustomBankProperty" />
+      <InheritanceHierarchy SuperType=":CustomBankPropertyValue" SubType=":RichTextValueCustomBankPropertyValue" />
+      <InheritanceHierarchy SuperType=":Resource" SubType=":TestPackageResource" />
+      <InheritanceHierarchy SuperType=":CustomBankProperty" SubType=":TreeStructureCustomBankProperty" />
+      <InheritanceHierarchy SuperType=":CustomBankPropertyValue" SubType=":TreeStructureCustomBankPropertyValue" />
+    </InheritanceHierarchies>
+  </EntityModel>
+  <SPCallDefinitions>
+    <SPCallDefinition Name="ChangeCreatorModifier" ObjectID="bc35fc65-0a90-4f49-bb07-5d2dd43818c0">
+      <Parameters>
+        <Parameter Name="CurrentUserId" Type="int" Precision="10" />
+        <Parameter Name="NewUserId" Type="int" Precision="10" />
+      </Parameters>
+    </SPCallDefinition>
+    <SPCallDefinition Name="ClearBank" ObjectID="5941548c-7fb9-4b6a-95b3-16807aff210f">
+      <Parameters>
+        <Parameter Name="BankId" Type="int" Precision="10" />
+      </Parameters>
+    </SPCallDefinition>
+    <SPCallDefinition Name="GetBankStatistics" ObjectID="cc7f98b6-8738-4bb2-b752-0cd6a958cb26">
+      <Parameters>
+        <Parameter Name="BankId" Type="int" Precision="10" />
+        <Parameter Name="UserName" Type="string" MaxLength="50" />
+      </Parameters>
+    </SPCallDefinition>
+    <SPCallDefinition Name="GetMaintenanceWindow" ObjectID="e8c321a9-4b5a-4e9e-ba3b-a4a9b484ae6b" />
+    <SPCallDefinition Name="HasDependingResourcesInSubBanks" ObjectID="07e6c158-a6b9-4fb2-bc6e-c658af0bcf5c">
+      <Parameters>
+        <Parameter Name="BankId" Type="int" Precision="10" />
+      </Parameters>
+    </SPCallDefinition>
+    <SPCallDefinition Name="SetMaintenanceWindow" ObjectID="5a66272c-1374-40c9-8d8b-54a892d9960f">
+      <Parameters>
+        <Parameter Name="PlannedTimestamp" Type="datetime" />
+      </Parameters>
+    </SPCallDefinition>
+    <SPCallDefinition Name="UpdateCustomBankPropertyBankId" ObjectID="a9a6a689-219e-4621-bb48-836788b13e2f">
+      <Parameters>
+        <Parameter Name="BankId" Type="int" Precision="10" />
+        <Parameter Name="CustomBankPropertyId" Type="guid" />
+      </Parameters>
+    </SPCallDefinition>
+    <SPCallDefinition Name="UpdateResourceBankId" ObjectID="7d5451c3-1962-446b-b618-37719e536ae6">
+      <Parameters>
+        <Parameter Name="BankId" Type="int" Precision="10" />
+        <Parameter Name="ResourceId" Type="guid" />
+      </Parameters>
+    </SPCallDefinition>
+  </SPCallDefinitions>
+  <TargetDatabases>
+    <TargetDatabase Type="2D18D138-1DD2-467E-86CC-4838250611AE" SyncSource="2">
+      <ConnectionElements>
+        <ConnectionElement Name="ServerName" Value="." />
+        <ConnectionElement Name="CatalogName" Value="master" />
+        <ConnectionElement Name="UseWindowsAuthentication" Value="true" />
+        <ConnectionElement Name="UserID" Value="" />
+        <ConnectionElement Name="Password" Value="" />
+      </ConnectionElements>
+      <SystemSequences>
+        <Sequence Name="SCOPE_IDENTITY()" />
+        <Sequence Name="@@IDENTITY" />
+      </SystemSequences>
+      <Catalogs>
+        <Catalog Name="QuestifyBuilder">
+          <Schemas>
+            <Schema Name="dbo" SyncSource="2" LastSyncWithDatabase="2019-04-09T12:43:01.5867575Z">
+              <Tables>
+                <Table Name="__RefactorLog">
+                  <PkConstraintName Name="PK____Refact__D3AEFFDBF17DF9B6" />
+                  <Fields>
+                    <Field Name="OperationKey" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                  </Fields>
+                  <CustomProperties>
+                    <CustomProperty Name="microsoft_database_tools_support" Value="refactoring log" />
+                  </CustomProperties>
+                </Table>
+                <Table Name="Action">
+                  <PkConstraintName Name="PK_action" />
+                  <Fields>
+                    <Field Name="actionId" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="name" Ordinal="2" DbType="24" Length="50" />
+                    <Field Name="title" Ordinal="3" IsOptional="true" DbType="24" Length="50" />
+                  </Fields>
+                </Table>
+                <Table Name="AspectResource">
+                  <PkConstraintName Name="PK_AspectResource" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="rawScore" Ordinal="2" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="AssessmentTestResource">
+                  <PkConstraintName Name="PK_AssessmentTestResource" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="isTemplate" Ordinal="2" HasDefaultValue="true" DefaultValue="(0)" DbType="2" />
+                  </Fields>
+                </Table>
+                <Table Name="Bank">
+                  <PkConstraintName Name="PK_Bank" />
+                  <Fields>
+                    <Field Name="id" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="parentBankId" Ordinal="2" IsOptional="true" DbType="8" Precision="10" />
+                    <Field Name="name" Ordinal="3" DbType="12" Length="50" />
+                    <Field Name="type" Ordinal="4" IsOptional="true" DbType="24" Length="50" />
+                    <Field Name="creationDate" Ordinal="5" DbType="4" />
+                    <Field Name="createdBy" Ordinal="6" DbType="8" Precision="10" />
+                    <Field Name="modifiedDate" Ordinal="7" DbType="4" />
+                    <Field Name="modifiedBy" Ordinal="8" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="ChildConceptStructurePartCustomBankProperty">
+                  <PkConstraintName Name="PK_ChildConceptStructurePartCustomBankProperty" />
+                  <Fields>
+                    <Field Name="id" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="conceptStructurePartCustomBankPropertyId" Ordinal="2" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="childConceptStructurePartCustomBankPropertyId" Ordinal="3" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="visualOrder" Ordinal="4" HasDefaultValue="true" DefaultValue="(0)" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="ChildTreeStructurePartCustomBankProperty">
+                  <PkConstraintName Name="PK__ChildTre__F10745F5635791CD" />
+                  <Fields>
+                    <Field Name="id" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="childTreeStructurePartCustomBankPropertyId" Ordinal="2" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="treeStructurePartCustomBankPropertyId" Ordinal="3" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="visualOrder" Ordinal="4" HasDefaultValue="true" DefaultValue="(0)" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="ConceptStructureCustomBankProperty">
+                  <PkConstraintName Name="PK_ConceptStructureCustomBankProperty" />
+                  <Fields>
+                    <Field Name="customBankPropertyId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                  </Fields>
+                </Table>
+                <Table Name="ConceptStructureCustomBankPropertySelectedPart">
+                  <PkConstraintName Name="PK_ConceptStructureCustomBankPropertySelectedPart" />
+                  <Fields>
+                    <Field Name="conceptStructurePartId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="resourceId" Ordinal="2" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="customBankPropertyId" Ordinal="3" IsPrimaryKey="true" DbType="25" />
+                  </Fields>
+                </Table>
+                <Table Name="ConceptStructureCustomBankPropertyValue">
+                  <PkConstraintName Name="PK_ConceptStructureCustomBankPropertyValue" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="customBankPropertyId" Ordinal="2" IsPrimaryKey="true" DbType="25" />
+                  </Fields>
+                </Table>
+                <Table Name="ConceptStructurePartCustomBankProperty">
+                  <PkConstraintName Name="PK_ConceptStructurePartCustomProperty" />
+                  <Fields>
+                    <Field Name="conceptStructurePartCustomBankPropertyId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="customBankPropertyId" Ordinal="2" DbType="25" />
+                    <Field Name="name" Ordinal="3" DbType="12" Length="50" />
+                    <Field Name="title" Ordinal="4" IsOptional="true" DbType="12" Length="255" />
+                    <Field Name="code" Ordinal="5" DbType="25" />
+                    <Field Name="conceptTypeId" Ordinal="6" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="ConceptType">
+                  <PkConstraintName Name="PK_ConceptType" />
+                  <Fields>
+                    <Field Name="conceptTypeId" Ordinal="1" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="name" Ordinal="2" DbType="24" Length="255" />
+                    <Field Name="applicableToMask" Ordinal="3" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="ControlTemplateResource">
+                  <PkConstraintName Name="PK_ControlTemplateResource" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                  </Fields>
+                </Table>
+                <Table Name="CustomBankProperty">
+                  <PkConstraintName Name="PK_CustomProperty" />
+                  <Fields>
+                    <Field Name="customBankPropertyId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="bankId" Ordinal="2" DbType="8" Precision="10" />
+                    <Field Name="applicableToMask" Ordinal="3" IsOptional="true" DbType="8" Precision="10" />
+                    <Field Name="publishable" Ordinal="4" HasDefaultValue="true" DefaultValue="(0)" DbType="2" />
+                    <Field Name="name" Ordinal="5" DbType="12" Length="50" />
+                    <Field Name="title" Ordinal="6" IsOptional="true" DbType="12" Length="255" />
+                    <Field Name="description" Ordinal="7" IsOptional="true" DbType="12" Length="2147483647" />
+                    <Field Name="creationDate" Ordinal="8" DbType="4" />
+                    <Field Name="createdBy" Ordinal="9" DbType="8" Precision="10" />
+                    <Field Name="modifiedDate" Ordinal="10" DbType="4" />
+                    <Field Name="modifiedBy" Ordinal="11" DbType="8" Precision="10" />
+                    <Field Name="code" Ordinal="12" HasDefaultValue="true" DefaultValue="newsequentialid()" DbType="25" />
+                    <Field Name="stateId" Ordinal="13" IsOptional="true" DbType="8" Precision="10" />
+                    <Field Name="version" Ordinal="14" HasDefaultValue="true" DefaultValue="(0.1)" DbType="24" Length="20" />
+                  </Fields>
+                </Table>
+                <Table Name="CustomBankPropertyValue">
+                  <PkConstraintName Name="PK_CustomBankPropertyValue" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="customBankPropertyId" Ordinal="2" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="displayValue" Ordinal="3" IsOptional="true" DbType="12" Length="255" />
+                  </Fields>
+                </Table>
+                <Table Name="DataSourceResource">
+                  <PkConstraintName Name="PK_DataSourceResource" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="dataSourceType" Ordinal="2" DbType="24" Length="255" />
+                    <Field Name="isTemplate" Ordinal="3" DbType="2" />
+                  </Fields>
+                </Table>
+                <Table Name="DependentResource">
+                  <PkConstraintName Name="PK_DependentResource" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="dependentResourceId" Ordinal="2" IsPrimaryKey="true" DbType="25" />
+                  </Fields>
+                </Table>
+                <Table Name="FreeValueCustomBankProperty">
+                  <PkConstraintName Name="PK_FreeValueCustomProperty" />
+                  <Fields>
+                    <Field Name="customBankPropertyId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                  </Fields>
+                </Table>
+                <Table Name="FreeValueCustomBankPropertyValue">
+                  <PkConstraintName Name="PK_FreeValueCustomBankPropertyValue" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="customBankPropertyId" Ordinal="2" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="value" Ordinal="3" IsOptional="true" DbType="12" Length="255" />
+                    <Field Name="freeValueCustomBankPropertyValueId" Ordinal="4" IsIdentity="true" DbType="8" Precision="10" />
+                  </Fields>
+                  <UniqueConstraints>
+                    <UniqueConstraint Name="IX_FreeValueCustomBankPropertyValueId">
+                      <Field Name="freeValueCustomBankPropertyValueId" />
+                    </UniqueConstraint>
+                  </UniqueConstraints>
+                </Table>
+                <Table Name="GenericResource">
+                  <PkConstraintName Name="PK_GenericResource" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="mediaType" Ordinal="2" HasDefaultValue="true" DefaultValue="'image'" DbType="24" Length="255" />
+                    <Field Name="size" Ordinal="3" HasDefaultValue="true" DefaultValue="(0)" DbType="8" Precision="10" />
+                    <Field Name="dimensions" Ordinal="4" IsOptional="true" DbType="24" Length="50" />
+                    <Field Name="isTemplate" Ordinal="5" HasDefaultValue="true" DefaultValue="(0)" DbType="2" />
+                  </Fields>
+                </Table>
+                <Table Name="HiddenResource">
+                  <PkConstraintName Name="PK_HiddenResource_1" />
+                  <Fields>
+                    <Field Name="ResourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="BankId" Ordinal="2" IsPrimaryKey="true" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="ItemLayoutTemplateResource">
+                  <PkConstraintName Name="PK_ItemLayoutTemplateResource" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="itemType" Ordinal="2" IsOptional="true" DbType="12" Length="50" />
+                  </Fields>
+                </Table>
+                <Table Name="ItemResource">
+                  <PkConstraintName Name="PK_ItemResource" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="isSystemItem" Ordinal="2" HasDefaultValue="true" DefaultValue="(0)" DbType="2" />
+                    <Field Name="alternativesCount" Ordinal="3" IsOptional="true" DbType="8" Precision="10" />
+                    <Field Name="keyValues" Ordinal="4" IsOptional="true" DbType="12" Length="500" />
+                    <Field Name="responseCount" Ordinal="5" IsOptional="true" DbType="8" Precision="10" />
+                    <Field Name="rawScore" Ordinal="6" IsOptional="true" DbType="8" Precision="10" />
+                    <Field Name="TesterSchemaVersion" Ordinal="7" IsOptional="true" DbType="8" Precision="10" />
+                    <Field Name="ILTName" Ordinal="8" IsOptional="true" DbType="12" Length="255" />
+                    <Field Name="ILTVersion" Ordinal="9" IsOptional="true" DbType="8" Precision="10" />
+                    <Field Name="MaxScore" Ordinal="10" IsOptional="true" DbType="5" Precision="9" Scale="2" />
+                    <Field Name="ItemAutoId" Ordinal="11" IsIdentity="true" DbType="8" Precision="10" />
+                    <Field Name="ItemId" Ordinal="12" IsOptional="true" DbType="24" Length="6" />
+                  </Fields>
+                </Table>
+                <Table Name="ListCustomBankProperty">
+                  <PkConstraintName Name="PK_ListCustomProperty" />
+                  <Fields>
+                    <Field Name="customBankPropertyId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="multipleSelect" Ordinal="2" HasDefaultValue="true" DefaultValue="(0)" DbType="2" />
+                  </Fields>
+                </Table>
+                <Table Name="ListCustomBankPropertySelectedValue">
+                  <PkConstraintName Name="PK_ListCustomBankPropertySelectedValue" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="customBankPropertyId" Ordinal="2" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="listValueBankCustomPropertyId" Ordinal="3" IsPrimaryKey="true" DbType="25" />
+                  </Fields>
+                </Table>
+                <Table Name="ListCustomBankPropertyValue">
+                  <PkConstraintName Name="PK_ListCustomBankPropertyValue" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="customBankPropertyId" Ordinal="2" IsPrimaryKey="true" DbType="25" />
+                  </Fields>
+                </Table>
+                <Table Name="ListValueCustomBankProperty">
+                  <PkConstraintName Name="PK_ListValueCustomProperty" />
+                  <Fields>
+                    <Field Name="listValueBankCustomPropertyId" Ordinal="1" IsPrimaryKey="true" HasDefaultValue="true" DefaultValue="newid()" DbType="25" />
+                    <Field Name="customBankPropertyId" Ordinal="2" DbType="25" />
+                    <Field Name="name" Ordinal="3" DbType="12" Length="50" />
+                    <Field Name="title" Ordinal="4" IsOptional="true" DbType="12" Length="255" />
+                    <Field Name="code" Ordinal="5" HasDefaultValue="true" DefaultValue="newsequentialid()" DbType="25" />
+                  </Fields>
+                </Table>
+                <Table Name="MaintenanceWindow">
+                  <Fields>
+                    <Field Name="maintenancePlannedTimestamp" Ordinal="1" IsOptional="true" DbType="4" />
+                  </Fields>
+                </Table>
+                <Table Name="PackageResource">
+                  <PkConstraintName Name="PK_PackageResource" />
+                  <Fields>
+                    <Field Name="ResourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                  </Fields>
+                </Table>
+                <Table Name="Permission">
+                  <PkConstraintName Name="PK_Permission" />
+                  <Fields>
+                    <Field Name="id" Ordinal="1" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="name" Ordinal="2" DbType="12" Length="20" />
+                    <Field Name="description" Ordinal="3" IsOptional="true" DbType="12" Length="50" />
+                    <Field Name="whenOwnerCondition" Ordinal="4" DbType="2" />
+                    <Field Name="creationDate" Ordinal="5" DbType="4" />
+                    <Field Name="createdBy" Ordinal="6" DbType="8" Precision="10" />
+                    <Field Name="modifiedDate" Ordinal="7" DbType="4" />
+                    <Field Name="modifiedBy" Ordinal="8" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="PermissionTarget">
+                  <PkConstraintName Name="PK_PermissionTarget" />
+                  <Fields>
+                    <Field Name="id" Ordinal="1" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="name" Ordinal="2" DbType="12" Length="50" />
+                    <Field Name="targettedNamedTask" Ordinal="3" IsOptional="true" DbType="12" Length="50" />
+                    <Field Name="isApplicationTarget" Ordinal="4" DbType="2" />
+                    <Field Name="creationDate" Ordinal="5" DbType="4" />
+                    <Field Name="createdBy" Ordinal="6" DbType="8" Precision="10" />
+                    <Field Name="modifiedDate" Ordinal="7" DbType="4" />
+                    <Field Name="modifiedBy" Ordinal="8" DbType="8" Precision="10" />
+                  </Fields>
+                  <UniqueConstraints>
+                    <UniqueConstraint Name="IX_PermissionTarget">
+                      <Field Name="name" />
+                      <Field Name="targettedNamedTask" />
+                    </UniqueConstraint>
+                  </UniqueConstraints>
+                </Table>
+                <Table Name="PlugInResource">
+                  <PkConstraintName Name="PK_PlugInResource" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="plugInType" Ordinal="2" DbType="12" Length="50" />
+                  </Fields>
+                </Table>
+                <Table Name="Resource">
+                  <PkConstraintName Name="PK_Resource" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="version" Ordinal="2" HasDefaultValue="true" DefaultValue="(0.1)" DbType="24" Length="20" />
+                    <Field Name="bankId" Ordinal="3" DbType="8" Precision="10" />
+                    <Field Name="name" Ordinal="4" DbType="12" Length="255" />
+                    <Field Name="title" Ordinal="5" IsOptional="true" DbType="12" Length="255" />
+                    <Field Name="description" Ordinal="6" IsOptional="true" HasDefaultValue="true" DefaultValue="''" DbType="12" Length="2147483647" />
+                    <Field Name="stateId" Ordinal="7" IsOptional="true" DbType="8" Precision="10" />
+                    <Field Name="creationDate" Ordinal="8" DbType="4" />
+                    <Field Name="createdBy" Ordinal="9" DbType="8" Precision="10" />
+                    <Field Name="modifiedDate" Ordinal="10" DbType="4" />
+                    <Field Name="modifiedBy" Ordinal="11" DbType="8" Precision="10" />
+                    <Field Name="originalVersion" Ordinal="12" IsOptional="true" DbType="24" Length="20" />
+                    <Field Name="originalName" Ordinal="13" IsOptional="true" DbType="12" Length="255" />
+                  </Fields>
+                </Table>
+                <Table Name="ResourceData">
+                  <PkConstraintName Name="PK_ResourceData" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="binData" Ordinal="2" IsOptional="true" DbType="7" Length="2147483647" />
+                    <Field Name="url" Ordinal="3" IsOptional="true" DbType="12" Length="500" />
+                    <Field Name="fileExtension" Ordinal="4" IsOptional="true" DbType="24" Length="8" />
+                    <Field Name="ident" Ordinal="5" IsIdentity="true" DbType="0" Precision="19" />
+                  </Fields>
+                </Table>
+                <Table Name="ResourceHistory">
+                  <PkConstraintName Name="PK_ResourceHistory" />
+                  <Fields>
+                    <Field Name="Id" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="ResourceId" Ordinal="2" DbType="25" />
+                    <Field Name="MajorVersion" Ordinal="3" DbType="16" Precision="5" />
+                    <Field Name="MinorVersion" Ordinal="4" DbType="16" Precision="5" />
+                    <Field Name="ModifiedBy" Ordinal="5" DbType="12" Length="255" />
+                    <Field Name="ModifiedDate" Ordinal="6" HasDefaultValue="true" DefaultValue="getdate()" DbType="4" />
+                    <Field Name="Label" Ordinal="7" IsOptional="true" DbType="12" Length="4000" />
+                    <Field Name="BinData" Ordinal="8" IsOptional="true" DbType="23" Length="2147483647" />
+                    <Field Name="MetaData" Ordinal="9" IsOptional="true" DbType="23" Length="2147483647" />
+                  </Fields>
+                </Table>
+                <Table Name="RichTextValueCustomBankProperty">
+                  <PkConstraintName Name="PK_RichTextValueCustomProperty" />
+                  <Fields>
+                    <Field Name="customBankPropertyId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                  </Fields>
+                </Table>
+                <Table Name="RichTextValueCustomBankPropertyValue">
+                  <PkConstraintName Name="PK_RichTextValueCustomBankPropertyValue" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="customBankPropertyId" Ordinal="2" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="value" Ordinal="3" IsOptional="true" DbType="12" Length="2147483647" />
+                    <Field Name="richTextValueCustomBankPropertyValueId" Ordinal="4" IsIdentity="true" DbType="8" Precision="10" />
+                  </Fields>
+                  <UniqueConstraints>
+                    <UniqueConstraint Name="IX_RichTextValueCustomBankPropertyValueId">
+                      <Field Name="richTextValueCustomBankPropertyValueId" />
+                    </UniqueConstraint>
+                  </UniqueConstraints>
+                </Table>
+                <Table Name="Role">
+                  <PkConstraintName Name="PK_Role" />
+                  <Fields>
+                    <Field Name="id" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="name" Ordinal="2" DbType="12" Length="50" />
+                    <Field Name="description" Ordinal="3" IsOptional="true" DbType="12" Length="50" />
+                    <Field Name="isApplicationRole" Ordinal="4" IsOptional="true" DbType="2" />
+                    <Field Name="creationDate" Ordinal="5" DbType="4" />
+                    <Field Name="createdBy" Ordinal="6" DbType="8" Precision="10" />
+                    <Field Name="modifiedDate" Ordinal="7" DbType="4" />
+                    <Field Name="modifiedBy" Ordinal="8" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="RolePermission">
+                  <PkConstraintName Name="PK_RolePermission" />
+                  <Fields>
+                    <Field Name="roleId" Ordinal="1" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="permissionTargetId" Ordinal="2" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="permissionId" Ordinal="3" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="creationDate" Ordinal="4" DbType="4" />
+                    <Field Name="createdBy" Ordinal="5" DbType="8" Precision="10" />
+                    <Field Name="modifiedDate" Ordinal="6" DbType="4" />
+                    <Field Name="modifiedBy" Ordinal="7" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="State">
+                  <PkConstraintName Name="PK_State" />
+                  <Fields>
+                    <Field Name="stateId" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="name" Ordinal="2" DbType="12" Length="50" />
+                    <Field Name="title" Ordinal="3" IsOptional="true" DbType="12" Length="50" />
+                    <Field Name="description" Ordinal="4" IsOptional="true" DbType="24" Length="4000" />
+                  </Fields>
+                </Table>
+                <Table Name="StateAction">
+                  <PkConstraintName Name="PK_StateAction" />
+                  <Fields>
+                    <Field Name="target" Ordinal="1" IsPrimaryKey="true" DbType="24" Length="50" />
+                    <Field Name="stateId" Ordinal="2" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="actionId" Ordinal="3" IsPrimaryKey="true" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="TestPackageResource">
+                  <PkConstraintName Name="PK_TestPackageResource" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                  </Fields>
+                </Table>
+                <Table Name="TreeStructureCustomBankProperty">
+                  <PkConstraintName Name="PK_TreeStructureCustomBankProperty" />
+                  <Fields>
+                    <Field Name="customBankPropertyId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                  </Fields>
+                </Table>
+                <Table Name="TreeStructureCustomBankPropertySelectedPart">
+                  <PkConstraintName Name="PK_TreeStructureCustomBankPropertySelectedPart" />
+                  <Fields>
+                    <Field Name="treeStructurePartId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="resourceId" Ordinal="2" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="customBankPropertyId" Ordinal="3" IsPrimaryKey="true" DbType="25" />
+                  </Fields>
+                </Table>
+                <Table Name="TreeStructureCustomBankPropertyValue">
+                  <PkConstraintName Name="PK_TreeStructureCustomBankPropertyValue" />
+                  <Fields>
+                    <Field Name="resourceId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="customBankPropertyId" Ordinal="2" IsPrimaryKey="true" DbType="25" />
+                  </Fields>
+                </Table>
+                <Table Name="TreeStructurePartCustomBankProperty">
+                  <PkConstraintName Name="PK_TreeStructurePartCustomBankProperty" />
+                  <Fields>
+                    <Field Name="treeStructurePartCustomBankPropertyId" Ordinal="1" IsPrimaryKey="true" DbType="25" />
+                    <Field Name="customBankPropertyId" Ordinal="2" DbType="25" />
+                    <Field Name="name" Ordinal="3" DbType="12" Length="50" />
+                    <Field Name="title" Ordinal="4" IsOptional="true" DbType="12" Length="255" />
+                    <Field Name="code" Ordinal="5" DbType="25" />
+                  </Fields>
+                </Table>
+                <Table Name="User">
+                  <PkConstraintName Name="PK_User" />
+                  <Fields>
+                    <Field Name="id" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="userName" Ordinal="2" DbType="12" Length="50" />
+                    <Field Name="password" Ordinal="3" DbType="12" Length="2147483647" />
+                    <Field Name="fullName" Ordinal="4" DbType="12" Length="50" />
+                    <Field Name="Active" Ordinal="5" DbType="2" />
+                    <Field Name="creationDate" Ordinal="6" DbType="4" />
+                    <Field Name="createdBy" Ordinal="7" DbType="8" Precision="10" />
+                    <Field Name="modifiedDate" Ordinal="8" DbType="4" />
+                    <Field Name="modifiedBy" Ordinal="9" DbType="8" Precision="10" />
+                    <Field Name="authenticationType" Ordinal="10" DbType="24" Length="50" />
+                    <Field Name="userSettings" Ordinal="11" HasDefaultValue="true" DefaultValue="''" DbType="12" Length="2147483647" />
+                    <Field Name="changePassword" Ordinal="12" HasDefaultValue="true" DefaultValue="(0)" DbType="2" />
+                    <Field Name="allowedFeatures" Ordinal="13" IsOptional="true" DbType="12" Length="2000" />
+                  </Fields>
+                </Table>
+                <Table Name="UserApplicationRole">
+                  <PkConstraintName Name="PK_UserApplicationRole" />
+                  <Fields>
+                    <Field Name="userId" Ordinal="1" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="applicationRoleId" Ordinal="2" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="creationDate" Ordinal="3" DbType="4" />
+                    <Field Name="createdBy" Ordinal="4" DbType="8" Precision="10" />
+                    <Field Name="modifiedDate" Ordinal="5" DbType="4" />
+                    <Field Name="modifiedBy" Ordinal="6" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="UserBankRole">
+                  <PkConstraintName Name="PK_UserBankRole" />
+                  <Fields>
+                    <Field Name="userId" Ordinal="1" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="bankId" Ordinal="2" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="bankRoleId" Ordinal="3" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="creationDate" Ordinal="4" DbType="4" />
+                    <Field Name="createdBy" Ordinal="5" DbType="8" Precision="10" />
+                    <Field Name="modifiedDate" Ordinal="6" DbType="4" />
+                    <Field Name="modifiedBy" Ordinal="7" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+              </Tables>
+              <StoredProcedures>
+                <StoredProcedure Name="ChangeCreatorModifier">
+                  <Parameters>
+                    <Parameter Name="@currentUserId" Direction="1" Ordinal="1" DbType="8" Precision="10" />
+                    <Parameter Name="@newUserId" Direction="1" Ordinal="2" DbType="8" Precision="10" />
+                  </Parameters>
+                </StoredProcedure>
+                <StoredProcedure Name="ClearBank">
+                  <Parameters>
+                    <Parameter Name="@bankId" Direction="1" Ordinal="1" DbType="8" Precision="10" />
+                  </Parameters>
+                </StoredProcedure>
+                <StoredProcedure Name="GetBankStatistics" NumberOfResultsets="21">
+                  <Parameters>
+                    <Parameter Name="@bankId" Direction="1" Ordinal="1" DbType="8" Precision="10" />
+                    <Parameter Name="@userName" Direction="1" Ordinal="2" DbType="24" Length="50" />
+                  </Parameters>
+                  <Resultsets>
+                    <Resultset Name="Resultset1">
+                      <Fields>
+                        <Field Name="totalNumberOfItems" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset10">
+                      <Fields>
+                        <Field Name="numberOfUnusedItemsTemplates" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset11">
+                      <Fields>
+                        <Field Name="numberOfItemTemplatesCreatedByMe" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset12">
+                      <Fields>
+                        <Field Name="totalNumberOfTestTemplates" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset13">
+                      <Fields>
+                        <Field Name="numberOfTestTemplatesCreatedByMe" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset14">
+                      <Fields>
+                        <Field Name="totalNumberOfControlTemplates" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset15">
+                      <Fields>
+                        <Field Name="numberOfUnusedControlTemplates" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset16">
+                      <Fields>
+                        <Field Name="numberOfControlTemplates" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset17">
+                      <Fields>
+                        <Field Name="totalNumberOfPlugins" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset18">
+                      <Fields>
+                        <Field Name="numberOfUnusedPlugins" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset19">
+                      <Fields>
+                        <Field Name="numberOfUnusedPluginsTest" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset2">
+                      <Fields>
+                        <Field Name="numberOfItemsCreatedByMe" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset20">
+                      <Fields>
+                        <Field Name="numberOfPluginsCreatedByMe" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset21">
+                      <Fields>
+                        <Field Name="numberOfItem" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                        <Field Name="name" Ordinal="2" DbType="12" Length="50" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset3">
+                      <Fields>
+                        <Field Name="numberOfUnusedItems" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset4">
+                      <Fields>
+                        <Field Name="resourceId" Ordinal="1" DbType="25" />
+                        <Field Name="name" Ordinal="2" DbType="12" Length="255" />
+                        <Field Name="title" Ordinal="3" IsOptional="true" DbType="12" Length="255" />
+                        <Field Name="modifiedDate" Ordinal="4" DbType="4" />
+                        <Field Name="fullName" Ordinal="5" DbType="12" Length="50" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset5">
+                      <Fields>
+                        <Field Name="totalNumberOfTest" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset6">
+                      <Fields>
+                        <Field Name="numberOfTestCreatedByMe" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset7">
+                      <Fields>
+                        <Field Name="totalNumberOfMedia" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset8">
+                      <Fields>
+                        <Field Name="numberOfUnusedMedia" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                    <Resultset Name="Resultset9">
+                      <Fields>
+                        <Field Name="totalNumberOfItemTemplates" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                  </Resultsets>
+                </StoredProcedure>
+                <StoredProcedure Name="GetMaintenanceWindow" NumberOfResultsets="1">
+                  <Resultsets>
+                    <Resultset Name="Resultset1">
+                      <Fields>
+                        <Field Name="PlannedTimestamp" Ordinal="1" IsOptional="true" DbType="4" />
+                      </Fields>
+                    </Resultset>
+                  </Resultsets>
+                </StoredProcedure>
+                <StoredProcedure Name="HasDependingResourcesInSubBanks" NumberOfResultsets="1">
+                  <Parameters>
+                    <Parameter Name="@bankId" Direction="1" Ordinal="1" DbType="8" Precision="10" />
+                  </Parameters>
+                  <Resultsets>
+                    <Resultset Name="Resultset1">
+                      <Fields>
+                        <Field Name="" Ordinal="1" IsOptional="true" DbType="8" Precision="10" />
+                      </Fields>
+                    </Resultset>
+                  </Resultsets>
+                </StoredProcedure>
+                <StoredProcedure Name="SetMaintenanceWindow">
+                  <Parameters>
+                    <Parameter Name="@plannedTimestamp" Direction="1" Ordinal="1" DbType="4" />
+                  </Parameters>
+                </StoredProcedure>
+                <StoredProcedure Name="UpdateCustomBankPropertyBankId">
+                  <Parameters>
+                    <Parameter Name="@CustomBankPropertyId" Direction="1" Ordinal="1" DbType="25" />
+                    <Parameter Name="@BankId" Direction="1" Ordinal="2" DbType="8" Precision="10" />
+                  </Parameters>
+                </StoredProcedure>
+                <StoredProcedure Name="UpdateResourceBankId">
+                  <Parameters>
+                    <Parameter Name="@ResourceId" Direction="1" Ordinal="1" DbType="25" />
+                    <Parameter Name="@BankId" Direction="1" Ordinal="2" DbType="8" Precision="10" />
+                  </Parameters>
+                </StoredProcedure>
+              </StoredProcedures>
+            </Schema>
+          </Schemas>
+          <ForeignKeyConstraints>
+            <ForeignKeyConstraint Name="dbo:AspectResource:FK_AspectResource_Resource" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Resource:resourceId" FkField="dbo:AspectResource:resourceId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:AssessmentTestResource:FK_AssessmentTestResource_Resource" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Resource:resourceId" FkField="dbo:AssessmentTestResource:resourceId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Bank:FK_Bank_Bank">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Bank:id" FkField="dbo:Bank:parentBankId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Bank:FK_Bank_CreatedByUser">
+              <FieldPairs>
+                <FieldPair PkField="dbo:User:id" FkField="dbo:Bank:createdBy" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Bank:FK_Bank_ModifiedByUser">
+              <FieldPairs>
+                <FieldPair PkField="dbo:User:id" FkField="dbo:Bank:modifiedBy" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ChildConceptStructurePartCustomBankProperty:FK_ChildConceptStructurePartToConceptStructurePart">
+              <FieldPairs>
+                <FieldPair PkField="dbo:ConceptStructurePartCustomBankProperty:conceptStructurePartCustomBankPropertyId" FkField="dbo:ChildConceptStructurePartCustomBankProperty:childConceptStructurePartCustomBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ChildConceptStructurePartCustomBankProperty:FK_ConceptStructurePartToConceptStructurePart" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:ConceptStructurePartCustomBankProperty:conceptStructurePartCustomBankPropertyId" FkField="dbo:ChildConceptStructurePartCustomBankProperty:conceptStructurePartCustomBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ChildTreeStructurePartCustomBankProperty:FK_ChildTreeStructurePartCustomBankProperty_TreeStructurePartCustomBankProperty" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:TreeStructurePartCustomBankProperty:treeStructurePartCustomBankPropertyId" FkField="dbo:ChildTreeStructurePartCustomBankProperty:treeStructurePartCustomBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ConceptStructureCustomBankProperty:FK_ConceptStructureCustomBankProperty_CustomBankProperty" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:CustomBankProperty:customBankPropertyId" FkField="dbo:ConceptStructureCustomBankProperty:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ConceptStructureCustomBankPropertySelectedPart:FK_ConceptStructureCustomBankPropertySelectedPart_ToConceptStructurePart">
+              <FieldPairs>
+                <FieldPair PkField="dbo:ConceptStructurePartCustomBankProperty:conceptStructurePartCustomBankPropertyId" FkField="dbo:ConceptStructureCustomBankPropertySelectedPart:conceptStructurePartId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ConceptStructureCustomBankPropertySelectedPart:FK_ConceptStructureCustomBankPropertySelectedPart_ToConceptStructurePartValue" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:ConceptStructureCustomBankPropertyValue:resourceId" FkField="dbo:ConceptStructureCustomBankPropertySelectedPart:resourceId" />
+                <FieldPair PkField="dbo:ConceptStructureCustomBankPropertyValue:customBankPropertyId" FkField="dbo:ConceptStructureCustomBankPropertySelectedPart:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ConceptStructureCustomBankPropertyValue:FK_ConceptStructureCustomBankPropertyValue_ConceptStructureCustomBankProperty">
+              <FieldPairs>
+                <FieldPair PkField="dbo:ConceptStructureCustomBankProperty:customBankPropertyId" FkField="dbo:ConceptStructureCustomBankPropertyValue:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ConceptStructureCustomBankPropertyValue:FK_ConceptStructureCustomBankPropertyValue_CustomBankPropertyValue" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:CustomBankPropertyValue:resourceId" FkField="dbo:ConceptStructureCustomBankPropertyValue:resourceId" />
+                <FieldPair PkField="dbo:CustomBankPropertyValue:customBankPropertyId" FkField="dbo:ConceptStructureCustomBankPropertyValue:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ConceptStructurePartCustomBankProperty:FK_ConceptStructure_ConceptStructureCustomBankProperty" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:ConceptStructureCustomBankProperty:customBankPropertyId" FkField="dbo:ConceptStructurePartCustomBankProperty:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ConceptStructurePartCustomBankProperty:FK_ConceptStructurePart_ToConceptType">
+              <FieldPairs>
+                <FieldPair PkField="dbo:ConceptType:conceptTypeId" FkField="dbo:ConceptStructurePartCustomBankProperty:conceptTypeId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ControlTemplateResource:FK_ControlTemplateResource_Resource" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Resource:resourceId" FkField="dbo:ControlTemplateResource:resourceId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:CustomBankProperty:FK_CustomBankProperty_State">
+              <FieldPairs>
+                <FieldPair PkField="dbo:State:stateId" FkField="dbo:CustomBankProperty:stateId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:CustomBankProperty:FK_CustomBankProperty_User">
+              <FieldPairs>
+                <FieldPair PkField="dbo:User:id" FkField="dbo:CustomBankProperty:createdBy" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:CustomBankProperty:FK_CustomBankProperty_User1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:User:id" FkField="dbo:CustomBankProperty:modifiedBy" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:CustomBankProperty:FK_CustomProperty_Bank" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Bank:id" FkField="dbo:CustomBankProperty:bankId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:CustomBankPropertyValue:FK_CustomBankPropertyValue_CustomBankProperty">
+              <FieldPairs>
+                <FieldPair PkField="dbo:CustomBankProperty:customBankPropertyId" FkField="dbo:CustomBankPropertyValue:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:CustomBankPropertyValue:FK_CustomBankPropertyValue_Resource" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Resource:resourceId" FkField="dbo:CustomBankPropertyValue:resourceId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:DataSourceResource:FK_DataSourceResource_Resource" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Resource:resourceId" FkField="dbo:DataSourceResource:resourceId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:DependentResource:FK_DependentResource_ReferenceToDependent" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Resource:resourceId" FkField="dbo:DependentResource:resourceId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:DependentResource:FK_DependentResource_Resource">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Resource:resourceId" FkField="dbo:DependentResource:dependentResourceId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:FreeValueCustomBankProperty:FK_FreeValueCustomProperty_CustomProperty" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:CustomBankProperty:customBankPropertyId" FkField="dbo:FreeValueCustomBankProperty:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:FreeValueCustomBankPropertyValue:FK_FreeValueCustomBankPropertyValue_CustomBankPropertyValue" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:CustomBankPropertyValue:resourceId" FkField="dbo:FreeValueCustomBankPropertyValue:resourceId" />
+                <FieldPair PkField="dbo:CustomBankPropertyValue:customBankPropertyId" FkField="dbo:FreeValueCustomBankPropertyValue:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:FreeValueCustomBankPropertyValue:FK_FreeValueCustomBankPropertyValue_FreeValueCustomBankProperty">
+              <FieldPairs>
+                <FieldPair PkField="dbo:FreeValueCustomBankProperty:customBankPropertyId" FkField="dbo:FreeValueCustomBankPropertyValue:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:GenericResource:FK_GenericResource_Resource" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Resource:resourceId" FkField="dbo:GenericResource:resourceId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:HiddenResource:FK_HiddenResource_Resource">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Resource:resourceId" FkField="dbo:HiddenResource:ResourceId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ItemLayoutTemplateResource:FK_ItemLayoutTemplateResource_Resource" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Resource:resourceId" FkField="dbo:ItemLayoutTemplateResource:resourceId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ItemResource:FK_ItemResource_Resource" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Resource:resourceId" FkField="dbo:ItemResource:resourceId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ListCustomBankProperty:FK_ListCustomProperty_CustomProperty" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:CustomBankProperty:customBankPropertyId" FkField="dbo:ListCustomBankProperty:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ListCustomBankPropertySelectedValue:FK_ListCustomBankPropertySelectedValue_ListCustomBankPropertyValue" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:ListCustomBankPropertyValue:resourceId" FkField="dbo:ListCustomBankPropertySelectedValue:resourceId" />
+                <FieldPair PkField="dbo:ListCustomBankPropertyValue:customBankPropertyId" FkField="dbo:ListCustomBankPropertySelectedValue:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ListCustomBankPropertySelectedValue:FK_ListCustomBankPropertySelectedValue_ListValueCustomBankProperty">
+              <FieldPairs>
+                <FieldPair PkField="dbo:ListValueCustomBankProperty:listValueBankCustomPropertyId" FkField="dbo:ListCustomBankPropertySelectedValue:listValueBankCustomPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ListCustomBankPropertyValue:FK_ListCustomBankPropertyValue_CustomBankPropertyValue" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:CustomBankPropertyValue:resourceId" FkField="dbo:ListCustomBankPropertyValue:resourceId" />
+                <FieldPair PkField="dbo:CustomBankPropertyValue:customBankPropertyId" FkField="dbo:ListCustomBankPropertyValue:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ListCustomBankPropertyValue:FK_ListCustomBankPropertyValue_ListCustomBankProperty">
+              <FieldPairs>
+                <FieldPair PkField="dbo:ListCustomBankProperty:customBankPropertyId" FkField="dbo:ListCustomBankPropertyValue:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ListValueCustomBankProperty:FK_ListValueCustomProperty_ListCustomProperty" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:ListCustomBankProperty:customBankPropertyId" FkField="dbo:ListValueCustomBankProperty:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:PackageResource:FK_PackageResource_Resource" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Resource:resourceId" FkField="dbo:PackageResource:ResourceId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:PlugInResource:FK_PlugInResource_Resource" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Resource:resourceId" FkField="dbo:PlugInResource:resourceId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Resource:FK_Resource_Bank">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Bank:id" FkField="dbo:Resource:bankId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Resource:FK_Resource_State">
+              <FieldPairs>
+                <FieldPair PkField="dbo:State:stateId" FkField="dbo:Resource:stateId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Resource:FK_Resource_User">
+              <FieldPairs>
+                <FieldPair PkField="dbo:User:id" FkField="dbo:Resource:createdBy" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Resource:FK_Resource_User1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:User:id" FkField="dbo:Resource:modifiedBy" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ResourceData:FK_ResourceData_Resource" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Resource:resourceId" FkField="dbo:ResourceData:resourceId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:ResourceHistory:FK_ResourceHistory_Resource" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Resource:resourceId" FkField="dbo:ResourceHistory:ResourceId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:RichTextValueCustomBankProperty:FK_RichTextValueCustomProperty_CustomProperty" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:CustomBankProperty:customBankPropertyId" FkField="dbo:RichTextValueCustomBankProperty:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:RichTextValueCustomBankPropertyValue:FK_RichTextValueCustomBankPropertyValue_CustomBankPropertyValue" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:CustomBankPropertyValue:resourceId" FkField="dbo:RichTextValueCustomBankPropertyValue:resourceId" />
+                <FieldPair PkField="dbo:CustomBankPropertyValue:customBankPropertyId" FkField="dbo:RichTextValueCustomBankPropertyValue:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:RichTextValueCustomBankPropertyValue:FK_RichTextValueCustomBankPropertyValue_RichTextValueCustomBankProperty">
+              <FieldPairs>
+                <FieldPair PkField="dbo:RichTextValueCustomBankProperty:customBankPropertyId" FkField="dbo:RichTextValueCustomBankPropertyValue:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Role:FK_Role_UserCreatedBy">
+              <FieldPairs>
+                <FieldPair PkField="dbo:User:id" FkField="dbo:Role:createdBy" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Role:FK_Role_UserModifiedBy">
+              <FieldPairs>
+                <FieldPair PkField="dbo:User:id" FkField="dbo:Role:modifiedBy" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:RolePermission:FK_RolePermission_Permission">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Permission:id" FkField="dbo:RolePermission:permissionId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:RolePermission:FK_RolePermission_PermissionTarget">
+              <FieldPairs>
+                <FieldPair PkField="dbo:PermissionTarget:id" FkField="dbo:RolePermission:permissionTargetId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:RolePermission:FK_RolePermission_Role">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Role:id" FkField="dbo:RolePermission:roleId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:StateAction:FK_StateAction_action">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Action:actionId" FkField="dbo:StateAction:actionId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:StateAction:FK_StateAction_State">
+              <FieldPairs>
+                <FieldPair PkField="dbo:State:stateId" FkField="dbo:StateAction:stateId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:TestPackageResource:FK_TestPackageResource_Resource" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Resource:resourceId" FkField="dbo:TestPackageResource:resourceId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:TreeStructureCustomBankProperty:FK_TreeStructureCustomBankProperty_CustomBankProperty" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:CustomBankProperty:customBankPropertyId" FkField="dbo:TreeStructureCustomBankProperty:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:TreeStructureCustomBankPropertySelectedPart:FK_TreeStructureCustomBankPropertySelectedPart_TreeStructureCustomBankPropertyValue" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:TreeStructureCustomBankPropertyValue:resourceId" FkField="dbo:TreeStructureCustomBankPropertySelectedPart:resourceId" />
+                <FieldPair PkField="dbo:TreeStructureCustomBankPropertyValue:customBankPropertyId" FkField="dbo:TreeStructureCustomBankPropertySelectedPart:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:TreeStructureCustomBankPropertySelectedPart:FK_TreeStructureCustomBankPropertySelectedPart_TreeStructurePartCustomBankProperty" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:TreeStructurePartCustomBankProperty:treeStructurePartCustomBankPropertyId" FkField="dbo:TreeStructureCustomBankPropertySelectedPart:treeStructurePartId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:TreeStructureCustomBankPropertyValue:FK_TreeStructureCustomBankPropertyValue_CustomBankPropertyValue" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:CustomBankPropertyValue:resourceId" FkField="dbo:TreeStructureCustomBankPropertyValue:resourceId" />
+                <FieldPair PkField="dbo:CustomBankPropertyValue:customBankPropertyId" FkField="dbo:TreeStructureCustomBankPropertyValue:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:TreeStructureCustomBankPropertyValue:FK_TreeStructureCustomBankPropertyValue_TreeStructureCustomBankProperty">
+              <FieldPairs>
+                <FieldPair PkField="dbo:TreeStructureCustomBankProperty:customBankPropertyId" FkField="dbo:TreeStructureCustomBankPropertyValue:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:TreeStructurePartCustomBankProperty:FK_TreeStructurePartCustomBankProperty_TreeStructureCustomBankProperty" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:TreeStructureCustomBankProperty:customBankPropertyId" FkField="dbo:TreeStructurePartCustomBankProperty:customBankPropertyId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:User:FK_User_CreatedBy">
+              <FieldPairs>
+                <FieldPair PkField="dbo:User:id" FkField="dbo:User:createdBy" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:User:FK_User_ModifiedBy">
+              <FieldPairs>
+                <FieldPair PkField="dbo:User:id" FkField="dbo:User:modifiedBy" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:UserApplicationRole:FK_UserApplicationRole_Role">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Role:id" FkField="dbo:UserApplicationRole:applicationRoleId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:UserApplicationRole:FK_UserApplicationRole_User" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:User:id" FkField="dbo:UserApplicationRole:userId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:UserBankRole:FK_UserBankRole_Bank" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Bank:id" FkField="dbo:UserBankRole:bankId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:UserBankRole:FK_UserBankRole_Role">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Role:id" FkField="dbo:UserBankRole:bankRoleId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:UserBankRole:FK_UserBankRole_User" DeleteRuleAction="1">
+              <FieldPairs>
+                <FieldPair PkField="dbo:User:id" FkField="dbo:UserBankRole:userId" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+          </ForeignKeyConstraints>
+        </Catalog>
+      </Catalogs>
+    </TargetDatabase>
+  </TargetDatabases>
+  <MappingStores>
+    <MappingStore Type="2D18D138-1DD2-467E-86CC-4838250611AE">
+      <EntityMappings>
+        <EntityMapping EntityName=":Action" TargetName="QuestifyBuilder:dbo:Action">
+          <FieldMappings>
+            <FieldMapping FieldName="ActionId" TargetFieldName="actionId" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="Name" TargetFieldName="name" />
+            <FieldMapping FieldName="Title" TargetFieldName="title" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":AspectResource" TargetName="QuestifyBuilder:dbo:AspectResource">
+          <FieldMappings>
+            <FieldMapping FieldName="RawScore" TargetFieldName="rawScore" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":AssessmentTestResource" TargetName="QuestifyBuilder:dbo:AssessmentTestResource">
+          <FieldMappings>
+            <FieldMapping FieldName="IsTemplate" TargetFieldName="isTemplate" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":Bank" TargetName="QuestifyBuilder:dbo:Bank">
+          <FieldMappings>
+            <FieldMapping FieldName="CreatedBy" TargetFieldName="createdBy" />
+            <FieldMapping FieldName="CreationDate" TargetFieldName="creationDate" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="ModifiedBy" TargetFieldName="modifiedBy" />
+            <FieldMapping FieldName="ModifiedDate" TargetFieldName="modifiedDate" />
+            <FieldMapping FieldName="Name" TargetFieldName="name" />
+            <FieldMapping FieldName="ParentBankId" TargetFieldName="parentBankId" />
+            <FieldMapping FieldName="Type" TargetFieldName="type" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":ChildConceptStructurePartCustomBankProperty" TargetName="QuestifyBuilder:dbo:ChildConceptStructurePartCustomBankProperty">
+          <FieldMappings>
+            <FieldMapping FieldName="ChildConceptStructurePartCustomBankPropertyId" TargetFieldName="childConceptStructurePartCustomBankPropertyId" />
+            <FieldMapping FieldName="ConceptStructurePartCustomBankPropertyId" TargetFieldName="conceptStructurePartCustomBankPropertyId" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" />
+            <FieldMapping FieldName="VisualOrder" TargetFieldName="visualOrder" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":ChildTreeStructurePartCustomBankProperty" TargetName="QuestifyBuilder:dbo:ChildTreeStructurePartCustomBankProperty">
+          <FieldMappings>
+            <FieldMapping FieldName="ChildTreeStructurePartCustomBankPropertyId" TargetFieldName="childTreeStructurePartCustomBankPropertyId" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" />
+            <FieldMapping FieldName="TreeStructurePartCustomBankPropertyId" TargetFieldName="treeStructurePartCustomBankPropertyId" />
+            <FieldMapping FieldName="VisualOrder" TargetFieldName="visualOrder" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":ConceptStructureCustomBankProperty" TargetName="QuestifyBuilder:dbo:ConceptStructureCustomBankProperty">
+          <FieldMappings>
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":ConceptStructureCustomBankPropertySelectedPart" TargetName="QuestifyBuilder:dbo:ConceptStructureCustomBankPropertySelectedPart">
+          <FieldMappings>
+            <FieldMapping FieldName="ConceptStructurePartId" TargetFieldName="conceptStructurePartId" />
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":ConceptStructureCustomBankPropertyValue" TargetName="QuestifyBuilder:dbo:ConceptStructureCustomBankPropertyValue">
+          <FieldMappings>
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":ConceptStructurePartCustomBankProperty" TargetName="QuestifyBuilder:dbo:ConceptStructurePartCustomBankProperty">
+          <FieldMappings>
+            <FieldMapping FieldName="Code" TargetFieldName="code" />
+            <FieldMapping FieldName="ConceptStructurePartCustomBankPropertyId" TargetFieldName="conceptStructurePartCustomBankPropertyId" />
+            <FieldMapping FieldName="ConceptTypeId" TargetFieldName="conceptTypeId" />
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+            <FieldMapping FieldName="Name" TargetFieldName="name" />
+            <FieldMapping FieldName="Title" TargetFieldName="title" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":ConceptType" TargetName="QuestifyBuilder:dbo:ConceptType">
+          <FieldMappings>
+            <FieldMapping FieldName="ApplicableToMask" TargetFieldName="applicableToMask" />
+            <FieldMapping FieldName="ConceptTypeId" TargetFieldName="conceptTypeId" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="Name" TargetFieldName="name" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":ControlTemplateResource" TargetName="QuestifyBuilder:dbo:ControlTemplateResource">
+          <FieldMappings>
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":CustomBankProperty" TargetName="QuestifyBuilder:dbo:CustomBankProperty">
+          <FieldMappings>
+            <FieldMapping FieldName="ApplicableToMask" TargetFieldName="applicableToMask" />
+            <FieldMapping FieldName="BankId" TargetFieldName="bankId" />
+            <FieldMapping FieldName="Code" TargetFieldName="code" />
+            <FieldMapping FieldName="CreatedBy" TargetFieldName="createdBy" />
+            <FieldMapping FieldName="CreationDate" TargetFieldName="creationDate" />
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+            <FieldMapping FieldName="Description" TargetFieldName="description" />
+            <FieldMapping FieldName="ModifiedBy" TargetFieldName="modifiedBy" />
+            <FieldMapping FieldName="ModifiedDate" TargetFieldName="modifiedDate" />
+            <FieldMapping FieldName="Name" TargetFieldName="name" />
+            <FieldMapping FieldName="Publishable" TargetFieldName="publishable" />
+            <FieldMapping FieldName="StateId" TargetFieldName="stateId" />
+            <FieldMapping FieldName="Title" TargetFieldName="title" />
+            <FieldMapping FieldName="Version" TargetFieldName="version" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":CustomBankPropertyValue" TargetName="QuestifyBuilder:dbo:CustomBankPropertyValue">
+          <FieldMappings>
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+            <FieldMapping FieldName="DisplayValue" TargetFieldName="displayValue" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":DataSourceResource" TargetName="QuestifyBuilder:dbo:DataSourceResource">
+          <FieldMappings>
+            <FieldMapping FieldName="DataSourceType" TargetFieldName="dataSourceType" />
+            <FieldMapping FieldName="IsTemplate" TargetFieldName="isTemplate" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":DependentResource" TargetName="QuestifyBuilder:dbo:DependentResource">
+          <FieldMappings>
+            <FieldMapping FieldName="DependentResourceId" TargetFieldName="dependentResourceId" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":FreeValueCustomBankProperty" TargetName="QuestifyBuilder:dbo:FreeValueCustomBankProperty">
+          <FieldMappings>
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":FreeValueCustomBankPropertyValue" TargetName="QuestifyBuilder:dbo:FreeValueCustomBankPropertyValue">
+          <FieldMappings>
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+            <FieldMapping FieldName="FreeValueCustomBankPropertyValueId" TargetFieldName="freeValueCustomBankPropertyValueId" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+            <FieldMapping FieldName="Value" TargetFieldName="value" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":GenericResource" TargetName="QuestifyBuilder:dbo:GenericResource">
+          <FieldMappings>
+            <FieldMapping FieldName="Dimensions" TargetFieldName="dimensions" />
+            <FieldMapping FieldName="IsTemplate" TargetFieldName="isTemplate" />
+            <FieldMapping FieldName="MediaType" TargetFieldName="mediaType" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+            <FieldMapping FieldName="Size" TargetFieldName="size" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":HiddenResource" TargetName="QuestifyBuilder:dbo:HiddenResource">
+          <FieldMappings>
+            <FieldMapping FieldName="BankId" TargetFieldName="BankId" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="ResourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":ItemLayoutTemplateResource" TargetName="QuestifyBuilder:dbo:ItemLayoutTemplateResource">
+          <FieldMappings>
+            <FieldMapping FieldName="ItemType" TargetFieldName="itemType" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":ItemResource" TargetName="QuestifyBuilder:dbo:ItemResource">
+          <FieldMappings>
+            <FieldMapping FieldName="AlternativesCount" TargetFieldName="alternativesCount" />
+            <FieldMapping FieldName="Iltname" TargetFieldName="ILTName" />
+            <FieldMapping FieldName="Iltversion" TargetFieldName="ILTVersion" />
+            <FieldMapping FieldName="IsSystemItem" TargetFieldName="isSystemItem" />
+            <FieldMapping FieldName="ItemAutoId" TargetFieldName="ItemAutoId" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="ItemId" TargetFieldName="ItemId" />
+            <FieldMapping FieldName="KeyValues" TargetFieldName="keyValues" />
+            <FieldMapping FieldName="MaxScore" TargetFieldName="MaxScore" />
+            <FieldMapping FieldName="RawScore" TargetFieldName="rawScore" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+            <FieldMapping FieldName="ResponseCount" TargetFieldName="responseCount" />
+            <FieldMapping FieldName="TesterSchemaVersion" TargetFieldName="TesterSchemaVersion" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":ListCustomBankProperty" TargetName="QuestifyBuilder:dbo:ListCustomBankProperty">
+          <FieldMappings>
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+            <FieldMapping FieldName="MultipleSelect" TargetFieldName="multipleSelect" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":ListCustomBankPropertySelectedValue" TargetName="QuestifyBuilder:dbo:ListCustomBankPropertySelectedValue">
+          <FieldMappings>
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+            <FieldMapping FieldName="ListValueBankCustomPropertyId" TargetFieldName="listValueBankCustomPropertyId" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":ListCustomBankPropertyValue" TargetName="QuestifyBuilder:dbo:ListCustomBankPropertyValue">
+          <FieldMappings>
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":ListValueCustomBankProperty" TargetName="QuestifyBuilder:dbo:ListValueCustomBankProperty">
+          <FieldMappings>
+            <FieldMapping FieldName="Code" TargetFieldName="code" />
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+            <FieldMapping FieldName="ListValueBankCustomPropertyId" TargetFieldName="listValueBankCustomPropertyId" />
+            <FieldMapping FieldName="Name" TargetFieldName="name" />
+            <FieldMapping FieldName="Title" TargetFieldName="title" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":PackageResource" TargetName="QuestifyBuilder:dbo:PackageResource">
+          <FieldMappings>
+            <FieldMapping FieldName="ResourceId" TargetFieldName="ResourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":Permission" TargetName="QuestifyBuilder:dbo:Permission">
+          <FieldMappings>
+            <FieldMapping FieldName="CreatedBy" TargetFieldName="createdBy" />
+            <FieldMapping FieldName="CreationDate" TargetFieldName="creationDate" />
+            <FieldMapping FieldName="Description" TargetFieldName="description" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="ModifiedBy" TargetFieldName="modifiedBy" />
+            <FieldMapping FieldName="ModifiedDate" TargetFieldName="modifiedDate" />
+            <FieldMapping FieldName="Name" TargetFieldName="name" />
+            <FieldMapping FieldName="WhenOwnerCondition" TargetFieldName="whenOwnerCondition" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":PermissionTarget" TargetName="QuestifyBuilder:dbo:PermissionTarget">
+          <FieldMappings>
+            <FieldMapping FieldName="CreatedBy" TargetFieldName="createdBy" />
+            <FieldMapping FieldName="CreationDate" TargetFieldName="creationDate" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="IsApplicationTarget" TargetFieldName="isApplicationTarget" />
+            <FieldMapping FieldName="ModifiedBy" TargetFieldName="modifiedBy" />
+            <FieldMapping FieldName="ModifiedDate" TargetFieldName="modifiedDate" />
+            <FieldMapping FieldName="Name" TargetFieldName="name" />
+            <FieldMapping FieldName="TargettedNamedTask" TargetFieldName="targettedNamedTask" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":PlugInResource" TargetName="QuestifyBuilder:dbo:PlugInResource">
+          <FieldMappings>
+            <FieldMapping FieldName="PlugInType" TargetFieldName="plugInType" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":Resource" TargetName="QuestifyBuilder:dbo:Resource">
+          <FieldMappings>
+            <FieldMapping FieldName="BankId" TargetFieldName="bankId" />
+            <FieldMapping FieldName="CreatedBy" TargetFieldName="createdBy" />
+            <FieldMapping FieldName="CreationDate" TargetFieldName="creationDate" />
+            <FieldMapping FieldName="Description" TargetFieldName="description" />
+            <FieldMapping FieldName="ModifiedBy" TargetFieldName="modifiedBy" />
+            <FieldMapping FieldName="ModifiedDate" TargetFieldName="modifiedDate" />
+            <FieldMapping FieldName="Name" TargetFieldName="name" />
+            <FieldMapping FieldName="OriginalName" TargetFieldName="originalName" />
+            <FieldMapping FieldName="OriginalVersion" TargetFieldName="originalVersion" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+            <FieldMapping FieldName="StateId" TargetFieldName="stateId" />
+            <FieldMapping FieldName="Title" TargetFieldName="title" />
+            <FieldMapping FieldName="Version" TargetFieldName="version" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":ResourceData" TargetName="QuestifyBuilder:dbo:ResourceData">
+          <FieldMappings>
+            <FieldMapping FieldName="BinData" TargetFieldName="binData" />
+            <FieldMapping FieldName="FileExtension" TargetFieldName="fileExtension" />
+            <FieldMapping FieldName="Ident" TargetFieldName="ident" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+            <FieldMapping FieldName="Url" TargetFieldName="url" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":ResourceHistory" TargetName="QuestifyBuilder:dbo:ResourceHistory">
+          <FieldMappings>
+            <FieldMapping FieldName="BinData" TargetFieldName="BinData" />
+            <FieldMapping FieldName="Id" TargetFieldName="Id" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="Label" TargetFieldName="Label" />
+            <FieldMapping FieldName="MajorVersion" TargetFieldName="MajorVersion" />
+            <FieldMapping FieldName="MetaData" TargetFieldName="MetaData" />
+            <FieldMapping FieldName="MinorVersion" TargetFieldName="MinorVersion" />
+            <FieldMapping FieldName="ModifiedBy" TargetFieldName="ModifiedBy" />
+            <FieldMapping FieldName="ModifiedDate" TargetFieldName="ModifiedDate" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="ResourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":RichTextValueCustomBankProperty" TargetName="QuestifyBuilder:dbo:RichTextValueCustomBankProperty">
+          <FieldMappings>
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":RichTextValueCustomBankPropertyValue" TargetName="QuestifyBuilder:dbo:RichTextValueCustomBankPropertyValue">
+          <FieldMappings>
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+            <FieldMapping FieldName="RichTextValueCustomBankPropertyValueId" TargetFieldName="richTextValueCustomBankPropertyValueId" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="Value" TargetFieldName="value" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":Role" TargetName="QuestifyBuilder:dbo:Role">
+          <FieldMappings>
+            <FieldMapping FieldName="CreatedBy" TargetFieldName="createdBy" />
+            <FieldMapping FieldName="CreationDate" TargetFieldName="creationDate" />
+            <FieldMapping FieldName="Description" TargetFieldName="description" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="IsApplicationRole" TargetFieldName="isApplicationRole" />
+            <FieldMapping FieldName="ModifiedBy" TargetFieldName="modifiedBy" />
+            <FieldMapping FieldName="ModifiedDate" TargetFieldName="modifiedDate" />
+            <FieldMapping FieldName="Name" TargetFieldName="name" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":RolePermission" TargetName="QuestifyBuilder:dbo:RolePermission">
+          <FieldMappings>
+            <FieldMapping FieldName="CreatedBy" TargetFieldName="createdBy" />
+            <FieldMapping FieldName="CreationDate" TargetFieldName="creationDate" />
+            <FieldMapping FieldName="ModifiedBy" TargetFieldName="modifiedBy" />
+            <FieldMapping FieldName="ModifiedDate" TargetFieldName="modifiedDate" />
+            <FieldMapping FieldName="PermissionId" TargetFieldName="permissionId" />
+            <FieldMapping FieldName="PermissionTargetId" TargetFieldName="permissionTargetId" />
+            <FieldMapping FieldName="RoleId" TargetFieldName="roleId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":State" TargetName="QuestifyBuilder:dbo:State">
+          <FieldMappings>
+            <FieldMapping FieldName="Description" TargetFieldName="description" />
+            <FieldMapping FieldName="Name" TargetFieldName="name" />
+            <FieldMapping FieldName="StateId" TargetFieldName="stateId" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="Title" TargetFieldName="title" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":StateAction" TargetName="QuestifyBuilder:dbo:StateAction">
+          <FieldMappings>
+            <FieldMapping FieldName="ActionId" TargetFieldName="actionId" />
+            <FieldMapping FieldName="StateId" TargetFieldName="stateId" />
+            <FieldMapping FieldName="Target" TargetFieldName="target" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":TestPackageResource" TargetName="QuestifyBuilder:dbo:TestPackageResource">
+          <FieldMappings>
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":TreeStructureCustomBankProperty" TargetName="QuestifyBuilder:dbo:TreeStructureCustomBankProperty">
+          <FieldMappings>
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":TreeStructureCustomBankPropertySelectedPart" TargetName="QuestifyBuilder:dbo:TreeStructureCustomBankPropertySelectedPart">
+          <FieldMappings>
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+            <FieldMapping FieldName="TreeStructurePartId" TargetFieldName="treeStructurePartId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":TreeStructureCustomBankPropertyValue" TargetName="QuestifyBuilder:dbo:TreeStructureCustomBankPropertyValue">
+          <FieldMappings>
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="resourceId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":TreeStructurePartCustomBankProperty" TargetName="QuestifyBuilder:dbo:TreeStructurePartCustomBankProperty">
+          <FieldMappings>
+            <FieldMapping FieldName="Code" TargetFieldName="code" />
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="customBankPropertyId" />
+            <FieldMapping FieldName="Name" TargetFieldName="name" />
+            <FieldMapping FieldName="Title" TargetFieldName="title" />
+            <FieldMapping FieldName="TreeStructurePartCustomBankPropertyId" TargetFieldName="treeStructurePartCustomBankPropertyId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":User" TargetName="QuestifyBuilder:dbo:User">
+          <FieldMappings>
+            <FieldMapping FieldName="Active" TargetFieldName="Active" />
+            <FieldMapping FieldName="AllowedFeatures" TargetFieldName="allowedFeatures" />
+            <FieldMapping FieldName="AuthenticationType" TargetFieldName="authenticationType" />
+            <FieldMapping FieldName="ChangePassword" TargetFieldName="changePassword" />
+            <FieldMapping FieldName="CreatedBy" TargetFieldName="createdBy" />
+            <FieldMapping FieldName="CreationDate" TargetFieldName="creationDate" />
+            <FieldMapping FieldName="FullName" TargetFieldName="fullName" />
+            <FieldMapping FieldName="Id" TargetFieldName="id" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="ModifiedBy" TargetFieldName="modifiedBy" />
+            <FieldMapping FieldName="ModifiedDate" TargetFieldName="modifiedDate" />
+            <FieldMapping FieldName="Password" TargetFieldName="password" />
+            <FieldMapping FieldName="UserName" TargetFieldName="userName" />
+            <FieldMapping FieldName="UserSettings" TargetFieldName="userSettings" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":UserApplicationRole" TargetName="QuestifyBuilder:dbo:UserApplicationRole">
+          <FieldMappings>
+            <FieldMapping FieldName="ApplicationRoleId" TargetFieldName="applicationRoleId" />
+            <FieldMapping FieldName="CreatedBy" TargetFieldName="createdBy" />
+            <FieldMapping FieldName="CreationDate" TargetFieldName="creationDate" />
+            <FieldMapping FieldName="ModifiedBy" TargetFieldName="modifiedBy" />
+            <FieldMapping FieldName="ModifiedDate" TargetFieldName="modifiedDate" />
+            <FieldMapping FieldName="UserId" TargetFieldName="userId" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName=":UserBankRole" TargetName="QuestifyBuilder:dbo:UserBankRole">
+          <FieldMappings>
+            <FieldMapping FieldName="BankId" TargetFieldName="bankId" />
+            <FieldMapping FieldName="BankRoleId" TargetFieldName="bankRoleId" />
+            <FieldMapping FieldName="CreatedBy" TargetFieldName="createdBy" />
+            <FieldMapping FieldName="CreationDate" TargetFieldName="creationDate" />
+            <FieldMapping FieldName="ModifiedBy" TargetFieldName="modifiedBy" />
+            <FieldMapping FieldName="ModifiedDate" TargetFieldName="modifiedDate" />
+            <FieldMapping FieldName="UserId" TargetFieldName="userId" />
+          </FieldMappings>
+        </EntityMapping>
+      </EntityMappings>
+      <TypedViewMappings />
+      <SPCallMappings>
+        <SPCallMapping SPCallName=":ChangeCreatorModifier" TargetName="QuestifyBuilder:dbo:ChangeCreatorModifier">
+          <FieldMappings>
+            <FieldMapping FieldName="CurrentUserId" TargetFieldName="@currentUserId" />
+            <FieldMapping FieldName="NewUserId" TargetFieldName="@newUserId" />
+          </FieldMappings>
+        </SPCallMapping>
+        <SPCallMapping SPCallName=":ClearBank" TargetName="QuestifyBuilder:dbo:ClearBank">
+          <FieldMappings>
+            <FieldMapping FieldName="BankId" TargetFieldName="@bankId" />
+          </FieldMappings>
+        </SPCallMapping>
+        <SPCallMapping SPCallName=":GetBankStatistics" TargetName="QuestifyBuilder:dbo:GetBankStatistics">
+          <FieldMappings>
+            <FieldMapping FieldName="BankId" TargetFieldName="@bankId" />
+            <FieldMapping FieldName="UserName" TargetFieldName="@userName" />
+          </FieldMappings>
+        </SPCallMapping>
+        <SPCallMapping SPCallName=":GetMaintenanceWindow" TargetName="QuestifyBuilder:dbo:GetMaintenanceWindow">
+          <FieldMappings />
+        </SPCallMapping>
+        <SPCallMapping SPCallName=":HasDependingResourcesInSubBanks" TargetName="QuestifyBuilder:dbo:HasDependingResourcesInSubBanks">
+          <FieldMappings>
+            <FieldMapping FieldName="BankId" TargetFieldName="@bankId" />
+          </FieldMappings>
+        </SPCallMapping>
+        <SPCallMapping SPCallName=":SetMaintenanceWindow" TargetName="QuestifyBuilder:dbo:SetMaintenanceWindow">
+          <FieldMappings>
+            <FieldMapping FieldName="PlannedTimestamp" TargetFieldName="@plannedTimestamp" />
+          </FieldMappings>
+        </SPCallMapping>
+        <SPCallMapping SPCallName=":UpdateCustomBankPropertyBankId" TargetName="QuestifyBuilder:dbo:UpdateCustomBankPropertyBankId">
+          <FieldMappings>
+            <FieldMapping FieldName="BankId" TargetFieldName="@BankId" />
+            <FieldMapping FieldName="CustomBankPropertyId" TargetFieldName="@CustomBankPropertyId" />
+          </FieldMappings>
+        </SPCallMapping>
+        <SPCallMapping SPCallName=":UpdateResourceBankId" TargetName="QuestifyBuilder:dbo:UpdateResourceBankId">
+          <FieldMappings>
+            <FieldMapping FieldName="BankId" TargetFieldName="@BankId" />
+            <FieldMapping FieldName="ResourceId" TargetFieldName="@ResourceId" />
+          </FieldMappings>
+        </SPCallMapping>
+      </SPCallMappings>
+      <TvfCallMappings />
+      <TypeConversionDefinitions />
+    </MappingStore>
+  </MappingStores>
+  <ModelViews />
+</Project>

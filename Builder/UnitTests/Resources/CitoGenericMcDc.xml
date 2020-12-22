@@ -1,0 +1,30 @@
+<Template xmlns:xsi="http://www.w3.org/2001/Schema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="1">
+	<Description />
+	<Settings />
+	<Targets>
+		<Target xsi:type="ItemLayoutTemplateTarget" enabled="true" name="ces">
+			<Description />
+			<Template>
+				<html>
+					<body>
+						<cito:control xmlns:cito="http://www.cito.nl/citotester" id="entireItem" type="Cito.Generic.Interaction.MC">
+							<parameter name="dualColumnLayout">
+								<designersetting key="defaultvalue">True</designersetting>
+							</parameter>
+							<parameter name="leftBody">
+								<designersetting key="visible">True</designersetting>
+							</parameter>
+							<parameter name="expectedAnswers">
+								<designersetting key="visible">False</designersetting>
+								<designersetting key="defaultvalue">1</designersetting>
+							</parameter>
+							<parameter name="multiChoiceType">
+								<designersetting key="defaultvalue">1</designersetting>
+							</parameter>
+						</cito:control>
+					</body>
+				</html>
+			</Template>
+		</Target>
+	</Targets>
+</Template>

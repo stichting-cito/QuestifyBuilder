@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.ScoreEditors.V2ScoreEditorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:CinchV2="clr-namespace:Cinch;assembly=Cinch.WPF"
+             xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF" 
+             xmlns:TCntMdl="clr-namespace:Cito.Tester.ContentModel;assembly=Cito.Tester.ContentModel"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:markupExtensions="clr-namespace:Questify.Builder.UI.Wpf.Presentation.MarkupExtensions"
+             meffed:ViewModelLocator.ViewModel="ItemEditor.V2ScoringVM"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <!--Please make sure that Resources are commented out-->
+         
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            
+            <DataTemplate DataType="{x:Type CinchV2:WorkspaceData}">
+                <Border Background="White" CornerRadius="2" Margin="2">
+                    <StackPanel Orientation="Horizontal" >
+                        <!-- This HEADER for each score editor. -->
+                        <Label Content="{Binding DisplayText}" VerticalContentAlignment="Center" Margin="10,0,10,0" />
+                    
+                        <!-- Actual Score Editor -->
+                        <Border HorizontalAlignment="Stretch" 
+                            VerticalAlignment="Stretch" 
+                            CinchV2:NavProps.ViewCreator="{Binding}"/>
+                    </StackPanel>
+                </Border>
+            </DataTemplate>
+            <DataTemplate x:Key="KeyFindingTemplate">
+                <Border Background="{StaticResource ItemEditor.ScoreEditor.GroupBackGroundBrush}" BorderBrush="{StaticResource ItemEditor.ScoreEditor.OutlineBrush}" BorderThickness="1" CornerRadius="2" Margin="5">
+                    <Grid Margin="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <!--<ColumnDefinition Width="Auto" />-->
+                        </Grid.ColumnDefinitions>
+                        
+                        <!--Row 0-->
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" Visibility="{Binding ShowScoringMethod.DataValue, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <Label Content="{StaticResource ItemEditor.ScoreEditor.ScoreMethod}"></Label>
+                            <ComboBox ItemsSource="{markupExtensions:Enum TCntMdl:EnumScoringMethod}" SelectedValuePath="Item1" DisplayMemberPath="Item2" SelectedValue="{Binding SelectedScoringMethod.DataValue}" HorizontalAlignment="Left" VerticalAlignment="Top"  />
+                        </StackPanel>
+                        
+                        <!--Row 1-->
+                        <StackPanel Grid.Row="1">
+                            <ItemsControl x:Name="scoreEditorsList"
+				            ItemsSource="{Binding ScoreEditorsViews}" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </DataTemplate>
+        </ResourceDictionary>
+        
+        
+    </UserControl.Resources>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Visibility="{Binding ScoreVisibility.DataValue}">
+            <Label Content="{StaticResource ItemEditor.ScoreEditor.ScoreEditor}" Background="{StaticResource ItemEditor.ScoreEditor.HeaderColorBrush}"  HorizontalAlignment="Stretch" Margin="0,0,0,5" />
+            <ItemsControl x:Name="scoreEditorsPerFindingList" ItemTemplate="{StaticResource KeyFindingTemplate}"
+				        ItemsSource="{Binding KeyDefinitionScoreViewModels}" />
+
+            <Label Content="{StaticResource ItemEditor.ScoreEditor.EncodingEditor}" Background="{StaticResource ItemEditor.ScoreEditor.HeaderColorBrush}" HorizontalAlignment="Stretch" Margin="0,0,0,5"
+                   Visibility="{Binding ConceptParametersPresent, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Border BorderBrush="{StaticResource ItemEditor.ScoreEditor.OutlineBrush}" BorderThickness="1" CornerRadius="2" Margin="1">
+                <ItemsControl x:Name="conceptEditorsList" 
+				        ItemsSource="{Binding ConceptEditorsViews}" />
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

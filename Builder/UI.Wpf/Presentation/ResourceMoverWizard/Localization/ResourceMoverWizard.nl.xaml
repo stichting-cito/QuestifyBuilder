@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+
+    <s:String x:Key="ResourceMoverWizard.Title">Verplaatsen bronnen</s:String>
+    <s:String x:Key="ResourceMoverWizard.Header">Verplaatsen bronnen</s:String>
+    <s:String x:Key="ResourceMoverWizard.Introduction">Deze wizard assisteert u bij het verplaatsen van bronnen.</s:String>
+    
+</ResourceDictionary>

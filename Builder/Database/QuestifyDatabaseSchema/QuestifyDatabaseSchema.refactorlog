@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="428b6776-8834-4a30-bbd8-864945b827ad" ChangeDateTime="11/29/2016 14:28:39">
+    <Property Name="ElementName" Value="[dbo].[ItemExposureLog].[Bank]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ItemExposureLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BankBreadcrum" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4501396f-39b4-41e3-b017-9251d576932d" ChangeDateTime="11/29/2016 15:25:25">
+    <Property Name="ElementName" Value="[dbo].[ItemExposureLog].[ExposedCodes]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ItemExposureLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExposedItems" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5e1832ae-1ffd-4b1d-8732-b982a5b19441" ChangeDateTime="11/29/2016 23:29:20">
+    <Property Name="ElementName" Value="[dbo].[ItemExposureLog].[Tab]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ItemExposureLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TabPage" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="124d16f7-e00a-4ef1-b453-830c6292099a" ChangeDateTime="11/29/2016 23:29:25">
+    <Property Name="ElementName" Value="[dbo].[ItemExposureLog].[BankBreadcrum]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ItemExposureLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BankBreadcrumb" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9c28fd1b-3e0e-4015-85cd-8e1a16a438d3" ChangeDateTime="11/29/2016 23:30:37">
+    <Property Name="ElementName" Value="[dbo].[ItemExposureLog].[BankBreadcrumb]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ItemExposureLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BankPath" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c15e62ec-eaa0-4bf6-b58c-b70e5b8c7bba" ChangeDateTime="11/29/2016 23:30:40">
+    <Property Name="ElementName" Value="[dbo].[ItemExposureLog].[Report]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ItemExposureLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ReportName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3fd90fb8-d887-4ebe-9743-5f849f290b05" ChangeDateTime="12/02/2016 10:37:43">
+    <Property Name="ElementName" Value="[dbo].[ItemExposureLog].[ExposedItems]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ItemExposureLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExposedResources" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e526fdb1-f6e9-41eb-8a7c-9ebde5cadc23" ChangeDateTime="04/18/2019 11:17:13">
+    <Property Name="ElementName" Value="[dbo].[UserTokens].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[UserTokens]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="userId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bec164af-07c1-4d80-9905-d07c0a55cf0f" ChangeDateTime="04/18/2019 11:27:18">
+    <Property Name="ElementName" Value="[dbo].[UserTokens].[Token]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[UserTokens]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="token" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8828e4de-da06-405f-8ca2-4a9cb24f3d27" ChangeDateTime="04/18/2019 11:27:22">
+    <Property Name="ElementName" Value="[dbo].[UserTokens].[Created]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[UserTokens]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="created" />
+  </Operation>
+</Operations>

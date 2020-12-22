@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.ScoreEditors.concrete.MCScoreEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+             xmlns:types="clr-namespace:Questify.Builder.UI.Wpf.Presentation.Types"
+             xmlns:valueConverters="clr-namespace:Questify.Builder.UI.Wpf.Presentation.ValueConverters"
+             meffed:ViewModelLocator.ViewModel="ItemEditor.ScoreEditors.MCScoringVM"
+
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources >
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <types:DesignTimeResourceDictionary  Source="..\..\..\..\ItemEditor\ItemEditor.ScoreEditor.xaml" />
+                <ResourceDictionary>
+                    <valueConverters:ListHasItemsToVisibilityConverter x:Key="hasValue"/>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+            
+
+            <!-- Keep this (below) uncommented!-->
+            <!-- This is needed to create a view based on the bound workspace data -->
+
+            <ControlTemplate x:Key="ScoreErrorTemplate">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <AdornedElementPlaceholder/>
+                    <Image Name="ValidizorImage" Stretch="None" Source="{StaticResource ItemEditor.ScoreEditor.ScoreEditor_ErrorImage}" ToolTip="{Binding ErrorContent}" ToolTipService.InitialShowDelay="0" ToolTipService.ShowDuration="60000"/>
+                </StackPanel>
+            </ControlTemplate>
+
+        </ResourceDictionary>
+    </UserControl.Resources >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Row 0 -->
+
+        <DockPanel Name="validationErrorReport" Grid.Row="0" Visibility="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.ValidationAdornerSiteFor).(Validation.Errors), Converter={StaticResource hasValue}}" Background="Yellow" >
+            <Image Margin="3 0" Source="{StaticResource ItemEditor.ScoreEditor.ScoreEditor_ErrorImage}" Width="16" />            
+            <Label Content="{Binding RelativeSource={RelativeSource AncestorType={x:Type DockPanel}}, Path=(Validation.ValidationAdornerSiteFor).(Validation.Errors).CurrentItem.ErrorContent}" />
+        </DockPanel>
+
+        <!-- Row 1, Score entry-->
+        
+        <ItemsControl ItemsSource="{Binding ScorableItems,ValidatesOnDataErrors=True}"  
+                      Validation.ValidationAdornerSite="{Binding ElementName=validationErrorReport}"
+                      Grid.Row="1">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Border BorderBrush="{x:Null}" >
+
+                            <CheckBox IsChecked="{Binding Value, Mode=OneWay}" Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.HandleToggle}" 
+                                                  CommandParameter="{Binding Key, Mode=OneWay}">
+                                <Label Content="{Binding Key}" />
+                            </CheckBox>
+                        </Border>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+
+</UserControl>

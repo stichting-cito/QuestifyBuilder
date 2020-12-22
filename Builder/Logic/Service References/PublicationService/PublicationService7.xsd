@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.PublicationService.Publication" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.PublicationService.Publication" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/Questify.Builder.Services.PublicationService/Publication/PublicationService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost/Questify.Builder.Services.PublicationService/Publication/PublicationService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.PublicationService" />
+  <xs:complexType name="ArrayOfPublicationHandlerIdentifier">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PublicationHandlerIdentifier" nillable="true" type="tns:PublicationHandlerIdentifier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPublicationHandlerIdentifier" nillable="true" type="tns:ArrayOfPublicationHandlerIdentifier" />
+  <xs:complexType name="PublicationHandlerIdentifier">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FileExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QualifiesForCurrentSelection" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReasonForNotQualifyingForCurrentSelection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserFriendlyName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PublicationHandlerIdentifier" nillable="true" type="tns:PublicationHandlerIdentifier" />
+  <xs:complexType name="ArrayOfTestPreviewHandlerIdentifier">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TestPreviewHandlerIdentifier" nillable="true" type="tns:TestPreviewHandlerIdentifier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTestPreviewHandlerIdentifier" nillable="true" type="tns:ArrayOfTestPreviewHandlerIdentifier" />
+  <xs:complexType name="TestPreviewHandlerIdentifier">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultClient" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsClickOnce" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PublicationHandlerType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserFriendlyName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestPreviewHandlerIdentifier" nillable="true" type="tns:TestPreviewHandlerIdentifier" />
+  <xs:complexType name="PublicationTaskProgress">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Questify.Builder.Services.PublicationService" base="q1:TaskProgress">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PublicationLocations" nillable="true" type="q2:ArrayOfstring" />
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PublicationUrls" nillable="true" type="q3:ArrayOfstring" />
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ReturnedIds" nillable="true" type="q4:ArrayOfstring" />
+          <xs:element minOccurs="0" name="Succeeded" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PublicationTaskProgress" nillable="true" type="tns:PublicationTaskProgress" />
+  <xs:complexType name="ArrayOfConceptProcessingLabelEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConceptProcessingLabelEntry" nillable="true" type="tns:ConceptProcessingLabelEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConceptProcessingLabelEntry" nillable="true" type="tns:ArrayOfConceptProcessingLabelEntry" />
+  <xs:complexType name="ConceptProcessingLabelEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConceptCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConceptResponseLabel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FactIdFirstFact" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConceptProcessingLabelEntry" nillable="true" type="tns:ConceptProcessingLabelEntry" />
+</xs:schema>

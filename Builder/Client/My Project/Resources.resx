@@ -1,0 +1,2219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutDialog_About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AboutDialog_Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AboutToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AboutToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AdaptiveSectionValidation" xml:space="preserve">
+    <value>Adaptive section validation</value>
+  </data>
+  <data name="add_favorite_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-favorite_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddAControlTemplate" xml:space="preserve">
+    <value>Add a control template</value>
+  </data>
+  <data name="AddAItemLayoutTemplate" xml:space="preserve">
+    <value>Add a item layout template</value>
+  </data>
+  <data name="AddASelectionTemplate" xml:space="preserve">
+    <value>Add a selection template</value>
+  </data>
+  <data name="AddBank_EnterValidInfo" xml:space="preserve">
+    <value>Enter a valid bankname</value>
+  </data>
+  <data name="AddingControlTemplate" xml:space="preserve">
+    <value>Adding control template</value>
+  </data>
+  <data name="AddingCustomProperties" xml:space="preserve">
+    <value>Adding custom property '{0}'</value>
+  </data>
+  <data name="AddingCustomPropertiesToItem" xml:space="preserve">
+    <value>Adding custom properties to item '{0}'</value>
+  </data>
+  <data name="AddingItemLayoutTemplate" xml:space="preserve">
+    <value>Adding item layout template</value>
+  </data>
+  <data name="AddingMediaFile" xml:space="preserve">
+    <value>Adding media file</value>
+  </data>
+  <data name="AddItem16x16_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddItem16x16.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddItem24x24_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddItem24x24.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AllEditors_CannotUpdateBecauseOfState" xml:space="preserve">
+    <value>This resource cannot be updated because of it's workflow status.</value>
+  </data>
+  <data name="AlterOrDeleteSelectedFiles" xml:space="preserve">
+    <value>Alter or delete the selected file(s).</value>
+  </data>
+  <data name="AnErrorOccurred" xml:space="preserve">
+    <value>An error occurred:</value>
+  </data>
+  <data name="AnErrorOccurredWhileValidatingTheSolution" xml:space="preserve">
+    <value>An error occurred while validating the solution!</value>
+  </data>
+  <data name="Appearance1_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Appearance1.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Appearance10_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Appearance10.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Appearance11_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Appearance11.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Appearance2_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Appearance2.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Appearance3_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Appearance3.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Appearance4_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Appearance4.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Appearance5_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Appearance5.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Appearance7_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Appearance7.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Appearance8_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Appearance8.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Appearance9_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Appearance9.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AspectEditor_PleaseEnterNewItemCode" xml:space="preserve">
+    <value>Please enter new aspect code:</value>
+  </data>
+  <data name="AspectEditor_Save_SavedStatusbarMessage" xml:space="preserve">
+    <value>Aspect saved ...</value>
+  </data>
+  <data name="AspectEditor_Save_SaveFailedStatusbarMessage" xml:space="preserve">
+    <value>Failed to save aspect ...</value>
+  </data>
+  <data name="AspectEditor_TitleBar" xml:space="preserve">
+    <value>Editor for aspect '{0}'</value>
+  </data>
+  <data name="AspectEditor_ValidateAspect_ValidationErrors" xml:space="preserve">
+    <value>Cannot update changes of this aspect because of the following validation errors:{0}</value>
+  </data>
+  <data name="AspectsToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AspectsToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AssessementTestCodeFieldDiffers" xml:space="preserve">
+    <value>A discrepancy was encountered in the code field! When you decide to change the code field, the linkage to other systems may be affected!{2}{2}Are you sure you want to change the value of the code field from '{0}' to '{1}'?</value>
+  </data>
+  <data name="AssessementTestTitleFieldDiffers" xml:space="preserve">
+    <value>A discrepancy was encountered in the title field!{2}{2}Are you sure you want to change the value of the code field from '{0}' to '{1}'?</value>
+  </data>
+  <data name="Authorization_Error_Saving" xml:space="preserve">
+    <value>Error saving authorization information!{0}{0}{1}</value>
+  </data>
+  <data name="AutoHide" xml:space="preserve">
+    <value>Auto hide</value>
+  </data>
+  <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BankCodeIsNotFilledMakeSureBankExternalKeyIsFilledThisIsOnlyAllowedByBankmanager" xml:space="preserve">
+    <value>Bank code is not filled. Make sure 'bank external key' is filled. This is only allowed by bank manager.</value>
+  </data>
+  <data name="BankPropertiesFor" xml:space="preserve">
+    <value>Bank properties for '{0}'</value>
+  </data>
+  <data name="BrowseForResource" xml:space="preserve">
+    <value>Browse for resource</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>Cancelled</value>
+  </data>
+  <data name="CannotStartPublication" xml:space="preserve">
+    <value>Cannot start publication, because of the following errors:{0}{0}</value>
+  </data>
+  <data name="CanTFindOtdForSection" xml:space="preserve">
+    <value>can't find OTD for this section</value>
+  </data>
+  <data name="CanTFindOtdForThisSection" xml:space="preserve">
+    <value>can't find OTD for this section</value>
+  </data>
+  <data name="CesLocationFilter" xml:space="preserve">
+    <value>CES Previewer|cefclient.exe|All files (*.*)|*.*</value>
+  </data>
+  <data name="ChangeCodeDialog_EmptyCodeName" xml:space="preserve">
+    <value>Please enter a new code in the field on this dialog.</value>
+  </data>
+  <data name="ChangeDataSourceDialogHeaderTooMuchReferences" xml:space="preserve">
+    <value>This field can only be changed when there are no references to this data source</value>
+  </data>
+  <data name="ChooseAExportMethod" xml:space="preserve">
+    <value>Choose an export method</value>
+  </data>
+  <data name="ChooseAImportMethod" xml:space="preserve">
+    <value>Choose an import method</value>
+  </data>
+  <data name="ChooseAPublicationMethod" xml:space="preserve">
+    <value>Choose a publication method</value>
+  </data>
+  <data name="ClickHereToOpen" xml:space="preserve">
+    <value>Click here to open the report</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="close_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CodeIsARequiredField" xml:space="preserve">
+    <value>Code is a required field</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="CompleteTheWizard" xml:space="preserve">
+    <value>Complete the wizard.</value>
+  </data>
+  <data name="ConnectDelivery" xml:space="preserve">
+    <value>Connect delivery</value>
+  </data>
+  <data name="ControlTemplate" xml:space="preserve">
+    <value>Control Template</value>
+  </data>
+  <data name="ControlTemplateHeader" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8" ?&gt; %newline% &lt;!--  CitoTester Control Template %newline% %tab% Name%tab%%tab%: %title% %newline% %tab% Version%tab%: 1.0 %newline% %tab% Date%tab%%tab%: %now% %newline% %tab% History%tab%: %now% %user% 	- Initial version %newline% %tab% Description: %description% %newline% --&gt;%newline% &lt;template&gt; %newline% %tab%&lt;controlTemplate&gt;&lt;![CDATA[ %newline% %tab% ]]&gt;&lt;/controlTemplate&gt;%newline% &lt;/template&gt;</value>
+  </data>
+  <data name="ControlTemplateHeaderV2" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;!--  CitoTester Control Template
+	Name		: %title%
+	Version		: 1.0
+	Date		: %now%
+	History		: %now% %user% 	- Initial version
+	Description	: %description%
+--&gt;
+&lt;Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="2"&gt;
+	&lt;Description&gt;&lt;/Description&gt;
+	&lt;Targets&gt;
+		&lt;Target xsi:type="ControlTemplateTarget" enabled="true" name="testPlayer"&gt;
+			&lt;Template&gt;
+				&lt;![CDATA[
+				
+				]]&gt;
+			&lt;/Template&gt;
+			&lt;ParameterSet id=""&gt;
+			&lt;/ParameterSet&gt;
+		&lt;/Target&gt;
+	&lt;/Targets&gt;
+	&lt;SharedFunctions&gt;
+		&lt;![CDATA[
+
+		]]&gt;
+	&lt;/SharedFunctions&gt;
+
+	&lt;SharedParameterSet&gt;
+	&lt;/SharedParameterSet&gt;
+&lt;/Template&gt;</value>
+  </data>
+  <data name="ControlTemplateS" xml:space="preserve">
+    <value>Control template(s)</value>
+  </data>
+  <data name="ControlTemplateToBeAdded" xml:space="preserve">
+    <value>Control template to be added:</value>
+  </data>
+  <data name="ControlTemplateToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ControlTemplateToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CopyOf0" xml:space="preserve">
+    <value>Copy_of_{0}</value>
+  </data>
+  <data name="CouldNotSaveResourceUnsupportedType" xml:space="preserve">
+    <value>Could not save resource of unsupported type '{0}'</value>
+  </data>
+  <data name="CreateNewBankAsChild" xml:space="preserve">
+    <value>Create new bank as child on '{0}'</value>
+  </data>
+  <data name="CreateNewBankOnRootlevel" xml:space="preserve">
+    <value>Create new bank on root level</value>
+  </data>
+  <data name="CustomBankPropertiesAdded" xml:space="preserve">
+    <value>{0} custom bank properties are added</value>
+  </data>
+  <data name="CustomBankPropertiesAlreadyExisted" xml:space="preserve">
+    <value>{0} custom bank properties already existed</value>
+  </data>
+  <data name="CustomBankPropertiesConflicts" xml:space="preserve">
+    <value>{0} custom bank properties had conflicts</value>
+  </data>
+  <data name="CustomPropertiesNewFree" xml:space="preserve">
+    <value>New free value</value>
+  </data>
+  <data name="CustomPropertiesNewMulti" xml:space="preserve">
+    <value>New multi value</value>
+  </data>
+  <data name="CustomPropertiesNewSingle" xml:space="preserve">
+    <value>New single value</value>
+  </data>
+  <data name="CustomPropertiesNewConceptStructure" xml:space="preserve">
+    <value>New conceptstructure</value>
+  </data>
+  <data name="CustomPropertyAlreadyExistInThisBankHierarchy" xml:space="preserve">
+    <value>The following properties already exist in this bank hierarchy: {0}</value>
+  </data>
+  <data name="database_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\database_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>Selection</value>
+  </data>
+  <data name="DataSourceEditor_DialogTitle" xml:space="preserve">
+    <value>Datasource editor</value>
+  </data>
+  <data name="DataSourceEditor_ValidationErrorsOnExit" xml:space="preserve">
+    <value>There are validation errors. Continue closing dialog without saving?</value>
+  </data>
+  <data name="delete_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete_16x.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete_favorite_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete-favorite_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeletedItemsAfterPaste" xml:space="preserve">
+    <value>The following items were removed from the paste operation because they already exit in the AssessmentTest: {0}</value>
+  </data>
+  <data name="DeleteFailureMessage" xml:space="preserve">
+    <value>The following resources could not be removed, because they are being used by other objects in the bank:
+
+{0}</value>
+  </data>
+  <data name="DeleteItem16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeleteItem16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteItems24x24_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeleteItems24x24.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteResources" xml:space="preserve">
+    <value>The following resource(s) can be deleted because they have only references to one or more test administrations.{0}{1}{0}The references have to be removed in order to delete the resource(s). Are you sure you want to do this?</value>
+  </data>
+  <data name="DeleteThisUser" xml:space="preserve">
+    <value>Delete this user?</value>
+  </data>
+  <data name="DeleteToolStripButton_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeleteToolStripButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeleteToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeleteUserError" xml:space="preserve">
+    <value>This user cannot be deleted. There is still content associated.</value>
+  </data>
+  <data name="DeliveryEditor_DeliveryCodeNameAlreadyExistsInBankHierarchy" xml:space="preserve">
+    <value>Delivery code already exists in bank hierarchy!</value>
+  </data>
+  <data name="DeliveryEditor_Load_DeliveryDefinitionLoaded" xml:space="preserve">
+    <value>Delivery definition loaded</value>
+  </data>
+  <data name="DeliveryEditor_NoSufficientRightsToPerformThisAction" xml:space="preserve">
+    <value>You don't have sufficient rights to perform this action.</value>
+  </data>
+  <data name="DeliveryEditor_OnlyPossibleToChangeTheDeliveryCodeWhenNoOtherChanges" xml:space="preserve">
+    <value>It is only possible to change the delivery code, when no other changes are made to this item. Please save the delivery first and try again!</value>
+  </data>
+  <data name="DeliveryEditor_SaveDelivery_DeliverySavedStatusbarMessage" xml:space="preserve">
+    <value>Saved delivery...</value>
+  </data>
+  <data name="DeliveryEditor_SaveDelivery_SaveFailedStatusbarMessage" xml:space="preserve">
+    <value>Failed to save delivery...</value>
+  </data>
+  <data name="DeliveryEditor_TitleBar" xml:space="preserve">
+    <value>Editor for delivery '{0}'</value>
+  </data>
+  <data name="DeliveryEditor_UnexpectedError" xml:space="preserve">
+    <value>An unexpected error occurred. Error: {0}</value>
+  </data>
+  <data name="DeliveryEditor_ValidateDelivery_ValidationErrors" xml:space="preserve">
+    <value>Cannot update changes of this delivery because of the following validation errors:{0}{0}</value>
+  </data>
+  <data name="DirectoryDoesNotExist" xml:space="preserve">
+    <value>Directory does not exist.</value>
+  </data>
+  <data name="DocKable" xml:space="preserve">
+    <value>Doc&amp;kable</value>
+  </data>
+  <data name="DockedPane" xml:space="preserve">
+    <value>Docked Pane</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Done.</value>
+  </data>
+  <data name="down_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DoYouReallyWantToClearAllTheResourcesInTheBank" xml:space="preserve">
+    <value>Do you really want to clear all the resources in the bank?</value>
+  </data>
+  <data name="ThisWizardHelpsYouToPublicateTheSelectedTest" xml:space="preserve">
+    <value>This wizard helps you to publicate the selected test(s).</value>
+  </data>
+  <data name="NoPrintFormsAvailable" xml:space="preserve">
+    <value>Please make sure that there are printforms coupled to the test.</value>
+  </data>
+  <data name="Message_NoSectionSelected" xml:space="preserve">
+    <value>There's no section selected in the test to add the item(s) to. First select a section or one of its items and try again.</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="new_document_16x16" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABEUlEQVQ4T62Q20oCURiF56XsHeo17I0k
+        LyK8KCNEUDAoVNIogzwhohN2QkZL0fFc03gYZ8kef3HGmTZz4QeLfbHX+i5+YW/EHmrYTSRVRSheQvA6
+        i+JLA1R1hg3+4yx8j4OjY74kmhapbuckGEfiqbqWiJKzJJwsU92O7/zWGG9CEytXNwWq21loS0OyEdHE
+        ykXsmepWdF2Hos7R6SuGwHPodRYEIo80sTKbaxiMVUjtMV9wGkrRZIu21DFRZmjJv3iTBnyB/zJBsy3q
+        dAF5+If69wiVd5kvYJ9m2OFGP1M0OxPU6n3kxbZ7gflwH80hyq9dZEpf7gXmw4mfPWQrLdzlJHcC9vLC
+        FbBPN6HJPhCEFdjM9sMXoOv1AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="TemplateSwitchWarningContinue" xml:space="preserve">
+    <value>{0}{1}Continue?</value>
+  </data>
+  <data name="NewDataSourceTemplate" xml:space="preserve">
+    <value>&lt;?xml version="1.0"?&gt;
+&lt;DataSourceSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" behaviour="{0}" dataSourceConfigSrc="resourceName" dataSourceConfigType="" dataSourceConfigUIFactorySrc="resourceName" dataSourceConfigUIFactoryType="" dataSourceSrc="resourceName" dataSourceType="" identifier="newdatasource" title="newdatasource"&gt;
+  &lt;settingsCollection&gt;
+    &lt;settings Name="dataSource"&gt;
+  	&lt;!--
+		TODO: 
+		
+		1: Set values for
+			config     : 'dataSourceConfigSrc'* and 'dataSourceConfigType' (example: Cito.Tester.PlugIns.DataSource.StaticGroups.StaticGroupDataSourceConfig, Cito.Tester.PlugIns.DataSource.StaticGroups)
+			UIfactory  : 'dataSourceConfigUIFactorySrc'* and 'dataSourceConfigUIFactoryType' (example: Cito.Tester.PlugIns.DataSource.StaticGroups.StaticGroupUIDesignerFactory, Cito.Tester.PlugIns.DataSource.StaticGroups)
+			datasource : 'dataSourceSrc'* and 'dataSourceType' (example: Cito.Tester.PlugIns.DataSource.StaticGroups.StaticGroupDatasource, Cito.Tester.PlugIns.DataSource.StaticGroups)
+			
+			*this is only used when datasource is placed in TB Bank instead of plugin-folder of TestBuilder
+			
+		2: Add config. replace example below.
+		
+		&lt;staticGroupDataSourceSettings&gt;
+			&lt;groupDefinition&gt;
+			  &lt;itemReference resourceIdentifier="60250" /&gt;
+			  &lt;itemReference resourceIdentifier="60251" /&gt;
+			  &lt;itemReference resourceIdentifier="60252" /&gt;
+			  &lt;itemReference resourceIdentifier="60253" /&gt;
+			&lt;/groupDefinition&gt;
+		&lt;/staticGroupDataSourceSettings&gt;
+	--&gt;
+    &lt;/settings&gt;
+  &lt;/settingsCollection&gt;
+&lt;/DataSourceSettings&gt;</value>
+  </data>
+  <data name="EditFileToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditFileToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Editor_SaveChangesQuestionMessage" xml:space="preserve">
+    <value>There are changes that are not saved yet! Save them before closing this editor?</value>
+  </data>
+  <data name="EditorFor01" xml:space="preserve">
+    <value>Editor for {0} '{1}'</value>
+  </data>
+  <data name="EditToolStripButton_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditToolStripButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnabledConditionRefersToNonExistingParameter" xml:space="preserve">
+    <value>Parameter '{0}' has an enabled condition based on a value of parameter '{1}' that doesn't exist.</value>
+  </data>
+  <data name="Error_EmtpyPassword" xml:space="preserve">
+    <value>A password is required to import this package!</value>
+  </data>
+  <data name="Error_WrongPassword" xml:space="preserve">
+    <value>The entered password is not correct! Please retype the password and try again.</value>
+  </data>
+  <data name="Passwordvalidate" xml:space="preserve">
+    <value>Allowed characters:
+- Lowercase: abcdefghijklmnopqrstuvwxyz
+- Uppercase: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+- Numbers : 0123456789
+- Special characters : .-#@~!$^*()+={{}}[]
+The password should contains at least one character of each of these categories
+Password length is 8 or more.
+The password can not contain username</value>
+  </data>
+  <data name="ErrorDeletingEntity" xml:space="preserve">
+    <value>Error while deleting {0}.</value>
+  </data>
+  <data name="ErrorImporting" xml:space="preserve">
+    <value>Error importing the package</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Errors:</value>
+  </data>
+  <data name="ErrorSavingBankInformation" xml:space="preserve">
+    <value>Error saving bank information!{0}{0}{1}</value>
+  </data>
+  <data name="ErrorsFoundInCollectionparameter" xml:space="preserve">
+    <value>Following errors are in found in a collectionparameter:</value>
+  </data>
+  <data name="ErrorThrown" xml:space="preserve">
+    <value>An error occured:</value>
+  </data>
+  <data name="ErrorWhileParsingTemplate" xml:space="preserve">
+    <value>Error while parsing template</value>
+  </data>
+  <data name="ExportAlreadyExistsSelectOtherExportLocation" xml:space="preserve">
+    <value>Export already exists, please select an other file name or export location.</value>
+  </data>
+  <data name="ExportFormWizard_BusyConstructingListOfDepencies" xml:space="preserve">
+    <value>Busy constructing list of depencies for: {0}</value>
+  </data>
+  <data name="ExportingResourcesToSpecifiedLocation" xml:space="preserve">
+    <value>Exporting resources to specified location...</value>
+  </data>
+  <data name="ExportLocationDoesNotExist" xml:space="preserve">
+    <value>Export location does not exist</value>
+  </data>
+  <data name="ExportOfResources" xml:space="preserve">
+    <value>Export of resources.</value>
+  </data>
+  <data name="ExportResultDescriptionOperationCancelled" xml:space="preserve">
+    <value>No valid export file has been created.</value>
+  </data>
+  <data name="ExportTaskDescriptionOperationCancelled" xml:space="preserve">
+    <value>The operation has been cancelled on your request</value>
+  </data>
+  <data name="ExportTaskOperationCancelled" xml:space="preserve">
+    <value>Operation cancelled</value>
+  </data>
+  <data name="ExportTitle" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="ExportToABasFile" xml:space="preserve">
+    <value>Export to a BAS file</value>
+  </data>
+  <data name="ExportToAPackageFile" xml:space="preserve">
+    <value>Export to a package file</value>
+  </data>
+  <data name="ExportToAPOKFile" xml:space="preserve">
+    <value>Export to a POK file</value>
+  </data>
+  <data name="ExportToExcel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExportToExcel.ICO;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExportToolStripButton_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExportToolStripButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExportToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExportToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="favorites" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\favorites.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FieldExportSource" xml:space="preserve">
+    <value>Export location</value>
+  </data>
+  <data name="FieldImportSource" xml:space="preserve">
+    <value>Import package</value>
+  </data>
+  <data name="FieldMustBeFilled" xml:space="preserve">
+    <value>Field '{0}' must be filled.</value>
+  </data>
+  <data name="FileAlreadyExist" xml:space="preserve">
+    <value>The file already exists on the specified location.</value>
+  </data>
+  <data name="FileDoesNotExist" xml:space="preserve">
+    <value>File does not exist!</value>
+  </data>
+  <data name="ChangePasswordDialogTitle" xml:space="preserve">
+    <value>Change your password</value>
+  </data>
+  <data name="FillInPassword" xml:space="preserve">
+    <value>Fill in the password </value>
+  </data>
+  <data name="FillInPasswordDesc" xml:space="preserve">
+    <value>A password is needed because the package appears to be encrypted.</value>
+  </data>
+  <data name="NewPasswordIntro" xml:space="preserve">
+    <value>Please choose a new password in order to continue</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Fill in your new password </value>
+  </data>
+  <data name="RepeatPassword" xml:space="preserve">
+    <value>Please repeat your new password </value>
+  </data>
+  <data name="PasswordCannotBeEmpty" xml:space="preserve">
+    <value>Please provide a password </value>
+  </data>
+  <data name="PasswordsDoNotMatch" xml:space="preserve">
+    <value>The passwords do not match. Please try again </value>
+  </data>
+  <data name="FillTheExportMethodOptions" xml:space="preserve">
+    <value>Fill the export method options</value>
+  </data>
+  <data name="FillTheImportMethodOptions" xml:space="preserve">
+    <value>Fill the import method options</value>
+  </data>
+  <data name="FillThePublicationMethodOptions" xml:space="preserve">
+    <value>Fill the publication method options</value>
+  </data>
+  <data name="FillTheSecurityOptions" xml:space="preserve">
+    <value>Fill the security options</value>
+  </data>
+  <data name="Floating" xml:space="preserve">
+    <value>&amp;Floating</value>
+  </data>
+  <data name="FollowingFilesAreExported" xml:space="preserve">
+    <value>The following files are published:{0}{0}{0}</value>
+  </data>
+  <data name="FollowingResourcesPreventDeleting" xml:space="preserve">
+    <value>The following {0} '{1}'-resources prevent  deleting :</value>
+  </data>
+  <data name="FollowingResourcesResultInAWarning" xml:space="preserve">
+    <value>The following {0} '{1}'-resources result in a warning :</value>
+  </data>
+  <data name="GenerateReport" xml:space="preserve">
+    <value>Generate a report</value>
+  </data>
+  <data name="GenerationProgress" xml:space="preserve">
+    <value>Generation progress</value>
+  </data>
+  <data name="GenerationProgressDescription" xml:space="preserve">
+    <value>Progress of the report that is generated.</value>
+  </data>
+  <data name="Hide" xml:space="preserve">
+    <value>&amp;Hide</value>
+  </data>
+  <data name="IdentifierAndCodeFieldDiffer" xml:space="preserve">
+    <value>The value of the id field ({0}) of the xml does not match the value of the code field ({1}) and it will be changed to {1}</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="ImportFailure" xml:space="preserve">
+    <value>Something went wrong while importing the package.
+(Error at loading the manifest)
+</value>
+    <comment>ImportFailure description</comment>
+  </data>
+  <data name="ImportFailureGeneral" xml:space="preserve">
+    <value>Something went wrong while importing the package.
+</value>
+    <comment>ImportFailure description</comment>
+  </data>
+  <data name="ImportFailureTitle" xml:space="preserve">
+    <value>Import failure</value>
+    <comment>ImportFailureTitle description</comment>
+  </data>
+  <data name="ImportFromAExcelFile" xml:space="preserve">
+    <value>Add custom properties from a MS Excel file</value>
+  </data>
+  <data name="ImportFromATestBuilderPackageFile" xml:space="preserve">
+    <value>Import from a Questify Builder package file</value>
+  </data>
+  <data name="ImportingResourcesToSpecifiedLocation" xml:space="preserve">
+    <value>Importing resources to specified location...</value>
+  </data>
+  <data name="ImportToolStripButton_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImportToolStripButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImportToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImportToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InitialiseProgressDescription" xml:space="preserve">
+    <value>Preparing wizard to generate report</value>
+  </data>
+  <data name="InitialiseProgressTask" xml:space="preserve">
+    <value>Initialisation progress</value>
+  </data>
+  <data name="InstanceAlreadyOpened" xml:space="preserve">
+    <value>There is already an instance of this application opened. Cannot open a second instance.</value>
+  </data>
+  <data name="InvalidTargetMessage" xml:space="preserve">
+    <value>Invalid target '{0}' specified in template</value>
+  </data>
+  <data name="InvisibleParameterHasAChangedValue" xml:space="preserve">
+    <value>Invisible parameter "{0}" has a changed value.</value>
+  </data>
+  <data name="Item0InAdaptiveSectionIsMissingInOtd1" xml:space="preserve">
+    <value>Item {0} inaAdaptive section is missing in OTD{1}</value>
+  </data>
+  <data name="Item0InOtdIsMissingInAdaptiveSection1" xml:space="preserve">
+    <value>Item {0} in OTD is missing in adaptive section{1}</value>
+  </data>
+  <data name="ItemEditor_AnErrorOccurredWhileUpdatingTheCodeNameInTests" xml:space="preserve">
+    <value>An error occurred while updating the code in tests!</value>
+  </data>
+  <data name="ItemEditor_ItemCodeNameAlreadyExistsInBankHierarchy" xml:space="preserve">
+    <value>Item code already exists in bank hierarchy!</value>
+  </data>
+  <data name="ItemEditor_ItemCodeRenamingIsSucceeded" xml:space="preserve">
+    <value>Item code renaming is succeeded!</value>
+  </data>
+  <data name="ItemEditor_Load_ItemDefinitionLoaded" xml:space="preserve">
+    <value>Item definition loaded</value>
+  </data>
+  <data name="ItemEditor_NoSufficientRightsToPerformThisAction" xml:space="preserve">
+    <value>You don't have sufficient rights to perform this action.</value>
+  </data>
+  <data name="ItemEditor_OldItemLayoutTemplateOpenedStatusBarMessage" xml:space="preserve">
+    <value>Item based on old item layout template opened</value>
+  </data>
+  <data name="ItemEditor_OnlyPossibleToChangeTheResourceCodeWhenNoOtherChanges" xml:space="preserve">
+    <value>It is only possible to change the {0} code, when no other changes are made to this item. Please save the {0} first and try again!</value>
+  </data>
+  <data name="ItemEditor_PleaseEnterNewItemCode" xml:space="preserve">
+    <value>Please enter new item code:</value>
+  </data>
+  <data name="ItemEditor_SaveAsCancelled" xml:space="preserve">
+    <value>Save as cancelled</value>
+  </data>
+  <data name="ItemEditor_SaveAsText" xml:space="preserve">
+    <value>Save as</value>
+  </data>
+  <data name="ItemEditor_SaveItem_ItemSavedStatusbarMessage" xml:space="preserve">
+    <value>Item saved ...</value>
+  </data>
+  <data name="ItemEditor_SaveItem_SaveFailedStatusbarMessage" xml:space="preserve">
+    <value>Failed to save item ...</value>
+  </data>
+  <data name="ItemEditor_TitleBar" xml:space="preserve">
+    <value>Item editor for item '{0}'</value>
+  </data>
+  <data name="ItemEditor_UnexpectedError" xml:space="preserve">
+    <value>An unexpected error occurred. Error: {0}</value>
+  </data>
+  <data name="ItemEditor_ValidateItem_ValidationErrors" xml:space="preserve">
+    <value>Cannot update changes of this item because of the following validation errors:{0}{0}</value>
+  </data>
+  <data name="ItemEditorNaviateNextNotPossible" xml:space="preserve">
+    <value>Current item is the last item in the list, navigate to next is not possible</value>
+  </data>
+  <data name="ItemEditorNaviatePreviousNotPossible" xml:space="preserve">
+    <value>Current item is the first item in the list, navigate to previous is not possible</value>
+  </data>
+  <data name="ItemForm_DialogTitle" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="ItemForm_IsDirtyWhenCancelPressed" xml:space="preserve">
+    <value>Changes you made will be lost. Are you sure you want to close this form?</value>
+  </data>
+  <data name="ItemForm_ValidationFailedWhenSaved" xml:space="preserve">
+    <value>There are some errors. Correct these errors before saving this item.</value>
+  </data>
+  <data name="ItemLayoutTemplate" xml:space="preserve">
+    <value>Item layout template</value>
+  </data>
+  <data name="itemlayoutTemplateHeader" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:cito="http://www.cito.nl/citotester"&gt;
+&lt;!--  CitoTester ItemLayout Template
+	Name		: %title%
+	Version		: 1.0
+	Date		: %now%
+	History		: %now% %user% 	- Initial version
+	Description	: %description%
+--&gt;
+	&lt;head&gt;
+	 	&lt;title&gt;&lt;/title&gt;
+	 	&lt;link rel="Stylesheet" href="" type="text/css" /&gt;
+	&lt;/head&gt;
+ 	&lt;body onselectstart="javascript:return false;"&gt;
+	
+	&lt;/body&gt;
+&lt;/html&gt;</value>
+  </data>
+  <data name="ItemLayoutTemplateHeaderV2" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;!--  CitoTester ItemLayout Template
+	Name		: %title%
+	Version		: 1.0
+	Date		: %now%
+	History		: %now% %user% 	- Initial version
+	Description	: %description%
+--&gt;
+&lt;Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="2"&gt;
+	&lt;Description&gt;&lt;/Description&gt;
+	&lt;Targets&gt;
+		&lt;Target xsi:type="ItemLayoutTemplateTarget" enabled="true" name="testPlayer"&gt;
+			&lt;Template&gt;
+				&lt;![CDATA[
+				
+				]]&gt;
+			&lt;/Template&gt;
+		&lt;/Target&gt;
+	&lt;/Targets&gt;
+&lt;/Template&gt;</value>
+  </data>
+  <data name="ItemLayoutTemplateS" xml:space="preserve">
+    <value>Item layout template(s)</value>
+  </data>
+  <data name="ItemLayoutTemplateToBeAdded" xml:space="preserve">
+    <value>Item layout template to be added:</value>
+  </data>
+  <data name="ItemLayoutTemplateToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemLayoutTemplateToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemrefenceDoesnTContainAnyItems" xml:space="preserve">
+    <value>Item reference doesn't contain any items</value>
+  </data>
+  <data name="ItemrefenceInSectionIsEqualToTheItemsInTheOtd" xml:space="preserve">
+    <value>Item reference in section is equal to the items in the OTD</value>
+  </data>
+  <data name="ItemsInExcel" xml:space="preserve">
+    <value>{0} items in the excel file.</value>
+  </data>
+  <data name="ItemsUpdatedWithCustomProperties" xml:space="preserve">
+    <value>{0} items were updated.</value>
+  </data>
+  <data name="ItemToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LastPublicationStatusMessage" xml:space="preserve">
+    <value>Last status in the publication process:</value>
+  </data>
+  <data name="Login_LoginFailed_Text" xml:space="preserve">
+    <value>Login failed with the given credentials!</value>
+  </data>
+  <data name="Login_LoginFailed_Title" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="MainForm_BankDoesNotExist" xml:space="preserve">
+    <value>Bank '{0}' does not exist. Probably the bank was deleted by another user. Do you want to refresh the bank hierarchy?</value>
+  </data>
+  <data name="MainForm_BankDoesNotExistTitle" xml:space="preserve">
+    <value>Bank does not exist</value>
+  </data>
+  <data name="MainForm_DoYouReallyWantToDeleteBankAndAllOfItsResources" xml:space="preserve">
+    <value>Do you really want to delete bank '{0}'?</value>
+  </data>
+  <data name="MainForm_EntityDoesNotExist" xml:space="preserve">
+    <value>Entity '{0}' does not exist in bank '{1}'. Probably the entity was deleted by another user. Do you want to refresh this grid?</value>
+  </data>
+  <data name="MainForm_EntityDoesNotExistTitle" xml:space="preserve">
+    <value>Entity does not exist in this bank</value>
+  </data>
+  <data name="MainForm_FastSearchTimeOut" xml:space="preserve">
+    <value>The search could not complete successfully. The search term is too general.
+(Reason: Time out)
+Please refine the search term and try again.</value>
+  </data>
+  <data name="MainForm_NoPreviewerAvailable" xml:space="preserve">
+    <value>There is no previewer available for this test package</value>
+  </data>
+  <data name="MainForm_NoResourcesSelected" xml:space="preserve">
+    <value>No resources selected</value>
+  </data>
+  <data name="MainForm_SelectResourcesToExport" xml:space="preserve">
+    <value>Select resources to export</value>
+  </data>
+  <data name="MainForm_SelectTestPackageToPublish" xml:space="preserve">
+    <value>Please select a test package to publish.</value>
+  </data>
+  <data name="MainForm_SelectTestToPublish" xml:space="preserve">
+    <value>Please select a test to publish.</value>
+  </data>
+  <data name="MainForm_SyntaxErrorSearchString" xml:space="preserve">
+    <value>Error while searching. Check your search string for syntax errors.</value>
+  </data>
+  <data name="MainForm_TestCannotBePreviewed" xml:space="preserve">
+    <value>This test cannot be previewed because there is no previewer configured for this test.</value>
+  </data>
+  <data name="MainForm_TestCannotBePreviewed_Title" xml:space="preserve">
+    <value>Test preview</value>
+  </data>
+  <data name="MainForm_TestTemplateGrid_GenerateResources_DialogTitle" xml:space="preserve">
+    <value>Generate proposals</value>
+  </data>
+  <data name="MainForm_TestTemplateGrid_GenerateResources_NoDataSourceSections" xml:space="preserve">
+    <value>This template has no sections with data sources. Therefore no proposals can be generated.</value>
+  </data>
+  <data name="MainForm_TestTemplateGrid_GenerateResources_OldTestModelMessage" xml:space="preserve">
+    <value>This template uses an old test definition model. This function is not supported for old test definition models.</value>
+  </data>
+  <data name="MakeSureBankExternalKeyHasAValue" xml:space="preserve">
+    <value>'Bank Externalkey' should have a value.</value>
+  </data>
+  <data name="Maximize" xml:space="preserve">
+    <value>Maximize</value>
+  </data>
+  <data name="MediaEditorForResource" xml:space="preserve">
+    <value>Editor for media '{0}'</value>
+  </data>
+  <data name="MediaFile" xml:space="preserve">
+    <value>media file</value>
+  </data>
+  <data name="MediaFileS" xml:space="preserve">
+    <value>media file(s)</value>
+  </data>
+  <data name="MediaFileToBeAdded" xml:space="preserve">
+    <value>Media file to be added:</value>
+  </data>
+  <data name="MediaToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MediaToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="Message_NoSectionSelectedTitle" xml:space="preserve">
+    <value>Selection fault</value>
+  </data>
+  <data name="MetaDataDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="MetaDataStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Minimize" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <data name="MultiSelectItemEditWizardChanging" xml:space="preserve">
+    <value>You are about to change a parameter/custom property/meta data value for the {0} selected item(s).
+
+Attention! This can not be undone!</value>
+  </data>
+  <data name="MultiSelectItemEditWizardCompleted" xml:space="preserve">
+    <value>You have changed the parameter/custom property/meta data value for {0} item(s).</value>
+  </data>
+  <data name="MultiSelectItemEditWizardEditDescription" xml:space="preserve">
+    <value>Edit the parameter or the custom property or a meta data with a new value, for the {0} selected item(s).</value>
+  </data>
+  <data name="Save" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAjNJREFUOE+tkutL01EYx3//Qu97E/SitzU1hmuxGvzKNZRlw7Aiuv3CW2m6zAsp
+        lqZRywtkK1w6abWahJOKvIApYiKLpWhl5oqmOLyiE8Hg23nOfnmyohfRA8+bw/l8znku0n+J588ioPS1
+        LqHFu4iH7jk0NYZx1zGFutqvsN8M4lrFOEpLPqCwYAR5uUM4fy4AFZckArs6gdqaVfwtVlbXYErpwuGU
+        pzxVXJK8Txa4oKpyXr36exAcnlvBbssLaDQKrIc8QuB+MMsFpSWT6vWN8QP+FFpAjNmHgksTOGhpFgJn
+        wzQXXLR9VBERP8Nvx8LYJnuRkz2KpESnENTfDnFBVuaQikXjV7gvEMJmgxuKMgiz2SEENdVfuEA5M6ii
+        f4Y7Bz5jU3wjjhx9hYSEOiG4XjWBjnawUQLHT76G9Vgv7zY1jGqmb9PLUbgbydaXkGW7EFwpG0ObD2wH
+        gGbXNzb3ZVSUz/CmUsOo5oz0wDp8IKkVRmOlEBQVjsLzCLjvXGOLE4EpNXtDWk7YkJpWHIUTGbzfA4Oh
+        TAhsecMMBqpvRfjLBLFjxOhk+N9PY3h8BkruVew1tXBYt8cFvb5YCGgtHXew/m0SEHw2/wbeBWcRnFrE
+        hct2xBpcDG5C7K570MXnC0FG+htW9xKHtxo92LJDxuO2Hvja+9DRPYDefj/2ma3Q6BsQx+Dt2npotTlC
+        kJnmTz59qoevJ20YLQnNmUZF3aaGUc30KiXBO+OyhODfQ5K+A0JWOr6CUjSGAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="MultiSelectItemEditWizardEditPreprocessingRule" xml:space="preserve">
+    <value>Edit preprocessing rules</value>
+  </data>
+  <data name="MultiSelectItemEditWizardEditTitle" xml:space="preserve">
+    <value>Edit parameter or custom property or meta data</value>
+  </data>
+  <data name="MultiSelectItemEditWizardMultipleBanksSelected" xml:space="preserve">
+    <value>It's not possible to edit custom properties or parameters or meta data from items in different banks</value>
+  </data>
+  <data name="MultiSelectItemEditWizardResultDescription" xml:space="preserve">
+    <value>Parameter or custom property or meta data saved for the {0} selected item(s).</value>
+  </data>
+  <data name="MultiSelectItemEditWizardSelectEditDescription" xml:space="preserve">
+    <value>Select the parameter or the custom property or the meta data you wish to edit for the {0} selected item(s).</value>
+  </data>
+  <data name="MultiSelectItemEditWizardSelectEditTitle" xml:space="preserve">
+    <value>Select parameter or custom property or metadata</value>
+  </data>
+  <data name="MultiSelectItemEditWizardSkippedItemsBecauseMissingKey" xml:space="preserve">
+    <value>The {0} items below have not been updated because they have no key value.</value>
+  </data>
+  <data name="MultiSelectItemEditWizardValidationErrors" xml:space="preserve">
+    <value>There are some validation errors. Please correct them before continuing.</value>
+  </data>
+  <data name="MultiSelectItemEditWizardWelcomeDescription" xml:space="preserve">
+    <value>With this wizard it's possible to edit a parameter or a custom property or meta data for multiple items at the same time.</value>
+  </data>
+  <data name="MultiSelectItemEditWizardWelcomeTitle" xml:space="preserve">
+    <value>Edit parameter or custom property or meta data</value>
+  </data>
+  <data name="Network-Download-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Network-Download-icon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewAspectToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewAspectToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewControlTemplateToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewControlTemplateToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewItemLayoutTemplateToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewItemLayoutTemplateToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewItemToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewItemToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewMediaToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewMediaToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewSection" xml:space="preserve">
+    <value>New section</value>
+  </data>
+  <data name="newString" xml:space="preserve">
+    <value>new</value>
+  </data>
+  <data name="NewTestDefaultName" xml:space="preserve">
+    <value>New Test</value>
+  </data>
+  <data name="NewTestPackage" xml:space="preserve">
+    <value>New Test Package</value>
+  </data>
+  <data name="NewTestPackageToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\documents2_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewTestpart" xml:space="preserve">
+    <value>New Test Part</value>
+  </data>
+  <data name="NewTestset" xml:space="preserve">
+    <value>New Test Set</value>
+  </data>
+  <data name="NewTestTemplateDefaultName" xml:space="preserve">
+    <value>New Test Template</value>
+  </data>
+  <data name="NewTestTemplateToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewTestTemplateToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewTestToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewTestToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewToolStripSplitButton_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewToolStripSplitButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="next-page" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next-page.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NoAction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NoAction.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoExportHandlersAvailable" xml:space="preserve">
+    <value>No Exporthandlers available</value>
+  </data>
+  <data name="NoFieldValidation" xml:space="preserve">
+    <value>no field validation for '{0}'.</value>
+  </data>
+  <data name="NoPublicationHandlers" xml:space="preserve">
+    <value>None of the publication methods can publish this selection of tests.</value>
+  </data>
+  <data name="NoReportsAvailable" xml:space="preserve">
+    <value>There are no reports available</value>
+  </data>
+  <data name="NotAbleToDelete" xml:space="preserve">
+    <value>You are not able to delete the selected {0}!</value>
+  </data>
+  <data name="NotAllRequiredTemplateFieldsAreFilled" xml:space="preserve">
+    <value>Not all required fields are filled! Please fill them and press OK to continue.</value>
+  </data>
+  <data name="NothingIsPreventingYouToPublishThisPackage" xml:space="preserve">
+    <value>Nothing is preventing you to publish these package(s)</value>
+  </data>
+  <data name="NotValid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\red-button_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NotValidated" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button-blue_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NotValidFiles0" xml:space="preserve">
+    <value>Not valid files:{0}</value>
+  </data>
+  <data name="online_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\online_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="open_report" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OperationSuccesfull" xml:space="preserve">
+    <value>Operation successful</value>
+  </data>
+  <data name="OperationUnSuccesfull" xml:space="preserve">
+    <value>Operation is not successfully executed.</value>
+  </data>
+  <data name="options_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\options_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OptionsForm_RestartLanguage_Text" xml:space="preserve">
+    <value>Builder must be restarted to view the changes. The program is closed now.</value>
+  </data>
+  <data name="OptionsForm_RestartLanguage_Title" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="OptionsForm_Text" xml:space="preserve">
+    <value>To view the changes, you must restart the program!</value>
+  </data>
+  <data name="OptionsForm_Title" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="OtdAndAdaptiveSectionDoesnTContainAnyItems" xml:space="preserve">
+    <value>OTD and adaptive section doesn't contain any items</value>
+  </data>
+  <data name="OtdDoesnTContainAnyItems" xml:space="preserve">
+    <value>OTD doesn't contain any items</value>
+  </data>
+  <data name="ParameterCannotBeRedirectedMultiTimes" xml:space="preserve">
+    <value>Parameter '{0}' is not allowed to be redirected to parameter '{1}' that is redirected as well.</value>
+  </data>
+  <data name="ParameterNamesMustBeUniqueMessage" xml:space="preserve">
+    <value>Parameter names (per target and shared) must be unique. Parameter '{0}' is not unique</value>
+  </data>
+  <data name="ParameterRedirectionInfoIsMissing" xml:space="preserve">
+    <value>'redirectToTargetControlId' and 'redirectToTargetParameterId' should be filled when redirecting parameter: '{0}'</value>
+  </data>
+  <data name="ParametersCannotReferToItself" xml:space="preserve">
+    <value>Parameter '{0}' cannot refer to itself.</value>
+  </data>
+  <data name="ParametersMustHaveSameType" xml:space="preserve">
+    <value>Parameter '{0}' of type '{1}' cannot refer to parameter '{2}'of type '{3}'</value>
+  </data>
+  <data name="PerformingOperation" xml:space="preserve">
+    <value>Performing operation...</value>
+  </data>
+  <data name="PermissionTarget" xml:space="preserve">
+    <value>Permission target</value>
+  </data>
+  <data name="PleaseChooseThePublicationLocation" xml:space="preserve">
+    <value>Please choose the publication location</value>
+  </data>
+  <data name="PleaseCloseAllItemEditorsFirst" xml:space="preserve">
+    <value>Please close all item editors first</value>
+  </data>
+  <data name="PleaseEnterAValidExportFilename" xml:space="preserve">
+    <value>Please enter a valid export file name.</value>
+  </data>
+  <data name="PleaseSelectAPrintForm" xml:space="preserve">
+    <value>Please select one or more print forms.</value>
+  </data>
+  <data name="PleaseSelectAReport" xml:space="preserve">
+    <value>Please select a report</value>
+  </data>
+  <data name="PleaseSelectDocx" xml:space="preserve">
+    <value>Please enter a valid docx file name.</value>
+  </data>
+  <data name="PreviewTestProgressCaption" xml:space="preserve">
+    <value>Preview test</value>
+  </data>
+  <data name="PreviewToolStripButton_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PreviewToolStripButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PreviewToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PreviewToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ProcessingResource" xml:space="preserve">
+    <value>Processing resource '{0}'...</value>
+  </data>
+  <data name="ProperiesToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ProperiesToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="property-blue-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\property-blue-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PropertyToolStripButton_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PropertyToolStripButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Publication" xml:space="preserve">
+    <value>Publication</value>
+  </data>
+  <data name="PublicationFormWizard_PasswordRules" xml:space="preserve">
+    <value>Package encryption is enabled, but password validation failed. Please enter a password using the following validation rules:
+
+Possible characters:
+
+- Small letters: abcdefghijklmnopqrstuvwxyz
+- Capital letters:   ABCDEFGHIJKLMNOPQRSTUVWXYZ
+- Numeric: 0123456789
+- Symbols: .-#@~!$^*()+={{}}[]
+
+Password must contain at least 1 token from three categories.
+Password must contain at least 1 and at most 40 characters.</value>
+  </data>
+  <data name="PublicationFormWizard_PasswordsDontMatch" xml:space="preserve">
+    <value>Passwords don't match. Please retype your password.</value>
+  </data>
+  <data name="PublicationLocationText" xml:space="preserve">
+    <value>Location {0}:</value>
+  </data>
+  <data name="PublicationName" xml:space="preserve">
+    <value>Published as : {0}</value>
+  </data>
+  <data name="PublicationOfTheTest" xml:space="preserve">
+    <value>Publication of the test(s): {0}.</value>
+  </data>
+  <data name="PublicationOfTheTestPackage" xml:space="preserve">
+    <value>Publication of the test package(s): {0}.</value>
+  </data>
+  <data name="PublishToolStripButton_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PublishToolStripButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Questify" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Questify.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReadExcelAdditionalExceptionMessage" xml:space="preserve">
+    <value>The error can also occur due to importing an old MS Excel format.</value>
+  </data>
+  <data name="ReadyImporting" xml:space="preserve">
+    <value>The package has been imported</value>
+  </data>
+  <data name="RefreshItemTemplate" xml:space="preserve">
+    <value>Refresh ItemTemplate</value>
+  </data>
+  <data name="RefreshToolStripButton_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RefreshToolStripButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RefreshToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RefreshToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReportsToolStripButton_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReportsToolStripButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReportsToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReportsToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResourceNotFound" xml:space="preserve">
+    <value>Resource '{0}' could not be found</value>
+  </data>
+  <data name="ResourceParameterContainsValueNotInBank" xml:space="preserve">
+    <value>Resource parameter '{0}' contains the default value '{1}', which isn't available in the bank!</value>
+  </data>
+  <data name="ResourcePropertiesFor" xml:space="preserve">
+    <value>Resource properties for '{0}'</value>
+  </data>
+  <data name="ResourcePropertyDialog_BrowseForRawDataButton_Click_AspectResourceFilter" xml:space="preserve">
+    <value>All files (*.*)|*.*</value>
+  </data>
+  <data name="ResourcePropertyDialog_BrowseForRawDataButton_Click_ControlTemplateResourceFilter" xml:space="preserve">
+    <value>Control template files (*.xHtml, *.code)|*.xhtml;*.code|All files (*.*)|*.*</value>
+  </data>
+  <data name="ResourcePropertyDialog_BrowseForRawDataButton_Click_DeliveryResourceFilter" xml:space="preserve">
+    <value>All Files (*.*)|*.*</value>
+  </data>
+  <data name="ResourcePropertyDialog_BrowseForRawDataButton_Click_GenericResourceFilter" xml:space="preserve">
+    <value>All files (*.*)|*.*|Image files (*.jpg; *.jpeg; *.gif; *.png; *.svg; *.bmp)|*.jpg;*.jpeg;*.gif;*.png;*.svg;*.bmp|Print image files (*.eps, *.tiff, *.tif)|*.eps;*.tiff;*.tif|MS Word templates (*.dotx)|*.dotx|MS Word documents (*.docx)|*.docx|Style sheet files (*.css)|*.css|Audio files (*.mp3, *.opus, *.ogg)|*.mp3;*.opus;*.ogg</value>
+  </data>
+  <data name="ResourcePropertyDialog_BrowseForRawDataButton_Click_ItemLayoutResourceFilter" xml:space="preserve">
+    <value>Item layout template files (*.xhtml)|*.xhtml|All files (*.*)|*.*</value>
+  </data>
+  <data name="ResourcePropertyDialog_BrowseForRawDataButton_Click_ItemResourceFilter" xml:space="preserve">
+    <value>Item resource data files (*.xml)|*.xml|All files (*.*)|*.*</value>
+  </data>
+  <data name="ResourcePropertyDialog_BrowseForRawDataButton_Click_TestPackageResourceFilter" xml:space="preserve">
+    <value>Test package resource data files (*.xml)|*.xml|All files (*.*)|*.*</value>
+  </data>
+  <data name="ResourcePropertyDialog_BrowseForRawDataButton_Click_TestResourceFilter" xml:space="preserve">
+    <value>Test resource data files (*.xml)|*.xml|All files (*.*)|*.*</value>
+  </data>
+  <data name="ResourcePropertyDialog_ExportButton_Click_DialogTitle" xml:space="preserve">
+    <value>Export resource to file</value>
+  </data>
+  <data name="ResourcePropertyDialog_ExportButton_Click_ResourceExported" xml:space="preserve">
+    <value>The resource is exported</value>
+  </data>
+  <data name="ResourceToImportDestinationCurrentBank" xml:space="preserve">
+    <value>Resource to import: {0}.{1}Destination: Current bank{1}Method: {2}{1}</value>
+  </data>
+  <data name="ResourceToImportDestinationCurrentBankExcel" xml:space="preserve">
+    <value>Resource to import: {0}.{1}Destination: Current bank{1}Method: {2}{1}</value>
+  </data>
+  <data name="ResourceToImportPsychometricData" xml:space="preserve">
+    <value>Resource to import: {0}.{1}Destination: Current bank{1}Method: {2}{1}Delivery: {3}{1}Analysis: {4}{1}</value>
+  </data>
+  <data name="ResourceToPublishDestinationPublicationMethod" xml:space="preserve">
+    <value>Resource to publish: {0}.{1}Destination: {2}{1}Publication method: {3}.{1}</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="RolePropertyTitle" xml:space="preserve">
+    <value>Role properties for {0}.</value>
+  </data>
+  <data name="Save16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SaveAs16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SaveAs16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SaveClose16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SaveClose16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Saving0312" xml:space="preserve">
+    <value>Saving {0}{3}({1}/{2}).</value>
+  </data>
+  <data name="SearchToolStripButton_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SearchToolStripButton.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SearchToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SearchToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Section0" xml:space="preserve">
+    <value>Section: {0}</value>
+  </data>
+  <data name="SelectAFileToAdd" xml:space="preserve">
+    <value>Select a file to add.</value>
+  </data>
+  <data name="SelectAnUserBeforeContinuing" xml:space="preserve">
+    <value>Select an user before continuing.</value>
+  </data>
+  <data name="SelectCesPreview" xml:space="preserve">
+    <value>Select CES Preview location</value>
+  </data>
+  <data name="SelectDependentResourceDialog_NoResourceSelectedMessage" xml:space="preserve">
+    <value>There is no resource selected. Please select a resource and press 'OK'</value>
+  </data>
+  <data name="SelectedBank" xml:space="preserve">
+    <value>Please select a bank</value>
+  </data>
+  <data name="SelectedFolderDoesNotExist" xml:space="preserve">
+    <value>selected folder does not exist</value>
+  </data>
+  <data name="SelectedMultipleInValidFiles" xml:space="preserve">
+    <value>You have selected {0} invalid files.
+
+Inalid files:
+{1}</value>
+  </data>
+  <data name="SelectedMultipleValidFiles" xml:space="preserve">
+    <value>You have selected {0} valid files.
+
+Valid files:
+{1}</value>
+  </data>
+  <data name="SelectedSingleInValidFile" xml:space="preserve">
+    <value>You have selected 1 invalid file.
+
+Invalid file: {0}</value>
+  </data>
+  <data name="SelectedSingleValidFile" xml:space="preserve">
+    <value>You have selected 1 valid file.
+
+Valid file: {0}</value>
+  </data>
+  <data name="SelectFilesToAdd" xml:space="preserve">
+    <value>Select files(s)</value>
+  </data>
+  <data name="SelectReport" xml:space="preserve">
+    <value>Select a report</value>
+  </data>
+  <data name="SelectReportDescription" xml:space="preserve">
+    <value>Please select the report you want to generate.</value>
+  </data>
+  <data name="SelectReportLocation" xml:space="preserve">
+    <value>Select the report location</value>
+  </data>
+  <data name="SelectReportLocationDescription" xml:space="preserve">
+    <value>Please select the location where the report should be stored.</value>
+  </data>
+  <data name="SelectResourceDialog_CannotSelectBecauseOfStatus" xml:space="preserve">
+    <value>Cannot use this resource, because of it's workflow status.</value>
+  </data>
+  <data name="SelectSupportedViewsForAssessmentTestDialog_ContentLabel_AddRemoveViewTypes" xml:space="preserve">
+    <value>Please add/remove test views that the test must support:</value>
+  </data>
+  <data name="SelectSupportedViewsForAssessmentTestDialog_ContentLabel_NewTest" xml:space="preserve">
+    <value>Please select the test views that the test template must support:</value>
+  </data>
+  <data name="SelectSupportedViewsForAssessmentTestDialog_PleaseSelectViews_Message" xml:space="preserve">
+    <value>Please select one or more test types and press OK.</value>
+  </data>
+  <data name="SelectSupportedViewsForAssessmentTestDialog_PleaseSelectViews_Title" xml:space="preserve">
+    <value>Select test types</value>
+  </data>
+  <data name="SelectSupportedViewsForTestPackageDialog_ContentLabel_AddRemoveViewTypes" xml:space="preserve">
+    <value>Please add/remove test views that the test package must support:</value>
+  </data>
+  <data name="SelectSupportedViewsForTestPackageDialog_ContentLabel_NewTestPackage" xml:space="preserve">
+    <value>Please select the test views that the test package template must support:</value>
+  </data>
+  <data name="SelectTargetsForTestPackages" xml:space="preserve">
+    <value>Select supported test types for test package</value>
+  </data>
+  <data name="SelectTargetsForTests" xml:space="preserve">
+    <value>Select supported test types for test</value>
+  </data>
+  <data name="SelectTemplateDialog_NoTemplateSelected_Text" xml:space="preserve">
+    <value>Please select a template</value>
+  </data>
+  <data name="SelectTemplateDialog_NoTemplateSelected_Title" xml:space="preserve">
+    <value>Templates</value>
+  </data>
+  <data name="SetExportSettings" xml:space="preserve">
+    <value>Set export settings</value>
+  </data>
+  <data name="ShowReport" xml:space="preserve">
+    <value>Click here to get an export of the result.</value>
+  </data>
+  <data name="sinc_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sinc_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SkipConflictingBankPropertiesAndContinueWithImport" xml:space="preserve">
+    <value>The following custom bank properties already exist but will be skipped because:
+    - they are of different type (or of type concept or tree), or
+    - their names differ in casing.
+    {0}Do you wish to continue the import?</value>
+  </data>
+  <data name="SolutionWillBeDeletedNoMatchPossible" xml:space="preserve">
+    <value>Solution will be deleted. No match possible.</value>
+  </data>
+  <data name="SortKeyMustBeNumeric" xml:space="preserve">
+    <value>Sortkey: '{0}' on parameter: '{1}' must be a numeric value.</value>
+  </data>
+  <data name="SourceEditor_SaveItem_ItemSavedStatusMessage" xml:space="preserve">
+    <value>Resource is saved.</value>
+  </data>
+  <data name="SourceEditor_SaveItem_SaveFailedStatusbarMessage" xml:space="preserve">
+    <value>Failed to save resource</value>
+  </data>
+  <data name="Splashscreen_Questify_Builder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Splashscreen_Questify_Builder.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StartExport" xml:space="preserve">
+    <value>Start export...</value>
+  </data>
+  <data name="StartGenerationReport" xml:space="preserve">
+    <value>Report is being generated</value>
+  </data>
+  <data name="StartImport" xml:space="preserve">
+    <value>Start import...</value>
+  </data>
+  <data name="StartPublication" xml:space="preserve">
+    <value />
+  </data>
+  <data name="StartPublishingTest" xml:space="preserve">
+    <value>Publishing test: '{0}'</value>
+  </data>
+  <data name="StartUpWarningCaption" xml:space="preserve">
+    <value>Tech Preview</value>
+    <comment>StartUpWarningCaption description</comment>
+  </data>
+  <data name="StartUpWarningText" xml:space="preserve">
+    <value />
+    <comment>StartUpWarningText description</comment>
+  </data>
+  <data name="Status_GetData" xml:space="preserve">
+    <value>Getting data...</value>
+  </data>
+  <data name="Status_SavingItem" xml:space="preserve">
+    <value>Saving item...</value>
+  </data>
+  <data name="StatusBar_ItemsFound" xml:space="preserve">
+    <value>{0} items found.</value>
+  </data>
+  <data name="StatusOfResourcesUsedInTest" xml:space="preserve">
+    <value>Status of resources used in test</value>
+  </data>
+  <data name="Succesfull" xml:space="preserve">
+    <value>Successful</value>
+  </data>
+  <data name="SuccesfulyExported" xml:space="preserve">
+    <value>Successfully exported</value>
+  </data>
+  <data name="SuccesfulyExportedResourcesTo" xml:space="preserve">
+    <value>Successfully exported {0} resources to {1}.</value>
+  </data>
+  <data name="SuccesfulyImportedToCurrentBank" xml:space="preserve">
+    <value>Successfully imported '{0}' in current bank.</value>
+  </data>
+  <data name="SureToDelete" xml:space="preserve">
+    <value>Are you sure you want to delete the selected row(s)?</value>
+  </data>
+  <data name="TargetSpecifiedMoreThanOnceMessage" xml:space="preserve">
+    <value>Target '{0}' is specified more than once.</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>test</value>
+  </data>
+  <data name="TestDoesNotContainAnyItemsPleaseAddItemsToTheTestBeforePublishing" xml:space="preserve">
+    <value>Test does not contain any items. Please add items to the test before publishing.</value>
+  </data>
+  <data name="TestEditor_ChangeViewTypes_InCompatibleItemsInTestMessage" xml:space="preserve">
+    <value>Not all items support the selected test views. Cannot change the item view types of this test.</value>
+  </data>
+  <data name="TestEditor_ChangeViewTypes_InCompatibleItemsInTestTitle" xml:space="preserve">
+    <value>Change item view types</value>
+  </data>
+  <data name="TestEditor_DeleteComponentsQuestionMessage" xml:space="preserve">
+    <value>This action will delete the selected component(s) and all it's underlying components from this test! Continue?</value>
+  </data>
+  <data name="TestEditor_ItemNotInBank" xml:space="preserve">
+    <value>Cannot add item '{0}' to this test, because it's not in the bank.</value>
+  </data>
+  <data name="TestEditor_Load_TestDefinitionLoaded" xml:space="preserve">
+    <value>Test definition loaded</value>
+  </data>
+  <data name="TestEditor_MultipleItemsAlreadyExistsInTestMessage" xml:space="preserve">
+    <value>Cannot add the following items to this test, because they are already added:{0}</value>
+  </data>
+  <data name="TestEditor_MultipleItemsAlreadyInTestAndBecauseOfWorkFlowStatusMessage" xml:space="preserve">
+    <value>Cannot add the following items to this test, because these are already added:{0}{0}{1}{0}And the following items because of their status:{0}{0}{2}</value>
+  </data>
+  <data name="TestEditor_MultipleItemsNotAddedInTest_AlreadyInTestAndIncompatibleViewTypesMessage" xml:space="preserve">
+    <value>Cannot add the following items to this test, because these are already added:{0}{0}{1}{0}And the following because they do not support the view types of the test:{0}{0}{2}</value>
+  </data>
+  <data name="TestEditor_MultipleItemsNotAddedInTest_AlreadyInTestAndWorkflowStatusAndIncompatibleViewTypesMessage" xml:space="preserve">
+    <value>Cannot add the following items to this test, because these are already added:{0}{0}{1}{0}And the following items because of their status:{0}{0}{2}{0}And the following because they do not support the view types of the test:{0}{0}{3}</value>
+  </data>
+  <data name="TestEditor_MultipleItemsNotAddedInTest_IncompatibleViewTypesMessage" xml:space="preserve">
+    <value>Cannot add the following items to this test, because they do not support the view types of the test:{0}{0}{1}</value>
+  </data>
+  <data name="TestEditor_MultipleItemsNotAddedInTest_WorkflowStatusAndIncompatibleViewTypesMessage" xml:space="preserve">
+    <value>Cannot add the following items to this test, because of their status:{0}{0}{1}{0}And the following because they do not support the view types of the test:{0}{0}{3}</value>
+  </data>
+  <data name="TestEditor_MultipleItemsNotAddedToTestBecauseOfWorkFlowStatusMessage" xml:space="preserve">
+    <value>Cannot add the following items to this test, because of their status:{0}</value>
+  </data>
+  <data name="TestEditor_MultipleItemsNotInBank" xml:space="preserve">
+    <value>Cannot add the following items to this test, because these are already added to this test because they don't exist in the bank. {0}</value>
+  </data>
+  <data name="TestEditor_RemoveViewTypeMessageBox" xml:space="preserve">
+    <value>You are about to remove the view type '{0}'. All specific view type properties are removed. Continue?</value>
+  </data>
+  <data name="TestEditor_RemoveViewTypeMessageBoxTitle" xml:space="preserve">
+    <value>Remove view type</value>
+  </data>
+  <data name="TestEditor_SaveTest_SaveFailedStatusbarMessage" xml:space="preserve">
+    <value>Failed to save test ...</value>
+  </data>
+  <data name="TestEditor_SaveTest_TestSavedStatusbarMessage" xml:space="preserve">
+    <value>Test saved ...</value>
+  </data>
+  <data name="TestEditor_TestCodeNameAlreadyExistsInBankHierarchy" xml:space="preserve">
+    <value>Test code already exists in bank hierarchy!</value>
+  </data>
+  <data name="TestEditor_TestCodeRenamingIsSucceeded" xml:space="preserve">
+    <value>Test code renaming is succeeded!</value>
+  </data>
+  <data name="TestEditor_TestPreview_IsDirty" xml:space="preserve">
+    <value>There are changes that need to be saved before the test can be previewed.
+Do you wish to save the changes now?</value>
+  </data>
+  <data name="TestEditor_ValidateItem_ValidationErrors" xml:space="preserve">
+    <value>Cannot update changes of this test because of the following validation errors:{0}{0}</value>
+  </data>
+  <data name="TestEditorv2_CannotAddItemIncompatibleViewTypes" xml:space="preserve">
+    <value>Cannot add item(s) to test because it doesn't support all test views.</value>
+  </data>
+  <data name="TestEditorv2_OldModelOpenedStatusBarMessage" xml:space="preserve">
+    <value>Old test definition model opened</value>
+  </data>
+  <data name="TestPackage" xml:space="preserve">
+    <value>Test package</value>
+  </data>
+  <data name="TestPackageDoesNotContainAnytestPleaseAddTetsToTheTestPackagebeforePublishing" xml:space="preserve">
+    <value>Test package doesn't contain any tests. Please add tests to the test package before publishing.</value>
+  </data>
+  <data name="TestPackageEditor_CannotAddTestIncompatibleViewTypes" xml:space="preserve">
+    <value>Cannot add test(s) to test because it doesn't support all test package views.</value>
+  </data>
+  <data name="TestPackageEditor_ChangeViewTypes_InCompatibleTestsInTestPackageMessage" xml:space="preserve">
+    <value>Not all tests support the selected test package views. Cannot change the test view types of this test package.</value>
+  </data>
+  <data name="TestPackageEditor_ChangeViewTypes_InCompatibleTestsInTestPackageTitle" xml:space="preserve">
+    <value>Change item view types</value>
+  </data>
+  <data name="TestPackageEditor_DeleteComponentsQuestionMessage" xml:space="preserve">
+    <value>This action will delete the selected component(s) and all it's underlying components from this test package! Continue?</value>
+  </data>
+  <data name="TestPackageEditor_Load_TestPackageDefinitionLoaded" xml:space="preserve">
+    <value>Test definition loaded</value>
+  </data>
+  <data name="TestPackageEditor_MultipleItemsNotInBank" xml:space="preserve">
+    <value>Cannot add to following tests to this test package, because these are already added to this test package because they don't exist in the bank. {0}</value>
+  </data>
+  <data name="TestPackageEditor_MultipleTestNotAddedToTestPackageBecauseOfWorkFlowStatusMessage" xml:space="preserve">
+    <value>Cannot add the following test to this test package, because of their status:{0}</value>
+  </data>
+  <data name="TestPackageEditor_MultipleTestsAlreadyExistsInTestPackageMessage" xml:space="preserve">
+    <value>Cannot add to following tests to this test package, because these are already added:{0}</value>
+  </data>
+  <data name="TestPackageEditor_MultipleTestsAlreadyInTestPackageAndBecauseOfWorkFlowStatusMessage" xml:space="preserve">
+    <value>Cannot add to following test to this test package, because these are already added:{0}{0}{1}{0}And the following tests because of their status:{0}{0}{2}</value>
+  </data>
+  <data name="TestPackageEditor_MultipleTestsNotAddedInTestPackage_AlreadyInTestAndWorkflowStatusAndIncompatibleViewTypesMessage" xml:space="preserve">
+    <value>Cannot add to following tests to this test package, because these are already added:{0}{0}{1}{0}And the following items because of their status:{0}{0}{2}{0}And the following because they do not support the view types of the test package:{0}{0}{3}</value>
+  </data>
+  <data name="TestPackageEditor_MultipleTestsNotAddedInTestPackage_AlreadyInTestPackageAndIncompatibleViewTypesMessage" xml:space="preserve">
+    <value>Cannot add to following tests to this test package, because these are already added:{0}{0}{1}{0}And the following because they do not support the view types of the test package:{0}{0}{2}</value>
+  </data>
+  <data name="TestPackageEditor_MultipleTestsNotAddedInTestPackage_IncompatibleViewTypesMessage" xml:space="preserve">
+    <value>Cannot add to following test to this test, because they do not support the view types of the test package:{0}{0}{1}</value>
+  </data>
+  <data name="TestPackageEditor_MultipleTestsNotAddedInTestPackage_WorkflowStatusAndIncompatibleViewTypesMessage" xml:space="preserve">
+    <value>Cannot add to following tests to this test package, because of their status:{0}{0}{1}{0}And the following because they do not support the view types of the test:{0}{0}{3}</value>
+  </data>
+  <data name="TestPackageEditor_RemoveViewTypeMessageBox" xml:space="preserve">
+    <value>You are about to remove the view type '{0}'. All specific view type properties are removed. Continue?</value>
+  </data>
+  <data name="TestPackageEditor_RemoveViewTypeMessageBoxTitle" xml:space="preserve">
+    <value>Remove view type</value>
+  </data>
+  <data name="TestPackageEditor_SaveTestPackage_SaveFailedStatusbarMessage" xml:space="preserve">
+    <value>Failed to save test package ...</value>
+  </data>
+  <data name="TestPackageEditor_SaveTestPackage_TestPackageSavedStatusbarMessage" xml:space="preserve">
+    <value>Test package saved ...</value>
+  </data>
+  <data name="TestPackageEditor_TestCodeNameAlreadyExistsInBankHierarchy1" xml:space="preserve">
+    <value>Test package code already exists in bank hierarchy!</value>
+  </data>
+  <data name="TestPackageEditor_TestCodeRenamingIsSucceeded" xml:space="preserve">
+    <value>Test package code renaming is succeeded!</value>
+  </data>
+  <data name="TestPackageEditor_TestNotInBank" xml:space="preserve">
+    <value>Cannot add test '{0}' to this test, because it's not in the bank.</value>
+  </data>
+  <data name="TestPackageEditor_TestPreview_IsDirty" xml:space="preserve">
+    <value>There are changes that need to be saved before the test package can be previewed.
+Do you wish to save the changes now?</value>
+  </data>
+  <data name="TestPackageEditor_ValidateItem_ValidationErrors" xml:space="preserve">
+    <value>Cannot update changes of this test package because of the following validation errors:{0}{0}</value>
+  </data>
+  <data name="TestPackageToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smart folder_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TestPackageToPublishPublicationMethod" xml:space="preserve">
+    <value>Test package to publish: {0}.{1}Publication method: {2}.{3}Encrypted publication: {4}{5}</value>
+  </data>
+  <data name="TestPreviewToTestPlayer_v1x" xml:space="preserve">
+    <value>Questify Player v1.x</value>
+  </data>
+  <data name="TestPreviewToTestPlayer_v2x" xml:space="preserve">
+    <value>Questify Player v2.x</value>
+  </data>
+  <data name="TestTemplate" xml:space="preserve">
+    <value>Test template</value>
+  </data>
+  <data name="TestTemplateToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TestTemplateToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TestToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TestToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TestToPublishPublicationMethod" xml:space="preserve">
+    <value>Test to publish: {0}.{1}Publication method: {2}.{3}Encrypted publication: {4}{5}</value>
+  </data>
+  <data name="TheBankCouldnTBeCleared" xml:space="preserve">
+    <value>The bank couldn't be cleared.</value>
+  </data>
+  <data name="TheCodeIsNotFilledForAllItemLayoutTemplates" xml:space="preserve">
+    <value>The code is not filled for all item layout templates.</value>
+  </data>
+  <data name="TheFilenameCannotContainIllegalCharacters" xml:space="preserve">
+    <value>The file name cannot contain illegal characters</value>
+  </data>
+  <data name="TheFollowingResourcesPreventYouFromPublishingThisPackage" xml:space="preserve">
+    <value>The following {0} resources prevent you from publishing this package :</value>
+  </data>
+  <data name="TheFollowingResourcesResultInAWarning" xml:space="preserve">
+    <value>The following {0} resources result in a warning :</value>
+  </data>
+  <data name="TheFollowingResourcesWereSkippedBecauseTheyAlreadyExistedWithinDestinationBankHierarchy" xml:space="preserve">
+    <value>The following resources were skipped because they already existed within destination bank hierarchy: </value>
+  </data>
+  <data name="TheFollowingTestAreSkipped0" xml:space="preserve">
+    <value>The following test(s) are skipped: {0}.</value>
+  </data>
+  <data name="TheFollowingTestHaveBeenSuccessfullyPublished0" xml:space="preserve">
+    <value>The following test(s) have been successfully published: {0}.</value>
+  </data>
+  <data name="TheFollowingTestPackagesHaveBeenSuccessfullyPublished0" xml:space="preserve">
+    <value>The following test package(s) are successfully published:{0}.</value>
+  </data>
+  <data name="TheLocationOfTheTestPreviewPlayerIsnTSpecifiedInTheConfigurationFile" xml:space="preserve">
+    <value>The location of the test preview player isn't specified in the configuration file!</value>
+  </data>
+  <data name="TheOperationIsSuccesfulyCompleted" xml:space="preserve">
+    <value>The operation is successfully completed.</value>
+  </data>
+  <data name="ThereAre0ItemsThatAreMissingInTheAdaptiveSection1" xml:space="preserve">
+    <value>There are {0} items that are missing in the adaptive section {1}</value>
+  </data>
+  <data name="ThereAre0ItemsThatAreMissingInTheOtd1" xml:space="preserve">
+    <value>There are {0} items that are missing in the OTD {1}</value>
+  </data>
+  <data name="ThereIsNoApplicationAssociatedToThisFileExcelIsProbablyNotInstalled" xml:space="preserve">
+    <value>There is no application associated with the file.</value>
+  </data>
+  <data name="TheTestHaveBeenSuccesfulyPublished" xml:space="preserve">
+    <value>The test {0} have been successfully published.</value>
+  </data>
+  <data name="TheTestPackageContainTheFollowingTests" xml:space="preserve">
+    <value>The test package(s) contain the following tests:{0}</value>
+  </data>
+  <data name="ThisWizardChecksIfTheOtdAndTheAdativeSectionContainTheSameItems" xml:space="preserve">
+    <value>This wizard checks if the OTD and the adaptive section contain the same items.</value>
+  </data>
+  <data name="ThisWizardHelpsYouToExportTheSelectedResources" xml:space="preserve">
+    <value>This wizard helps you to export the selected resources.</value>
+  </data>
+  <data name="ThisWizardHelpsYouToGenerateAReport" xml:space="preserve">
+    <value>This wizard helps you to generate a report.</value>
+  </data>
+  <data name="ThisWizardHelpsYouToImportResources" xml:space="preserve">
+    <value>This wizard helps you to import resources.</value>
+  </data>
+  <data name="TitleIsARequiredField" xml:space="preserve">
+    <value>Title is a required field.</value>
+  </data>
+  <data name="TypeIsARequiredField" xml:space="preserve">
+    <value>Type is a required field.</value>
+  </data>
+  <data name="UnknownHostname" xml:space="preserve">
+    <value>Unknown host name uses resource:// protocol. Host name must be 'package'</value>
+  </data>
+  <data name="up_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\up_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user__16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user__16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UserAccountToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserAccountToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UserPropertyTitle" xml:space="preserve">
+    <value>User Properties for {0}.</value>
+  </data>
+  <data name="Valid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green-button_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ValidateParametersCollectionParameterWillShrink" xml:space="preserve">
+    <value>CollectionParameter "{0}": Collection will shrinked from {1} to {2} items. Loss of data starts at the last item.</value>
+  </data>
+  <data name="ValidateParametersCollectionWillBeDeleted" xml:space="preserve">
+    <value>Collection "{0}" will be deleted</value>
+  </data>
+  <data name="ValidateParametersParameterHasADifferentType" xml:space="preserve">
+    <value>Parameter "{0}" has a different type in current and new item layout template. Current value will be deleted.</value>
+  </data>
+  <data name="ValidateParametersParameterWillBeDeleted" xml:space="preserve">
+    <value>Parameter "{0}" will be deleted.</value>
+  </data>
+  <data name="ValidateParametersWhenOpeningEditorThisEditorCannotBeOpened" xml:space="preserve">
+    <value>This editor cannot be opened correctly.{0}{0}More detailed information:{0}{1}</value>
+  </data>
+  <data name="ValidateParametersWhenOpeningItemThisItemCannotBeOpenedPossibleLossOfData" xml:space="preserve">
+    <value>Possible loss of data. Since the last time this item has been opened and the item layout template has been changed.{0}Continue?{0}{0}More detailed information:{0}{1}</value>
+  </data>
+  <data name="ValidatingResource" xml:space="preserve">
+    <value>Validating resource {0}...</value>
+  </data>
+  <data name="ValidationResult" xml:space="preserve">
+    <value>Validation results: valid: {0}, warnings: {1}, invalid: {2}.</value>
+  </data>
+  <data name="ValidationsSucceeded" xml:space="preserve">
+    <value>All validations succeeded.</value>
+  </data>
+  <data name="ValidationTask" xml:space="preserve">
+    <value>Validation</value>
+  </data>
+  <data name="ValidationTaskDesciption" xml:space="preserve">
+    <value>All configured validations are executed.</value>
+  </data>
+  <data name="ValidFilename" xml:space="preserve">
+    <value>Select or type a valid file name.</value>
+  </data>
+  <data name="VerifiesThatNoResourcesPreventYouFromPublishing" xml:space="preserve">
+    <value>This step verifies that no resources prevent you from publishing this test</value>
+  </data>
+  <data name="VerifyTheChoicesMadeInTheWizard" xml:space="preserve">
+    <value>Verify the choices made in the wizard and click Finish.</value>
+  </data>
+  <data name="Wait" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wait_animated_image.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yellow-button_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WarningDeleteCustomProperties" xml:space="preserve">
+    <value>At least one of the custom properties to remove is used by items or other resources.
+When you continue, the property values of these resources will be removed!</value>
+  </data>
+  <data name="WarningDeleteCustomPropertiesTitle" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Warnings" xml:space="preserve">
+    <value>Warnings:</value>
+  </data>
+  <data name="WarningsFoundInCollectionparameter" xml:space="preserve">
+    <value>Following warnings are in found in a collection parameter:</value>
+  </data>
+  <data name="web_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\web_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WizardFileSelectionTabTaskDescription" xml:space="preserve">
+    <value>Click on the browse button to select a {0} file. It is also possible to select more files at ones.</value>
+  </data>
+  <data name="WizardFileSelectionTabTaskDescription2" xml:space="preserve">
+    <value>Select 1 or more {0}(s).</value>
+  </data>
+  <data name="WizardForm_CodeFieldCannotContainIllegalChars" xml:space="preserve">
+    <value>'Code' cannot contain any of the following characters: &lt;&gt;"#%{}|\/^~[]';?:@=&amp;^$+()!,`*</value>
+  </data>
+  <data name="WizardForm_CodeNotFilled" xml:space="preserve">
+    <value>The code is not filled for all objects.</value>
+  </data>
+  <data name="WizardForm_FileNameCannotContainIllegalChars" xml:space="preserve">
+    <value>The file name cannot contain illegal characters.</value>
+  </data>
+  <data name="WizardForm_SelectAFileMessage" xml:space="preserve">
+    <value>Please select a file first.</value>
+  </data>
+  <data name="WizardForm_SelectAFileTitle" xml:space="preserve">
+    <value>No file selected</value>
+  </data>
+  <data name="WizardForm_SelectAnObject" xml:space="preserve">
+    <value>You have to select at least one object to continue.</value>
+  </data>
+  <data name="WizardForm_TitleNotFilled" xml:space="preserve">
+    <value>The title is not filled for all objects.</value>
+  </data>
+  <data name="WizardForm_TypeNotFilled" xml:space="preserve">
+    <value>The type is not filled for all objects.</value>
+  </data>
+  <data name="WizardResultTabTaskDescription" xml:space="preserve">
+    <value>The {0} has been successfully added.</value>
+  </data>
+  <data name="WizardSelectedFilesTabTaskDescription" xml:space="preserve">
+    <value>Select a row to alter 'Title', 'Code' or 'Description'</value>
+  </data>
+  <data name="WizardSelectMethodTask" xml:space="preserve">
+    <value>What would you like to do</value>
+  </data>
+  <data name="WizardSelectTemplateTask" xml:space="preserve">
+    <value>Select template resource</value>
+  </data>
+  <data name="WizardSelectTemplateTaskDescription" xml:space="preserve">
+    <value>select resource that will be used as a template</value>
+  </data>
+  <data name="WizardWelcomeTabDescription" xml:space="preserve">
+    <value>This wizard helps you to add {0} to the selected bank.</value>
+  </data>
+  <data name="WordPublication_NoBookletsFound_Caption" xml:space="preserve">
+    <value>MS Word publication</value>
+  </data>
+  <data name="WordPublication_NoBookletsFound_Message" xml:space="preserve">
+    <value>No booklets found for publication.</value>
+  </data>
+  <data name="WouldYouLikeToOpenTheFileNow" xml:space="preserve">
+    <value>Would you like to open the file?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="YouHaveSelected0ValidFiles1ValidFiles2" xml:space="preserve">
+    <value>You have selected {0} valid files.{1}{1}Valid files:{2}</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Reference(s):</value>
+  </data>
+  <data name="Resource" xml:space="preserve">
+    <value>Resource(s): </value>
+  </data>
+  <data name="ConceptEditor_SaveChanges" xml:space="preserve">
+    <value>There are unsaved changes. Do you wish to save them?</value>
+  </data>
+  <data name="CustomPropertyEditor_TitleBar" xml:space="preserve">
+    <value>Editor for property '{0}'</value>
+  </data>
+  <data name="MainForm_DeleteCustomProperty" xml:space="preserve">
+    <value>This custom property can be deleted without affecting any other resource. Are you sure you want to remove this custom property?</value>
+  </data>
+  <data name="FixErrorsFirst" xml:space="preserve">
+    <value>Please fix errors first before adding a new property</value>
+  </data>
+  <data name="MainForm_CopyToClipboard" xml:space="preserve">
+    <value>Activate a window and press Ctrl-Shift-C to copy the bread crumb to the clipboard</value>
+  </data>
+  <data name="MainForm_CustomPropertyIsConnectedToItem" xml:space="preserve">
+    <value>At least one of the selected custom properties is connected to the resource(s) below. If you proceed, all connections to the resource(s) will be lost.
+Do you want to continue?</value>
+  </data>
+  <data name="Harmonization" xml:space="preserve">
+    <value>Harmonization</value>
+  </data>
+  <data name="ServiceNotAvailable" xml:space="preserve">
+    <value>{0} service is not available.{1}</value>
+  </data>
+  <data name="Validation" xml:space="preserve">
+    <value>Validation</value>
+  </data>
+  <data name="SourceEditorControlTemplateTitle" xml:space="preserve">
+    <value>Editor for control template '{0}'</value>
+  </data>
+  <data name="SourceEditorDataSourceTitle" xml:space="preserve">
+    <value>Editor for selection template '{0}'</value>
+  </data>
+  <data name="SourceEditorItemLayoutTemplateTitle" xml:space="preserve">
+    <value>Editor for item layout template '{0}'</value>
+  </data>
+  <data name="ResourcesToMoveMustBeInSameBank" xml:space="preserve">
+    <value>The resource to move should all be in the same bank.</value>
+  </data>
+  <data name="MainForm_TestPackageCannotBePreviewed" xml:space="preserve">
+    <value>This test package cannot be previewed because it doesn't contain tests.</value>
+  </data>
+  <data name="ExportTaskOperationFailed" xml:space="preserve">
+    <value>Operation failed</value>
+  </data>
+  <data name="CustomPropertiesNewTreeStructure" xml:space="preserve">
+    <value>New tree structure</value>
+  </data>
+  <data name="OnlyAllowedWhenResourceIsNotNew" xml:space="preserve">
+    <value>This action not permitted when the resource is not new.</value>
+  </data>
+  <data name="Error_PublicationType_Not_Available" xml:space="preserve">
+    <value>Unable to create preview, publication service does not support requested publication type {0}.</value>
+  </data>
+  <data name="ErrorUnableToCreatePreview" xml:space="preserve">
+    <value>An error occured, unable to create preview. Error message: {0}</value>
+  </data>
+  <data name="ErrorPublicationServiceUnableToPreview" xml:space="preserve">
+    <value>Unable to show preview. An error occurred in the preview service: {0}.</value>
+  </data>
+  <data name="HarmonizationDialogTitle" xml:space="preserve">
+    <value>Harmonizing</value>
+  </data>
+  <data name="PublicationResultText" xml:space="preserve">
+    <value>The publication returned the following result:</value>
+  </data>
+  <data name="PublicationOfTheBank" xml:space="preserve">
+    <value>Publication of the bank and its subbanks: {0}</value>
+  </data>
+  <data name="ThisWizardHelpsYouToPublicateTheSelectedBank" xml:space="preserve">
+    <value>This wizard helps you to publicate the selected bank.</value>
+  </data>
+  <data name="PleaseEnterACompleteAndValidPath" xml:space="preserve">
+    <value>Please enter a complete and valid path.</value>
+  </data>
+  <data name="ErrorCaption" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="CustomPropertyEditor_ValidationErrors" xml:space="preserve">
+    <value>Cannot update changes of this property because of the following validation errors:{0}</value>
+  </data>
+  <data name="CustomPropertyEditor_NotAllowed" xml:space="preserve">
+    <value>You are not allowed to edit this custom property.</value>
+  </data>
+  <data name="DocX2Html" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DocX2Html.xslt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="HandleImportConflictCustomPropertyDialogWindowTitle" xml:space="preserve">
+    <value>Import - Conflicting custom properties</value>
+  </data>
+  <data name="HandleImportConflictResourceDialogWindowTitle" xml:space="preserve">
+    <value>Import - Conflicting Resources</value>
+  </data>
+  <data name="ProgressHandler_UpdatingBankAndServerCache" xml:space="preserve">
+    <value>Updating bank and server cache. Please wait...</value>
+  </data>
+  <data name="SourceFileNotFoundErrorMessage" xml:space="preserve">
+    <value>Can't find the sourcefile {0}.</value>
+  </data>
+  <data name="HarmonizationCancelledMessage" xml:space="preserve">
+    <value>Harmonization is cancelled. Harmonization is needed to synchronize the paramaters in items and templates. Publications and previews might fail or give unexcepted results without harmonizing. It is recommended to harmonize the items of templates manually.</value>
+  </data>
+  <data name="OperationCancelled" xml:space="preserve">
+    <value>Operation cancelled</value>
+  </data>
+  <data name="InitializingHarmonization" xml:space="preserve">
+    <value>Gathering information for harmonization</value>
+  </data>
+  <data name="OperationCancelling" xml:space="preserve">
+    <value>Cancelling process</value>
+  </data>
+  <data name="BankCodeCannotContainMoreThanThreeCharactersForBAS" xml:space="preserve">
+    <value>Bankcode cannot contain more than three characters.</value>
+  </data>
+  <data name="PackageExportHandler_CreateExportFile" xml:space="preserve">
+    <value>Creating the exportfile ...</value>
+  </data>
+  <data name="PackageExportHandler_ProcessingCustomBankProperties" xml:space="preserve">
+    <value>Busy processing custom property '{0}'</value>
+  </data>
+  <data name="CustomBankPropertiesRemovedFromItem" xml:space="preserve">
+    <value>{0} Items where attached to multiple treestructures. An item can only contain one treestructure. The treestructures are removed from the item(s). </value>
+  </data>
+  <data name="ErrorWhileImportingItemMissingIlt" xml:space="preserve">
+    <value>Required item layout template '{0}' was not found in the bank.</value>
+  </data>
+  <data name="TestPartValidationRuleRemoved" xml:space="preserve">
+    <value>{0} validationrules where removed from the imported test(s), because the custom property used by it is not available in the target bank.</value>
+  </data>
+  <data name="CodeMaxLenghtExceeded" xml:space="preserve">
+    <value>Maximum length of 'Name' is {0}</value>
+  </data>
+  <data name="BankNameMaxLenghtExceeded" xml:space="preserve">
+    <value>Maximum length of 'Bankname' is {0}</value>
+  </data>
+  <data name="MainForm_MaxOpenItemsReached" xml:space="preserve">
+    <value>The maximum number of opened items ({0}) is reached. Close at least one item to be able to open another item.</value>
+  </data>
+  <data name="MainForm_MaxOpenItemsReachedTitle" xml:space="preserve">
+    <value>Maximum number of open items reached.</value>
+  </data>
+  <data name="MainForm_NoOpenIItems" xml:space="preserve">
+    <value>There are no opened items. A second item cannot be opened.</value>
+  </data>
+  <data name="MainForm_NoOpenIItemsTitle" xml:space="preserve">
+    <value>No open items.</value>
+  </data>
+  <data name="MainForm_ItemAlreadyOpen" xml:space="preserve">
+    <value>The item you are trying to open is already open.</value>
+  </data>
+  <data name="MainForm_ItemAlreadyOpenTitle" xml:space="preserve">
+    <value>Already open.</value>
+  </data>
+  <data name="ShowPassword" xml:space="preserve">
+    <value>Show or hide password</value>
+  </data>
+  <data name="ShowPasswordImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShowPassword.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainForm_MaxOpenItemsReachedNewItem" xml:space="preserve">
+    <value>The maximum number of opened items ({0}) is reached. Close at least one item to create a new item.</value>
+  </data>
+  <data name="NoApplications" xml:space="preserve">
+    <value>Error while retrieving applications from the server.</value>
+  </data>
+  <data name="MultiSelectItemEditWizardOverwriteCheckboxText" xml:space="preserve">
+    <value>Overwrite existing values for custom property '{0}'</value>
+  </data>
+  <data name="MultiSelectItemEditWizardOverwriteDescription" xml:space="preserve">
+    <value>Specify what should happen with existing values for the {0} selected item(s).</value>
+  </data>
+  <data name="MultiSelectItemEditWizardOverwriteTitle" xml:space="preserve">
+    <value>Existing values</value>
+  </data>
+  <data name="GenerateProposals_TestIsDirty" xml:space="preserve">
+    <value>It is only possible to generate variants when all other changes to the test are saved. Please save the test first and try again!</value>
+  </data>
+  <data name="GenerateProposals_NrOfGeneratedTests" xml:space="preserve">
+    <value>Nr of generated tests: {0}</value>
+  </data>
+  <data name="MainForm_LoginNotPermittedMessage" xml:space="preserve">
+    <value>Logging in into Questify Builder is currently not permittted.
+For more information please contact your application administrator.</value>
+  </data>
+  <data name="MainForm_MaintenanceWindowMessage" xml:space="preserve">
+    <value>Due to maintenance Questify Builder will be temporarily unavailable (from {0}). Do not forget to log out.</value>
+  </data>
+  <data name="CustomPropertiesNewFreeRichText" xml:space="preserve">
+    <value>New rich text value</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>item</value>
+  </data>
+  <data name="TestPackageNoCaps" xml:space="preserve">
+    <value>test package</value>
+  </data>
+  <data name="BankDeleted" xml:space="preserve">
+    <value>The selected bank is already deleted.</value>
+  </data>
+  <data name="TestPackageEditor_TestNotFoundMessage" xml:space="preserve">
+    <value>Could not open the selected test. The testpackage may be corrupted.</value>
+  </data>
+  <data name="TestPackageEditor_TestNotFoundTitle" xml:space="preserve">
+    <value>Unable to open test</value>
+  </data>
+  <data name="TestEditor_ItemNotFoundMessage" xml:space="preserve">
+    <value>Could not open the selected item.</value>
+  </data>
+  <data name="TestEditor_ItemNotFoundTitle" xml:space="preserve">
+    <value>Unable to open item</value>
+  </data>
+  <data name="ImportHarmonisationDetermineParameterSetForILT" xml:space="preserve">
+    <value>Getting parameters for item layout template '{0}'...</value>
+  </data>
+  <data name="ImportHarmonisationDetermineIltsToHarmonize" xml:space="preserve">
+    <value>Determining which item layout templates to harmonize...</value>
+  </data>
+  <data name="Import_Package" xml:space="preserve">
+    <value>Loading package...</value>
+  </data>
+  <data name="Import_PackageSet" xml:space="preserve">
+    <value>Loading packageset...</value>
+  </data>
+  <data name="Import_PackageSet_StartImport" xml:space="preserve">
+    <value>Start importing packageset...</value>
+  </data>
+  <data name="Import_Package_StartImport" xml:space="preserve">
+    <value>Start importing package...</value>
+  </data>
+  <data name="OneOrMoreInstancesRunning" xml:space="preserve">
+    <value>One or more instances of Questify Builder are already running. Do you want to close these instances?</value>
+  </data>
+  <data name="OneOrMoreInstancesRunningTitle" xml:space="preserve">
+    <value>Questify Builder already running</value>
+  </data>
+  <data name="ImportSettingCustomPropertyDisplayValue" xml:space="preserve">
+    <value>Setting display values for custom properties of imported resources...</value>
+  </data>
+  <data name="Login_LoginFailedBcOldVersion_Text" xml:space="preserve">
+    <value>The Questify Builder version you are using is not up to date. Therefore, you cannot log in.
+Please start Questify Builder via {0} to get the latest version.</value>
+  </data>
+  <data name="CopyToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CopyToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PasteToolStripMenuItem_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PasteToolStripMenuItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CustomPropertyEditor_ValidationErrorsOnExit" xml:space="preserve">
+    <value>There are validation errors. Continue closing dialog without saving?</value>
+  </data>
+  <data name="ImportOfResources" xml:space="preserve">
+    <value>Import of resources</value>
+  </data>
+  <data name="UpdateAvailableWillBeInstalled_Message" xml:space="preserve">
+    <value>Questify Builder will be updated to a newer version and needs to be restarted.</value>
+  </data>
+  <data name="UpdateAvailbleWillBeInstalled_Caption" xml:space="preserve">
+    <value>Update available</value>
+  </data>
+  <data name="GenericTest_SupportedView" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Components" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\..\Documentation\Components.md;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AllEditors_SaveChangesForResourceWithStateWarning" xml:space="preserve">
+    <value>Resource with name '{0}' has '{1}'-status, are you sure you want to save changes?</value>
+  </data>
+  <data name="apiConnectionError" xml:space="preserve">
+    <value>Could not connect to API endpoint</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>Features</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="AboutToClearAndDeleteResourcesInTheBankAndSubbanks" xml:space="preserve">
+    <value>You are about to clear and delete the selected bank and all underlying banks. Continue?</value>
+  </data>
+</root>

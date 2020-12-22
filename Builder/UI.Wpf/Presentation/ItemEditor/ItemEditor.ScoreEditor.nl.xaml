@@ -1,0 +1,64 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Expander header -->
+    <s:String x:Key="ItemEditor.ScoreEditor.ExpanderScoringHeader">Score-editor</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ExpanderEncodingHeader">Coderingseditor</s:String>
+    
+    <!-- GENERAL UserControl -->
+    <s:String x:Key="ItemEditor.ScoreEditor.ScoreEditor">Score-editors</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.EncodingEditor">Coderingseditor</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ScoreEditorForEncodingWindow">Coderingsscore-editor</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.NoKeysSet">Er is geen sleutel ingevuld.</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.TooLittleKeySet">Er zijn onvoldoende sleutels ingevuld.</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.TooManyKeysSet">Er zijn te veel sleutels ingevuld.</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ReloadScore">Ververs codering</s:String>
+
+    <!-- Column headers -->
+    <s:String x:Key="ItemEditor.ScoreEditor.FieldNameColumnHeaderText">Naam</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.OperatorColumnHeaderText">Operator</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ValueColumnHeaderText">Waarde</s:String>
+
+    <!-- Often used words -->
+    <s:String x:Key="ItemEditor.ScoreEditor.Alternatives">Alternatief</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.AddAlternative">Alternatief toevoegen</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.RemoveAlternative">Alternatief verwijderen</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.PreProcessingRule">Voorbereidingsregel</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.Key">Sleutel</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ColumnSeparatorText">of</s:String>
+
+    <!-- Scoring Method -->
+    <s:String x:Key="ItemEditor.ScoreEditor.ScoreMethod">Scoringsmethode :</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ScoreMethod.None">Geen</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ScoreMethod.Dichotomous">Dichotoom</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ScoreMethod.Polytomous">Polytoom</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.ComparisonType">Vergelijkingstype</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.RangeText">Tot en met</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.Equals">Gelijk aan</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.Range">Bereik</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.GreaterThan">Groter dan</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.SmallerThan">Kleiner dan</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.GreaterThanEquals">Groter of gelijk aan</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.SmallerThanEquals">Kleiner of gelijk aan</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.Equivalent">Equivalent van</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.NotEquals">Ongelijk aan</s:String> 
+
+    <!-- Validation errors -->
+    <s:String x:Key="ItemEditor.ScoreEditor.Choice.NoDuplicateKeys">Een sleutel mag slechts een keer worden toegekend.</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.GapMatch.ValidateMatchMax">Het toegestane aantal koppelingen voor de geselecteerde waarde is overschreden.</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.GraphGapMatch.Hotspot">Hotspot</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.GraphGapMatch.Picture">Plaatje</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.Order.ValidateAssignToOnePositionOnly">Een element mag slechts aan een positie toegewezen worden.</s:String>
+
+    <!-- Ordering label -->
+    <s:String x:Key="ItemEditor.ScoreEditor.Order.PostionLabel">Positie</s:String>
+    
+    <!--Cas Scoring-->
+    <s:String x:Key="ItemEditor.ScoreEditor.CasEditor.NrVariable">Aantal variabelen:</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.CasEditor.NrSolutions">Aantal oplossingen:</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.CasEditor.Label">Label</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.CasEditor.SolutionNR">Oplossing {0}</s:String>
+    <s:String x:Key="ItemEditor.ScoreEditor.CasEditor.Degree">Controle op graad:</s:String>
+    
+</ResourceDictionary>

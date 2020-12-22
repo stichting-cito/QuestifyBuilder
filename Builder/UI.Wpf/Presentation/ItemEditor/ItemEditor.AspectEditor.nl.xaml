@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefs.GroupHeader">Aspecten</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.MaxScoreLabel">Maximum score :</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.DescriptionLabel">Additionele omschrijving :</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.Label">Geselecteerde aspecten</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.NameLabel">Naam</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.TitleLabel">Titel</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.MaxScoreLabel">Maximum score</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.SumOfMaxScoreLabel">Totaal maximum score:</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.AddButton.Title">Toevoegen</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.RemoveButton.Title">Verwijderen</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.EditButton.Title">Bewerken</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.UpButton.Title">Omhoog</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.DownButton.Title">Omlaag</s:String>
+    
+</ResourceDictionary>

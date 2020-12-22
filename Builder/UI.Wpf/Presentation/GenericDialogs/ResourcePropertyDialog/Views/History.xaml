@@ -1,0 +1,145 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.GenericDialogs.ResourcePropertyDialog.Views.History"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+			 xmlns:gl="clr-namespace:System.Globalization;assembly=mscorlib"
+			 meffed:ViewModelLocator.ViewModel="ResourcePropertyDialog.HistoryViewModel" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+			 d:DesignHeight="500" d:DesignWidth="400">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<Grid Name="masterGrid">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+		</Grid.RowDefinitions>
+			
+		<ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" 
+                      DataContext="{Binding HistoryList.DataValue}">
+			<StackPanel Orientation="Vertical">
+				<Grid Margin="0,0,0,5">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="35"></ColumnDefinition>	<!--Spacer column (good enough for now...)-->
+						<ColumnDefinition Width="40"></ColumnDefinition>	<!--Version-->
+						<ColumnDefinition Width="100"></ColumnDefinition>	<!--ModifiedDate-->
+						<ColumnDefinition Width="90"></ColumnDefinition>	<!--ModifiedBy-->
+						<ColumnDefinition Width="140"></ColumnDefinition>	<!--Label-->
+						<ColumnDefinition Width="80"></ColumnDefinition>    <!--Revert to previous version-->
+						<ColumnDefinition Width="50"></ColumnDefinition>	<!--Compare-->
+					</Grid.ColumnDefinitions>
+					<TextBlock Text="{StaticResource ResourcePropertyDialog.Tab.History.Version}" Grid.Column="1" />
+					<TextBlock Text="{StaticResource ResourcePropertyDialog.Tab.History.ModifiedDate}" Grid.Column="2" />
+					<TextBlock Text="{StaticResource ResourcePropertyDialog.Tab.History.ModifiedBy}" Grid.Column="3"/>
+					<TextBlock Text="{StaticResource ResourcePropertyDialog.Tab.History.Label}" Grid.Column="4"/>
+					<TextBlock Text="{StaticResource ResourcePropertyDialog.Tab.History.Revert}" Grid.Column="5"/>
+					<TextBlock Text="{StaticResource ResourcePropertyDialog.Tab.History.Compare}" Grid.Column="6" />
+				</Grid>
+
+				<ItemsControl ItemsSource="{Binding}">
+					<ItemsControl.ItemTemplate>
+						<DataTemplate>
+							<Border BorderThickness="1" BorderBrush="LightGray" Margin="0,0,0,5">
+								<Expander ExpandDirection="Down">
+									<i:Interaction.Triggers>
+										<!--	<i:EventTrigger EventName="Collapsed">
+											<i:InvokeCommandAction Command="{Binding ElementName=masterGrid, Path=DataContext.ExpanderCollapsedCommand}" CommandParameter="{Binding ResourceHistoryEntity}" />
+										</i:EventTrigger>
+											-->
+
+										<!-- comment is very welcome here.
+											The command 'ExpanderExpandedCommand' from the ViewModel can't be referenced by a common construct like Command=ExpanderExpandedCommand because we're in a template. Somehow you have
+											to get access to the DataContext (which is the ViewModel). The next two lines both accomplish this. One by type and one by elementname. I slightly prefer by name to be sure you always
+											have the right control. -->
+										<i:EventTrigger EventName="Expanded">
+											<!--<CinchV2:EventToCommandTrigger Command="{Binding ElementName=masterGrid, Path=DataContext.ExpanderExpandedCommand}" />
+											<CinchV2:EventToCommandTrigger Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ScrollViewer}}, Path=DataContext.ExpanderExpandedCommand}" />-->
+										<i:InvokeCommandAction Command="{Binding ElementName=masterGrid, Path=DataContext.ExpanderExpandedCommand}" CommandParameter="{Binding ResourceHistoryEntity}" />
+										</i:EventTrigger>
+									</i:Interaction.Triggers>
+									<Expander.Header>
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="10"></ColumnDefinition>	 <!--Spacer column (good enough for now...)--> 
+												<ColumnDefinition Width="40"></ColumnDefinition>	 <!--Version--> 
+												<ColumnDefinition Width="100"></ColumnDefinition>	 <!--ModifiedDate--> 
+												<ColumnDefinition Width="90"></ColumnDefinition>	 <!--ModifiedBy--> 
+												<ColumnDefinition Width="140"></ColumnDefinition>	 <!--Label-->
+												<ColumnDefinition Width="80"></ColumnDefinition>     <!--Revert to previous version-->
+												<ColumnDefinition Width="50"></ColumnDefinition>	 <!--Compare-->
+												<!--Label-->
+											</Grid.ColumnDefinitions>
+											<TextBlock Text="{Binding ResourceHistoryEntity.Version}" Grid.Column="1" />
+											<TextBlock Text="{Binding ResourceHistoryEntity.ModifiedDate, StringFormat='g', ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Grid.Column="2" />
+											<TextBlock Text="{Binding ResourceHistoryEntity.ModifiedBy}" Grid.Column="3" TextWrapping="Wrap"/>
+											<TextBlock Text="{Binding ResourceHistoryEntity.Label}" Grid.Column="4" TextWrapping="Wrap"/>
+											<Button Grid.Column="5" Margin="18,0,18,0" Width="20" Height="20"
+													IsEnabled="{Binding IsRevertButtonEnabled}"
+													Visibility="{Binding IsRevertButtonVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+													ToolTip="{Binding ToolTipText}"
+													ToolTipService.ShowOnDisabled="True" ToolTipService.ShowDuration="15000">
+												<Image Source="..\..\..\Resources\Images\revert_16.png"/>
+												<i:Interaction.Triggers>
+													<i:EventTrigger EventName="Click">
+														<i:InvokeCommandAction Command="{Binding ElementName=masterGrid, Path=DataContext.RevertButtonClickCommand}" CommandParameter="{Binding ResourceHistoryEntity}" />
+													</i:EventTrigger>
+												</i:Interaction.Triggers>
+											</Button>
+											<CheckBox Grid.Column="6" Margin="18,0,18,0" VerticalAlignment="Center" IsEnabled="{Binding IsHistoryCheckBoxEnabled}">
+												<i:Interaction.Triggers>
+													<i:EventTrigger EventName="Checked">
+														<i:InvokeCommandAction Command="{Binding ElementName=masterGrid, Path=DataContext.CheckBoxCheckedCommand}" CommandParameter="{Binding ResourceHistoryEntity}" />
+													</i:EventTrigger>
+													<i:EventTrigger EventName="Unchecked">
+														<i:InvokeCommandAction Command="{Binding ElementName=masterGrid, Path=DataContext.CheckBoxUncheckedCommand}" CommandParameter="{Binding ResourceHistoryEntity}" />
+													</i:EventTrigger>
+												</i:Interaction.Triggers>
+											</CheckBox>
+										</Grid>
+									</Expander.Header>
+									<Grid HorizontalAlignment="Stretch">
+										<GroupBox Header="{StaticResource ResourcePropertyDialog.Tab.History.GroupBox.Title}">
+											<Grid Name="metaDataCompareResultsGrid" DataContext="{Binding MetaDataCompareResults}" Margin="0,5,0,0">
+												<ItemsControl ItemsSource="{Binding}" Margin="0, 5, 0, 0">
+													<ItemsControl.ItemTemplate>
+														<DataTemplate>
+															<Grid>
+																<Grid.ColumnDefinitions>
+																	<ColumnDefinition Width="*"></ColumnDefinition>
+																	<ColumnDefinition Width="Auto"></ColumnDefinition>
+																</Grid.ColumnDefinitions>
+																<Grid.RowDefinitions>
+																	<RowDefinition Height="30"></RowDefinition>
+																</Grid.RowDefinitions>
+																<TextBlock Text="{Binding LocalizedPropertyName}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Margin="10,0,20,0"/>
+																<Button HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,0,5" 
+																		Command="{Binding ElementName=masterGrid, Path=DataContext.ShowDifferenceCommand }" CommandParameter="{Binding}" Grid.Column="1" Grid.Row="0">
+																	<Image Source="..\..\..\Resources\Images\Search.png" Width="20" Height="20" Margin="0,2,0,2"/>
+																</Button>
+															</Grid>
+														</DataTemplate>
+													</ItemsControl.ItemTemplate>
+												</ItemsControl>
+											</Grid>
+										</GroupBox>
+									</Grid>
+								</Expander>
+							</Border>
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</ItemsControl>
+			</StackPanel>
+		</ScrollViewer>
+        <Button Style="{StaticResource DialogButtonStyle}" HorizontalAlignment="Left"
+                Content="{StaticResource ResourcePropertyDialog.Tab.History.Command.Compare}"
+                IsEnabled="{Binding ElementName=masterGrid, Path=DataContext.CompareButtonVisible.DataValue}" 
+                VerticalAlignment="Bottom" 
+                Command="{Binding ElementName=masterGrid, Path=DataContext.ShowAllDifferencesOfTwoVersionsCommand }" 
+                Grid.Row="1"/>
+	</Grid>
+</UserControl>

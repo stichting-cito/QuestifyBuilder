@@ -1,0 +1,620 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AssessmentTestViewBase_FriendlyEntityName" xml:space="preserve">
+    <value>Test properties</value>
+  </data>
+  <data name="IdentifierIsARequiredField" xml:space="preserve">
+    <value>'Identifier' is a required field.</value>
+  </data>
+  <data name="ItemFunctionalTypeIsARequiredField" xml:space="preserve">
+    <value>'Item functional type' is a required field.</value>
+  </data>
+  <data name="ItemReferenceViewBase_FriendlyEntityName" xml:space="preserve">
+    <value>Item reference properties</value>
+  </data>
+  <data name="NavigationModeIsARequiredField" xml:space="preserve">
+    <value>'Navigation mode' is a required field.</value>
+  </data>
+  <data name="PrintFormIsARequiredField" xml:space="preserve">
+    <value>Please select at least one booklet for the MS Word publication</value>
+  </data>
+  <data name="PrintFormLabelsAreRequired" xml:space="preserve">
+    <value>Labels are required.</value>
+  </data>
+  <data name="PrintFormLabelsMaxLength" xml:space="preserve">
+    <value>The maximum label length allowed is {0} characters.</value>
+  </data>
+  <data name="PrintFormLabelsMayNotContainFollowingCharacters" xml:space="preserve">
+    <value>Labels may not contain any of the following characters: {0}</value>
+  </data>
+  <data name="PrintFormLabelsMustBeUnique" xml:space="preserve">
+    <value>Labels must be unique.</value>
+  </data>
+  <data name="PrintFormType_CorrectionBooklet" xml:space="preserve">
+    <value>Scoring booklet</value>
+  </data>
+  <data name="PrintFormType_MultiMediaInstructionBooklet" xml:space="preserve">
+    <value>Instruction booklet for MMS</value>
+  </data>
+  <data name="PrintFormType_QuestionBooklet" xml:space="preserve">
+    <value>Question booklet</value>
+  </data>
+  <data name="PrintFormType_SourceBooklet" xml:space="preserve">
+    <value>Source booklet</value>
+  </data>
+  <data name="PrintFormWordTemplatesAreRequired" xml:space="preserve">
+    <value>MS Word templates are required.</value>
+  </data>
+  <data name="SourceNameIsARequiredField" xml:space="preserve">
+    <value>'Referenced item' is a required field.</value>
+  </data>
+  <data name="TestPartViewBase_FriendlyEntityName" xml:space="preserve">
+    <value>Test part properties</value>
+  </data>
+  <data name="TestSectionViewBase_FriendlyEntityName" xml:space="preserve">
+    <value>Test section properties</value>
+  </data>
+  <data name="TitleIsARequiredField" xml:space="preserve">
+    <value>'Title' is a required field.</value>
+  </data>
+  <data name="Word_AssessmentTestPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>PBT - MS Word - Test properties</value>
+  </data>
+  <data name="Word_ItemReferencePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>PBT - MS Word - Item properties</value>
+  </data>
+  <data name="Word_TestOutcomePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>PBT - MS Word - Scoring result properties</value>
+  </data>
+  <data name="Word_TestPackagePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>PBT - MS Word - Test package properties</value>
+  </data>
+  <data name="Word_TestPartPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>PBT - MS Word - Test part properties</value>
+  </data>
+  <data name="Word_TestReferencePropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>PBT - MS Word - Test reference properties</value>
+  </data>
+  <data name="Word_TestSectionPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>PBT - MS Word - Test section properties</value>
+  </data>
+  <data name="Word_TestSetPropertiesEditor_FrameTitle" xml:space="preserve">
+    <value>PBT - MS Word - Test set properties</value>
+  </data>
+  <data name="ChoosePrintFormControl_LabelIsRequired" xml:space="preserve">
+    <value>This field is required.</value>
+  </data>
+  <data name="ChoosePrintFormControl_LabelMaxLength" xml:space="preserve">
+    <value>The maximum length allowed is {0} characters.</value>
+  </data>
+  <data name="ChoosePrintFormControl_LabelMayNotContainFollowingCharacters" xml:space="preserve">
+    <value>This field may not contain any of the following characters: {0}</value>
+  </data>
+  <data name="ChoosePrintFormControl_TemplateIsRequired" xml:space="preserve">
+    <value>MS Word template is required.</value>
+  </data>
+  <data name="SelectResourceDialog_CannotSelectBecauseOfStatus" xml:space="preserve">
+    <value>Cannot use this resource, because of it's workflow status.</value>
+  </data>
+  <data name="SelectResourceEntityDialogBase_OkButton_NoResourceSelectedMessage" xml:space="preserve">
+    <value>There is no resource selected. Please select a resource and press 'OK'</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="add_icon_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-icon_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="remove16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\remove16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TestEditorPlugin_Description" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="AssessmentTestViewType_Word" xml:space="preserve">
+    <value>Paper based test with MS Word</value>
+  </data>
+  <data name="CannotStartPublication" xml:space="preserve">
+    <value>Cannot start publication, because of the following errors:{0}{0}</value>
+  </data>
+  <data name="FieldMustBeFilled" xml:space="preserve">
+    <value>Field '{0}' must be filled.</value>
+  </data>
+  <data name="NoPrintFormsAvailable" xml:space="preserve">
+    <value>No printforms available</value>
+  </data>
+  <data name="PleaseSelectAPrintForm" xml:space="preserve">
+    <value>Select at least one printform</value>
+  </data>
+  <data name="PublishingDocumentToSpecifiedLocation" xml:space="preserve">
+    <value>Document is published to the specified location...</value>
+  </data>
+  <data name="PublishToWord" xml:space="preserve">
+    <value>Publish to MS Word</value>
+  </data>
+  <data name="SelectedFolderDoesNotExist" xml:space="preserve">
+    <value>The selected folder does not exist</value>
+  </data>
+  <data name="TestPluginError" xml:space="preserve">
+    <value>This test can not be viewed due to incompatible plugins.</value>
+  </data>
+  <data name="TestPluginErrorCaption" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="TestPreviewToWord" xml:space="preserve">
+    <value>MS Word</value>
+  </data>
+  <data name="Aspect" xml:space="preserve">
+    <value>Aspect:</value>
+  </data>
+  <data name="ChoiceAlternatives" xml:space="preserve">
+    <value>Inline choice alternatives</value>
+  </data>
+  <data name="ItemIsAdded" xml:space="preserve">
+    <value>Item {0} is added to the MS Word document</value>
+  </data>
+  <data name="MaxScore" xml:space="preserve">
+    <value>Max. score: {0}</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Code: {0}</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title: {0}</value>
+  </data>
+  <data name="AlternativesCount" xml:space="preserve">
+    <value>Alternative Count</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Bank</value>
+  </data>
+  <data name="BankId" xml:space="preserve">
+    <value>BankId</value>
+  </data>
+  <data name="CannotStartExport" xml:space="preserve">
+    <value>The report cannot be created {0}</value>
+  </data>
+  <data name="CES" xml:space="preserve">
+    <value>FACET</value>
+  </data>
+  <data name="Config" xml:space="preserve">
+    <value>Config: {0}</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="ControlTemplate" xml:space="preserve">
+    <value>ControlTemplate</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Created by</value>
+  </data>
+  <data name="CreatingScreenshot" xml:space="preserve">
+    <value>An image of item '{0}' is created.</value>
+  </data>
+  <data name="CreationDate" xml:space="preserve">
+    <value>Creation date</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Dimension" xml:space="preserve">
+    <value>Dimension: {0}</value>
+  </data>
+  <data name="DiskIsFull" xml:space="preserve">
+    <value>Insufficient storage, file is not saved.</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>An error occured: {0}</value>
+  </data>
+  <data name="ErrorsFoundInCollectionparameter" xml:space="preserve">
+    <value>Following errors are in found in a collectionparameter:</value>
+  </data>
+  <data name="ErrorWhileParsingTemplate" xml:space="preserve">
+    <value>Error while parsing template</value>
+  </data>
+  <data name="ExtraOptionTask" xml:space="preserve">
+    <value>Select the information that should be in the report.</value>
+  </data>
+  <data name="ExtraOptionTaskDescription" xml:space="preserve">
+    <value>Please select the information that should be in the report.</value>
+  </data>
+  <data name="FACET" xml:space="preserve">
+    <value>FACET</value>
+  </data>
+  <data name="FieldEmpty" xml:space="preserve">
+    <value>Please fill in field {0}</value>
+  </data>
+  <data name="FileExists" xml:space="preserve">
+    <value>File already exists</value>
+  </data>
+  <data name="FilenameNotValid" xml:space="preserve">
+    <value>Please enter a valid file name.</value>
+  </data>
+  <data name="FolderContainsInvalidCharacters" xml:space="preserve">
+    <value>Folder contains invalid character: "{0}"</value>
+  </data>
+  <data name="ImageCouldNotBeFound" xml:space="preserve">
+    <value>Image could not be found</value>
+  </data>
+  <data name="ImageReportDescriptionItem" xml:space="preserve">
+    <value>A screenshot will be created for all selected items.</value>
+  </data>
+  <data name="ImageReportDescriptionTest" xml:space="preserve">
+    <value>A screenshot will be created for all items in the selected test.</value>
+  </data>
+  <data name="ImageReportNameItem" xml:space="preserve">
+    <value>JPG: item screenshots</value>
+  </data>
+  <data name="ImageReportNameTest" xml:space="preserve">
+    <value>JPG: screenshots of items in test</value>
+  </data>
+  <data name="InvisibleParameterHasAChangedValue" xml:space="preserve">
+    <value>Invisible parameter "{0}" has a changed value.</value>
+  </data>
+  <data name="IsSystemItem" xml:space="preserve">
+    <value>IsSystemItem</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="ItemContent" xml:space="preserve">
+    <value>Item content</value>
+  </data>
+  <data name="ItemCustomProperties" xml:space="preserve">
+    <value>Item custom properties</value>
+  </data>
+  <data name="ItemDependencies" xml:space="preserve">
+    <value>Item dependencies</value>
+  </data>
+  <data name="ItemEditor_ValidateItem_ValidationErrors" xml:space="preserve">
+    <value>Cannot update changes of this item because of the following validation errors:{0}{0}</value>
+  </data>
+  <data name="ItemInformation" xml:space="preserve">
+    <value>Item information</value>
+  </data>
+  <data name="ItemLayoutTemplate" xml:space="preserve">
+    <value>ItemLayoutTemplate</value>
+  </data>
+  <data name="ItemLayoutTemplateUsedName" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="ItemPlusCode" xml:space="preserve">
+    <value>Item {0}</value>
+  </data>
+  <data name="ItemReferences" xml:space="preserve">
+    <value>Item references</value>
+  </data>
+  <data name="ItemKeysWithPreprocessorRules" xml:space="preserve">
+    <value>Item keys with preprocessor rules</value>
+  </data>
+  <data name="ItemSolution" xml:space="preserve">
+    <value>Item solution</value>
+  </data>
+  <data name="KeyValues" xml:space="preserve">
+    <value>Solution</value>
+  </data>
+  <data name="Label" xml:space="preserve">
+    <value>Label</value>
+  </data>
+  <data name="Media" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="ModifiedBy" xml:space="preserve">
+    <value>Modified By</value>
+  </data>
+  <data name="ModifiedByFullName" xml:space="preserve">
+    <value>Modified by</value>
+  </data>
+  <data name="ModifiedDate" xml:space="preserve">
+    <value>Modified date</value>
+  </data>
+  <data name="Name1" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="NameValue" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NoCommonTargetFound" xml:space="preserve">
+    <value>No common target found.</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Geen</value>
+  </data>
+  <data name="NoProgrammInstalled" xml:space="preserve">
+    <value>There is no program associated with the file.</value>
+  </data>
+  <data name="OrginalName" xml:space="preserve">
+    <value>Orginal name</value>
+  </data>
+  <data name="OrginalVersion" xml:space="preserve">
+    <value>Orginal version</value>
+  </data>
+  <data name="OriginalName" xml:space="preserve">
+    <value>Original Name</value>
+  </data>
+  <data name="OriginalVersion" xml:space="preserve">
+    <value>Original Version</value>
+  </data>
+  <data name="OverviewGridImage" xml:space="preserve">
+    <value>Target: "{0}"
+Location: "{1}"</value>
+  </data>
+  <data name="OverviewGridToWord" xml:space="preserve">
+    <value>Report: {1}.{0}{0} Location: {2}.{0}{0}Selected information blocks:{0}{3}{0}{0}Item on new page: {4}{0}Landscape page orientation: {5}</value>
+  </data>
+  <data name="PackagedImageReportDescriptionItem" xml:space="preserve">
+    <value>An archive will be created with screenshots for all selected items.</value>
+  </data>
+  <data name="PackagedImageReportDescriptionTest" xml:space="preserve">
+    <value>An archive will be created with screenshots for all selected tests</value>
+  </data>
+  <data name="PackagedImageReportNameItem" xml:space="preserve">
+    <value>An archive will be created with screenshots for all selected items.</value>
+  </data>
+  <data name="PackagedImageReportNameTest" xml:space="preserve">
+    <value>An archive will be created with screenshots for all selected tests</value>
+  </data>
+  <data name="PathOrFilenameNotValid" xml:space="preserve">
+    <value>Please enter a valid directory and/or file name.</value>
+  </data>
+  <data name="PleaseSelectAnExistingPath" xml:space="preserve">
+    <value>Please select an existing path.</value>
+  </data>
+  <data name="PleaseSelectAtLeastOneInformationBlock" xml:space="preserve">
+    <value>Please select a least one information block.</value>
+  </data>
+  <data name="PleaseSelectAtLeatOneInfomationBlock" xml:space="preserve">
+    <value>Selecteer tenminste één informatie blok.</value>
+  </data>
+  <data name="Plugin" xml:space="preserve">
+    <value>Plugin</value>
+  </data>
+  <data name="PreprocessingRule" xml:space="preserve">
+    <value>Preprocessing rule</value>
+  </data>
+  <data name="ProcessingItem" xml:space="preserve">
+    <value>Processing item {0}</value>
+  </data>
+  <data name="ProgressMessage" xml:space="preserve">
+    <value>Searching for columns for item {0}</value>
+  </data>
+  <data name="RawScore" xml:space="preserve">
+    <value>Raw score</value>
+  </data>
+  <data name="ReportDescriptionItem" xml:space="preserve">
+    <value>All selected items in MS Word. You can select which information should be in the MS Word document.</value>
+  </data>
+  <data name="ReportDescriptionTest" xml:space="preserve">
+    <value>All items of a test in MS Word. You can select which information should be in the MS Word document.</value>
+  </data>
+  <data name="ReportNameItem" xml:space="preserve">
+    <value>MS Word: items including (custom) properties</value>
+  </data>
+  <data name="ReportNameTest" xml:space="preserve">
+    <value>MS Word: items in test (including (custom) properties)</value>
+  </data>
+  <data name="ResourceId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="ResponseCount" xml:space="preserve">
+    <value>Response count</value>
+  </data>
+  <data name="SelectATarget" xml:space="preserve">
+    <value>Select a target</value>
+  </data>
+  <data name="SelectedAnalysesFiles" xml:space="preserve">
+    <value>Analyses files: {0}</value>
+  </data>
+  <data name="SelectedTarget" xml:space="preserve">
+    <value>Target: {0}</value>
+  </data>
+  <data name="Selection" xml:space="preserve">
+    <value>Selection</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="SuccessfullyGenerated" xml:space="preserve">
+    <value>Report '{0}' is successfully generated.</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="TestPlayer" xml:space="preserve">
+    <value>Questify Player</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Theme: {0}</value>
+  </data>
+  <data name="Title1" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="ValidateParametersCollectionParameterWillShrink" xml:space="preserve">
+    <value>CollectionParameter "{0}": Collection will shrink from {1} to {2} items. Loss of data starts at the last item.</value>
+  </data>
+  <data name="ValidateParametersCollectionWillBeDeleted" xml:space="preserve">
+    <value>Collection "{0}" will be deleted</value>
+  </data>
+  <data name="ValidateParametersParameterHasADifferentType" xml:space="preserve">
+    <value>Parameter "{0}" has a different type in current and new itemtemplate. Current value will be deleted.</value>
+  </data>
+  <data name="ValidateParametersParameterWillBeDeleted" xml:space="preserve">
+    <value>Parameter "{0}" will be deleted.</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="WarningsFoundInCollectionparameter" xml:space="preserve">
+    <value>Following warnings are in found in a collectionparameter:</value>
+  </data>
+  <data name="WithoutNavigationbar" xml:space="preserve">
+    <value>without navigationbar</value>
+  </data>
+  <data name="Word" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="WouldYouLikeToOpen" xml:space="preserve">
+    <value>Would you like to open the file?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Default.docx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PleaseEnterACompleteAndValidPath" xml:space="preserve">
+    <value>Please enter a complete and valid path.</value>
+  </data>
+  <data name="Publication" xml:space="preserve">
+    <value>Publication</value>
+  </data>
+  <data name="PublicationLocationText" xml:space="preserve">
+    <value>Location of {0}:</value>
+  </data>
+  <data name="FileAlreadyExist" xml:space="preserve">
+    <value>The file already exists on the specified location.</value>
+  </data>
+  <data name="PleaseEnterAValidExportFilename" xml:space="preserve">
+    <value>Please enter a valid export file name.</value>
+  </data>
+  <data name="TheFilenameCannotContainIllegalCharacters" xml:space="preserve">
+    <value>The file name cannot contain illegal characters</value>
+  </data>
+  <data name="PublicationOptions" xml:space="preserve">
+    <value>Choose publication options</value>
+  </data>
+  <data name="PublicationFolder" xml:space="preserve">
+    <value>Publication folder</value>
+  </data>
+  <data name="SpecifyPackageName" xml:space="preserve">
+    <value>Specify package name</value>
+  </data>
+  <data name="Formula" xml:space="preserve">
+    <value>Formula</value>
+  </data>
+  <data name="NotApplicable" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+</root>

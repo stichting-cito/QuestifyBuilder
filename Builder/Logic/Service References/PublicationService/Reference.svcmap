@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cdf3c83d-6948-4f67-a59c-09d8a3895561" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/Questify.Builder.Services.PublicationService/Publication/PublicationService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PublicationService7.xsd" MetadataType="Schema" ID="57573f83-d257-4636-b444-007310824f68" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/Publication/PublicationService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PublicationService1.disco" MetadataType="Disco" ID="ad2269a6-4025-4a7f-a637-86c81d1a09d3" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/Publication/PublicationService.svc?disco" />
+    <MetadataFile FileName="PublicationService73.xsd" MetadataType="Schema" ID="ec1ac54a-a0b8-4c25-b037-0240b28e9ca5" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/Publication/PublicationService.svc?xsd=xsd4" />
+    <MetadataFile FileName="PublicationService1.wsdl" MetadataType="Wsdl" ID="7750b7ed-efbc-45cf-8ef6-6c2e99f4309d" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/Publication/PublicationService.svc?wsdl" />
+    <MetadataFile FileName="PublicationService74.xsd" MetadataType="Schema" ID="c5ffd28c-3aec-4ea4-81f8-39a1096c5401" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/Publication/PublicationService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PublicationService75.xsd" MetadataType="Schema" ID="1234a8d3-cff5-48d1-ad3c-94e801217245" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/Publication/PublicationService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PublicationService76.xsd" MetadataType="Schema" ID="939dce12-92b3-40fd-a754-cd93c0f8cce5" SourceId="1" SourceUrl="http://localhost/Questify.Builder.Services.PublicationService/Publication/PublicationService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

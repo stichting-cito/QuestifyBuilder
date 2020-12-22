@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="a_tale_of_two_cities" xml:space="preserve">
+    <value>&lt;p class="UserSRTitelGroot"&gt;A Tale of Two Cities, by Charles Dickens&lt;/p&gt;
+    &lt;p class="UserSRTitelKlein"&gt;1 The Period&lt;/p&gt;
+    &lt;p&gt;It was the best of times, it was the worst of times, it was the age of wisdom,&lt;br /&gt;it was the age of foolishness, it was the epoch of belief, it was the&lt;br /&gt;epoch of incredulity, it was the season of Light, it was the season of&lt;br /&gt;Darkness, it was the spring of hope, it was the winter of despair, we had&lt;br /&gt;everything before us, we had nothing before us, we were all going direct&lt;br /&gt;to Heaven, we were all going direct the other way—in short, the period&lt;br /&gt;was so far like the present period, that some of its noisiest authorities insisted&lt;br /&gt;on its being received, for good or for evil, in the superlative degree&lt;br /&gt;of comparison only.&lt;br /&gt;There was a king with a large jaw and a queen with a plain face, on the&lt;br /&gt;throne of England; there were a king with a large jaw and a queen with a&lt;br /&gt;fair face, on the throne of France. In both countries it was clearer than&lt;br /&gt;crystal to the lords of the State preserves of loaves and fishes, that things&lt;br /&gt;in general were settled for ever.&lt;br /&gt;It was the year of Our Lord one thousand seven hundred and seventyfive.&lt;br /&gt;Spiritual revelations were conceded to England at that favoured&lt;br /&gt;period, as at this. Mrs. Southcott had recently attained her five-andtwentieth&lt;br /&gt;blessed birthday, of whom a prophetic private in the Life&lt;br /&gt;Guards had heralded the sublime appearance by announcing that arrangements&lt;br /&gt;were made for the swallowing up of London and Westminster.&lt;br /&gt;Even the Cock-lane ghost had been laid only a round dozen of&lt;br /&gt;years, after rapping out its messages, as the spirits of this very year last&lt;br /&gt;past (supernaturally deficient in originality) rapped out theirs. Mere&lt;br /&gt;messages in the earthly order of events had lately come to the English&lt;br /&gt;Crown and People, from a congress of British subjects in America:&lt;br /&gt;which, strange to relate, have proved more important to the human race&lt;br /&gt;than any communications yet received through any of the chickens of the&lt;br /&gt;Cock-lane brood. France, less favoured on the whole as to matters spiritual&lt;br /&gt;than her sister of the shield and trident, rolled with exceeding&lt;br /&gt;smoothness down hill, making paper money and spending it. Under the&lt;/p&gt;
+    &lt;p&gt;guidance of her Christian pastors, she entertained herself, besides, with&lt;br /&gt;such humane achievements as sentencing a youth to have his hands cut&lt;br /&gt;off, his tongue torn out with pincers, and his body burned alive, because&lt;br /&gt;he had not kneeled down in the rain to do honour to a dirty procession&lt;br /&gt;of monks which passed within his view, at a distance of some fifty or&lt;br /&gt;sixty yards. It is likely enough that, rooted in the woods of France and&lt;br /&gt;Norway, there were growing trees, when that sufferer was put to death,&lt;br /&gt;already marked by the Woodman, Fate, to come down and be sawn into&lt;br /&gt;boards, to make a certain movable framework with a sack and a knife in&lt;br /&gt;it, terrible in history. It is likely enough that in the rough outhouses of&lt;br /&gt;some tillers of the heavy lands adjacent to Paris, there were sheltered&lt;br /&gt;from the weather that very day, rude carts, bespattered with rustic mire,&lt;br /&gt;snuffed about by pigs, and roosted in by poultry, which the Farmer,&lt;br /&gt;Death, had already set apart to be his tumbrils of the Revolution. But that&lt;br /&gt;Woodman and that Farmer, though they work unceasingly, work silently,&lt;br /&gt;and no one heard them as they went about with muffled tread:&lt;br /&gt;the rather, forasmuch as to entertain any suspicion that they were awake,&lt;br /&gt;was to be atheistical and traitorous.&lt;br /&gt;In England, there was scarcely an amount of order and protection to&lt;br /&gt;justify much national boasting. Daring burglaries by armed men, and&lt;br /&gt;highway robberies, took place in the capital itself every night; families&lt;br /&gt;were publicly cautioned not to go out of town without removing their&lt;br /&gt;furniture to upholsterers’ warehouses for security; the highwayman in&lt;br /&gt;the dark was a City tradesman in the light, and, being recognised and&lt;br /&gt;challenged by his fellow-tradesman whom he stopped in his character of&lt;br /&gt;“the Captain,” gallantly shot him through the head and rode away; the&lt;br /&gt;mall was waylaid by seven robbers, and the guard shot three dead, and&lt;br /&gt;then got shot dead himself by the other four, “in consequence of the failure&lt;br /&gt;of his ammunition” after which the mall was robbed in peace; that&lt;br /&gt;magnificent potentate, the Lord Mayor of London, was made to stand&lt;br /&gt;and deliver on Turnham Green, by one highwayman, who despoiled the&lt;br /&gt;illustrious creature in sight of all his retinue; prisoners in London gaols&lt;br /&gt;fought battles with their turnkeys, and the majesty of the law fired blunderbusses&lt;br /&gt;in among them, loaded with rounds of shot and ball; thieves&lt;br /&gt;snipped off diamond crosses from the necks of noble lords at Court&lt;br /&gt;drawing-rooms; musketeers went into St. Giles’s, to search for contraband&lt;br /&gt;goods, and the mob fired on the musketeers, and the musketeers&lt;br /&gt;fired on the mob, and nobody thought any of these occurrences much&lt;br /&gt;out of the common way. In the midst of them, the hangman, ever busy&lt;br /&gt;and ever worse than useless, was in constant requisition; now, stringing&lt;/p&gt;
+    &lt;p&gt;up long rows of miscellaneous criminals; now, hanging a housebreaker&lt;br /&gt;on Saturday who had been taken on Tuesday; now, burning people in&lt;br /&gt;the hand at Newgate by the dozen, and now burning pamphlets at the&lt;br /&gt;door of Westminster Hall; to-day, taking the life of an atrocious murderer,&lt;br /&gt;and to-morrow of a wretched pilferer who had robbed a farmer’s boy&lt;br /&gt;of sixpence.&lt;br /&gt;All these things, and a thousand like them, came to pass in and close&lt;br /&gt;upon the dear old year one thousand seven hundred and seventy-five.&lt;br /&gt;Environed by them, while the Woodman and the Farmer worked unheeded,&lt;br /&gt;those two of the large jaws, and those other two of the plain and&lt;br /&gt;the fair faces, trod with stir enough, and carried their divine rights with a&lt;br /&gt;high hand. Thus did the year one thousand seven hundred and seventyfive&lt;br /&gt;conduct their Greatnesses, and myriads of small creatures—the&lt;br /&gt;creatures of this chronicle among the rest—along the roads that lay before&lt;br /&gt;them.&lt;/p&gt;</value>
+  </data>
+  <data name="DefaultStyleSheet" xml:space="preserve">
+    <value>html,body {
+	padding: 0; 
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	font-family: Verdana;
+	font-size: 13px;
+	cursor: default;
+}
+
+table, td {
+	font-family: Verdana;
+	font-size: 13px;
+}
+
+#content {
+	margin-top: 25px;
+	margin-left: 25px;
+	margin-right: 25px;
+	table-layout: fixed;
+}
+
+#left {
+	width: 50%;
+	margin: 0px;
+	vertical-align: top;
+}
+
+#right {
+	width: 50%;
+	margin: 0px;
+	vertical-align: top;
+}
+
+#body {
+	margin: 0px;
+	margin-bottom: 20px;
+}
+
+#question {
+	margin: 0px;
+	margin-bottom: 20px;
+}
+
+td.mcRadioButtonCell {
+	vertical-align: top;
+	padding:0;			
+}
+
+td.mcCell {
+	vertical-align: top;				
+}
+
+td.mcLabelCell{
+	vertical-align: top;
+	padding-top: 2px;
+}
+
+td.mcRadioButtonCellHC {
+	text-align: center;
+	vertical-align: bottom;
+}
+
+td.mcCellHC {
+	text-align: center;
+	vertical-align: bottom;
+}
+
+td.mcLabelCellHC {
+	text-align: center;
+	vertical-align: top;
+}
+
+.alternativeLabel { 
+	cursor: hand; 
+}
+
+img.mml {
+	vertical-align: middle;
+}
+
+.UserSRVet {
+	font-weight: bold;
+}
+
+.UserSROnderstreept {
+	text-decoration: underline;
+}
+
+.UserSRSchuin {
+	font-style: italic;
+}
+
+.UserSRVetSchuin {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.UserSRMarker {
+	background-color: yellow;
+}
+
+.UserSRTitelKlein {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.UserSRTitelGroot {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+
+.UserSRGrijs {
+	color: grey;
+}
+
+.UserSRDoorstrepen {
+	text-decoration: line-through;
+}
+
+.UserSRCourier {
+	font-family: Courier New, Courier;
+	font-size: 15px;
+}
+
+.UserSRGroep {
+	white-space: nowrap;
+}</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="transparentPix" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transparentPix.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

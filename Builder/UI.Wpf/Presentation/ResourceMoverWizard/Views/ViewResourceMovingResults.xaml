@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.ResourceMoverWizard.Views.ViewResourceMovingResults"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+             xmlns:valueConverters="clr-namespace:Questify.Builder.UI.Wpf.Presentation.ValueConverters"
+             meffed:ViewModelLocator.ViewModel="ResourceMoverWizard.ViewResourceMovingResults"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <valueConverters:EntityTypeToFriendlyNameConverter x:Key="FriendlyEntityName"/>
+        
+            <Style x:Key="DataGridDemoRowStyle" TargetType="{x:Type DataGridRow}">
+                <Style.Triggers>
+                    <Trigger Property="AlternationIndex" Value="2" >
+                        <Setter Property="Background" Value="Blue" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid>
+        <DataGrid x:Name="MovingValidationResults" 
+                  ItemsSource="{Binding MovingResult.DataValue.Details}"
+                  AutoGenerateColumns="False"
+                  AlternationCount="2"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{StaticResource ResourceMoverWizard.ViewResourceMovingResults.ColHdrSourceBank}" Binding="{Binding SourceBankName}" />
+                <DataGridTextColumn Header="{StaticResource ResourceMoverWizard.ViewResourceMovingResults.ColHdrDestinationBank}" Binding="{Binding DestinationBankName}" />
+                <DataGridTextColumn Header="{StaticResource ResourceMoverWizard.ViewResourceMovingResults.ColHdrResourceName}" Binding="{Binding ResourceName}" />
+                <DataGridTextColumn Header="{StaticResource ResourceMoverWizard.ViewResourceMovingResults.ColHdrResourceTitle}" Binding="{Binding ResourceTitle}" />
+                <DataGridTextColumn Header="{StaticResource ResourceMoverWizard.ViewResourceMovingResults.ColHdrResourceType}" Binding="{Binding ResourceType, Converter={StaticResource FriendlyEntityName}}" />
+                <DataGridTextColumn Header="{StaticResource ResourceMoverWizard.ViewResourceMovingResults.ColHdrViaResource}" Binding="{Binding ViaResourceName}" />
+                <DataGridTextColumn Header="{StaticResource ResourceMoverWizard.ViewResourceMovingResults.ColHdrProblemDescription}" Binding="{Binding ProblemDescription}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,190 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls1="clr-namespace:Questify.Builder.UI.Wpf.Controls">
+
+	<Color x:Key="ForegroundNormalColor">#444444</Color>
+	<SolidColorBrush x:Key="ForegroundNormalBrush" Color="{StaticResource ForegroundNormalColor}" />
+	
+	<!--Block Grid Style-->
+
+	<Style x:Key="BlockGridCellTextBlockStyle" TargetType="{x:Type TextBlock}">
+		<Setter Property="Padding" Value="4,4,4,0" />
+	</Style>
+	<Style x:Key="BlockGridCellTextBoxEditStyle" TargetType="{x:Type TextBox}">
+		<Setter Property="Padding" Value="0,2,0,0" />
+	</Style>
+	
+	<Style x:Key="BlockGridCellStyle" TargetType="{x:Type controls1:BlockGridCell}">
+		<Setter Property="Background" Value="#FFFFFF"/>
+		<Setter Property="BorderBrush" Value="#EFEFEF"/>
+		<Setter Property="BorderThickness" Value="1,1,0,1" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type controls1:BlockGridCell}">
+					<Border Background="{TemplateBinding Background}" 
+					  BorderBrush="{TemplateBinding BorderBrush}"  
+					  BorderThickness="{TemplateBinding BorderThickness}" 
+					  SnapsToDevicePixels="True">
+						<ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+							<ContentPresenter.Resources>
+								<Style TargetType="{x:Type TextBlock}">
+									<Setter Property="Foreground" Value="Red" />
+								</Style>
+								<Style TargetType="{x:Type TextBox}">
+									<Setter Property="Foreground" Value="Red" />
+								</Style>
+								<Style TargetType="{x:Type Label}">
+									<Setter Property="Foreground" Value="Red" />
+								</Style>
+							</ContentPresenter.Resources>
+						</ContentPresenter>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<Trigger Property="IsSelected" Value="True">
+				<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+				<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+			</Trigger>
+			<Trigger Property="IsKeyboardFocusWithin" Value="True">
+				<Setter Property="BorderBrush" Value="#104F91" />
+				<Setter Property="BorderThickness" Value="1" />
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+	<Style TargetType="{x:Type controls1:BlockGridBlockRow}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type controls1:BlockGridBlockRow}">
+					<Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+						<StackPanel>
+							<ItemsPresenter Margin="0,5,0,5" />
+							<Separator />
+						</StackPanel>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="{x:Type controls1:BlockGridColumnHeader}">
+		<Setter Property="VerticalContentAlignment" Value="Top" />
+		<Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type controls1:BlockGridColumnHeader}">
+					<Border x:Name="columnHeaderBorder" BorderThickness="1,0,0,0" Padding="6">
+						<Border.BorderBrush>
+							<SolidColorBrush Color="#DBDBDB" />
+						</Border.BorderBrush>
+						<Border.Background>
+							<SolidColorBrush Color="#EEEEEE" />
+						</Border.Background>
+						<Grid>
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+											SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+											VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+											TextBlock.Foreground="{StaticResource ForegroundNormalBrush}">
+							</ContentPresenter>
+						</Grid>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="{x:Type controls1:BlockGridHeaderPresenter}">
+		<Setter Property="VerticalContentAlignment" Value="Top" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type controls1:BlockGridHeaderPresenter}">
+					<Grid>
+						<ItemsPresenter x:Name="headerItemsPresenter" Height="{TemplateBinding Height}"/>
+					</Grid>
+					<!-- Items presented are done by BlockGridCellsPanel -->
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="ItemsPanel">
+			<Setter.Value>
+				<ItemsPanelTemplate>
+					<controls1:BlockGridCellsPanel VerticalAlignment="Top" />
+				</ItemsPanelTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="{x:Type controls1:BlockGrid}">
+		<Setter Property="Background" Value="#FCFCFC" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type controls1:BlockGrid}">
+					<Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							Focusable="False">
+
+						<!--The control should be able to scoll.-->
+						<ScrollViewer x:Name="PART_ScrollViewer" Focusable="false">
+
+							<!-- Alter Scrollviewers appearance-->
+							<ScrollViewer.Template>
+								<ControlTemplate TargetType="{x:Type ScrollViewer}" >
+									<Grid >
+
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="0"  />
+											<ColumnDefinition Width="*" />
+											<ColumnDefinition Width="Auto" />
+										</Grid.ColumnDefinitions>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="Auto" />
+											<RowDefinition Height="*" />
+											<RowDefinition Height="Auto" />
+										</Grid.RowDefinitions>
+
+										<!--Header [Row 0 Column 1] -->
+										<controls1:BlockGridHeaderPresenter x:Name="PART_BlockGridHeaderPresenter" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" />
+
+										<!--Content [Row 1 Column 0 span 2] -->
+										<ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
+																CanContentScroll="{TemplateBinding CanContentScroll}" 
+																CanHorizontallyScroll="False" 
+																CanVerticallyScroll="False" 
+																ContentTemplate="{TemplateBinding ContentTemplate}" 
+																Content="{TemplateBinding Content}" 
+																Grid.Row="1" Grid.Column="1"
+																HorizontalAlignment="Left" 
+																/>
+
+										<!--Scroll bars-->
+										<ScrollBar x:Name="PART_VerticalScrollBar" Orientation="Vertical" ViewportSize="{TemplateBinding ViewportHeight}" Maximum="{TemplateBinding ScrollableHeight}"
+												   Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+												   Grid.Column="2" Grid.Row="1" />
+
+										<ScrollBar Grid.Column="1" Grid.Row="2" 
+													   Name="PART_HorizontalScrollBar"
+													   Orientation="Horizontal"
+													   Maximum="{TemplateBinding ScrollableWidth}"
+													   ViewportSize="{TemplateBinding ViewportWidth}"
+													   Value="{Binding Path=HorizontalOffset, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
+													   Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+									</Grid>
+								</ControlTemplate>
+							</ScrollViewer.Template>
+
+							<!--Display items -->
+							<ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+
+						</ScrollViewer>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

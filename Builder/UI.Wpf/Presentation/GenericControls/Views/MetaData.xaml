@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="Questify.Builder.UI.Wpf.Presentation.GenericControls.Views.MetaData"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:gl="clr-namespace:System.Globalization;assembly=mscorlib"
+             xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+             xmlns:valueConverters="clr-namespace:Questify.Builder.UI.Wpf.Presentation.ValueConverters"
+             meffed:ViewModelLocator.ViewModel="GenericControls.MetaDataVM" 
+             mc:Ignorable="d" 
+             d:DesignHeight="432" d:DesignWidth="930">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <valueConverters:StateEntityConverter x:Key="stateEntityConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <GroupBox Style="{StaticResource DefaultGroupBoxStyle}" Header="{StaticResource ResourcePropertyDialog.Tab.General.Header}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="{StaticResource GenericControls.Metadata.Name}" VerticalAlignment="Center" />
+            <TextBox IsEnabled="{Binding AllowNameEdit.DataValue}" Grid.Column="1" 
+                     Margin="5" Validation.ErrorTemplate="{StaticResource DefaultErrorTemplate}">
+                <TextBox.Text>
+                    <Binding Path="Name.DataValue" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True"/>
+                </TextBox.Text>
+            </TextBox>
+
+            <TextBlock Text="{StaticResource GenericControls.Metadata.Title}" Grid.Row="1" VerticalAlignment="Center"/>
+            <TextBox IsEnabled="{Binding AllowTitleEdit.DataValue}" Grid.Row="1" Grid.Column="1" Margin="5" Validation.ErrorTemplate="{StaticResource DefaultErrorTemplate}">
+                <TextBox.Text>
+                    <Binding Path="Title.DataValue" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True"/>
+                </TextBox.Text>
+            </TextBox>
+
+            <TextBlock Text="{StaticResource GenericControls.Metadata.Version}" VerticalAlignment="Center" Grid.Row="2"
+                       Visibility="{Binding IsVersionVisible.DataValue, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <TextBlock Text="{Binding ResourceProperties.DataValue.Version}" Grid.Row="2" Grid.Column="1" Margin="5" Visibility="{Binding IsVersionVisible.DataValue, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Button Grid.Row="2" Grid.Column="2" Command="{Binding OpenResourcePropertiesDialog}" Visibility="{Binding OpenResourcePropertyDialogButtonVisible.DataValue, Converter={StaticResource BooleanToVisibilityConverter}}" HorizontalAlignment="Right" Margin="3,3,3,3" Width="23" Height="23">
+                <Image Source="..\..\Resources\Images\Search.png" />
+            </Button>
+
+            <TextBlock Text="{StaticResource GenericControls.Metadata.ResourceType}" VerticalAlignment="Center" Grid.Row="3"/>
+            <TextBlock Text="{Binding ResourceProperties.DataValue.ResourceType}" Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="{StaticResource GenericControls.Metadata.State}" VerticalAlignment="Center" Grid.Row="4"  />
+			<ComboBox Margin="5" ItemsSource="{Binding States}" DisplayMemberPath="Title" VerticalAlignment="Center" SelectedItem="{Binding ResourceProperties.DataValue.State, TargetNullValue=0, Converter={StaticResource stateEntityConverter}}" Grid.Row="4" Grid.Column="1" />
+
+            <TextBlock Text="{StaticResource GenericControls.Metadata.CreatedBy}" Grid.Row="5" VerticalAlignment="Center" />
+            <TextBlock Text="{Binding ResourceProperties.DataValue.CreatedByFullName}" Grid.Row="5" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="{StaticResource GenericControls.Metadata.CreationDate}" Grid.Row="6" VerticalAlignment="Center" />
+            <TextBlock Text="{Binding ResourceProperties.DataValue.CreationDate, StringFormat='g', ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Grid.Row="6" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="{StaticResource GenericControls.Metadata.ModifiedBy}" Grid.Row="7"  VerticalAlignment="Center"/>
+            <TextBlock Text="{Binding ResourceProperties.DataValue.ModifiedByFullName}" Grid.Row="7" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="{StaticResource GenericControls.Metadata.ModifiedDate}" Grid.Row="8" VerticalAlignment="Center" />
+            <TextBlock Text="{Binding ResourceProperties.DataValue.ModifiedDate, StringFormat='g', ConverterCulture={x:Static gl:CultureInfo.CurrentCulture}}" Grid.Row="8" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="{StaticResource GenericControls.Metadata.CopyFromString}" Grid.Row="9" VerticalAlignment="Center" />
+            <TextBlock Text="{Binding ResourceProperties.DataValue.CopiedFromString}" Grid.Row="9" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="{StaticResource GenericControls.Metadata.Description}" Grid.Row="10" Margin="0 3" />
+            <TextBox Text="{Binding ResourceProperties.DataValue.Description, TargetNullValue='', UpdateSourceTrigger=PropertyChanged}" Grid.Row="10" Grid.Column="1"
+                     Margin="5" AcceptsReturn="True" VerticalAlignment="Stretch" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+        </Grid>
+    </GroupBox>
+</UserControl>

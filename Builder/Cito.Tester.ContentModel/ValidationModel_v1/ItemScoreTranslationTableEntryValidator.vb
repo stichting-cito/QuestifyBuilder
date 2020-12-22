@@ -1,0 +1,3 @@
+Public Class ItemScoreTranslationTableEntryValidator
+
+End Class

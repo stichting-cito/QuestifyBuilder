@@ -1,0 +1,85 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Questify.Builder.UI.Wpf.Controls">
+
+    <Style TargetType="{x:Type controls:BlockGrid}">
+        
+        <!--<Setter Property="BorderThickness" Value="4"/>
+        <Setter Property="BorderBrush"  Value="Black" />-->
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:BlockGrid}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Focusable="False">
+                        
+                        <!--The control should be able to scoll.-->
+                        <ScrollViewer x:Name="PART_ScrollViewer" Focusable="false">
+
+                            <!-- Alter Scrollviewers appearance-->
+                            <ScrollViewer.Template>
+                                <ControlTemplate TargetType="{x:Type ScrollViewer}" >
+                                    <Grid >
+                                        
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="20"  />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        
+                                        <!--Header [Row 0 Column 1] -->
+                                        <controls:BlockGridHeaderPresenter x:Name="PART_BlockGridHeaderPresenter" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" />
+                                        
+                                        <!--Content [Row 1 Column 0 span 2] -->
+                                        <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
+                                                                CanContentScroll="{TemplateBinding CanContentScroll}" 
+                                                                CanHorizontallyScroll="False" 
+                                                                CanVerticallyScroll="False" 
+                                                                ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                                                Content="{TemplateBinding Content}" 
+                                                                Grid.Row="1" Grid.Column="1"
+                                                                HorizontalAlignment="Left" 
+                                                                />
+                                        
+                                        <!--Scroll bars-->
+                                        <ScrollBar x:Name="PART_VerticalScrollBar" Orientation="Vertical" ViewportSize="{TemplateBinding ViewportHeight}" Maximum="{TemplateBinding ScrollableHeight}"
+                                                   Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                                   Grid.Column="2" Grid.Row="1" />
+
+                                        <ScrollBar Grid.Column="1" Grid.Row="2" 
+                                                       Name="PART_HorizontalScrollBar"
+                                                       Orientation="Horizontal"
+                                                       Maximum="{TemplateBinding ScrollableWidth}"
+                                                       ViewportSize="{TemplateBinding ViewportWidth}"
+                                                       Value="{Binding Path=HorizontalOffset, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
+                                                       Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </ScrollViewer.Template>
+                            
+                            <!--Display items -->
+                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            
+                        </ScrollViewer>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>            
+        </Setter>        
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel HorizontalAlignment="Left" x:Name="ScrollContentPresenter_Panel"/>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

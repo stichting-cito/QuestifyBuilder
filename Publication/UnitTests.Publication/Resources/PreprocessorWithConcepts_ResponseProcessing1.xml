@@ -1,0 +1,54 @@
+<responseProcessing xmlns="http://www.imsglobal.org/xsd/imsqti_v2p2">
+    <responseCondition>
+      <responseIf>
+        <stringMatch caseSensitive="false">
+          <customOperator definition="depcp:ToAscii">
+            <customOperator definition="depcp:Trim">
+              <variable identifier="RESPONSE" />
+            </customOperator>
+          </customOperator>
+          <baseValue baseType="string">test</baseValue>
+        </stringMatch>
+        <setOutcomeValue identifier="SCORE">
+          <sum>
+            <baseValue baseType="float">1</baseValue>
+            <variable identifier="SCORE" />
+          </sum>
+        </setOutcomeValue>
+      </responseIf>
+    </responseCondition>
+    <responseCondition>
+      <responseIf>
+        <gte>
+          <variable identifier="SCORE"/>
+          <baseValue baseType="float">1</baseValue>
+        </gte>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+      </responseIf>
+      <responseElse>
+        <setOutcomeValue identifier="SCORE">
+          <baseValue baseType="float">0</baseValue>
+        </setOutcomeValue>
+      </responseElse>
+    </responseCondition>
+    <responseCondition>
+      <responseIf>
+        <stringMatch caseSensitive="false">
+          <customOperator definition="depcp:ToAscii">
+            <customOperator definition="depcp:Trim">
+              <variable identifier="RESPONSE" />
+            </customOperator>
+          </customOperator>
+          <baseValue baseType="string">testing</baseValue>
+        </stringMatch>
+        <setOutcomeValue identifier="CONCEPTRESPONSE_CONCEPT1">
+          <baseValue baseType="float">1</baseValue>
+        </setOutcomeValue>
+		    <setOutcomeValue identifier="CONCEPTRESPONSE_CONCEPT2">
+			    <baseValue baseType="float">2</baseValue>
+		    </setOutcomeValue>
+      </responseIf>
+  </responseCondition>
+</responseProcessing>

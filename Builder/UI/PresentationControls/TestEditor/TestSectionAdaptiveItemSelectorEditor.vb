@@ -1,0 +1,3 @@
+Public Class TestSectionAdaptiveItemSelectorEditor
+
+End Class

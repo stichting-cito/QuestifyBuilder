@@ -1,0 +1,438 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="SolutionCleaner"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:ctc="clr-namespace:Cito.Tester.ContentModel;assembly=Cito.Tester.ContentModel"
+ xmlns:local="clr-namespace:Questify.Builder.Logic.ContentModel.workers.Flow"
+ xmlns:local1="clr-namespace:Questify.Builder.Logic.ContentModel.Scoring"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Solution" Type="InArgument(ctc:Solution)" />
+    <x:Property Name="ScoringParameters" Type="InArgument(scg:IEnumerable(ctc:ScoringParameter))" />
+  </x:Members>
+  <sap2010:WorkflowViewState.IdRef>SolutionCleaner_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>Cito.Tester.ContentModel</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>Questify.Builder.Logic.ContentModel.Scoring</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>Cito.Tester.ContentModel</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Questify.Builder.Logic</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Flowchart sap2010:WorkflowViewState.IdRef="Flowchart_1">
+      <Flowchart.StartNode>
+        <FlowDecision x:Name="__ReferenceID0" Condition="[Solution.AutoScoring = False]" DisplayName="Solution has auto scoring set off" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+          <FlowDecision.True>
+            <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+              <local:RemoveFindings x:TypeArguments="ctc:KeyFinding" DisplayName="Remove Keyfindings" Findings="[Solution.Findings]" sap2010:WorkflowViewState.IdRef="RemoveFindings`1_1" />
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_2">
+                  <local:RemoveFindings x:TypeArguments="ctc:ConceptFinding" DisplayName="Remove Conceptfindings" Findings="[Solution.ConceptFindings]" sap2010:WorkflowViewState.IdRef="RemoveFindings`1_2" />
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowDecision.True>
+          <FlowDecision.False>
+            <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_4">
+              <local:RemoveAutoScoringOffAspectRefs sap2010:WorkflowViewState.IdRef="RemoveAutoScoringOffAspectRefs_1" Solution="[Solution]" />
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_25">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="scg:Dictionary(x:String, ctc:ScoringParameter)" Name="FactId_To_ScoringParameter" />
+                    </Sequence.Variables>
+                    <local:GetFactsIdsPerScoringParameter sap2010:WorkflowViewState.IdRef="GetFactsIdsPerScoringParameter_2" Result="[FactId_To_ScoringParameter]" ScoringParameters="[ScoringParameters]" />
+                    <Parallel sap2010:WorkflowViewState.IdRef="Parallel_2">
+                      <Sequence DisplayName="Keyfinding Sequence" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="scg:IEnumerable(local1:CombinedScoringMapKey)" Name="scoringMap" />
+                        </Sequence.Variables>
+                        <local:RemoveUnusedFindings x:TypeArguments="ctc:KeyFinding" DisplayName="Remove Unused KeyFindings" Findings="[Solution.Findings]" sap2010:WorkflowViewState.IdRef="RemoveUnusedFindings`1_3" ScoringParameters="[ScoringParameters]" />
+                        <ForEach x:TypeArguments="ctc:KeyFinding" DisplayName="ForEach&lt;KeyFinding&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_13" Values="[Solution.Findings]">
+                          <ActivityAction x:TypeArguments="ctc:KeyFinding">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="ctc:KeyFinding" Name="finding" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Finding Sequence" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                              <ForEach x:TypeArguments="ctc:BaseFact" DisplayName="ForEach&lt;BaseFact&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[finding.Facts]">
+                                <ActivityAction x:TypeArguments="ctc:BaseFact">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="ctc:BaseFact" Name="fact" />
+                                  </ActivityAction.Argument>
+                                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                    <local:RemoveOutOfBoundsValues BaseFact="[fact]" FactIdsToScoringParameter="[FactId_To_ScoringParameter]" sap2010:WorkflowViewState.IdRef="RemoveOutOfBoundsValues_5" />
+                                    <local:RemoveEmptyValues sap2010:WorkflowViewState.IdRef="RemoveEmptyValues_5" KeyValues="[fact.Values]" />
+                                  </Sequence>
+                                </ActivityAction>
+                              </ForEach>
+                              <local:RemoveEmptyFacts Facts="[finding.Facts]" sap2010:WorkflowViewState.IdRef="RemoveEmptyFacts_5" />
+                              <Assign sap2010:WorkflowViewState.IdRef="Assign_3">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="scg:IEnumerable(local1:CombinedScoringMapKey)">[scoringMap]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="scg:IEnumerable(local1:CombinedScoringMapKey)">[New Questify.Builder.Logic.ContentModel.Scoring.ScoringMap(ScoringParameters, Solution).GetMap()]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ForEach x:TypeArguments="ctc:KeyFactSet" DisplayName="ForEach&lt;KeyFactSet&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_12" Values="[finding.KeyFactsets]">
+                                <ActivityAction x:TypeArguments="ctc:KeyFactSet">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="ctc:KeyFactSet" Name="factset" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Set Sequence" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                    <local:RemoveFactsOfWrongType BaseFacts="[factset.Facts]" FactIdsToScoringParameter="[FactId_To_ScoringParameter]" sap2010:WorkflowViewState.IdRef="RemoveFactsOfWrongType_5" />
+                                    <ForEach x:TypeArguments="ctc:BaseFact" DisplayName="ForEach&lt;BaseFact&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_11" Values="[factset.Facts]">
+                                      <ActivityAction x:TypeArguments="ctc:BaseFact">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="ctc:BaseFact" Name="fact" />
+                                        </ActivityAction.Argument>
+                                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                          <local:RemoveOutOfBoundsValues BaseFact="[fact]" FactIdsToScoringParameter="[FactId_To_ScoringParameter]" sap2010:WorkflowViewState.IdRef="RemoveOutOfBoundsValues_6" />
+                                          <local:RemoveEmptyValues sap2010:WorkflowViewState.IdRef="RemoveEmptyValues_6" KeyValues="[fact.Values]" />
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </ForEach>
+                                    <local:RemoveEmptyFacts Facts="[factset.Facts]" sap2010:WorkflowViewState.IdRef="RemoveEmptyFacts_6" />
+                                    <local:RemoveUnusedFacts BaseFacts="[factset.Facts]" FactIdsToScoringParameter="[FactId_To_ScoringParameter]" sap2010:WorkflowViewState.IdRef="RemoveUnusedFacts_5" />
+                                    <local:MoveSingleFactsFromFactSetsToFinding BaseFacts="[factset.Facts]" FactIdsToScoringParameter="[FactId_To_ScoringParameter]" FindingToMoveTo="[finding]" sap2010:WorkflowViewState.IdRef="MoveSingleFactsFromFactSetsToFinding_3" ScoringMap="[scoringMap]" />
+                                  </Sequence>
+                                </ActivityAction>
+                              </ForEach>
+                              <local:RemoveFactsOfWrongType BaseFacts="[finding.Facts]" FactIdsToScoringParameter="[FactId_To_ScoringParameter]" sap2010:WorkflowViewState.IdRef="RemoveFactsOfWrongType_6" />
+                              <local:RemoveEmptyKeyFactSets x:TypeArguments="ctc:KeyFinding" Finding="[finding]" sap2010:WorkflowViewState.IdRef="RemoveEmptyKeyFactSets`1_3" />
+                              <local:RemoveUnusedFacts BaseFacts="[finding.Facts]" FactIdsToScoringParameter="[FactId_To_ScoringParameter]" sap2010:WorkflowViewState.IdRef="RemoveUnusedFacts_6" />
+                            </Sequence>
+                          </ActivityAction>
+                        </ForEach>
+                      </Sequence>
+                      <Sequence DisplayName="Conceptfinding Sequence" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="scg:IEnumerable(local1:CombinedScoringMapKey)" Name="scoringMap" />
+                        </Sequence.Variables>
+                        <local:RemoveUnusedFindings x:TypeArguments="ctc:ConceptFinding" DisplayName="Remove Unused ConceptFindings" Findings="[Solution.ConceptFindings]" sap2010:WorkflowViewState.IdRef="RemoveUnusedFindings`1_4" ScoringParameters="[ScoringParameters]" />
+                        <ForEach x:TypeArguments="ctc:ConceptFinding" DisplayName="ForEach&lt;ConceptFinding&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_17" Values="[Solution.ConceptFindings]">
+                          <ActivityAction x:TypeArguments="ctc:ConceptFinding">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="ctc:ConceptFinding" Name="finding" />
+                            </ActivityAction.Argument>
+                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_23">
+                              <Sequence DisplayName="Finding Sequence" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                <ForEach x:TypeArguments="ctc:BaseFact" DisplayName="ForEach&lt;BaseFact&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_14" Values="[finding.Facts]">
+                                  <ActivityAction x:TypeArguments="ctc:BaseFact">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="ctc:BaseFact" Name="fact" />
+                                    </ActivityAction.Argument>
+                                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                      <local:RemoveOutOfBoundsValues BaseFact="[fact]" FactIdsToScoringParameter="[FactId_To_ScoringParameter]" sap2010:WorkflowViewState.IdRef="RemoveOutOfBoundsValues_7" />
+                                      <local:RemoveEmptyValues sap2010:WorkflowViewState.IdRef="RemoveEmptyValues_7" KeyValues="[fact.Values]" />
+                                    </Sequence>
+                                  </ActivityAction>
+                                </ForEach>
+                                <local:RemoveEmptyFacts Facts="[finding.Facts]" sap2010:WorkflowViewState.IdRef="RemoveEmptyFacts_7" />
+                                <Assign sap2010:WorkflowViewState.IdRef="Assign_4">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="scg:IEnumerable(local1:CombinedScoringMapKey)">[scoringMap]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="scg:IEnumerable(local1:CombinedScoringMapKey)">[New Questify.Builder.Logic.ContentModel.Scoring.ConceptScoringMap(ScoringParameters, Solution).GetMap()]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ForEach x:TypeArguments="ctc:KeyFactSet" sap2010:WorkflowViewState.IdRef="ForEach`1_16" Values="[finding.KeyFactsets]">
+                                  <ActivityAction x:TypeArguments="ctc:KeyFactSet">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="ctc:KeyFactSet" Name="factset" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Set Sequence" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                      <local:RemoveFactsOfWrongType BaseFacts="[factset.Facts]" FactIdsToScoringParameter="[FactId_To_ScoringParameter]" sap2010:WorkflowViewState.IdRef="RemoveFactsOfWrongType_7" />
+                                      <ForEach x:TypeArguments="ctc:BaseFact" DisplayName="ForEach&lt;BaseFact&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_15" Values="[factset.Facts]">
+                                        <ActivityAction x:TypeArguments="ctc:BaseFact">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="ctc:BaseFact" Name="fact" />
+                                          </ActivityAction.Argument>
+                                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                            <local:RemoveOutOfBoundsValues BaseFact="[fact]" FactIdsToScoringParameter="[FactId_To_ScoringParameter]" sap2010:WorkflowViewState.IdRef="RemoveOutOfBoundsValues_8" />
+                                            <local:RemoveEmptyValues sap2010:WorkflowViewState.IdRef="RemoveEmptyValues_8" KeyValues="[fact.Values]" />
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ForEach>
+                                      <local:RemoveEmptyFacts Facts="[factset.Facts]" sap2010:WorkflowViewState.IdRef="RemoveEmptyFacts_8" />
+                                      <local:RemoveUnusedFacts BaseFacts="[factset.Facts]" FactIdsToScoringParameter="[FactId_To_ScoringParameter]" sap2010:WorkflowViewState.IdRef="RemoveUnusedFacts_7" />
+                                      <local:MoveSingleFactsFromFactSetsToFinding BaseFacts="[factset.Facts]" FactIdsToScoringParameter="[FactId_To_ScoringParameter]" FindingToMoveTo="[finding]" sap2010:WorkflowViewState.IdRef="MoveSingleFactsFromFactSetsToFinding_4" ScoringMap="[scoringMap]" />
+                                    </Sequence>
+                                  </ActivityAction>
+                                </ForEach>
+                                <local:RemoveFactsOfWrongType BaseFacts="[finding.Facts]" FactIdsToScoringParameter="[FactId_To_ScoringParameter]" sap2010:WorkflowViewState.IdRef="RemoveFactsOfWrongType_8" />
+                                <local:RemoveEmptyKeyFactSets x:TypeArguments="ctc:KeyFinding" Finding="[finding]" sap2010:WorkflowViewState.IdRef="RemoveEmptyKeyFactSets`1_4" />
+                                <local:RemoveUnusedFacts BaseFacts="[finding.Facts]" FactIdsToScoringParameter="[FactId_To_ScoringParameter]" sap2010:WorkflowViewState.IdRef="RemoveUnusedFacts_8" />
+                              </Sequence>
+                              <local:RemoveFactsAlreadyInFactSet BaseFacts="[finding.Facts]" sap2010:WorkflowViewState.IdRef="RemoveFactsAlreadyInFactSet_2" ScoringParameters="[ScoringParameters]" Solution="[Solution]" />
+                            </Sequence>
+                          </ActivityAction>
+                        </ForEach>
+                        <local:ClearConceptIfRequired sap2010:WorkflowViewState.IdRef="ClearConceptIfRequired_2" ScoringParameters="[ScoringParameters]" Solution="[Solution]" />
+                      </Sequence>
+                    </Parallel>
+                  </Sequence>
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowDecision.False>
+        </FlowDecision>
+      </Flowchart.StartNode>
+      <x:Reference>__ReferenceID0</x:Reference>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+      <x:Reference>__ReferenceID3</x:Reference>
+      <x:Reference>__ReferenceID4</x:Reference>
+    </Flowchart>
+    <sads:DebugSymbol.Symbol>d1NDOlxnaXRcUXVlc3RpZnlCdWlsZGVyXEJ1aWxkZXJcTG9naWNcQ29udGVudE1vZGVsXHdvcmtlcnNcRmxvd1xTb2x1dGlvbkNsZWFuZXIueGFtbH4sA9QBDgIBAS0F0gERAgECLzkvWQMBnAE8DzyQAQMBmQE/E8YBHgIBBzIPMr0BAgEFNRM10AECAQM8gQE8jQEDAZoBQxVDzgEDAZUBRBXFASACAQgycDKFAQIBBjV8NZgBAgEEQ4UBQ6MBAwGXAUO2AUPLAQMBlgFFF4IBIgIBVIMBF8QBIgIBCUkZSYICAwGSAUoZgQEjAgFVhwEZhwGRAgIBUYgBGcIBIwIBDsMBGcMBsgECAQpJhwFJnAEDAZQBSeoBSf8BAwGTAUqhAUq2AQMBkQFPHX8oAgFWhwGPAYcBqwECAVOHAfkBhwGOAgIBUogBqQGIAcUBAgFQjQEdwAEoAgEPwwGEAcMBmQECAQ3DAaMBwwGvAQIBC1AfWikDAYYBWx9bhgEDAYQBXB9jKAMBgQFkH3spAgFifB98zwECAV59H32xAQIBW34ffsUBAgFXjgEfvgEqAgEVvwEfvwHeAQIBEFCjAVC0AQMBkAFVI1guAwGHAVs9W04DAYUBYW9h0QEDAYMBXnBefAMBggFkpwFkvgEDAYABaSN5LgIBY3xHfFgCAWF8c3yRAQIBX31mfXECAVx+Qn5TAgFafm5+jAECAViPASGZASsCAUWaASGaAYgBAgFDmwEhogEqAgFAowEhugErAgEhuwEhuwHRAQIBHbwBIbwBswECARq9ASG9AccBAgEWvwFMvwFdAgEUvwGwAb8BxQECARO/Ac8BvwHbAQIBEVYlVs0BAwGLAVclV5ABAwGIAWolatUBAgF8ayV1LwIBcXYldowBAgFvdyV3ywECAWt4JXinAgIBZI8BpQGPAbYBAgFPlAEllwEwAgFGmgE/mgFQAgFEoAFxoAHaAQIBQp0Bcp0BfgIBQaMBgQGjAZgBAgE/qAEluAEwAgEiuwFJuwFaAgEguwF1uwGTAQIBHrwBaLwBcwIBG70BRL0BVQIBGb0BcL0BjgECARdWTVZVAwGOAVZwVo4BAwGMAVd+V40BAwGJAWpNal4CAX9qeWqXAQIBfWupAWu6AQIBe3ApczQCAXJ2Q3ZUAgFwd0h3WQIBbnd0d5IBAgFseLYBeMEBAgFpeFt4bAIBaHiWAnikAgIBZ3iHAXilAQIBZZUBJ5UBzwECAUqWASeWAZIBAgFHqQEnqQHXAQIBO6oBJ7QBMQIBMLUBJ7UBjgECAS62ASe2Ac0BAgEqtwEntwGpAgIBI3ErcdMBAgF2citylgECAXOVAU+VAVcCAU2VAXKVAZABAgFLlgGAAZYBjwECAUipAU+pAWACAT6pAXupAZkBAgE8qgGrAaoBvAECATqvASuyATYCATG1AUW1AVYCAS+2AUq2AVsCAS22AXa2AZQBAgErtwG4AbcBwwECASi3AV23AW4CASe3AZgCtwGmAgIBJrcBiQG3AacBAgEkcVNxWwIBeXF2cZQBAgF3coQBcpMBAgF0sAEtsAHVAQIBNbEBLbEBmAECATKwAVWwAV0CATiwAXiwAZYBAgE2sQGGAbEBlQECATM=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="RemoveFindings`1_1" sap:VirtualizedContainerService.HintSize="200,22">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="RemoveFindings`1_2" sap:VirtualizedContainerService.HintSize="200,22">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">30,299</av:Point>
+            <av:Size x:Key="ShapeSize">200,22</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_3">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">30,239</av:Point>
+            <av:Size x:Key="ShapeSize">200,22</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">130,261 130,299</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="RemoveAutoScoringOffAspectRefs_1" sap:VirtualizedContainerService.HintSize="200,22">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="GetFactsIdsPerScoringParameter_2" sap:VirtualizedContainerService.HintSize="1002,22" />
+      <sap2010:ViewStateData Id="RemoveUnusedFindings`1_3" sap:VirtualizedContainerService.HintSize="391,22" />
+      <sap2010:ViewStateData Id="RemoveOutOfBoundsValues_5" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="RemoveEmptyValues_5" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_14" sap:VirtualizedContainerService.HintSize="222,208">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_10" sap:VirtualizedContainerService.HintSize="339,356" />
+      <sap2010:ViewStateData Id="RemoveEmptyFacts_5" sap:VirtualizedContainerService.HintSize="339,22" />
+      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="339,60" />
+      <sap2010:ViewStateData Id="RemoveFactsOfWrongType_5" sap:VirtualizedContainerService.HintSize="287,22" />
+      <sap2010:ViewStateData Id="RemoveOutOfBoundsValues_6" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="RemoveEmptyValues_6" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_15" sap:VirtualizedContainerService.HintSize="222,208">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_11" sap:VirtualizedContainerService.HintSize="287,356" />
+      <sap2010:ViewStateData Id="RemoveEmptyFacts_6" sap:VirtualizedContainerService.HintSize="287,22" />
+      <sap2010:ViewStateData Id="RemoveUnusedFacts_5" sap:VirtualizedContainerService.HintSize="287,22" />
+      <sap2010:ViewStateData Id="MoveSingleFactsFromFactSetsToFinding_3" sap:VirtualizedContainerService.HintSize="287,22" />
+      <sap2010:ViewStateData Id="Sequence_16" sap:VirtualizedContainerService.HintSize="309,728">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_12" sap:VirtualizedContainerService.HintSize="339,876" />
+      <sap2010:ViewStateData Id="RemoveFactsOfWrongType_6" sap:VirtualizedContainerService.HintSize="339,22" />
+      <sap2010:ViewStateData Id="RemoveEmptyKeyFactSets`1_3" sap:VirtualizedContainerService.HintSize="339,22" />
+      <sap2010:ViewStateData Id="RemoveUnusedFacts_6" sap:VirtualizedContainerService.HintSize="339,22" />
+      <sap2010:ViewStateData Id="Sequence_17" sap:VirtualizedContainerService.HintSize="361,1744">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_13" sap:VirtualizedContainerService.HintSize="391,1892" />
+      <sap2010:ViewStateData Id="Sequence_18" sap:VirtualizedContainerService.HintSize="413,2326">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="RemoveUnusedFindings`1_4" sap:VirtualizedContainerService.HintSize="413,22" />
+      <sap2010:ViewStateData Id="RemoveOutOfBoundsValues_7" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="RemoveEmptyValues_7" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_19" sap:VirtualizedContainerService.HintSize="222,208">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_14" sap:VirtualizedContainerService.HintSize="339,356" />
+      <sap2010:ViewStateData Id="RemoveEmptyFacts_7" sap:VirtualizedContainerService.HintSize="339,22" />
+      <sap2010:ViewStateData Id="Assign_4" sap:VirtualizedContainerService.HintSize="339,60" />
+      <sap2010:ViewStateData Id="RemoveFactsOfWrongType_7" sap:VirtualizedContainerService.HintSize="287,22" />
+      <sap2010:ViewStateData Id="RemoveOutOfBoundsValues_8" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="RemoveEmptyValues_8" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Sequence_20" sap:VirtualizedContainerService.HintSize="222,208">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_15" sap:VirtualizedContainerService.HintSize="287,356" />
+      <sap2010:ViewStateData Id="RemoveEmptyFacts_8" sap:VirtualizedContainerService.HintSize="287,22" />
+      <sap2010:ViewStateData Id="RemoveUnusedFacts_7" sap:VirtualizedContainerService.HintSize="287,22" />
+      <sap2010:ViewStateData Id="MoveSingleFactsFromFactSetsToFinding_4" sap:VirtualizedContainerService.HintSize="287,22" />
+      <sap2010:ViewStateData Id="Sequence_21" sap:VirtualizedContainerService.HintSize="309,728">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_16" sap:VirtualizedContainerService.HintSize="339,876" />
+      <sap2010:ViewStateData Id="RemoveFactsOfWrongType_8" sap:VirtualizedContainerService.HintSize="339,22" />
+      <sap2010:ViewStateData Id="RemoveEmptyKeyFactSets`1_4" sap:VirtualizedContainerService.HintSize="339,22" />
+      <sap2010:ViewStateData Id="RemoveUnusedFacts_8" sap:VirtualizedContainerService.HintSize="339,22" />
+      <sap2010:ViewStateData Id="Sequence_22" sap:VirtualizedContainerService.HintSize="361,1744">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="RemoveFactsAlreadyInFactSet_2" sap:VirtualizedContainerService.HintSize="361,22" />
+      <sap2010:ViewStateData Id="Sequence_23" sap:VirtualizedContainerService.HintSize="383,1930">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_17" sap:VirtualizedContainerService.HintSize="413,2078" />
+      <sap2010:ViewStateData Id="ClearConceptIfRequired_2" sap:VirtualizedContainerService.HintSize="413,22" />
+      <sap2010:ViewStateData Id="Sequence_24" sap:VirtualizedContainerService.HintSize="435,2326">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Parallel_2" sap:VirtualizedContainerService.HintSize="1002,2372" />
+      <sap2010:ViewStateData Id="Sequence_25" sap:VirtualizedContainerService.HintSize="200,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">380,294.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,51</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">380,239</av:Point>
+            <av:Size x:Key="ShapeSize">200,22</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">480,261 480,294.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowDecision_1" sap:VirtualizedContainerService.HintSize="160,87">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <av:Point x:Key="ShapeLocation">220,116.5</av:Point>
+            <av:Size x:Key="ShapeSize">160,87</av:Size>
+            <av:PointCollection x:Key="FalseConnector">380,160 480,160 480,239</av:PointCollection>
+            <av:PointCollection x:Key="TrueConnector">220,160 130,160 130,239</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Flowchart_1" sap:VirtualizedContainerService.HintSize="784,636">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+            <av:Size x:Key="ShapeSize">60,75</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,116.5</av:PointCollection>
+            <x:Double x:Key="Width">770</x:Double>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_13" sap:VirtualizedContainerService.HintSize="806,760">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SolutionCleaner_1" sap:VirtualizedContainerService.HintSize="846,840">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+            <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

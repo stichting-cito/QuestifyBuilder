@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <!-- COMMANDS -->
+    <s:String x:Key="GenericWizard.Next">Volgende &gt;</s:String>
+    <s:String x:Key="GenericWizard.Previous">&lt; Vorige</s:String>
+    <s:String x:Key="GenericWizard.Finish">Voltooien</s:String>
+    <s:String x:Key="GenericWizard.Cancel">Annuleren</s:String>
+    <s:String x:Key="GenericWizard.Close">Sluiten</s:String>
+</ResourceDictionary>
