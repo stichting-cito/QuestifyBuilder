@@ -247,6 +247,10 @@
     <Compile Include="ResponseAndScoringModel\Solution\KeyFindingCollection.vb" />
     <Compile Include="ResponseAndScoringModel\Solution\ConcreteScoring\AdminKeyFinding.vb" />
     <Compile Include="ResponseAndScoringModel\Solution\ConcreteScoring\AdminKeyFindingSet.vb" />
+    <Compile Include="ResponseAndScoringModel\Translation\AspectScoreTranslationTable.vb" />
+    <Compile Include="ResponseAndScoringModel\Translation\AspectScoreTranslationTableEntry.vb" />
+    <Compile Include="ResponseAndScoringModel\Translation\ScoreTranslationTable.vb" />
+    <Compile Include="ResponseAndScoringModel\Translation\ScoreTranslationTableEntry.vb" />
     <Compile Include="ResponseAndScoringModel\Values\Types\BooleanValue.vb" />
     <Compile Include="ResponseAndScoringModel\Values\TypedComparisonValue.vb" />
     <Compile Include="ResponseAndScoringModel\Values\Types\CatchAllValue.vb" />

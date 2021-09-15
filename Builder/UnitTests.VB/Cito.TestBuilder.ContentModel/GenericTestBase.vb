@@ -8,6 +8,10 @@ Public MustInherit Class GenericTestBase(Of T As CommonEntityBase)
 
     Private testContextInstance As TestContext
 
+    '''<summary>
+    '''Gets or sets the test context which provides
+    '''information about and functionality for the current test run.
+    '''</summary>
     Public Property TestContext() As TestContext
         Get
             Return testContextInstance
@@ -19,16 +23,20 @@ Public MustInherit Class GenericTestBase(Of T As CommonEntityBase)
 
     <TestMethod()> <TestCategory("ContentModel")>
     Public Sub WhenSettingFieldToWrongValue_IDataErrorInfo_HasError()
+        'Arrange
         Dim obj As T = CreateTheObject()
         Dim dataError As IDataErrorInfo = DirectCast(obj, IDataErrorInfo)
         Dim ex As Exception = Nothing
 
+        'Act
         Try
             SetErroneousParam(obj)
         Catch e As Exception
             ex = e
         End Try
 
+        'Assert
+        'Two possibilities, exception or IDataErrorInfo functionality.
         If ex IsNot Nothing Then
             Assert.IsTrue(TypeOf ex Is SD.LLBLGen.Pro.ORMSupportClasses.ORMEntityValidationException, "Exception that can be thrown in severe cases.")
         End If
@@ -36,13 +44,15 @@ Public MustInherit Class GenericTestBase(Of T As CommonEntityBase)
     End Sub
 
 
-    <TestMethod()> <TestCategory("ContentModel")>
+    <TestMethod()> <TestCategory("ContentModel")> 
     Public Sub ItemResourceIsSerialisable_UsedForMultiEditClone()
+        'Arrange
         Dim result As ItemResourceEntity = BinaryCloner.DeepClone(Of ItemResourceEntity)(New ItemResourceEntity())
         Using ms As New IO.MemoryStream
             SerializeHelper.XmlSerializeToStream(ms, New ItemResourceEntity)
             ms.Seek(0, IO.SeekOrigin.Begin)
-
+            
+            'Act
             Try
                 result = DirectCast(SerializeHelper.XmlDeserializeFromStream(ms, GetType(ItemResourceEntity)), ItemResourceEntity)
             Catch
@@ -55,10 +65,12 @@ Public MustInherit Class GenericTestBase(Of T As CommonEntityBase)
 
     <TestMethod()> <TestCategory("ContentModel")>
     Public Sub WhenSettingFieldToWrongValueAndThenToCorrectValue_IDataErrorInfo_HasNoError()
+        'Arrange
         Dim obj As T = CreateTheObject()
         Dim dataError As IDataErrorInfo = DirectCast(obj, IDataErrorInfo)
         Dim ex As Exception = Nothing
 
+        'Act
         Try
             SetErroneousParam(obj)
         Catch e As Exception
@@ -67,12 +79,14 @@ Public MustInherit Class GenericTestBase(Of T As CommonEntityBase)
         Try
             SetCorrectParam(obj)
         Catch e As Exception
-            Assert.Fail()
+            Assert.Fail() 'SHOULD NOT OCCUR!
         End Try
 
         obj.ValidateEntity()
 
 
+        'Assert
+        'Two possibilities, exception or IDataErrorInfo functionality.
         If ex IsNot Nothing Then
             Assert.IsTrue(TypeOf ex Is SD.LLBLGen.Pro.ORMSupportClasses.ORMEntityValidationException, "Exception that can be thrown in severe cases.")
         End If

@@ -18,37 +18,47 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddParameter(typeof(MultiChoiceScoringParameter))]
         public void OneScoringParameter_One_ScoreEditor()
         {
+            //Arrange
             var fakeItemEdtrVm = FakeItemEditorVM;
             var viewAwareStatus = ViewAwareStatus;
             var V2Score = new V2ScoringViewModel(viewAwareStatus);
             InjectStuff(V2Score);
+            //Act
             viewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             Assert.AreEqual(1, V2Score.KeyDefinitionScoreViewModels.Sum(k => k.ScoreEditorsViews.Count));
         }
-
+        
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring")]
         [AddParameter(typeof(MultiChoiceScoringParameter))]
         [AddParameter(typeof(MultiChoiceScoringParameter))]
         public void TwoScoringParameter_One_ScoreEditor()
         {
+            //Arrange
             var fakeItemEdtrVm = FakeItemEditorVM;
             var viewAwareStatus = ViewAwareStatus;
             var V2Score = new V2ScoringViewModel(viewAwareStatus);
             InjectStuff(V2Score);
+            //Act
             viewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             Assert.AreEqual(2, V2Score.KeyDefinitionScoreViewModels.Sum(k => k.ScoreEditorsViews.Count));
         }
 
+        //ConceptCreator
 
-        [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring")]
+        [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring")]        
         [AddConcept(ConceptCreator.SomeConcept, ConceptPartId = ConceptCreator.SomeConcept_Part1)]
         public void ItemHasConcepts_butNO_ScoreParam_NoScoreEditors()
         {
+            //Arrange
             var fakeItemEdtrVm = FakeItemEditorVM;
             var viewAwareStatus = ViewAwareStatus;
             var V2Score = new V2ScoringViewModel(viewAwareStatus);
             InjectStuff(V2Score);
+            //Act
             viewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             Assert.AreEqual(0, V2Score.KeyDefinitionScoreViewModels.Sum(k => k.ScoreEditorsViews.Count), "Contains a Conceptscore editor without a score parameter????");
         }
 
@@ -57,11 +67,14 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddConcept(ConceptCreator.SomeConcept, ConceptPartId = ConceptCreator.SomeConcept_Part1)]
         public void ItemHasConcepts_And_ScoreParam_HasOneScoreEditor_HasOneConceptScoreEditor()
         {
+            //Arrange
             var fakeItemEdtrVm = FakeItemEditorVM;
             var viewAwareStatus = ViewAwareStatus;
             var V2Score = new V2ScoringViewModel(viewAwareStatus);
             InjectStuff(V2Score);
+            //Act
             viewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             Assert.AreEqual(1, V2Score.KeyDefinitionScoreViewModels.Sum(k => k.ScoreEditorsViews.Count));
             Assert.AreEqual(1, V2Score.ConceptEditorsViews.Count);
         }
@@ -72,24 +85,31 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddConcept(ConceptCreator.SomeConcept, ConceptPartId = ConceptCreator.SomeConcept_Part1)]
         public void ItemHasConcepts_And_2ScoreParam_HasTwoScoreEditor_HasOneConceptScoreEditor()
         {
+            //Arrange
             var fakeItemEdtrVm = FakeItemEditorVM;
             var viewAwareStatus = ViewAwareStatus;
             var V2Score = new V2ScoringViewModel(viewAwareStatus);
             InjectStuff(V2Score);
+            //Act
             viewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             Assert.AreEqual(2, V2Score.KeyDefinitionScoreViewModels.Sum(k => k.ScoreEditorsViews.Count));
             Assert.AreEqual(1, V2Score.ConceptEditorsViews.Count);
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring")]
-        [AddParameter(typeof(StringScoringParameter), ControllerID = "ControllerID")]
+        [AddParameter(typeof(StringScoringParameter) , ControllerID = "ControllerID") ]
         public void StringScoringParamShouldBeAbleToExistAlone()
         {
+            //Arrange
             var fakeItemEdtrVm = FakeItemEditorVM;
             var viewAwareStatus = ViewAwareStatus;
             var V2Score = new V2ScoringViewModel(viewAwareStatus);
             InjectStuff(V2Score);
-            viewAwareStatus.SimulateViewIsLoadedEvent(); Assert.IsTrue(true);
+            //Act
+            viewAwareStatus.SimulateViewIsLoadedEvent(); //When written this test shows a StringScoringParameter seems te require a xhtml param.
+            //Assert
+            Assert.IsTrue(true);//this is a smoke test! It should just not crash
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring")]
@@ -97,11 +117,15 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddParameter(typeof(StringScoringParameter), ControllerID = "ControllerID")]
         public void EnrichingScoreingParametersShouldNotBeak_2()
         {
+            //Arrange
             var fakeItemEdtrVm = FakeItemEditorVM;
             var viewAwareStatus = ViewAwareStatus;
             var V2Score = new V2ScoringViewModel(viewAwareStatus);
             InjectStuff(V2Score);
-            viewAwareStatus.SimulateViewIsLoadedEvent(); Assert.IsTrue(true);
+            //Act
+            viewAwareStatus.SimulateViewIsLoadedEvent(); //When written this test shows a StringScoringParameter should be an inlineElement. This is not always the case!
+            //Assert
+            Assert.IsTrue(true);//this is a smoke test! It should just not crash
         }
 
 
@@ -113,7 +137,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
         internal override void SetFakeViewDataContext(ref IWorkSpaceAware fakeView, IItemEditorViewModel itemEditorViewModel)
         {
-            fakeView.WorkSpaceContextualData.DataValue = itemEditorViewModel;
+            //vanilla option,.. just the itemEditor ViewModel
+            fakeView.WorkSpaceContextualData.DataValue  = itemEditorViewModel;
         }
     }
 }

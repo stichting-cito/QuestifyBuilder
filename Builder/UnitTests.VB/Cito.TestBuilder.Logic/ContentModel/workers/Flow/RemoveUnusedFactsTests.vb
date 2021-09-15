@@ -10,13 +10,16 @@ Public Class RemoveUnusedFactsTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub TryToRemoveFactsFromSolutionWithoutAny()
+        'Arrange
         Dim solution = solution_ValidFacts.To(Of Solution)()
         Dim sp = New IntegerScoringParameter() With {.InlineId = "Some_InlineId", .FindingOverride = "TestFindingId"}.AddSubParameters("A", "B", "C", "D")
         Dim result = WorkflowInvoker.Invoke(New GetFactsIdsPerScoringParameter(), New Dictionary(Of String, Object) From {{"ScoringParameters", New ScoringParameter() {sp}}})
         Dim inputs As New Dictionary(Of String, Object) From {{"BaseFacts", solution.Findings(0).Facts}, {"FactIdsToScoringParameter", result}}
 
+        'Act
         WorkflowInvoker.Invoke(New RemoveUnusedFacts(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.AreEqual(4, solution.Findings(0).Facts.Count)
     End Sub
@@ -24,39 +27,48 @@ Public Class RemoveUnusedFactsTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub TryToRemoveFactsFromSolutionWithOnlyOnValidFacts_OtherPostfix()
+        'Arrange
         Dim solution = solution_NoValidFacts.To(Of Solution)()
         Dim sp = New IntegerScoringParameter() With {.InlineId = "Some_InlineId", .FindingOverride = "TestFindingId"}.AddSubParameters("A", "B", "C", "D")
         Dim result = WorkflowInvoker.Invoke(New GetFactsIdsPerScoringParameter(), New Dictionary(Of String, Object) From {{"ScoringParameters", New ScoringParameter() {sp}}})
         Dim inputs As New Dictionary(Of String, Object) From {{"BaseFacts", solution.Findings(0).Facts}, {"FactIdsToScoringParameter", result}}
 
+        'Act
         WorkflowInvoker.Invoke(New RemoveUnusedFacts(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.AreEqual(0, solution.Findings(0).Facts.Count)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub TryToRemoveFactsFromSolutionWithOnlyonValidFacts_OtherPrefixes()
+        'Arrange
         Dim solution = solution_NonValidFacts2.To(Of Solution)()
         Dim sp = New IntegerScoringParameter() With {.InlineId = "Some_InlineId", .FindingOverride = "TestFindingId"}.AddSubParameters("A", "B", "C", "D")
         Dim result = WorkflowInvoker.Invoke(New GetFactsIdsPerScoringParameter(), New Dictionary(Of String, Object) From {{"ScoringParameters", New ScoringParameter() {sp}}})
         Dim inputs As New Dictionary(Of String, Object) From {{"BaseFacts", solution.Findings(0).Facts}, {"FactIdsToScoringParameter", result}}
 
+        'Act
         WorkflowInvoker.Invoke(New RemoveUnusedFacts(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.AreEqual(0, solution.Findings(0).Facts.Count)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub RemoveFactsFromSolution_HalfOfFactsShouldBeRemoved()
+        'Arrange
         Dim solution = solution_HalfValidFacts.To(Of Solution)()
         Dim sp = New IntegerScoringParameter() With {.InlineId = "Some_InlineId", .FindingOverride = "TestFindingId"}.AddSubParameters("A", "B", "C", "D")
         Dim result = WorkflowInvoker.Invoke(New GetFactsIdsPerScoringParameter(), New Dictionary(Of String, Object) From {{"ScoringParameters", New ScoringParameter() {sp}}})
         Dim inputs As New Dictionary(Of String, Object) From {{"BaseFacts", solution.Findings(0).Facts}, {"FactIdsToScoringParameter", result}}
 
+        'Act
         WorkflowInvoker.Invoke(New RemoveUnusedFacts(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.AreEqual(2, solution.Findings(0).Facts.Count)
     End Sub
@@ -64,17 +76,21 @@ Public Class RemoveUnusedFactsTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub RemoveFactsFromSolution_FactsWithAnswerCategoryFactId()
+        'Arrange
         Dim solution = solution_WithAnswerCategoryFactId.To(Of Solution)()
         Dim sp = New IntegerScoringParameter() With {.InlineId = "Some_InlineId", .FindingOverride = "TestFindingId"}.AddSubParameters("A")
         Dim result = WorkflowInvoker.Invoke(New GetFactsIdsPerScoringParameter(), New Dictionary(Of String, Object) From {{"ScoringParameters", New ScoringParameter() {sp}}})
         Dim inputs As New Dictionary(Of String, Object) From {{"BaseFacts", solution.Findings(0).Facts}, {"FactIdsToScoringParameter", result}}
 
+        'Act
         WorkflowInvoker.Invoke(New RemoveUnusedFacts(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.AreEqual(2, solution.Findings(0).Facts.Count)
     End Sub
 
+#Region "Data"
     ReadOnly solution_ValidFacts As XElement = <solution>
                                                    <keyFindings>
                                                        <keyFinding id="TestFindingId" scoringMethod="Dichotomous">
@@ -127,5 +143,6 @@ Public Class RemoveUnusedFactsTests
                                                                      </keyFinding>
                                                                  </keyFindings>
                                                              </solution>
+#End Region
 
 End Class

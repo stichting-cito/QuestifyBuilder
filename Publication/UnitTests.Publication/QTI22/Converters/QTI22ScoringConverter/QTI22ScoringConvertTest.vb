@@ -17,89 +17,96 @@ Imports Questify.Builder.Logic.QTI.Converters.ScoringConverter.QTI22
 <TestClass()>
 Public Class QTI22ScoringConvertTest
 
+#Region " ResponseDeclaration tests "
 
     <TestMethod(), TestCategory("QTIScoring"), Description("Test responseDeclarations of gap/input items - with multiple correct answers")>
     Public Sub GapInline_AlternativeAnswers_ResponseDeclaration_MatchesExpectedResult()
-        Assert.IsTrue(BasicResponseDeclarationTest(My.Resources.GapInlineSC, My.Resources.GapInlineSC_ItemBody, My.Resources.GapInlineSC_ResponseDeclarations, New QTI22CombinedScoringConverter))
+        Assert.IsTrue(BasicResponseDeclarationTest(My.Resources.GapInlineSC, My.Resources.GapInlineSC_ItemBody_QTI22, My.Resources.GapInlineSC_ResponseDeclarations_QTI22, New QTI22CombinedScoringConverter))
     End Sub
 
     <TestMethod(), TestCategory("QTIScoring"), Description("Test responseDeclarations of gap/input items - with multiple correct answers")>
     Public Sub GapInline2_AlternativeAnswers_ResponseDeclaration_MatchesExpectedResult()
-        Assert.IsTrue(BasicResponseDeclarationTest(My.Resources.GapInlineSC2, My.Resources.GapInlineSC2_Itembody, My.Resources.GapInlineSC2_ResponseDeclarations, New QTI22CombinedScoringConverter))
+        Assert.IsTrue(BasicResponseDeclarationTest(My.Resources.GapInlineSC2, My.Resources.GapInlineSC2_Itembody_QTI22, My.Resources.GapInlineSC2_ResponseDeclarations_QTI22, New QTI22CombinedScoringConverter))
     End Sub
 
     <TestMethod(), TestCategory("QTIScoring"), Description("Test responseDeclarations of graphic gapmatch items - with multiple correct answers")>
     Public Sub GraphicGapMatch_AlternativeAnswers_ResponseDeclaration_MatchesExpectedResult()
         Dim itemSource As XElement = XElement.Parse(My.Resources.GraphicGapMatch)
         Dim item As AssessmentItem = CreateAssessmentItem(itemSource)
-        Assert.IsTrue(BasicResponseDeclarationTest(My.Resources.GraphicGapMatch, My.Resources.GraphicGapMatch_Itembody, My.Resources.GraphicGapMatch_ResponseDeclarations, New QTI22CombinedScoringConverter(item.Parameters.DeepFetchScoringParameters)))
+        Assert.IsTrue(BasicResponseDeclarationTest(My.Resources.GraphicGapMatch, My.Resources.GraphicGapMatch_Itembody_QTI22, My.Resources.GraphicGapMatch_ResponseDeclarations_QTI22, New QTI22CombinedScoringConverter(item.Parameters.DeepFetchScoringParameters)))
     End Sub
 
     <TestMethod(), TestCategory("QTIScoring"), Description("Test responseDeclarations of inline choice items - with multiple correct answers")>
     Public Sub ChoiceInline_AlternativeAnswers_ResponseDeclaration_MatchesExpectedResult()
         Dim itemSource As XElement = XElement.Parse(My.Resources.ChoiceInline)
         Dim item As AssessmentItem = CreateAssessmentItem(itemSource)
-        Assert.IsTrue(BasicResponseDeclarationTest(My.Resources.ChoiceInline, My.Resources.ChoiceInline_Itembody, My.Resources.ChoiceInline_ResponseDeclarations, New QTI22CombinedScoringConverter(item.Parameters.DeepFetchScoringParameters)))
+        Assert.IsTrue(BasicResponseDeclarationTest(My.Resources.ChoiceInline, My.Resources.ChoiceInline_Itembody_QTI22, My.Resources.ChoiceInline_ResponseDeclarations_QTI22, New QTI22CombinedScoringConverter(item.Parameters.DeepFetchScoringParameters)))
     End Sub
 
+#End Region
 
+#Region " ResponseProcessing tests "
 
     <TestMethod(), TestCategory("QTIScoring"), Description("Test scoring of gap/input items - date")>
     Public Sub GapDateScoringTest()
-        Assert.IsTrue(BasicScoringConverterTest(My.Resources.GapDateSC, My.Resources.GapDateSC_Itembody, My.Resources.GapDateSC_ResponseProcessing_QTI22, New QTI22CombinedScoringConverter))
+        Assert.IsTrue(BasicScoringConverterTest(My.Resources.GapDateSC, My.Resources.GapDateSC_Itembody_QTI22, My.Resources.GapDateSC_ResponseProcessing_QTI22, New QTI22CombinedScoringConverter))
     End Sub
 
     <TestMethod(), TestCategory("QTIScoring"), Description("Test scoring of MC items - with multiple concepts")>
     Public Sub McWithConceptsScoringTest()
         Dim itemSource As XElement = XElement.Parse(My.Resources.McWithConcepts)
         Dim item As AssessmentItem = CreateAssessmentItem(itemSource)
-        Assert.IsTrue(BasicScoringConverterTest(My.Resources.McWithConcepts, My.Resources.McWithConcepts_Itembody, My.Resources.McWithConcepts_ResponseProcessing_QTI22, New QTI22CombinedScoringConverter(item.Parameters.DeepFetchScoringParameters())))
+        Assert.IsTrue(BasicScoringConverterTest(My.Resources.McWithConcepts, My.Resources.McWithConcepts_Itembody_QTI22, My.Resources.McWithConcepts_ResponseProcessing_QTI22, New QTI22CombinedScoringConverter(item.Parameters.DeepFetchScoringParameters())))
     End Sub
 
     <TestMethod(), TestCategory("QTIScoring"), Description("Test scoring of inline alternative answers")>
     Public Sub GapInline_AlternativeAnswers_ResponseProcessing_MatchesExpectedResult()
-        Assert.IsTrue(BasicScoringConverterTest(My.Resources.GapInlineSC, My.Resources.GapInlineSC_ItemBody, My.Resources.GapInlineSC_ResponseProcessing_QTI22, New QTI22CombinedScoringConverter()))
+        Assert.IsTrue(BasicScoringConverterTest(My.Resources.GapInlineSC, My.Resources.GapInlineSC_ItemBody_QTI22, My.Resources.GapInlineSC_ResponseProcessing_QTI22, New QTI22CombinedScoringConverter()))
     End Sub
 
     <TestMethod(), TestCategory("QTIScoring"), Description("Test scoring of inline alternative answers")>
     Public Sub GapInline2_AlternativeAnswers_ResponseProcessing_MatchesExpectedResult()
-        Assert.IsTrue(BasicScoringConverterTest(My.Resources.GapInlineSC2, My.Resources.GapInlineSC2_Itembody, My.Resources.GapInlineSC2_ResponseProcessing_QTI22, New QTI22CombinedScoringConverter()))
+        Assert.IsTrue(BasicScoringConverterTest(My.Resources.GapInlineSC2, My.Resources.GapInlineSC2_Itembody_QTI22, My.Resources.GapInlineSC2_ResponseProcessing_QTI22, New QTI22CombinedScoringConverter()))
     End Sub
 
     <TestMethod(), TestCategory("QTIScoring"), Description("Test scoring of graphic alternative answers")>
     Public Sub GraphicGapMatch_AlternativeAnswers_ResponseProcessing_MatchesExpectedResult()
         Dim itemSource As XElement = XElement.Parse(My.Resources.GraphicGapMatch)
         Dim item As AssessmentItem = CreateAssessmentItem(itemSource)
-        Assert.IsTrue(BasicScoringConverterTest(My.Resources.GraphicGapMatch, My.Resources.GraphicGapMatch_Itembody, My.Resources.GraphicGapMatch_ResponseProcessing_QTI22, New QTI22CombinedScoringConverter(item.Parameters.DeepFetchScoringParameters())))
+        Assert.IsTrue(BasicScoringConverterTest(My.Resources.GraphicGapMatch, My.Resources.GraphicGapMatch_Itembody_QTI22, My.Resources.GraphicGapMatch_ResponseProcessing_QTI22, New QTI22CombinedScoringConverter(item.Parameters.DeepFetchScoringParameters())))
     End Sub
 
     <TestMethod(), TestCategory("QTIScoring"), Description("Test scoring of inline choice alternative answers")>
     Public Sub ChoiceInline_AlternativeAnswers_ResponseProcessing_MatchesExpectedResult()
         Dim itemSource As XElement = XElement.Parse(My.Resources.ChoiceInline)
         Dim item As AssessmentItem = CreateAssessmentItem(itemSource)
-        Assert.IsTrue(BasicScoringConverterTest(My.Resources.ChoiceInline, My.Resources.ChoiceInline_Itembody, My.Resources.ChoiceInline_ResponseProcessing_QTI22, New QTI22CombinedScoringConverter(item.Parameters.DeepFetchScoringParameters())))
+        Assert.IsTrue(BasicScoringConverterTest(My.Resources.ChoiceInline, My.Resources.ChoiceInline_Itembody_QTI22, My.Resources.ChoiceInline_ResponseProcessing_QTI22, New QTI22CombinedScoringConverter(item.Parameters.DeepFetchScoringParameters())))
     End Sub
 
+#End Region
 
+#Region " OutcomeDeclaration tests "
 
     <TestMethod(), TestCategory("QTIScoring"), Description("Test outcomeDeclarations of MC items - with multiple concepts")>
     Public Sub McWithMultipleConceptsOutcomeDeclarationTest()
         Dim itemSource As XElement = XElement.Parse(My.Resources.McWithConcepts)
         Dim item As AssessmentItem = CreateAssessmentItem(itemSource)
-        Assert.IsTrue(BasicOutcomeDeclarationTest(My.Resources.McWithConcepts, My.Resources.McWithConcepts_Itembody, My.Resources.McWithConcepts_OutcomeDeclarations, New QTI22CombinedScoringConverter(item.Parameters.DeepFetchScoringParameters())))
+        Assert.IsTrue(BasicOutcomeDeclarationTest(My.Resources.McWithConcepts, My.Resources.McWithConcepts_Itembody_QTI22, My.Resources.McWithConcepts_OutcomeDeclarations_QTI22, New QTI22CombinedScoringConverter(item.Parameters.DeepFetchScoringParameters())))
     End Sub
 
     <TestMethod(), TestCategory("QTIScoring"), Description("Test outcomeDeclarations of textual gap/input items - with preprocessing rules and concepts")>
     Public Sub PreprocessorWithConceptsOutcomeDeclarationTest()
         Dim itemSource As XElement = XElement.Parse(My.Resources.PreprocessorWithConcepts)
         Dim item As AssessmentItem = CreateAssessmentItem(itemSource)
-        Assert.IsTrue(BasicOutcomeDeclarationTest(My.Resources.PreprocessorWithConcepts, My.Resources.PreprocessorWithConcepts_Itembody, My.Resources.PreprocessorWithConcepts_OutcomeDeclarations, New QTI22CombinedScoringConverter(item.Parameters.DeepFetchScoringParameters())))
+        Assert.IsTrue(BasicOutcomeDeclarationTest(My.Resources.PreprocessorWithConcepts, My.Resources.PreprocessorWithConcepts_Itembody_QTI22, My.Resources.PreprocessorWithConcepts_OutcomeDeclarations_QTI22, New QTI22CombinedScoringConverter(item.Parameters.DeepFetchScoringParameters())))
     End Sub
 
+#End Region
 
 
     <TestMethod(), TestCategory("QTIScoring")>
     Public Sub VideoResponseTest()
+        'Arrange
         Dim item As AssessmentItem = CreateAssessmentItem(<assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="biKB-2012-B3 vraag 13" title="Bloed 3 van 4" layoutTemplateSrc="Cito.Generic.MC.DC">
                                                               <solution>
                                                                   <keyFindings>
@@ -279,18 +286,28 @@ Public Class QTI22ScoringConvertTest
         Dim packageCreator As QTI22PackageCreator = New QTI22PackageCreator(New PluginHandlerConfigCollection())
         Dim itemHelper As New ItemHelper(item, Nothing, Nothing, fakeResourceHelper, template.ToString, New QTI22CombinedScoringConverter, packageCreator)
 
+        'Act
         Dim itmDoc = itemHelper.CreateItemDocument()
         Dim nsmgr As New XmlNamespaceManager(itmDoc.NameTable)
         nsmgr.AddNamespace("default", "http://www.imsglobal.org/xsd/imsqti_v2p2")
+        'Assert
         Assert.IsTrue(itmDoc.SelectNodes("//default:responseDeclaration", nsmgr).Count = 2)
     End Sub
 
+#Region " Private Sub "
 
+    ''' <summary>
+    ''' Creates the assessment item.
+    ''' </summary>
+    ''' <param name="xItem">The x item.</param>
     Private Function CreateAssessmentItem(xItem As XElement) As AssessmentItem
         Dim itemObject = SerializeHelper.XmlDeserializeFromString(xItem.ToString, GetType(AssessmentItem))
         Return DirectCast(itemObject, AssessmentItem)
     End Function
 
+    ''' <summary>
+    ''' Gets the fake resource helper.
+    ''' </summary>
     Private Function GetFakeResourceHelper() As ResourceHelper
         Dim fakeResourceHelper = A.Fake(Of ResourceHelper)()
         Dim RedirectedCall = A.CallTo(Function() fakeResourceHelper.ProcessResources(String.Empty,
@@ -305,6 +322,7 @@ Public Class QTI22ScoringConvertTest
     End Function
 
     Private Function BasicScoringConverterTest(resourceItemSource As String, resourceItemBody As String, resourceExpectedResult As String, scoringConverter As IScoringConverterQTI22) As Boolean
+        'Arrange
         Dim itemSource As XElement = XElement.Parse(resourceItemSource)
         Dim item As AssessmentItem = CreateAssessmentItem(itemSource)
         Dim template As XElement = XElement.Parse(resourceItemBody)
@@ -313,8 +331,10 @@ Public Class QTI22ScoringConvertTest
         Dim packageCreator As QTI22PackageCreator = New QTI22PackageCreator(New PluginHandlerConfigCollection())
         Dim itemHelper As New ItemHelper(item, Nothing, Nothing, fakeResourceHelper, template.ToString, scoringConverter, packageCreator)
 
+        'Act
         Dim itmDoc = itemHelper.CreateItemDocument()
 
+        'Assert
         Dim nsmgr As New XmlNamespaceManager(itmDoc.NameTable)
         nsmgr.AddNamespace("default", "http://www.imsglobal.org/xsd/imsqti_v2p2")
         Dim resultOutput = XDocument.Parse(itmDoc.SelectSingleNode("//default:responseProcessing", nsmgr).OuterXml)
@@ -331,8 +351,10 @@ Public Class QTI22ScoringConvertTest
         Dim packageCreator As QTI22PackageCreator = New QTI22PackageCreator(New PluginHandlerConfigCollection())
         Dim itemHelper As New ItemHelper(item, Nothing, Nothing, fakeResourceHelper, template.ToString, scoringConverter, packageCreator)
 
+        'Act
         Dim itmDoc = itemHelper.CreateItemDocument()
 
+        'Assert
         Dim nsmgr As New XmlNamespaceManager(itmDoc.NameTable)
         nsmgr.AddNamespace("default", "http://www.imsglobal.org/xsd/imsqti_v2p2")
         Dim resultOutput As XDocument = New XDocument
@@ -360,8 +382,10 @@ Public Class QTI22ScoringConvertTest
         Dim packageCreator As QTI22PackageCreator = New QTI22PackageCreator(New PluginHandlerConfigCollection())
         Dim itemHelper As New ItemHelper(item, Nothing, Nothing, fakeResourceHelper, template.ToString, scoringConverter, packageCreator)
 
+        'Act
         Dim itmDoc = itemHelper.CreateItemDocument()
 
+        'Assert
         Dim nsmgr As New XmlNamespaceManager(itmDoc.NameTable)
         nsmgr.AddNamespace("default", "http://www.imsglobal.org/xsd/imsqti_v2p2")
         Dim resultOutput As XDocument = New XDocument
@@ -379,5 +403,6 @@ Public Class QTI22ScoringConvertTest
         Return UnitTestHelper.AreSame(expectedResult, resultOutput)
     End Function
 
+#End Region
 
 End Class

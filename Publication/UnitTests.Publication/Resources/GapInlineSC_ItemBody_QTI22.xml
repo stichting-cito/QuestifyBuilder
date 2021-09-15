@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itemBody class="defaultBody">
+	<div class="content">
+		<div class="questify_div_center">
+			<div class="questify_div_center_inner">
+				<div class="questify_itemtitle">
+					<p>Basic operations</p>
+				</div>
+				<div class="questify_prompt">
+					<p>Write down the calculation.</p>
+				</div>
+				<div id="questify_questionwithinlinecontrol">
+					<p>
+						<img id="Id-IMG_74163465-cdfa-4fce-90bd-b77b3bf0503c" src="../img/L_Z2_MA_ZuV_A0138_00605_Bild4.png" width="24" height="24" alt=""/>
+ <img id="Id-c1-id-15" alt="" src="../img/L_Z2_MA_ZuV_A0138_00605_Bild4.png" width="24" height="24"/>
+ <img id="Id-c1-id-16" alt="" src="../img/L_Z2_MA_ZuV_A0138_00605_Bild4.png" width="24" height="24"/>
+ + <img id="Id-c1-id-17" alt="" src="../img/L_Z2_MA_ZuV_A0138_00605_Bild4.png" width="24" height="24"/>
+ <strong>
+							<img id="Id-c1-id-18" alt="" src="../img/L_Z2_MA_ZuV_A0138_00605_Bild4.png" width="24" height="24"/>
+						</strong>
+ = <img id="Id-c1-id-38" alt="" src="../img/L_Z2_MA_ZuV_A0138_00605_Bild4.png" width="24" height="24"/>
+ <img id="Id-c1-id-39" alt="" src="../img/L_Z2_MA_ZuV_A0138_00605_Bild4.png" width="24" height="24"/>
+ <img id="Id-c1-id-40" alt="" src="../img/L_Z2_MA_ZuV_A0138_00605_Bild4.png" width="24" height="24"/>
+ <img id="Id-c1-id-41" alt="" src="../img/L_Z2_MA_ZuV_A0138_00605_Bild4.png" width="24" height="24"/>
+ <img id="Id-c1-id-42" alt="" src="../img/L_Z2_MA_ZuV_A0138_00605_Bild4.png" width="24" height="24"/>
+					</p>
+ <p/>
+					<p>Write the solutions in the boxes.</p>
+					<p>
+						<textEntryInteraction patternMask="^-?([0-9]{1,1})?$" responseIdentifier="27d24f98-4191-41e3-8e63-2f2efd052051" expectedLength="2"/>
+ + <textEntryInteraction patternMask="^-?([0-9]{1,1})?$" responseIdentifier="14fe3c42-5fea-48d4-b908-f1fdaac93ee5" expectedLength="2"/>
+ = <textEntryInteraction patternMask="^-?([0-9]{1,1})?$" responseIdentifier="f593b47f-7b0a-4f81-9b0d-806ec392a689" expectedLength="2"/>
+					</p>
+				</div>
+				<div id="answer"/>
+			</div>
+		</div>
+	</div>
+</itemBody>

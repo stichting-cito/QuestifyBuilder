@@ -9,6 +9,7 @@ Public Class Html_RefsC1_2_CitoTests
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub ConvertFromC1NodesToCitoNodes()
+        'Arrange
         Dim C1Format = <p>this is a reference <span id="ref8d8d8f6c-9391-45bc-865b-366b8f1c9485"
                                                   contenteditable="false"
                                                   cito_type="reference"
@@ -19,8 +20,10 @@ Public Class Html_RefsC1_2_CitoTests
 
         Dim converter As New HtmlConverter_C1RefToCitoRef
 
+        'Act
         Dim result = converter.ConvertHtml(C1Format)
 
+        'Assert
         Assert.IsFalse(ContainsRootElement(result))
         Assert.IsTrue(ContainsCitoRefAttributtes(result))
         Assert.IsTrue(ContainsXmlNSCito(result))
@@ -29,6 +32,7 @@ Public Class Html_RefsC1_2_CitoTests
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub ConvertFromC1NodesToCitoNodes_MultipleNodes()
+        'Arrange
         Dim C1Format = <p>this is a reference <span id="ref8d8d8f6c-9391-45bc-865b-366b8f1c9485"
                                                   contenteditable="false"
                                                   cito_type="reference"
@@ -39,8 +43,10 @@ Public Class Html_RefsC1_2_CitoTests
 
         Dim converter As New HtmlConverter_C1RefToCitoRef
 
+        'Act
         Dim result = converter.ConvertHtml("<p>...</p>" + C1Format)
 
+        'Assert
         Assert.IsFalse(ContainsRootElement(result))
         Assert.IsTrue(ContainsCitoRefAttributtes(result))
         Assert.IsTrue(ContainsXmlNSCito(result))
@@ -49,21 +55,27 @@ Public Class Html_RefsC1_2_CitoTests
 
     <TestMethod(), TestCategory("UILogic"), WorkItem(9787)>
     Public Sub ConvertUninterestingSpan_resultShouldBeUnalterd()
+        'Arrange
         Dim span = <p>this is a reference <span id="id1" xmlns="http://www.w3.org/1999/xhtml">abc</span><span id="id1" xmlns="http://www.w3.org/1999/xhtml">def</span></p>.ToString()
         Dim converter As New HtmlConverter_C1RefToCitoRef()
 
+        'Act
         Dim result = converter.ConvertHtml(span)
 
+        'Assert
         Assert.AreEqual(span.Length, result.Length)
     End Sub
 
     <TestMethod(), TestCategory("UILogic"), WorkItem(9787)>
     Public Sub ConvertUninterestingSpanSeperatedBySpaces_resultShouldBeUnalterd()
+        'Arrange
         Dim span = "<p>this is a reference <span id=""id1"" xmlns=""http://www.w3.org/1999/xhtml"">abc</span> <span id=""id1"" xmlns=""http://www.w3.org/1999/xhtml"">def</span></p>"
         Dim converter As New HtmlConverter_C1RefToCitoRef()
 
+        'Act
         Dim result = converter.ConvertHtml(span)
 
+        'Assert
         Assert.AreEqual(span.Length, result.Length)
     End Sub
 

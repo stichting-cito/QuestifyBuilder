@@ -19,7 +19,6 @@ Namespace QTI30
 
             Dim xmlNamespaceManager As New XmlNamespaceManager(xmlDoc.NameTable)
             xmlNamespaceManager.AddNamespace("qti", xmlDoc.DocumentElement.NamespaceURI)
-            xmlNamespaceManager.AddNamespace("html", "http://www.w3.org/1999/xhtml")
             xmlNamespaceManager.AddNamespace("pci", "http://www.imsglobal.org/xsd/portableCustomInteraction_v1")
 
             Return ResponseIdentifierHelper.GetResponseIdentifiers(xmlDoc, xmlNamespaceManager)

@@ -23,22 +23,25 @@ Public Class AssessmentItemBooleanParameterComparerTest
         Dim booleanParam2 As New BooleanParameter()
         paramCollection1.Id = "invoer"
         paramCollection2.Id = "invoer"
-        booleanParam1.Name = "parameter1"
-        booleanParam2.Name = "parameter1"
-        booleanParam1.Value = True
-        booleanParam2.Value = True
+        booleanParam1.Name = "parameter1"   'Same parameter names! ParameterName must match the name of the parameter in the ILT
+        booleanParam2.Name = "parameter1"   'Same parameter names! ParameterName must match the name of the parameter in the ILT
+        booleanParam1.Value = True 'Same values!
+        booleanParam2.Value = True 'Same values!
 
         paramCollection1.InnerParameters.Add(booleanParam1)
         paramCollection2.InnerParameters.Add(booleanParam2)
 
+        'Arrange
         Dim versionableEntity1 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem1)
         Dim versionableEntity2 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem2)
 
-        Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
+        'Act
+        Dim resourceHistoryEntity1 As ResourceHistoryEntity =ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsNotNull(resourceHistoryEntity1.BinData)
@@ -57,22 +60,25 @@ Public Class AssessmentItemBooleanParameterComparerTest
         Dim booleanParam2 As New BooleanParameter()
         paramCollection1.Id = "invoer"
         paramCollection2.Id = "invoer"
-        booleanParam1.Name = "parameter1"
-        booleanParam2.Name = "parameter2"
-        booleanParam1.Value = True
-        booleanParam2.Value = True
+        booleanParam1.Name = "parameter1" 'Different parameter names!
+        booleanParam2.Name = "parameter2" 'Different parameter names!
+        booleanParam1.Value = True 'Same values!
+        booleanParam2.Value = True 'Same values!
 
         paramCollection1.InnerParameters.Add(booleanParam1)
         paramCollection2.InnerParameters.Add(booleanParam2)
 
+        'Arrange
         Dim versionableEntity1 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem1)
         Dim versionableEntity2 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem2)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsNotNull(resourceHistoryEntity1.BinData)
@@ -99,22 +105,25 @@ Public Class AssessmentItemBooleanParameterComparerTest
         Dim booleanParam2 As New BooleanParameter()
         paramCollection1.Id = "invoer"
         paramCollection2.Id = "invoer"
-        booleanParam1.Name = "parameter1"
-        booleanParam2.Name = "parameter2"
-        booleanParam1.Value = True
-        booleanParam2.Value = False
+        booleanParam1.Name = "parameter1" 'Different parameter names!
+        booleanParam2.Name = "parameter2" 'Different parameter names!
+        booleanParam1.Value = True 'Different values!
+        booleanParam2.Value = False 'Different values!
 
         paramCollection1.InnerParameters.Add(booleanParam1)
         paramCollection2.InnerParameters.Add(booleanParam2)
 
+        'Arrange
         Dim versionableEntity1 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem1)
         Dim versionableEntity2 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem2)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsNotNull(resourceHistoryEntity1.BinData)
@@ -141,22 +150,25 @@ Public Class AssessmentItemBooleanParameterComparerTest
         Dim booleanParam2 As New BooleanParameter()
         paramCollection1.Id = "invoer"
         paramCollection2.Id = "invoer"
-        booleanParam1.Name = "parameter1"
-        booleanParam2.Name = "parameter1"
-        booleanParam1.Value = True
-        booleanParam2.Value = False
-
+        booleanParam1.Name = "parameter1"   'Same parameter names!
+        booleanParam2.Name = "parameter1"   'Same parameter names!
+        booleanParam1.Value = True 'Different values!
+        booleanParam2.Value = False 'Different values!
+   
         paramCollection1.InnerParameters.Add(booleanParam1)
         paramCollection2.InnerParameters.Add(booleanParam2)
 
+        'Arrange
         Dim versionableEntity1 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem1)
         Dim versionableEntity2 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem2)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsNotNull(resourceHistoryEntity1.BinData)

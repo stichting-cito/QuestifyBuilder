@@ -41,7 +41,7 @@ Public Class ResourceHistoryCreatorTest
     Public Sub CreateSimpleResourceHistoryEntity_ControlTemplateResourceEntity()
         DoCreateSimpleResourceHistoryEntity(Of ControlTemplateResourceEntity)()
     End Sub
-
+    
     <TestMethod>
     <ExpectedException(GetType(ArgumentException))>
     Public Sub CreateSimpleResourceHistoryEntity_CustomBankPropertyEntity()
@@ -49,6 +49,7 @@ Public Class ResourceHistoryCreatorTest
     End Sub
 
     Private Sub DoCreateSimpleResourceHistoryEntity(Of T As {New})()
+        'Arrange
         Dim versionable As IVersionable = TryCast(New T(), IVersionable)
 
         If versionable Is Nothing Then
@@ -64,9 +65,11 @@ Public Class ResourceHistoryCreatorTest
         propertyEntity.IsDirty = False
         propertyEntity.IsNew = False
 
+        'Act
         Dim resourceHistory As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(CType(propertyEntity, IVersionable), "remcor")
         Dim metaData = CType(SerializeHelper.XmlDeserializeFromByteArray(resourceHistory.MetaData, GetType(Versioning.MetaData)), Versioning.MetaData)
 
+        'Assert
         Assert.IsNotNull(resourceHistory)
         Assert.IsFalse(propertyEntity.IsNew)
         Assert.IsFalse(propertyEntity.IsDirty)

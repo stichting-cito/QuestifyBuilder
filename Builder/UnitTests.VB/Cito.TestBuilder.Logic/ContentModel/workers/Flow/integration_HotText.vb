@@ -11,13 +11,16 @@ Public Class integration_HotText
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     Public Sub IntegrationTest_Step1()
+        'Arrange     
         Dim solution = New Solution()
         Dim HotTxtPrms = HotTextScoringParameters()
         WriteToDebug(solution, "Arrange")
-
+        
+        'Act
         HotTxtPrms(0).GetScoreManipulator(solution).RemoveKey("123")
         HotTxtPrms(1).GetScoreManipulator(solution).RemoveKey("456")
-
+        
+        'Assert
         WriteToDebug(solution, "Assert")
 
         Assert.IsTrue(UnitTestHelper.AreSame(Step1.ToString(), solution.DoSerialize().ToString()))
@@ -26,15 +29,18 @@ Public Class integration_HotText
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Group and add a second set, just like the scoring editor.")>
     Public Sub IntegrationTest_Step2()
+        'Arrange     
         Dim solution = Step1.To(Of Solution)()
         Dim HotTxtPrms = HotTextScoringParameters()
         Dim map = New ScoringMap(HotTxtPrms, solution).GetMap().ToList()
         WriteToDebug(solution, "Arrange")
 
+        'Act
         Dim factSetId = New FactTargetManipulator(solution).GroupInteractions(map.SelectMany(Function(smk) smk))
         Dim map2 = New ScoringMap(HotTxtPrms, solution).GetMap().ToList()
         Dim factSetId2 = New FactTargetManipulator(solution).AddFactSet(map2.First())
-
+        
+        'Assert
         WriteToDebug(solution, "Assert")
 
         Assert.IsTrue(UnitTestHelper.AreSame(Step2.ToString(), solution.DoSerialize().ToString()))
@@ -43,13 +49,16 @@ Public Class integration_HotText
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Get Concept")>
     Public Sub IntegrationTest_Step3()
+        'Arrange     
         Dim solution = Step2.To(Of Solution)()
         Dim HotTxtPrms = HotTextScoringParameters()
         Dim combinedScoringMapKey = New ScoringMap(HotTxtPrms, solution).GetMap().First()
         WriteToDebug(solution, "Arrange")
 
+        'Act
         combinedScoringMapKey.GetConceptManipulator(solution)
 
+        'Assert
         WriteToDebug(solution, "Assert")
 
         Assert.IsTrue(UnitTestHelper.AreSame(Step3.ToString(), solution.DoSerialize().ToString()))
@@ -58,33 +67,39 @@ Public Class integration_HotText
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Remove factset from keyFiding")>
     Public Sub IntegrationTest_Step4()
+        'Arrange     
         Dim solution = Step3.To(Of Solution)()
         Dim HotTxtPrms = HotTextScoringParameters()
         Dim combinedScoringMapKey = New ScoringMap(HotTxtPrms, solution).GetMap().First()
         WriteToDebug(solution, "Arrange")
 
+        'Act
         Dim manipulator = New FactTargetManipulator(solution)
         manipulator.RemoveFactSet(combinedScoringMapKey.First, 1)
 
+        'Assert
         WriteToDebug(solution, "Assert")
 
-        Assert.IsTrue(UnitTestHelper.AreSame(step4.ToString(), solution.DoSerialize().ToString()))
+         Assert.IsTrue(UnitTestHelper.AreSame(step4.ToString(), solution.DoSerialize().ToString()))
     End Sub
 
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Get Concept, an answerCatagory should have been formed.")>
     Public Sub IntegrationTest_Step5()
+        'Arrange     
         Dim solution = step4.To(Of Solution)()
         Dim HotTxtPrms = HotTextScoringParameters()
         Dim combinedScoringMapKey = New ScoringMap(HotTxtPrms, solution).GetMap().First()
         WriteToDebug(solution, "Arrange")
 
+        'Act
         combinedScoringMapKey.GetConceptManipulator(solution)
 
+        'Assert
         WriteToDebug(solution, "Assert")
 
-        Assert.IsTrue(UnitTestHelper.AreSame(step5.ToString(), solution.DoSerialize().ToString()))
+         Assert.IsTrue(UnitTestHelper.AreSame(step5.ToString(), solution.DoSerialize().ToString()))
     End Sub
 
     Private Function HotTextScoringParameters() As List(Of HotTextScoringParameter)
@@ -96,6 +111,7 @@ Public Class integration_HotText
         Return ret
     End Function
 
+#Region "Data"
 
     Private Step1 As XElement = <solution xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                                     <keyFindings>
@@ -375,5 +391,6 @@ Public Class integration_HotText
                                     <aspectReferences/>
                                 </solution>
 
+#End Region
 
 End Class

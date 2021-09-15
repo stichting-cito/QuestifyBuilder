@@ -13,11 +13,17 @@ Public Class DialogEditTableProperties
 
     Public Sub New(editor As XHtmlEditor, ByVal namespaceManager As XmlNamespaceManager)
 
+        ' This call is required by the designer.
         InitializeComponent()
 
+        ' Add any initialization after the InitializeComponent() call.
         _editor = editor
     End Sub
 
+    ''' <summary>
+    ''' Gets or sets the table alignment.
+    ''' </summary>
+    ''' <value>The table alignment.</value>
     Public Property TableAlignment() As Web.UI.WebControls.HorizontalAlign
         Get
             Dim tconverter As System.ComponentModel.TypeConverter = System.ComponentModel.TypeDescriptor.GetConverter(_tableAlignment.GetType)
@@ -28,6 +34,10 @@ Public Class DialogEditTableProperties
         End Set
     End Property
 
+    ''' <summary>
+    ''' Gets or sets the table style.
+    ''' </summary>
+    ''' <value>The table style.</value>
     Public Property TableStyle() As String
         Get
             Return ConstructTableStyle()
@@ -39,11 +49,12 @@ Public Class DialogEditTableProperties
                 Dim KeyWordIndex As Integer
 
                 KeyWordIndex = value.IndexOf("WIDTH:")
+                'default try to obtain width info via the table _item, to stay compatible with old items the value is alternatively obtain via the value string.
                 If (_item IsNot Nothing AndAlso _item.UseWidth) OrElse KeyWordIndex > -1 Then
                     RadioButtonFixedWidth.Checked = True
 
                     Dim widhtValue As String
-                    Dim widthUnitIndex As Integer = 0
+                    Dim widthUnitIndex As Integer = 0 'Default to percentage
 
                     If _item IsNot Nothing AndAlso _item.UseWidth Then
                         widhtValue = _item.WidthValue.ToString()
@@ -121,6 +132,7 @@ Public Class DialogEditTableProperties
 
             Style += ";"
         Else
+            'set this to false, otherwise the resulting table will have width=<whatever value is in WidthValue and WidthType is used>.
             _item.UseWidth = False
         End If
 
@@ -155,11 +167,13 @@ Public Class DialogEditTableProperties
     Private Sub DialogEditTableProperties_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         System.ComponentModel.TypeDescriptor.AddAttributes(_tableAlignment.GetType(), New System.ComponentModel.TypeConverterAttribute(GetType(LocalEnumLocalizer)))
 
+        'Fill the ComboBoxAlignment with the translated values that correspond to the enum values.
         ComboBoxAlignment.Items.Clear()
         For Each kv As KeyValuePair(Of System.Enum, String) In LocalEnumLocalizer.GetValues(_tableAlignment.GetType())
             ComboBoxAlignment.Items.Add(kv.Value)
         Next
 
+        'Set the selected item and index according to the _TableAlignment value.
         Dim tconverter As System.ComponentModel.TypeConverter = System.ComponentModel.TypeDescriptor.GetConverter(_tableAlignment.GetType())
         Dim SelectedText As String = String.Empty
         SelectedText = tconverter.ConvertToString(Nothing, Threading.Thread.CurrentThread.CurrentUICulture, _tableAlignment)
@@ -197,6 +211,9 @@ Public Class DialogEditTableProperties
         Return Web.UI.WebControls.HorizontalAlign.NotSet
     End Function
 
+    ''' <summary>
+    ''' This private class facilitates translation of enum members.
+    ''' </summary>
     Private Class LocalEnumLocalizer
         Inherits Cito.Tester.Common.ResourceEnumConverter
 
@@ -205,14 +222,26 @@ Public Class DialogEditTableProperties
         End Sub
     End Class
 
+    ''' <summary>
+    ''' Binds data from the item to GUI controls on the form.
+    ''' Data can be bound either using the <see cref="Control.DataBindings"/> collection or any other way allowing 
+    ''' to read data from the item and write it back.
+    ''' </summary>
+    ''' <param name="item">The item to be bound to the GUI controls.</param>
     Private Sub BindData(ByVal item As XHTMLTableItem) Implements ITableItemDialog.BindData
         _item = item
         _tableAlignment = GetAlignmentFromTable(CType(item.Node, XmlElement))
 
     End Sub
 
+    ''' <summary>
+    ''' Shows the form with the specified owner to the user.
+    ''' </summary>
+    ''' <param name="ownerWindow">Any object that implements <see cref="System.Windows.Forms.IWin32Window"/> and represents 
+    ''' the top-level window that will own this form.</param>
+    ''' <returns>True if the form was displayed successfully and the item was changed.</returns>
     Private Function Show(ByVal ownerWindow As IWin32Window) As Boolean Implements ITableItemDialog.Show
         Return ShowDialog(ownerWindow) = DialogResult.OK
     End Function
-
+    
 End Class

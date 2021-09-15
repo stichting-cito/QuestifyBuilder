@@ -39,10 +39,13 @@ namespace Questify.Builder.UnitTests.Questify.Builder.LlblGen.Proxy.Entities
         {
             CreateTest();
 
+            //arrange
             var service = new LlblGenAssessmentTestResourceDtoServiceAdapter(
-        new LlblGenResourceDtoService<AssessmentTestResourceDto, AssessmentTestResourceEntity>());
-            var dependencies = service.GetDependencies(_currentGuidAssessment).ToList();
-            Assert.AreEqual(1, dependencies.Count);
+                    new LlblGenResourceDtoService<AssessmentTestResourceDto, AssessmentTestResourceEntity>());
+            //Act
+            var dependencies = service.GetDependencies(_currentGuidAssessment).ToList() ;
+            //Assert
+            Assert.AreEqual(1,dependencies.Count);
         }
 
         private void CreateTest()

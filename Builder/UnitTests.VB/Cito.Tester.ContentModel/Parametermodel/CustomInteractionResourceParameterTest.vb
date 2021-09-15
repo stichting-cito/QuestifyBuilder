@@ -6,14 +6,24 @@ Imports Cito.Tester.ContentModel
 Public Class CustomInteractionResourceParameterTest
     Inherits SerializationTestBase
 
-    <TestMethod()> <TestCategory("ContentModel")>
+    <TestMethod()> <TestCategory("ContentModel")> 
     Public Sub TestSerializedResult()
+        'Arrange
         Dim p As New CustomInteractionResourceParameter() With {.Name = "ci1", .Value = "someCi.ci", .Height = 20, .Scalable = True}
         Dim result As XElement = Nothing
-
+       
+        'Act
         result = DoSerialize(p)
+       
+        'Assert
 
-
+        '[Expected Result:]
+        '<CustomInteractionResourceParameter 
+        'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        'xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+        'name="ci1" height="20" scalable="true" 
+        'interactioncount="0">someCi.ci
+        '</CustomInteractionResourceParameter>
 
         Assert.IsNotNull(result)
         Assert.AreEqual("ci1", result.Attribute("name").Value)
@@ -25,26 +35,32 @@ Public Class CustomInteractionResourceParameterTest
 
     <TestMethod()> <TestCategory("ContentModel")>
     Public Sub SeralisationInParameterCollectionTest()
+        'Arrange
         Dim params As New ParameterCollection
         Dim ciResourceParam As New CustomInteractionResourceParameter() With {.Name = "ci1", .Value = "someCi.ci", .Height = 20, .Width = 42, .Scalable = False, .Scorable = False, .CommunicationType = CustomInteractionResourceParameter.CustomInteractionCommunicationType.State}
 
         params.InnerParameters.Add(ciResourceParam)
-
+        
+        'Act
         Dim result = DoSerialize(params)
-
+       
+        'Assert
         Assert.AreEqual(recorded.ToString(), result.ToString())
     End Sub
 
 
     <TestMethod()> <TestCategory("ContentModel")>
     Public Sub SeralisationInParameterCollectionTest_OmmitWidthAndHeight_ShouldNotBeSerialized()
+        'Arrange
         Dim params As New ParameterCollection
         Dim ciResourceParam As New CustomInteractionResourceParameter() With {.Name = "ci1", .Value = "someCi.ci", .Scalable = True, .Scorable = True, .CommunicationType = CustomInteractionResourceParameter.CustomInteractionCommunicationType.Answer, .InteractionCount = 8}
 
         params.InnerParameters.Add(ciResourceParam)
-
+      
+        'Act
         Dim result = DoSerialize(params)
-
+       
+        'Assert
         Assert.AreEqual(recorded2.ToString(), result.ToString())
     End Sub
 

@@ -57,6 +57,7 @@ Namespace Cito.TestBuilder.Conversion
         Public Sub HtmlStyleMissingHandlerStyleEventArgsNothing()
             Dim wsHelper As New WordStyleHelper()
 
+            ' Should NOT throw an exception
             wsHelper.HtmlStyleMissing(Nothing, Nothing)
         End Sub
 
@@ -64,6 +65,7 @@ Namespace Cito.TestBuilder.Conversion
         Public Sub HtmlStyleMissingHandlerStyleDefinitionsPartNothing()
             Dim wsHelper As New WordStyleHelper()
             Using monitor = wsHelper.Monitor()
+                ' Should NOT throw an exception
                 wsHelper.ApplyStyleToTableCellIfExists("Foo", Nothing)
                 monitor.Should.NotRaise("StylesChanged")
             End Using

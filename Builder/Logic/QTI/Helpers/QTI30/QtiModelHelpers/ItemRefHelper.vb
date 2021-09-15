@@ -19,11 +19,12 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
         End Sub
 
         Public Function CreateItemRef(ByRef test As AssessmentTestType) As AssessmentItemRefType
-            Dim itemId = ChainHandlerHelper.GetIdentifierFromResourceId(_itemRef.SourceName, PackageCreatorConstants.TypeOfResource.item)
+            Dim itemResourceIdentifier = GetItemResourceIdentifier()
+            Dim itemId = ChainHandlerHelper.GetIdentifierFromResourceId(itemResourceIdentifier, PackageCreatorConstants.TypeOfResource.item)
             Dim itemRef As New AssessmentItemRefType
             Dim maxItemDuration As Integer = _packageCreator.GetMaxItemDurationFromItemParameters(_itemRef.SourceName)
             itemRef.identifier = itemId
-            itemRef.href = $"{_itemRef.SourceName}.xml"
+            itemRef.href = $"{itemResourceIdentifier}.xml"
             itemRef.childIndex = GetChildIndex(ChainHandlerHelper.RemovePrefixFromResourceIdentifier(test.identifier, PackageCreatorConstants.TypeOfResource.test))
 
             Dim weight As New WeightType
@@ -76,6 +77,10 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
 
         Protected Overridable Function GetNamespaceHelper() As NamespaceHelper
             Return New QTI30NamespaceHelper
+        End Function
+
+        Protected Overridable Function GetItemResourceIdentifier() As String
+            Return _itemRef.SourceName
         End Function
 
         Private Function GetSectionReference(test As AssessmentTestType, parentId As String) As AssessmentSectionType

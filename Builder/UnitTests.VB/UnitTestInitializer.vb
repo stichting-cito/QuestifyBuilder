@@ -1,4 +1,5 @@
 ﻿
+'Code taken from http://blogs.iis.net/yigalatz/archive/2011/03/31/unit-tests-should-not-debug-assert.aspx
 Imports System.Diagnostics
 
 <TestClass>

@@ -9,6 +9,7 @@
     <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.NameLabel">Name</s:String>
     <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.TitleLabel">Title</s:String>
     <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.MaxScoreLabel">Max score</s:String>
+    <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.MaxTranslatedScoreLabel">Translated score</s:String>
     <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.SumOfMaxScoreLabel">Sum of max score:</s:String>
     <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.AddButton.Title">Add</s:String>
     <s:String x:Key="ItemEditor.AspectEditor.AspectRefsList.RemoveButton.Title">Remove</s:String>

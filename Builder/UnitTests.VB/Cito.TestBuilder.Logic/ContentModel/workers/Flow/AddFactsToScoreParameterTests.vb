@@ -13,6 +13,7 @@ Public Class AddFactsToScoreParameterTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub MCSetB_KeysForAANdBAreCreated()
+        'Arrange
         Dim solution As New Solution
         Dim choiceSp = New ChoiceScoringParameter() With {.ControllerId = "Control", .MaxChoices = 1}.AddSubParameters("A", "B", "C")
         choiceSp.GetScoreManipulator(solution).SetKey("B")
@@ -20,15 +21,18 @@ Public Class AddFactsToScoreParameterTests
         SyncSolution(solution, choiceSp)
         solution.WriteToDebug("Arrange")
         Dim inputs As New Dictionary(Of String, Object) From {{"CombinedScoringKey", combinedScoringMap}, {"Solution", solution}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New AddFactsToScoreParameter(), inputs)
-
+        
+        'Assert
         solution.WriteToDebug("Assert")
-        Assert.IsTrue(UnitTestHelper.AreSame(expected.ToString(), solution.DoSerialize().ToString()))
+         Assert.IsTrue(UnitTestHelper.AreSame(expected.ToString(), solution.DoSerialize().ToString()))
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub MCSetB_KeysForAANdBAreCreated_MultiRun_StillSameExample()
+        'Arrange
         Dim solution As New Solution
         Dim choiceSp = New ChoiceScoringParameter() With {.ControllerId = "Control", .MaxChoices = 1}.AddSubParameters("A", "B", "C")
         choiceSp.GetScoreManipulator(solution).SetKey("B")
@@ -36,16 +40,19 @@ Public Class AddFactsToScoreParameterTests
         SyncSolution(solution, choiceSp)
         solution.WriteToDebug("Arrange")
         Dim inputs As New Dictionary(Of String, Object) From {{"CombinedScoringKey", combinedScoringMap}, {"Solution", solution}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New AddFactsToScoreParameter(), inputs)
         WorkflowInvoker.Invoke(New AddFactsToScoreParameter(), inputs)
-
+        
+        'Assert
         solution.WriteToDebug("Assert")
-        Assert.IsTrue(UnitTestHelper.AreSame(expected.ToString(), solution.DoSerialize().ToString()))
+         Assert.IsTrue(UnitTestHelper.AreSame(expected.ToString(), solution.DoSerialize().ToString()))
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub MRDeSetA_KeysA_AndInverted_A_Created()
+        'Arrange
         Dim solution As New Solution
         Dim choiceSp = New ChoiceScoringParameter() With {.ControllerId = "mr_1", .MaxChoices = 0, .FindingOverride = "Opgave"}.AddSubParameters("A")
         choiceSp.GetScoreManipulator(solution).RemoveKey("A")
@@ -53,16 +60,19 @@ Public Class AddFactsToScoreParameterTests
         SyncSolution(solution, choiceSp)
         solution.WriteToDebug("Arrange")
         Dim inputs As New Dictionary(Of String, Object) From {{"CombinedScoringKey", combinedScoringMap}, {"Solution", solution}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New AddFactsToScoreParameter(), inputs)
-
+        
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.IsFalse(choiceSp.IsSingleChoice)
-        Assert.IsTrue(UnitTestHelper.AreSame(_mrExpectedFalse.ToString(), solution.DoSerialize().ToString()))
+         Assert.IsTrue(UnitTestHelper.AreSame(_mrExpectedFalse.ToString(), solution.DoSerialize().ToString()))
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub MRDeSetA_KeysA_AndInverted_A_Created_MultiRun()
+        'Arrange
         Dim solution As New Solution
         Dim choiceSp = New ChoiceScoringParameter() With {.ControllerId = "mr_1", .MaxChoices = 0, .FindingOverride = "Opgave"}.AddSubParameters("A")
         choiceSp.GetScoreManipulator(solution).RemoveKey("A")
@@ -70,10 +80,12 @@ Public Class AddFactsToScoreParameterTests
         SyncSolution(solution, choiceSp)
         solution.WriteToDebug("Arrange")
         Dim inputs As New Dictionary(Of String, Object) From {{"CombinedScoringKey", combinedScoringMap}, {"Solution", solution}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New AddFactsToScoreParameter(), inputs)
         WorkflowInvoker.Invoke(New AddFactsToScoreParameter(), inputs)
-
+        
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.IsFalse(choiceSp.IsSingleChoice)
         Assert.IsTrue(UnitTestHelper.AreSame(_mrExpectedFalse.ToString(), solution.DoSerialize().ToString()))
@@ -81,6 +93,7 @@ Public Class AddFactsToScoreParameterTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub MRSetA_KeysA_AndInverted_A_Created()
+        'Arrange
         Dim solution As New Solution
         Dim choiceSp = New ChoiceScoringParameter() With {.ControllerId = "mr_1", .MaxChoices = 0, .FindingOverride = "Opgave"}.AddSubParameters("A")
         choiceSp.GetScoreManipulator(solution).SetKey("A")
@@ -88,9 +101,11 @@ Public Class AddFactsToScoreParameterTests
         SyncSolution(solution, choiceSp)
         solution.WriteToDebug("Arrange")
         Dim inputs As New Dictionary(Of String, Object) From {{"CombinedScoringKey", combinedScoringMap}, {"Solution", solution}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New AddFactsToScoreParameter(), inputs)
-
+        
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.IsFalse(choiceSp.IsSingleChoice)
         Assert.IsTrue(UnitTestHelper.AreSame(_mrExpectedTrue.ToString(), solution.DoSerialize().ToString()))
@@ -98,6 +113,7 @@ Public Class AddFactsToScoreParameterTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub MRSetA_KeysA_AndInverted_A_Created_MultiRun()
+        'Arrange
         Dim solution As New Solution
         Dim choiceSp = New ChoiceScoringParameter() With {.ControllerId = "mr_1", .MaxChoices = 0, .FindingOverride = "Opgave"}.AddSubParameters("A")
         choiceSp.GetScoreManipulator(solution).SetKey("A")
@@ -105,10 +121,12 @@ Public Class AddFactsToScoreParameterTests
         SyncSolution(solution, choiceSp)
         solution.WriteToDebug("Arrange")
         Dim inputs As New Dictionary(Of String, Object) From {{"CombinedScoringKey", combinedScoringMap}, {"Solution", solution}}
-
+       
+        'Act
         WorkflowInvoker.Invoke(New AddFactsToScoreParameter(), inputs)
         WorkflowInvoker.Invoke(New AddFactsToScoreParameter(), inputs)
-
+        
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.IsFalse(choiceSp.IsSingleChoice)
         Assert.IsTrue(UnitTestHelper.AreSame(_mrExpectedTrue.ToString(), solution.DoSerialize().ToString()))
@@ -116,6 +134,7 @@ Public Class AddFactsToScoreParameterTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub MrGrouped_AddFactsForC_AntwoordWordtGemaaktInFinding()
+        'Arrange
         Dim solution = MrABCD_ABGrouped.To(Of Solution)()
         Dim choiceSp = New ChoiceScoringParameter() With {.ControllerId = "mc_1", .MaxChoices = 0, .FindingOverride = "Opgave"}.AddSubParameters("A", "B", "C", "D")
 
@@ -125,16 +144,19 @@ Public Class AddFactsToScoreParameterTests
         solution.WriteToDebug("Arrange")
 
         Dim inputs As New Dictionary(Of String, Object) From {{"CombinedScoringKey", combinedScoringMap}, {"Solution", solution}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New AddFactsToScoreParameter(), inputs)
-
+        
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.IsFalse(choiceSp.IsSingleChoice)
 
         Dim catchAllFact = solution.ConceptFindings.First().Facts.FirstOrDefault(Function(fact) fact.Id = "C[1]-mc_1")
         Assert.IsNotNull(catchAllFact, "CatchAll Fact was expected")
     End Sub
-
+  
+#Region "Data"
     ReadOnly expected As XElement = <solution xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                                         <keyFindings>
                                             <keyFinding id="Control" scoringMethod="None">
@@ -174,7 +196,7 @@ Public Class AddFactsToScoreParameterTests
                                         </conceptFindings>
                                         <aspectReferences/>
                                     </solution>
-
+    
     ReadOnly _mrExpectedFalse As XElement = <solution xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                                                 <keyFindings>
                                                     <keyFinding id="Opgave" scoringMethod="None">
@@ -361,6 +383,7 @@ Public Class AddFactsToScoreParameterTests
                                                 <aspectReferences/>
                                             </solution>
 
+#End Region
 
     Private Sub SyncSolution(ByVal solution As Solution, ByVal scoringParameter As ScoringParameter)
         Dim inputs As New Dictionary(Of String, Object) From {{"ScoreParameter", scoringParameter}, {"Solution", solution}}

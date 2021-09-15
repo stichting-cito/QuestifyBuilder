@@ -11,7 +11,7 @@ using Questify.Builder.UnitTests.Fakes;
 namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 {
     [TestClass]
-    public class ItemEditor_HandleOldItems : ItemEditorTestBase
+    public class ItemEditor_HandleOldItems : ItemEditorTestBase 
     {
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), FakeObjectFactoryBehavior(ItemEditorObjectStrategy.AbsoluteValidMinimum, IsOldItem = true)]
         public void LoadOldItem_IsOldItem_ShouldBeTrue()
@@ -20,11 +20,13 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             var view = A.Fake<IPresentationControl>(); view.WorkSpaceContextualData.DataValue = ItemEditorVm_InError;
             var fake_MsgBoxServ = FakeMessageBoxService.MakeNewFake();
             var viewAwareStatus = new TestViewAwareStatus();
-            var resouceEditor = A.Fake<IResourceEditorService>();
-            var presentationVm = new PresentationViewModel(viewAwareStatus, resouceEditor);
+			var resouceEditor = A.Fake<IResourceEditorService>();
+			var presentationVm = new PresentationViewModel(viewAwareStatus, resouceEditor);
+            //Act
             viewAwareStatus.View = view;
             viewAwareStatus.SimulateViewIsLoadedEvent();
-            Assert.IsTrue(presentationVm.IsOldItem.DataValue);
+            //Assert            
+            Assert.IsTrue(presentationVm.IsOldItem.DataValue );
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), FakeObjectFactoryBehavior(ItemEditorObjectStrategy.AbsoluteValidMinimum, IsOldItem = false)]
@@ -34,10 +36,12 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             var view = A.Fake<IPresentationControl>(); view.WorkSpaceContextualData.DataValue = ItemEditorVm_InError;
             var fake_MsgBoxServ = FakeMessageBoxService.MakeNewFake();
             var viewAwareStatus = new TestViewAwareStatus();
-            var resouceEditor = A.Fake<IResourceEditorService>();
-            var presentationVm = new PresentationViewModel(viewAwareStatus, resouceEditor);
+			var resouceEditor = A.Fake<IResourceEditorService>();
+			var presentationVm = new PresentationViewModel(viewAwareStatus, resouceEditor);
+            //Act
             viewAwareStatus.View = view;
             viewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert            
             Assert.IsFalse(presentationVm.IsOldItem.DataValue);
         }
     }

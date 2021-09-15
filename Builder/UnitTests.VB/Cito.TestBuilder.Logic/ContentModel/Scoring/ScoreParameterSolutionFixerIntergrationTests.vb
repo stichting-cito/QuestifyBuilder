@@ -11,16 +11,19 @@ Public Class ScoreParameterSolutionFixerIntergrationTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub ValidSolution_NotModified()
+        'Arrange
         Dim solution As New Solution
         Dim scoreParameterValueId As String = "A"
         Dim integerPrm = CreateIntegerScoreParam("SomeController", scoreParameterValueId)
         Dim scoreManipulator = integerPrm.GetScoreManipulator(solution)
 
-        scoreManipulator.SetKey(scoreParameterValueId, 10)
+        scoreManipulator.SetKey(scoreParameterValueId, 10) 'Set some score
         WriteSolution("Arrange", solution)
 
+        'Act        -- !! INTEGRATION !! --
         solution.FixRemovedScoringParameters({integerPrm})
 
+        'Assert
         WriteSolution("Assert", solution)
 
         Dim VerifyManipulator = integerPrm.GetScoreManipulator(solution)
@@ -31,6 +34,7 @@ Public Class ScoreParameterSolutionFixerIntergrationTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub RemoveScoringParameter_SolutionIsFixed()
+        'Arrange
         Dim solution As New Solution
         Dim scoreParameterValueId As String = "A"
         Dim integerPrm = CreateIntegerScoreParam("SomeController", scoreParameterValueId)
@@ -38,18 +42,20 @@ Public Class ScoreParameterSolutionFixerIntergrationTests
         Dim integerPrm3 = CreateIntegerScoreParam("SomeController3", scoreParameterValueId)
 
         Dim scoreManipulator = integerPrm.GetScoreManipulator(solution)
-        scoreManipulator.SetKey(scoreParameterValueId, 10)
+        scoreManipulator.SetKey(scoreParameterValueId, 10) 'Set some score
 
         scoreManipulator = integerPrm2.GetScoreManipulator(solution)
-        scoreManipulator.SetKey(scoreParameterValueId, 11)
+        scoreManipulator.SetKey(scoreParameterValueId, 11) 'Set some score
 
         scoreManipulator = integerPrm3.GetScoreManipulator(solution)
-        scoreManipulator.SetKey(scoreParameterValueId, 12)
+        scoreManipulator.SetKey(scoreParameterValueId, 12) 'Set some score
 
         WriteSolution("Arrange", solution)
 
+        'Act        -- !! INTEGRATION !! --
         solution.FixRemovedScoringParameters({integerPrm, integerPrm3})
 
+        'Assert
         WriteSolution("Assert", solution)
 
         Dim verifyManipulator = integerPrm.GetScoreManipulator(solution)
@@ -62,6 +68,7 @@ Public Class ScoreParameterSolutionFixerIntergrationTests
 
     End Sub
 
+#Region "Helpers"
 
     Private Function CreateIntegerScoreParam(controllerId As String, scoreParameterValueId As String, Optional findingName As String = "finding") As IntegerScoringParameter
         Dim fieldA As New IntegerScoringParameter With {.ControllerId = controllerId, .FindingOverride = findingName}
@@ -83,5 +90,6 @@ Public Class ScoreParameterSolutionFixerIntergrationTests
         End Using
     End Sub
 
+#End Region
 
 End Class

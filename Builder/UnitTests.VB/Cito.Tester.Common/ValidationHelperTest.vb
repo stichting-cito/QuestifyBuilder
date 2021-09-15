@@ -1,11 +1,22 @@
 ﻿
 Imports Cito.Tester.Common
 
+'''<summary>
+'''This is a test class for Cito.Tester.Common.ValidationHelper and is intended
+'''to contain all Cito.Tester.Common.ValidationHelper Unit Tests
+'''</summary>
 <TestClass()> _
 Public Class ValidationHelperTest
 
+    '''<summary>
+    '''Gets or sets the test context which provides
+    '''information about and functionality for the current test run.
+    '''</summary>
     Public Property TestContext() As TestContext
 
+    '''<summary>
+    '''A test for DoesntContainsCharacters(ByVal String, ByVal String)
+    '''</summary>
     <TestMethod()> _
     Public Sub ValidationHelper_DoesntContainsCharactersTest()
         Dim falseValidation As String = "Th&sIs@FalseV@lid@tion"
@@ -18,6 +29,9 @@ Public Class ValidationHelperTest
         Assert.IsTrue(test2result, "The second test is expected to be true")
     End Sub
 
+    '''<summary>
+    '''A test for IsBetweenNumericValues(ByVal Decimal, ByVal Decimal, ByVal Decimal)
+    '''</summary>
     <TestMethod()> _
     Public Sub ValidationHelper_IsBetweenDecimalNumericValuesTest()
         Dim validation As Decimal = 1203
@@ -28,6 +42,9 @@ Public Class ValidationHelperTest
         Assert.IsFalse(test2Result, "The second test is expected to return 'false'")
     End Sub
 
+    '''<summary>
+    '''A test for IsBetweenNumericValues(ByVal Double, ByVal Double, ByVal Double)
+    '''</summary>
     <TestMethod()> _
     Public Sub ValidationHelper_IsBetweenDoubleNumericValuesTest()
         Dim validation As Double = 10.487
@@ -38,6 +55,9 @@ Public Class ValidationHelperTest
         Assert.IsFalse(test2Result, "The second test is expected to return 'false'")
     End Sub
 
+    '''<summary>
+    '''A test for IsBetweenNumericValues(ByVal Integer, ByVal Integer, ByVal Integer)
+    '''</summary>
     <TestMethod()> _
     Public Sub ValidationHelper_IsBetweenIntegerNumericValuesTest()
         Dim validation As Integer = 1203
@@ -48,6 +68,9 @@ Public Class ValidationHelperTest
         Assert.IsFalse(test2Result, "The second test is expected to return 'false'")
     End Sub
 
+    '''<summary>
+    '''A test for IsBetweenNumericValues(ByVal Single, ByVal Single, ByVal Single)
+    '''</summary>
     <TestMethod()> _
     Public Sub ValidationHelper_IsBetweenSingleNumericValuesTest()
         Dim validation As Single = 1203
@@ -58,10 +81,15 @@ Public Class ValidationHelperTest
         Assert.IsFalse(test2Result, "The second test is expected to return 'false'")
     End Sub
 
+    '''<summary>
+    '''A test for IsFollowingRegexRule(ByVal String, ByVal String)
+    '''</summary>
     <TestMethod()> _
     Public Sub ValidationHelper_IsFollowingRegexRuleTest()
+        'Regex expression: only numbers and letters
         Dim regexExpression As String = "^[\d\w\s]+$"
 
+        'Strings to validate
         Dim validationTest1 As String = "231232ThisStringShouldReturnTrue23213"
         Dim validationTest2 As String = "ThisStringShouldReturnF@lse"
 
@@ -72,6 +100,9 @@ Public Class ValidationHelperTest
         Assert.IsFalse(test2Result, "The second test is expected to return 'false'")
     End Sub
 
+    '''<summary>
+    '''A test for IsNotEmpty(ByVal Object)
+    '''</summary>
     <TestMethod()> _
     Public Sub ValidationHelper_IsNotEmptyTest()
         Dim validationTest1 As String = String.Empty
@@ -88,6 +119,9 @@ Public Class ValidationHelperTest
         Assert.IsFalse(test3Result, "Third test is expected to return false")
     End Sub
 
+    '''<summary>
+    '''A test for IsNumeric(ByVal String)
+    '''</summary>
     <TestMethod()> _
     Public Sub ValidationHelper_IsNumericTest()
         Dim validationTest1 As String = "12F"

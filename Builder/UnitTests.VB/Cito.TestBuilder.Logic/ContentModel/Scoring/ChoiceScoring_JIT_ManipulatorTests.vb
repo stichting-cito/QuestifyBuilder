@@ -21,6 +21,7 @@ Public Class ChoiceScoring_JIT_ManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GetKeys_SolutionShouldNotBeAlterd()
+        'Arrange
         Dim param = New ChoiceScoringParameter() With {.ControllerId = "MC", .MaxChoices = 1}
         param.Value = New ParameterSetCollection
         param.Value.Add(New ParameterCollection() With {.Id = "A"})
@@ -28,9 +29,11 @@ Public Class ChoiceScoring_JIT_ManipulatorTests
         param.Value.Add(New ParameterCollection() With {.Id = "C"})
 
         Dim manipulator As IChoiceScoringManipulator = New ChoiceScoringManipulator(GetKeyManipulator(MCKeyFinding("MC")), param)
-
+        
+        'Act
         Dim res = manipulator.GetKeyStatus()
-
+        
+        'Assert
         WriteSolution("Assert", solution)
 
         Assert.AreEqual(0, solution.Findings.Count)

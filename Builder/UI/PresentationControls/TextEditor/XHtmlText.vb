@@ -5,7 +5,7 @@ Imports NLog
 Imports Questify.Builder.Logic
 
 Public Class XhtmlText
-    Public Shared Sub AddNodeAfterCurrentNode(editor As IXhtmlEditor, newNode As XmlNode, isNew As Boolean)
+    Public Shared Sub AddNodeAfterCurrentNode(editor As IXhtmlEditor, newNode As XmlNode, isNew As Boolean) 
         Dim p = editor.Selection.Start
 
         If p Is Nothing OrElse
@@ -18,6 +18,8 @@ Public Class XhtmlText
         Debug.Assert(p.ParentNode IsNot Nothing)
 
         Try
+            'You can not just randomly insert nodes,.. need to import otherwise you'll get err that node came from diff doc
+            'Also adding these in a transaction to suppress lots and lots of updates.
             editor.BeginTransaction()
             Dim toInsNode As XmlNode = editor.Document.ImportNode(newNode, True)
             editor.CommitTransaction()
@@ -36,5 +38,5 @@ Public Class XhtmlText
         End Try
 
     End Sub
-
+    
 End Class

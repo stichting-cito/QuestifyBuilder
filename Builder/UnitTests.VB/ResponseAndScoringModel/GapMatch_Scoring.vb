@@ -7,43 +7,55 @@ Public Class GapMatch_Scoring
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub Score_MaxSolutionSolution_Test()
+        'Arrange
         Dim sol = ToSolution(_sol)
-
+       
+        'Act
         Dim maxScore = sol.GetMaxSolutionTranslatedScore()
-
+       
+        'Assert
         Assert.IsTrue(CType((maxScore = 1), Boolean))
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub Score_CorrectResponse_Expects1()
+        'Arrange
         Dim sol = ToSolution(_sol)
         Dim valuesToCreate As New List(Of Tuple(Of String, String)) From {New Tuple(Of String, String)("A", "I23a0653b-b574-4d5e-ad66-e05af1a169da"), New Tuple(Of String, String)("B", "I27b8eca6-ae70-4f7b-bc23-b904b2e9045f"), New Tuple(Of String, String)("C", "I47a1295a-c729-49d5-9da0-bac0799a019e")}
         Dim r = GetResponse(valuesToCreate, "gapMatchController")
 
+        'Act
         Dim score = sol.ScoreSolution(r)
 
+        'Assert
         Assert.IsTrue(CType((score = 1), Boolean))
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub Score_IncompleteResponse_Expects0()
+        'Arrange
         Dim sol = ToSolution(_sol)
         Dim valuesToCreate As New List(Of Tuple(Of String, String)) From {New Tuple(Of String, String)("A", "I23a0653b-b574-4d5e-ad66-e05af1a169da"), New Tuple(Of String, String)("B", "I27b8eca6-ae70-4f7b-bc23-b904b2e9045f")}
         Dim r = GetResponse(valuesToCreate, "gapMatchController")
 
+        'Act
         Dim score = sol.ScoreSolution(r)
 
+        'Assert
         Assert.IsTrue(CType((score = 0), Boolean))
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub Score_IncorrectResponse_Expects0()
+        'Arrange
         Dim sol = ToSolution(_sol)
         Dim valuesToCreate As New List(Of Tuple(Of String, String)) From {New Tuple(Of String, String)("B", "I23a0653b-b574-4d5e-ad66-e05af1a169da"), New Tuple(Of String, String)("B", "I27b8eca6-ae70-4f7b-bc23-b904b2e9045f"), New Tuple(Of String, String)("A", "I47a1295a-c729-49d5-9da0-bac0799a019e")}
         Dim r = GetResponse(valuesToCreate, "gapMatchController")
-
+        
+        'Act
         Dim score = sol.ScoreSolution(r)
 
+        'Assert
         Assert.IsTrue(CType((score = 0), Boolean))
     End Sub
 

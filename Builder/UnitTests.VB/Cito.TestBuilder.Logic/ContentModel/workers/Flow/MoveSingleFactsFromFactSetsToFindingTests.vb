@@ -11,48 +11,58 @@ Public Class MoveSingleFactsFromFactSetsToFindingTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub TestThatASingleIntegerValueIsMoved()
+        'Arrange
         Dim solution = _testSolution1.To(Of Solution)()
         Dim sp = New IntegerScoringParameter() With {.ControllerId = "Some_InlineId", .FindingOverride = "TestFindingId"}.AddSubParameters("A", "B", "C", "D")
         Dim result = WorkflowInvoker.Invoke(New GetFactsIdsPerScoringParameter(), New Dictionary(Of String, Object) From {{"ScoringParameters", New ScoringParameter() {sp}}})
 
         Dim inputs As New Dictionary(Of String, Object) From {{"BaseFacts", solution.Findings(0).KeyFactsets(0).Facts}, {"FindingToMoveTo", solution.Findings(0)}, {"FactIdsToScoringParameter", result}, {"ScoringMap", New ScoringMap(New ScoringParameter() {sp}, solution).GetMap()}}
 
+        'Act
         WorkflowInvoker.Invoke(New MoveSingleFactsFromFactSetsToFinding(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.IsTrue(UnitTestHelper.AreSame(solution.DoSerialize().ToString(), _result1.ToString()))
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub TestThatADoubleIntegerValueIsNotMoved()
+        'Arrange
         Dim solution = _testSolution2.To(Of Solution)()
         Dim sp = New IntegerScoringParameter() With {.ControllerId = "Some_InlineId", .FindingOverride = "TestFindingId"}.AddSubParameters("A", "B", "C", "D")
         Dim result = WorkflowInvoker.Invoke(New GetFactsIdsPerScoringParameter(), New Dictionary(Of String, Object) From {{"ScoringParameters", New ScoringParameter() {sp}}})
 
         Dim inputs As New Dictionary(Of String, Object) From {{"BaseFacts", solution.Findings(0).KeyFactsets(0).Facts}, {"FindingToMoveTo", solution.Findings(0)}, {"FactIdsToScoringParameter", result}, {"ScoringMap", New ScoringMap(New ScoringParameter() {sp}, solution).GetMap()}}
 
+        'Act
         WorkflowInvoker.Invoke(New MoveSingleFactsFromFactSetsToFinding(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.IsTrue(UnitTestHelper.AreSame(solution.DoSerialize().ToString(), _testSolution2.ToString()))
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub TestThatAMcValueIsMoved()
+        'Arrange
         Dim solution = _testSolution3.To(Of Solution)()
         Dim sp = New ChoiceScoringParameter() With {.ControllerId = "Some_InlineId", .FindingOverride = "TestFindingId", .MaxChoices = 1}.AddSubParameters("A", "B", "C", "D")
         Dim result = WorkflowInvoker.Invoke(New GetFactsIdsPerScoringParameter(), New Dictionary(Of String, Object) From {{"ScoringParameters", New ScoringParameter() {sp}}})
 
         Dim inputs As New Dictionary(Of String, Object) From {{"BaseFacts", solution.Findings(0).KeyFactsets(0).Facts}, {"FindingToMoveTo", solution.Findings(0)}, {"FactIdsToScoringParameter", result}, {"ScoringMap", New ScoringMap(New ScoringParameter() {sp}, solution).GetMap()}}
 
+        'Act
         WorkflowInvoker.Invoke(New MoveSingleFactsFromFactSetsToFinding(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.IsTrue(UnitTestHelper.AreSame(solution.DoSerialize().ToString(), _result3.ToString()))
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub TestThatSingleFactInFactSetIsRemovedWhenItAlsoExistInAGroup()
+        'Arrange
         Dim solution = _testSolution4.To(Of Solution)()
         Dim sp1 = New TimeScoringParameter() With {.InlineId = "I8026e8ea-9736-42a8-958a-93a2b2e8e596", .ControllerId = "gapController", .FindingOverride = "gapController"}.AddSubParameters("1")
         Dim sp2 = New TimeScoringParameter() With {.InlineId = "I83acb713-3769-49e6-96ab-1b1c09748cf7", .ControllerId = "gapController", .FindingOverride = "gapController"}.AddSubParameters("1")
@@ -65,14 +75,17 @@ Public Class MoveSingleFactsFromFactSetsToFindingTests
             {"ScoringMap", New ScoringMap(New ScoringParameter() {sp1, sp2}, solution).GetMap()}
         }
 
+        'Act
         WorkflowInvoker.Invoke(New MoveSingleFactsFromFactSetsToFinding(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.IsTrue(UnitTestHelper.AreSame(_result4.ToString(), solution.DoSerialize().ToString()))
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub TestThatCatchAllValueConceptFactInFactSetIsMovedToFinding()
+        'Arrange
         Dim solution = _testSolution5.To(Of Solution)()
 
         Dim sp = New DecimalScoringParameter() With {.ControllerId = "gapController",
@@ -88,12 +101,15 @@ Public Class MoveSingleFactsFromFactSetsToFindingTests
             {"ScoringMap", New ScoringMap(New ScoringParameter() {sp}, solution).GetMap()}
         }
 
+        'Act
         WorkflowInvoker.Invoke(New MoveSingleFactsFromFactSetsToFinding(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.IsTrue(UnitTestHelper.AreSame(_result5.ToString(), solution.DoSerialize().ToString()))
     End Sub
 
+#Region "Data"
 
     ReadOnly _testSolution1 As XElement = <solution>
                                               <keyFindings>
@@ -283,5 +299,6 @@ Public Class MoveSingleFactsFromFactSetsToFindingTests
                                         <aspectReferences/>
                                     </solution>
 
+#End Region
 
 End Class

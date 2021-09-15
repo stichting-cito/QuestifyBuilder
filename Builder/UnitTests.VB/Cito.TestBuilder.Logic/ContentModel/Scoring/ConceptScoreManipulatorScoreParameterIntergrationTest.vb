@@ -13,17 +13,21 @@ Public Class ConceptScoreManipulatorScoreParameterIntergrationTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub GetListOfFactIds()
+        'Arrange
         Dim solution As New Solution
         Dim integerPrm = CreateIntegerScoreParam("SomeController")
         Dim scoreManipulator = integerPrm.GetScoreManipulator(solution)
 
-        scoreManipulator.SetKey("A", 10)
+        'Act        -- !! INTEGRATION !! --
+        scoreManipulator.SetKey("A", 10) 'Set some score
         Dim conceptManipulator = CreateManipulator(integerPrm, solution)
         Dim result = conceptManipulator.GetConceptIds().ToList()
-
+        
+        'Assert
         WriteSolution("Assert", solution)
-        Assert.AreEqual(1 + 1, result.Count)
+        Assert.AreEqual(1 + 1, result.Count) '+ Catch all
 
+        'FactId will be reported as A, but it should really be A-SomeController. This is so that facts are easy seperated.
         Assert.AreEqual("A", result(0))
         Assert.AreEqual("A-SomeController", solution.ConceptFindings(0).Facts(0).Id)
     End Sub
@@ -31,21 +35,25 @@ Public Class ConceptScoreManipulatorScoreParameterIntergrationTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub TheIdReportedShouldBeUsable()
+        'Arrange
         Dim solution As New Solution
         Dim integerPrm = CreateIntegerScoreParam("SomeController")
-        Dim scoreManipulator = integerPrm.GetScoreManipulator(solution) : scoreManipulator.SetKey("A", 10)
+        Dim scoreManipulator = integerPrm.GetScoreManipulator(solution) : scoreManipulator.SetKey("A", 10) 'Set some score
         Dim conceptManipulator = CreateManipulator(integerPrm, solution)
 
+        'Act        -- !! INTEGRATION !! -- 
         Dim result = New List(Of String)
         For Each id As String In conceptManipulator.GetConceptIds()
             result.Add(conceptManipulator.GetDisplayValueForConceptId(id))
         Next
 
+        'Assert
         WriteSolution("Assert", solution)
-        Assert.AreEqual(1 + 1, result.Count)
+        Assert.AreEqual(1 + 1, result.Count) '1 + Catch all
         Assert.AreEqual("10", result(0))
     End Sub
 
+#Region "Helpers"
 
     Private Function CreateIntegerScoreParam(controllerId As String, Optional findingName As String = "finding") As IntegerScoringParameter
         Dim fieldA = New IntegerScoringParameter() With {.ControllerId = controllerId, .FindingOverride = findingName}.AddSubParameters("A")
@@ -63,6 +71,7 @@ Public Class ConceptScoreManipulatorScoreParameterIntergrationTest
         End Using
     End Sub
 
+#End Region
 
     Private Function CreateManipulator(prm As ScoringParameter, solution As Solution) As IConceptScoreManipulator
         Dim map = New ScoringMap(New ScoringParameter() {prm}, solution).GetMap()

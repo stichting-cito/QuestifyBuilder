@@ -10,7 +10,7 @@ Imports Questify.Builder.UnitTests.Framework.My.Resources
 
 <TestClass>
 Public Class XOldHtmlEditBehaviorTests
-
+    
     <TestInitialize>
     Public Sub Init()
         FakeDal.Init()
@@ -23,10 +23,13 @@ Public Class XOldHtmlEditBehaviorTests
 
     <TestMethod, TestCategory("UILogic"), TestCategory("EditBehavior")>
     Public Sub BusinessRulesXhtmlParamBehavior_Test()
+        'Arrange
         Dim itemResource As New ItemResourceEntity()
-
+        
+        'Act
         Dim behavior As New XOldHtmlParameterBehavior(itemResource, GetFakeResourceManager(), 8417, New XHtmlParameter() With {.Value = _inline.ToString()})
 
+        'Assert
         Assert.IsTrue(behavior.CanInsertImages)
         Assert.IsTrue(behavior.CanInsertFormula)
         Assert.IsTrue(behavior.CanInsertReferences)
@@ -39,90 +42,102 @@ Public Class XOldHtmlEditBehaviorTests
 
     <TestMethod, TestCategory("UILogic"), TestCategory("EditBehavior")>
     Public Sub Inline_HtmlConverterTest()
-        AddInline()
-        AddTransparentPix()
+        'Arrange
+        AddInline() 'Make Inine possible
+        AddTransparentPix() 'Just a test image
         Dim itemResource As New ItemResourceEntity()
         Dim behavior As New XOldHtmlParameterBehavior(itemResource, GetFakeResourceManager(), 9991, New XHtmlParameter() With {.Value = _inline.ToString()})
 
         Dim result As String = String.Empty
         Dim evnt = Sub(s As Object, e As ResourceNeededEventArgs)
-                       e.BinaryResource = New BinaryResource(UnitTestHelper.ImageToByte2(FakeStaticResources.transparentPix))
+                       e.BinaryResource = New BinaryResource(UnitTestHelper.ImageToByte2(FakeStaticResources.transparentPix)) 'Dummy resource
                        result = e.ResourceName
                    End Sub
         AddHandler TestSessionContext.ResourceNeeded, evnt
 
+        'Act
         Dim html = behavior.GetHtml()
         RemoveHandler TestSessionContext.ResourceNeeded, evnt
 
+        'Assert
         Assert.IsTrue(html.Contains("alt=""TransparentPix.png"" src=""resource://package:9991/TransparentPix.png"))
         Assert.IsTrue(html.Contains("isinlineelement"))
     End Sub
-
+    
     <TestMethod, TestCategory("UILogic"), TestCategory("EditBehavior")>
     Public Sub InlineCount_HtmlConverterTest()
-        AddInline()
-        AddTransparentPix()
+        'Arrange
+        AddInline() 'Make Inine possible
+        AddTransparentPix() 'Just a test image
         Dim itemResource As New ItemResourceEntity()
         Dim behavior As New XOldHtmlParameterBehavior(itemResource, GetFakeResourceManager(), 8417, New XHtmlParameter() With {.Value = _inline.ToString()})
 
         Dim result As String = String.Empty
         Dim evnt = Sub(s As Object, e As ResourceNeededEventArgs)
-                       e.BinaryResource = New BinaryResource(UnitTestHelper.ImageToByte2(FakeStaticResources.transparentPix))
-                       result = e.ResourceName
-                   End Sub
+            e.BinaryResource = New BinaryResource(UnitTestHelper.ImageToByte2(FakeStaticResources.transparentPix)) 'Dummy resource
+            result = e.ResourceName
+        End Sub
         AddHandler TestSessionContext.ResourceNeeded, evnt
 
+        'Act
         Dim html = behavior.GetHtml()
         RemoveHandler TestSessionContext.ResourceNeeded, evnt
 
+        'Assert
         Assert.AreEqual(1, behavior.InlineElements.Count())
     End Sub
 
     <TestMethod, TestCategory("UILogic"), TestCategory("EditBehavior")>
     Public Sub InlineBack2Parameter_HtmlConverterTest()
+        'Arrange
         Dim xhtmlparam As New XHtmlParameter() With {.Value = _inline.ToString()}
-        AddInline()
-        AddTransparentPix()
+        AddInline() 'Make Inine possible
+        AddTransparentPix() 'Just a test image
         Dim itemResource As New ItemResourceEntity()
         Dim behavior As New XOldHtmlParameterBehavior(itemResource, GetFakeResourceManager(), 8417, xhtmlparam)
 
         Dim result As String = String.Empty
         Dim evnt = Sub(s As Object, e As ResourceNeededEventArgs)
-                       e.BinaryResource = New BinaryResource(UnitTestHelper.ImageToByte2(FakeStaticResources.transparentPix))
-                       result = e.ResourceName
-                   End Sub
+            e.BinaryResource = New BinaryResource(UnitTestHelper.ImageToByte2(FakeStaticResources.transparentPix)) 'Dummy resource
+            result = e.ResourceName
+        End Sub
         AddHandler TestSessionContext.ResourceNeeded, evnt
 
+        'Act
         Dim html = behavior.GetHtml()
         RemoveHandler TestSessionContext.ResourceNeeded, evnt
         behavior.SetHtml(html)
 
-        Assert.IsTrue(xhtmlparam.Value.Contains("<img"))
+        'Assert
+        Assert.IsTrue(xhtmlparam.Value.Contains("<img")) 'Does not contain old image
     End Sub
 
     <TestMethod, TestCategory("UILogic"), TestCategory("EditBehavior")>
     Public Sub Param2Inline2Parameter2Inline_HtmlConverterTest()
+        'Arrange
         Dim xhtmlparam As New XHtmlParameter() With {.Value = _inline.ToString()}
-        AddInline()
-        AddTransparentPix()
+        AddInline() 'Make Inine possible
+        AddTransparentPix() 'Just a test image
         Dim itemResource As New ItemResourceEntity()
         Dim behavior As New XOldHtmlParameterBehavior(itemResource, GetFakeResourceManager(), 8417, xhtmlparam)
 
         Dim result As String = String.Empty
         Dim evnt = Sub(s As Object, e As ResourceNeededEventArgs)
-                       e.BinaryResource = New BinaryResource(UnitTestHelper.ImageToByte2(FakeStaticResources.transparentPix))
-                       result = e.ResourceName
-                   End Sub
+            e.BinaryResource = New BinaryResource(UnitTestHelper.ImageToByte2(FakeStaticResources.transparentPix)) 'Dummy resource
+            result = e.ResourceName
+        End Sub
         AddHandler TestSessionContext.ResourceNeeded, evnt
 
-        Dim html = behavior.GetHtml()
+        'Act
+        Dim html = behavior.GetHtml()        
         behavior.SetHtml(html)
-        Dim html2 = behavior.GetHtml()
+        Dim html2 = behavior.GetHtml() 'Convert the inline to editor
         RemoveHandler TestSessionContext.ResourceNeeded, evnt
 
         html = UnitTestHelper.SetFixedIdsToCompare(html)
         html2 = UnitTestHelper.SetFixedIdsToCompare(html2)
 
+        'Assert
         Assert.AreEqual(html, html2, "when converted both results should be the same")
         Assert.AreEqual(1, behavior.InlineElements.Count())
     End Sub

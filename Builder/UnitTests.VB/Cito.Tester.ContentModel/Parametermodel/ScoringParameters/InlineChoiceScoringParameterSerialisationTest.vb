@@ -10,6 +10,7 @@ Public Class InlineChoiceScoringParameterSerialisationTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub CompareWithPreviouslyKnowState()
+        'Arrange
         Dim inlineChoiceScoringPrm = New InlineChoiceScoringParameter()
         inlineChoiceScoringPrm.MinChoices = 1
         inlineChoiceScoringPrm.MaxChoices = 2
@@ -26,8 +27,11 @@ Public Class InlineChoiceScoringParameterSerialisationTest
         inlineChoiceScoringPrm.Value.Add(subParam1)
         inlineChoiceScoringPrm.Value.Add(subParam2)
 
+        'Act
         Dim result = DoSerialize(Of InlineChoiceScoringParameter)(inlineChoiceScoringPrm)
-
+        
+        'Assert
+        'Compare with previously known result 
         Assert.AreEqual(<InlineChoiceScoringParameter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ControllerId="inline_1" findingOverride="inline_finding" minChoices="1" maxChoices="2">
                             <subparameterset id="">
                                 <plaintextparameter name="option">a</plaintextparameter>
@@ -43,6 +47,7 @@ Public Class InlineChoiceScoringParameterSerialisationTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Deserialize_Test()
+        'Arrange
         Dim xmlData = <InlineChoiceScoringParameter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ControllerId="inline_1" findingOverride="inline_finding" minChoices="1" maxChoices="2">
                           <definition id="">
                               <plaintextparameter name="option"/>
@@ -54,9 +59,11 @@ Public Class InlineChoiceScoringParameterSerialisationTest
                               <plaintextparameter name="option">b</plaintextparameter>
                           </subparameterset>
                       </InlineChoiceScoringParameter>
-
+      
+        'Act
         Dim result = Deserialize(Of InlineChoiceScoringParameter)(xmlData)
-
+        
+        'Assert
         Assert.AreEqual(result.ControllerId, "inline_1")
         Assert.AreEqual(result.FindingOverride, "inline_finding")
         Assert.AreEqual(result.MinChoices, 1)
@@ -74,10 +81,13 @@ Public Class InlineChoiceScoringParameterSerialisationTest
 
     <TestMethod(), TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub DeserializeFilledInlineChoiceScoringParameter_Test()
+        'Arrange
         Dim xmlData = _inlineChoiceWithOptions
 
+        'Act
         Dim result = Deserialize(Of InlineChoiceScoringParameter)(xmlData)
 
+        'Assert
         Assert.AreEqual("inlineChoiceController", result.ControllerId)
         Assert.AreEqual("Opgave", result.FindingOverride)
         Assert.AreEqual(0, result.MinChoices)
@@ -97,13 +107,17 @@ Public Class InlineChoiceScoringParameterSerialisationTest
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     <Description("Validates the XmlElement definition on InnerParameters ")>
     Public Sub CompareWithPreviouslyKnowStateInAssessment()
+        'Asserts that this is not broken -> <XmlElement("inlineChoiceScoringparameter", GetType(InlineChoiceScoringParameter))> _
 
+        'Arrange
         Dim a = New AssessmentItem
         a.Parameters.Add(New ParameterCollection())
         a.Parameters(0).InnerParameters.Add(New InlineChoiceScoringParameter())
 
+        'Act
         Dim result = DoSerialize(a)
 
+        'Assert
         Assert.AreEqual(<assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="" title="" layoutTemplateSrc="">
                             <solution>
                                 <keyFindings/>
@@ -120,10 +134,13 @@ Public Class InlineChoiceScoringParameterSerialisationTest
 
     <TestMethod(), TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub DeserializeAssessmentItem_Test()
+        'Arrange
         Dim xmlData = _assessmentItemWithXhtmlParametersInXhtmlParameters
 
+        'Act
         Dim result = Deserialize(Of AssessmentItem)(xmlData)
 
+        'Assert
         Dim params As HashSet(Of ScoringParameter) = result.Parameters.DeepFetchInlineScoringParameters()
         Assert.AreEqual(1, params.Count)
         Assert.IsInstanceOfType(params.First(), GetType(InlineChoiceScoringParameter))
@@ -148,6 +165,7 @@ Public Class InlineChoiceScoringParameterSerialisationTest
         Assert.IsTrue(XmlTools.DeepEqualsWithNormalization(New XDocument(<p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml"><em id="c1-id-12">italic </em>option</p>), XDocument.Parse(xhtmlParam2.Value), Nothing))
     End Sub
 
+#Region " Data "
 
     ReadOnly _inlineChoiceWithOptions As XElement =
        <InlineChoiceScoringParameter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="inlineChoiceScoring" label="Getal" ControllerId="inlineChoiceController" findingOverride="Opgave" minChoices="0" maxChoices="1">
@@ -268,5 +286,6 @@ Public Class InlineChoiceScoringParameterSerialisationTest
             </parameters>
         </assessmentItem>
 
+#End Region
 
 End Class

@@ -173,9 +173,9 @@ Namespace QTI.Helpers.QTI22
     Then
                         If Not scoringParams.Any(Function(s) CombinedScoringHelper.GetFormulaItemType(finding, s) = CombinedScoringHelper.FormulaItemType.EvaluateDependency) Then Return ResponseDeclarationTypeBaseType.float
                     End If
-                Case "choiceinteraction", "matchinteraction", "hottextinteraction", "orderinteraction", "inlinechoiceinteraction", "hotspotinteraction"
+                Case "choiceinteraction", "hottextinteraction", "orderinteraction", "inlinechoiceinteraction", "hotspotinteraction"
                     returnValue = ResponseDeclarationTypeBaseType.identifier
-                Case "gapmatchinteraction", "graphicgapmatchinteraction"
+                Case "gapmatchinteraction", "graphicgapmatchinteraction", "matchinteraction"
                     returnValue = ResponseDeclarationTypeBaseType.directedPair
                 Case "selectpointinteraction", "positionobjectinteraction"
                     returnValue = ResponseDeclarationTypeBaseType.point

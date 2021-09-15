@@ -2,10 +2,11 @@
 Option Strict On
 Option Explicit On
 
+Imports System
 
 Namespace My.Resources
 
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0"), _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0"), _
 Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
 Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(), _
 Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
@@ -42,15 +43,27 @@ Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
             End Get
         End Property
 
-        Friend ReadOnly Property ChoiceInline_Itembody() As String
+        Friend ReadOnly Property ChoiceInline_Itembody_QTI22() As String
             Get
-                Return ResourceManager.GetString("ChoiceInline_Itembody", resourceCulture)
+                Return ResourceManager.GetString("ChoiceInline_Itembody_QTI22", resourceCulture)
             End Get
         End Property
 
-        Friend ReadOnly Property ChoiceInline_ResponseDeclarations() As String
+        Friend ReadOnly Property ChoiceInline_Itembody_QTI30() As String
             Get
-                Return ResourceManager.GetString("ChoiceInline_ResponseDeclarations", resourceCulture)
+                Return ResourceManager.GetString("ChoiceInline_Itembody_QTI30", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property ChoiceInline_ResponseDeclarations_QTI22() As String
+            Get
+                Return ResourceManager.GetString("ChoiceInline_ResponseDeclarations_QTI22", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property ChoiceInline_ResponseDeclarations_QTI30() As String
+            Get
+                Return ResourceManager.GetString("ChoiceInline_ResponseDeclarations_QTI30", resourceCulture)
             End Get
         End Property
 
@@ -60,9 +73,21 @@ Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
             End Get
         End Property
 
-        Friend ReadOnly Property ContentWithResources() As String
+        Friend ReadOnly Property ChoiceInline_ResponseProcessing_QTI30() As String
             Get
-                Return ResourceManager.GetString("ContentWithResources", resourceCulture)
+                Return ResourceManager.GetString("ChoiceInline_ResponseProcessing_QTI30", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property ContentWithResources_QTI22() As String
+            Get
+                Return ResourceManager.GetString("ContentWithResources_QTI22", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property ContentWithResources_QTI30() As String
+            Get
+                Return ResourceManager.GetString("ContentWithResources_QTI30", resourceCulture)
             End Get
         End Property
 
@@ -72,9 +97,15 @@ Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
             End Get
         End Property
 
-        Friend ReadOnly Property GapDateSC_Itembody() As String
+        Friend ReadOnly Property GapDateSC_Itembody_QTI22() As String
             Get
-                Return ResourceManager.GetString("GapDateSC_Itembody", resourceCulture)
+                Return ResourceManager.GetString("GapDateSC_Itembody_QTI22", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property GapDateSC_Itembody_QTI30() As String
+            Get
+                Return ResourceManager.GetString("GapDateSC_Itembody_QTI30", resourceCulture)
             End Get
         End Property
 
@@ -84,21 +115,45 @@ Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
             End Get
         End Property
 
+        Friend ReadOnly Property GapDateSC_ResponseProcessing_QTI30() As String
+            Get
+                Return ResourceManager.GetString("GapDateSC_ResponseProcessing_QTI30", resourceCulture)
+            End Get
+        End Property
+
         Friend ReadOnly Property GapInlineSC() As String
             Get
                 Return ResourceManager.GetString("GapInlineSC", resourceCulture)
             End Get
         End Property
 
-        Friend ReadOnly Property GapInlineSC_ItemBody() As String
+        Friend ReadOnly Property GapInlineSC_ItemBody_QTI22() As String
             Get
-                Return ResourceManager.GetString("GapInlineSC_ItemBody", resourceCulture)
+                Return ResourceManager.GetString("GapInlineSC_ItemBody_QTI22", resourceCulture)
             End Get
         End Property
 
-        Friend ReadOnly Property GapInlineSC_ResponseDeclarations() As String
+        Friend ReadOnly Property GapInlineSC_ItemBody_QTI30() As String
             Get
-                Return ResourceManager.GetString("GapInlineSC_ResponseDeclarations", resourceCulture)
+                Return ResourceManager.GetString("GapInlineSC_ItemBody_QTI30", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property GapInlineSC_ItemBody1_QTI22() As String
+            Get
+                Return ResourceManager.GetString("GapInlineSC_ItemBody1_QTI22", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property GapInlineSC_ResponseDeclarations_QTI22() As String
+            Get
+                Return ResourceManager.GetString("GapInlineSC_ResponseDeclarations_QTI22", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property GapInlineSC_ResponseDeclarations_QTI30() As String
+            Get
+                Return ResourceManager.GetString("GapInlineSC_ResponseDeclarations_QTI30", resourceCulture)
             End Get
         End Property
 
@@ -108,21 +163,39 @@ Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
             End Get
         End Property
 
+        Friend ReadOnly Property GapInlineSC_ResponseProcessing_QTI30() As String
+            Get
+                Return ResourceManager.GetString("GapInlineSC_ResponseProcessing_QTI30", resourceCulture)
+            End Get
+        End Property
+
         Friend ReadOnly Property GapInlineSC2() As String
             Get
                 Return ResourceManager.GetString("GapInlineSC2", resourceCulture)
             End Get
         End Property
 
-        Friend ReadOnly Property GapInlineSC2_Itembody() As String
+        Friend ReadOnly Property GapInlineSC2_Itembody_QTI22() As String
             Get
-                Return ResourceManager.GetString("GapInlineSC2_Itembody", resourceCulture)
+                Return ResourceManager.GetString("GapInlineSC2_Itembody_QTI22", resourceCulture)
             End Get
         End Property
 
-        Friend ReadOnly Property GapInlineSC2_ResponseDeclarations() As String
+        Friend ReadOnly Property GapInlineSC2_Itembody_QTI30() As String
             Get
-                Return ResourceManager.GetString("GapInlineSC2_ResponseDeclarations", resourceCulture)
+                Return ResourceManager.GetString("GapInlineSC2_Itembody_QTI30", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property GapInlineSC2_ResponseDeclarations_QTI22() As String
+            Get
+                Return ResourceManager.GetString("GapInlineSC2_ResponseDeclarations_QTI22", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property GapInlineSC2_ResponseDeclarations_QTI30() As String
+            Get
+                Return ResourceManager.GetString("GapInlineSC2_ResponseDeclarations_QTI30", resourceCulture)
             End Get
         End Property
 
@@ -132,21 +205,39 @@ Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
             End Get
         End Property
 
+        Friend ReadOnly Property GapInlineSC2_ResponseProcessing_QTI30() As String
+            Get
+                Return ResourceManager.GetString("GapInlineSC2_ResponseProcessing_QTI30", resourceCulture)
+            End Get
+        End Property
+
         Friend ReadOnly Property GraphicGapMatch() As String
             Get
                 Return ResourceManager.GetString("GraphicGapMatch", resourceCulture)
             End Get
         End Property
 
-        Friend ReadOnly Property GraphicGapMatch_Itembody() As String
+        Friend ReadOnly Property GraphicGapMatch_Itembody_QTI22() As String
             Get
-                Return ResourceManager.GetString("GraphicGapMatch_Itembody", resourceCulture)
+                Return ResourceManager.GetString("GraphicGapMatch_Itembody_QTI22", resourceCulture)
             End Get
         End Property
 
-        Friend ReadOnly Property GraphicGapMatch_ResponseDeclarations() As String
+        Friend ReadOnly Property GraphicGapMatch_Itembody_QTI30() As String
             Get
-                Return ResourceManager.GetString("GraphicGapMatch_ResponseDeclarations", resourceCulture)
+                Return ResourceManager.GetString("GraphicGapMatch_Itembody_QTI30", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property GraphicGapMatch_ResponseDeclarations_QTI22() As String
+            Get
+                Return ResourceManager.GetString("GraphicGapMatch_ResponseDeclarations_QTI22", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property GraphicGapMatch_ResponseDeclarations_QTI30() As String
+            Get
+                Return ResourceManager.GetString("GraphicGapMatch_ResponseDeclarations_QTI30", resourceCulture)
             End Get
         End Property
 
@@ -156,21 +247,39 @@ Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
             End Get
         End Property
 
+        Friend ReadOnly Property GraphicGapMatch_ResponseProcessing_QTI30() As String
+            Get
+                Return ResourceManager.GetString("GraphicGapMatch_ResponseProcessing_QTI30", resourceCulture)
+            End Get
+        End Property
+
         Friend ReadOnly Property McWithConcepts() As String
             Get
                 Return ResourceManager.GetString("McWithConcepts", resourceCulture)
             End Get
         End Property
 
-        Friend ReadOnly Property McWithConcepts_Itembody() As String
+        Friend ReadOnly Property McWithConcepts_Itembody_QTI22() As String
             Get
-                Return ResourceManager.GetString("McWithConcepts_Itembody", resourceCulture)
+                Return ResourceManager.GetString("McWithConcepts_Itembody_QTI22", resourceCulture)
             End Get
         End Property
 
-        Friend ReadOnly Property McWithConcepts_OutcomeDeclarations() As String
+        Friend ReadOnly Property McWithConcepts_Itembody_QTI30() As String
             Get
-                Return ResourceManager.GetString("McWithConcepts_OutcomeDeclarations", resourceCulture)
+                Return ResourceManager.GetString("McWithConcepts_Itembody_QTI30", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property McWithConcepts_OutcomeDeclarations_QTI22() As String
+            Get
+                Return ResourceManager.GetString("McWithConcepts_OutcomeDeclarations_QTI22", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property McWithConcepts_OutcomeDeclarations_QTI30() As String
+            Get
+                Return ResourceManager.GetString("McWithConcepts_OutcomeDeclarations_QTI30", resourceCulture)
             End Get
         End Property
 
@@ -180,27 +289,51 @@ Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
             End Get
         End Property
 
+        Friend ReadOnly Property McWithConcepts_ResponseProcessing_QTI30() As String
+            Get
+                Return ResourceManager.GetString("McWithConcepts_ResponseProcessing_QTI30", resourceCulture)
+            End Get
+        End Property
+
         Friend ReadOnly Property PreprocessorWithConcepts() As String
             Get
                 Return ResourceManager.GetString("PreprocessorWithConcepts", resourceCulture)
             End Get
         End Property
 
-        Friend ReadOnly Property PreprocessorWithConcepts_Itembody() As String
+        Friend ReadOnly Property PreprocessorWithConcepts_Itembody_QTI22() As String
             Get
-                Return ResourceManager.GetString("PreprocessorWithConcepts_Itembody", resourceCulture)
+                Return ResourceManager.GetString("PreprocessorWithConcepts_Itembody_QTI22", resourceCulture)
             End Get
         End Property
 
-        Friend ReadOnly Property PreprocessorWithConcepts_OutcomeDeclarations() As String
+        Friend ReadOnly Property PreprocessorWithConcepts_Itembody_QTI30() As String
             Get
-                Return ResourceManager.GetString("PreprocessorWithConcepts_OutcomeDeclarations", resourceCulture)
+                Return ResourceManager.GetString("PreprocessorWithConcepts_Itembody_QTI30", resourceCulture)
             End Get
         End Property
 
-        Friend ReadOnly Property PreprocessorWithConcepts_ResponseProcessing_QTI22() As String
+        Friend ReadOnly Property PreprocessorWithConcepts_OutcomeDeclarations_QTI22() As String
             Get
-                Return ResourceManager.GetString("PreprocessorWithConcepts_ResponseProcessing_QTI22", resourceCulture)
+                Return ResourceManager.GetString("PreprocessorWithConcepts_OutcomeDeclarations_QTI22", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property PreprocessorWithConcepts_OutcomeDeclarations_QTI30() As String
+            Get
+                Return ResourceManager.GetString("PreprocessorWithConcepts_OutcomeDeclarations_QTI30", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property PreprocessorWithConcepts_ResponseProcessing1() As String
+            Get
+                Return ResourceManager.GetString("PreprocessorWithConcepts_ResponseProcessing1", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property PreprocessorWithConcepts_ResponseProcessing11() As String
+            Get
+                Return ResourceManager.GetString("PreprocessorWithConcepts_ResponseProcessing11", resourceCulture)
             End Get
         End Property
     End Module

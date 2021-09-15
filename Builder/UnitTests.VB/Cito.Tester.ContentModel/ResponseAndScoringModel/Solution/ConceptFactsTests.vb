@@ -9,6 +9,7 @@ Public Class ConceptFactsTests : Inherits SerializationTestBase
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("Solution")>
     <Description("Concepts should not serialize, since not used")>
     Public Sub SerializeTestAndCompare()
+        'Arrange
         Dim solution = New Solution
         Dim conceptFinding = New ConceptFinding With {.Id = "Id needs to be set"}
         Dim conceptFact = New ConceptFact
@@ -19,15 +20,18 @@ Public Class ConceptFactsTests : Inherits SerializationTestBase
         conceptFinding.Facts.Add(conceptFact)
 
         solution.Findings.Add(conceptFinding)
-
+      
+        'Act
         Dim result = DoSerialize(Of Solution)(solution)
-
+       
+        'Assert
         Assert.IsTrue(XmlTools.DeepEqualsWithNormalization(New XDocument(_recorded), New XDocument(result), Nothing))
     End Sub
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("Solution")>
     <Description("Concepts should serialize")>
     Public Sub SerializeTestAndCompareWithConceptValue()
+        'Arrange
         Dim solution = New Solution
         Dim conceptFinding = New ConceptFinding With {.Id = "Id needs to be set"}
 
@@ -43,8 +47,10 @@ Public Class ConceptFactsTests : Inherits SerializationTestBase
         conceptFact.Concepts.Add("someCode", 1)
         conceptFact.Concepts.Add("someOtherCode", 42)
 
+        'Act
         Dim result = DoSerialize(Of Solution)(solution)
-
+       
+        'Assert
         Assert.IsTrue(XmlTools.DeepEqualsWithNormalization(New XDocument(_recorded2), New XDocument(result), Nothing))
     End Sub
 

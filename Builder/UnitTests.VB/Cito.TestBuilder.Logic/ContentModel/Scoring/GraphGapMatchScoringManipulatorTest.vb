@@ -13,15 +13,19 @@ Imports Questify.Builder.UnitTests.Framework
 <TestClass()>
 Public Class GraphGapMatchScoringManipulatorTest
 
+    'Graphical Gap Match Variant 1
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GraphGapMatch_GetKey_A_NoSolution()
+        'Arrange
         Dim param = CreateScoreParameter()
 
         Dim sol = GetSolution(GraphGapMatchKeyFinding)
         Dim manipulator As IChoiceArrayScoringManipulator = param.GetScoreManipulator(sol)
 
+        'Act
         Dim res = manipulator.GetKeyStatus()
 
+        'Assert
         Assert.IsTrue(res.ContainsKey("A"))
         Assert.AreEqual("IMAGE_A", res("A").ToString)
         Assert.AreEqual(2, param.Value.Count)
@@ -29,19 +33,25 @@ Public Class GraphGapMatchScoringManipulatorTest
         Assert.AreEqual(2, res.Keys.Count)
     End Sub
 
+    'Graphical Gap Match Variant 1
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GetDisplayValue_version1()
+        'Arrange
         Dim param = CreateScoreParameter()
         Dim sol = GetSolution(GraphGapMatchKeyFinding)
         Dim manipulator As IChoiceArrayScoringManipulator = param.GetScoreManipulator(sol)
 
-        Dim result = manipulator.GetDisplayValueForKey("A")
+        'Act
+        Dim result = manipulator.GetDisplayValueForKey("A") 'Key is IMAGE_A
 
+        'Assert
         Assert.AreEqual("choice IMAGE_A", result)
     End Sub
 
+    'Graphical Gap Match Variant 1
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GetDisplayValueForExistingItem()
+        'Arrange
         Dim item = ItemFromTestTool.To(Of AssessmentItem)()
 
         Dim param = DirectCast(item.Parameters.DeepFetchScoringParameters().First(Function(prm) TypeOf prm Is GraphGapMatchScoringParameter), GraphGapMatchScoringParameter)
@@ -50,20 +60,26 @@ Public Class GraphGapMatchScoringManipulatorTest
         Dim sol = item.Solution
         Dim manipulator As IChoiceArrayScoringManipulator = ScoringParameterFactory.GetConceptScoreManipulator(Of IValidatingChoiceArrayScoringManipulator(Of String))(param, sol)
 
-        Dim result = manipulator.GetDisplayValueForKey("A")
+        'Act
+        Dim result = manipulator.GetDisplayValueForKey("A") 'Key is IMAGE_A
 
+        'Assert
         Assert.AreEqual("Plaatje C", result)
     End Sub
 
+    'Graphical Gap Match Variant 2
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GraphGapMatch2_GetKey_A_NoSolution()
+        'Arrange
         Dim param = CreateScoreParameter(transform:=False)
 
         Dim sol = GetSolution(GraphGapMatchVar2KeyFinding)
         Dim manipulator As IChoiceArrayScoringManipulator = param.GetScoreManipulator(sol)
 
+        'Act
         Dim res = manipulator.GetKeyStatus()
 
+        'Assert
         Assert.IsTrue(res.ContainsKey("IMAGE_A"))
         Assert.AreEqual(4, param.Value.Count)
         Assert.AreEqual(0, param.Gaps.Count)
@@ -73,13 +89,16 @@ Public Class GraphGapMatchScoringManipulatorTest
         Assert.AreEqual(4, res.Keys.Count)
     End Sub
 
+    'Graphical Gap Match Variant 1
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GraphGapMatch_Remove_Key_FromSolution()
+        'Arrange
         Dim param = CreateScoreParameter()
 
         Dim sol = GetSolution(GraphGapMatchKeyFinding)
         Dim manipulator As IChoiceArrayScoringManipulator = param.GetScoreManipulator(sol)
 
+        'Act
         manipulator.Clear()
         WriteSolution("after clear", sol)
 
@@ -91,17 +110,21 @@ Public Class GraphGapMatchScoringManipulatorTest
 
         Dim res = manipulator.GetKeyStatus()
 
+        'Assert
         Assert.AreEqual(0, res("A").Value.Count)
         Assert.AreEqual(0, res("B").Value.Count)
     End Sub
 
+    'Graphical Gap Match Variant 1
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GraphGapMatch_Set_Key_FromSolution()
+        'Arrange
         Dim param = CreateScoreParameter()
 
         Dim sol = GetSolution(GraphGapMatchKeyFinding)
         Dim manipulator As IChoiceArrayScoringManipulator = param.GetScoreManipulator(sol)
 
+        'Act
         manipulator.Clear()
         WriteSolution("after clear", sol)
 
@@ -110,21 +133,26 @@ Public Class GraphGapMatchScoringManipulatorTest
 
         Dim res = manipulator.GetKeyStatus()
 
+        'Assert
         Assert.AreEqual("IMAGE_B", res("B").ToString)
         Assert.AreEqual(String.Empty, res("A").ToString)
     End Sub
 
+    'Graphical Gap Match Variant 1
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GraphGapMatch_ClearKey_FromSolution()
+        'Arrange
         Dim param = CreateScoreParameter()
 
         Dim sol = GetSolution(GraphGapMatchKeyFinding)
         Dim manipulator As IChoiceArrayScoringManipulator = param.GetScoreManipulator(sol)
 
+        'Act
         manipulator.Clear()
         WriteSolution("after clear", sol)
         Dim res = manipulator.GetKeyStatus()
 
+        'Assert
         Assert.AreEqual(2, res.Keys.Count)
         Assert.IsTrue(res.ContainsKey("A"))
         Assert.IsTrue(res.ContainsKey("B"))
@@ -135,6 +163,7 @@ Public Class GraphGapMatchScoringManipulatorTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GraphGapMatch_GetKey_B_NoSolution()
+        'Arrange
         Dim param = CreateScoreParameter()
 
         Dim key = CreateGapMatchKeyFinding("IMAGE_A", "B")
@@ -145,8 +174,10 @@ Public Class GraphGapMatchScoringManipulatorTest
         manipulator.SetKey("A", "IMAGE_A")
         manipulator.SetKey("B", "IMAGE_B")
 
+        'Act
         Dim res = manipulator.GetKeyStatus()
 
+        'Assert
         Assert.AreEqual("IMAGE_A", res("A").ToString)
         Assert.AreEqual("IMAGE_B", res("B").ToString)
         Assert.AreEqual(2, res.Keys.Count)
@@ -154,6 +185,7 @@ Public Class GraphGapMatchScoringManipulatorTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GraphGapMatch_CreateInvalidFinding_Test()
+        'Arrange
         Dim param = CreateScoreParameter()
 
         Dim sol = GetSolution(GraphGapMatchKeyFinding)
@@ -163,8 +195,10 @@ Public Class GraphGapMatchScoringManipulatorTest
 
         manipulator.GetKeyStatus()
 
+        'Act
         Dim isValidFinding = manipulator.IsValid("IMAGE_A")
 
+        'Assert
         Assert.IsFalse(isValidFinding)
     End Sub
 

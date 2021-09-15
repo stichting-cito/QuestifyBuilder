@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qti-item-body class="defaultBody">
+	<div class="content">
+		<div class="questify_div_center">
+			<div class="questify_div_center_inner">
+				<div class="questify_itemtitle">
+					<p>Tens board</p>
+				</div>
+				<div class="questify_prompt">
+					<p>Cover me.</p>
+				</div>
+				<div id="question"> <p/>
+					<p>I'm going in.</p>
+				</div>
+				<div id="hotSpotAnswer_Vertical">
+					<qti-graphic-gap-match-interaction response-identifier="gapMatchController">
+						<object type="image/png" data="../img/Zehnertafel.png" width="386" height="44"/>
+						<qti-gap-img identifier="A" match-max="2">
+							<object type="image/png" data="../img/Rot.png"/>
+						</qti-gap-img>
+						<qti-gap-img identifier="B" match-max="2">
+							<object type="image/png" data="../img/Blau.png"/>
+						</qti-gap-img>
+						<qti-gap-img identifier="C" match-max="2">
+							<object type="image/png" data="../img/Gruen.png"/>
+						</qti-gap-img>
+						<qti-associable-hotspot identifier="HSA" match-max="1" coords="1,0,35,42" shape="rect"/>
+						<qti-associable-hotspot identifier="HSB" match-max="1" coords="37,1,75,43" shape="rect"/>
+						<qti-associable-hotspot identifier="HSC" match-max="1" coords="76,1,112,43" shape="rect"/>
+						<qti-associable-hotspot identifier="HSD" match-max="1" coords="113,2,151,42" shape="rect"/>
+						<qti-associable-hotspot identifier="HSE" match-max="1" coords="150,1,188,43" shape="rect"/>
+						<qti-associable-hotspot identifier="HSF" match-max="1" coords="188,0,226,44" shape="rect"/>
+						<qti-associable-hotspot identifier="HSG" match-max="1" coords="227,1,263,43" shape="rect"/>
+						<qti-associable-hotspot identifier="HSH" match-max="1" coords="263,1,301,43" shape="rect"/>
+						<qti-associable-hotspot identifier="HSI" match-max="1" coords="302,1,338,43" shape="rect"/>
+						<qti-associable-hotspot identifier="HSJ" match-max="1" coords="340,1,384,43" shape="rect"/>
+					</qti-graphic-gap-match-interaction>
+				</div>
+			</div>
+		</div>
+	</div>
+</qti-item-body>

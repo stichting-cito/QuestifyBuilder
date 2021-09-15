@@ -11,6 +11,7 @@ Public Class InlineChoiceScoringManipulatorTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub SetKeyB_GetDisplayValue_B()
+        'Arrange
         Dim itm = itemInlineChoice.To(Of AssessmentItem)()
         Dim scoringParams = itm.Parameters.DeepFetchInlineScoringParameters()
 
@@ -22,15 +23,18 @@ Public Class InlineChoiceScoringManipulatorTest
 
         Dim scoringMap = New ScoringMap(New ScoringParameter() {scoringParameter}, itm.Solution).GetMap().First()
 
+        'Act
         Dim conceptManipulator = scoringMap.GetConceptManipulator(itm.Solution)
         Dim keyValue = conceptManipulator.GetDisplayValueForConceptId("B")
 
+        'Assert
         Assert.AreEqual(3, scoringMap.Count(), "It is a choice so 3 scoringMapKeys")
         Assert.AreEqual("200", keyValue)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub SetKeyB_GetDisplayValue_A1()
+        'Arrange
         Dim itm = itemInlineChoice.To(Of AssessmentItem)()
         Dim scoringParams = itm.Parameters.DeepFetchInlineScoringParameters()
 
@@ -42,15 +46,18 @@ Public Class InlineChoiceScoringManipulatorTest
 
         Dim scoringMap = New ScoringMap(New ScoringParameter() {scoringParameter}, itm.Solution).GetMap().First()
 
+        'Act
         Dim conceptManipulator = scoringMap.GetConceptManipulator(itm.Solution)
         Dim keyValue = conceptManipulator.GetDisplayValueForConceptId("A[1]")
 
 
+        'Assert
         Assert.AreEqual(3, scoringMap.Count(), "It is a choice so 3 scoringMapKeys")
         Assert.AreEqual("100", keyValue)
     End Sub
 
 
+#Region "Data"
     Private ReadOnly itemInlineChoice As XElement = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="1002" title="1002" layoutTemplateSrc="ilt.inline.choice">
                                                         <solution>
                                                         </solution>
@@ -113,5 +120,6 @@ Public Class InlineChoiceScoringManipulatorTest
                                                     </assessmentItem>
 
 
+#End Region
 
 End Class

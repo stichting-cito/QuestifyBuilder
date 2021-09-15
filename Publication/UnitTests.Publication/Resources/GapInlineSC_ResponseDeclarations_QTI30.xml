@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qti-response-declarations>
+  <qti-response-declaration identifier="RESPONSE" cardinality="single" base-type="integer">
+    <qti-correct-response interpretation="(2&amp;3&amp;5)|(3&amp;2&amp;5)">
+      <qti-value>2</qti-value>
+    </qti-correct-response>
+  </qti-response-declaration>
+  <qti-response-declaration identifier="RESPONSE2" cardinality="single" base-type="integer">
+    <qti-correct-response>
+      <qti-value>3</qti-value>
+    </qti-correct-response>
+  </qti-response-declaration>
+  <qti-response-declaration identifier="RESPONSE3" cardinality="single" base-type="integer">
+    <qti-correct-response>
+      <qti-value>5</qti-value>
+    </qti-correct-response>
+  </qti-response-declaration>
+</qti-response-declarations>

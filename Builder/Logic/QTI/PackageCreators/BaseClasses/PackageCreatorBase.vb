@@ -14,7 +14,7 @@ Imports Questify.Builder.Model.ContentModel.HelperClasses
 Namespace QTI.PackageCreators.BaseClasses
 
     Public MustInherit Class PackageCreatorBase(Of T As PublicationRequestBase)
-        Implements IDisposable
+        Implements IDisposable, IPackageCreator
 
         Private _itemSelector As ItemSelectorManager
         Private _itemCounter As Integer = 0
@@ -149,14 +149,14 @@ Namespace QTI.PackageCreators.BaseClasses
         End Sub
 
         Protected Function GetAssessmentTest(testEntry As ResourceEntry) As AssessmentTest2
-            Dim request = new ResourceRequestDTO With {.WithCustomProperties = True}
+            Dim request = New ResourceRequestDTO With {.WithCustomProperties = True}
             Dim testResource As BinaryResource = ResourceMan.GetResource(testEntry.Name, AddressOf StreamConverters.ConvertStreamToString, request)
 
             Return DirectCast(SerializeHelper.XmlDeserializeFromString(DirectCast(testResource.ResourceObject, String), GetType(AssessmentTest2)), AssessmentTest2)
         End Function
 
         Protected Function GetTestPackage(testEntry As ResourceEntry) As TestPackage
-            Dim request = new ResourceRequestDTO With {.WithCustomProperties = True}
+            Dim request = New ResourceRequestDTO With {.WithCustomProperties = True}
             Dim testPackageResource As BinaryResource = ResourceMan.GetResource(testEntry.Name, AddressOf StreamConverters.ConvertStreamToString, request)
             Return DirectCast(SerializeHelper.XmlDeserializeFromString(DirectCast(testPackageResource.ResourceObject, String), GetType(TestPackage)), TestPackage)
         End Function
@@ -225,27 +225,6 @@ Namespace QTI.PackageCreators.BaseClasses
             Return parsedDocument.OuterXml
         End Function
 
-        Public Sub ResourceNeeded(ByVal sender As Object, ByVal e As ResourceNeededEventArgs)
-            Dim _resource As BinaryResource = Nothing
-            dim request = New ResourceRequestDTO With {.WithCustomProperties = True}
-            If (e.Command And ResourceNeededCommand.Resource) = ResourceNeededCommand.Resource Then
-                If e.TypedResourceType IsNot Nothing Then
-                    Debug.Assert(e.TypedResourceType IsNot GetType(AssessmentItem), "Assessment item should not be read using TypedResourceType because of whitespace handling!")
-
-                    _resource = ResourceMan.GetTypedResource(e.ResourceName, e.TypedResourceType, request)
-                Else
-                    _resource = ResourceMan.GetResource(e.ResourceName, e.StreamProcessingDelegate, request)
-                End If
-
-                e.BinaryResource = _resource
-            End If
-
-            If (e.Command And ResourceNeededCommand.MetaData) = ResourceNeededCommand.MetaData Then
-                Dim fetchedMetaData As MetaDataCollection = ResourceMan.GetResourceMetaData(e.ResourceName)
-                e.Metadata.AddRange(fetchedMetaData)
-            End If
-        End Sub
-
         Public Function GetItemByCode(ByVal itemCode As String) As AssessmentItem
             Dim itemResourceEventArgs As New ResourceNeededEventArgs(itemCode, AddressOf StreamConverters.ConvertStreamToByteArray)
 
@@ -279,7 +258,7 @@ Namespace QTI.PackageCreators.BaseClasses
             Return assessmentTest
         End Function
 
-        Public Function GetAspectByCode(ByVal code As String) As Aspect
+        Public Function GetAspectByCode(ByVal code As String) As Aspect Implements IPackageCreator.GetAspectByCode
             If Not AspectHelper.IsDefaultResourceAspect(code) Then
                 Dim aspectResourceEventArgs As New ResourceNeededEventArgs(code, GetType(Aspect))
                 ResourceNeeded(Nothing, aspectResourceEventArgs)
@@ -290,7 +269,7 @@ Namespace QTI.PackageCreators.BaseClasses
         End Function
 
         Public Function ParseTemplate(ByVal itemCode As String, assessmentTestViewType As String, item As AssessmentItem) As String
-            dim curItem = item
+            Dim curItem = item
             If curItem Is Nothing Then
                 curItem = GetItemByCode(itemCode)
             End If
@@ -352,5 +331,29 @@ Namespace QTI.PackageCreators.BaseClasses
             Me.New()
         End Sub
 
+        Public Sub ResourceNeeded(sender As Object, e As ResourceNeededEventArgs) Implements IPackageCreator.ResourceNeeded
+            Dim _resource As BinaryResource = Nothing
+            Dim request = New ResourceRequestDTO With {.WithCustomProperties = True}
+            If (e.Command And ResourceNeededCommand.Resource) = ResourceNeededCommand.Resource Then
+                If e.TypedResourceType IsNot Nothing Then
+                    Debug.Assert(e.TypedResourceType IsNot GetType(AssessmentItem), "Assessment item should not be read using TypedResourceType because of whitespace handling!")
+
+                    _resource = ResourceMan.GetTypedResource(e.ResourceName, e.TypedResourceType, request)
+                Else
+                    _resource = ResourceMan.GetResource(e.ResourceName, e.StreamProcessingDelegate, request)
+                End If
+
+                e.BinaryResource = _resource
+            End If
+
+            If (e.Command And ResourceNeededCommand.MetaData) = ResourceNeededCommand.MetaData Then
+                Dim fetchedMetaData As MetaDataCollection = ResourceMan.GetResourceMetaData(e.ResourceName)
+                e.Metadata.AddRange(fetchedMetaData)
+            End If
+        End Sub
+
+        Public Overridable Function GetAssessmentTestViewType() As String Implements IPackageCreator.GetAssessmentTestViewType
+            Return GenericTestModelPlugin.PLUGIN_NAME
+        End Function
     End Class
-End NameSpace
+End Namespace

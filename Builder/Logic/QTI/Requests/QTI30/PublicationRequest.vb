@@ -97,6 +97,8 @@ Namespace QTI.Requests.QTI30
                     Return ResourceTypeType.imsqti_test_xmlv3p0
                 Case PackageCreator.QTIManifestResourceType.associatedcontent
                     Return ResourceTypeType.associatedcontentlearningapplicationresource
+                Case PackageCreator.QTIManifestResourceType.sharedstimulus
+                    Return ResourceTypeType.imsqti_stimulus_xmlv3p0
                 Case PackageCreator.QTIManifestResourceType.webcontent,
                      PackageCreator.QTIManifestResourceType.adaptive_driver,
                      PackageCreator.QTIManifestResourceType.adaptive_module

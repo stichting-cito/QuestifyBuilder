@@ -5,6 +5,7 @@ Namespace QTI_Base
 
     Public MustInherit Class ResponseDeclarationHotspotTestsBase
 
+#Region "Scoring parameters"
 
         Protected Function GetHotspotScoringParams() As HashSet(Of ScoringParameter)
             Dim scoreParams As New HashSet(Of ScoringParameter)
@@ -22,7 +23,9 @@ Namespace QTI_Base
             Return scoreParams
         End Function
 
+#End Region
 
+#Region "Solutions"
 
         Protected _solution1 As XElement =
             <solution>
@@ -383,6 +386,7 @@ Namespace QTI_Base
                 </ItemScoreTranslationTable>
             </solution>
 
+#End Region
 
     End Class
 

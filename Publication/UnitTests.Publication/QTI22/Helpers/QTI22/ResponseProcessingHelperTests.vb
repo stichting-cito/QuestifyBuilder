@@ -2,11 +2,11 @@
 Imports Questify.Builder.Logic.QTI.Helpers.QTI22
 Imports Questify.Builder.Logic.QTI.Xsd.QTI22_Final
 
-Namespace QTI22Publication.Helpers.QTI22
+Namespace QTI22.Helpers
     <TestClass>
     Public Class ResponseProcessingHelperTests
         <TestMethod>
-        Public Sub MergeResponseProcessing_NoValues_ReturnsNothing
+        Public Sub MergeResponseProcessing_NoValues_ReturnsNothing()
             Dim valueFirst As ResponseProcessingType = Nothing
             Dim valueSecond As ResponseProcessingType = Nothing
 
@@ -16,8 +16,8 @@ Namespace QTI22Publication.Helpers.QTI22
         End Sub
 
         <TestMethod>
-        Public Sub MergeResponseProcessing_OnlyFirstValue_ReturnsFirstValue
-            Dim valueFirst = new ResponseProcessingType()
+        Public Sub MergeResponseProcessing_OnlyFirstValue_ReturnsFirstValue()
+            Dim valueFirst = New ResponseProcessingType()
             valueFirst.Items = New List(Of Object)()
             valueFirst.Items.Add(New ResponseConditionType())
             Dim valueSecond As ResponseProcessingType = Nothing
@@ -29,9 +29,9 @@ Namespace QTI22Publication.Helpers.QTI22
         End Sub
 
         <TestMethod>
-        Public Sub MergeResponseProcessing_OnlySecondValue_ReturnsSecondValue
+        Public Sub MergeResponseProcessing_OnlySecondValue_ReturnsSecondValue()
             Dim valueFirst As ResponseProcessingType = Nothing
-            Dim valueSecond = new ResponseProcessingType()
+            Dim valueSecond = New ResponseProcessingType()
             valueSecond.Items = New List(Of Object)()
             valueSecond.Items.Add(New ResponseConditionType())
 
@@ -42,11 +42,11 @@ Namespace QTI22Publication.Helpers.QTI22
         End Sub
 
         <TestMethod>
-        Public Sub MergeResponseProcessing_BothValues_ReturnsMerged
-            Dim valueFirst = new ResponseProcessingType()
+        Public Sub MergeResponseProcessing_BothValues_ReturnsMerged()
+            Dim valueFirst = New ResponseProcessingType()
             valueFirst.Items = New List(Of Object)()
             valueFirst.Items.Add(New ResponseConditionType())
-            Dim valueSecond = new ResponseProcessingType()
+            Dim valueSecond = New ResponseProcessingType()
             valueSecond.Items = New List(Of Object)()
             valueSecond.Items.Add(New ResponseConditionType())
 
@@ -56,4 +56,4 @@ Namespace QTI22Publication.Helpers.QTI22
             Assert.AreEqual(2, result.Items.Count)
         End Sub
     End Class
-End NameSpace
+End Namespace

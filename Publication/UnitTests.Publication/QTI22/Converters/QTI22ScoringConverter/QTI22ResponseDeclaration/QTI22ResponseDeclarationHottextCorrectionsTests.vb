@@ -40,6 +40,7 @@ Public Class QTI22ResponseDeclarationHottextCorrectionsTests
         RunResponseDeclarationTest(_itemBody2, _solution7, GetHottextCorrectionScoringParams_II, _result7, 5)
     End Sub
 
+#Region "Scoring parameters"
 
     Private Function GetHottextCorrectionScoringParams() As HashSet(Of ScoringParameter)
         Dim scoreParams As New HashSet(Of ScoringParameter)
@@ -60,20 +61,20 @@ Public Class QTI22ResponseDeclarationHottextCorrectionsTests
 
         Dim xhtmlValue As XElement = <xhtmlparameter name="hottexttext">
                                          <p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml">Op vrijwel alle <cito:InlineElement id="Ice5853d6-5a4b-4fc6-9298-7bc4047d0e26" layoutTemplateSourceName="InlineHottextCorrectionLayoutTemplate" xmlns:cito="http://www.cito.nl/citotester">
-                                                 <cito:parameters>
-                                                     <cito:parameterSet id="entireItem">
-                                                         <cito:listedparameter name="controlType">hottext</cito:listedparameter>
-                                                         <cito:plaintextparameter name="controlId">Ice5853d6-5a4b-4fc6-9298-7bc4047d0e26</cito:plaintextparameter>
-                                                         <cito:plaintextparameter name="controlLabel">een</cito:plaintextparameter>
-                                                         <cito:booleanparameter name="addHottextCorrection">True</cito:booleanparameter>
-                                                         <cito:plaintextparameter name="hottextValue"/>
-                                                         <cito:hotTextCorrectionScoringParameter name="hotTextCorrectionScoring" ControllerId="hottextCorrectionController" findingOverride="hottextController" expectedLength="0" correctionIsApplicable="true">
-                                                             <cito:subparameterset id="Input"/>
-                                                             <cito:definition id=""/>
-                                                             <cito:relatedControlLabel name="controlLabel">een</cito:relatedControlLabel>
-                                                         </cito:hotTextCorrectionScoringParameter>
-                                                     </cito:parameterSet>
-                                                 </cito:parameters>
+                                             <cito:parameters>
+                                                 <cito:parameterSet id="entireItem">
+                                                     <cito:listedparameter name="controlType">hottext</cito:listedparameter>
+                                                     <cito:plaintextparameter name="controlId">Ice5853d6-5a4b-4fc6-9298-7bc4047d0e26</cito:plaintextparameter>
+                                                     <cito:plaintextparameter name="controlLabel">een</cito:plaintextparameter>
+                                                     <cito:booleanparameter name="addHottextCorrection">True</cito:booleanparameter>
+                                                     <cito:plaintextparameter name="hottextValue"/>
+                                                     <cito:hotTextCorrectionScoringParameter name="hotTextCorrectionScoring" ControllerId="hottextCorrectionController" findingOverride="hottextController" expectedLength="0" correctionIsApplicable="true">
+                                                         <cito:subparameterset id="Input"/>
+                                                         <cito:definition id=""/>
+                                                         <cito:relatedControlLabel name="controlLabel">een</cito:relatedControlLabel>
+                                                     </cito:hotTextCorrectionScoringParameter>
+                                                 </cito:parameterSet>
+                                             </cito:parameters>
                                              </cito:InlineElement><span id="SIce5853d6-5a4b-4fc6-9298-7bc4047d0e26" style="background-color: #C7B8CE;">een</span> meren is in de zomer veel te doen: ze zijn <cito:InlineElement id="I1752ec64-4652-4723-b3b0-0404b15a0e6d" layoutTemplateSourceName="InlineHottextCorrectionLayoutTemplate" xmlns:cito="http://www.cito.nl/citotester">
                                                  <cito:parameters>
                                                      <cito:parameterSet id="entireItem">
@@ -237,7 +238,7 @@ Public Class QTI22ResponseDeclarationHottextCorrectionsTests
                     $"Input_{pair.Key}", .ExpectedLength = 0, .CorrectionIsApplicable = True}
             correctionScoreParam.AddSubParameters("Input")
             correctionScoreParam.RelatedControlLabelParameter = New PlainTextParameter() With {.Name = "controlLabel", .Value = pair.Value}
-            scoreParams.Add(correctionScoreParam)
+            scoreParams.Add(correctionScoreParam)   'For testpurposes... add to collection as well... during a normal publication the scoring parameters are being retrieved from the item using DeepFetchInlineScoringParameters
         Next
 
         Return scoreParams
@@ -336,13 +337,15 @@ Public Class QTI22ResponseDeclarationHottextCorrectionsTests
                     $"Input_{pair.Key}", .ExpectedLength = 0, .CorrectionIsApplicable = True}
             correctionScoreParam.AddSubParameters("Input")
             correctionScoreParam.RelatedControlLabelParameter = New PlainTextParameter() With {.Name = "controlLabel", .Value = pair.Value}
-            scoreParams.Add(correctionScoreParam)
+            scoreParams.Add(correctionScoreParam)   'For testpurposes... add to collection as well... during a normal publication the scoring parameters are being retrieved from the item using DeepFetchInlineScoringParameters
         Next
 
         Return scoreParams
     End Function
 
+#End Region
 
+#Region "Itembodies"
 
     Private _itemBody1 As XElement =
         <wrapper>
@@ -358,7 +361,7 @@ Public Class QTI22ResponseDeclarationHottextCorrectionsTests
                                 <div id="questionwithinlinecontrol">
                                     <hottextInteraction responseIdentifier="hottextController" maxChoices="0" class="markCorrect">
                                         <p id="c1-id-11">Op vrijwel alle <span>
-                                                <hottext id="Ice5853d6-5a4b-4fc6-9298-7bc4047d0e26" identifier="Ice5853d6-5a4b-4fc6-9298-7bc4047d0e26"/>
+                                            <hottext id="Ice5853d6-5a4b-4fc6-9298-7bc4047d0e26" identifier="Ice5853d6-5a4b-4fc6-9298-7bc4047d0e26"/>
                                             </span>
                                             <span id="SIce5853d6-5a4b-4fc6-9298-7bc4047d0e26" style="background-color: #C7B8CE;">een</span> meren is in de zomer veel te doen: ze zijn <span>
                                                 <hottext id="I1752ec64-4652-4723-b3b0-0404b15a0e6d" identifier="I1752ec64-4652-4723-b3b0-0404b15a0e6d"/>
@@ -477,7 +480,9 @@ Public Class QTI22ResponseDeclarationHottextCorrectionsTests
             </itemBody>
         </wrapper>
 
+#End Region
 
+#Region "Solutions"
 
     Private _solution1 As XElement =
         <solution>
@@ -1639,7 +1644,9 @@ Public Class QTI22ResponseDeclarationHottextCorrectionsTests
             </ItemScoreTranslationTable>
         </solution>
 
+#End Region
 
+#Region "Expected results"
 
     Private _result1 As XElement =
         <responseDeclarations>
@@ -1933,5 +1940,6 @@ Public Class QTI22ResponseDeclarationHottextCorrectionsTests
             <responseDeclaration identifier="RESPONSE5" cardinality="single" baseType="string"/>
         </responseDeclarations>
 
+#End Region
 
 End Class

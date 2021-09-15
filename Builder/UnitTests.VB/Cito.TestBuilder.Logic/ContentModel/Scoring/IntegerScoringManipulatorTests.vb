@@ -15,43 +15,55 @@ Public Class IntegerScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub ControllerIdSet_ShouldBeSetAsPostFix()
+        'Arrange
         Dim param = New IntegerScoringParameter() With {.ControllerId = "Gap"}
-
+        
+        'Act
         Dim result = DirectCast(param.GetScoreManipulator(New Solution), MultiTypeScoringManipulator).Manipulator.FactIdPostFix
-
+        
+        'Assert
         Assert.AreEqual("-Gap", result)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub InlineIdSet_ShouldBeSetAsPostFix()
+        'Arrange
         Dim param = New IntegerScoringParameter() With {.InlineId = "Inline"}
-
+        
+        'Act
         Dim result = DirectCast(param.GetScoreManipulator(New Solution), MultiTypeScoringManipulator).Manipulator.FactIdPostFix
-
+        
+        'Assert
         Assert.AreEqual("-Inline", result)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub ControllerIdSet_and_InlineIdSet_Inline_ShouldBeSetAsPostFix()
+        'Arrange
         Dim param = New IntegerScoringParameter() With {.InlineId = "Inline", .ControllerId = "Controller"}
-
+        
+        'Act
         Dim result = DirectCast(param.GetScoreManipulator(New Solution), MultiTypeScoringManipulator).Manipulator.FactIdPostFix
-
+        
+        'Assert
         Assert.AreEqual("-Inline", result)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub SetKey_A_ShouldContainA_AndValue()
+        'Arrange
         Dim param = New IntegerScoringParameter() With {.ControllerId = "Gap"}
         param.Value = New ParameterSetCollection
         param.Value.Add(New ParameterCollection() With {.Id = "A"})
 
         Dim key = New KeyFinding()
         Dim manipulator As IGapScoringManipulator(Of MultiType) = New MultiTypeScoringManipulator(New KeyManipulator(key), param)
-
+        
+        'Act
         manipulator.SetKey("A", New GapValue(Of MultiType)(5, GapComparisonType.GreaterThan))
         manipulator.SetKey("B", 6)
 
+        'Assert
         Dim res = manipulator.GetKeyStatus()
         Assert.IsTrue(res.ContainsKey("A"))
         Assert.AreEqual(1, res("A").Count())
@@ -67,6 +79,7 @@ Public Class IntegerScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub TestMultipleIntegerScoringParameters()
+        'Arrange
         Dim paramA = New IntegerScoringParameter() With {.ControllerId = "Gap", .FindingOverride = "shared_finding", .InlineId = "inline1"}
         paramA.Value = New ParameterSetCollection
         paramA.Value.Add(New ParameterCollection() With {.Id = "A"})
@@ -81,6 +94,7 @@ Public Class IntegerScoringManipulatorTests
         Dim manipulatorA = paramA.GetScoreManipulator(solution)
         Dim manipulatorB = paramB.GetScoreManipulator(solution)
 
+        'Act
         manipulatorA.SetKey("A", 1)
         manipulatorB.SetKey("C", New GapValue(Of MultiType)(3, GapComparisonType.GreaterThan))
         manipulatorB.SetKey("D", New GapValue(Of MultiType)(4, 5))
@@ -88,6 +102,7 @@ Public Class IntegerScoringManipulatorTests
         Dim keyStatusA = manipulatorA.GetKeyStatus()
         Dim keyStatusB = manipulatorB.GetKeyStatus()
 
+        'Assert
         WriteSolution("assert", solution)
         Assert.AreEqual(1, keyStatusA.Count)
         Assert.AreEqual(1, keyStatusA("A").First().Value.IntegerValue)
@@ -105,17 +120,20 @@ Public Class IntegerScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub TestSetValueMultipleTimes()
+        'Arrange
         Dim paramA = New IntegerScoringParameter() With {.ControllerId = "Gap", .FindingOverride = "shared_finding", .InlineId = "inline1"}
         paramA.Value = New ParameterSetCollection
         paramA.Value.Add(New ParameterCollection() With {.Id = "A"})
         Dim solution As New Solution()
         Dim manipulatorA = paramA.GetScoreManipulator(solution)
 
+        'Act
         manipulatorA.SetKey("A", 1)
         manipulatorA.ReplaceKeyValueAt("A", 2, 0)
         manipulatorA.ReplaceKeyValueAt("A", 100, 0)
         Dim keyStatusA = manipulatorA.GetKeyStatus()
 
+        'Assert
         Assert.AreEqual(1, keyStatusA.Values.Count)
         Assert.AreEqual(100, keyStatusA.Values(0).First().Value.IntegerValue)
         Assert.AreEqual(1, keyStatusA.Values(0).Count())
@@ -123,6 +141,7 @@ Public Class IntegerScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub TestSolutionSorting_SeparateFindings()
+        'Arrange
         Dim paramA = New IntegerScoringParameter() With {.ControllerId = "Gap", .InlineId = "inline1"}
         paramA.Value = New ParameterSetCollection
         paramA.Value.Add(New ParameterCollection() With {.Id = "A"})
@@ -143,12 +162,14 @@ Public Class IntegerScoringManipulatorTests
         Dim manipulatorC = paramC.GetScoreManipulator(solution)
         Dim manipulatorB = paramB.GetScoreManipulator(solution)
 
+        'Act
         manipulatorA.SetKey("A", 1)
         manipulatorC.SetKey("C", 3)
         manipulatorB.SetKey("B", 2)
         solution.SortSolution(parameters)
         Dim keyValuesString = ScoringPropertiesCalculator.GetKeyValuesAsString(solution, 0)
 
+        'Assert
         Assert.AreEqual("1|2|3", keyValuesString)
 
         keyValuesString = New ScoringDisplayValueCalculator(parameters, solution).GetScoreDisplayValue()
@@ -157,6 +178,7 @@ Public Class IntegerScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub TestSolutionSorting_SharedFinding()
+        'Arrange
         Dim paramA = New IntegerScoringParameter() With {.ControllerId = "Gap", .FindingOverride = "shared_finding", .InlineId = "inline1"}.AddSubParameters("A")
         Dim paramB = New IntegerScoringParameter() With {.ControllerId = "Gap", .FindingOverride = "shared_finding", .InlineId = "inline2"}.AddSubParameters("B")
         Dim paramC = New DecimalScoringParameter() With {.ControllerId = "Gap", .FindingOverride = "shared_finding", .InlineId = "inline3"}.AddSubParameters("C")
@@ -169,12 +191,14 @@ Public Class IntegerScoringManipulatorTests
         Dim manipulatorB = paramB.GetScoreManipulator(solution)
         Dim manipulatorC = paramC.GetScoreManipulator(solution)
 
+        'Act
         manipulatorA.SetKey("A", 1)
         manipulatorC.SetKey("C", 3)
         manipulatorB.SetKey("B", 2)
         solution.SortSolution(parameters)
         Dim keyValuesString = ScoringPropertiesCalculator.GetKeyValuesAsString(solution, 0)
 
+        'Assert
         Assert.AreEqual("1&2&3", keyValuesString)
 
         keyValuesString = New ScoringDisplayValueCalculator(parameters, solution).GetScoreDisplayValue()
@@ -183,6 +207,7 @@ Public Class IntegerScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub TestScoringParameterRemoval_SharedFinding()
+        'Arrange
         Dim paramA = New IntegerScoringParameter() With {.ControllerId = "Gap", .FindingOverride = "shared_finding", .InlineId = "inline1"}.AddSubParameters("A")
         Dim paramCD = New IntegerScoringParameter() With {.ControllerId = "Gap", .FindingOverride = "shared_finding", .InlineId = "inline2"}.AddSubParameters("C", "D")
         Dim paramE = New DecimalScoringParameter() With {.ControllerId = "Gap", .FindingOverride = "shared_finding", .InlineId = "inline3"}.AddSubParameters("E")
@@ -193,15 +218,18 @@ Public Class IntegerScoringManipulatorTests
         Dim manipulatorCD = paramCD.GetScoreManipulator(solution)
         Dim manipulatorE = paramE.GetScoreManipulator(solution)
 
+        'Act
         manipulatorA.SetKey("A", 1)
         manipulatorCD.SetKey("C", New GapValue(Of MultiType)(3, GapComparisonType.GreaterThan))
         manipulatorCD.SetKey("D", New GapValue(Of MultiType)(4, 5))
         manipulatorE.SetKey("E", 7.5D)
         Dim solutionBeforeFix = DeepCloneSolution(solution)
 
+        'Fix solution. Do not mention 'paramCD'
         solution.FixRemovedScoringParameters(New ScoringParameter() {paramA, paramE})
         Dim solutionAfterFix = DeepCloneSolution(solution)
 
+        'Assert
         WriteSolution("assert", solution)
         Assert.AreEqual(1, solutionBeforeFix.Findings.Count)
         Assert.AreEqual(4, solutionBeforeFix.Findings(0).Facts.Count, "Expected 4 facts")
@@ -213,6 +241,7 @@ Public Class IntegerScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub TestScoringParameterRemoval_SeparatedFindings()
+        'Arrange
         Dim paramA = New IntegerScoringParameter() With {.ControllerId = "Gap", .InlineId = "inline1"}.AddSubParameters("A")
         Dim paramCD = New IntegerScoringParameter() With {.ControllerId = "Gap", .InlineId = "inline2"}.AddSubParameters("C", "D")
         Dim paramE = New DecimalScoringParameter() With {.ControllerId = "Gap", .InlineId = "inline3"}.AddSubParameters("E")
@@ -223,14 +252,17 @@ Public Class IntegerScoringManipulatorTests
         Dim manipulatorCD = paramCD.GetScoreManipulator(solution)
         Dim manipulatorE = paramE.GetScoreManipulator(solution)
 
+        'Act
         manipulatorA.SetKey("A", 1)
         manipulatorCD.SetKey("C", New GapValue(Of MultiType)(3, GapComparisonType.GreaterThan))
         manipulatorCD.SetKey("D", New GapValue(Of MultiType)(4, 5))
         manipulatorE.SetKey("E", 7.5D)
         Dim solutionState1 = DeepCloneSolution(solution)
+        'Remove paramB
         solution.FixRemovedScoringParameters(New ScoringParameter() {paramA, paramE})
         Dim solutionState2 = DeepCloneSolution(solution)
 
+        'Assert
         WriteSolution("assert", solution)
         Assert.AreEqual(3, solutionState1.Findings.Count)
         Assert.AreEqual(1, solutionState1.Findings(0).Facts.Count)
@@ -244,14 +276,17 @@ Public Class IntegerScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub UnsetKeys()
+        'Arrange
         Dim solution = Deserialize(Of Solution)(someIntegerData)
         WriteSolution("Arrange", solution)
         Dim intParam = New IntegerScoringParameter() With {.ControllerId = "Controller"}
         intParam.Value = New ParameterSetCollection() : intParam.Value.Add(New ParameterCollection() With {.Id = "A"})
         Dim manipulator = intParam.GetScoreManipulator(solution)
-
+        
+        'Act
         manipulator.RemoveKey("A")
-
+        
+        'Assert
         WriteSolution("Assert", solution)
         Dim res = manipulator.GetKeyStatus()
         Assert.IsTrue(res.ContainsKey("A"))
@@ -260,6 +295,7 @@ Public Class IntegerScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub UnsetKeyInFactSet()
+        'Arrange
         Dim solution = Deserialize(Of Solution)(someIntegerDataWithFactSets)
         WriteSolution("Arrange", solution)
 
@@ -269,22 +305,27 @@ Public Class IntegerScoringManipulatorTests
 
         manipulator.SetFactSetTarget(1)
 
+        'Act
         manipulator.RemoveKey("B")
         Dim result = manipulator.GetKeyStatus("B")
 
+        'Assert
         WriteSolution("Assert", solution)
-        Assert.IsFalse(result(0).Value.IntegerValue.HasValue)
-        Assert.AreEqual(String.Empty, result(0).Value.ToString)
+        Assert.IsFalse(result(0).Value.IntegerValue.HasValue) 'Default value
+        Assert.AreEqual(String.Empty, result(0).Value.ToString) 'Default value
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GetDisplayValueForKey()
+        'Arrange
         Dim solution = sampleData.To(Of Solution)()
         Dim intParam = New IntegerScoringParameter() With {.ControllerId = "Controller"}.AddSubParameters("A")
         Dim manipulator = intParam.GetScoreManipulator(solution)
-
+        
+        'Act
         Dim result = manipulator.GetDisplayValueForKey("A")
-
+        
+        'Assert
         Dim expected As String = "1#2#3"
         Assert.AreEqual(expected, result)
     End Sub
@@ -330,6 +371,7 @@ Public Class IntegerScoringManipulatorTests
         Return ret
     End Function
 
+#Region "Data"
     Private someIntegerData As XElement = <solution>
                                               <keyFindings>
                                                   <keyFinding id="Controller" scoringMethod="None">
@@ -444,5 +486,6 @@ Public Class IntegerScoringManipulatorTests
                                           </keyFindings>
                                           <aspectReferences/>
                                       </solution>
+#End Region
 
 End Class

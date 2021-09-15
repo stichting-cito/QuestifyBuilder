@@ -1,0 +1,14 @@
+  <qti-item-body class="defaultBody">
+    <div class="content">
+      <div>
+        <div id="itemquestion">
+          <p>ToLower, Trim, ToAscii <qti-text-entry-interaction pattern-mask="^.{0,10}$" response-identifier="d8a12ec3-e934-48e7-8e67-814db27baa4a" expected-length="10" /> </p>
+        </div>
+        <div id="questionwithinlinecontrol">
+          <p>Bla</p>
+        </div>
+        <div id="answer">
+        </div>
+      </div>
+    </div>
+  </qti-item-body>

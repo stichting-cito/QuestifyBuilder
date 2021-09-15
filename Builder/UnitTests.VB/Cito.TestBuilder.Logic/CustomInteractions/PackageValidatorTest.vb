@@ -8,10 +8,13 @@ Public Class PackageValidatorTest
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub ReadCustomInteractionCoordinateAllMetadataTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+        
+        'Act
         Dim metadata = CiPackageValidator.ReadCustomInteractionMetadata(Coordinatescomplete, errorMessage)
-
+        
+        'Assert
         Assert.AreEqual(0, errorMessage.Count)
         Assert.AreEqual("customInteraction coordinates", metadata.Title)
         Assert.AreEqual(200, metadata.Height)
@@ -23,10 +26,13 @@ Public Class PackageValidatorTest
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub ReadCustomInteractionCoordinateBasicMetadataTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+       
+        'Act
         Dim metadata = CiPackageValidator.ReadCustomInteractionMetadata(CoordinateBasic, errorMessage)
-
+        
+        'Assert
         Assert.AreEqual(errorMessage.Count, 0)
         Dim scoringTypes = metadata.GetScoring
         Assert.AreEqual(scoringTypes.Count, 2)
@@ -36,10 +42,13 @@ Public Class PackageValidatorTest
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub ReadCustomInteractionDecimalAllMetadataTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+        
+        'Act
         Dim metadata = CiPackageValidator.ReadCustomInteractionMetadata(DecimalComplete, errorMessage)
-
+        
+        'Assert
         Assert.AreEqual(errorMessage.Count, 0)
         Assert.AreEqual("customInteraction coordinates", metadata.Title)
         Assert.AreEqual(200, metadata.Height)
@@ -51,10 +60,13 @@ Public Class PackageValidatorTest
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub ReadCustomInteractionDecimalBasicMetadataTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+        
+        'Act
         Dim metadata = CiPackageValidator.ReadCustomInteractionMetadata(DecimalMinimum, errorMessage)
-
+       
+        'Assert
         Assert.AreEqual(0, errorMessage.Count)
         Dim scoringTypes = metadata.GetScoring
         Assert.AreEqual(4, scoringTypes.Count)
@@ -63,10 +75,13 @@ Public Class PackageValidatorTest
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub ReadCustomInteractionIntegerAllMetadataTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+       
+        'Act
         Dim metadata = CiPackageValidator.ReadCustomInteractionMetadata(IntegerComplete, errorMessage)
-
+      
+        'Assert
         Assert.AreEqual(0, errorMessage.Count)
         Assert.AreEqual("customInteraction coordinates", metadata.Title)
         Assert.AreEqual(200, metadata.Height)
@@ -78,10 +93,13 @@ Public Class PackageValidatorTest
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub ReadCustomInteractionIntegerBasicMetadataTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+       
+        'Act
         Dim metadata = CiPackageValidator.ReadCustomInteractionMetadata(IntegerMinimum, errorMessage)
-
+       
+        'Assert
         Assert.AreEqual(0, errorMessage.Count)
         Dim scoringTypes = metadata.GetScoring
         Assert.AreEqual(4, scoringTypes.Count)
@@ -90,10 +108,13 @@ Public Class PackageValidatorTest
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub ReadCustomInteractionMathMlAllMetadataTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+       
+        'Act
         Dim metadata = CiPackageValidator.ReadCustomInteractionMetadata(MathMlComplete, errorMessage)
-
+       
+        'Assert
         Assert.AreEqual(0, errorMessage.Count)
         Assert.AreEqual("customInteraction formula", metadata.Title)
         Assert.AreEqual(200, metadata.Height)
@@ -105,10 +126,13 @@ Public Class PackageValidatorTest
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub ReadCustomInteractionMathMlBasicMetadataTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+       
+        'Act
         Dim metadata = CiPackageValidator.ReadCustomInteractionMetadata(MathMlMinimum, errorMessage)
-
+      
+        'Assert
         Assert.AreEqual(0, errorMessage.Count)
         Dim scoringTypes = metadata.GetScoring
         Assert.AreEqual(2, scoringTypes.Count)
@@ -117,10 +141,13 @@ Public Class PackageValidatorTest
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub ReadCustomInteractionChoiceAllMetadataTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+      
+        'Act
         Dim metadata = CiPackageValidator.ReadCustomInteractionMetadata(ChoiceComplete, errorMessage)
-
+      
+        'Assert
         Assert.AreEqual(0, errorMessage.Count)
         Assert.AreEqual("test customInteraction", metadata.Title)
         Assert.AreEqual(200, metadata.Height)
@@ -135,10 +162,13 @@ Public Class PackageValidatorTest
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub ReadCustomInteractionCombinedMetadataTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+     
+        'Act
         Dim metadata = CiPackageValidator.ReadCustomInteractionMetadata(Combined, errorMessage)
-
+     
+        'Assert
         Assert.AreEqual(0, errorMessage.Count)
         Assert.AreEqual("test customInteraction", metadata.Title)
         Assert.AreEqual(200, metadata.Height)
@@ -155,73 +185,97 @@ Public Class PackageValidatorTest
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub MaxChoiceGreaterThanChoiceCollectionTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+     
+        'Act
         CiPackageValidator.ReadCustomInteractionMetadata(MaxChoiceToHigh, errorMessage)
-
+     
+        'Assert
         Assert.AreEqual(1, errorMessage.Count)
     End Sub
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub MinChoiceGreaterThanChoiceCollectionTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+     
+        'Act
         CiPackageValidator.ReadCustomInteractionMetadata(MinChoiceToHigh, errorMessage)
-
+     
+        'Assert
         Assert.AreEqual(2, errorMessage.Count)
     End Sub
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub SolutionNotInChoiceCollectionTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+      
+        'Act
         CiPackageValidator.ReadCustomInteractionMetadata(CorrectResponseNotInChoices, errorMessage)
-
+     
+        'Assert
         Assert.AreEqual(1, errorMessage.Count)
     End Sub
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub NoScoreTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+      
+        'Act
         CiPackageValidator.ReadCustomInteractionMetadata(NoScore, errorMessage)
-
+      
+        'Assert
         Assert.AreEqual(1, errorMessage.Count)
     End Sub
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub CoordinateWrongCultureTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+      
+        'Act
         CiPackageValidator.ReadCustomInteractionMetadata(CoordinateWrongCultureCorrectResponse, errorMessage)
-
+     
+        'Assert 
         Assert.AreEqual(2, errorMessage.Count)
     End Sub
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub DecimalCultureWrongTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+     
+        'Act
         CiPackageValidator.ReadCustomInteractionMetadata(DecimalCultureWrong, errorMessage)
-
+     
+        'Assert
         Assert.AreEqual(1, errorMessage.Count)
     End Sub
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub IntegerCultureWrongTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+      
+        'Act
         CiPackageValidator.ReadCustomInteractionMetadata(IntegerCorrectAnswerWrong, errorMessage)
-
+     
+        'Assert
         Assert.AreEqual(1, errorMessage.Count)
     End Sub
 
     <TestMethod(), TestCategory("customInteractionProcessing")>
     Public Sub ReadGeogebraAllMetadataTest()
+        'Arrange
         Dim errorMessage As New List(Of String)
-
+     
+        'Act
         Dim metadata = GeogebraPackageValidator.ReadCustomInteractionMetadata(GetGeogebraNodeList(), errorMessage)
-
+     
+        'Assert
         Assert.AreEqual(0, errorMessage.Count)
         Dim scoringTypes = metadata.GetScoring
         Assert.AreEqual(2, scoringTypes.Count)

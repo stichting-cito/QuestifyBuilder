@@ -8,7 +8,7 @@ namespace Questify.Builder.UnitTests.Fakes
     {
         private readonly string _xhtmlParameter;
 
-        public AddXhtmlParameterAttribute(string xhtmlParameter, [CallerLineNumber] int order = 0)
+        public AddXhtmlParameterAttribute(string xhtmlParameter, [CallerLineNumber]int order = 0)
             : base(order)
         {
             _xhtmlParameter = xhtmlParameter;

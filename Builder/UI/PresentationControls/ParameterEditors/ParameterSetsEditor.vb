@@ -12,6 +12,7 @@ Imports Questify.Builder.Model.ContentModel.EntityClasses
 
 Public Class ParameterSetsEditor
 
+#Region " Private declarations "
 
     Private _itemSaving As Boolean = False
     Private _formClosing As Boolean = False
@@ -23,8 +24,11 @@ Public Class ParameterSetsEditor
     Private _referencedStylesheetsHeaderStyleElementContent As String = String.Empty
     Private _itemLayoutAdapterForItem As ItemLayoutAdapter = Nothing
 
+    'parameter that is referenced --> list of parameters that refer to the parameter
     Private ReadOnly _redirectedParameterDictionary As New Dictionary(Of ParameterBase, List(Of ParameterBase))
+    'parameter for which a condition is defined --> dictionary of parameters that are conditionally visible with conditional value
     Private ReadOnly _conditionalParameterDictionary As New Dictionary(Of ParameterBase, Dictionary(Of ParameterEditorControlBase, String))
+    'parameter for which a condition is defined --> parameter on which the visibility of the key parameter is conditionally based
     Private ReadOnly _conditionalParameterDependenciesDictionary As New Dictionary(Of ParameterBase, ParameterBase)
     Private ReadOnly _groupConditionalParameterList As New List(Of ParameterBase)
 
@@ -34,15 +38,27 @@ Public Class ParameterSetsEditor
     Private Const CONDITIONAL_NOT As Char = "!"c
     Private Const CONDITIONAL_EMPTY As String = "(EMPTY)"
 
+#End Region
 
+#Region " Public events "
 
+    ''' <summary>
+    ''' Occurs when a resource must be checked whether it is used in an item.
+    ''' </summary>
     <Description("This event will be raised when a resource must be checked whether it is used in an item"), Category("ParameterSetsEditor events")>
     Public Event CheckResourceUsed As EventHandler(Of ResourceUsedCheckEventArgs)
+    'ToDo [remcor 21-04-2012]: Refactor. This event is no longer needed because the ResourceManager is available as a property
 
+    ''' <summary>
+    ''' Occurs when the resource is edited.
+    ''' </summary>
     <Description("This event will be raised when a parameter requests the generic resource editor."), Category("ParameterSetsEditor events")>
     Public Event EditResource As EventHandler(Of ResourceNameEventArgs)
+    'ToDo [remcor 21-04-2012]: Refactor. This event is no longer needed because the ResourceManager is available as a property
 
+#End Region
 
+#Region " Public properties "
 
     Public Property Solution As Solution
 
@@ -82,6 +98,10 @@ Public Class ParameterSetsEditor
 
     Public Property ContextIdentifierForEditors As Integer?
 
+    ''' <summary>
+    ''' Gets or sets the item resource, which contains dependent resources that could be used by parameter editors to
+    ''' control dependent resources.
+    ''' </summary>
     Public Property ResourceEntity As ResourceEntity
 
     Public Property FilterParameter As ParameterBase
@@ -89,6 +109,7 @@ Public Class ParameterSetsEditor
     Public Property ShouldSort As Boolean
 
 
+    ' Suppress CA2227: The collection will be build from outside this control and then passed.
     <SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")>
     Public Property ParameterSets As ParameterSetCollection
         Get
@@ -96,6 +117,7 @@ Public Class ParameterSetsEditor
         End Get
         Set
             _parameterSets = Value
+            ' Render editors and bind data
             If _shouldRender Then
                 If Value IsNot Nothing Then
                     _referencedStylesheetsFromItemLayoutTemplate = Nothing
@@ -145,8 +167,11 @@ Public Class ParameterSetsEditor
         End Set
     End Property
 
+#End Region
 
+#Region " Methods "
 
+#Region " Friend "
 
     Friend Function ValidateThisEditor(editor As ParameterEditorControlBase, Optional andSiblings As Boolean = True) As String
 
@@ -195,11 +220,15 @@ Public Class ParameterSetsEditor
         Return result
     End Function
 
+#End Region
 
+#Region " Public "
 
     Public Sub New()
+        ' This call is required by the Windows Form Designer.
         InitializeComponent()
         ReInitializeConditionalObjects()
+        ' Add any initialization after the InitializeComponent() call.
     End Sub
 
     Public Sub New(itemResourceEntity As ItemResourceEntity, parameterSets As ParameterSetCollection)
@@ -213,6 +242,10 @@ Public Class ParameterSetsEditor
         Me.ParameterSets = parameterSets
     End Sub
 
+    ''' <summary>
+    ''' Validates all the parameter editors in this placeholder.
+    ''' </summary>
+    ''' <returns>A string with the error messages if validation fails.</returns>
     Public Function ValidateParameterEditors() As String
         Dim errorStringBuilder As New StringBuilder()
 
@@ -270,15 +303,18 @@ Public Class ParameterSetsEditor
     Public Sub CleanUpEditors()
         _cleaningControls = True
 
+        ' remove all event handlers from parameter editors
         ReInitializeConditionalObjects()
 
+        'Add to List,.. then clear then dispose
         Dim toRemove = Controls.Cast(Of Control)().ToList()
         Controls.Clear()
 
-        Me.Visible = False
+        Me.Visible = False 'old trick.
         Me.SuspendLayout()
         If _parameterEditors IsNot Nothing Then
             For Each editorControl As ParameterEditorControlBase In _parameterEditors.Keys
+                ' type specific additional handlers
                 If TypeOf editorControl Is ResourceParameterEditorControl Then
                     RemoveHandler DirectCast(editorControl, ResourceParameterEditorControl).ResourceNeeded, AddressOf ParameterEditorControl_ResourceNeeded
                     RemoveHandler DirectCast(editorControl, ResourceParameterEditorControl).EditResource, AddressOf ParameterEditorControl_EditResource
@@ -289,9 +325,11 @@ Public Class ParameterSetsEditor
                     RemoveHandler DirectCast(editorControl, ParameterCollectionEditorControl).EditResource, AddressOf ParameterEditorControl_EditResource
                 End If
 
+                ' explicitly dispose the editor
                 editorControl.Dispose()
             Next
 
+            ' clean collection to lose references
             _parameterEditors = New Dictionary(Of ParameterEditorControlBase, ParameterBase)
         End If
 
@@ -308,11 +346,13 @@ Public Class ParameterSetsEditor
         End Try
 
         Me.ResumeLayout()
-        Me.Visible = True
+        Me.Visible = True 'old trick.
         _cleaningControls = False
     End Sub
 
+#End Region
 
+#Region " Protected "
 
     Protected Overridable Sub OnCheckResourceUsed(e As ResourceUsedCheckEventArgs)
         RaiseEvent CheckResourceUsed(Me, e)
@@ -323,11 +363,14 @@ Public Class ParameterSetsEditor
     End Sub
 
 
+#End Region
 
+#Region " Private "
 
     Private Sub RenderEditors()
         Me.Visible = False
 
+        ' reset this control
         CleanUpEditors()
 
         If _parameterEditors Is Nothing Then
@@ -358,6 +401,7 @@ Public Class ParameterSetsEditor
             Dim parameters As List(Of ParameterBase) = _parameterSets.GetParameters(FromNonDynamicCollections)
             Using parFactory As New ParameterEditorFactory()
 
+                ' only render controls for parametercollections which have parameters assigned.
                 For Each param As ParameterBase In parameters
                     Dim visibleSetting As String = param.DesignerSettings.GetSettingValueByKey("visible")
                     Dim redirected As String = param.DesignerSettings.GetSettingValueByKey("redirectEnabled")
@@ -366,7 +410,9 @@ Public Class ParameterSetsEditor
                     If (Not String.IsNullOrEmpty(redirected) AndAlso String.Equals(redirected, Boolean.TrueString, StringComparison.OrdinalIgnoreCase)) Then
                         AddToRedirectionDictionary(param)
                     ElseIf (Not String.IsNullOrEmpty(visibleSetting) AndAlso String.Equals(visibleSetting, Boolean.FalseString, StringComparison.OrdinalIgnoreCase)) Then
+                        ' no editor is needed. This parameter has been given a default value (in the control of itemlayouttemplate) which can't be edited
                     Else
+                        'Filter the rendering if a filter parameter is given
                         Dim cont As Boolean = True
                         If Not FilterParameter Is Nothing Then
                             Dim paramGroup As String = param.DesignerSettings.GetSettingValueByKey("group")
@@ -385,13 +431,17 @@ Public Class ParameterSetsEditor
                         End If
                         If cont Then
                             Dim paramUIControl As ParameterEditorControlBase = parFactory.CreateControl(param, Me)
+                            ' Create and bind parameterUI controls
                             If paramUIControl IsNot Nothing Then
+                                ' get groupname for this control
                                 Dim group As String = param.DesignerSettings.GetSettingValueByKey("group")
                                 If String.IsNullOrEmpty(group) Then
                                     group = My.Resources.GroupNameConstant_General
                                 End If
+                                ' check whether the group already exists, if not then create it (case-insensative)
                                 Dim groupControl As ParameterGroupBox = Nothing
                                 If Not _groups.TryGetValue(group.ToLower.ToLower, groupControl) Then
+                                    ' create the group control
                                     groupControl = New ParameterGroupBox()
                                     groupControl.Dock = DockStyle.Top
                                     groupControl.GroupName = group
@@ -402,8 +452,10 @@ Public Class ParameterSetsEditor
                                     _groups.Add(group.ToLower, groupControl)
                                 End If
 
+                                'add editor to group
                                 groupControl.AddParameterEditorToGroup(paramUIControl, param)
 
+                                ' add editor to list of editors on this control
                                 _parameterEditors.Add(paramUIControl, param)
                             End If
                         End If
@@ -411,6 +463,8 @@ Public Class ParameterSetsEditor
                 Next
 
             End Using
+            'if all parametersets are added to a groupbox, the parameters that are conditional enabled can be set.
+            'Because its checked if the are any enabled controls in the groups it should be done after all parametersets are added to a groupbox.
             For Each paramUIControl As ParameterEditorControlBase In _parameterEditors.Keys
                 Dim parameterCollectionSetId As String = _parameterSets.GetParameterSetCollectionNameByParameter(_parameterEditors.Item(paramUIControl))
                 InitialiseConditionalEnabledParameter(_parameterEditors.Item(paramUIControl), paramUIControl, parameterCollectionSetId)
@@ -420,12 +474,15 @@ Public Class ParameterSetsEditor
             Next
         End If
 
+        ' Next
         If _groups.Values.Count = 0 Then
+            ' there are no parameters for this item. Create a label to represent this fact.
             Dim noParametersLabel As New Label()
             noParametersLabel.Text = My.Resources.ParameterSetsEditor_RenderEditors_NoEditors
             noParametersLabel.AutoSize = True
             Me.Controls.Add(noParametersLabel)
         Else
+            ' add groupcontrols on this control
             Dim tabIndex As Integer = 0
             If ShouldSort Then
                 Dim sortedGroups As New SortedDictionary(Of String, ParameterGroupBox)(_groups)
@@ -438,6 +495,8 @@ Public Class ParameterSetsEditor
                 Next
             End If
         End If
+        ' End If
+        '
         InitialGroupVisiblity()
 
         Me.ResumeLayout()
@@ -445,6 +504,8 @@ Public Class ParameterSetsEditor
     End Sub
 
 
+    'Do not display parameterCollections form parameter set where is dynamic.
+    'Scoring parameters for custom interactions should not be displayed.
     Private Function FromNonDynamicCollections() As Func(Of ParameterCollection, Boolean)
         Return Function(parameterCollection) Not parameterCollection.IsDynamicCollection
     End Function
@@ -506,7 +567,7 @@ Public Class ParameterSetsEditor
                 Dim value As String = parameter.DesignerSettings.GetDesignerSettingByKey("groupConditionalEnabledWhenValue").Value
                 If _groups.ContainsKey(groupName.ToLower) Then
                     Dim isVisible As Boolean = parameter.ToString.Equals(value, StringComparison.CurrentCultureIgnoreCase)
-                    If onlyInvisible = True OrElse (onlyInvisible = False AndAlso isVisible = False) Then
+                    If onlyInvisible = True OrElse (onlyInvisible = False AndAlso isVisible = False) Then 'to make sure that when there are no controls in the group it isn't won't be visible agian
                         _groups(groupName.ToLower).Visible = isVisible
                         ReorderControls()
                     End If
@@ -525,11 +586,12 @@ Public Class ParameterSetsEditor
     End Sub
 
     Private Sub AddGroupControl(groupControl As ParameterGroupBox, ByRef tabIndex As Integer)
+        ' add an row to push the rows up; wraps content
         groupControl.TableLayoutControl.RowStyles.Add(New RowStyle(SizeType.Percent, 100))
         groupControl.SetTabIndex(tabIndex)
 
         Me.Controls.Add(groupControl)
-        groupControl.BringToFront()
+        groupControl.BringToFront() ' MSDN: Controls are docked in reverse z-order, therefor BringToFront/SendToBack is the correct method to use here.
     End Sub
 
     Friend Sub ParameterEditorControl_ResourceNeeded(sender As Object, e As ResourceNeededEventArgs)
@@ -553,8 +615,11 @@ Public Class ParameterSetsEditor
         End If
     End Sub
 
+#End Region
 
+#End Region
 
+#Region "Conditions"
     Private Sub ReInitializeConditionalObjects()
         CleanUpConditionalObjects()
 
@@ -606,6 +671,7 @@ Public Class ParameterSetsEditor
         End If
     End Sub
 
+#Region "Redirection"
 
     Private Sub AddToRedirectionDictionary(parameter As ParameterBase)
         If parameter.DesignerSettings.GetDesignerSettingByKey("redirectToTargetControlId") IsNot Nothing AndAlso parameter.DesignerSettings.GetDesignerSettingByKey("redirectToTargetParameterId") IsNot Nothing Then
@@ -616,6 +682,7 @@ Public Class ParameterSetsEditor
                 If referenceParameter IsNot Nothing Then
 
                     If Not _redirectedParameterDictionary.ContainsKey(referenceParameter) Then
+                        'Add handler so the references can be updated when the referenced changed
                         _redirectedParameterDictionary.Add(referenceParameter, New List(Of ParameterBase))
                         AddHandler referenceParameter.PropertyChanged, AddressOf ReferencedParameter_ParameterChanged
                     End If
@@ -625,6 +692,7 @@ Public Class ParameterSetsEditor
                         parameterReferenceList.Add(parameter)
                     End If
 
+                    'Take current value of referenced parameter. TFS#7841
                     parameter.SetValue(referenceParameter.ToString)
 
                 Else
@@ -635,6 +703,7 @@ Public Class ParameterSetsEditor
     End Sub
 
     Private Sub ReferencedParameter_ParameterChanged(sender As Object, e As PropertyChangedEventArgs)
+        'Update the parameter here
         Dim parameter As ParameterBase = Nothing
         parameter = TryCast(sender, ParameterBase)
 
@@ -645,7 +714,9 @@ Public Class ParameterSetsEditor
         End If
     End Sub
 
+#End Region ''redirection
 
+#Region "Visibility"
 
     Private Function AddConditionalParameterToDictionary(referenceParameter As ParameterBase, paramUI As ParameterEditorControlBase, conditionalEnabledWhenValue As String) As Boolean
         Dim returnValue As Boolean = True
@@ -654,6 +725,7 @@ Public Class ParameterSetsEditor
                 _conditionalParameterDictionary.Add(referenceParameter, New Dictionary(Of ParameterEditorControlBase, String))
                 AddHandler referenceParameter.PropertyChanged, AddressOf ConditionalParameter_ParameterChanged
 
+                'Add possible conditional parameter dependencies to dictionary
                 AddConditionalParameterDependencyToDictionary(referenceParameter)
             End If
             Dim parameterReferenceList As Dictionary(Of ParameterEditorControlBase, String) = _conditionalParameterDictionary.Item(referenceParameter)
@@ -680,6 +752,7 @@ Public Class ParameterSetsEditor
     End Function
 
     Private Sub AddConditionalParameterDependencyToDictionary(referenceParameter As ParameterBase)
+        'Check: does referenceParameter have conditionalDesignerSettings as well
         Dim conditionalDesignerSettings As Dictionary(Of String, String) = GetConditionalDesignerSettings(referenceParameter)
         If conditionalDesignerSettings.ContainsKey("enabled") AndAlso conditionalDesignerSettings.ContainsKey("switchPrm") Then
             Dim parameterCollectionSetId As String = _parameterSets.GetParameterSetCollectionNameByParameter(referenceParameter)
@@ -701,6 +774,7 @@ Public Class ParameterSetsEditor
     Private Sub PerformEnablingDisablingConditionalParameters(parameter As ParameterBase, dependsOnDisabledParameter As Boolean)
         If parameter IsNot Nothing AndAlso _conditionalParameterDictionary.ContainsKey(parameter) Then
             If Not dependsOnDisabledParameter Then
+                'first enable controls then disable the controls that should be disabled, because otherwise the groupbox will be made invisible first then visible. otherwise the groupbox could be made invisible first and the back to visible
                 For Each paramEditor As ParameterEditorControlBase In _conditionalParameterDictionary.Item(parameter).Keys
                     If Not TypeOf parameter Is CollectionParameter Then
                         If _conditionalParameterDictionary.Item(parameter).Item(paramEditor).Contains(CONDITIONAL_OR) Then
@@ -715,6 +789,8 @@ Public Class ParameterSetsEditor
                             If CheckEnableParameter(_conditionalParameterDictionary.Item(parameter).Item(paramEditor), parameter.ToString, True) = True Then ParameterEditorSetConditionalEnabled(parameter.Name, paramEditor, True)
                         End If
                     Else
+                        ' JKEV 20120511
+                        '  if a collectionparameter is used as conditional param, then the condition is TRUE if the collection parameter has one or more items
                         If DirectCast(parameter, CollectionParameter).Value.Count > 0 Then
                             ParameterEditorSetConditionalEnabled(parameter.Name, paramEditor, True)
                         End If
@@ -738,12 +814,15 @@ Public Class ParameterSetsEditor
                             If CheckEnableParameter(_conditionalParameterDictionary.Item(parameter).Item(paramEditor), parameter.ToString, False) = True Then disableParameter = True
                         End If
                     Else
+                        ' JKEV 20120511
+                        '  if a collectionparameter is used as conditional param, then the condition is TRUE if the collection parameter has one or more items
                         If DirectCast(parameter, CollectionParameter).Value.Count = 0 Then disableParameter = True
                     End If
                 End If
                 If disableParameter Then ParameterEditorSetConditionalEnabled(parameter.Name, paramEditor, False)
             Next
 
+            'perform action for parameter on which this parameter depends as well
             If _conditionalParameterDependenciesDictionary IsNot Nothing AndAlso _conditionalParameterDependenciesDictionary.ContainsValue(parameter) Then
                 _conditionalParameterDependenciesDictionary.Where(Function(c) c.Value.Name.Equals(parameter.Name)).ToList().ForEach(Sub(kvp)
                                                                                                                                         PerformEnablingDisablingConditionalParameters(kvp.Key, (dependsOnDisabledParameter OrElse CheckEnableParameter(kvp.Key.DesignerSettings.GetDesignerSettingByKey("conditionalEnabledWhenValue").Value, parameter.ToString, False)))
@@ -786,7 +865,9 @@ Public Class ParameterSetsEditor
         Return result
     End Function
 
+#End Region ''visibility
 
+#Region "Group"
 
     Private Sub AddGroupConditionalParameterToDictionary(parameter As ParameterBase)
         If (parameter.DesignerSettings.GetDesignerSettingByKey("groupConditionalEnabledSwitch") IsNot Nothing) AndAlso
@@ -808,6 +889,8 @@ Public Class ParameterSetsEditor
         End If
     End Sub
 
+#End Region ''Groups
 
+#End Region ''Conditions
 
 End Class

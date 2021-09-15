@@ -32,10 +32,28 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Label Content="{StaticResource ItemEditor.AspectEditor.MaxScoreLabel}" Grid.Row="0" Grid.Column="0" Margin="0" />
-            <TextBox x:Name="MaxScoreTextBox" Grid.Row="0" Grid.Column="1" Text="{Binding AspectRef.DataValue.MaxScore, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalAlignment="Left" Width="25" Height="18" LostFocus="TextBox_LostFocus"></TextBox>
-            <Label Content="{StaticResource ItemEditor.AspectEditor.DescriptionLabel}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
-            <DockPanel  LastChildFill="True" Grid.Row="2" Grid.ColumnSpan="2" Visibility="{Binding AspectEditorVisible.DataValue, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Label Content="{StaticResource ItemEditor.AspectEditor.MaxScoreLabel}" 
+                   Grid.Row="0" 
+                   Grid.Column="0" 
+                   Margin="0" />
+            <TextBox x:Name="MaxScoreTextBox" 
+                     Grid.Row="0" 
+                     Grid.Column="1" 
+                     Text="{Binding AspectRef.DataValue.MaxScore, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                     Margin="3" 
+                     HorizontalAlignment="Left"
+                     Width="25" 
+                     Height="18" 
+                     LostFocus="TextBox_LostFocus" 
+                     IsEnabled="{Binding Path=EnableMaxScoreTextBox.DataValue}"></TextBox>
+            <Label Content="{StaticResource ItemEditor.AspectEditor.DescriptionLabel}" 
+                   Grid.Row="1" 
+                   Grid.Column="0" 
+                   Grid.ColumnSpan="2" />
+            <DockPanel LastChildFill="True" 
+                       Grid.Row="2" 
+                       Grid.ColumnSpan="2" 
+                       Visibility="{Binding AspectEditorVisible.DataValue, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <WindowsFormsHost x:Name="host2" DockPanel.Dock="Top">
                     <TbUI:FocusedReparentHtmlEditor x:Name="FocusedEditor" Dock="Fill" AutoSize="True" />
                 </WindowsFormsHost>

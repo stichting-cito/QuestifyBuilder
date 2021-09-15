@@ -13,16 +13,20 @@ Public Class PreferDatabindingValidationTest
 
     <TestMethod(), TestCategory("Logic"), ExpectedException(GetType(SuggestDatasourceBindingException))>
     Sub AddWholeDSToEmptySection_ExpectsSuggestingException()
+        'Arrange
         Dim req As TestConstructionRequest = TestConstructionFactory.Add("1001", "1002", "1003")
 
+        'Redirect call
         A.CallTo(Function() FakeServices.FakeResourceService.GetDataSourcesForBank(A(Of Integer).Ignored,
-                                                              A(Of Nullable(Of Boolean)).Ignored,
-                                                              A(Of String()).Ignored)
-                                                          ).ReturnsLazily(Function() FakeFactory.Datasources.GetInclusionGroup("ds1", New String() {"1003", "1002", "1001"}))
+                                                                      A(Of Nullable(Of Boolean)).Ignored,
+                                                                      A(Of String()).Ignored)
+                                                                  ).ReturnsLazily(Function() FakeFactory.Datasources.GetInclusionGroup("ds1", New String() {"1003", "1002", "1001"}))
 
+        'Fake DataBaseResourceManager
         Dim bankEntity As EntityClasses.BankEntity = A.Fake(Of EntityClasses.BankEntity)()
         Dim dbMan As DataBaseResourceManager = A.Fake(Of DataBaseResourceManager)(Function(x) New DataBaseResourceManager(bankEntity.Id))
 
+        'Assessment
         Dim targetSection As TestSection2 = Nothing
         Dim assessment As AssessmentTest2
         assessment = FakeFactory.AssesmentTest.MakeAssessment("Test1",
@@ -33,23 +37,30 @@ Public Class PreferDatabindingValidationTest
 
         Dim handler As New PreferDatabindingValidation(dbMan, targetSection)
 
+        'Act
         handler.ProcessRequest(req)
 
+        'Assert
+        'Expects Exception
     End Sub
 
 
     <TestMethod(), TestCategory("Logic"), ExpectedException(GetType(SuggestDatasourceBindingException))>
     Sub AddWholeDSToNonEmptySection_ExpectsSuggestingException()
+        'Arrange
         Dim req As TestConstructionRequest = TestConstructionFactory.Add("1001", "1002", "1003")
 
+        'Redirect call
         A.CallTo(Function() FakeServices.FakeResourceService.GetDataSourcesForBank(A(Of Integer).Ignored,
-                                                              A(Of Nullable(Of Boolean)).Ignored,
-                                                              A(Of String()).Ignored)
-                                                          ).ReturnsLazily(Function() FakeFactory.Datasources.GetInclusionGroup("ds1", New String() {"1003", "1002", "1001"}))
+                                                                      A(Of Nullable(Of Boolean)).Ignored,
+                                                                      A(Of String()).Ignored)
+                                                                  ).ReturnsLazily(Function() FakeFactory.Datasources.GetInclusionGroup("ds1", New String() {"1003", "1002", "1001"}))
 
+        'Fake DataBaseResourceManager
         Dim bankEntity As EntityClasses.BankEntity = A.Fake(Of EntityClasses.BankEntity)()
         Dim dbMan As DataBaseResourceManager = A.Fake(Of DataBaseResourceManager)(Function(x) New DataBaseResourceManager(bankEntity.Id))
 
+        'Assessment
         Dim targetSection As TestSection2 = Nothing
         Dim assessment As AssessmentTest2
         assessment = FakeFactory.AssesmentTest.MakeAssessment("Test1",
@@ -60,22 +71,29 @@ Public Class PreferDatabindingValidationTest
 
         Dim handler As New PreferDatabindingValidation(dbMan, targetSection)
 
+        'Act
         handler.ProcessRequest(req)
 
+        'Assert
+        'Expects Exception
     End Sub
 
     <TestMethod(), TestCategory("Logic")>
     Sub AddWholeDSToNonEmptySection_ExpectsSuggestingExceptionToNewSection()
+        'Arrange
         Dim req As TestConstructionRequest = TestConstructionFactory.Add("1001", "1002", "1003")
 
+        'Redirect call
         A.CallTo(Function() FakeServices.FakeResourceService.GetDataSourcesForBank(A(Of Integer).Ignored,
-                                                              A(Of Nullable(Of Boolean)).Ignored,
-                                                              A(Of String()).Ignored)
-                                                          ).ReturnsLazily(Function() FakeFactory.Datasources.GetInclusionGroup("ds1", New String() {"1003", "1002", "1001"}))
+                                                                      A(Of Nullable(Of Boolean)).Ignored,
+                                                                      A(Of String()).Ignored)
+                                                                  ).ReturnsLazily(Function() FakeFactory.Datasources.GetInclusionGroup("ds1", New String() {"1003", "1002", "1001"}))
 
+        'Fake DataBaseResourceManager
         Dim bankEntity As EntityClasses.BankEntity = A.Fake(Of EntityClasses.BankEntity)()
         Dim dbMan As DataBaseResourceManager = A.Fake(Of DataBaseResourceManager)(Function(x) New DataBaseResourceManager(bankEntity.Id))
 
+        'Assessment
         Dim targetSection As TestSection2 = Nothing
         Dim assessment As AssessmentTest2
         assessment = FakeFactory.AssesmentTest.MakeAssessment("Test1",
@@ -86,8 +104,10 @@ Public Class PreferDatabindingValidationTest
 
         Dim handler As New PreferDatabindingValidation(dbMan, targetSection)
 
+        'Act
         Try
             handler.ProcessRequest(req)
+        'Assert
         Catch ex As SuggestDatasourceBindingException
             Assert.IsTrue(ex.IsSuggestingNestedSection)
         Catch ex As Exception
@@ -97,16 +117,20 @@ Public Class PreferDatabindingValidationTest
 
     <TestMethod(), TestCategory("Logic")>
     Sub AddACoupleOfItemsIncludingAgroup_ExpectsSuggestingExceptionToNewSection()
+        'Arrange
         Dim req As TestConstructionRequest = TestConstructionFactory.Add("1001", "2001", "2002", "1002", "1003")
 
+        'Redirect call
         A.CallTo(Function() FakeServices.FakeResourceService.GetDataSourcesForBank(A(Of Integer).Ignored,
-                                                              A(Of Nullable(Of Boolean)).Ignored,
-                                                              A(Of String()).Ignored)
-                                                          ).ReturnsLazily(Function() FakeFactory.Datasources.GetInclusionGroup("ds1", New String() {"1003", "1002", "1001"}))
+                                                                      A(Of Nullable(Of Boolean)).Ignored,
+                                                                      A(Of String()).Ignored)
+                                                                  ).ReturnsLazily(Function() FakeFactory.Datasources.GetInclusionGroup("ds1", New String() {"1003", "1002", "1001"}))
 
+        'Fake DataBaseResourceManager
         Dim bankEntity As EntityClasses.BankEntity = A.Fake(Of EntityClasses.BankEntity)()
         Dim dbMan As DataBaseResourceManager = A.Fake(Of DataBaseResourceManager)(Function(x) New DataBaseResourceManager(bankEntity.Id))
 
+        'Assessment
         Dim targetSection As TestSection2
         Dim assessment As AssessmentTest2
         assessment = FakeFactory.AssesmentTest.MakeAssessment("Test1",
@@ -115,9 +139,11 @@ Public Class PreferDatabindingValidationTest
 
         Dim handler As New PreferDatabindingValidation(dbMan, targetSection)
 
+        'Act
         Try
 
             handler.ProcessRequest(req)
+        'Assert
         Catch ex As SuggestDatasourceBindingException
             Assert.IsTrue(ex.IsSuggestingNestedSection)
         Catch ex As Exception

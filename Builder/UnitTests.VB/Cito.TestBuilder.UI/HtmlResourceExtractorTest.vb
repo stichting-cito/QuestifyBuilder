@@ -7,6 +7,9 @@ Imports System.Xml
 Imports System.Linq
 Imports Questify.Builder.UI
 
+''' <summary>
+''' Extracts information from HTML tests.
+''' </summary>
 <TestClass()>
 Public Class HtmlResourceExtractorTest
 
@@ -46,39 +49,48 @@ Public Class HtmlResourceExtractorTest
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub TestIfResourcesArePresent()
+        'Arrange
         Dim namespaceManager As XmlNamespaceManager = XHtmlParameterExtensions.GetNamespaceManager()
         Dim inlineConverter As New HtmlInlineConverter(Nothing, namespaceManager, Nothing, Nothing)
         Dim xmlElement As Xml.XmlElement = ToXmlElement(inline.ToString)
 
         Dim inlineElementList As List(Of InlineElement) = inlineConverter.GetInlineElementsFromXmlElement(xmlElement)
         Dim resources As List(Of String) = HtmlResourceExtractor.GetAllResourcesInHtml(inlineElementList, html.ToString()).ToList()
-
+        
+        'Act
         Dim b1 As Boolean = resources.Contains("Charlie Chaplin.gif")
         Dim b2 As Boolean = resources.Contains("InlineImageLayoutTemplate")
 
+        'Assert
         Assert.IsTrue(b1)
         Assert.IsTrue(b2)
     End Sub
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub TestIfResourceIsNOTPresent()
+        'Arrange
         Dim namespaceManager As XmlNamespaceManager = XHtmlParameterExtensions.GetNamespaceManager()
         Dim inlineConverter As New HtmlInlineConverter(Nothing, namespaceManager, Nothing, Nothing)
 
         Dim xmlElement As Xml.XmlElement = ToXmlElement(inline.ToString)
         Dim inlineElementList As List(Of InlineElement) = inlineConverter.GetInlineElementsFromXmlElement(xmlElement)
         Dim resources As List(Of String) = HtmlResourceExtractor.GetAllResourcesInHtml(inlineElementList, html.ToString()).ToList()
-
+      
+        'Act
         Dim b1 As Boolean = resources.Contains("ThisResourceIsNotPresent")
-
+       
+        'Assert
         Assert.IsFalse(b1)
     End Sub
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub TestThatCertainItemsAreExtractedFromHtml()
+        'Arrange
 
+        'Act
         Dim lstInlineElements As New List(Of String)(HtmlResourceExtractor.GetImageResources(html.ToString()))
-
+        
+        'Assert
         Assert.AreEqual(1, lstInlineElements.Count)
 
         Assert.AreEqual("oldImage.gif", lstInlineElements(0))
@@ -87,19 +99,22 @@ Public Class HtmlResourceExtractorTest
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub TestThatCertainItemsAreExtractedFromXml()
+        'Arrange
         Dim namespaceManager As XmlNamespaceManager = XHtmlParameterExtensions.GetNamespaceManager()
         Dim inlineConverter As New HtmlInlineConverter(Nothing, namespaceManager, Nothing, Nothing)
 
         Dim xmlElement As Xml.XmlElement = ToXmlElement(inline.ToString)
         Dim inlineElementList As List(Of InlineElement) = inlineConverter.GetInlineElementsFromXmlElement(xmlElement)
         Dim resources As List(Of String) = HtmlResourceExtractor.GetAllResourcesInHtml(inlineElementList, html.ToString()).ToList
-
+      
+        'Act
         Dim lstInlineElements As New List(Of String)
 
         For Each inline As InlineElement In inlineElementList
             lstInlineElements.AddRange(inline.GetResourcesFromResourceParameter())
         Next
-
+       
+        'Assert
         Assert.AreEqual(1, lstInlineElements.Count)
         Assert.AreEqual(2, resources.Count - lstInlineElements.Count)
         Assert.IsTrue(resources.Contains("InlineImageLayoutTemplate"))
@@ -110,13 +125,19 @@ Public Class HtmlResourceExtractorTest
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub LoadWithMiltipleRoots_NoExceptionThrown()
+        'Arrange
         Dim html As String = "<p>row 1</p>" +
-                     "<p>row 2</p>"
+                             "<p>row 2</p>"
         Dim inlineElementList As New List(Of InlineElement)
 
-
+        'The html loaded is only what is present in the body, therefore it lacks a root
+        'This should NOT cause any problems.
+      
+        'Act
         HtmlResourceExtractor.GetAllResourcesInHtml(inlineElementList, html)
-
+        
+        'Assert
+        'Should not throw an exception
     End Sub
 
 End Class

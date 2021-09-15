@@ -7,9 +7,10 @@ Imports Questify.Builder.Logic.ContentModel.Scoring
 
 <TestClass>
 Public Class ScoringPropertiesCalculatorTests
-
+    
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub ResponseCount_Equals_NumberOfKeyFacts()
+        'Arrange
         Dim solutionXml = <solution>
                               <keyFindings>
                                   <keyFinding id="mc" scoringMethod="Dichotomous">
@@ -21,13 +22,16 @@ Public Class ScoringPropertiesCalculatorTests
 
         Dim solution = SolutionFromXml(solutionXml)
 
+        'Act
         Dim responseCount = ScoringPropertiesCalculator.GetResponseCount(solution)
 
+        'Assert
         Assert.AreEqual(2, responseCount)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub ResponseCount_IsNull_IfNoFactsAvailable()
+        'Arrange
         Dim solutionXml = <solution>
                               <keyFindings>
                                   <keyFinding id="mc" scoringMethod="Dichotomous">
@@ -37,13 +41,16 @@ Public Class ScoringPropertiesCalculatorTests
 
         Dim solution = SolutionFromXml(solutionXml)
 
+        'Act
         Dim responseCount = ScoringPropertiesCalculator.GetResponseCount(solution)
 
+        'Assert
         Assert.IsNull(responseCount)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub KeyValueString_Joined()
+        'Arrange
         Dim solutionXml = <solution>
                               <keyFindings>
                                   <keyFinding id="mc" scoringMethod="Dichotomous">
@@ -77,13 +84,16 @@ Public Class ScoringPropertiesCalculatorTests
 
         Dim solution = SolutionFromXml(solutionXml)
 
+        'Act
         Dim keyValueString = ScoringPropertiesCalculator.GetKeyValuesAsString(solution, 0)
 
+        'Assert
         Assert.AreEqual("A&123.45#1.00-100.00|B", keyValueString)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub RawScore_Dichotomous()
+        'Arrange
         Dim solutionXml = <solution>
                               <keyFindings>
                                   <keyFinding id="mc" scoringMethod="Dichotomous">
@@ -95,13 +105,16 @@ Public Class ScoringPropertiesCalculatorTests
 
         Dim solution = SolutionFromXml(solutionXml)
 
+        'Act
         Dim rawScore = ScoringPropertiesCalculator.GetRawScore(solution)
 
+        'Assert
         Assert.AreEqual(1, rawScore)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub RawScore_Dichotomous_WithAspects()
+        'Arrange
         Dim solutionXml = <solution>
                               <keyFindings>
                                   <keyFinding id="mc" scoringMethod="Dichotomous">
@@ -119,13 +132,16 @@ Public Class ScoringPropertiesCalculatorTests
 
         Dim solution = SolutionFromXml(solutionXml)
 
+        'Act
         Dim rawScore = ScoringPropertiesCalculator.GetRawScore(solution)
 
+        'Assert
         Assert.AreEqual(6, rawScore)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub RawScore_Polytomous()
+        'Arrange
         Dim solutionXml = <solution>
                               <keyFindings>
                                   <keyFinding id="mc" scoringMethod="Polytomous">
@@ -136,13 +152,16 @@ Public Class ScoringPropertiesCalculatorTests
                           </solution>
         Dim solution = SolutionFromXml(solutionXml)
 
+        'Act
         Dim rawScore = ScoringPropertiesCalculator.GetRawScore(solution)
 
+        'Assert
         Assert.AreEqual(3, rawScore)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub RawScore_Polytomous_WithAspect()
+        'Arrange
         Dim solutionXml = <solution>
                               <keyFindings>
                                   <keyFinding id="mc" scoringMethod="Polytomous">
@@ -159,13 +178,16 @@ Public Class ScoringPropertiesCalculatorTests
                           </solution>
         Dim solution = SolutionFromXml(solutionXml)
 
+        'Act
         Dim rawScore = ScoringPropertiesCalculator.GetRawScore(solution)
 
+        'Assert
         Assert.AreEqual(8, rawScore)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub RawScore_Summed()
+        'Arrange
         Dim solutionXml = <solution>
                               <keyFindings>
                                   <keyFinding id="mc" scoringMethod="Polytomous">
@@ -180,13 +202,16 @@ Public Class ScoringPropertiesCalculatorTests
                           </solution>
         Dim solution = SolutionFromXml(solutionXml)
 
+        'Act
         Dim rawScore = ScoringPropertiesCalculator.GetRawScore(solution)
 
+        'Assert
         Assert.AreEqual(4, rawScore)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub MaxScore_DichotomousWithScoreTranslationTable()
+        'Arrange
         Dim solutionXml = <solution>
                               <keyFindings>
                                   <keyFinding id="mc" scoringMethod="Dichotomous">
@@ -201,13 +226,16 @@ Public Class ScoringPropertiesCalculatorTests
                           </solution>
         Dim solution = SolutionFromXml(solutionXml)
 
+        'Act
         Dim maxScore = ScoringPropertiesCalculator.GetMaxScore(solution)
 
+        'Assert
         Assert.AreEqual(4D, maxScore)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub MaxScore_PolytomousWithoutScoreTranslationTable()
+        'Arrange
         Dim solutionXml = <solution>
                               <keyFindings>
                                   <keyFinding id="mc" scoringMethod="Polytomous">
@@ -218,13 +246,16 @@ Public Class ScoringPropertiesCalculatorTests
                           </solution>
         Dim solution = SolutionFromXml(solutionXml)
 
+        'Act
         Dim maxScore = ScoringPropertiesCalculator.GetMaxScore(solution)
 
+        'Assert
         Assert.AreEqual(3D, maxScore)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), Description("Format Matrix KeyValues into a user friendly string")>
     Public Sub KeyValues_FormatMatrixKeyValuesIntoUserFriendlyString()
+        'Arrange
         Dim solutionXml = <solution>
                               <keyFindings>
                                   <keyFinding id="mc" scoringMethod="Dichotomous">
@@ -281,13 +312,16 @@ Public Class ScoringPropertiesCalculatorTests
                           </solution>
         Dim solution = SolutionFromXml(solutionXml)
 
+        'Act
         Dim keyValuesString = ScoringPropertiesCalculator.GetKeyValuesAsString(solution, 0)
 
+        'Assert
         Assert.AreEqual("CBAD", keyValuesString)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), Description("Format KeyValues into a user friendly string")>
     Public Sub KeyValues_FormatKeyValuesIntoUserFriendlyString1()
+        'Arrange
         Dim solutionXml = <solution>
                               <keyFindings>
                                   <keyFinding id="inlineChoiceController" scoringMethod="Dichotomous">
@@ -307,13 +341,16 @@ Public Class ScoringPropertiesCalculatorTests
 
         Dim solution = SolutionFromXml(solutionXml)
 
+        'Act
         Dim keyValuesString = ScoringPropertiesCalculator.GetKeyValuesAsString(solution, 0)
 
+        'Assert
         Assert.AreEqual("A", keyValuesString)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), Description("Format KeyValues into a user friendly string")>
     Public Sub KeyValues_FormatKeyValuesIntoUserFriendlyString2()
+        'Arrange
         Dim solutionXml = <solution>
                               <keyFindings>
                                   <keyFinding id="mc" scoringMethod="Dichotomous">
@@ -333,13 +370,16 @@ Public Class ScoringPropertiesCalculatorTests
 
         Dim solution = SolutionFromXml(solutionXml)
 
+        'Act
         Dim keyValuesString = ScoringPropertiesCalculator.GetKeyValuesAsString(solution, 0)
 
+        'Assert
         Assert.AreEqual(keyValuesString, "B")
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), Description("Format KeyValues into a user friendly string")>
     Public Sub KeyValues_FormatKeyValuesIntoUserFriendlyString3()
+        'Arrange
         Dim solutionXml = <solution>
                               <keyFindings>
                                   <keyFinding id="PoRwItemController" scoringMethod="None"/>
@@ -365,29 +405,35 @@ Public Class ScoringPropertiesCalculatorTests
 
         Dim solution = SolutionFromXml(solutionXml)
 
+        'Act
         Dim keyValuesString = ScoringPropertiesCalculator.GetKeyValuesAsString(solution, 0)
 
+        'Assert
         Assert.AreEqual("1&30", keyValuesString)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), Description("Format KeyValues into a user friendly string")>
     Public Sub KeyValues_FormatKeyValuesIntoUserFriendlyString4()
+        'Arrange
         Dim solutionXml =
-<solution>
-    <keyFindings>
-        <keyFinding id="audioController1" scoringMethod="None"/>
-        <keyFinding id="audioController2" scoringMethod="None"/>
-    </keyFindings>
-    <aspectReferences/>
-</solution>
-
+        <solution>
+            <keyFindings>
+                <keyFinding id="audioController1" scoringMethod="None"/>
+                <keyFinding id="audioController2" scoringMethod="None"/>
+            </keyFindings>
+            <aspectReferences/>
+        </solution>
+        
         Dim solution = SolutionFromXml(solutionXml)
 
+        'Act
         Dim keyValuesString = ScoringPropertiesCalculator.GetKeyValuesAsString(solution, 0)
 
+        'Assert
         Assert.IsTrue(String.IsNullOrEmpty(keyValuesString), "The key string should be empty.")
     End Sub
 
+#Region "Helper functions"
     Private Function SolutionFromXml(xml As XElement) As Solution
         Dim serializer As New XmlSerializer(GetType(Solution))
         Return DirectCast(serializer.Deserialize(xml.CreateReader()), Solution)
@@ -406,22 +452,27 @@ Public Class ScoringPropertiesCalculatorTests
     End Function
 
     Private Function GetListOfInteractionControllers(ByVal parsedXmlTemplate As XHtmlDocument) As Xml.XmlNodeList
+        'Create namespace manager
         Dim nsmgr As Xml.XmlNamespaceManager = New Xml.XmlNamespaceManager(parsedXmlTemplate.NameTable)
         nsmgr.AddNamespace("xhtml", "http://www.w3.org/1999/xhtml")
         nsmgr.AddNamespace("cito", "http://www.cito.nl/citotester")
 
+        'Create XPath for selecting 
         Dim nodes As Xml.XmlNodeList = parsedXmlTemplate.SelectNodes("//cito:interactionController", nsmgr)
         Return nodes
     End Function
 
     Private Function GetListOfInteractionControls(ByVal parsedXmlTemplate As XHtmlDocument, ByVal controllerId As String) As Xml.XmlNodeList
+        'Create namespace manager
         Dim nsmgr As Xml.XmlNamespaceManager = New Xml.XmlNamespaceManager(parsedXmlTemplate.NameTable)
         nsmgr.AddNamespace("xhtml", "http://www.w3.org/1999/xhtml")
         nsmgr.AddNamespace("cito", "http://www.cito.nl/citotester")
 
+        'Create XPath
         Dim nodes As Xml.XmlNodeList = parsedXmlTemplate.SelectNodes(String.Format("//cito:interactionControl[@controller='{0}']", controllerId), nsmgr)
         Return nodes
     End Function
 
+#End Region
 
 End Class

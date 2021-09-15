@@ -41,38 +41,50 @@ Public Class AreaEditorTest
 
     <TestMethod()> _
     Public Sub AddOneRectangleToShapeList()
+        'Arrange
         Dim shapeList As New ShapeList()
         shapeList.Add(_rectangleShape)
 
+        'Act
         _areaEditor.ShapeList = shapeList
 
+        'Assert
         Assert.IsTrue(_areaEditor.ShapeList.Count = 1)
     End Sub
 
     <TestMethod()> _
     Public Sub AddOneRectangleToCanvas()
+        'Arrange
 
+        'Act
         _areaEditor.AddShapeToCanvas(_shapeConverter.ToDrawing(_rectangleShape, True))
 
+        'Assert
         Assert.IsTrue(_areaEditor.ShapeList.Count = 1)
         Assert.IsTrue(_areaEditor.ShapeList(0).Identifier = "A")
     End Sub
 
     <TestMethod()> _
     Public Sub AddOneCircleToCanvas()
+        'Arrange
 
+        'Act
         _areaEditor.AddShapeToCanvas(_shapeConverter.ToDrawing(_circleShape, True))
 
+        'Assert
         Assert.IsTrue(_areaEditor.ShapeList.Count = 1)
         Assert.IsTrue(_areaEditor.ShapeList(0).Identifier = "A")
     End Sub
 
     <TestMethod()> _
     Public Sub AddOneCircleAndOneRectangleToCanvas()
+        'Arrange
 
+        'Act
         _areaEditor.AddShapeToCanvas(_shapeConverter.ToDrawing(_circleShape, True))
         _areaEditor.AddShapeToCanvas(_shapeConverter.ToDrawing(_rectangleShape, True))
 
+        'Assert
         Assert.IsTrue(_areaEditor.ShapeList.Count = 2)
         Assert.IsTrue(_areaEditor.ShapeList(0).Identifier = "A")
         Assert.IsTrue(_areaEditor.ShapeList(1).Identifier = "B")
@@ -80,12 +92,15 @@ Public Class AreaEditorTest
 
     <TestMethod()> _
     Public Sub AddOneCircleAndOneRectangleToCanvasAndRemoveTheCircle()
+        'Arrange
         Dim circleDrawing As IDrawableItem = _shapeConverter.ToDrawing(_circleShape, True)
 
+        'Act
         _areaEditor.AddShapeToCanvas(circleDrawing)
         _areaEditor.AddShapeToCanvas(_shapeConverter.ToDrawing(_rectangleShape, True))
         _areaEditor.RemoveShapeFromCanvas(circleDrawing)
 
+        'Assert
         Assert.IsTrue(_areaEditor.ShapeList.Count = 1)
         Assert.IsTrue(_areaEditor.ShapeList(0).Identifier = "A")
         Assert.IsInstanceOfType(_areaEditor.ShapeList(0), GetType(RectangleShape))
@@ -93,12 +108,15 @@ Public Class AreaEditorTest
 
     <TestMethod()> _
     Public Sub AddOneCircleAndOneRectangleToCanvasAndRemoveTheRectangle()
+        'Arrange
         Dim rectangleDrawing As IDrawableItem = _shapeConverter.ToDrawing(_rectangleShape, True)
 
+        'Act
         _areaEditor.AddShapeToCanvas(_shapeConverter.ToDrawing(_circleShape, True))
         _areaEditor.AddShapeToCanvas(rectangleDrawing)
         _areaEditor.RemoveShapeFromCanvas(rectangleDrawing)
 
+        'Assert
         Assert.IsTrue(_areaEditor.ShapeList.Count = 1)
         Assert.IsTrue(_areaEditor.ShapeList(0).Identifier = "A")
         Assert.IsInstanceOfType(_areaEditor.ShapeList(0), GetType(CircleShape))

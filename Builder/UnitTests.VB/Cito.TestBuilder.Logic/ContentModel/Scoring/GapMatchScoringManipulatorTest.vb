@@ -14,13 +14,16 @@ Public Class GapMatchScoringManipulatorTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GapMatch_GetKey_A_NoSolution()
+        'Arrange
         Dim param = CreateScoreParameter()
 
         Dim key = CreateGapMatchKeyFinding(param.Value.First().Id, "A")
         Dim manipulator As IValidatingChoiceArrayScoringManipulator(Of String) = New GapMatchScoringManipulator(GetKeyManipulator(key), param)
 
+        'Act
         Dim res = manipulator.GetKeyStatus()
 
+        'Assert
         Assert.IsTrue(res.ContainsKey(param.Value.First().Id))
         Assert.AreEqual("A", res(param.Value.First().Id).ToString)
         Assert.AreEqual(param.Value.Count, res.Keys.Count)
@@ -28,6 +31,7 @@ Public Class GapMatchScoringManipulatorTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GapMatch_SetKey_B_NoSolution()
+        'Arrange
         Dim param = CreateScoreParameter()
 
         Dim key As KeyFinding = CreateGapMatchKeyFinding(param.Value.First().Id, "A")
@@ -35,10 +39,12 @@ Public Class GapMatchScoringManipulatorTest
 
         Dim manipulator As IValidatingChoiceArrayScoringManipulator(Of String) = New GapMatchScoringManipulator(GetKeyManipulator(key), param)
 
+        'Act
         manipulator.SetKey(param.Value.Last().Id, "B")
 
         WriteKeyFinding("act", key)
 
+        'Assert
         Dim res = manipulator.GetKeyStatus()
 
         Assert.IsTrue(res.ContainsKey(param.Value.First().Id))
@@ -50,14 +56,17 @@ Public Class GapMatchScoringManipulatorTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GapMatch_RemoveKey_A_NoSolution()
+        'Arrange
         Dim param = CreateScoreParameter()
 
         Dim key = CreateGapMatchKeyFinding(param.Value.First().Id, "A")
 
         Dim manipulator As IChoiceArrayScoringManipulator = New GapMatchScoringManipulator(GetKeyManipulator(key), param)
 
+        'Act
         manipulator.RemoveKey(param.Value.First().Id)
 
+        'Assert
         Dim res = manipulator.GetKeyStatus()
         For Each keyValuePair In res
             Assert.IsTrue(String.IsNullOrEmpty(keyValuePair.Value))
@@ -68,6 +77,7 @@ Public Class GapMatchScoringManipulatorTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GapMatch_Clear_All_NoSolution()
+        'Arrange
         Dim param = CreateScoreParameter()
 
         Dim key = CreateGapMatchKeyFinding(param.Value.First().Id, "A")
@@ -77,8 +87,10 @@ Public Class GapMatchScoringManipulatorTest
         manipulator.SetKey(param.Value(1).Id, "A")
         manipulator.SetKey(param.Value(2).Id, "C")
 
+        'Act
         manipulator.Clear()
 
+        'Assert
         Dim res = manipulator.GetKeyStatus()
         For Each keyValuePair In res
             Assert.IsTrue(String.IsNullOrEmpty(keyValuePair.Value))
@@ -89,6 +101,7 @@ Public Class GapMatchScoringManipulatorTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GapMatch_CreateInvalidFinding_Test()
+        'Arrange
         Dim param = CreateScoreParameter()
 
         Dim key = CreateGapMatchKeyFinding(param.Value.First().Id, "A")
@@ -96,15 +109,19 @@ Public Class GapMatchScoringManipulatorTest
         Dim manipulator As IValidatingChoiceArrayScoringManipulator(Of String) = New GapMatchScoringManipulator(GetKeyManipulator(key), param)
         manipulator.SetKey(param.Value(1).Id, "A")
 
+        'Act
         Dim isValidFinding = manipulator.IsValid("A")
 
+        'Assert
         Assert.IsFalse(isValidFinding)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GapMatch_CreateValidFinding_Test()
+        'Arrange
         Dim param = CreateScoreParameter(False)
 
+        'SET MATCH MAX TO 2
         DirectCast(param.Value(0).InnerParameters(0), GapTextParameter).MatchMax = 2
 
         param = param.Transform()
@@ -114,13 +131,16 @@ Public Class GapMatchScoringManipulatorTest
         Dim manipulator As IValidatingChoiceArrayScoringManipulator(Of String) = New GapMatchScoringManipulator(GetKeyManipulator(key), param)
         manipulator.SetKey(param.Value(1).Id, "A")
 
+        'Act
         Dim isValidFinding = manipulator.IsValid("A")
 
+        'Assert
         Assert.IsTrue(isValidFinding)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GetDisplayValueForExistingItem_ShouldBeSpring()
+        'Arrange
         Dim item = ItemFromTestTool.To(Of AssessmentItem)()
 
         Dim param = DirectCast(item.Parameters.DeepFetchScoringParameters().First(Function(prm) TypeOf prm Is GapMatchScoringParameter), GapMatchScoringParameter)
@@ -129,8 +149,10 @@ Public Class GapMatchScoringManipulatorTest
         Dim sol = item.Solution
         Dim manipulator As IChoiceArrayScoringManipulator = ScoringParameterFactory.GetConceptScoreManipulator(Of IValidatingChoiceArrayScoringManipulator(Of String))(param, sol)
 
+        'Act
         Dim result = manipulator.GetDisplayValueForKey("I68a92575-2ae9-4cfc-8ce2-284844f72fa9")
 
+        'Assert
         Assert.AreEqual("spring", result)
     End Sub
 

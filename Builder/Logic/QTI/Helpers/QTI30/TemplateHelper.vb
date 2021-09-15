@@ -51,7 +51,7 @@ Namespace QTI.Helpers.QTI30
         Protected Function GetQtiTemplate(parsedTemplate As String, tagsToRemove As List(Of String)) As String
             tagsToRemove.Add("styles")
 
-            Dim tagsToReplace = New Dictionary(Of String, String) From {{"itemBody", "qti-item-body"}}
+            Dim tagsToReplace = New Dictionary(Of String, String) From {{"itemBody", "qti-item-body"}, {"stylesheet", "qti-stylesheet"}}
 
             Return ChainHandlerHelper.RemoveAttribute(
                         ChainHandlerHelper.RemoveAttribute(

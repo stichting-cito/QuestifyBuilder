@@ -1,7 +1,7 @@
 ﻿Imports System.Linq
 Imports System.Xml.Linq
 Imports Cito.Tester.ContentModel
-Imports Questify.Builder.Logic.QTI.Helpers.QTI22
+Imports Questify.Builder.Logic.QTI.Helpers.QTI30
 
 Namespace QTI.Converters.Processing.QTI30
 
@@ -20,10 +20,10 @@ Namespace QTI.Converters.Processing.QTI30
                 Dim value = keyValue.Values.First()
                 If Not TypeOf value Is CatchAllValue AndAlso Not TypeOf value Is NoValue Then
                     processing = <qti-member></qti-member>
-                    processing.Add(QTI22ScoringHelper.GetDirectPairProcessingForValue(value.ToString, keyValue.Domain))
+                    processing.Add(ScoringHelper.GetDirectPairProcessingForValue(value.ToString, keyValue.Domain))
                     processing.Add(GetProcessingForVariable())
                 ElseIf TypeOf value Is NoValue Then
-                    processing = QTI22ScoringHelper.GetGapMatchNoValueResponseProcessing(ScoringParameter, keyValue, GetProcessingForVariable())
+                    processing = ScoringHelper.GetGapMatchNoValueResponseProcessing(ScoringParameter, keyValue, GetProcessingForVariable())
                 End If
             End If
 

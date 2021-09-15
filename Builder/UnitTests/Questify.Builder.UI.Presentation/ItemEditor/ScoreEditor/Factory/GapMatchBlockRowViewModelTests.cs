@@ -17,13 +17,16 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void ChoiceValuesShouldNotBeEscaped()
         {
+            //Arrange
             var item = _assessmentItem.To<AssessmentItem>();
             var parameters = item.Parameters.DeepFetchInlineScoringParameters();
             var param = parameters.OfType<GapMatchScoringParameter>().First();
 
-            var combinedScoringMap = param.AsCombinedScoringMap(new[] { 0 });
+            //Act
+            var combinedScoringMap = param.AsCombinedScoringMap(/*GroupIdentifier*/new[] { 0 });
             var result = BlockRowViewModelFactory.CreateInstances(combinedScoringMap, item.Solution, 0).ToList();
 
+            //Assert
             var vm = (GapMatchBlockRowViewModel)result.First();
             Assert.AreEqual(string.Empty, vm.Choices.DataValue[0].Value);
             Assert.AreEqual("<", vm.Choices.DataValue[1].Value);
@@ -34,14 +37,17 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void NoScoreIsSupportedGapMatch()
         {
+            //Arrange
             var item = _assessmentItemNoValueCorrect.To<AssessmentItem>();
             var parameters = item.Parameters.DeepFetchInlineScoringParameters();
             var param = parameters.OfType<GapMatchScoringParameter>().First();
 
+            //Act
             var manipulator = param.GetScoreManipulator(item.Solution);
             var vm1 = new GapMatchBlockRowViewModel(param, manipulator, "I4e556201-0c3f-4e62-896c-ec45409ad1b6");
             var vm2 = new GapMatchBlockRowViewModel(param, manipulator, "If29a4b35-6cb4-4b97-ba86-43d91ef87eb8");
 
+            //Assert
             Assert.AreEqual(GapComparisonType.NoValue, vm1.ComparisonType.DataValue);
             Assert.AreEqual(GapComparisonType.Equals, vm2.ComparisonType.DataValue);
         }
@@ -49,19 +55,23 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void NoScoreIsSupportedGapMatchRichText()
         {
+            //Arrange
             var item = _assessmentItemNoValueCorrectRichText.To<AssessmentItem>();
             var parameters = item.Parameters.DeepFetchInlineScoringParameters();
             var param = parameters.OfType<GapMatchRichTextScoringParameter>().First();
 
+            //Act
             var manipulator = param.GetScoreManipulator(item.Solution);
             var vm1 = new GapMatchBlockRowViewModel(param, manipulator, "I4e556201-0c3f-4e62-896c-ec45409ad1b6");
             var vm2 = new GapMatchBlockRowViewModel(param, manipulator, "If29a4b35-6cb4-4b97-ba86-43d91ef87eb8");
 
+            //Assert
             Assert.AreEqual(GapComparisonType.NoValue, vm1.ComparisonType.DataValue);
             Assert.AreEqual(GapComparisonType.Equals, vm2.ComparisonType.DataValue);
         }
 
 
+        #region Data
 
         private readonly XElement _assessmentItem =
                     XElement.Parse(@"
@@ -487,5 +497,6 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
               </parameters>
             </assessmentItem>");
 
+        #endregion
     }
 }

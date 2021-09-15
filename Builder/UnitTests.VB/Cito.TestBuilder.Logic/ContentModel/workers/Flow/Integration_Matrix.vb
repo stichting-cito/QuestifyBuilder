@@ -12,35 +12,42 @@ Public Class Integration_Matrix
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Add Matrix scoring a=3 b=1 c=2 ")>
     Public Sub IntegrationTest_Step1()
+        'Arrange     
         Dim solution = New Solution()
         WriteToDebug(solution, "Arrange")
-
+        
+        'Act
         Dim sp = MatrixScoringParameters()
         sp.GetScoreManipulator(solution).SetKey("A", "3")
         sp.GetScoreManipulator(solution).SetKey("B", "1")
         sp.GetScoreManipulator(solution).SetKey("C", "2")
-
+        
+        'Assert
         WriteToDebug(solution, "Assert")
 
-        Assert.IsTrue(UnitTestHelper.AreSame(Step1.ToString(), solution.DoSerialize().ToString()))
+         Assert.IsTrue(UnitTestHelper.AreSame(Step1.ToString(), solution.DoSerialize().ToString()))
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Add Matrix scoring a=3 b=1 c=2")>
     Public Sub IntegrationTest_Step2()
+        'Arrange     
         Dim solution = Step1.To(Of Solution)()
         WriteToDebug(solution, "Arrange")
 
         Dim sp = MatrixScoringParameters()
         Dim map = New ScoringMap(New ScoringParameter() {sp}, solution).GetMap().ToList()
 
+        'Act
         map(0).GetConceptManipulator(solution)
 
+        'Assert  
         WriteToDebug(solution, "Assert")
 
         Assert.IsTrue(UnitTestHelper.AreSame(Step2.ToString(), solution.DoSerialize().ToString()))
     End Sub
 
+#Region "Data"
 
     ReadOnly Step1 As XElement = <solution xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                                      <keyFindings>
@@ -130,6 +137,7 @@ Public Class Integration_Matrix
                                      <aspectReferences/>
                                  </solution>
 
+#End Region
 
     Private Function MatrixScoringParameters() As MatrixScoringParameter
         Dim toReturn = New MatrixScoringParameter() With {.Name = "matrix", .ControllerId = "MXC", .FindingOverride = "matrixFO"}.AddSubParameters("A", "B", "C")

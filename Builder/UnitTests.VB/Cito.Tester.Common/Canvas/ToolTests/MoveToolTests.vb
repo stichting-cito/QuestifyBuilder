@@ -12,15 +12,18 @@ Public Class MoveToolTests
 
     <TestMethod()> <TestCategory("Controls")>
     Public Sub SelectDeselect_ItmChanged()
+        'Arrange
         Dim c As ICanvas = DirectCast(New Canvas, ICanvas)
         Dim itm As IDrawableItem = New DefaultShapeFactory().CreateShape(Of IRectangle)()
         c.AddItem(itm)
 
         AddHandler c.CollectionChanged, TrackAndResetCounters()
 
+        'Act
         c.Select(itm)
         c.DeSelect()
-
+       
+        'Assert
         Assert.AreEqual(0, added)
         Assert.AreEqual(0, removed)
         Assert.AreEqual(1, replace)
@@ -28,25 +31,29 @@ Public Class MoveToolTests
 
     <TestMethod()> <TestCategory("Controls")> <WorkItem(9858)>
     Public Sub MoveItem_ItmChanged()
+        'Arrange
         Dim c As ICanvas = DirectCast(New Canvas, ICanvas)
 
         Dim shape As IRectangle = CreateRectangle(0, 0, 10, 10)
         c.AddItem(shape)
 
         AddHandler c.CollectionChanged, TrackAndResetCounters()
-
+      
+        'Act
         c.Tool.MouseDown(c, New MouseEventArgs(MouseButtons.Left, 1, 0, 0, 0))
         c.Tool.MouseMove(c, New MouseEventArgs(MouseButtons.Left, 0, 100, 100, 0))
         c.Tool.MouseUp(c, New MouseEventArgs(MouseButtons.Left, 0, 100, 100, 0))
 
+        'Assert
         Assert.AreEqual(0, added)
         Assert.AreEqual(0, removed)
-        Assert.AreEqual(1, replace)
-        Assert.AreEqual(0, c.Items.Count())
+        Assert.AreEqual(1, replace) 'MouseUp on tool should replace the item on collection
+        Assert.AreEqual(0, c.Items.Count()) 'Item is being edited thus not in collection.
     End Sub
 
     <TestMethod()> <TestCategory("Controls")> <WorkItem(9858)>
     Public Sub MoveItemRelease_ItmChanged()
+        'Arrange
         Dim c As ICanvas = DirectCast(New Canvas, ICanvas)
         Dim drawingList As New List(Of IDrawableItem)
         Dim itm As IDrawableItem = New DefaultShapeFactory().CreateShape(Of IRectangle)()
@@ -64,28 +71,31 @@ Public Class MoveToolTests
                                                 Case NotifyCollectionChangedAction.Replace
                                                     Dim old = DirectCast(e.OldItems(0), IDrawableItem)
                                                     Assert.IsNotNull(old)
-                                                    drawingList.Add(old)
+                                                    drawingList.Add(old) 'Add old for comparison
                                                     replace += 1
                                                 Case Else
-                                                    Throw New Exception()
+                                                    Throw New Exception() 'Not expected!
                                             End Select
                                         End Sub
+        'Act
         c.Tool.MouseDown(c, New MouseEventArgs(MouseButtons.Left, 1, 0, 0, 0))
         c.Tool.MouseMove(c, New MouseEventArgs(MouseButtons.Left, 0, 100, 100, 0))
-        c.Tool.MouseUp(c, New MouseEventArgs(MouseButtons.Left, 0, 100, 100, 0))
-        c.DeSelect()
+        c.Tool.MouseUp(c, New MouseEventArgs(MouseButtons.Left, 0, 100, 100, 0)) 'Causes Element Changed
+        c.DeSelect() 'Causes Element Changed
 
+        'Assert
         Assert.AreEqual(0, added)
         Assert.AreEqual(0, removed)
-        Assert.AreEqual(2, replace)
+        Assert.AreEqual(2, replace) 'MouseUp on tool should replace the item on collection
         Assert.AreEqual(2, drawingList.Count)
-        Assert.AreNotEqual(drawingList(0).BoundingBox, drawingList(1).BoundingBox)
+        Assert.AreNotEqual(drawingList(0).BoundingBox, drawingList(1).BoundingBox) 'OldItem had to be changed.
     End Sub
 
 
     <TestMethod()> <TestCategory("Controls")> <WorkItem(9858)>
     Public Sub MoveWithKeyboard_ItmChanged()
-        Dim c As ICanvas = DirectCast(New Canvas With {.BackgroundImage = New Bitmap(100, 100)}, ICanvas)
+        'Arrange
+        Dim c As ICanvas = DirectCast(New Canvas With {.BackgroundImage = New Bitmap(100,100)}, ICanvas)
         Dim drawingList As New List(Of IDrawableItem)
         Dim itm As IDrawableItem = New DefaultShapeFactory().CreateShape(Of IRectangle)()
         drawingList.Add(itm)
@@ -100,21 +110,23 @@ Public Class MoveToolTests
                                                     removed += 1
                                                 Case NotifyCollectionChangedAction.Replace
                                                     Dim old = DirectCast(e.OldItems(0), IDrawableItem)
-                                                    drawingList.Add(old)
+                                                    drawingList.Add(old) 'Add old for comparison
                                                     replace += 1
                                                 Case Else
-                                                    Throw New Exception()
+                                                    Throw New Exception() 'Not expected!
                                             End Select
                                         End Sub
-
+       
+        'Act
         c.Tool.MouseDown(c, New MouseEventArgs(MouseButtons.Left, 1, 0, 0, 0))
         c.Tool.KeyDown(c, New KeyEventArgs(Keys.Down))
 
+        'Assert
         Assert.AreEqual(0, added)
         Assert.AreEqual(0, removed)
-        Assert.AreEqual(1, replace)
+        Assert.AreEqual(1, replace) 'MouseUp on tool should replace the item on collection
         Assert.AreEqual(2, drawingList.Count)
-        Assert.AreNotEqual(drawingList(0).BoundingBox, drawingList(1).BoundingBox)
+        Assert.AreNotEqual(drawingList(0).BoundingBox, drawingList(1).BoundingBox) 'OldItem had to be changed.
     End Sub
 
     Private Function TrackAndResetCounters() As EventHandler(Of NotifyCollectionChangedEventArgs)
@@ -128,7 +140,7 @@ Public Class MoveToolTests
                        Case NotifyCollectionChangedAction.Replace
                            replace += 1
                        Case Else
-                           Throw New Exception()
+                           Throw New Exception() 'Not expected!
                    End Select
                End Sub
     End Function

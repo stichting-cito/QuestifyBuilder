@@ -10,10 +10,13 @@ Public MustInherit Class TypedComparisonValueBaseTest(Of T)
 
     <TestMethod> <TestCategory("ContentModel")>
     Public Sub AllComparisonTypesAreTested()
+        'THIS METHOD WILL BREAK WHEN COMPARISONTYPE IS EXTENDED! JUST ADD A PROPERTY!
 
+        'Arrange
         Dim names = getComparisonValues()
         Dim properties = GetProperties().Where(Function(propertyInfo) propertyInfo.Name.StartsWith(PropertyMarker)).Select(Function(propertyInfo) propertyInfo.Name).ToList()
 
+        'Act  & assert
         For Each name As String In names
             Dim exists = properties.Any(Function(propname) propname = PropertyMarker + name)
             Assert.IsTrue(exists)
@@ -22,15 +25,17 @@ Public MustInherit Class TypedComparisonValueBaseTest(Of T)
 
     <TestMethod> <TestCategory("ContentModel")>
     Public Sub TestSupport()
+        'Arrange
         Dim testTee As TypedComparisonValue(Of T) = CreateTestObject()
         Dim testValue As BaseValue = GetSomeValue()
 
+        'Act & assert
         For Each comparison As String In getComparisonValues()
             Dim isSupported = True
 
             Try
                 testTee.TypeOfComparison = comparison
-                testTee.IsMatch(testValue)
+                testTee.IsMatch(testValue) 'Result is ignored, not that kind of a test.
             Catch ex As NotSupportedException
                 isSupported = False
             Catch ex As Exception
@@ -63,6 +68,7 @@ Public MustInherit Class TypedComparisonValueBaseTest(Of T)
         Return [Enum].GetNames(enums.GetType())
     End Function
 
+    'These properties will assist in validating the correctness of TypedComparisonValue innerts
     Protected Overridable ReadOnly Property ShouldSupport_None As Boolean
         Get
             Return False

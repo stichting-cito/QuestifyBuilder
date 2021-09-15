@@ -43,7 +43,9 @@ Partial Public Class ItemTestData
         End Using
     End Sub
 
+#Region "Choice.Inline"
 
+#Region " Items "
     Friend Shared ReadOnly item_choice_inline_dc As XElement = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="itm_inlinechoice" itemid="testId" title="code" layoutTemplateSrc="choice.inline.dc">
                                                                    <solution>
                                                                        <keyFindings>
@@ -171,6 +173,7 @@ Partial Public Class ItemTestData
                                                                        </parameterSet>
                                                                    </parameters>
                                                                </assessmentItem>
+#End Region
 
     Friend Shared ReadOnly ilt_choice_inline_dc As XElement = <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="1">
                                                                   <Description></Description>
@@ -359,7 +362,9 @@ Partial Public Class ItemTestData
                                                                  </inlineChoiceScoringparameter>
                                                              </SharedParameterSet>
                                                          </Template>
+#End Region
 
+#Region "Gaps.Inline "
     Friend Shared ReadOnly ilt_Gaps_Inline_DC As XElement = <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="1">
                                                                 <Description>Gap item (inline) met twee kolommen</Description>
                                                                 <Settings>
@@ -926,6 +931,7 @@ Partial Public Class ItemTestData
                                                                         </SharedParameterSet>
                                                                     </Template>
 
+#End Region
 
     Friend Shared ReadOnly InlineVideo As XElement = <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="1">
                                                          <Description>Dit is een test omschrijving voor ItemLayoutTemplate</Description>

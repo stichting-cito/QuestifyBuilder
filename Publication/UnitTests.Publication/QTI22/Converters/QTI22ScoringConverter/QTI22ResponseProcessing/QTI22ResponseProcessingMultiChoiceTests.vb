@@ -19,14 +19,17 @@ Public Class QTI22ResponseProcessingMultiChoiceTests
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessing")>
     Public Sub MultipleChoice_NoScoringParams_Test()
 
+        'Arrange
         Dim responseIdentifierAttributeList As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody4)
         Dim solution As Solution = _solution1.Deserialize(Of Solution)()
         Dim finding As KeyFinding = solution.Findings(0)
         Dim findingIndex As Integer = 0
         Dim processor = New QTI22ResponseProcessing(responseIdentifierAttributeList, solution, finding, findingIndex, Nothing, New QTI22CombinedScoringConverter, False)
 
+        'Act
         Dim result = processor.GetProcessing().ToXmlDocument()
 
+        'Assert
         Assert.IsTrue(UnitTestHelper.AreSame(_responseProcessing8, result))
     End Sub
 
@@ -39,14 +42,17 @@ Public Class QTI22ResponseProcessingMultiChoiceTests
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessing")>
     Public Sub MultipleResponse_NoScoringParams_Test()
 
+        'Arrange
         Dim responseIdentifierAttributeList As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody1)
         Dim solution As Solution = _solution2.Deserialize(Of Solution)()
         Dim finding As KeyFinding = solution.Findings(0)
         Dim findingIndex As Integer = 0
         Dim processor = New QTI22ResponseProcessing(responseIdentifierAttributeList, solution, finding, findingIndex, Nothing, New QTI22CombinedScoringConverter, False)
 
+        'Act
         Dim result = processor.GetProcessing().ToXmlDocument()
 
+        'Assert
         Assert.IsTrue(UnitTestHelper.AreSame(_responseProcessing9, result))
     End Sub
 
@@ -86,6 +92,7 @@ Public Class QTI22ResponseProcessingMultiChoiceTests
         QTI22PublicationTestHelper.RunResponseProcessingTest(_itemBody3, _finding7, _responseProcessing7, scoringPrms, New QTI22CombinedScoringConverter(scoringPrms))
     End Sub
 
+#Region "Items"
 
     Private _itemBody1 As XElement =
         <wrapper>
@@ -219,7 +226,9 @@ Public Class QTI22ResponseProcessingMultiChoiceTests
             </itemBody>
         </wrapper>
 
+#End Region
 
+#Region "Expected results"
 
     Private _responseProcessing1 As XElement =
         <responseProcessing>
@@ -729,5 +738,6 @@ Public Class QTI22ResponseProcessingMultiChoiceTests
             </responseCondition>
         </responseProcessing>
 
+#End Region
 
 End Class

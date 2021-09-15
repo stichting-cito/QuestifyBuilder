@@ -13,29 +13,43 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemEditor
         [TestMethod, TestCategory("ParameterEditor")]
         public void GetGroup_AllParametersVisible_ShouldEquals2()
         {
-            var parameterSetCollection = ParameterSetCollectionCloner.DeSerializerFromString(_simpleAllParansVisible.ToString()); var factory = new ParameterViewFactory(parameterSetCollection);
+            //Arrange
+            var parameterSetCollection = ParameterSetCollectionCloner.DeSerializerFromString(_simpleAllParansVisible.ToString()); /*DeSerializes WITH designersettings*/
+            var factory = new ParameterViewFactory(parameterSetCollection);
+            //Act
             var groups = factory.GetGroups();
-            Assert.AreEqual(2, groups.Count());
+            //Assert
+            Assert.AreEqual(2,groups.Count());
         }
 
         [TestMethod, TestCategory("ParameterEditor")]
         public void GetGroup_GroupBBB_has2ParamsButWithCasingError_ShouldHave2Groups()
         {
-            var parameterSetCollection = ParameterSetCollectionCloner.DeSerializerFromString(_simpleGroups_CasingError.ToString()); var factory = new ParameterViewFactory(parameterSetCollection);
+            //Arrange
+            var parameterSetCollection = ParameterSetCollectionCloner.DeSerializerFromString(_simpleGroups_CasingError.ToString()); /*DeSerializes WITH designersettings*/
+            var factory = new ParameterViewFactory(parameterSetCollection);
+            //Act
             var groups = factory.GetGroups();
-            Assert.AreEqual(2, groups.Count());
+            //Assert
+            Assert.AreEqual(2,groups.Count());
         }
 
         [TestMethod, TestCategory("ParameterEditor")]
         public void GetGroup_1ParametersVisible_ShouldEquals1()
         {
-            var parameterSetCollection = ParameterSetCollectionCloner.DeSerializerFromString(_simpleBBBParansVisible.ToString()); var factory = new ParameterViewFactory(parameterSetCollection);
+            //Arrange
+            var parameterSetCollection = ParameterSetCollectionCloner.DeSerializerFromString(_simpleBBBParansVisible.ToString()); /*DeSerializes WITH designersettings*/
+            var factory = new ParameterViewFactory(parameterSetCollection);
+            //Act
             var groups = factory.GetGroups();
-            Assert.AreEqual(1, groups.Count());
+            //Assert
+            Assert.AreEqual(1,groups.Count());
         }
 
+        #region Data
 
-
+        /* Groups : AAA ; BBB
+         */
         private readonly XElement _simpleAllParansVisible = XElement.Parse(@"<?xml version=""1.0"" encoding=""utf-8""?>
 <ArrayOfParameterCollection xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
   <ParameterCollection id=""entireItem"">
@@ -57,9 +71,10 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemEditor
    
   </ParameterCollection>  
 </ArrayOfParameterCollection>");
+        
 
-
-
+          /* Groups : AAA ; BBB
+         */
         private readonly XElement _simpleBBBParansVisible = XElement.Parse(@"<?xml version=""1.0"" encoding=""utf-8""?>
 <ArrayOfParameterCollection xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
   <ParameterCollection id=""entireItem"">
@@ -83,7 +98,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemEditor
 </ArrayOfParameterCollection>");
 
 
-
+        /* Groups : AAA ; BBB
+*/
         private readonly XElement _simpleGroups_CasingError = XElement.Parse(@"<?xml version=""1.0"" encoding=""utf-8""?>
 <ArrayOfParameterCollection xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
   <ParameterCollection id=""entireItem"">
@@ -114,6 +130,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemEditor
   </ParameterCollection>  
 </ArrayOfParameterCollection>");
 
+        #endregion
 
     }
 }

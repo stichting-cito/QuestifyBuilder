@@ -3,20 +3,31 @@ Imports System.ComponentModel
 Imports Questify.Builder.Logic
 Imports Questify.Builder.Logic.PluginExtensibility.Html.EditBehavior
 
+''' <summary>
+''' This control assists the Re-parent control. This control is not intended to be used stand alone.
+''' </summary>
+''' <remarks>
+''' This control exists to speedup ParameterSetEditor's XHtmlParameter. This control aims to only present a viewer. 
+''' When this control receives focus, we re-parent an existing XHtmlEditor for editor logic.
+''' </remarks>''' 
 <ToolboxBitmap(GetType(System.Windows.Forms.WebBrowser))>
 Public Class XHtmlViewer
     Inherits WebBrowser
 
     Private Const MinimumHeightInPixels = 30
 
+    ' Flag: Has Dispose already been called?
     Private _disposed As Boolean = False
     Private _behaviour As IHtmlEditorBehaviour
+    '------Internal State variables
     Private _handlesAreSet As Boolean = False
     Private _lastClick As Integer = Environment.TickCount
 
+    '----Designer Vars
     Private _doHeightUpdate As Boolean = False
     Private _determiningSize As Boolean = False
 
+    ' Flag: Has html content changed?
     Private _updatedOnceOnOpen As Boolean = False
     Private _editorHasStarted As Boolean = False
     Private _mouseFocused As Boolean = False
@@ -24,6 +35,12 @@ Public Class XHtmlViewer
     Public Event HtmlSizeStored As EventHandler(Of SizeEventArgs)
 
 
+    ''' <summary>
+    ''' Gets or sets a value indicating whether this instance is read only.
+    ''' </summary>
+    ''' <value>
+    ''' <c>true</c> if this instance is read only; otherwise, <c>false</c>.
+    ''' </value>
     <DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)>
     Friend Property IsReadOnly As Boolean
     Private _isLoaded As Boolean = False
@@ -38,12 +55,16 @@ Public Class XHtmlViewer
         Me.Focus()
     End Sub
 
+    ''' <summary>
+    ''' Sets the edited HTML. It's intended to be called when the editor is dismounted.
+    ''' </summary>
     Friend Sub UpdateHtml()
         If Not _determiningSize Then
             Dim html As String = String.Empty
             Try
                 html = _behaviour.GetHtml()
 
+                'In classes GenericResourceBehaviour, AspectEditorBehaviour and AspectReferenceEditorBehaviour these placeholders are added to be able to adjust the font here.
                 html = html.Replace("fontFamilyPlaceholderKey", "font-family")
                 html = html.Replace("fontFamilyPlaceholderValue", DefaultFont.FontFamily.Name)
             Catch ex As Exception
@@ -60,8 +81,9 @@ Public Class XHtmlViewer
 
     Private Sub SetHandlers()
         If (Not _handlesAreSet) Then
-            Debug.Assert(Document IsNot Nothing)
+            Debug.Assert(Document IsNot Nothing) 'Assert that the document is not nothing, ensured by initially setting the document's text.
 
+            '-----=====[Set handlers]=====-----
             AddHandler Document.ContextMenuShowing, New HtmlElementEventHandler(AddressOf contextMenuShowingHandler)
             AddHandler Document.MouseDown, New HtmlElementEventHandler(AddressOf mouseDownHandler)
             AddHandler DocumentCompleted, New WebBrowserDocumentCompletedEventHandler(AddressOf documentCompletedHandler)
@@ -81,7 +103,12 @@ Public Class XHtmlViewer
         End If
     End Sub
 
+    ''' <summary>
+    ''' 'using WndProc because this occurs earlier in the call chain then the standard MouseDown handler
+    ''' </summary>
+    ''' <param name="m"></param>
     Protected Overrides Sub WndProc(ByRef m As Message)
+        ' catch WM_LBUTTONDOWN
         If m.Msg = &H210 AndAlso m.WParam.ToInt32() = &H201 Then
             _mouseFocused = True
         Else
@@ -102,13 +129,15 @@ Public Class XHtmlViewer
             Return
         End If
 
-        If (Document IsNot Nothing AndAlso Document.Body IsNot Nothing AndAlso (Not _updatedOnceOnOpen OrElse _editorHasStarted)) Then
+        If (Document IsNot Nothing AndAlso Document.Body IsNot Nothing AndAlso (Not _updatedOnceOnOpen OrElse _editorHasStarted)) Then 'Prevent NullReference exception by checking if Document is not nothing.
+            ' _updatedOnce prevents multiple rendering iterations, possibly caused by:
+            ' http://stackoverflow.com/questions/6771258/what-does-meta-http-equiv-x-ua-compatible-content-ie-edge-do/6771584#6771584
             _updatedOnceOnOpen = True
             Dim body = CType(Document.Body.DomElement, mshtml.IHTMLElement2)
             Dim desiredHeight As Integer = Math.Max(body.scrollHeight, Document.Body.ScrollRectangle.Height)
             Dim minHeightInPixels = MinimumHeightInPixels
             If _behaviour.IsToolstripVisible Then
-                desiredHeight += 35
+                desiredHeight += 35     'extra height of 35 to compensate the toolbar.
                 minHeightInPixels += 35
             End If
             MinimumSize = New Size(MinimumSize.Width, Math.Max(minHeightInPixels, desiredHeight))
@@ -138,6 +167,12 @@ Public Class XHtmlViewer
         _determiningSize = False
     End Sub
 
+    ''' <summary>
+    ''' Gets or sets a value indicating whether to alter the height when the document is done loading.
+    ''' </summary>
+    ''' <value>
+    '''   <c>true</c> if [do height update]; otherwise, <c>false</c>.
+    ''' </value>
     <Description("To update or not update the height of the control when the document is done loading")>
     <DefaultValue(False)>
     Public Property DoHeightUpdate As Boolean

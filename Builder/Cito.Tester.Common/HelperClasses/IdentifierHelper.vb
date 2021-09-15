@@ -2,11 +2,9 @@
 
 Public NotInheritable Class IdentifierHelper
 
-
     Public Const CI_ParameterCollectionName As String = "__CustomInteractions"
     Public Const CI_ParameterCollectionPrefix As String = "__CI_"
     Public Const CI_FindingName As String = "CustomInteractions"
-
 
     Public Shared Function MatchesInlineCustomInteractionIdentifier(identifier As String, ByRef guidPart As String) As Boolean
         Dim regex As New Regex("CI_SP_(?<guidPart>.+?)_[0-9]")
@@ -51,13 +49,11 @@ Public NotInheritable Class IdentifierHelper
         Return result
     End Function
 
-
-    Private Shared Function IsGuid(identifier As String) As Boolean
+    Public Shared Function IsGuid(identifier As String) As Boolean
         Dim guidPattern As String = "[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}"
         If String.IsNullOrEmpty(identifier) Then Return False
         Dim regex As New Regex(guidPattern)
         Return regex.IsMatch(identifier)
     End Function
-
 
 End Class

@@ -12,13 +12,16 @@ Public Class EnforceSingleChoiceScoreTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub RemoveKeyCFromConcept()
+        'Arrange
         Dim solution = MCKeyFindingAndConceptFindingDiffer.To(Of Solution)()
         Dim sp = New ChoiceScoringParameter() With {.MaxChoices = 1, .ControllerId = "mc_1", .FindingOverride = "Opgave"}.AddSubParameters("A", "B", "C")
         Dim combinedScoringMap = New ScoringMap(New ScoringParameter() {sp}, solution).GetMap().First()
         Dim inputs As New Dictionary(Of String, Object) From {{"CombinedScoringMapKey", combinedScoringMap}, {"Solution", solution}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New EnforceSingleChoiceScore(), inputs)
-
+        
+        'Assert
         Assert.IsTrue(sp.IsSingleChoice)
         Assert.AreEqual(1, solution.ConceptFindings.First().Facts.Count, "fact c should be deleted")
         Assert.AreEqual("A"c, solution.ConceptFindings.First().Facts.First().Id(0), "fact c should be deleted")
@@ -26,13 +29,16 @@ Public Class EnforceSingleChoiceScoreTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub RemoveKeyCFromConcept_AnswerCatagoryB_ShouldNotPoseAnyProblen()
+        'Arrange
         Dim solution = MCKeyFindingAndConceptFindingDiffer_HasAnswerCategory.To(Of Solution)()
         Dim sp = New ChoiceScoringParameter() With {.MaxChoices = 1, .ControllerId = "mc_1", .FindingOverride = "Opgave"}.AddSubParameters("A", "B", "C")
         Dim combinedScoringMap = New ScoringMap(New ScoringParameter() {sp}, solution).GetMap().First()
         Dim inputs As New Dictionary(Of String, Object) From {{"CombinedScoringMapKey", combinedScoringMap}, {"Solution", solution}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New EnforceSingleChoiceScore(), inputs)
-
+        
+        'Assert
         Assert.IsTrue(sp.IsSingleChoice)
         Assert.AreEqual(2, solution.ConceptFindings.First().Facts.Count, "fact c should be deleted")
         Assert.AreEqual("A"c, solution.ConceptFindings.First().Facts(0).Id(0), "fact c should be deleted")
@@ -41,17 +47,21 @@ Public Class EnforceSingleChoiceScoreTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub ActivityDoesNotLookAtActualKey()
+        'Arrange
         Dim solution = KeyIsA_ButInConceptKeyIs_A_C.To(Of Solution)()
         Dim sp = New ChoiceScoringParameter() With {.MaxChoices = 1, .ControllerId = "mc_1", .FindingOverride = "Opgave"}.AddSubParameters("A", "B", "C")
         Dim combinedScoringMap = New ScoringMap(New ScoringParameter() {sp}, solution).GetMap().First()
         Dim inputs As New Dictionary(Of String, Object) From {{"CombinedScoringMapKey", combinedScoringMap}, {"Solution", solution}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New EnforceSingleChoiceScore(), inputs)
-
+        
+        'Assert
         Assert.AreEqual("A", DirectCast(DirectCast(solution.Findings.First().Facts.First().Values.First(), KeyValue).Values.First(), StringValue).Value)
         Assert.AreEqual("C", DirectCast(DirectCast(solution.ConceptFindings.First().Facts.First().Values.First(), KeyValue).Values.First(), StringValue).Value)
     End Sub
 
+#Region "Data"
 
     ReadOnly MCKeyFindingAndConceptFindingDiffer As XElement = <solution>
                                                                    <keyFindings>
@@ -188,5 +198,6 @@ Public Class EnforceSingleChoiceScoreTest
                                                             </ItemScoreTranslationTable>
                                                         </solution>
 
+#End Region
 
 End Class

@@ -109,12 +109,15 @@ Public Class QTI22ConceptResponseProcessingInputTests
 
     Private Sub ExecuteConceptResponseProcessingTest(itemBody As XElement, scoringParameters As HashSet(Of ScoringParameter), finding As XElement, processing As XElement)
 
+        'Arrange
         Dim responseIdentifierAttributeList As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(itemBody)
         Dim conceptFinding As ConceptFinding = finding.Deserialize(Of ConceptFinding)()
         Dim processor = New QTI22ConceptResponseProcessing(responseIdentifierAttributeList, conceptFinding, scoringParameters, New QTI22CombinedScoringConverter())
 
+        'Act
         Dim result = processor.GetProcessing(False)
 
+        'Assert
         Dim expected = New XDocument(processing)
         Dim actual = New XDocument(result)
         Assert.IsTrue(UnitTestHelper.AreSame(expected, actual))

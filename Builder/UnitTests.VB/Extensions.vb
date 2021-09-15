@@ -5,6 +5,10 @@ Imports System.Xml.Linq
 
 Module Extensions
 
+    ''' <summary>
+    ''' Converts the XElement to an XmlNode
+    ''' </summary>
+    ''' <param name="element">The element.</param>
     <Extension()>
     Public Function ToXmlNode(element As XElement) As XmlNode
         Dim root As New XDocument(New XElement("Root", element))
@@ -15,6 +19,10 @@ Module Extensions
         End Using
     End Function
 
+    ''' <summary>
+    ''' Converts the XElement to an XmlNode
+    ''' </summary>
+    ''' <param name="element">The element.</param>
     <Extension()>
     Public Function ToXmlElement(element As XElement) As XmlElement
         Dim ret As XmlNode = element.ToXmlNode()
@@ -24,6 +32,10 @@ Module Extensions
         Return Nothing
     End Function
 
+    ''' <summary>
+    ''' Convert an array of XElements to a XML node list.
+    ''' </summary>
+    ''' <param name="elements">The elements.</param>
     Public Function ToXmlNodeList(ByVal ParamArray elements() As XElement) As XmlNodeList
         Dim root As New XDocument(New XElement("Root", elements))
         Using xmlReader As XmlReader = root.CreateReader()

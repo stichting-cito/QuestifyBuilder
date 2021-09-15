@@ -12,19 +12,25 @@ Public Class HtmlConverter_RepairElementReferenceTests
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub Move_U_tag_OutsideReferenceSpanElement()
+        'Arrange
         Dim converter As New HtmlConverter_RepairElementReference(_namespaceManager)
-
+        
+        'Act
         Dim result As String = converter.ConvertHtml(_sampleHtmlWithReference.ToString())
-
+        
+        'Assert
         Assert.IsTrue(result.Contains("</span></u>") AndAlso result.Contains("<u><span"))
     End Sub
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub DONOT_Move_U_tag_OutsideSpanElement()
+        'Arrange
         Dim converter As New HtmlConverter_RepairElementReference(_namespaceManager)
-
+        
+        'Act
         Dim result As String = converter.ConvertHtml(_sampleHtml.ToString())
-
+       
+        'Assert
         Assert.IsFalse(result.Contains("</span></u>") AndAlso result.Contains("<u><span"))
     End Sub
 

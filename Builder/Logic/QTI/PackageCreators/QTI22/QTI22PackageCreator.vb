@@ -159,6 +159,8 @@ Namespace QTI.PackageCreators.QTI22
             ElseIf testPackage IsNot Nothing Then
                 TypeOfPackage = PackageCreatorConstants.PackageType.TestPackagePublication
                 CurrentAssessmentPackage = testPackage
+            Else
+                TypeOfPackage = PackageCreatorConstants.PackageType.TestPublication
             End If
             Dim returnValue As Boolean
             Dim sessionContext As ISessionContext = New SessionContext()
@@ -637,10 +639,6 @@ Namespace QTI.PackageCreators.QTI22
         Public Overridable Sub CopySchemaFiles(xsdFolder As String)
             CopySchemas(My.Resources.schema_qti22, xsdFolder)
         End Sub
-
-        Public Overridable Function GetAssessmentTestViewType() As String
-            Return GenericTestModelPlugin.PLUGIN_NAME
-        End Function
 
         Protected Sub CopySchemas(schemasZip As Byte(), xsdFolder As String)
             If Not New DirectoryInfo(xsdFolder).Exists Then

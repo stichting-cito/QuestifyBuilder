@@ -22,12 +22,15 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void BlockGridIsNotNull()
         {
+            //Arrange
             var solution = Deserialize<Solution>(SingleSolution);
             var intSP = new IntegerScoringParameter() { FindingOverride = "sharedIntegerFinding", ControllerId = "integerScore", Name = "integerScore" }.AddSubParameters("1");
             var combinedScoreMapKeys = new ScoringMap(new ScoringParameter[] { intSP }, solution).GetMap();
 
+            //Act
             var vm = new V2AdvResponseCategoryScoringVM(combinedScoreMapKeys.First(), solution);
             vm.AddBlockGridData();
+            //Assert
 
             Assert.IsNotNull(vm.BlockGridData);
         }
@@ -35,12 +38,15 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void BlockGrid_SingelSolution_HasSingleRow_SingleBlock()
         {
+            //Arrange
             var solution = Deserialize<Solution>(SingleSolution);
             var intSP = new IntegerScoringParameter() { FindingOverride = "sharedIntegerFinding", ControllerId = "integerScore", Name = "integerScore" }.AddSubParameters("1");
             var combinedScoreMapKeys = new ScoringMap(new ScoringParameter[] { intSP }, solution).GetMap();
 
+            //Act
             var vm = new V2AdvResponseCategoryScoringVM(combinedScoreMapKeys.First(), solution);
             vm.AddBlockGridData();
+            //Assert
 
             Assert.AreEqual(1, vm.BlockGridData.Count, "Expects single row");
             Assert.AreEqual(1, vm.BlockGridData[0].Count, "Expects Single Block");
@@ -50,6 +56,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void With2ScoringParams_AddingAltToInt1_TheOnlyInt2_BlockVM_ShouldHaveIndex1()
         {
+            //Arrange
             var solution = new Solution();
             var sp1 = new IntegerScoringParameter() { FindingOverride = "Finding", ControllerId = "Int1", Name = "Integer1", SupportCasScoring = true }.AddSubParameters("1");
             var sp2 = new IntegerScoringParameter() { FindingOverride = "Finding", ControllerId = "Int2", Name = "Integer2", SupportCasScoring = true }.AddSubParameters("1");
@@ -59,9 +66,11 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             var vm = new V2AdvResponseCategoryScoringVM(combinedScoringMap, solution);
             vm.AddBlockGridData();
+            //Act
             var blockInRowData = vm.BlockGridData[0][0];
             var blockRowViewModel = getBlockRowVmLstList(blockInRowData, "Integer1").First();
             vm.AddScoreAlternative(blockInRowData, blockRowViewModel, solution);
+            //Assert
             var lst = getBlockRowVmLstList(blockInRowData, "Integer2");
             Assert.AreEqual(1, lst.Count);
             Assert.AreEqual(0, lst[0].Index);
@@ -70,6 +79,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void WhenAddingANewAlternative_TheLocationInsertedIsTheNextLocation()
         {
+            //Arrange
             var solution = Deserialize<Solution>(integerSolution);
             var sp1 = new IntegerScoringParameter() { FindingOverride = "sharedIntegerFinding", ControllerId = "integerScore", Name = "Integer1", SupportCasScoring = true }.AddSubParameters("1");
 
@@ -78,8 +88,11 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             var vm = new V2AdvResponseCategoryScoringVM(combinedScoringMap, solution);
             vm.AddBlockGridData();
+            //Act
             var blockInRowData = vm.BlockGridData[0][0];
-            var blockRowViewModel = getBlockRowVmLstList(blockInRowData, "Integer1")[1]; vm.AddScoreAlternative(blockInRowData, blockRowViewModel, solution);
+            var blockRowViewModel = getBlockRowVmLstList(blockInRowData, "Integer1")[1]; //This one has value 2
+            vm.AddScoreAlternative(blockInRowData, blockRowViewModel, solution);
+            //Assert
             var lst = GetValues(blockInRowData, "Integer1", solution);
             Assert.AreEqual(5, lst.Count);
 
@@ -93,6 +106,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void WhenAddingANewAlternative_AllIndexesAreDistinct()
         {
+            //Arrange
             var solution = Deserialize<Solution>(integerSolution);
             var sp1 = new IntegerScoringParameter() { FindingOverride = "sharedIntegerFinding", ControllerId = "integerScore", Name = "Integer1", SupportCasScoring = true }.AddSubParameters("1");
 
@@ -101,8 +115,11 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             var vm = new V2AdvResponseCategoryScoringVM(combinedScoringMap, solution);
             vm.AddBlockGridData();
+            //Act
             var blockInRowData = vm.BlockGridData[0][0];
-            var blockRowViewModel = getBlockRowVmLstList(blockInRowData, "Integer1")[1]; vm.AddScoreAlternative(blockInRowData, blockRowViewModel, solution);
+            var blockRowViewModel = getBlockRowVmLstList(blockInRowData, "Integer1")[1]; //This one has value 2
+            vm.AddScoreAlternative(blockInRowData, blockRowViewModel, solution);
+            //Assert
             var lst = getBlockRowVmLstList(blockInRowData, "Integer1").Select(x => x.Index).Distinct();
             Assert.AreEqual(5, lst.Count());
         }
@@ -110,21 +127,25 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void WhenAddingANewAlternativeToAGroup_ValidateValues()
         {
+            //Arrange
             var solution = Deserialize<Solution>(integerGroupedSolution);
             var sp1 = new IntegerScoringParameter() { FindingOverride = "sharedIntegerFinding", ControllerId = "integerScore", Name = "Integer1", SupportCasScoring = true }.AddSubParameters("1", "2");
 
-            var combinedScoringMap = new ScoringMap(new[] { sp1 }, solution).GetMap().First();
+            var combinedScoringMap = new ScoringMap(new[] {sp1}, solution).GetMap().First();
 
             var vm = new V2AdvResponseCategoryScoringVM(combinedScoringMap, solution);
             vm.AddBlockGridData();
-
+            
+            //Act
             var blockInRowData = vm.BlockGridData[0][0];
-            var blockRowViewModel = getBlockRowVmLstList(blockInRowData, "Integer1.1")[0]; vm.AddScoreAlternative(blockInRowData, blockRowViewModel, solution);
-
+            var blockRowViewModel = getBlockRowVmLstList(blockInRowData, "Integer1.1")[0]; //This one has value 2
+            vm.AddScoreAlternative(blockInRowData, blockRowViewModel, solution);
+            
+            //Assert
 
             var lst1 = GetValues(blockInRowData, "Integer1.1", solution);
             var lst2 = GetValues(blockInRowData, "Integer1.2", solution);
-
+            
             Assert.AreEqual(2, lst1.Count);
             Assert.AreEqual(6, lst1[0].Value.IntegerValue);
             Assert.AreEqual(null, lst1[1].Value.IntegerValue);
@@ -133,6 +154,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             Assert.AreEqual(14, lst2[0].Value.IntegerValue);
         }
 
+        #region Data
 
         private XElement SingleSolution = XElement.Parse(@"<solution>
 	                                                        <keyFindings>
@@ -196,6 +218,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                                                             </solution>");
 
 
+        #endregion
 
 
         private T Deserialize<T>(XElement input)

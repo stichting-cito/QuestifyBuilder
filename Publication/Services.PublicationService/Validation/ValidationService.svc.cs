@@ -22,11 +22,25 @@ namespace Questify.Builder.Services.PublicationService.Validation
         private static readonly Dictionary<string, ValidationTaskProgress> ValidationProgress = new Dictionary<string, ValidationTaskProgress>();
         public static IEnumerable<IValidateHandler> Validators { get; set; }
 
+        /// <summary>
+        /// Indicates if at least 1 validation handler is available for the specified tests.
+        /// </summary>
+        /// <param name="bankId">The bank unique identifier.</param>
+        /// <param name="testNames">The test names.</param>
+        /// <returns>true if at least 1 handler is available or else false </returns>
         public bool AtLeastOneHandlerAvailable(int bankId, IList<string> testNames)
         {
             return InitializeSupportedValidationHandlers(bankId, testNames).Any();
         }
 
+        /// <summary>
+        /// Start validation of the given tests in the specified bank.
+        /// </summary>
+        /// <param name="bankId">The bank unique identifier.</param>
+        /// <param name="testNames">The test names.</param>
+        /// <returns>
+        /// A list of <see cref="ValidationHandlerIdentifier" /> which can be used to poll for progress.
+        /// </returns>
         public IList<ValidationHandlerIdentifier> Validate(int bankId, IList<string> testNames)
         {
             var handlers = InitializeSupportedValidationHandlers(bankId, testNames);
@@ -37,7 +51,7 @@ namespace Questify.Builder.Services.PublicationService.Validation
 
             var ctx = System.Web.HttpContext.Current;
 
-            new Thread(() =>
+            new Thread(() => 
             {
                 System.Web.HttpContext.Current = ctx;
                 DoValidation(handlers);
@@ -46,11 +60,24 @@ namespace Questify.Builder.Services.PublicationService.Validation
             return handlers;
         }
 
+        /// <summary>
+        /// Gets the progress of the specified task.
+        /// </summary>
+        /// <param name="taskId">The task unique identifier.</param>
+        /// <returns>
+        /// The progress of the specified validation task.
+        /// </returns>
         public ValidationTaskProgress GetProgress(string taskId)
         {
             return ValidationProgress.ContainsKey(taskId) ? ValidationProgress[taskId] : null;
         }
 
+        /// <summary>
+        /// Finishes the specified validation task. Should be called after the client
+        /// is aware that the validation has finished and the client no longer needs to poll
+        /// for progress. The server can then perform some cleanup tasks.
+        /// </summary>
+        /// <param name="taskId">The task's unique identifier.</param>
         public void FinishValidation(string taskId)
         {
             if (ValidationProgress.ContainsKey(taskId))
@@ -65,12 +92,17 @@ namespace Questify.Builder.Services.PublicationService.Validation
             return info.GetCurrentVersion();
         }
 
+        /// <summary>
+        /// Initializes the supported validation handlers.
+        /// </summary>
+        /// <param name="bankId">The bank identifier.</param>
+        /// <param name="testNames">The test names.</param>
         protected virtual IList<ValidationHandlerIdentifier> InitializeSupportedValidationHandlers(int bankId, IList<string> testNames)
         {
             var tests = testNames.Select(tm => ResourceFactory.Instance.GetResourceByNameWithOption(bankId, tm, new ResourceRequestDTO() { WithDependencies = true })).OfType<AssessmentTestResourceEntity>();
             var result = new List<ValidationHandlerIdentifier>();
 
-            foreach (var validator in Validators)
+            foreach(var validator in Validators)
             {
                 validator.Collection = tests.Select(t => t.ConvertResourceEntityToDto<AssessmentTestResourceEntity, AssessmentTestResourceDto>(false))
                                             .OfType<ResourceDto>().ToList();

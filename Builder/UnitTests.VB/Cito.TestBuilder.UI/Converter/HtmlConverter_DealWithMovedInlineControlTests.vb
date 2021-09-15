@@ -12,10 +12,13 @@ Public Class HtmlConverter_DealWithMovedInlineControlTests
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub NothingToDo_NoAlterations()
+        'Arrange
         Dim converter = New HtmlConverter_DealWithMovedInlineControl(A.Fake(Of IHtmlEditorBehaviour))
-
+        
+        'Act
         Dim result = converter.ConvertHtml(singleInline.ToString())
-
+        
+        'Assert
         Dim doc1 = XDocument.Load(singleInline.CreateReader())
         Dim doc2 = XDocument.Parse(result)
         Assert.IsTrue(UnitTestHelper.AreSame(doc1, doc2))
@@ -23,10 +26,13 @@ Public Class HtmlConverter_DealWithMovedInlineControlTests
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub NothingToDo_InlineIdsMatchesHtmlInlineIds()
+        'Arrange
         Dim converter = New HtmlConverter_DealWithMovedInlineControl(GetFakeWithInlineElements("Ice32c0ba-73db-456d-b3d3-c92265282cf7"))
-
+        
+        'Act
         Dim result = converter.ConvertHtml(singleInline.ToString())
-
+        
+        'Assert
         Dim doc1 = XDocument.Load(singleInline.CreateReader())
         Dim doc2 = XDocument.Parse(result)
         Assert.IsTrue(UnitTestHelper.AreSame(doc1, doc2))
@@ -34,10 +40,13 @@ Public Class HtmlConverter_DealWithMovedInlineControlTests
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub NothingToDo_2htmlInlineIds_1matchInInlineId()
+        'Arrange
         Dim converter = New HtmlConverter_DealWithMovedInlineControl(GetFakeWithInlineElements("Ice32c0ba-73db-456d-b3d3-c92265282cf7"))
-
+        
+        'Act
         Dim result = converter.ConvertHtml(doubleInline.ToString())
-
+        
+        'Assert
         Dim doc1 = XDocument.Load(doubleInline.CreateReader())
         Dim doc2 = XDocument.Parse(result)
         Assert.IsTrue(UnitTestHelper.AreSame(doc1, doc2))
@@ -45,10 +54,13 @@ Public Class HtmlConverter_DealWithMovedInlineControlTests
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub NeedsToDoSomething_2htmlInlineIds_1matchInInlineId_andHasOtherIdThatIsNotPresent_HtmlIdIsRenamed()
+        'Arrange
         Dim converter = New HtmlConverter_DealWithMovedInlineControl(GetFakeWithInlineElements("Ice32c0ba-73db-456d-b3d3-c92265282cf7", "IsGone"))
-
+        
+        'Act
         Dim result = converter.ConvertHtml(doubleInline.ToString())
-
+        
+        'Assert
         Dim doc1 = XDocument.Load(doubleInline.CreateReader())
         Dim doc2 = XDocument.Parse(result)
         Assert.IsTrue(UnitTestHelper.AreSame(doc1, doc2))
@@ -56,11 +68,14 @@ Public Class HtmlConverter_DealWithMovedInlineControlTests
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub RenameOfInlineIdAffectsIdsOfBehavior()
+        'Arrange
         Dim fakeHtmlEditorBehavior = GetFakeWithInlineElements("Ice32c0ba-73db-456d-b3d3-c92265282cf7", "IsGone")
         Dim converter = New HtmlConverter_DealWithMovedInlineControl(fakeHtmlEditorBehavior)
-
+        
+        'Act
         Dim result = converter.ConvertHtml(doubleInline.ToString())
-
+        
+        'Assert
         Assert.IsTrue(fakeHtmlEditorBehavior.InlineElements.ContainsKey("Ice32c0ba-73db-456d-b3d3-c92265282cf7"))
         Assert.IsFalse(fakeHtmlEditorBehavior.InlineElements.ContainsKey("IsGone"))
         Assert.IsTrue(fakeHtmlEditorBehavior.InlineElements.ContainsKey("c1-id-09"))

@@ -68,6 +68,7 @@ Namespace QTI30
             PublicationTestHelper.RunResponseProcessingTest(_itemBody3, _finding7, _responseProcessing7, scoringPrms, New CombinedScoringConverter(scoringPrms))
         End Sub
 
+#Region "Items"
 
         Private _itemBody1 As XElement =
             <wrapper>
@@ -248,7 +249,9 @@ Namespace QTI30
                 </itemBody>
             </wrapper>
 
+#End Region
 
+#Region "Expected results"
 
         Private _responseProcessing1 As XElement =
             <qti-response-processing>
@@ -682,6 +685,7 @@ Namespace QTI30
                 </qti-response-condition>
             </qti-response-processing>
 
+#End Region
 
     End Class
 

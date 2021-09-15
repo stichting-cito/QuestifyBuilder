@@ -9,11 +9,16 @@ Public Class PackageImportOptionsControl
 
     Private WithEvents RM As ResourceManifest
 
+    ''' <summary>
+    ''' Holds value whether package is encryted or not
+    ''' </summary>
     Private ReadOnly _options As PackageImportOptionsDataEntity
 
     Public Sub New()
+        ' This call is required by the Windows Form Designer.
         InitializeComponent()
         PackageUrlTextBox.EnableFileNameDrop()
+        ' Add any initialization after the InitializeComponent() call.
         _options = New PackageImportOptionsDataEntity
     End Sub
 
@@ -24,6 +29,7 @@ Public Class PackageImportOptionsControl
     End Property
 
     Private Sub BrowseButton_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BrowseButton.Click
+        'set initial path of filename
         If String.IsNullOrEmpty(_options.Url) Then
             PackageOpenFileDialog.InitialDirectory = TestBuilderClientSettings.ImportLocation
         Else
@@ -48,6 +54,7 @@ Public Class PackageImportOptionsControl
     Private Sub PackageOutputOptionsControl_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         PackageImportOptionsDataEntityBindingSource.DataSource = _options
 
+        'force change
         PackageUrlTextBox.Text = String.Empty
     End Sub
 

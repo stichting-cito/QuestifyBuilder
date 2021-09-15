@@ -12,6 +12,7 @@ Public Class HtmlConverter_MathML_Tests
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub EditorToParamTest()
+        'Arrange
         Dim mathMlEditorPlugin = A.Fake(Of IMathMlEditorPlugin)()
 
         IoCHelper.Init(New List(Of IMathMlEditorPlugin) From {mathMlEditorPlugin})
@@ -22,20 +23,25 @@ Public Class HtmlConverter_MathML_Tests
         Dim expected = XDocument.Parse(mathImgHtml.ToString())
         Dim converter = New HtmlConverter_MathMLToMathImage(PluginHelper.MathMlPlugin)
 
+        'Act
         Dim result = XDocument.Parse(converter.ConvertHtml(mathFormulaHtml.ToString()))
         UnitTestHelper.SetFixedIdsToCompare(result)
 
+        'Assert
         Dim areEqual = UnitTestHelper.AreSame(result, expected)
         Assert.IsTrue(areEqual)
     End Sub
 
     <TestMethod, TestCategory("UILogic")>
     Public Sub ParamToEditorTest()
+        'Arrange
         Dim expected = XDocument.Parse(mathFormulaHtml.ToString())
         Dim converter = New HtmlConverter_MathImageToMathML()
 
+        'Act
         Dim result = XDocument.Parse(converter.ConvertHtml(mathImgHtml.ToString()))
 
+        'Assert
         Dim areEqual = UnitTestHelper.AreSame(result, expected)
         Assert.IsTrue(areEqual)
     End Sub

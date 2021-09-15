@@ -16,19 +16,25 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
     {
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("Concept")]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [ExpectedException(typeof( ArgumentNullException ))]
         public void CanNot_HandleNull()
         {
+            //Arrange
             var factory = new ConceptScoringFactory();
+            //Act
             factory.CanHandle(null);
+            //Assert
             Assert.Fail("Expected ArgumentNull Exception");
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("Concept")]
         public void CanNot_HandleEmptyCollection()
         {
+            //Arrange
             var factory = new ConceptScoringFactory();
+            //Act
             var result = factory.CanHandle(new List<ScoringParameter>());
+            //Assert
             Assert.IsFalse(result);
         }
 
@@ -36,14 +42,18 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("Concept")]
         public void Can_HandleCollection()
         {
+            //Arrange
             var factory = new ConceptScoringFactory();
-            var result = factory.CanHandle(new List<ScoringParameter>(new[] { new MultiChoiceScoringParameter() }));
+            //Act
+            var result = factory.CanHandle(new List<ScoringParameter>(new []{new MultiChoiceScoringParameter()}));
+            //Assert
             Assert.IsTrue(result);
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring")]
         public void WorkspaceData_IsUsableByViewModel()
         {
+            //Arrange
             var fakeVAS = new Cinch.TestViewAwareStatus();
             var ConceptVM = new EncodingScoringViewModel(fakeVAS, A.Fake<IAddAnswerCategory>());
             var fact = new ConceptScoringFactory();
@@ -51,8 +61,11 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             var fakeView = A.Fake<Cinch.IWorkSpaceAware>();
             fakeView.WorkSpaceContextualData.DataValue = workspaceData.DataValue;
             fakeVAS.View = fakeView;
+            //Act
             fakeVAS.SimulateViewIsLoadedEvent();
-
+            //Assert
+            
+            //Should not crash
         }
     }
 }

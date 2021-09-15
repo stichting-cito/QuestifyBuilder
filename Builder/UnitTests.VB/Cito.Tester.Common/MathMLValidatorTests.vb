@@ -8,73 +8,97 @@ Public Class MathMLValidatorTests
 
     <TestMethod()>
     Public Sub ValidMatML_ValidatesWithoutErrorAndWarnings()
+        'Arrange
         Dim mathML As String = _validMathML.ToString()
 
+        'Act
         Dim result As IEnumerable(Of String) = MathMLValidator.ValidateMathML(mathML)
 
+        'Assert
         Assert.AreEqual(0, result.Count())
     End Sub
 
     <TestMethod()>
     Public Sub ValidMatML_IsValid()
+        'Arrange
         Dim mathML As String = _validMathML.ToString()
 
+        'Act
         Dim result As Boolean = MathMLValidator.IsValidMathML(mathML)
 
+        'Assert
         Assert.IsTrue(result)
     End Sub
 
     <TestMethod()>
     Public Sub ValidMatMLWithUnicode_IsValid()
+        'Arrange
         Dim mathML As String = _validMathMLWithUnicode.ToString()
 
+        'Act
         Dim result As Boolean = MathMLValidator.IsValidMathML(mathML)
 
+        'Assert
         Assert.IsTrue(result)
     End Sub
 
     <TestMethod()>
     Public Sub InValidMatML_GivesErrorAndWarnings()
+        'Arrange
         Dim mathML As String = _invalidMathML.ToString()
 
+        'Act
         Dim result As IEnumerable(Of String) = MathMLValidator.ValidateMathML(mathML)
 
+        'Assert
         Assert.AreEqual(1, result.Count())
     End Sub
 
     <TestMethod()>
     Public Sub InValidMatMLWithSchemaViolation_GivesErrorAndWarnings()
+        'Arrange
         Dim mathML As String = _invalidMathMLViolatesSchema.ToString()
 
+        'Act
         Dim result As IEnumerable(Of String) = MathMLValidator.ValidateMathML(mathML)
 
+        'Assert
         Assert.AreEqual(1, result.Count())
     End Sub
 
     <TestMethod()>
     Public Sub NotMatMLWithNamespace_GivesErrorAndWarnings()
+        'Arrange
         Dim mathML As String = _bookXMLWithMathMLNamespace.ToString()
 
+        'Act
         Dim result As IEnumerable(Of String) = MathMLValidator.ValidateMathML(mathML)
 
+        'Assert
         Assert.AreEqual(1, result.Count())
     End Sub
 
     <TestMethod()>
     Public Sub NotMatMLWithoutNamespace_GivesErrorAndWarnings()
+        'Arrange
         Dim mathML As String = _bookXMLWithoutMathMLNamespace.ToString()
 
+        'Act
         Dim result As IEnumerable(Of String) = MathMLValidator.ValidateMathML(mathML)
 
+        'Assert
         Assert.AreEqual(1, result.Count())
     End Sub
 
     <TestMethod()>
     Public Sub SomeText_GivesErrorAndWarnings()
+        'Arrange
         Dim mathML As String = "some text"
 
+        'Act
         Dim result As IEnumerable(Of String) = MathMLValidator.ValidateMathML(mathML)
 
+        'Assert
         Assert.AreEqual(1, result.Count())
     End Sub
 

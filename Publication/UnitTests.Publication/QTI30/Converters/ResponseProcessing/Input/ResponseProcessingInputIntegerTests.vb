@@ -25,7 +25,7 @@ Namespace QTI30
             Dim finding As KeyFinding = solution.Findings(0)
             Dim scoringPrms = GetInputScoringParams(1)
 
-            PublicationTestHelper.RunResponseProcessingTest(_itemOneGap, solution, finding, PublicationTestHelper.ResponseProcessingTemplateMatchCorrect, scoringPrms, New CombinedScoringConverter(scoringPrms), 0, False)
+            PublicationTestHelper.RunResponseProcessingTest(_itemOneGap, solution, finding, _responseProcessing3, scoringPrms, New CombinedScoringConverter(scoringPrms), 0, False)
         End Sub
 
         <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("ResponseProcessing")>
@@ -167,6 +167,46 @@ Namespace QTI30
                                 <qti-base-value base-type="integer">10</qti-base-value>
                             </qti-lte>
                         </qti-and>
+                        <qti-set-outcome-value identifier="SCORE">
+                            <qti-sum>
+                                <qti-base-value base-type="float">1</qti-base-value>
+                                <qti-variable identifier="SCORE"/>
+                            </qti-sum>
+                        </qti-set-outcome-value>
+                    </qti-response-if>
+                </qti-response-condition>
+                <qti-response-condition>
+                    <qti-response-if>
+                        <qti-gte>
+                            <qti-variable identifier="SCORE"/>
+                            <qti-base-value base-type="float">1</qti-base-value>
+                        </qti-gte>
+                        <qti-set-outcome-value identifier="SCORE">
+                            <qti-base-value base-type="float">1</qti-base-value>
+                        </qti-set-outcome-value>
+                    </qti-response-if>
+                    <qti-response-else>
+                        <qti-set-outcome-value identifier="SCORE">
+                            <qti-base-value base-type="float">0</qti-base-value>
+                        </qti-set-outcome-value>
+                    </qti-response-else>
+                </qti-response-condition>
+            </qti-response-processing>
+
+        Private _responseProcessing3 As XElement =
+            <qti-response-processing>
+                <qti-response-condition>
+                    <qti-response-if>
+                        <qti-or>
+                            <qti-equal tolerance-mode="exact">
+                                <qti-variable identifier="RESPONSE"/>
+                                <qti-base-value base-type="integer">2</qti-base-value>
+                            </qti-equal>
+                            <qti-equal tolerance-mode="exact">
+                                <qti-variable identifier="RESPONSE"/>
+                                <qti-base-value base-type="integer">-3</qti-base-value>
+                            </qti-equal>
+                        </qti-or>
                         <qti-set-outcome-value identifier="SCORE">
                             <qti-sum>
                                 <qti-base-value base-type="float">1</qti-base-value>

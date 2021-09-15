@@ -60,6 +60,8 @@
 										Width="300" HeaderContainerStyle="{StaticResource horizontalColumnHeaderStyle}"/>
                         <GridViewColumn DisplayMemberBinding="{Binding maxScore}" Header="{StaticResource ItemEditor.AspectEditor.AspectRefsList.MaxScoreLabel}"
 										Width="100" HeaderContainerStyle="{StaticResource horizontalColumnHeaderStyle}"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding maxTranslatedScore}" Header="{StaticResource ItemEditor.AspectEditor.AspectRefsList.MaxTranslatedScoreLabel}"
+                                        Width="150" HeaderContainerStyle="{StaticResource horizontalColumnHeaderStyle}" />
                     </GridView>
                 </ListView.View>
             </ListView>

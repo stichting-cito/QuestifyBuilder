@@ -6,7 +6,7 @@ namespace Questify.Builder.UnitTests.Fakes
     [AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = true)]
     sealed class AddAspectScoringParameterAttribute : OrderedAttribute
     {
-        public AddAspectScoringParameterAttribute([CallerLineNumber] int order = 0)
+        public AddAspectScoringParameterAttribute([CallerLineNumber]int order = 0)
             : base(order)
         {
         }

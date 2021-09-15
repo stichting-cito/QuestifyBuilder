@@ -981,6 +981,20 @@ Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
             End Get
         End Property
 
+        Public ReadOnly Property nonqtischemas() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("nonqtischemas", resourceCulture)
+                Return CType(obj, Byte())
+            End Get
+        End Property
+
+        Public ReadOnly Property nonqtischemas_qti22() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("nonqtischemas_qti22", resourceCulture)
+                Return CType(obj, Byte())
+            End Get
+        End Property
+
         Public ReadOnly Property NoProgrammInstalled() As String
             Get
                 Return ResourceManager.GetString("NoProgrammInstalled", resourceCulture)
@@ -1496,13 +1510,6 @@ Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
         Public ReadOnly Property schema_qti30() As Byte()
             Get
                 Dim obj As Object = ResourceManager.GetObject("schema_qti30", resourceCulture)
-                Return CType(obj, Byte())
-            End Get
-        End Property
-
-        Public ReadOnly Property Schemas() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Schemas", resourceCulture)
                 Return CType(obj, Byte())
             End Get
         End Property

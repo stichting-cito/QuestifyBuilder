@@ -23,7 +23,7 @@ Public Class KeyManipulatorTests : Inherits BaseScoringManipulatorTests(Of KeyFi
 
     Public Overrides ReadOnly Property GetPerConcreteManipulator_CanManipulateSets As Boolean
         Get
-            Return True
+            Return True 'Yes: KeyFindings have sets.
         End Get
     End Property
 

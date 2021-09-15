@@ -22,7 +22,8 @@ namespace Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels.ScoreEditor
     public class AspectReferenceScoringViewModel : ViewModelBase, IViewModel2ViewCommandSupport
     {
         static readonly PropertyChangedEventArgs AspectEditControlEventArgs = ObservableHelper.CreateArgs<AspectReferenceScoringViewModel>(x => x.EditControl);
-        static readonly PropertyChangedEventArgs AspectRefArgs = ObservableHelper.CreateArgs<AspectReferenceScoringViewModel>(x => x.AspectRef); static readonly PropertyChangedEventArgs AspectEditorVisibleArgs = ObservableHelper.CreateArgs<AspectReferenceScoringViewModel>(x => x.AspectEditorVisible); static readonly PropertyChangedEventArgs AspectExpanderHeaderArgs = ObservableHelper.CreateArgs<AspectReferenceScoringViewModel>(x => x.AspectExpanderHeader);
+        static readonly PropertyChangedEventArgs AspectRefArgs = ObservableHelper.CreateArgs<AspectReferenceScoringViewModel>(x => x.AspectRef); static readonly PropertyChangedEventArgs AspectEditorVisibleArgs = ObservableHelper.CreateArgs<AspectReferenceScoringViewModel>(x => x.AspectEditorVisible); static readonly PropertyChangedEventArgs AspectExpanderHeaderArgs = ObservableHelper.CreateArgs<AspectReferenceScoringViewModel>(x => x.AspectExpanderHeader); static readonly PropertyChangedEventArgs EnableMaxScoreTextBoxArgs = ObservableHelper.CreateArgs<AspectReferenceScoringViewModel>(x => x.EnableMaxScoreTextBox);
+
         private readonly IViewAwareStatus _viewAwareStatusService;
         private AspectEditorSingleView _view;
         private ResourceEntity _resourceEntity;
@@ -47,6 +48,7 @@ namespace Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels.ScoreEditor
                 DataValue = false
             };
             AspectExpanderHeader = new DataWrapper<string>(this, AspectExpanderHeaderArgs);
+            EnableMaxScoreTextBox = new DataWrapper<bool>(this, EnableMaxScoreTextBoxArgs);
         }
 
         void viewAwareStatusService_ViewLoaded()
@@ -58,17 +60,19 @@ namespace Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels.ScoreEditor
                 _view = (AspectEditorSingleView)view;
                 _view.SetViewModel(this);
 
-                _itemEditorVm = ((Tuple<IItemEditorViewModel, IAspectReferencesScoringViewModel, string, string, bool, bool>)workspaceData.WorkSpaceContextualData.DataValue).Item1;
-                _aspectRefsViewModel = ((Tuple<IItemEditorViewModel, IAspectReferencesScoringViewModel, string, string, bool, bool>)workspaceData.WorkSpaceContextualData.DataValue).Item2;
-                _aspectIdentifier = ((Tuple<IItemEditorViewModel, IAspectReferencesScoringViewModel, string, string, bool, bool>)workspaceData.WorkSpaceContextualData.DataValue).Item3;
-                _controllerId = ((Tuple<IItemEditorViewModel, IAspectReferencesScoringViewModel, string, string, bool, bool>)workspaceData.WorkSpaceContextualData.DataValue).Item4;
-                _showAspectIdentifierInHeader = ((Tuple<IItemEditorViewModel, IAspectReferencesScoringViewModel, string, string, bool, bool>)workspaceData.WorkSpaceContextualData.DataValue).Item6;
+                var dataValue = (Tuple<IItemEditorViewModel, IAspectReferencesScoringViewModel, string, string, bool, bool, bool>)workspaceData.WorkSpaceContextualData.DataValue;
+                _itemEditorVm = dataValue.Item1;
+                _aspectRefsViewModel = dataValue.Item2;
+                _aspectIdentifier = dataValue.Item3;
+                _controllerId = dataValue.Item4;
+                _showAspectIdentifierInHeader = dataValue.Item6;
+                EnableMaxScoreTextBox.DataValue = dataValue.Item7;
 
                 _itemEditorVm.Updated += ItemEditor_Updated;
                 if (!_itemEditorVm.IsLoading)
                     Update();
 
-                if (((Tuple<IItemEditorViewModel, IAspectReferencesScoringViewModel, string, string, bool, bool>)workspaceData.WorkSpaceContextualData.DataValue).Item5)
+                if (dataValue.Item5)
                 {
                     _view.MaxScoreTextBox.Focus();
                 }
@@ -90,6 +94,7 @@ namespace Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels.ScoreEditor
         public DataWrapper<object> EditControl { get; }
         public DataWrapper<bool> AspectEditorVisible { private set; get; }
         public DataWrapper<string> AspectExpanderHeader { private set; get; }
+        public DataWrapper<bool> EnableMaxScoreTextBox { private set; get; }
 
         public void DoPostSaveTasks()
         {
@@ -208,10 +213,12 @@ namespace Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels.ScoreEditor
 
                 if (_resourceEntity != null && _resourceEntity.GetType() == typeof(AspectResourceEntity))
                 {
-                    AspectReference aspectRef = new AspectReference();
-                    aspectRef.SourceName = _resourceEntity.Name;
-                    aspectRef.MaxScore = ((AspectResourceEntity)_resourceEntity).RawScore;
-                    aspectRef.Description = string.Empty;
+                    AspectReference aspectRef = new AspectReference
+                    {
+                        SourceName = _resourceEntity.Name,
+                        MaxScore = ((AspectResourceEntity)_resourceEntity).RawScore,
+                        Description = string.Empty
+                    };
 
                     AspectRef.DataValue = aspectRef;
                 }

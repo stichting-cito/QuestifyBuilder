@@ -12,13 +12,16 @@ Public Class RemoveDuplicatedKeysInConceptTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub RemoveAnswerCategroy()
+        'Arrange
         Dim solution = sampleSomthingCanBeRemoved.To(Of Solution)()
         Dim scoringParameter = New ChoiceScoringParameter() With {.FindingOverride = "Opgave", .ControllerId = "mc_1", .MaxChoices = 1}.AddSubParameters("A", "B")
         Dim combinedScoringMap = New ScoringMap(New ScoringParameter() {scoringParameter}, solution).GetMap().First()
         Dim inputs As New Dictionary(Of String, Object) From {{"CombinedScoringMapKey", combinedScoringMap}, {"Solution", solution}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New RemoveDuplicatedKeysInConcept(), inputs)
-
+        
+        'Assert
         Assert.IsTrue(scoringParameter.IsSingleChoice)
         Assert.AreEqual(1, solution.ConceptFindings.First().Facts.Count, "Since potential double fact has been found, delete it.")
     End Sub
@@ -26,18 +29,22 @@ Public Class RemoveDuplicatedKeysInConceptTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub CannotRemoveAnswerCategroy()
+        'Arrange
         Dim solution = noChangesRequired.To(Of Solution)()
         Dim scoringParameter = New ChoiceScoringParameter() With {.FindingOverride = "Opgave", .ControllerId = "mc_1", .MaxChoices = 1}.AddSubParameters("A", "B")
         Dim combinedScoringMap = New ScoringMap(New ScoringParameter() {scoringParameter}, solution).GetMap().First()
         Dim inputs As New Dictionary(Of String, Object) From {{"CombinedScoringMapKey", combinedScoringMap}, {"Solution", solution}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New RemoveDuplicatedKeysInConcept(), inputs)
-
+        
+        'Assert
         Assert.IsTrue(scoringParameter.IsSingleChoice)
         Assert.AreEqual(2, solution.ConceptFindings.First().Facts.Count, "Nothing to do")
     End Sub
 
 
+#Region "Data"
 
     ReadOnly sampleSomthingCanBeRemoved As XElement = <solution>
                                                           <keyFindings>
@@ -117,5 +124,6 @@ Public Class RemoveDuplicatedKeysInConceptTests
                                                  </ItemScoreTranslationTable>
                                              </solution>
 
+#End Region
 
 End Class

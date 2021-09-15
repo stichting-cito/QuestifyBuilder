@@ -81,8 +81,8 @@ Namespace QTI.Helpers.QTI30
 
         Public Overloads Shared Function DetermineDecimalSeparatorForGap(ByVal responseIdentifierAttribute As XmlAttribute) As DecimalSeparator
             If responseIdentifierAttribute.OwnerElement.LocalName.ToLower = "qti-text-entry-interaction" Then
-                If (Not responseIdentifierAttribute.OwnerElement.Attributes Is Nothing AndAlso Not responseIdentifierAttribute.OwnerElement.Attributes("qti-pattern-mask") Is Nothing) Then
-                    Dim patternMask As String = responseIdentifierAttribute.OwnerElement.Attributes("qti-pattern-mask").Value
+                If (Not responseIdentifierAttribute.OwnerElement.Attributes Is Nothing AndAlso Not responseIdentifierAttribute.OwnerElement.Attributes("pattern-mask") Is Nothing) Then
+                    Dim patternMask As String = responseIdentifierAttribute.OwnerElement.Attributes("pattern-mask").Value
                     If patternMask.IndexOf("?(([\,])") <> -1 OrElse patternMask.IndexOf("?((\,)") <> -1 Then Return DecimalSeparator.Comma
                     If patternMask.IndexOf("?(([\.])") <> -1 OrElse patternMask.IndexOf("?((\.)") <> -1 Then Return DecimalSeparator.Dot
                     If patternMask.IndexOf("?(([\,\.])") <> -1 Then Return DecimalSeparator.Both
@@ -158,6 +158,7 @@ Namespace QTI.Helpers.QTI30
                     solution.Findings.Any() AndAlso solution.Findings.Count = 1 AndAlso
                     ItemHasSingleScoringParameter(scoringParams) AndAlso
                     Not SolutionContainsFactSets(solution) AndAlso
+                    Not SolutionContainsAlternativeKeyValues(solution) AndAlso
                     Not SolutionContainsExoticScoringValues(solution) AndAlso
                     Not QTIScoringHelper.ShouldScoreBeTranslated(solution.ItemScoreTranslationTable) Then
                 Return True
@@ -199,6 +200,18 @@ Namespace QTI.Helpers.QTI30
 
         Private Shared Function SolutionContainsFactSets(solution As Solution) As Boolean
             Return solution.Findings.Any(Function(f) f.KeyFactsets.Any())
+        End Function
+
+        Private Shared Function SolutionContainsAlternativeKeyValues(solution As Solution) As Boolean
+            Dim result = solution.Findings.Any(Function(f) f.Facts.Any(Function(fa) fa.Values.OfType(Of KeyValue).Any(Function(kv) kv.Values.Count() > 1)))
+            result = result OrElse SolutionHasAlternativeKeyValuesInSeperateKeyFacts(solution)
+            Return result
+        End Function
+
+        Private Shared Function SolutionHasAlternativeKeyValuesInSeperateKeyFacts(solution As Solution) As Boolean
+            Dim domainsInKeyValues = solution.Findings.SelectMany(Function(f) f.Facts.SelectMany(Function(fa) fa.Values.OfType(Of KeyValue).Select(Function(kv) kv.Domain)))
+            Dim allDomainsAreUnique = domainsInKeyValues.GroupBy(Function(d) d).All(Function(x) x.Count() = 1)
+            Return Not allDomainsAreUnique
         End Function
 
         Private Shared Function SolutionContainsExoticScoringValues(solution As Solution) As Boolean

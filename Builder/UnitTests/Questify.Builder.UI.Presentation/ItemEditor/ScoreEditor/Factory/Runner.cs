@@ -5,6 +5,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor.ScoreEditor.Factory
 {
 
+    /// <summary>
+    /// This runner acts as a decorator because some types are not publicly accessible
+    /// but an unit tests needs to be publicly accessible.
+    /// </summary>
     [TestClass]
     public abstract class Runner : IBaseScoreFactoryTest
     {
@@ -40,7 +44,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             decoree.WorkspaceData_IsUsableByViewModel();
         }
 
-        public Func<Cinch.TestViewAwareStatus, object> CreateViewModel
+        public Func<Cinch.TestViewAwareStatus, object> CreateViewModel 
         {
             get
             {
@@ -51,6 +55,6 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                 decoree.CreateViewModel = value;
             }
         }
-
+ 
     }
 }

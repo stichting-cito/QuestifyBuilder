@@ -11,6 +11,7 @@ Public Class ItemLayoutAndControlAdapterTests
 
     <TestMethod()> <TestCategory("ContentModel")>
     Public Sub LoadSimple_ILT_WithSimpleControlTemplate_ExpectsOnly_OnlyILT_Loaded()
+        'Arrange
         Dim extractedParameterSets As ParameterSetCollection
         Dim ilt = <?xml version="1.0" encoding="utf-8"?>
                   <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="2">
@@ -43,14 +44,17 @@ Public Class ItemLayoutAndControlAdapterTests
         Dim handler As EventHandler(Of ResourceNeededEventArgs) = a.Fake(Of EventHandler(Of ResourceNeededEventArgs))()
         A.CallTo(Sub() handler.Invoke(A(Of Object).Ignored, A(Of ResourceNeededEventArgs).Ignored)).
             Invokes(Sub(i)
+                        'This is the Resource Needed Handler.
                         Dim e = i.GetArgument(Of ResourceNeededEventArgs)(1)
                         e.BinaryResource = New BinaryResource(e.ResourceName, Nothing, If(e.ResourceName = "ItemLayout", ilt.ToString(), control.ToString()), Nothing)
                     End Sub)
 
+        'Act
         Dim itmlayout As New ItemLayoutAdapter("ItemLayout", Nothing, handler)
 
-        extractedParameterSets = itmlayout.CreateParameterSetsFromItemTemplate()
+        extractedParameterSets = itmlayout.CreateParameterSetsFromItemTemplate() 'The parameter sets are retrieved from Control Templates.
 
+        'Assert
         A.CallTo(handler).MustHaveHappened(Repeated.Exactly.Twice)
         Assert.AreEqual(1, extractedParameterSets.Count)
 

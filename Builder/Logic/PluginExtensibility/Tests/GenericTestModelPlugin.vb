@@ -11,7 +11,7 @@ Public Class GenericTestModelPlugin
             Return PLUGIN_NAME
         End Get
     End Property
-
+    
     Public Function IsSupportedView(view As String) As Boolean Implements ITestModelPlugin.IsSupportedView
         Return view = Name
     End Function
@@ -40,15 +40,19 @@ Public Class GenericTestModelPlugin
     End Function
 
     Public Function ConstructTestSectionView(assessmentTest As TestSection2) As TestSectionViewBase Implements ITestModelPlugin.ConstructTestSectionView
+        ' create new test section
         Dim returnValue As New GeneralTestSection(assessmentTest)
 
+        ' iterate through components
         For Each component As TestComponent2 In assessmentTest.Components
             Dim componentViewToAdd As TestComponentViewBase
 
             If TypeOf component Is TestSection2 Then
+                ' another section
                 componentViewToAdd = ConstructTestSectionView(DirectCast(component, TestSection2))
 
             ElseIf TypeOf component Is ItemReference2 Then
+                ' item reference
                 componentViewToAdd = GetItemReference(DirectCast(component, ItemReference2))
             Else
                 Throw New NotSupportedException($"Type '{component.GetType().FullName}' not supported in component collection")
@@ -61,10 +65,12 @@ Public Class GenericTestModelPlugin
     End Function
 
     Public Function ConstructTestPartView(testPart As TestPart2) As TestPartViewBase Implements ITestModelPlugin.ConstructTestPartView
+        ' create new testpart
         Dim returnValue As New GeneralTestPart()
         returnValue.AddDynamicPropertiesFromModel(testPart)
         returnValue.ValidateAllProperties()
 
+        ' iterate test sections
         For Each section As TestSection2 In testPart.Sections
             Dim testSectionView As TestSectionViewBase = ConstructTestSectionView(section)
             returnValue.Sections.Add(testSectionView)
@@ -74,13 +80,16 @@ Public Class GenericTestModelPlugin
     End Function
 
     Public Function CreateView(test As AssessmentTest2) As AssessmentTestViewBase Implements ITestModelPlugin.CreateView
+        ' create root object and initialize this object with the test model.
         Dim returnValue As New GeneralAssessmentTest(test)
 
+        ' link test parts
         For Each part As TestPart2 In test.TestParts
             Dim testPartView As TestPartViewBase = ConstructTestPartView(part)
             returnValue.TestParts.Add(testPartView)
         Next
 
+        ' add view type to model when it is not already defined.
         If Not test.IncludedViews.Contains(Name) Then
             test.IncludedViews.Add(Name)
         End If

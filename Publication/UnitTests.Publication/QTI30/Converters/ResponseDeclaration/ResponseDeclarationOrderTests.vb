@@ -25,7 +25,7 @@
         End Sub
 
         <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseDeclaration")>
-        Public Sub ItemWithOneOrderInteractionAndPolytomousScoringWhenCreatingResponseDeclarationShouldCreateCorrectResponsesAndMappings()
+        Public Sub ItemWithOneOrderInteractionAndPolytomousScoringWhenCreatingResponseDeclarationShouldCreateCorrectResponsesButNoMappings()
             PublicationTestHelper.RunResponseDeclarationTest(_itemBody1, _solution5, GetOrderScoringParams(), _result5, 1)
         End Sub
 
@@ -132,14 +132,6 @@
                         <qti-value>A</qti-value>
                         <qti-value>B</qti-value>
                     </qti-correct-response>
-                    <qti-mapping>
-                        <qti-map-entry map-key="C" mapped-value="1"/>
-                        <qti-map-entry map-key="D" mapped-value="1"/>
-                        <qti-map-entry map-key="E" mapped-value="1"/>
-                        <qti-map-entry map-key="F" mapped-value="1"/>
-                        <qti-map-entry map-key="A" mapped-value="1"/>
-                        <qti-map-entry map-key="B" mapped-value="1"/>
-                    </qti-mapping>
                 </qti-response-declaration>
             </root>
 

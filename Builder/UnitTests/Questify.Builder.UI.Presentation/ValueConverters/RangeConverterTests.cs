@@ -13,9 +13,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ValueConve
         [TestMethod]
         public void DisplayOfRangeThroughConverter()
         {
-            var converter = new RangeConverter();
-
-            object[] values = { 3, 5 };
+            var converter =new RangeConverter();
+            
+            object[] values = { 3,5};
             var formattedText = converter.Convert(values, typeof(string), null, null);
             Assert.AreEqual("[3;5]", formattedText);
         }

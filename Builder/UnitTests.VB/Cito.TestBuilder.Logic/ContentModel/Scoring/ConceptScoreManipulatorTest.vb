@@ -15,72 +15,84 @@ Public Class ConceptScoreManipulatorTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub AddSingleScore_ToSolutionWithConceptFinding()
+        'Arrange
         Dim sol = GetSolution(Key_and_ConceptFinding__EmptyConceptScore)
         Dim scoreParam As ScoringParameter = New ChoiceScoringParameter() With {.FindingOverride = "mc", .MaxChoices = 1}.AddSubParameters("A", "B", "C")
         Dim scoreManipulator = scoreParam.GetScoreManipulator(sol)
         Dim factIds = scoreManipulator.GetKeysAlreadyManipulated().ToList()
-        Dim conceptScoreManipulator = CreateManipulator(scoreParam, sol)
-
+        Dim conceptScoreManipulator = CreateManipulator(scoreParam, sol) 'This should copy stuff
+        
+        'Act
         WriteSolution("Before", sol)
 
         conceptScoreManipulator.SetScore("SomePart", factIds(0), 1)
 
         WriteSolution("After", sol)
-
+        
+        'Assert
         Assert.AreEqual(1, getConceptFact("mc", "B", sol).Concepts.Count, "Expected the concepts to contain exactly 1 concept")
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub AddSingleScore_ToSolutionWithoutConceptFinding()
+        'Arrange
         Dim sol = GetSolution(KeyFact_Only)
         WriteSolution("Arranging", sol)
         Dim scoreParam As ScoringParameter = New ChoiceScoringParameter() With {.FindingOverride = "mc", .MaxChoices = 1}.AddSubParameters("A", "B", "C")
         Dim scoreManipulator = scoreParam.GetScoreManipulator(sol)
         Dim factIds = scoreManipulator.GetKeysAlreadyManipulated().ToList()
-        Dim conceptScoreManipulator = CreateManipulator(scoreParam, sol)
-
+        Dim conceptScoreManipulator = CreateManipulator(scoreParam, sol) 'This should copy stuff
+        
+        'Act
         WriteSolution("Before", sol)
 
         conceptScoreManipulator.SetScore("SomePart", factIds(0), 1)
 
         WriteSolution("After", sol)
-
+        
+        'Assert
         Assert.AreEqual(1, getConceptFact("mc", "B", sol).Concepts.Count, "Expected the concepts to contain exactly 1 concept")
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub GetConceptScore_ToSolutionWithoutConceptFinding_ScoreShouldBe_NULL()
+        'Arrange
         Dim sol = GetSolution(KeyFact_Only)
         WriteSolution("Arranging", sol)
 
         Dim scoreParam As ScoringParameter = New ChoiceScoringParameter() With {.FindingOverride = "mc", .MaxChoices = 1}.AddSubParameters("A", "B", "C")
         Dim scoreManipulator = scoreParam.GetScoreManipulator(sol)
         Dim factIds = scoreManipulator.GetKeysAlreadyManipulated().ToList()
-        Dim conceptScoreManipulator = CreateManipulator(scoreParam, sol)
-
+        Dim conceptScoreManipulator = CreateManipulator(scoreParam, sol) 'This should copy stuff
+        
+        'Act
         WriteSolution("Before", sol)
 
         Dim result = conceptScoreManipulator.GetScoreForPart("SomePart", scoreManipulator.GetKeysAlreadyManipulated()).ToList()
 
         WriteSolution("After", sol)
-
+        
+        'Assert
         Assert.AreEqual(1, result.Count())
         Assert.AreEqual(Nothing, result.First())
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub GetConceptScore_GetScoreForPartShouldReturnValuesInFactIdOrder()
+        'Arrange
         Dim sol = GetSolution(Key_and_ConceptFinding_WithFilledInConceptScore)
 
         Dim scoreParam As ScoringParameter = New GraphGapMatchScoringParameter() With {.FindingOverride = "gapMatchController"}.AddSubParameters("A", "B", "C")
         Dim factIds1 = New String() {"A-gapMatchController", "A[*]-gapMatchController"}
         Dim factIds2 = New String() {"A[*]-gapMatchController", "A-gapMatchController"}
 
-        Dim conceptScoreManipulator = CreateManipulator(scoreParam, sol)
+        Dim conceptScoreManipulator = CreateManipulator(scoreParam, sol) 'This should copy stuff
 
+        'Act
         Dim result1 = conceptScoreManipulator.GetScoreForPart("Attribuut 01", factIds1).ToList()
         Dim result2 = conceptScoreManipulator.GetScoreForPart("Attribuut 01", factIds2).ToList()
 
+        'Assert
         Assert.AreEqual(2, result1.Count())
         Assert.AreEqual(10, result1(0))
         Assert.AreEqual(20, result1(1))
@@ -218,6 +230,9 @@ Public Class ConceptScoreManipulatorTest
                                                                               <aspectReferences/>
                                                                           </solution>
 
+    ''' <summary>
+    ''' Concept Manipulator operates on CombinedScoringMapKey
+    ''' </summary>
     Private Function CreateManipulator(prm As ScoringParameter, solution As Solution) As IConceptScoreManipulator
         Dim map = New ScoringMap(New ScoringParameter() {prm}, solution).GetMap()
 

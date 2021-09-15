@@ -23,23 +23,26 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         {
             IMathMlEditorPlugin mathMlEditorPlugin = A.Fake<IMathMlEditorPlugin>();
 
-            IoCHelper.Init(new List<IMathMlEditorPlugin> { mathMlEditorPlugin });
+            IoCHelper.Init(new List<IMathMlEditorPlugin>{mathMlEditorPlugin});
             PluginHelper.MathMlPlugin = IoCHelper.GetInstances<IMathMlEditorPlugin>().FirstOrDefault();
 
             var theCall = A.CallTo(() => mathMlEditorPlugin.RenderPng(A<string>.Ignored));
             theCall.ReturnsLazily(args => GetMathMlImg());
 
+            //Arrange
             var item = _assessmentItemAllValuesCorrect.To<AssessmentItem>();
             var parameters = item.Parameters.DeepFetchInlineScoringParameters();
             var param = parameters.OfType<MathCasEqualScoringParameter>().ToList();
             var param2 = parameters.OfType<CasEqualStepsScoringParameter>().ToList();
+            //Act
             var manipulator1 = param[0].GetScoreManipulator(item.Solution);
             var manipulator2 = param2[0].GetScoreManipulator(item.Solution);
             var manipulator3 = param[1].GetScoreManipulator(item.Solution);
             var vm1 = new MathCasEqualBlockRowViewModel(param[0], manipulator1, "First", 0);
             var vm3 = new MathCasEqualBlockRowViewModel(param[1], manipulator3, "Last", 0);
             var vm2 = new BooleanBlockRowViewModel(param2[0], manipulator2, "Second", 0);
-
+            
+            //Assert
             Assert.AreEqual(GapComparisonType.EqualEquation, vm1.ComparisonType.DataValue);
             Assert.AreEqual(GapComparisonType.Equals, vm2.ComparisonType.DataValue);
             Assert.AreEqual(GapComparisonType.Equals, vm3.ComparisonType.DataValue);
@@ -49,7 +52,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         {
             return Convert.FromBase64String("iVBORw0KGgoAAAANSUhEUgAAACEAAAASCAYAAADVCrdsAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABt0lEQVRIie3Uz4uNYRQH8M+duQwbTBaEEWEyG8WKFFlMZmMoNUUp2zFFs7GQUjKyUpqGspHEZv4FC4WmpFlQLCxs2Ew0RWH8mGvxnDtz7zvvO/Pemh2nTs+v73nP9/me87z8t2SVFvEj2L3MHMarLYB3oYZLy0zicyvgm+jM7G3Lwa3EPnQrVroprqwSW/EF09iAMziMLZGwFrhNQfY1eoPEiYjrwikcweoYa9BWksQQbsf8J57jmYU3vYw3Uu/0YTuuxdkMnmAy+/EyJDbiD6ZiPY0JfMvB/sbRmP+IhHtjPYUXsd9kZcoxhLESOLhgXp2K1BePC7D1Es4pUcUN7M8A16MDH0uSqGE25gNYhasF2LlS1pW4joPowfEG4DncWSRpUff34DwO4dNScXUlLkrv/5gkIazBOrxvkcRmXEE/PuBsWRLwFC8xHOtB3F2EQB6JTtzDOA5IJektEddkA/iOHRgtwHThPl7hKx7hdJw9kPqi0UfibGfEvZVe2EOczEtQxbvwPQUkKmiPsSKp2djgKzLetlRceybBLH5hLW4VkKDheZm/cT0+61lsXtwC65B+zf+W/QU0JFY71brlJwAAAABJRU5ErkJggg==");
         }
-
+        
+        #region Data
 
         private readonly XElement _assessmentItemAllValuesCorrect =
             XElement.Parse(@"
@@ -209,5 +213,6 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
   </parameters>
 </assessmentItem>");
 
+        #endregion
     }
 }

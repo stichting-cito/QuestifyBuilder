@@ -36,6 +36,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
         [TestMethod]
         public void HarmonizeBaseTemplateAddParameterTest()
         {
+            //Arrange
             var itemResource = GetItemResource();
             var item = CreateBasicAssessmentItem();
             itemResource.SetAssessmentItem(item);
@@ -46,7 +47,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
                     {"template", parameterSetCollection}
                 }, (StringComparer.OrdinalIgnoreCase));
             var harmonizer = new Harmonizer(HarmonizeOptions.Base);
+            //Act
             harmonizer.Harmonize(dict, itemResource);
+            //Assert
             var parameter = itemResource.GetAssessmentItem().Parameters.GetParameters();
             var addedParameter = parameter.FirstOrDefault(p => p.Name.Equals("parameter3", StringComparison.OrdinalIgnoreCase));
             var parameterWithValue = parameter.FirstOrDefault(p => p.Name.Equals("parameter2", StringComparison.OrdinalIgnoreCase));
@@ -95,12 +98,14 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
         [TestMethod]
         public void HarmonizeBaseTemplateRemoveParameterTest()
         {
+            //Arrange
             var itemResource = GetItemResource();
             var item = CreateBasicAssessmentItem();
             itemResource.SetAssessmentItem(item);
             var parameterSetCollection = CreateBasicParameterSet();
             var parameterToRemove = parameterSetCollection.GetParameter("parameter1", "parameterSet1");
-            parameterSetCollection.GetParamCollectionByControlId("parameterSet1").InnerParameters.Remove(parameterToRemove);
+            parameterSetCollection.GetParamCollectionByControlId("parameterSet1") //Remove parameter from the template
+                .InnerParameters.Remove(parameterToRemove);
             var dict =
                 new ConcurrentDictionary<string, ParameterSetCollection>(
                     new Dictionary<string, ParameterSetCollection>
@@ -108,8 +113,11 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
                         {"template", parameterSetCollection}
                     }, (StringComparer.OrdinalIgnoreCase));
             var harmonizer = new Harmonizer(HarmonizeOptions.Base);
+            //Act
             harmonizer.Harmonize(dict, itemResource);
+            //Assert
             var parameter = itemResource.GetAssessmentItem().Parameters.GetParameters();
+            //p1 should be removed 3 should be added
             Assert.AreEqual(parameter.Count, 2);
             Assert.IsTrue(parameter.Any(p => p.Name.Equals("parameter2", StringComparison.OrdinalIgnoreCase)));
             Assert.IsTrue(parameter.Any(p => p.Name.Equals("parameter3", StringComparison.OrdinalIgnoreCase)));
@@ -118,6 +126,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
         [TestMethod]
         public void HarmonizeBaseTemplateAddParameterInCollectionTest()
         {
+            //Arrange
             var itemResource = GetItemResource();
             var item = CreateAssessmentItemWithCollectionParameter();
             itemResource.SetAssessmentItem(item);
@@ -125,7 +134,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
 
             var dict = new ConcurrentDictionary<string, ParameterSetCollection>(new Dictionary<string, ParameterSetCollection> { { "template2", parameterSetCollection } }, StringComparer.OrdinalIgnoreCase);
             var harmonizer = new Harmonizer(HarmonizeOptions.Base);
+            //Act
             harmonizer.Harmonize(dict, itemResource);
+            //Assert
             var parameter = itemResource.GetAssessmentItem().Parameters.GetParameters();
             Assert.AreEqual(parameter.Count, 3);
             Assert.IsTrue(parameter.Any(p => p.Name.Equals("parameter1", StringComparison.OrdinalIgnoreCase)));
@@ -135,13 +146,16 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
         [TestMethod]
         public void HarmonizeInlineTemplateAddParameter()
         {
+            //Arrange
             var itemResource = GetItemResource();
             var item = CreatAssessmentItemWithInlineElement();
             itemResource.SetAssessmentItem(item);
             var parameterSetCollection = CreateParameterSetForInlineTemplate();
             var dict = new ConcurrentDictionary<string, ParameterSetCollection>(new Dictionary<string, ParameterSetCollection> { { "inlinetemplate", parameterSetCollection } });
             var harmonizer = new Harmonizer(HarmonizeOptions.Inline);
+            //Act
             harmonizer.Harmonize(dict, itemResource);
+            //Assert
             var inlineParameter = itemResource.GetAssessmentItem().GetInlineElements().FirstOrDefault();
             Assert.IsNotNull(inlineParameter);
             var parameterWithValue = inlineParameter.Parameters.FlattenParameters().FirstOrDefault(p => p.Name.Equals("source", StringComparison.OrdinalIgnoreCase));
@@ -153,6 +167,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
         [TestMethod]
         public void HarmonizeInlineTemplateInAspect()
         {
+            //Arrange
             var itemResource = GetItemResource();
             var item = CreatAssessmentItemWithAspect();
             itemResource.SetAssessmentItem(item);
@@ -161,7 +176,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
                 new ConcurrentDictionary<string, ParameterSetCollection>(
                     new Dictionary<string, ParameterSetCollection> { { "inlinetemplate", parameterSetCollection } });
             var harmonizer = new Harmonizer(HarmonizeOptions.Inline);
+            //Act
             harmonizer.Harmonize(dict, itemResource);
+            //Assert
             var inlineParameter = itemResource.GetAssessmentItem().GetInlineElements().FirstOrDefault();
             Assert.IsNotNull(inlineParameter);
             var parameterWithValue = inlineParameter.Parameters.FlattenParameters().FirstOrDefault(p => p.Name.Equals("source", StringComparison.OrdinalIgnoreCase));
@@ -175,31 +192,49 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
         [TestMethod]
         public void HarmonizeScoringsParamaterAttributeReference()
         {
+            //Arrange
             var itemResource = GetItemResource();
             var item = CreateAssessmentItemWithScoringParameter();
             itemResource.SetAssessmentItem(item);
             var parameterSetCollection = CreateParameterSetForScoringsParameterAttributeReference();
             var dict = new ConcurrentDictionary<string, ParameterSetCollection>(new Dictionary<string, ParameterSetCollection> { { "Template2", parameterSetCollection } });
             var harmonizer = new Harmonizer(HarmonizeOptions.All);
+            //Act
             harmonizer.Harmonize(dict, itemResource);
+            //Assert
             var mcScoringParameter = itemResource.GetAssessmentItem().Parameters.FlattenParameters().OfType<MultiChoiceScoringParameter>().FirstOrDefault();
             Assert.IsNotNull(mcScoringParameter);
             Assert.AreEqual(mcScoringParameter.MinChoices, 2);
         }
 
 
+        /// <summary>
+        /// Harmonizes the multiple items.
+        /// This test tests the following scenario:
+        /// If, for some reason, two items have te be harmonized, and the number of alternatives differs, it happened that the nr of
+        /// alternatives was incorrect after the harmonization. The mostly happend when first an item with ie 6 alternatives was harmonized and than
+        /// an item with ie 4 alternatives was harmonized.
+        /// 
+        /// The item/itemlayouttemplate/controltemplate xml's can possibly be smaller, but at least the ones present now gave a repro.
+        /// The itemXmls contain a parameter not present in the template, so harmonization does trigger.
+        /// </summary>
         [TestMethod, TestCategory("Logic")]
         public void HarmonizeMultipleItems()
         {
+            // Arrange
             CreateItems(ItemLayoutTemplate, ControlTemplate, item1DataXml, item2DataXml);
-            var request = new ResourceRequestDTO { WithDependencies = true, WithCustomProperties = true };
+            var request = new ResourceRequestDTO {WithDependencies = true, WithCustomProperties = true};
             var item1 = ResourceFactory.Instance.GetResourceByNameWithOption(0, "item1", request) as ItemResourceEntity;
-            var item2 = ResourceFactory.Instance.GetResourceByNameWithOption(0, "item2", request) as ItemResourceEntity;
+            var item2 = ResourceFactory.Instance.GetResourceByNameWithOption(0, "item2", request ) as ItemResourceEntity;
 
             var itemsHarmonized = 0;
 
+            // Act
             var harmonizer = new Harmonizer(HarmonizeOptions.All);
-            itemsHarmonized += harmonizer.Harmonize(item2) ? 1 : 0; itemsHarmonized += harmonizer.Harmonize(item1) ? 1 : 0;
+            itemsHarmonized += harmonizer.Harmonize(item2) ? 1 : 0; // first harmonize the item with 6 alternatives
+            itemsHarmonized += harmonizer.Harmonize(item1) ? 1 : 0; // then harmonize the item with 4 alternatives.
+
+            // Assert
             Assert.AreEqual(2, itemsHarmonized, "Expected both items to be harmonized");
             var newItem1 = ResourceFactory.Instance.GetResourceByNameWithOption(0, "item1", request);
             if (newItem1.ResourceData == null || newItem1.ResourceData.BinData.Length == 0)
@@ -212,27 +247,40 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
             var item1Xml = XDocument.Parse(System.Text.Encoding.UTF8.GetString(newItem1.ResourceData.BinData));
             var item2Xml = XDocument.Parse(System.Text.Encoding.UTF8.GetString(newItem2.ResourceData.BinData));
 
-            Assert.IsTrue(UnitTestHelper.AreSame(item1Xml, new XDocument(expectedItem1))); Assert.IsTrue(UnitTestHelper.AreSame(item2Xml, new XDocument(expectedItem2)));
+            Assert.IsTrue(UnitTestHelper.AreSame(item1Xml, new XDocument(expectedItem1))); // No changes expected
+            Assert.IsTrue(UnitTestHelper.AreSame(item2Xml, new XDocument(expectedItem2))); // No changes expected
         }
 
+        /// <summary>
+        /// Harmonizes the item with a duplicate parameter set.
+        /// What happened before: ParameterSet was copied by fixify, with a new id (because of rename in template). Harmonization did not remove the 'old' set. This test kind of
+        /// ensures it does.
+        /// </summary>
+        /// <history>
+        ///   [petere]  12-6-2015  Created
+        /// </history>
         [TestMethod, TestCategory("Logic")]
         public void HarmonizeItemWithDuplicateParameterSet()
         {
+            // Arrange
             CreateItem(ItemLayoutTemplate, ControlTemplate, item3DataXml, "item2");
-            var request = new ResourceRequestDTO { WithDependencies = true, WithCustomProperties = true };
+            var request = new ResourceRequestDTO {WithDependencies = true, WithCustomProperties = true};
             var item = ResourceFactory.Instance.GetResourceByNameWithOption(0, "item2", request) as ItemResourceEntity;
             var harmonizer = new Harmonizer(HarmonizeOptions.All);
 
+            // Act
             var result = harmonizer.Harmonize(item);
 
+            // Assert
             Assert.AreEqual(true, result, "Expected item to be harmonized, but it is not.");
             var newItem = ResourceFactory.Instance.GetResourceByNameWithOption(0, "item2", request);
             if (newItem.ResourceData == null || newItem.ResourceData.BinData.Length == 0)
                 ResourceFactory.Instance.GetResourceData(newItem);
             var newItemXml = XElement.Parse(System.Text.Encoding.UTF8.GetString(newItem.ResourceData.BinData));
-            Assert.IsTrue(UnitTestHelper.AreSame(new XDocument(newItemXml), new XDocument(expectedItem2)));
+            Assert.IsTrue(UnitTestHelper.AreSame(new XDocument(newItemXml), new XDocument(expectedItem2))); // Duplicate paramset should have been deleted.
         }
 
+        #region HelperFunctions
 
         private ItemResourceEntity GetItemResource()
         {
@@ -259,7 +307,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
         {
             return (AssessmentItem)SerializeHelper.XmlDeserializeFromString(item4DataXml.ToString(), typeof(AssessmentItem));
         }
-
+        
         private ParameterSetCollection CreateParameterSetWithDynamicProperties()
         {
             return (ParameterSetCollection)SerializeHelper.XmlDeserializeFromString(Properties.Resources.ParameterSet3, typeof(ParameterSetCollection));
@@ -302,7 +350,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
             return paramColl;
         }
 
+        #endregion
 
+        #region FakeDal Helpers
 
         private void CreateItem(XElement itemLayoutTemplateXml, XElement controlTemplateXml, XElement itemXml, string itemIdentifier)
         {
@@ -346,7 +396,10 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
             }
             resourceEntity.IsNew = false;
         }
+        #endregion
 
+        #region XML Data
+        #region Item1
         private readonly XElement item1DataXml = XElement.Parse(@"<assessmentItem xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" identifier=""item1"" title=""Teenager forum"" layoutTemplateSrc=""ilt.gapmatch"">
   <solution>
     <keyFindings>
@@ -510,7 +563,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
   </parameters>
 </assessmentItem>");
 
+        #endregion
 
+        #region Item2
         private readonly XElement item2DataXml = XElement.Parse(@"<assessmentItem xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" identifier=""item2"" title=""Categories"" layoutTemplateSrc=""ilt.gapmatch"">
   <solution>
     <keyFindings>
@@ -926,7 +981,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
   </parameters>
 </assessmentItem>");
 
+        #endregion
 
+        #region Item3
 
         private readonly XElement item3DataXml = XElement.Parse(@"<assessmentItem xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" identifier=""item2"" title=""Categories"" layoutTemplateSrc=""ilt.gapmatch"">
   <solution>
@@ -1517,7 +1574,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
     </parameterSet>
   </parameters>
 </assessmentItem>");
+        #endregion
 
+        #region Item4
 
         private readonly XElement item4DataXml =
             XElement.Parse(
@@ -1634,7 +1693,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
     </parameterSet>
   </parameters>
 </assessmentItem>");
+        #endregion
 
+        #region Control template
         private readonly XElement ControlTemplate = XElement.Parse(@"<Template xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" definitionVersion=""1"">
 	<Description>Control template voor koppelitems</Description>
 	<Targets>
@@ -1908,7 +1969,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
   </SharedParameterSet>
 </Template>
 ");
+        #endregion
 
+        #region InlineGapMatchLayoutTemplate
 
         private readonly XElement InlineGapMatchLayoutTemplate = XElement.Parse(@"<Template xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" definitionVersion=""1"">
 	<Description></Description>
@@ -1967,7 +2030,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
 	</SharedParameterSet>
 </Template>");
 
+        #endregion
 
+        #region ItemLayoutTemplate
 
         private readonly XElement ItemLayoutTemplate = XElement.Parse(@"<Template xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" definitionVersion=""1"">
     <Description>Gap item (inline) met een kolom</Description>
@@ -2017,7 +2082,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
       </Targets>
 </Template>");
 
+        #endregion
 
+        #region ExpectedItem1
 
         private readonly XElement expectedItem1 = XElement.Parse(@"<assessmentItem xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" identifier=""item1"" title=""Teenager forum"" layoutTemplateSrc=""ilt.gapmatch"">
   <solution>
@@ -2177,7 +2244,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
     </parameterSet>
   </parameters>
 </assessmentItem>");
+        #endregion
 
+        #region ExpectedItem2
 
         private readonly XElement expectedItem2 = XElement.Parse(@"<assessmentItem xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" identifier=""item2"" title=""Categories"" layoutTemplateSrc=""ilt.gapmatch"">
   <solution>
@@ -2590,6 +2659,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
     </parameterSet>
   </parameters>
 </assessmentItem>");
+        #endregion
 
+        #endregion
     }
 }

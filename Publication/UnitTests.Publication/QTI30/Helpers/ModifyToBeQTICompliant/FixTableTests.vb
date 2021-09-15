@@ -1,0 +1,28 @@
+﻿
+Imports Questify.Builder.Logic.QTI.Helpers.QTI_Base.QTICompliantHelper
+Imports Questify.Builder.Logic.QTI.Helpers.QTI30
+
+Imports Questify.Builder.UnitTests.Framework
+
+Namespace QTI30.Helpers
+
+    <TestClass()>
+    Public Class FixTableTests
+
+        <TestMethod(), TestCategory("FACET Document Tweaks")>
+        Public Sub FixTableInParagraph()
+            'Arrange 
+            Dim xDoc = <?xml version="1.0" encoding="utf-8"?><qti-assessment-item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 ../controlxsds/depv1p0_qtiitemv2p1_v1p0.xsd" adaptive="false" identifier="ITM-300504" title="Aanzichten" timeDependent="false" xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"><div id="question"><p><span class="UserSRVet">Aan welke eisen moet de beveiliger van buurtcentrum Duin en Bos voldoen?</span></p></div><div id="mc"><qti-choice-interaction id="choiceInteraction1" class="" max-choices="1" shuffle="false" response-identifier="mc"><qti-simple-choice identifier="A"><p>kunnen samenwerken, sportief zijn, ICT-vaardig zijn, verantwoordelijkheidsgevoel tonen<br/><table style="WIDTH: 100%; BORDER-COLLAPSE: collapse" oncontextmenu="window.event.returnValue = false;"><tbody><tr><td style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; VERTICAL-ALIGN: top; BORDER-TOP: medium none; BORDER-RIGHT: medium none; PADDING-TOP: 3px"/></tr></tbody></table></p></qti-simple-choice><qti-simple-choice identifier="B"><p>kunnen samenwerken, sportief zijn, tweetalig zijn, beroepsgeheim hanteren<br/><table style="WIDTH: 100%; BORDER-COLLAPSE: collapse" oncontextmenu="window.event.returnValue = false;"><tbody><tr><td style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; VERTICAL-ALIGN: top; BORDER-TOP: medium none; BORDER-RIGHT: medium none; PADDING-TOP: 3px"/></tr></tbody></table></p></qti-simple-choice><qti-simple-choice identifier="C"><p>zelfstandig kunnen werken, betrouwbaar zijn, beroepsgeheim hanteren,<br/>verantwoordelijkheidsgevoel tonen<br/><table style="WIDTH: 100%; BORDER-COLLAPSE: collapse" oncontextmenu="window.event.returnValue = false;"><tbody><tr><td style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; VERTICAL-ALIGN: top; BORDER-TOP: medium none; BORDER-RIGHT: medium none; PADDING-TOP: 3px"/></tr></tbody></table></p></qti-simple-choice><qti-simple-choice identifier="D"><p>zelfstandig kunnen werken, betrouwbaar zijn, ICT-vaardig zijn, tweetalig zijn</p></qti-simple-choice></qti-choice-interaction></div></qti-assessment-item>
+            Dim xpectedOutcome = <?xml version="1.0" encoding="utf-8"?><qti-assessment-item xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p1 ../controlxsds/depv1p0_qtiitemv2p1_v1p0.xsd" adaptive="false" identifier="ITM-300504" title="Aanzichten" timeDependent="false" xmlns="http://www.imsglobal.org/xsd/imsqti_v2p1"><div id="question"><p><span class="UserSRVet">Aan welke eisen moet de beveiliger van buurtcentrum Duin en Bos voldoen?</span></p></div><div id="mc"><qti-choice-interaction id="choiceInteraction1" class="" max-choices="1" shuffle="false" response-identifier="mc"><qti-simple-choice identifier="A"><p style="margin-bottom: 0px;">kunnen samenwerken, sportief zijn, ICT-vaardig zijn, verantwoordelijkheidsgevoel tonen</p><table style="WIDTH: 100%; BORDER-COLLAPSE: collapse" oncontextmenu="window.event.returnValue = false;"><tbody><tr><td style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; VERTICAL-ALIGN: top; BORDER-TOP: medium none; BORDER-RIGHT: medium none; PADDING-TOP: 3px"/></tr></tbody></table><p/></qti-simple-choice><qti-simple-choice identifier="B"><p style="margin-bottom: 0px;">kunnen samenwerken, sportief zijn, tweetalig zijn, beroepsgeheim hanteren</p><table style="WIDTH: 100%; BORDER-COLLAPSE: collapse" oncontextmenu="window.event.returnValue = false;"><tbody><tr><td style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; VERTICAL-ALIGN: top; BORDER-TOP: medium none; BORDER-RIGHT: medium none; PADDING-TOP: 3px"/></tr></tbody></table><p/></qti-simple-choice><qti-simple-choice identifier="C"><p style="margin-bottom: 0px;">zelfstandig kunnen werken, betrouwbaar zijn, beroepsgeheim hanteren,<br/>verantwoordelijkheidsgevoel tonen</p><table style="WIDTH: 100%; BORDER-COLLAPSE: collapse" oncontextmenu="window.event.returnValue = false;"><tbody><tr><td style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; VERTICAL-ALIGN: top; BORDER-TOP: medium none; BORDER-RIGHT: medium none; PADDING-TOP: 3px"/></tr></tbody></table><p/></qti-simple-choice><qti-simple-choice identifier="D"><p>zelfstandig kunnen werken, betrouwbaar zijn, ICT-vaardig zijn, tweetalig zijn</p></qti-simple-choice></qti-choice-interaction></div></qti-assessment-item>
+            Dim xmlDoc = xDoc.ToXmlDocument
+            Dim fp As New FixTable
+            'Act
+            fp.Modify(xmlDoc, New QTI30DocumentHelper())
+            'Assert
+            Dim xOutcome = XDocument.Parse(xmlDoc.OuterXml)
+            Assert.IsTrue(UnitTestHelper.AreSame(xpectedOutcome, xOutcome))
+        End Sub
+
+    End Class
+
+End Namespace

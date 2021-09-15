@@ -7,35 +7,47 @@ Imports Cito.Tester.Common
 <TestClass()> Public Class ParamsetFlattnerTest
 
     <TestMethod(), TestCategory("Logic")> Public Sub FlattenEmpty()
+        'Arrange
         Dim prmSet = GetemptySet()
-
+        
+        'Act
         Dim result = prmSet.FlattenParameters()
-
+        
+        'Assert
         Assert.AreEqual(0, result.Count())
     End Sub
 
     <TestMethod(), TestCategory("Logic")> Public Sub FlattenSetWith1ParameterSet()
+        'Arrange
         Dim prmSet = get1ParamSet()
-
+       
+        'Act
         Dim result = prmSet.FlattenParameters()
-
+        
+        'Assert
         Assert.AreEqual(10, result.Count())
     End Sub
 
 
     <TestMethod(), TestCategory("Logic")> Public Sub FlattenSetWith2ParameterSet()
+        'Arrange
         Dim prmSet = get2ParamSet()
-
+        
+        'Act
         Dim result = prmSet.FlattenParameters()
-
+        
+        'Assert
         Assert.AreEqual(20, result.Count())
     End Sub
 
     <TestMethod(), TestCategory("Logic")> Public Sub FlattenSetWith1ParameterSetWith1Coll()
+        'Arrange
         Dim prmSet = get1ParmsetWithColl()
-
+        
+        'Act
         Dim result = prmSet.FlattenParameters()
-
+        
+        'Assert
         Assert.AreEqual(6, result.Count())
     End Sub
 

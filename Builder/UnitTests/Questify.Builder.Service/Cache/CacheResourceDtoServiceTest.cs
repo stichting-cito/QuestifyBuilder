@@ -23,16 +23,20 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
         [TestMethod, TestCategory("Cache")]
         public void ListIsCached()
         {
+            //Arrange
             var itemDtoService = A.Fake<IResourceDtoRepository<ItemResourceDto>>();
             var theCall = A.CallTo(() => itemDtoService.GetResourcesForBank(1));
 
             theCall.ReturnsLazily(args => GetItemList());
             var bankSrvDecorator = new CacheResourceDtoService<ItemResourceDto>(itemDtoService);
+            //Act
             bankSrvDecorator.GetResourcesForBank(1);
-            Thread.Sleep(100); bankSrvDecorator.GetResourcesForBank(1);
+            Thread.Sleep(100); // Give some time to store the resource into the cache
             bankSrvDecorator.GetResourcesForBank(1);
             bankSrvDecorator.GetResourcesForBank(1);
-            theCall.MustHaveHappened(Repeated.Exactly.Times(1));
+            bankSrvDecorator.GetResourcesForBank(1);
+            //Assert
+            theCall.MustHaveHappened(Repeated.Exactly.Times(1)); //Object should be retrieved from service once
         }
 
 
@@ -40,21 +44,25 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
         [TestMethod, TestCategory("Cache")]
         public void GetIsCached()
         {
+            //Arrange
             var itemDtoService = A.Fake<IResourceDtoRepository<ItemResourceDto>>();
             var theCall = A.CallTo(() => itemDtoService.Get(_resourceId));
 
             theCall.ReturnsLazily(args => GetItem());
             var bankSrvDecorator = new CacheResourceDtoService<ItemResourceDto>(itemDtoService);
+            //Act
             bankSrvDecorator.Get(_resourceId);
             bankSrvDecorator.Get(_resourceId);
             bankSrvDecorator.Get(_resourceId);
             bankSrvDecorator.Get(_resourceId);
-            theCall.MustHaveHappened(Repeated.Exactly.Times(1));
+            //Assert
+            theCall.MustHaveHappened(Repeated.Exactly.Times(1)); //Object should be retrieved from service once and from cache three times. 
         }
 
         [TestMethod, TestCategory("Cache")]
         public void CachedListIsInvalidated()
         {
+            //Arrange
             var itemDtoService = A.Fake<IResourceDtoRepository<ItemResourceDto>>();
             var fakeGetFullList = A.CallTo(() => itemDtoService.GetResourcesForBank(1));
             var fakeGetMulti = A.CallTo(() => itemDtoService.GetMulti(A<IEnumerable<Guid>>.Ignored));
@@ -64,14 +72,16 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
 
             var resourceSrvDecorator = new CacheResourceDtoService<ItemResourceDto>(itemDtoService);
 
+            //Act
             resourceSrvDecorator.GetResourcesForBank(1);
             Thread.Sleep(250);
             resourceSrvDecorator.EntityChanged(_resourceId);
             var list = resourceSrvDecorator.GetResourcesForBank(1);
 
+            //Assert
             var itemResourceDto = list.FirstOrDefault(r => r.ResourceId == _resourceId);
             Assert.IsTrue(itemResourceDto != null && itemResourceDto.Name == "otherName");
-            fakeGetFullList.MustHaveHappened(Repeated.Exactly.Times(1));
+            fakeGetFullList.MustHaveHappened(Repeated.Exactly.Times(1)); //Object should be retrieved from service once
         }
 
         [TestMethod, TestCategory("Cache")]
@@ -90,14 +100,17 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
                 var resourceService = A.Fake<IResourceService>();
                 var theCall2 = A.CallTo(() => resourceService.UpdateItemResource(A<ItemResourceEntity>.Ignored));
                 theCall2.ReturnsLazily(args => ReturnEmpty());
-                var resourceSrvDecorator = new InvalidateCacheResourceService(new CacheResourceService(resourceService, 2, true, 2, 50, true, false));
+                var resourceSrvDecorator = new InvalidateCacheResourceService(new CacheResourceService(resourceService, 2, true, 2, 50, true, false)); //With timeout for 2 seconds.
+
 
                 var itemResourceDtoSrvDecorator = new CacheItemResourceDtoService(itemDtoService);
                 InitDtoFactory(itemResourceDtoSrvDecorator);
                 itemResourceDtoSrvDecorator.GetResourcesForBank(1);
                 var itemResource = new ItemResourceEntity { ResourceId = _resourceId };
+                //Arrange
                 using (new NotifyCacheAfterBatch())
                 {
+                    //Act
                     resourceSrvDecorator.UpdateItemResource(itemResource);
                     resourceSrvDecorator.UpdateItemResource(itemResource);
                     resourceSrvDecorator.UpdateItemResource(itemResource);
@@ -106,9 +119,10 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
                     resourceSrvDecorator.UpdateItemResource(itemResource);
                 }
                 var list = itemResourceDtoSrvDecorator.GetResourcesForBank(1);
+                //Assert
                 var itemResourceDto = list.FirstOrDefault(r => r.ResourceId == _resourceId);
                 Assert.IsTrue(itemResourceDto != null && itemResourceDto.Name == "otherName");
-                fakeGetMulti.MustHaveHappened(Repeated.Exactly.Times(1));
+                fakeGetMulti.MustHaveHappened(Repeated.Exactly.Times(1)); //Object should be retrieved from service once
             }
             finally
             {
@@ -132,12 +146,15 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
                 var resourceService = A.Fake<IResourceService>();
                 var theCall2 = A.CallTo(() => resourceService.UpdateItemResource(A<ItemResourceEntity>.Ignored));
                 theCall2.ReturnsLazily(args => ReturnEmpty());
-                var resourceSrvDecorator = new InvalidateCacheResourceService(new CacheResourceService(resourceService, 2, true, 2, 50, true, false));
+                var resourceSrvDecorator = new InvalidateCacheResourceService(new CacheResourceService(resourceService, 2, true, 2, 50, true, false)); //With timeout for 2 seconds.
+                
                 var itemResourceDtoSrvDecorator = new CacheItemResourceDtoService(itemDtoService);
                 InitDtoFactory(itemResourceDtoSrvDecorator);
                 itemResourceDtoSrvDecorator.GetResourcesForBank(1);
                 var itemResource = new ItemResourceEntity { ResourceId = _resourceId };
+                //Arrange
 
+                //Act
                 resourceSrvDecorator.UpdateItemResource(itemResource);
                 resourceSrvDecorator.UpdateItemResource(itemResource);
                 resourceSrvDecorator.UpdateItemResource(itemResource);
@@ -145,6 +162,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
                 resourceSrvDecorator.UpdateItemResource(itemResource);
                 resourceSrvDecorator.UpdateItemResource(itemResource);
                 var list = itemResourceDtoSrvDecorator.GetResourcesForBank(1);
+                //Assert
                 var itemResourceDto = list.FirstOrDefault(r => r.ResourceId == _resourceId);
                 Assert.IsTrue(itemResourceDto != null && itemResourceDto.Name == "otherName");
                 fakeGetMulti.MustHaveHappened(Repeated.Exactly.Times(6));
@@ -158,6 +176,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
         [TestMethod, TestCategory("Cache")]
         public void CachedListIsInvalidatedWhenResourceIsDeleted()
         {
+            //Arrange
             var itemDtoService = A.Fake<IResourceDtoRepository<ItemResourceDto>>();
             var fakeGetFullList = A.CallTo(() => itemDtoService.GetResourcesForBank(1));
             var fakeGetMulti = A.CallTo(() => itemDtoService.GetMulti(A<IEnumerable<Guid>>.Ignored));
@@ -167,14 +186,17 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
 
             var bankSrvDecorator = new CacheResourceDtoService<ItemResourceDto>(itemDtoService);
 
+            //Act
             bankSrvDecorator.GetResourcesForBank(1);
             Thread.Sleep(250);
             bankSrvDecorator.EntityChanged(_resourceId);
             var list = bankSrvDecorator.GetResourcesForBank(1);
 
-            Assert.IsTrue(!list.Any());
+            //Assert
+            Assert.IsTrue(!list.Any());//if a resource is deleted it shouldn't be in the list
         }
-
+        
+        #region Helper Functions
 
         private Guid _resourceId = Guid.NewGuid();
 
@@ -224,7 +246,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
         {
             return String.Empty;
         }
-
+        
         private ItemResourceDto GetItem()
         {
             return new ItemResourceDto()
@@ -234,7 +256,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
                 ResourceId = _resourceId
             };
         }
-
+        
         private void InitDtoFactory(IItemResourceDtoRepository itemDtoService)
         {
             var dataSourceResourceService = A.Fake<IDataSourceResourceDtoRepository>();
@@ -259,7 +281,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
             A.CallTo(() => dataSourceResourceService.Get(_resourceId)).ReturnsLazily(args => null);
             var controlTemplateResourceService = A.Fake<IControlTemplateResourceDtoRepository>();
             A.CallTo(() => controlTemplateResourceService.Get(_resourceId)).ReturnsLazily(args => null);
-
+            
             var bankService = A.Fake<IBankDtoRepository>();
             var cacheService = A.Fake<ICacheService>();
 
@@ -270,5 +292,6 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
                                     datasourceTemplateResourceService, testTemplateResourceService, controlTemplateResourceService, bankService, cacheService);
         }
 
+        #endregion
     }
 }

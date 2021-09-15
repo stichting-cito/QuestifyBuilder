@@ -23,88 +23,142 @@ Public Class SplitSqlQueryDecoratorTest
     End Sub
 
 
+    ''' <summary>
+    ''' Testing when we send an empty list if we get en empty Resources list back.
+    ''' </summary>
     <TestMethod()>
     Public Sub ShouldReturnNoResources()
+        'Arrange
 
+        'Act
         Dim resources = sqlSplitQueryDecorator.GetResourcesByIdsWithOption(New List(Of Guid)(), New ResourceRequestDTO())
 
+        'Assert
         Assert.AreEqual(0, resources.Count)
     End Sub
 
+    ''' <summary>
+    ''' Testing with amount of 3000 resourceIds, if we make 2 calls to the database.
+    ''' </summary>
     <TestMethod()>
     Public Sub CanTheDecoratorSplitTheQuery()
+        'Arrange
         Dim resourceCount = 3000
         Dim times = CInt(IIf(resourceCount Mod SplitSqlQueryDecorator.MaxParametersPerQuery = 0, (resourceCount \ SplitSqlQueryDecorator.MaxParametersPerQuery), (resourceCount \ SplitSqlQueryDecorator.MaxParametersPerQuery) + 1))
 
+        'Act
         sqlSplitQueryDecorator.GetResourcesByIdsWithOption(GetListOfGuids(resourceCount), New ResourceRequestDTO())
 
+        'Assert
         Assert.AreEqual(fakeResourceService.CallCount, times)
     End Sub
 
+    ''' <summary>
+    ''' Testing with amount of 1 resourceIds, if we make 1 calls to the database.
+    ''' </summary>
     <TestMethod()>
     Public Sub CanTheDecoratorSplitTheQuery1()
+        'Arrange
 
+        'Act
         sqlSplitQueryDecorator.GetResourcesByIdsWithOption(GetListOfGuids(1), New ResourceRequestDTO())
 
+        'Assert
         Assert.AreEqual(fakeResourceService.CallCount, 1)
     End Sub
 
+    ''' <summary>
+    ''' Testing with amount of 1000 resourceIds, if we make 1 calls to the database.
+    ''' </summary>
     <TestMethod()>
     Public Sub CanTheDecoratorSplitTheQuery2()
+        'Arrange
         Dim resourceCount = 1000
         Dim times = CInt(IIf(resourceCount Mod SplitSqlQueryDecorator.MaxParametersPerQuery = 0, (resourceCount \ SplitSqlQueryDecorator.MaxParametersPerQuery), (resourceCount \ SplitSqlQueryDecorator.MaxParametersPerQuery) + 1))
 
+        'Act
         sqlSplitQueryDecorator.GetResourcesByIdsWithOption(GetListOfGuids(resourceCount), New ResourceRequestDTO())
 
+        'Assert
         Assert.AreEqual(fakeResourceService.CallCount, times)
     End Sub
 
+    ''' <summary>
+    ''' Testing with amount of 955 resourceIds, if we make 1 calls to the database.
+    ''' </summary>
     <TestMethod()>
     Public Sub CanTheDecoratorSplitTheQuery3()
+        'Arrange
         Dim resourceCount = 955
         Dim times = CInt(IIf(resourceCount Mod SplitSqlQueryDecorator.MaxParametersPerQuery = 0, (resourceCount \ SplitSqlQueryDecorator.MaxParametersPerQuery), (resourceCount \ SplitSqlQueryDecorator.MaxParametersPerQuery) + 1))
 
+        'Act
         sqlSplitQueryDecorator.GetResourcesByIdsWithOption(GetListOfGuids(resourceCount), New ResourceRequestDTO())
 
+        'Assert
         Assert.AreEqual(fakeResourceService.CallCount, times)
     End Sub
 
+    ''' <summary>
+    ''' Testing with amount of 2550 resourceIds, if we make 1 calls to the database.
+    ''' </summary>
     <TestMethod()>
     Public Sub CanTheDecoratorSplitTheQuery4()
+        'Arrange
         Dim resourceCount = 955
         Dim times = CInt(IIf(resourceCount Mod SplitSqlQueryDecorator.MaxParametersPerQuery = 0, (resourceCount \ SplitSqlQueryDecorator.MaxParametersPerQuery), (resourceCount \ SplitSqlQueryDecorator.MaxParametersPerQuery) + 1))
 
+        'Act
         sqlSplitQueryDecorator.GetResourcesByIdsWithOption(GetListOfGuids(resourceCount), New ResourceRequestDTO())
 
+        'Assert
         Assert.AreEqual(fakeResourceService.CallCount, times)
     End Sub
 
+    ''' <summary>
+    ''' Testing if we get the correct resources count from the extra functionality 'sqlSplitQueryDecorator.GetResourcesByIds' repeated twice.
+    ''' </summary>
     <TestMethod()>
     Public Sub CanGetResourcesFromDb()
+        'Arrange
         Dim resourceCount = 2000
 
+        'Act
         Dim result = sqlSplitQueryDecorator.GetResourcesByIdsWithOption(GetListOfGuids(resourceCount), New ResourceRequestDTO())
 
+        'Assert
         Assert.AreEqual(resourceCount, result.Count)
     End Sub
 
+    ''' <summary>
+    ''' Testing if we get the correct resources count from the extra functionality 'sqlSplitQueryDecorator.GetResourcesByIds' repeated once.
+    ''' </summary>
     <TestMethod()>
     Public Sub CanGetResourcesFromDb1()
+        'Arrange
         Dim resourceCount = 1000
         Dim times = CInt(IIf(resourceCount Mod SplitSqlQueryDecorator.MaxParametersPerQuery = 0, (resourceCount \ SplitSqlQueryDecorator.MaxParametersPerQuery), (resourceCount \ SplitSqlQueryDecorator.MaxParametersPerQuery) + 1))
 
+        'Act
         Dim result = sqlSplitQueryDecorator.GetResourcesByIdsWithOption(GetListOfGuids(resourceCount), New ResourceRequestDTO())
 
+        'Assert
         Assert.AreEqual(resourceCount, result.Count)
     End Sub
 
+    ''' <summary>
+    ''' Testing if we get the correct resources from the database, if the resource.Id is the same as the resourceId we asked for. 
+    ''' </summary>
     <TestMethod()>
     Public Sub CanGetResourcesFromDb2()
+        'Arrange
         Dim resourceCount = 2000
         Dim times = CInt(IIf(resourceCount Mod SplitSqlQueryDecorator.MaxParametersPerQuery = 0, (resourceCount \ SplitSqlQueryDecorator.MaxParametersPerQuery), (resourceCount \ SplitSqlQueryDecorator.MaxParametersPerQuery) + 1))
 
+        'Act
         Dim result = sqlSplitQueryDecorator.GetResourcesByIdsWithOption(GetListOfGuids(resourceCount), New ResourceRequestDTO())
 
+        'Assert
         For Each entity As ItemResourceEntity In result
             Assert.IsTrue(result.Contains(entity))
         Next
@@ -279,7 +333,7 @@ Public Class SplitSqlQueryDecoratorTest
         Public Function GetGenericResourceForBank(bankId As Integer, filter As String, filePrefix As String, templatesOnly As Boolean) As EntityCollection Implements IResourceService.GetGenericResourceForBank
             Throw New NotImplementedException
         End Function
-
+        
         Public Function UpdateBankIdOfResourceEntitiesAndCustomBankProperties(bankIdValue As Integer, resourceIdsToUpdate As List(Of Guid), customBankPropertyIdsToUpdate As List(Of Guid)) As List(Of KeyValuePair(Of Guid, String)) Implements IResourceService.UpdateBankIdOfResourceEntitiesAndCustomBankProperties
             Throw New NotImplementedException
         End Function
@@ -363,7 +417,7 @@ Public Class SplitSqlQueryDecoratorTest
         Public Function UpdateControlTemplateResource(resource As ControlTemplateResourceEntity, refetch As Boolean, recurse As Boolean) As String Implements IResourceService.UpdateControlTemplateResource
             Throw New NotImplementedException
         End Function
-
+        
         Public Function DeleteResources(resourcesToDelete As EntityCollection, ByRef notDeletedResources As EntityCollection) As String Implements IResourceService.DeleteResources
             Throw New NotImplementedException
         End Function
@@ -435,7 +489,7 @@ Public Class SplitSqlQueryDecoratorTest
         Public Function GetAssessmentTestsForBank(bankId As Integer, includeParentBanks As Boolean, includeChildBanks As Boolean, withCustomProperties As Boolean) As EntityCollection Implements IResourceService.GetAssessmentTestsForBank
             Throw New NotImplementedException()
         End Function
-
+        
         Public Function GetItemLayoutTemplatesFromListOfResourceIds(resourceIds As IEnumerable(Of Guid), withDependencies As Boolean) As EntityCollection Implements IResourceService.GetItemLayoutTemplatesFromListOfResourceIds
             Throw New NotImplementedException()
         End Function

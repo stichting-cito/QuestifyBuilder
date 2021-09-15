@@ -12,6 +12,7 @@ Public Class Integration_2InlineChoice_Grouped
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Add 2 inlineChoices and group these")>
     Public Sub IntegrationTest_Step1()
+        'Arrange     
         Dim solution = New Solution()
         Dim sp = InlineChoiceScoringParameters()
         sp(0).GetScoreManipulator(solution).SetKey("B")
@@ -20,10 +21,12 @@ Public Class Integration_2InlineChoice_Grouped
         Dim map = New ScoringMap(sp, solution).GetMap().ToList()
 
         WriteToDebug(solution, "Arrange")
-
+        
+        'Act
         Dim grouper = New FactTargetManipulator(solution)
         Dim factId = grouper.GroupInteractions(map.SelectMany(Function(csm) csm))
-
+        
+        'Assert
         WriteToDebug(solution, "Assert")
         Assert.IsTrue(UnitTestHelper.AreSame(Step1.ToString(), solution.DoSerialize().ToString()))
         Assert.AreEqual(0, factId, "No Keyfacts present, so only logical that it is added at position 0")
@@ -32,33 +35,39 @@ Public Class Integration_2InlineChoice_Grouped
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Get Concept Manipulator, whole concept structure is created")>
     Public Sub IntegrationTest_Step2()
+        'Arrange     
         Dim solution = Step1.To(Of Solution)()
         Dim sp = InlineChoiceScoringParameters()
         Dim combinedScoringMap = New ScoringMap(sp, solution).GetMap().Single()
         WriteToDebug(solution, "Arrange")
-
+        
+        'Act
         Dim conceptManipulator = combinedScoringMap.GetConceptManipulator(solution)
         Dim conceptIds = conceptManipulator.GetConceptIds().ToList()
-
+        
+        'Assert
         WriteToDebug(solution, "Assert")
         Assert.IsTrue(UnitTestHelper.AreSame(Step2.ToString(), solution.DoSerialize().ToString()))
-        Assert.AreEqual("0", conceptIds(0))
-        Assert.AreEqual("1", conceptIds(1))
+        Assert.AreEqual("0", conceptIds(0)) 'These are factSet numbers
+        Assert.AreEqual("1", conceptIds(1)) 'These are factSet numbers
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Get Display Value")>
     Public Sub IntegrationTest_Step3()
+        'Arrange     
         Dim solution = Step2.To(Of Solution)()
         Dim sp = InlineChoiceScoringParameters()
         Dim combinedScoringMap = New ScoringMap(sp, solution).GetMap().Single()
         WriteToDebug(solution, "Arrange")
-
+        
+        'Act
         Dim conceptManipulator = combinedScoringMap.GetConceptManipulator(solution)
 
+        'Assert
         WriteToDebug(solution, "Assert")
 
-        Assert.AreEqual("B&3", conceptManipulator.GetDisplayValueForConceptId("0"))
+        Assert.AreEqual("B&3", conceptManipulator.GetDisplayValueForConceptId("0")) 'These are factSet numbers
         Assert.AreEqual("{∗}&{∗}&{∗}&{∗}&{∗}&{∗}", conceptManipulator.GetDisplayValueForConceptId("1"))
     End Sub
 
@@ -66,20 +75,26 @@ Public Class Integration_2InlineChoice_Grouped
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Change Score and refresh concept.")>
     Public Sub IntegrationTest_Step4()
+        'Arrange     
         Dim solution = Step2.To(Of Solution)()
         Dim sp = InlineChoiceScoringParameters()
         Dim combinedScoringMap = New ScoringMap(sp, solution).GetMap().Single()
         WriteToDebug(solution, "Arrange")
 
-        sp(0).GetScoreManipulator(solution).SetKey("C")
-        sp(1).GetScoreManipulator(solution).SetKey("2")
+        'Act
+        'Change Key
+        sp(0).GetScoreManipulator(solution).SetKey("C") 'Was B
+        sp(1).GetScoreManipulator(solution).SetKey("2") 'Was 3
+        'Refresh Concept
         combinedScoringMap.GetConceptManipulator(solution)
 
+        'Assert
         WriteToDebug(solution, "Assert")
 
         Assert.IsTrue(UnitTestHelper.AreSame(Step4.ToString(), solution.DoSerialize().ToString()))
     End Sub
 
+#Region "Data"
 
     ReadOnly Step1 As XElement = <solution xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                                      <keyFindings>
@@ -260,6 +275,7 @@ Public Class Integration_2InlineChoice_Grouped
 
 
 
+#End Region
 
     Protected Overridable Function InlineChoiceScoringParameters() As ChoiceScoringParameter()
         Return New InlineChoiceScoringParameter() {

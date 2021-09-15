@@ -11,21 +11,27 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.MarkupExte
     [TestClass]
     public class EnumExtensionTests
     {
-        [TestMethod, TestCategory("WPF")]
+        [TestMethod,TestCategory("WPF")]
         public void ReturnedTypeIsAsAdvertisedByAttribute()
         {
+            //Arrange
             var converter = new EnumExtension(typeof(MyEnum));
-            var meReturnType = (MarkupExtensionReturnTypeAttribute)converter.GetType().GetCustomAttributes(typeof(MarkupExtensionReturnTypeAttribute), false).First();
+            var meReturnType = (MarkupExtensionReturnTypeAttribute)converter.GetType().GetCustomAttributes(typeof(MarkupExtensionReturnTypeAttribute),false).First();
+            //Act
             var result = converter.ProvideValue(A.Fake<IServiceProvider>());
-
+            
+            //Assert            
             Assert.IsTrue(meReturnType.ReturnType.IsAssignableFrom(result.GetType()));
         }
 
         [TestMethod, TestCategory("WPF")]
         public void ReturnsExpectedResult()
         {
-            var converter = new EnumExtension(typeof(MyEnum));
+            //Arrange
+            var converter = new EnumExtension(typeof(MyEnum));            
+            //Act
             var result = (Array)converter.ProvideValue(A.Fake<IServiceProvider>());
+            //Assert
             Assert.AreEqual(2, result.Length);
         }
 
@@ -33,14 +39,18 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.MarkupExte
         [ExpectedException(typeof(ArgumentException))]
         public void NoGivenTypeWillThrow()
         {
-            var converter = new EnumExtension();
+            //Arrange
+            var converter = new EnumExtension(); //MISSING TYPE
+            
+            //Act
             var result = converter.ProvideValue(A.Fake<IServiceProvider>());
-
+            //Assert
+            
         }
-
+        
         private enum MyEnum
         {
-            Test1, Test2
+            Test1,Test2
         }
     }
 }

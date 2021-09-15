@@ -13,6 +13,7 @@ Public Class Integration_2MC_Grouped
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Add 2 mc and group these")>
     Public Sub IntegrationTest_Step1()
+        'Arrange     
         Dim solution = New Solution()
         Dim sp = ChoiceScoringParameters()
         sp(0).GetScoreManipulator(solution).SetKey("B")
@@ -21,10 +22,12 @@ Public Class Integration_2MC_Grouped
         Dim map = New ScoringMap(sp, solution).GetMap().ToList()
 
         WriteToDebug(solution, "Arrange")
-
+        
+        'Act
         Dim grouper = New FactTargetManipulator(solution)
         Dim factId = grouper.GroupInteractions(map.SelectMany(Function(csm) csm))
-
+        
+        'Assert
         WriteToDebug(solution, "Assert")
 
         Assert.IsTrue(UnitTestHelper.AreSame(Step1.ToString(), solution.DoSerialize().ToString()))
@@ -34,50 +37,60 @@ Public Class Integration_2MC_Grouped
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Get Concept Manipulator, whole structure is created")>
     Public Sub IntegrationTest_Step2()
+        'Arrange     
         Dim solution = Step1.To(Of Solution)()
         Dim sp = ChoiceScoringParameters()
         Dim combinedScoringMap = New ScoringMap(sp, solution).GetMap().Single()
         WriteToDebug(solution, "Arrange")
-
+        
+        'Act
         Dim conceptManipulator = combinedScoringMap.GetConceptManipulator(solution)
         Dim conceptIds = conceptManipulator.GetConceptIds().ToList()
-
+        
+        'Assert
         WriteToDebug(solution, "Assert")
         Assert.IsTrue(UnitTestHelper.AreSame(Step2.ToString(), solution.DoSerialize().ToString()))
-        Assert.AreEqual("0", conceptIds(0))
-        Assert.AreEqual("1", conceptIds(1))
+        Assert.AreEqual("0", conceptIds(0)) 'These are factSet numbers
+        Assert.AreEqual("1", conceptIds(1)) 'These are factSet numbers
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Get Display Value")>
     Public Sub IntegrationTest_Step3()
+        'Arrange     
         Dim solution = Step2.To(Of Solution)()
         Dim sp = ChoiceScoringParameters()
         Dim combinedScoringMap = New ScoringMap(sp, solution).GetMap().Single()
         WriteToDebug(solution, "Arrange")
-
+        
+        'Act
         Dim conceptManipulator = combinedScoringMap.GetConceptManipulator(solution)
 
+        'Assert
         WriteToDebug(solution, "Assert")
 
-        Assert.AreEqual("B&3", conceptManipulator.GetDisplayValueForConceptId("0"))
+        Assert.AreEqual("B&3", conceptManipulator.GetDisplayValueForConceptId("0")) 'These are factSet numbers
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <WorkItem(20802)>
     Public Sub FixBug()
+        'Arrange     
         Dim solution = FixBugData.To(Of Solution)()
         Dim sp = ChoiceScoringParameters()
         Dim combinedScoringMap = New ScoringMap(sp, solution).GetMap().Single()
         WriteToDebug(solution, "Arrange")
-
+        
+        'Act
         combinedScoringMap.GetConceptManipulator(solution)
 
+        'Assert
         WriteToDebug(solution, "Assert")
 
         Assert.AreEqual(3, solution.ConceptFindings.First().KeyFactsets.Count)
     End Sub
 
+#Region "Data"
     Dim Step1 As XElement = <solution xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                                 <keyFindings>
                                     <keyFinding id="Integratie" scoringMethod="None">
@@ -279,6 +292,7 @@ Public Class Integration_2MC_Grouped
                                      </conceptFindings>
                                      <aspectReferences/>
                                  </solution>
+#End Region
 
     Private Function ChoiceScoringParameters() As ChoiceScoringParameter()
         Return New ChoiceScoringParameter() {

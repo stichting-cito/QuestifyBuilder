@@ -121,26 +121,44 @@
   <data name="ChoiceInline" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ChoiceInline.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-16</value>
   </data>
-  <data name="ChoiceInline_Itembody" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChoiceInline_Itembody.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="ChoiceInline_Itembody_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChoiceInline_Itembody_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="ChoiceInline_ResponseDeclarations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChoiceInline_ResponseDeclarations.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="ChoiceInline_Itembody_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChoiceInline_Itembody_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ChoiceInline_ResponseDeclarations_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChoiceInline_ResponseDeclarations_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ChoiceInline_ResponseDeclarations_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChoiceInline_ResponseDeclarations_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="ChoiceInline_ResponseProcessing_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChoiceInline_ResponseProcessing1.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+    <value>..\Resources\ChoiceInline_ResponseProcessing_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="ContentWithResources" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\contentwithresources.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="ChoiceInline_ResponseProcessing_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChoiceInline_ResponseProcessing_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ContentWithResources_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ContentWithResources_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ContentWithResources_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ContentWithResources_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="GapDateSC" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GapDateSC.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="GapDateSC_Itembody" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GapDateSC_Itembody.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="GapDateSC_Itembody_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GapDateSC_Itembody_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GapDateSC_Itembody_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GapDateSC_Itembody_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="GapDateSC_ResponseProcessing_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GapDateSC_ResponseProcessing1.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+    <value>..\Resources\GapDateSC_ResponseProcessing_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GapDateSC_ResponseProcessing_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GapDateSC_ResponseProcessing_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="GapInlineSC" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GapInlineSC.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-16</value>
@@ -148,58 +166,106 @@
   <data name="GapInlineSC2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GapInlineSC2.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-16</value>
   </data>
-  <data name="GapInlineSC2_Itembody" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GapInlineSC2_Itembody.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="GapInlineSC2_Itembody_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GapInlineSC2_Itembody_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="GapInlineSC2_ResponseDeclarations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GapInlineSC2_ResponseDeclarations.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="GapInlineSC2_Itembody_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GapInlineSC2_Itembody_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GapInlineSC2_ResponseDeclarations_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GapInlineSC2_ResponseDeclarations_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GapInlineSC2_ResponseDeclarations_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GapInlineSC2_ResponseDeclarations_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="GapInlineSC2_ResponseProcessing_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GapInlineSC2_ResponseProcessing1.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+    <value>..\Resources\GapInlineSC2_ResponseProcessing_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="GapInlineSC_ItemBody" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GapInlineSC_ItemBody.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="GapInlineSC2_ResponseProcessing_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GapInlineSC2_ResponseProcessing_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="GapInlineSC_ResponseDeclarations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GapInlineSC_ResponseDeclarations.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="GapInlineSC_ItemBody1_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GapInlineSC_ItemBody1_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GapInlineSC_ItemBody_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GapInlineSC_ItemBody_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GapInlineSC_ItemBody_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GapInlineSC_ItemBody_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GapInlineSC_ResponseDeclarations_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GapInlineSC_ResponseDeclarations_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GapInlineSC_ResponseDeclarations_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GapInlineSC_ResponseDeclarations_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="GapInlineSC_ResponseProcessing_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GapInlineSC_ResponseProcessing1.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+    <value>..\Resources\GapInlineSC_ResponseProcessing_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GapInlineSC_ResponseProcessing_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GapInlineSC_ResponseProcessing_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="GraphicGapMatch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GraphicGapMatch.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-16</value>
   </data>
-  <data name="GraphicGapMatch_Itembody" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GraphicGapMatch_Itembody.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="GraphicGapMatch_Itembody_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GraphicGapMatch_Itembody_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="GraphicGapMatch_ResponseDeclarations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GraphicGapMatch_ResponseDeclarations.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="GraphicGapMatch_Itembody_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GraphicGapMatch_Itembody_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GraphicGapMatch_ResponseDeclarations_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GraphicGapMatch_ResponseDeclarations_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GraphicGapMatch_ResponseDeclarations_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GraphicGapMatch_ResponseDeclarations_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="GraphicGapMatch_ResponseProcessing_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GraphicGapMatch_ResponseProcessing1.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+    <value>..\Resources\GraphicGapMatch_ResponseProcessing_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="GraphicGapMatch_ResponseProcessing_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GraphicGapMatch_ResponseProcessing_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="McWithConcepts" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\McWithConcepts.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="McWithConcepts_Itembody" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\McWithConcepts_Itembody.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="McWithConcepts_Itembody_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\McWithConcepts_Itembody_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="McWithConcepts_OutcomeDeclarations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\McWithConcepts_OutcomeDeclarations.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="McWithConcepts_Itembody_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\McWithConcepts_Itembody_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="McWithConcepts_OutcomeDeclarations_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\McWithConcepts_OutcomeDeclarations_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="McWithConcepts_OutcomeDeclarations_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\McWithConcepts_OutcomeDeclarations_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="McWithConcepts_ResponseProcessing_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\McWithConcepts_ResponseProcessing1.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+    <value>..\Resources\McWithConcepts_ResponseProcessing_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="McWithConcepts_ResponseProcessing_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\McWithConcepts_ResponseProcessing_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="PreprocessorWithConcepts" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PreprocessorWithConcepts.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="PreprocessorWithConcepts_Itembody" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PreprocessorWithConcepts_Itembody.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="PreprocessorWithConcepts_Itembody_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PreprocessorWithConcepts_Itembody_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="PreprocessorWithConcepts_OutcomeDeclarations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PreprocessorWithConcepts_OutcomeDeclarations.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="PreprocessorWithConcepts_Itembody_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PreprocessorWithConcepts_Itembody_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="PreprocessorWithConcepts_ResponseProcessing_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="PreprocessorWithConcepts_OutcomeDeclarations_QTI22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PreprocessorWithConcepts_OutcomeDeclarations_QTI22.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="PreprocessorWithConcepts_OutcomeDeclarations_QTI30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PreprocessorWithConcepts_OutcomeDeclarations_QTI30.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="PreprocessorWithConcepts_ResponseProcessing1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PreprocessorWithConcepts_ResponseProcessing1.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="PreprocessorWithConcepts_ResponseProcessing11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PreprocessorWithConcepts_ResponseProcessing1.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

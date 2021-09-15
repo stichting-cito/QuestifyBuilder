@@ -7,9 +7,9 @@ Public Class BaseParamValidatorTests
 
     <TestInitialize()> _
     Public Sub MyTestInitialize()
-        FailOnAssert.Disable = True
+        FailOnAssert.Disable = True 'Disable 
     End Sub
-
+    
     <TestCleanup()> _
     Public Sub MyTestCleanup()
         FailOnAssert.Disable = False
@@ -17,10 +17,13 @@ Public Class BaseParamValidatorTests
 
     <TestMethod(), TestCategory("Logic")>
     Public Sub checkIfUnknowParamIsValid_ShouldBe()
+        'Arrange
         Dim param = New FakeParameter()
-
+        
+        'Act
         Dim result = param.IsValid()
-
+        
+        'Assert
         Assert.IsTrue(result)
     End Sub
 

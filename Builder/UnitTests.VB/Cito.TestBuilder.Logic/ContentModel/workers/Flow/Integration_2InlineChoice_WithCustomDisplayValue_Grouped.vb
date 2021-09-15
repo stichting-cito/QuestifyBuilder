@@ -10,6 +10,7 @@ Public Class Integration_2InlineChoice_WithCustomDisplayValue_Grouped
 
         For Each choiceScoringParameter As ChoiceScoringParameter In choiceScoringParameters
 
+            'For inlineChoice there is a rule that it should return the first inline choice.
             Dim subParams = choiceScoringParameter.Value
             For Each parameterCollection As ParameterCollection In subParams
 

@@ -9,13 +9,16 @@ Public Class StaticExample_FindingToFindingManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("ScoringAdv"), TestCategory("Scoring")>
     Public Sub SyncPreprocessingRule()
+        'Arrange
         Dim soulution = solutionWithPreprocessingRule.To(Of Solution)()
         Dim conceptFinding = New ConceptFinding("mirror")
         soulution.ConceptFindings.Add(conceptFinding)
         Dim finding2Finding = New FindingToFindingManipulator(New KeyManipulator(soulution.GetFindingOrMakeIt("ctrl")), New ConceptManipulator(conceptFinding))
-
+        
+        'Act
         finding2Finding.Execute()
-
+        
+        'Assert            
         Assert.IsTrue(UnitTestHelper.AreSame(compare_solutionWithPreprocessingRule.ToString(), soulution.DoSerialize().ToString()))
     End Sub
 

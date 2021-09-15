@@ -200,6 +200,7 @@ Partial Public Class ItemTestData
 
     End Sub
 
+#Region "Item Data"
     Public Shared info_AsmntItem As XElement = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="code" itemid="testId" title="title" layoutTemplateSrc="ilt.html">
                                                    <solution>
                                                        <keyFindings/>
@@ -273,7 +274,7 @@ Partial Public Class ItemTestData
                                                             </parameterSet>
                                                         </parameters>
                                                     </assessmentItem>
-
+    
     Public Shared ReadOnly itm_essay_sc As XElement = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="code" itemid="testId" title="title" layoutTemplateSrc="ilt.essay.sc">
                                                           <solution>
                                                               <keyFindings/>
@@ -303,7 +304,9 @@ Partial Public Class ItemTestData
                                                               </parameterSet>
                                                           </parameters>
                                                       </assessmentItem>
+#End Region
 
+#Region "ILT_TemplateSwitching - ESSAY"
 
     Public Shared ReadOnly ilt_essay_sc As XElement = <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="1">
                                                           <Description></Description>
@@ -407,7 +410,9 @@ Partial Public Class ItemTestData
                                                       </SharedParameterSet>
                                                   </Template>
 
+#End Region
 
+#Region "ILT_TemplateSwitching - GraphicGapMatch"
 
     Friend Shared ReadOnly itm_ggm_dc As XElement = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="TestItemIteration12_Original" itemid="testId" title="TestItemIteration12_Original" layoutTemplateSrc="Cito.Generic.GraphicGapMatch.DC">
                                                         <solution>
@@ -597,7 +602,9 @@ Partial Public Class ItemTestData
                                                         </graphGapMatchScoringParameter>
                                                     </SharedParameterSet>
                                                 </Template>
+#End Region
 
+#Region " MC/MR "
 
     Public Shared ReadOnly ilt_mc_dc As XElement = <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="1">
                                                        <Description></Description>
@@ -706,6 +713,7 @@ Partial Public Class ItemTestData
                                                        </Targets>
                                                    </Template>
 
+#Region "Tabular"
 
     Friend Shared ReadOnly itm_tabular_dc As XElement = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="tabular_dc" itemid="testId" title="tabular_dc" layoutTemplateSrc="Cito.Generic.Tabular.DC">
                                                             <solution>
@@ -904,6 +912,7 @@ Partial Public Class ItemTestData
                                                                    </multichoicescoringparameter>
                                                                </SharedParameterSet>
                                                            </Template>
+#End Region
 
     Public Shared ReadOnly ct_mc As XElement = <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="1">
                                                    <Description></Description>
@@ -1013,7 +1022,9 @@ Partial Public Class ItemTestData
                                                        </multichoicescoringparameter>
                                                    </SharedParameterSet>
                                                </Template>
+#End Region
 
+#Region "Hottext and Hottext Corrections"
     Friend Shared ReadOnly item_hottext_dc As XElement = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="HottextItem" itemid="testId" title="HottextItem" layoutTemplateSrc="Cito.Generic.Hottext.DC">
                                                              <solution>
                                                                  <keyFindings>
@@ -1067,19 +1078,19 @@ Partial Public Class ItemTestData
                                                                      <booleanparameter name="isCorrectionVariant">False</booleanparameter>
                                                                      <xhtmlparameter name="hottextInput">
                                                                          <p id="c1-id-11" xmlns="http://www.w3.org/1999/xhtml">Dit is een <cito:InlineElement id="I82efd231-365b-4444-ae27-c23d6d60cdac" layoutTemplateSourceName="InlineHottextLayoutTemplate" inlineFO="" xmlns:cito="http://www.cito.nl/citotester">
-                                                                                 <cito:parameters>
-                                                                                     <cito:parameterSet id="entireItem">
-                                                                                         <cito:listedparameter name="controlType">hottext</cito:listedparameter>
-                                                                                         <cito:plaintextparameter name="controlId">I82efd231-365b-4444-ae27-c23d6d60cdac</cito:plaintextparameter>
-                                                                                         <cito:plaintextparameter name="controlLabel">hottext</cito:plaintextparameter>
-                                                                                         <cito:booleanparameter name="addHottextCorrection">False</cito:booleanparameter>
-                                                                                         <cito:plaintextparameter name="hottextValue"/>
-                                                                                         <cito:hotTextCorrectionScoringParameter name="hotTextCorrectionScoring" ControllerId="hottextCorrectionController" findingOverride="hottextController" expectedLength="0" correctionIsApplicable="false">
-                                                                                             <cito:definition id=""/>
-                                                                                             <cito:relatedControlLabel name="controlLabel">hottext</cito:relatedControlLabel>
-                                                                                         </cito:hotTextCorrectionScoringParameter>
-                                                                                     </cito:parameterSet>
-                                                                                 </cito:parameters>
+                                                                             <cito:parameters>
+                                                                                 <cito:parameterSet id="entireItem">
+                                                                                     <cito:listedparameter name="controlType">hottext</cito:listedparameter>
+                                                                                     <cito:plaintextparameter name="controlId">I82efd231-365b-4444-ae27-c23d6d60cdac</cito:plaintextparameter>
+                                                                                     <cito:plaintextparameter name="controlLabel">hottext</cito:plaintextparameter>
+                                                                                     <cito:booleanparameter name="addHottextCorrection">False</cito:booleanparameter>
+                                                                                     <cito:plaintextparameter name="hottextValue"/>
+                                                                                     <cito:hotTextCorrectionScoringParameter name="hotTextCorrectionScoring" ControllerId="hottextCorrectionController" findingOverride="hottextController" expectedLength="0" correctionIsApplicable="false">
+                                                                                         <cito:definition id=""/>
+                                                                                         <cito:relatedControlLabel name="controlLabel">hottext</cito:relatedControlLabel>
+                                                                                     </cito:hotTextCorrectionScoringParameter>
+                                                                                 </cito:parameterSet>
+                                                                             </cito:parameters>
                                                                              </cito:InlineElement><span id="SI82efd231-365b-4444-ae27-c23d6d60cdac" style="BACKGROUND-COLOR: #c7b8ce">hottext</span><cito:InlineElement id="Iaab4ae78-3d71-4d49-b3b6-ec87d036754e" layoutTemplateSourceName="InlineHottextLayoutTemplate" inlineFO="" xmlns:cito="http://www.cito.nl/citotester">
                                                                                  <cito:parameters>
                                                                                      <cito:parameterSet id="entireItem">
@@ -1377,6 +1388,7 @@ Partial Public Class ItemTestData
                                                                   </hotTextCorrectionScoringParameter>
                                                               </SharedParameterSet>
                                                           </Template>
+#End Region
 
     Public Shared ilt_html_ilt As XElement = <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="1">
                                                  <Description>Test</Description>
@@ -1463,6 +1475,7 @@ Partial Public Class ItemTestData
                                                     </Targets>
                                                 </Template>
 
+    'This ControlTemplate has and integer param named xhtml. This should cause problems
     Public Shared min_htmlErr_ctrl As XElement = <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="1">
                                                      <Description></Description>
                                                      <Targets>
@@ -1601,7 +1614,9 @@ Partial Public Class ItemTestData
                                                     </SharedParameterSet>
                                                 </Template>
 
+#Region "comparing"
 
+#Region "Boolean"
     Public Shared ilt_compare_boolean1 As XElement = <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="1">
                                                          <Description></Description>
                                                          <Settings>
@@ -1715,7 +1730,9 @@ Partial Public Class ItemTestData
                                                                   </booleanparameter>
                                                               </SharedParameterSet>
                                                           </Template>
+#End Region
 
+#Region "Integer"
 
     Public Shared ilt_compare_integer1 As XElement = <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="1">
                                                          <Description></Description>
@@ -1818,7 +1835,9 @@ Partial Public Class ItemTestData
                                                               </SharedParameterSet>
                                                           </Template>
 
+#End Region
 
+#Region "Collection"
 
     Public Shared ilt_compare_collection1 As XElement = <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="1">
                                                             <Description></Description>
@@ -1964,7 +1983,9 @@ Partial Public Class ItemTestData
                                                                  </SharedParameterSet>
                                                              </Template>
 
+#End Region
 
+#Region "Xhtml"
 
     Public Shared ilt_compare_xhtml1 As XElement = <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="1">
                                                        <Description></Description>
@@ -2067,7 +2088,9 @@ Partial Public Class ItemTestData
                                                             </SharedParameterSet>
                                                         </Template>
 
+#End Region
 
+#Region "Listed"
 
     Public Shared ilt_compare_listed1 As XElement = <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="1">
                                                         <Description></Description>
@@ -2198,6 +2221,8 @@ Partial Public Class ItemTestData
                                                              </SharedParameterSet>
                                                          </Template>
 
+#End Region
 
+#End Region
 
 End Class

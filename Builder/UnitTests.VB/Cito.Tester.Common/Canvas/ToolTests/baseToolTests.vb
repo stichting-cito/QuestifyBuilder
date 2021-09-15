@@ -19,15 +19,27 @@ Public Class baseToolTests
                        Case NotifyCollectionChangedAction.Replace
                            Replace += 1
                        Case Else
-                           Throw New Exception()
+                           Throw New Exception() 'Not expected!
                    End Select
                End Sub
     End Function
 
+    ''' <summary>
+    ''' Moves the mouse to...
+    ''' </summary>
+    ''' <param name="x">The x coord.</param>
+    ''' <param name="y">The y coord.</param>
+    ''' <param name="c">The canvas.</param>
     Protected Sub MoveMouseTo(x As Integer, y As Integer, c As ICanvas)
         c.Tool.MouseMove(c, New MouseEventArgs(MouseButtons.None, 0, x, y, 0))
     End Sub
 
+    ''' <summary>
+    ''' Does a mouse click
+    ''' </summary>
+    ''' <param name="x">The x coord.</param>
+    ''' <param name="y">The y coord.</param>
+    ''' <param name="c">The canvas.</param>
     Protected Sub MouseClick(x As Integer, y As Integer, c As ICanvas)
         c.Tool.MouseDown(c, New MouseEventArgs(MouseButtons.Left, 0, x, y, 0))
         c.Tool.MouseUp(c, New MouseEventArgs(MouseButtons.Left, 0, x, y, 0))

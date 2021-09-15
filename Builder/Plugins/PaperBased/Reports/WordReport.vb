@@ -18,7 +18,6 @@ Imports Questify.Builder.Logic.Service.Factories
 Imports Questify.Builder.Logic.Service.HelperFunctions
 Imports Questify.Builder.Logic.Service.Interfaces
 Imports Questify.Builder.Logic.Service.Model.Entities
-Imports Questify.Builder.Model.ContentModel
 Imports Questify.Builder.Model.ContentModel.EntityClasses
 Imports Questify.Builder.Model.ContentModel.FactoryClasses
 Imports Questify.Builder.Model.ContentModel.HelperClasses
@@ -29,6 +28,7 @@ Public Class WordReport
     Inherits ReportBase
     Implements IReportHandlerAsync
 
+#Region " Private Fields "
 
     Private _bankId As Integer
     Private _assessmentTest As AssessmentTest2
@@ -45,13 +45,17 @@ Public Class WordReport
     Private ReadOnly _defaultImageSizePortrait As New Size(580, 435)
     Private ReadOnly _defaultImageSizeLandscape As New Size(666, 500)
 
+#End Region
 
+#Region " Constructor "
 
     Public Sub New()
         _optionValidatorBase = New OptionValidatorWordExport
     End Sub
 
+#End Region
 
+#Region " Public Properties "
 
     Public Overrides ReadOnly Property Name() As String Implements IReportHandler.Name
         Get
@@ -68,6 +72,11 @@ Public Class WordReport
         End Get
     End Property
 
+    ''' <summary>
+    ''' Sets the selected bank. Which is needed in some cases when
+    ''' you need to get all parent banks to retrieve items that are in
+    ''' other banks than the selected bank (parent).
+    ''' </summary>
     Public Overrides Property BankId As Integer Implements IReportValidationBase.BankId
         Set(ByVal value As Integer)
             _bankId = value
@@ -103,6 +112,9 @@ Public Class WordReport
         End Get
     End Property
 
+    ''' <summary>
+    ''' Gets the selected information blocks.
+    ''' </summary>
     Private Function GetSelectedInformationBlocks() As String
         Dim sb As New StringBuilder(String.Empty)
         If OptionValidator.ShouldItemInformationBeAddedToTheReport Then
@@ -144,6 +156,9 @@ Public Class WordReport
         Return sb.ToString
     End Function
 
+    ''' <summary>
+    ''' Gets the exported report location.
+    ''' </summary>
     Public Overrides ReadOnly Property ExportedReportLocation() As String Implements IReportHandler.ExportedReportLocation
         Get
             If OptionValidator IsNot Nothing AndAlso Not String.IsNullOrEmpty(OptionValidator.ExportPath) Then
@@ -166,15 +181,23 @@ Public Class WordReport
         End Get
     End Property
 
+#End Region
 
+#Region " Public Events "
 
     Protected Sub OnStartCollectGeneratingReport(ByVal e As StartEventArgs)
         RaiseEvent StartReportProgress(Me, e)
     End Sub
 
 
+    ''' <summary>
+    ''' Occurs when [progress collect columns].
+    ''' </summary>
     Public Event ReportProgress(ByVal sender As Object, ByVal e As Cito.Tester.Common.ProgressEventArgs) Implements IReportHandler.Progress
 
+    ''' <summary>
+    ''' Occurs when [start collect columns].
+    ''' </summary>
     Public Event StartReportProgress(ByVal sender As Object, ByVal e As StartEventArgs) Implements IReportHandler.StartProgress
 
 
@@ -186,9 +209,14 @@ Public Class WordReport
         RaiseEvent ReportCompleted(Me, e)
     End Sub
 
+    ''' <summary>
+    ''' Occurs when [on report completed].
+    ''' </summary>
     Public Event ReportCompleted(ByVal sender As Object, ByVal e As ReportCompletedEventArgs) Implements IReportHandler.ReportCompleted
 
+#End Region
 
+#Region " Public Functions "
 
     Public Function GenerateData() As Boolean Implements IReportHandler.GenerateData
         Dim t As Task(Of Boolean) = DoGenerateDataAsync()
@@ -198,6 +226,7 @@ Public Class WordReport
     End Function
 
     Public Async Function DoGenerateDataAsync() As Task(Of Boolean) Implements IReportHandlerAsync.GenerateDataAsync
+        'get a list of item codes
         Dim returnValue As Boolean = False
         Try
             Dim resource = Me.Collection.FirstOrDefault
@@ -232,6 +261,10 @@ Public Class WordReport
         Return returnValue
     End Function
 
+    ''' <summary>
+    ''' Gets the assessment test.
+    ''' </summary>
+    ''' <param name="resource">The test resource.</param>
     Protected Overrides Function GetAssessmentTest(resource As ResourceDto) As AssessmentTest2
         If _assessmentTest Is Nothing Then
             Dim assessmentTest = TryCast(ResourceFactory.Instance.GetResourceByIdWithOption(resource.ResourceId, New AssessmentTestResourceEntityFactory(), New ResourceRequestDTO()), AssessmentTestResourceEntity)
@@ -248,6 +281,9 @@ Public Class WordReport
         Return _assessmentTest
     End Function
 
+    ''' <summary>
+    ''' Gets the export location UI.
+    ''' </summary>
     Public Overrides Function GetExportLocationUI() As UserControl Implements IReportHandler.GetExportLocationUI
         OptionValidator.ClearErrors()
         Dim selectLocationForm As New SelectReportLocation
@@ -278,6 +314,9 @@ Public Class WordReport
         Return selectLocationForm
     End Function
 
+    ''' <summary>
+    ''' Gets the extra options UI.
+    ''' </summary>
     Public Overrides Function GetExtraOptionsUI() As UserControl Implements IReportHandler.GetExtraOptionsUI
         OptionValidator.ClearErrors()
         Dim first = _selectedEntities.FirstOrDefault
@@ -300,6 +339,7 @@ Public Class WordReport
 
             If OptionValidator.Handlers IsNot Nothing AndAlso OptionValidator.Handlers.Any() Then
                 OptionValidator.SelectedHandler = OptionValidator.Handlers(0)
+                ' reset extra options
                 OptionValidator.Size = String.Empty
 
                 If OptionValidator.SelectedHandler.Dimensions IsNot Nothing Then
@@ -313,19 +353,35 @@ Public Class WordReport
         Return Nothing
     End Function
 
+#End Region
 
+#Region " Private Functions "
 
+    ''' <summary>
+    ''' Handles the Progress event of the ItemPreviewer control.
+    ''' </summary>
+    ''' <param name="sender">The source of the event.</param>
+    ''' <param name="e">The <see cref="Cito.Tester.Common.ProgressEventArgs" /> instance containing the event data.</param>
     Private Sub ItemPreviewer_Progress(ByVal sender As Object, ByVal e As Cito.Tester.Common.ProgressEventArgs)
         OnProgressCollectGeneratingReport(e)
     End Sub
 
 
+    ''' <summary>
+    ''' Handles the AllScreenshotsCompleted event of the ItemPreviewer control.
+    ''' </summary>
+    ''' <param name="sender">The source of the event.</param>
+    ''' <param name="e">The <see cref="System.EventArgs" /> instance containing the event data.</param>
     Private Sub ItemPreviewer_AllScreenshotsCompleted(ByVal sender As Object, ByVal e As EventArgs)
         StartGeneratingReport()
     End Sub
 
+    ''' <summary>
+    ''' Creates the report form item collection.
+    ''' </summary>
     Private Async Function CreateReportFromItemCollection() As Task
         If _itemCollection IsNot Nothing Then
+            'dont loop through the itemCollection because we want to keep the sequence
             OnStartCollectGeneratingReport(New StartEventArgs(_itemCollection.Count))
 
             If OptionValidator.ShouldAddItemContent AndAlso (OptionValidator.SelectedHandler IsNot Nothing AndAlso OptionValidator.SelectedHandler.PreviewTarget <> PaperBasedTestPlugin.PLUGIN_NAME) Then
@@ -373,6 +429,7 @@ Public Class WordReport
             Dim originalExportpath As String = OptionValidator.ExportPath
             Dim i As Integer = 1
 
+            'If the file is open, generate a new name.
             Do
                 Try
                     Using fileStream As New FileStream(OptionValidator.ExportPath, FileMode.Create)
@@ -396,6 +453,7 @@ Public Class WordReport
                 End Try
             Loop Until Not retry
 
+            'reset the progressbar
             OnStartCollectGeneratingReport(New StartEventArgs(_itemCollection.Count))
 
             Dim openXmlHelper As New OpenXmlGenerator
@@ -403,6 +461,7 @@ Public Class WordReport
             Dim wordDoc As WordprocessingDocument = openXmlHelper.OpenDocument(OptionValidator.ExportPath)
             wordDoc.MainDocumentPart.Document.Body.RemoveAllChildren()
 
+            'Set landscape page orientation if required
             If OptionValidator.PageOrientationLandscape Then openXmlHelper.SetPageOrientationLandscape(wordDoc)
 
             Dim itemIndex As Integer = 0
@@ -416,6 +475,8 @@ Public Class WordReport
 
             returnValue = True
             _resultText = String.Format(My.Resources.SuccessfullyGenerated, Me.Name)
+        Catch ex As Exception
+            _resultText = _resultText & Environment.NewLine & String.Format(My.Resources.ErrorOccured, ex.Message)
         Finally
             _itemCollection.Dispose()
 
@@ -441,7 +502,7 @@ Public Class WordReport
                                     itemCode As String,
                                     itemIndex As Integer) As WordprocessingDocument
 
-        _resultText = "Item: " + itemCode
+        _resultText = "Item: " + itemCode 'Keep track of the item being processed so this information is available in the resultoverview.
 
         OnProgressCollectGeneratingReport(New Cito.Tester.Common.ProgressEventArgs(String.Format(My.Resources.ProcessingItem, itemCode)))
 
@@ -451,6 +512,7 @@ Public Class WordReport
         Dim headerOnePresent As Boolean = False
 
         If indexList.Count = 1 Then
+            'Add item information
             If OptionValidator.ShouldItemInformationBeAddedToTheReport Then
                 If Not headerOnePresent Then
                     openXmlHelper.AddHeaderOne(wordDoc, String.Format(My.Resources.ItemPlusCode, itemCode), If(itemIndex = 0 OrElse OptionValidator.ItemOnNewPage, True, False))
@@ -463,6 +525,7 @@ Public Class WordReport
                 AddRowsForEntity(item, openXmlHelper, itemInformationTable)
             End If
 
+            'Add table for answer alternatives for inline items
             If OptionValidator.ShouldShowPreprocessorRules Then
                 AddFirstHeader(openXmlHelper, wordDoc, itemCode, headerOnePresent)
                 openXmlHelper.AddHeaderTwo(wordDoc, My.Resources.ItemKeysWithPreprocessorRules)
@@ -470,6 +533,7 @@ Public Class WordReport
                 AddRowsForItemKeysWithPreprocessorRules(item, openXmlHelper, wordDoc)
             End If
 
+            'Add custom properties
             If OptionValidator.ShouldItemCustomPropertiesBeAddedToTheReport Then
                 If Not headerOnePresent Then
                     openXmlHelper.AddHeaderOne(wordDoc, String.Format(My.Resources.ItemPlusCode, itemCode), If(itemIndex = 0 OrElse OptionValidator.ItemOnNewPage, True, False))
@@ -482,6 +546,7 @@ Public Class WordReport
                 AddCustomPropertiesRowsForEntity(item, openXmlHelper, itemCustomPropertyTable, My.Resources.Item, wordDoc)
             End If
 
+            'Add References
             If OptionValidator.ShouldReferencesBeAddedToTheReport Then
                 If Not headerOnePresent Then
                     openXmlHelper.AddHeaderOne(wordDoc, String.Format(My.Resources.ItemPlusCode, itemCode), If(itemIndex = 0 OrElse OptionValidator.ItemOnNewPage, True, False))
@@ -495,6 +560,7 @@ Public Class WordReport
                 AddRowsForCollection(referenceCollection, openXmlHelper, itemReferenceTable, wordDoc)
             End If
 
+            'Add Dependencies
             If OptionValidator.ShouldDependenciesBeAddedToTheReport Then
                 If Not headerOnePresent Then
                     openXmlHelper.AddHeaderOne(wordDoc, String.Format(My.Resources.ItemPlusCode, itemCode), If(itemIndex = 0 OrElse OptionValidator.ItemOnNewPage, True, False))
@@ -508,6 +574,7 @@ Public Class WordReport
                 AddRowsForCollection(dependencyCollection, openXmlHelper, itemDependenciesTable, wordDoc)
             End If
 
+            'Add Key
             If OptionValidator.ShouldItemSolutionBeAddedToTheReport Then
                 If Not headerOnePresent Then
                     openXmlHelper.AddHeaderOne(wordDoc, String.Format(My.Resources.ItemPlusCode, itemCode), If(itemIndex = 0 OrElse OptionValidator.ItemOnNewPage, True, False))
@@ -523,6 +590,7 @@ Public Class WordReport
                 openXmlHelper.AddSolutionToWordDoc(wordDoc, _resourceManager, itemCode, item.KeyValues)
             End If
 
+            'Add Content 
             If OptionValidator.ShouldAddItemContent Then
                 If Not headerOnePresent Then
                     openXmlHelper.AddHeaderOne(wordDoc, String.Format(My.Resources.ItemPlusCode, itemCode), If(itemIndex = 0 OrElse OptionValidator.ItemOnNewPage, True, False))
@@ -551,6 +619,7 @@ Public Class WordReport
                 End If
             End If
 
+            'Add Alternatives
             If OptionValidator.ShouldAddChoiceAlternatives AndAlso OptionValidator.AddChoiceAlternativesOptionVisible Then
                 If Not headerOnePresent Then
                     openXmlHelper.AddHeaderOne(wordDoc, String.Format(My.Resources.ItemPlusCode, itemCode), If(itemIndex = 0 OrElse OptionValidator.ItemOnNewPage, True, False))
@@ -566,13 +635,17 @@ Public Class WordReport
 
         End If
 
-        If OptionValidator.ItemOnNewPage AndAlso Not (itemIndex + 1 = _itemCodeList.Count) Then
+        If OptionValidator.ItemOnNewPage AndAlso Not (itemIndex + 1 = _itemCodeList.Count) Then 'dont add a break when we are at the end
+            'add break
             openXmlHelper.AddPageBreak(wordDoc)
         End If
 
         Return wordDoc
     End Function
 
+    ''' <summary>
+    ''' Adds the first header, with the itemCode, if it has not been added yet
+    ''' </summary>
     Private Sub AddFirstHeader(ByRef openXmlHelper As OpenXmlGenerator, ByRef wordDoc As WordprocessingDocument, itemCode As String, ByRef headerOnePresent As Boolean)
         If Not headerOnePresent Then
             openXmlHelper.AddHeaderOne(wordDoc, String.Format(My.Resources.ItemPlusCode, itemCode))
@@ -580,7 +653,14 @@ Public Class WordReport
         End If
     End Sub
 
+    ''' <summary>
+    ''' Adds the rows for entity.
+    ''' </summary>
+    ''' <param name="entity">The entity.</param>
+    ''' <param name="openXmlHelper">The openxml helper.</param>
+    ''' <param name="table">The table.</param>
     Private Sub AddRowsForEntity(ByVal entity As ResourceEntity, ByRef openXmlHelper As OpenXmlGenerator, ByVal table As Table)
+        ' Create a list of columns to exclude from the report.
         Dim listOfExcludedColumns As New List(Of String)
         listOfExcludedColumns.Add("ResourceId")
 
@@ -591,26 +671,31 @@ Public Class WordReport
 
                 Select Case field.Name
                     Case "StateId"
+                        ' StateId is not very meaningful for the end user, so we translate it to StateName
                         If Not String.IsNullOrEmpty(entity.StateName) Then
                             fieldName = My.Resources.State
                             fieldValue = entity.StateName
                         End If
                     Case "BankId"
+                        ' BankId is not very meaningful for the end user, so we translate it to BankName
                         If Not String.IsNullOrEmpty(entity.BankName) Then
                             fieldName = My.Resources.Bank
                             fieldValue = entity.BankName
                         End If
                     Case "CreatedBy"
+                        ' CreatedBy (user id) is not very meaningful for the end user, so we translate it to the full name of the user.
                         If Not String.IsNullOrEmpty(entity.CreatedByFullName) Then
                             fieldName = My.Resources.CreatedBy
                             fieldValue = entity.CreatedByFullName
                         End If
                     Case "ModifiedBy"
+                        ' ModiefiedBy (user id) is not very meaningful for the end user, so we translate it to the full name of the user.
                         If Not String.IsNullOrEmpty(entity.ModifiedByFullName) Then
                             fieldName = My.Resources.ModifiedBy
                             fieldValue = entity.ModifiedByFullName
                         End If
                     Case "IsSystemItem"
+                        ' True/False is not for a end user, so translate it to yes/no.
                         If field.DbValue IsNot Nothing Then
                             Dim isSystemItem As Boolean
                             If Boolean.TryParse(field.DbValue.ToString(), isSystemItem) AndAlso isSystemItem Then
@@ -620,18 +705,22 @@ Public Class WordReport
                             End If
                         End If
                     Case "keyValues"
+                        'If value is empty then check if there are aspects
                         If Not OptionValidator.ShouldItemSolutionBeAddedToTheReport Then
                             If field.DbValue IsNot Nothing AndAlso Not String.IsNullOrEmpty(field.DbValue.ToString) Then
                                 fieldValue = field.DbValue.ToString()
                             End If
                         End If
                     Case "ItemAutoId"
+                        'Ignore
                     Case "ItemId"
                         If ItemIdHelper.UseItemId Then fieldValue = If(field.DbValue IsNot Nothing, field.DbValue.ToString(), String.Empty)
                     Case Else
+                        ' In all other cases, just get the value.
                         fieldValue = If(field.DbValue IsNot Nothing, field.DbValue.ToString(), String.Empty)
                 End Select
 
+                ' Only add the entity property to the table if there is a value.
                 If Not String.IsNullOrEmpty(fieldValue) Then
                     AddRowToTable(fieldName, fieldValue, openXmlHelper, table)
                 End If
@@ -712,6 +801,13 @@ Public Class WordReport
         Return False
     End Function
 
+    ''' <summary>
+    ''' Adds a new row to the table.
+    ''' </summary>
+    ''' <param name="fieldName">The name of the field (value for column 1).</param>
+    ''' <param name="fieldValue">The value of the field (value for column 2).</param>
+    ''' <param name="openXmlHelper">The OpenXmlGenerator to use.</param>
+    ''' <param name="table">The table to add the row to.</param>
     Private Sub AddRowToTable(ByVal fieldName As String, ByVal fieldValue As String, ByRef openXmlHelper As OpenXmlGenerator, ByVal table As Table)
         Dim newList As New List(Of String)
         newList.Add(fieldName)
@@ -719,11 +815,17 @@ Public Class WordReport
         openXmlHelper.AddRow(table, newList)
     End Sub
 
+    ''' <summary>
+    ''' Gets the custom properties for entity.
+    ''' </summary>
+    ''' <param name="entity">The entity.</param>
     Private Sub AddCustomPropertiesRowsForEntity(ByVal entity As ResourceEntity, ByRef openXmlHelper As OpenXmlGenerator, ByVal table As Table, ByVal entityName As String, ByVal worddoc As WordprocessingDocument)
+        'get test custom properties
         If entity.CustomBankPropertyValueCollection.Any() Then
             For Each customBankPropertyValue As CustomBankPropertyValueEntity In entity.CustomBankPropertyValueCollection
                 Dim customBankValueProperty As CustomBankPropertyValueEntity = GetCustomPropertyValue(customBankPropertyValue.CustomBankPropertyId, entity)
                 If customBankValueProperty IsNot Nothing Then
+                    'TODO: get the correct value (customBankValueProperty.ToString is not it!) - Check in the item editor how the value is retrieved. There are 3 possible value types (list, free value, ??).
                     Dim name As String = customBankPropertyValue.CustomBankProperty.Name
                     Dim fieldName As String = String.Format("{0}_{1}", entityName, name)
                     Dim value As String = String.Empty
@@ -749,6 +851,9 @@ Public Class WordReport
         End If
     End Sub
 
+    ''' <summary>
+    ''' Gets the display text for selected values.
+    ''' </summary>
     Private Function GetDisplayTextForSelectedValues(ByVal customBankPropertyValue As CustomBankPropertyValueEntity) As String
         Dim selectedValues As New StringBuilder
 
@@ -756,6 +861,7 @@ Public Class WordReport
         value = DirectCast(customBankPropertyValue, ListCustomBankPropertyValueEntity)
 
         For Each selectedValue As ListValueCustomBankPropertyEntity In value.ListValueCustomBankPropertyCollectionViaListCustomBankPropertySelectedValue
+            ' If there already is a value in selectedValues, append a semicolumn to seperate the values.
             If selectedValues.Length > 0 Then
                 selectedValues.Append(";")
             End If
@@ -765,6 +871,12 @@ Public Class WordReport
         Return selectedValues.ToString
     End Function
 
+    ''' <summary>
+    ''' Adds the reference rows for entity.
+    ''' </summary>
+    ''' <param name="collection">The  collection.</param>
+    ''' <param name="openXmlHelper">The openxml helper.</param>
+    ''' <param name="table">The item reference table.</param>
     Private Sub AddRowsForCollection(ByRef collection As EntityCollection, ByRef openXmlHelper As OpenXmlGenerator, ByRef table As Table, ByVal wordDoc As WordprocessingDocument)
         If collection.Any() Then
             Dim headerList As New List(Of String)
@@ -784,6 +896,12 @@ Public Class WordReport
         End If
     End Sub
 
+    ''' <summary>
+    ''' Adds the row for related entity.
+    ''' </summary>
+    ''' <param name="relatedEntity">The related entity.</param>
+    ''' <param name="table">The table.</param>
+    ''' <param name="openXmlHelper">The openxml helper.</param>
     Private Sub AddRowForRelatedEntity(ByRef relatedEntity As EntityBase2, ByRef table As Table, ByRef openXmlHelper As OpenXmlGenerator)
         Dim newList As New List(Of String)
         Dim type As String = GetTypeNameFromEntityBase(relatedEntity)
@@ -796,6 +914,10 @@ Public Class WordReport
     End Sub
 
 
+    ''' <summary>
+    ''' Gets the type name from entity base.
+    ''' </summary>
+    ''' <param name="entity">The entity.</param><returns></returns>
     Private Function GetTypeNameFromEntityBase(ByVal entity As EntityBase2) As String
         Dim type As String = String.Empty
         Select Case entity.GetType.ToString
@@ -815,14 +937,20 @@ Public Class WordReport
         Return type
     End Function
 
+    ''' <summary>
+    ''' Gets the custom property value.
+    ''' </summary>
+    ''' <param name="CustomBankPropertyId">The custom bank property id.</param>
 
     Private Function GetCustomPropertyValue(ByVal CustomBankPropertyId As Guid, ByVal entity As ResourceEntity) As CustomBankPropertyValueEntity
         Dim filter As IPredicate
         Dim indexes As List(Of Integer)
 
+        ' Try to locate value for custombankproperty
         filter = (CustomBankPropertyValueFields.CustomBankPropertyId = CustomBankPropertyId)
         indexes = entity.CustomBankPropertyValueCollection.FindMatches(filter)
 
+        ' Return found entity or nothing
         If indexes.Count = 1 Then
             Return entity.CustomBankPropertyValueCollection(indexes(0))
         Else
@@ -831,6 +959,10 @@ Public Class WordReport
     End Function
 
 
+    ''' <summary>
+    ''' Gets the name of the resource string by resource.
+    ''' </summary>
+    ''' <param name="resourceName">Name of the resource.</param><returns></returns>
     Private Function GetResourceStringByName(ByVal resourceName As String) As String
         Dim returnValue As String = String.Empty
         Try
@@ -850,4 +982,5 @@ Public Class WordReport
         End If
     End Sub
 
+#End Region
 End Class

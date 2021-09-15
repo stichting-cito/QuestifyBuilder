@@ -13,8 +13,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void CreateMC_And_INT_Expects2Rows()
         {
+            //Arrange
             var solution = new Solution();
-            var mcScoringParameter = new MultiChoiceScoringParameter() { MaxChoices = 1 }.AddSubParameters("A", "B", "C",
+            var mcScoringParameter = new MultiChoiceScoringParameter() {MaxChoices = 1}.AddSubParameters("A", "B", "C",
                 "D");
             var integerScoringParameter = new IntegerScoringParameter().AddSubParameters("A");
 
@@ -23,39 +24,47 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                 {
                     new ScoringMapKey(mcScoringParameter, "A"), new ScoringMapKey(mcScoringParameter, "B"),
                     new ScoringMapKey(mcScoringParameter, "C"), new ScoringMapKey(mcScoringParameter, "D"),
-                    new ScoringMapKey(integerScoringParameter, "A")                 }, new[] { 0, 1 });
+                    new ScoringMapKey(integerScoringParameter, "A") //<-----The Difference
+                }, new[] {0, 1});
 
+            //Act
             var result = BlockRowViewModelFactory.CreateInstances(combinedScoringMap, solution, 0);
 
+            //Assert
             Assert.AreEqual(2, result.Count(), "Expected 2 block rows");
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void CreateInt_And_MC_Expects2Rows()
         {
+            //Arrange
             var solution = new Solution();
-            var mcScoringParameter = new MultiChoiceScoringParameter() { MaxChoices = 1 }.AddSubParameters("A", "B", "C",
+            var mcScoringParameter = new MultiChoiceScoringParameter() {MaxChoices = 1}.AddSubParameters("A", "B", "C",
                 "D");
             var integerScoringParameter = new IntegerScoringParameter().AddSubParameters("A");
 
             var combinedScoringMap =
                 CombinedScoringMapKey.Create(new[]
                 {
-                    new ScoringMapKey(integerScoringParameter, "A"),                     new ScoringMapKey(mcScoringParameter, "A"), new ScoringMapKey(mcScoringParameter, "B"),
+                    new ScoringMapKey(integerScoringParameter, "A"), //<-----The Difference
+                    new ScoringMapKey(mcScoringParameter, "A"), new ScoringMapKey(mcScoringParameter, "B"),
                     new ScoringMapKey(mcScoringParameter, "C"), new ScoringMapKey(mcScoringParameter, "D")
-                }, new[] { 0, 1 });
+                }, new[] {0, 1});
 
+            //Act
             var result = BlockRowViewModelFactory.CreateInstances(combinedScoringMap, solution, 0);
 
+            //Assert
             Assert.AreEqual(2, result.Count(), "Expected 2 block rows");
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void CreateMR_And_INT_Expects5Rows()
         {
+            //Arrange
             var solution = new Solution();
 
-            var mcScoringParameter = new MultiChoiceScoringParameter() { MaxChoices = 2, ControllerId = "mr" }.AddSubParameters("A", "B", "C",
+            var mcScoringParameter = new MultiChoiceScoringParameter() {MaxChoices = 2, ControllerId="mr"}.AddSubParameters("A", "B", "C",
                 "D");
             var integerScoringParameter = new IntegerScoringParameter().AddSubParameters("A");
 
@@ -64,31 +73,38 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                 {
                     new ScoringMapKey(mcScoringParameter, "A"), new ScoringMapKey(mcScoringParameter, "B"),
                     new ScoringMapKey(mcScoringParameter, "C"), new ScoringMapKey(mcScoringParameter, "D"),
-                    new ScoringMapKey(integerScoringParameter, "A")                 }, new[] { 0, 1 });
+                    new ScoringMapKey(integerScoringParameter, "A") //<-----The Difference
+                }, new[] {0, 1});
 
+            //Act
             var result = BlockRowViewModelFactory.CreateInstances(combinedScoringMap, solution, 0);
 
+            //Assert
             Assert.AreEqual(5, result.Count(), "Expected 5 block rows");
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void CreateINT_And_MR_Expects5Rows()
         {
+            //Arrange
             var solution = new Solution();
 
-            var mcScoringParameter = new MultiChoiceScoringParameter() { MaxChoices = 2, ControllerId = "mr" }.AddSubParameters("A", "B", "C",
+            var mcScoringParameter = new MultiChoiceScoringParameter() {MaxChoices = 2, ControllerId="mr"}.AddSubParameters("A", "B", "C",
                 "D");
             var integerScoringParameter = new IntegerScoringParameter().AddSubParameters("A");
 
             var combinedScoringMap =
                 CombinedScoringMapKey.Create(new[]
                 {
-                    new ScoringMapKey(integerScoringParameter, "A"),                     new ScoringMapKey(mcScoringParameter, "A"), new ScoringMapKey(mcScoringParameter, "B"),
+                    new ScoringMapKey(integerScoringParameter, "A"), //<-----The Difference
+                    new ScoringMapKey(mcScoringParameter, "A"), new ScoringMapKey(mcScoringParameter, "B"),
                     new ScoringMapKey(mcScoringParameter, "C"), new ScoringMapKey(mcScoringParameter, "D")
-                }, new[] { 0, 1 });
+                }, new[] {0, 1});
 
+            //Act
             var result = BlockRowViewModelFactory.CreateInstances(combinedScoringMap, solution, 0);
 
+            //Assert
             Assert.AreEqual(5, result.Count(), "Expected 5 block rows");
         }
     }

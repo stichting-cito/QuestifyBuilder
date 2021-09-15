@@ -15,6 +15,11 @@ namespace Questify.Builder.UnitTests
     public static class ExtensionMethods
     {
 
+        /// <summary>
+        /// Sets the Assessment on ItemResourceEntity.
+        /// </summary>
+        /// <param name="me"></param>
+        /// <param name="a"></param>
         public static void SetAssessmentOnItemResource(this ItemResourceEntity me, AssessmentItem a)
         {
             if (me.ResourceData == null) me.ResourceData = new ResourceDataEntity();
@@ -27,14 +32,24 @@ namespace Questify.Builder.UnitTests
         }
 
 
+        /// <summary>
+        /// Gets the Assessment form ItemResourceEntity
+        /// </summary>
+        /// <param name="me"></param>
         public static AssessmentItem GetAssessmentFromItemResource(this ItemResourceEntity me)
         {
+            //guards
             if (me.ResourceData == null) return null;
             if (me.ResourceData.BinData.Length == 0) return null;
 
             return (AssessmentItem)SerializeHelper.XmlDeserializeFromByteArray(me.ResourceData.BinData, typeof(AssessmentItem));
         }
 
+        /// <summary>
+        /// Transforms ScoringParameter to a CombinedScoringMapKey
+        /// </summary>
+        /// <param name="me">Me.</param>
+        /// <returns>CombinedScoringMapKey.</returns>
         public static CombinedScoringMapKey AsCombinedScoringMap(this ScoringParameter me)
         {
             List<ScoringMapKey> keys = new List<ScoringMapKey>();
@@ -46,7 +61,13 @@ namespace Questify.Builder.UnitTests
             return CombinedScoringMapKey.Create(keys);
         }
 
-        public static CombinedScoringMapKey AsCombinedScoringMapThatIsGroup(this ScoringParameter me, IEnumerable<int> groupIdentifiers)
+        /// <summary>
+        /// Transforms ScoringParameter to a CombinedScoringMapKey
+        /// </summary>
+        /// <param name="me">Me.</param>
+        /// <param name="groupIdentifiers"></param>
+        /// <returns>CombinedScoringMapKey.</returns>
+        public static CombinedScoringMapKey AsCombinedScoringMapThatIsGroup(this ScoringParameter me, IEnumerable<int> groupIdentifiers )
         {
             List<ScoringMapKey> keys = new List<ScoringMapKey>();
             foreach (var set in me.Value)
@@ -57,12 +78,24 @@ namespace Questify.Builder.UnitTests
             return CombinedScoringMapKey.Create(keys, groupIdentifiers);
         }
 
+        /// <summary>
+        /// Transforms ScoringParameter to a CombinedScoringMapKey
+        /// </summary>
+        /// <param name="me">Me.</param>
+        /// <param name="solution"></param>
+        /// <returns>CombinedScoringMapKey.</returns>
         public static CombinedScoringMapKey AsCombinedScoringMap(this ScoringParameter me, Solution solution)
         {
             List<ScoringParameter> sp = new List<ScoringParameter>() { me };
             return new ScoringMap(sp, solution).GetMap().First();
         }
 
+        /// <summary>
+        /// Transforms ScoringParameter to a CombinedScoringMapKey with factSets.
+        /// </summary>
+        /// <param name="me">Me.</param>
+        /// <param name="setNumbers">The set numbers.</param>
+        /// <returns>CombinedScoringMapKey.</returns>
         public static CombinedScoringMapKey AsCombinedScoringMap(this ScoringParameter me, params int[] setNumbers)
         {
             List<ScoringMapKey> keys = new List<ScoringMapKey>();
@@ -73,8 +106,15 @@ namespace Questify.Builder.UnitTests
             return CombinedScoringMapKey.Create(keys, setNumbers);
         }
 
+        /// <summary>
+        /// Adds the sub parameters.
+        /// </summary>
+        /// <typeparam name="TScorePrm">The type of the t score PRM.</typeparam>
+        /// <param name="me">Me.</param>
+        /// <param name="ids">The ids.</param>
+        /// <returns>TScorePrm.</returns>
         public static TScorePrm AddSubParameters<TScorePrm>(this TScorePrm me, params string[] ids)
-    where TScorePrm : ScoringParameter
+            where TScorePrm : ScoringParameter
         {
             me.Value = new ParameterSetCollection();
             foreach (var id in ids)
@@ -135,7 +175,7 @@ namespace Questify.Builder.UnitTests
             return Encoding.UTF8.GetBytes(input.ToString());
         }
 
-        public static string AsString(this byte[] input)
+        public static string AsString(this  byte[] input)
         {
             return Encoding.UTF8.GetString(input);
         }

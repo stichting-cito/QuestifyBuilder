@@ -2,11 +2,11 @@
 Imports Questify.Builder.Logic.QTI.Helpers.QTI22
 Imports Questify.Builder.Logic.QTI.Xsd.QTI22_Final
 
-Namespace QTI22Publication.Helpers.QTI22
+Namespace QTI22.Helpers
     <TestClass>
     Public Class ResponseDeclarationHelperTests
         <TestMethod>
-        Public Sub CreateEmptyResponseDeclaration_CardinalitySingle_ReturnsCorrectCardinality
+        Public Sub CreateEmptyResponseDeclaration_CardinalitySingle_ReturnsCorrectCardinality()
             Dim cardinality = ResponseDeclarationTypeCardinality.single
 
             Dim result = ResponseDeclarationHelper.CreateEmptyResponseDeclaration(cardinality, String.Empty)
@@ -16,7 +16,7 @@ Namespace QTI22Publication.Helpers.QTI22
         End Sub
 
         <TestMethod>
-        Public Sub CreateEmptyResponseDeclaration_Identifier_ReturnsCorrectIdentifier
+        Public Sub CreateEmptyResponseDeclaration_Identifier_ReturnsCorrectIdentifier()
             Dim identifier = "abcdefg"
 
             Dim result = ResponseDeclarationHelper.CreateEmptyResponseDeclaration(ResponseDeclarationTypeCardinality.single, identifier)
@@ -25,4 +25,4 @@ Namespace QTI22Publication.Helpers.QTI22
             Assert.AreEqual(identifier, result.identifier)
         End Sub
     End Class
-End NameSpace
+End Namespace

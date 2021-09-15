@@ -7,6 +7,7 @@ Public Class HotTextCorrectionScoringParameterSerialisationTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub CompareWithPreviouslyKnowState()
+        'Arrange
         Dim hotTextCorrectionPrm = New HotTextCorrectionScoringParameter() With {.ControllerId = "hottextcorrectioncontroller_1"}
         hotTextCorrectionPrm.Value = New ParameterSetCollection()
         hotTextCorrectionPrm.BluePrint = New ParameterCollection()
@@ -14,8 +15,11 @@ Public Class HotTextCorrectionScoringParameterSerialisationTest
         Dim subParamCollection As New ParameterCollection() With {.Id = "guid123"}
         hotTextCorrectionPrm.Value.Add(subParamCollection)
 
+        'Act
         Dim result = DoSerialize(Of HotTextCorrectionScoringParameter)(hotTextCorrectionPrm)
-
+        
+        'Assert
+        'Compare with previously known result 
         Assert.AreEqual(<HotTextCorrectionScoringParameter
                             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -29,6 +33,7 @@ Public Class HotTextCorrectionScoringParameterSerialisationTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Deserialize_Test()
+        'Arrange
         Dim xmlData = <HotTextCorrectionScoringParameter
                           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                           xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -43,9 +48,11 @@ Public Class HotTextCorrectionScoringParameterSerialisationTest
                           </subparameterset>
                           <definition id=""/>
                       </HotTextCorrectionScoringParameter>
-
+        
+        'Act
         Dim result = Deserialize(Of HotTextCorrectionScoringParameter)(xmlData)
-
+       
+        'Assert
         Assert.AreEqual("hottextcorrectioncontroller_1", result.ControllerId)
         Assert.AreEqual(1, result.ExpectedLength)
         Assert.AreEqual("Ia1384693-9aac-4a5d-bb43-9c2b262e864a", result.Value(1).Id)
@@ -55,8 +62,9 @@ Public Class HotTextCorrectionScoringParameterSerialisationTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub SerializeHotTextCorrectionScoringParameter_inAssessmentItem_CompareWithPreviouslyKnownResult_Test()
+        'Arrange
         Dim a = New AssessmentItem With
-        {.Title = "someTitle", .Identifier = "someIdentifier", .LayoutTemplateSourceName = "someIlt"}
+                {.Title = "someTitle", .Identifier = "someIdentifier", .LayoutTemplateSourceName = "someIlt"}
         Dim p = a.Parameters.AddNew()
         p.Id = "id_1"
 
@@ -85,8 +93,10 @@ Public Class HotTextCorrectionScoringParameterSerialisationTest
         p.InnerParameters.Add(newHotTextXhtmlParam)
         p.InnerParameters.Add(newHTParam)
 
+        'Act
         Dim result = DoSerialize(Of AssessmentItem)(a)
-
+        
+        'Assert
         Assert.AreEqual(<assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="someIdentifier" title="someTitle" layoutTemplateSrc="someIlt">
                             <solution>
                                 <keyFindings/>
@@ -125,6 +135,7 @@ Public Class HotTextCorrectionScoringParameterSerialisationTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Deserialize_InAssessmentItem_Test()
+        'Arrange
         Dim xmlData = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="someIdentifier" title="someTitle" layoutTemplateSrc="someIlt">
                           <solution>
                               <keyFindings/>
@@ -136,9 +147,11 @@ Public Class HotTextCorrectionScoringParameterSerialisationTest
                               </parameterSet>
                           </parameters>
                       </assessmentItem>
-
+        
+        'Act
         Dim result = Deserialize(Of AssessmentItem)(xmlData)
-
+        
+        'Assert
         Assert.IsInstanceOfType(result.Parameters(0).InnerParameters(0), GetType(HotTextCorrectionScoringParameter))
     End Sub
 

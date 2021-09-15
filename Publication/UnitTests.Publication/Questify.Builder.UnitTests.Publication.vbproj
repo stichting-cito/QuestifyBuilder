@@ -88,6 +88,9 @@
     <Reference Include="FakeItEasy, Version=4.0.0.0, Culture=neutral, PublicKeyToken=eff28e2146d5fd2c, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FakeItEasy.4.6.0\lib\net45\FakeItEasy.dll</HintPath>
     </Reference>
+    <Reference Include="FluentAssertions, Version=5.10.3.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentAssertions.5.10.3\lib\net47\FluentAssertions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
@@ -169,7 +172,28 @@
     <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\Input\QTI22ResponseProcessingInputStringTests.vb" />
     <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ResponseProcessing\Input\QTI22ResponseProcessingInputTimeTests.vb" />
     <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22ScoringConvertTest.vb" />
-    <Compile Include="QTI22\Converters\QTI22ScoringConverter\QTI22KeyValueContainsDateTimeValuesTest.vb" />
+    <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationCasTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationCombinedItemsTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationCustomInteractionTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationGraphicGapMatchCategorizeTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationHottextCorrectionsTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\ConceptScoring\ConceptResponseProcessingInputTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\ConceptScoring\ConceptResponseProcessingTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\Input\ResponseProcessingInputCurrencyTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\Input\ResponseProcessingInputDateTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\Input\ResponseProcessingInputDecimalTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\Input\ResponseProcessingInputStringTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\Input\ResponseProcessingInputTimeTests.vb" />
+    <Compile Include="QTI30\Helpers\DocumentHelperTests.vb" />
+    <Compile Include="QTI30\Helpers\ModifyToBeQTICompliant\FixAspectTests.vb" />
+    <Compile Include="QTI30\Helpers\ModifyToBeQTICompliant\FixDivTest.vb" />
+    <Compile Include="QTI30\Helpers\ModifyToBeQTICompliant\FixExtendedTextInteractionTest.vb" />
+    <Compile Include="QTI30\Helpers\ModifyToBeQTICompliant\FixIdsTest.vb" />
+    <Compile Include="QTI30\Helpers\ModifyToBeQTICompliant\FixTableTests.vb" />
+    <Compile Include="QTI30\Helpers\ResourceHelperTests.vb" />
+    <Compile Include="QTI30\Helpers\ResponseDeclarationHelperTests.vb" />
+    <Compile Include="QTI30\Helpers\ResponseProcessingHelperTests.vb" />
+    <Compile Include="QTI_Base\KeyValueContainsDateTimeValuesTest.vb" />
     <Compile Include="QTI22\Helpers\QTI22\DocumentHelperTests.vb" />
     <Compile Include="QTI22\Helpers\QTI22\ModifyToBeQTICompliant\QTI22FixAspectTests.vb" />
     <Compile Include="QTI22\Helpers\QTI22\ModifyToBeQTICompliant\QTI22FixDivTest.vb" />
@@ -179,6 +203,7 @@
     <Compile Include="QTI22\Helpers\QTI22\ResourceHelperTests.vb" />
     <Compile Include="ExtensionMethod.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="QTI30\Converters\OutcomeDeclaration\OutcomeDeclarationTests.vb" />
     <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationGapMatchTests.vb" />
     <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationGraphicGapMatchTests.vb" />
     <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationHotspotTests.vb" />
@@ -188,15 +213,20 @@
     <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationInputTests.vb" />
     <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationMatrixTests.vb" />
     <Compile Include="QTI30\Converters\ResponseDeclaration\ResponseDeclarationMultiChoiceTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingHottextCorrectionsTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingCustomInteractionTests.vb" />
     <Compile Include="QTI30\Converters\ResponseProcessing\Input\ResponseProcessingInputIntegerTests.vb" />
     <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingChoiceTests.vb" />
     <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingGapmatchTests.vb" />
     <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingGraphicGapMatchTests.vb" />
+    <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingGraphicGapMatchCategorizeTests.vb" />
     <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingHotspotTests.vb" />
     <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingHottextTests.vb" />
     <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingOrderTests.vb" />
     <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingMatrixTests.vb" />
     <Compile Include="QTI30\Converters\ResponseProcessing\ResponseProcessingMultiChoiceTests.vb" />
+    <Compile Include="QTI30\Converters\ScoringConverter\CombinedScoringConverterTests.vb" />
+    <Compile Include="QTI30\Converters\ScoringConverter\ScoringConvertTest.vb" />
     <Compile Include="QTI30\TestHelpers\PublicationTestHelper.vb" />
     <Compile Include="QTI_Base\Converters\ResponseDeclaration\ResponseDeclarationGapMatchTestsBase.vb" />
     <Compile Include="QTI_Base\Converters\ResponseDeclaration\ResponseDeclarationGraphicGapMatchTestsBase.vb" />
@@ -216,6 +246,7 @@
     <Compile Include="QTI_Base\Converters\ResponseProcessing\ResponseProcessingOrderTestsBase.vb" />
     <Compile Include="QTI_Base\Converters\ResponseProcessing\ResponseProcessingMatrixTestsBase.vb" />
     <Compile Include="QTI_Base\Converters\ResponseProcessing\ResponseProcessingMultiChoiceTestsBase.vb" />
+    <Compile Include="QTI_Base\TextToSpeechHelperTests.vb" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Builder\Cito.Tester.Common\Cito.Tester.Common.vbproj">
@@ -261,37 +292,88 @@
   <ItemGroup>
     <Content Include="Resources\ChoiceInline.xml" />
     <Content Include="Resources\ChoiceInline_Itembody.xml" />
+    <None Include="Resources\ChoiceInline_Itembody_QTI22.xml" />
+    <None Include="Resources\ChoiceInline_QTI22.xml" />
+    <None Include="Resources\ChoiceInline_Itembody_QTI30.xml" />
     <Content Include="Resources\ChoiceInline_ResponseDeclarations.xml" />
+    <None Include="Resources\ChoiceInline_ResponseDeclarations_QTI22.xml" />
+    <None Include="Resources\ChoiceInline_ResponseDeclarations_QTI30.xml" />
     <Content Include="Resources\ChoiceInline_ResponseProcessing1.xml" />
+    <None Include="Resources\ChoiceInline_ResponseProcessing1_QTI22.xml" />
+    <None Include="Resources\ChoiceInline_ResponseProcessing_QTI22.xml" />
+    <None Include="Resources\ChoiceInline_ResponseProcessing_QTI30.xml" />
     <Content Include="Resources\ContentWithResources.xml" />
+    <None Include="Resources\ContentWithResources_QTI22.xml" />
+    <None Include="Resources\ContentWithResources_QTI30.xml" />
     <Content Include="Resources\GapDateSC.xml" />
     <Content Include="Resources\GapDateSC_Itembody.xml" />
+    <None Include="Resources\GapDateSC_Itembody_QTI22.xml" />
+    <None Include="Resources\GapDateSC_QTI22.xml" />
+    <None Include="Resources\GapDateSC_Itembody_QTI30.xml" />
     <Content Include="Resources\GapDateSC_ResponseProcessing1.xml" />
+    <None Include="Resources\GapDateSC_ResponseProcessing1_QTI22.xml" />
+    <None Include="Resources\GapDateSC_ResponseProcessing_QTI22.xml" />
+    <None Include="Resources\GapDateSC_ResponseProcessing_QTI30.xml" />
     <Content Include="Resources\GapInlineSC.xml" />
     <Content Include="Resources\GapInlineSC2.xml" />
     <Content Include="Resources\GapInlineSC2_Itembody.xml" />
+    <None Include="Resources\GapInlineSC2_Itembody_QTI22.xml" />
+    <None Include="Resources\GapInlineSC2_QTI22.xml" />
+    <None Include="Resources\GapInlineSC2_Itembody_QTI30.xml" />
     <Content Include="Resources\GapInlineSC2_ResponseDeclarations.xml" />
+    <None Include="Resources\GapInlineSC2_ResponseDeclarations_QTI22.xml" />
+    <None Include="Resources\GapInlineSC2_ResponseDeclarations_QTI30.xml" />
     <Content Include="Resources\GapInlineSC2_ResponseProcessing1.xml" />
+    <None Include="Resources\GapInlineSC2_ResponseProcessing1_QTI22.xml" />
+    <None Include="Resources\GapInlineSC2_ResponseProcessing_QTI22.xml" />
+    <None Include="Resources\GapInlineSC2_ResponseProcessing_QTI30.xml" />
     <Content Include="Resources\GapInlineSC_ItemBody.xml" />
+    <None Include="Resources\GapInlineSC_ItemBody1.xml" />
+    <None Include="Resources\GapInlineSC_ItemBody_QTI22.xml" />
+    <None Include="Resources\GapInlineSC_ItemBody1_QTI22.xml" />
+    <None Include="Resources\GapInlineSC_QTI22.xml" />
+    <None Include="Resources\GapInlineSC_ItemBody_QTI30.xml" />
     <Content Include="Resources\GapInlineSC_ResponseDeclarations.xml" />
+    <None Include="Resources\GapInlineSC_ResponseDeclarations_QTI22.xml" />
+    <None Include="Resources\GapInlineSC_ResponseDeclarations_QTI30.xml" />
     <Content Include="Resources\GapInlineSC_ResponseProcessing1.xml" />
+    <None Include="Resources\GapInlineSC_ResponseProcessing1_QTI22.xml" />
+    <None Include="Resources\GapInlineSC_ResponseProcessing_QTI22.xml" />
+    <None Include="Resources\GapInlineSC_ResponseProcessing_QTI30.xml" />
     <Content Include="Resources\GraphicGapMatch.xml" />
     <Content Include="Resources\GraphicGapMatch_Itembody.xml" />
+    <None Include="Resources\GraphicGapMatch_Itembody_QTI22.xml" />
+    <None Include="Resources\GraphicGapMatch_QTI22.xml" />
+    <None Include="Resources\GraphicGapMatch_Itembody_QTI30.xml" />
     <Content Include="Resources\GraphicGapMatch_ResponseDeclarations.xml" />
+    <None Include="Resources\GraphicGapMatch_ResponseDeclarations_QTI22.xml" />
+    <None Include="Resources\GraphicGapMatch_ResponseDeclarations_QTI30.xml" />
     <Content Include="Resources\GraphicGapMatch_ResponseProcessing1.xml" />
+    <None Include="Resources\GraphicGapMatch_ResponseProcessing1_QTI22.xml" />
+    <None Include="Resources\GraphicGapMatch_ResponseProcessing_QTI22.xml" />
+    <None Include="Resources\GraphicGapMatch_ResponseProcessing_QTI30.xml" />
     <Content Include="Resources\McWithConcepts.xml" />
     <Content Include="Resources\McWithConcepts_Itembody.xml" />
+    <None Include="Resources\McWithConcepts_Itembody_QTI22.xml" />
+    <None Include="Resources\McWithConcepts_Itembody_QTI30.xml" />
     <Content Include="Resources\McWithConcepts_OutcomeDeclarations.xml" />
+    <None Include="Resources\McWithConcepts_OutcomeDeclarations_QTI22.xml" />
+    <None Include="Resources\McWithConcepts_QTI22.xml" />
+    <None Include="Resources\McWithConcepts_OutcomeDeclarations_QTI30.xml" />
     <Content Include="Resources\McWithConcepts_ResponseProcessing1.xml" />
+    <None Include="Resources\McWithConcepts_ResponseProcessing1_QTI22.xml" />
+    <None Include="Resources\McWithConcepts_ResponseProcessing_QTI22.xml" />
+    <None Include="Resources\McWithConcepts_ResponseProcessing_QTI30.xml" />
     <Content Include="Resources\PreprocessorWithConcepts.xml" />
     <Content Include="Resources\PreprocessorWithConcepts_Itembody.xml" />
+    <None Include="Resources\PreprocessorWithConcepts_Itembody_QTI22.xml" />
+    <None Include="Resources\PreprocessorWithConcepts_Itembody_QTI30.xml" />
     <Content Include="Resources\PreprocessorWithConcepts_OutcomeDeclarations.xml" />
+    <None Include="Resources\PreprocessorWithConcepts_OutcomeDeclarations_QTI22.xml" />
+    <None Include="Resources\PreprocessorWithConcepts_OutcomeDeclarations_QTI30.xml" />
     <Content Include="Resources\PreprocessorWithConcepts_ResponseProcessing1.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="QTI30\Converters\OutcomeDeclaration\" />
-    <Folder Include="QTI30\Converters\ScoringConverter\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

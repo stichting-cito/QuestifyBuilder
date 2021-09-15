@@ -11,6 +11,7 @@ Public Class RefreshResource
 
     <TestMethod()> <TestCategory("ContentModel")>
     Public Sub RefreshResourceParameter_HandlerShouldBeCalledOnce()
+        'Arrange
         Dim sourcetxt As New XhtmlResourceParameter() With {.Name = "sourcetxt", .Value = "Test"}
         Dim data As String = "The story"
         Dim handler = A.Fake(Of EventHandler(Of ResourceNeededEventArgs))()
@@ -20,8 +21,10 @@ Public Class RefreshResource
                                                                                                             End Sub)
         AddHandler sourcetxt.ResourceNeeded, handler
 
+        'Act
         sourcetxt.RefreshResource()
 
+        'Assert
         A.CallTo(Sub() handler.Invoke(A(Of Object).Ignored, A(Of ResourceNeededEventArgs).Ignored)).MustHaveHappened(Repeated.Exactly.Once)
 
         Assert.AreEqual(data, Encoding.UTF8.GetString(sourcetxt.Resource))
@@ -29,6 +32,7 @@ Public Class RefreshResource
 
     <TestMethod()> <TestCategory("ContentModel")>
     Public Sub RefreshResourceParameter_ReferencesShouldBeSet()
+        'Arrange
         Dim sourcetxt As New XhtmlResourceParameter() With {.Name = "sourcetxt", .Value = "Test"}
         Dim data As String = "The story"
         Dim handler = A.Fake(Of EventHandler(Of ResourceNeededEventArgs))()
@@ -38,8 +42,10 @@ Public Class RefreshResource
                                                                                                             End Sub)
         AddHandler sourcetxt.ResourceNeeded, handler
 
+        'Act
         sourcetxt.RefreshResource()
 
+        'Assert
         A.CallTo(Sub() handler.Invoke(A(Of Object).Ignored, A(Of ResourceNeededEventArgs).Ignored)).MustHaveHappened(Repeated.Exactly.Once)
 
         Assert.AreEqual(data, Encoding.UTF8.GetString(sourcetxt.Resource))

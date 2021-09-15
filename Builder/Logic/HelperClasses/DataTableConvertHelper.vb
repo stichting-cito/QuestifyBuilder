@@ -29,6 +29,7 @@ Public Class DataTableConvertHelper
 
     Private Const DUTCH As String = "NL"
 
+#Region "IDisposable Support"
 
     Protected Overridable Sub Dispose(disposing As Boolean)
         If disposing AndAlso Me._resourceManager IsNot Nothing Then
@@ -38,25 +39,48 @@ Public Class DataTableConvertHelper
         End If
     End Sub
 
+    'This code added by Visual Basic to correctly implement the disposable pattern.
     Public Sub Dispose() Implements IDisposable.Dispose
+        'Do not change this code. Put cleanup code in Dispose(ByVal disposing As Boolean) above.
         Me.Dispose(True)
         GC.SuppressFinalize(Me)
     End Sub
+#End Region
 
+#Region " Public Events  "
 
+    ''' <summary>
+    ''' Occurs when [start publication].
+    ''' </summary>
     Public Event StartCreateTable As EventHandler(Of StartEventArgs)
 
+    ''' <summary>
+    ''' Raises the <see cref="StartCreateTable" /> event.
+    ''' </summary>
+    ''' <param name="e">The <see cref="StartEventArgs"/> instance containing the event data.</param>
     Private Sub OnStartCreateTable(ByVal e As StartEventArgs)
         RaiseEvent StartCreateTable(Me, e)
     End Sub
 
+    ''' <summary>
+    ''' Occurs when progress in the creation of the table van be reported.
+    ''' </summary>
     Public Event CreateProgress As EventHandler(Of ProgressEventArgs)
 
+    ''' <summary>
+    ''' Raises the <see cref="CreateProgress" /> event.
+    ''' </summary>
+    ''' <param name="e">The <see cref="Cito.Tester.Common.ProgressEventArgs" /> instance containing the event data.</param>
     Private Sub OnCreateProgress(ByVal e As ProgressEventArgs)
         RaiseEvent CreateProgress(Me, e)
     End Sub
 
+#End Region
 
+    ''' <summary>
+    ''' Gets the datatable.
+    ''' </summary>
+    ''' <param name="collection">The collection.</param>
     Public Function CreateTable(ByVal collection As IList(Of ResourceDto), includedItemParameters As Boolean) As DataTable
         Dim returnDatatable As DataTable = Nothing
 
@@ -74,6 +98,7 @@ Public Class DataTableConvertHelper
         If collection.OfType(Of ItemResourceDto).Any() OrElse
            collection.OfType(Of GenericResourceDto).Any() OrElse
            collection.OfType(Of AssessmentTestResourceDto).Any() Then
+            'We'll process the whole collection at once so we can get the full item in one DB call
             entityDataTable = Me.CreateDatatable(collection.OfType(Of ResourceDto).ToList, includedItemParameters)
             If entityDataTable IsNot Nothing Then
                 Dim keys = {entityDataTable.Columns(My.Resources.ResourceManager.GetResourceStringByName("DataTableKey2"))}
@@ -161,6 +186,7 @@ Public Class DataTableConvertHelper
     Private Function CreateDatatable(ByVal collection As IList(Of ResourceDto), ByVal includeParameters As Boolean) As DataTable
         Dim dataTable As DataTable = New DataTable()
         Me.OnStartCreateTable(New StartEventArgs(collection.Count))
+        'Don't loop through the collection because we want to keep the sequence
         Dim index As Integer = 0
         For Each resource In collection
             dataTable.NewRow()
@@ -174,6 +200,7 @@ Public Class DataTableConvertHelper
     Private Sub CreateRow(ByRef table As DataTable, ByRef resource As ResourceDto, ByRef index As Integer, withParameters As Boolean)
         Dim newRow As DataRow = table.NewRow
         table.Rows.Add(newRow)
+        'Add default value for first key-column (necessary to specify test code when creating reports for multiple tests at once)
         Me.FillRowWithResourceDto(newRow, resource)
         If withParameters AndAlso TypeOf resource Is ItemResourceDto Then
             Dim item = DirectCast(resource, ItemResourceDto)
@@ -184,17 +211,32 @@ Public Class DataTableConvertHelper
         End If
     End Sub
 
+    ''' <summary>
+    ''' Fills the data row for item.
+    ''' </summary>
+    ''' <param name="row">The DataRow to fill</param>
+    ''' <param name="resourceDto">The resource.</param>
     Private Sub FillRowWithResourceDto(ByRef row As DataRow, ByVal resourceDto As ResourceDto)
         row.AddField(My.Resources.ResourceManager.GetResourceStringByName("DataTableKey2"), resourceDto.Name, 1)
         row.FillWithEntity(resourceDto, _customBankPropertyDictionary)
 
+        'Add State field manually
         row.AddField(_stateFieldName, resourceDto.StateName)
     End Sub
 
+    ''' <summary>
+    ''' Handles the ResourceNeeded event of the ItemParameterGrid control.
+    ''' </summary>
+    ''' <param name="sender">The source of the event.</param>
+    ''' <param name="e">The <see cref="Cito.Tester.ContentModel.ResourceNeededEventArgs" /> instance containing the event data.</param>
     Private Sub ItemParameterGrid_ResourceNeeded(ByVal sender As Object, ByVal e As ResourceNeededEventArgs)
         _resourceManager.HandleResourceNeeded(e, New ResourceRequestDTO())
     End Sub
 
+    ''' <summary>
+    ''' Gets the name of the parameter.
+    ''' </summary>
+    ''' <param name="parameter">The parameter.</param>
 
     Public Shared Function GetLocalizedParameterLabel(ByVal parameter As ParameterBase) As String
 
@@ -219,12 +261,21 @@ Public Class DataTableConvertHelper
         Return returnValue
     End Function
 
+    ''' <summary>
+    ''' Fills the data row for item.
+    ''' </summary>
+    ''' <param name="row">The DataTable to add the row to</param>
+    ''' <param name="assessmentItem">The item resource.</param>
+    ''' <param name="index">The index of the added row</param>
     Private Sub FillRowWithAssessmentItem(ByVal row As DataRow, ByVal assessmentItem As AssessmentItem, ByRef index As Integer)
         If assessmentItem.Solution.AspectReferenceSetCollection IsNot Nothing AndAlso assessmentItem.Solution.AspectReferenceSetCollection.Any() Then
+            'Add the 'Aspects' column (if it doesn't exist)
             row.AddField("Aspects", assessmentItem.Solution.GetAspectsCSV(), index)
         End If
 
+        'Get parameters from itemtemplate
         If assessmentItem.Solution.AspectReferenceSetCollection IsNot Nothing AndAlso assessmentItem.Solution.AspectReferenceSetCollection.Count > 0 Then
+            'Add the 'Aspects' column if it doesn't exist
             If MultiLanguageController.CurrentLanguageSetting = DUTCH Then
                 row.AddField("Aspecten", assessmentItem.Solution.GetAspectsCSV())
             Else
@@ -232,6 +283,7 @@ Public Class DataTableConvertHelper
             End If
         End If
 
+        'Get parameters from itemtemplate
         If Not _templateCache.ContainsKey(assessmentItem.LayoutTemplateSourceName) Then
             Dim adapter As New ItemLayoutAdapter(assessmentItem.LayoutTemplateSourceName, Nothing, AddressOf ItemParameterGrid_ResourceNeeded)
             Dim extractedParameterSets = adapter.CreateParameterSetsFromItemTemplate()
@@ -247,6 +299,10 @@ Public Class DataTableConvertHelper
     End Sub
 
 
+    ''' <summary>
+    ''' Fills the datatable for test.
+    ''' </summary>
+    ''' <param name="assessmenttestResource">The assessmentest resource.</param>
     Private Function CreateDataTableForTest(ByVal assessmenttestResource As AssessmentTestResourceEntity, ByVal includeParameters As Boolean) As DataTable
         Const ERRORITEM As String = "e"
         Const PAUSEITEM As String = "p"
@@ -267,7 +323,8 @@ Public Class DataTableConvertHelper
             Next
         Next
 
-        Dim request = New ItemResourceRequestDTO() With {.WithCustomProperties = True, .WithDependencies = True, .WithReportData = True}
+        'Get item
+        Dim request = New ItemResourceRequestDTO() With {.WithCustomProperties = True, .WithDependencies = True, .WithReportData=True}
         Dim items = DtoFactory.Item.GetItemsByCode(allItemsInTestCollection.Select(Function(i) i.SourceName), BankId, request)
         Dim index As Integer = 0
         Dim navNr As Integer = 0
@@ -275,6 +332,7 @@ Public Class DataTableConvertHelper
 
         Me.OnStartCreateTable(New StartEventArgs(allItemsInTestCollection.Count))
 
+        'Don't loop through the itemCollection because we want to keep the sequence
         For Each itemReference As ItemReference2 In allItemsInTestCollection
             Me.OnCreateProgress(New ProgressEventArgs(String.Format(My.Resources.ProgressMessage, itemReference.SourceName)))
             Dim item = items.FirstOrDefault(Function(i) i.Name = itemReference.SourceName)
@@ -285,8 +343,10 @@ Public Class DataTableConvertHelper
             Dim newDataRow As DataRow = dataTable.NewRow
             dataTable.Rows.Add(newDataRow)
 
+            'Add test identifier for first key-column (necessary when creating reports for multiple tests at once)
             newDataRow.AddField(My.Resources.ResourceManager.GetResourceStringByName("DataTableKey1"), assessmentTest.Identifier)
 
+            'Add itemreference fields to the newly created row
             newDataRow.AddField("ReferenceTitle", itemReference.Title)
             newDataRow.AddField("ItemActive", If(itemReference.Active, My.Resources.Yes, My.Resources.No))
             newDataRow.AddField("IsAnchorItem", If(itemReference.IsAnchorItem, My.Resources.Yes, My.Resources.No))

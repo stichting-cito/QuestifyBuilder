@@ -52,7 +52,7 @@ Namespace QTI.Converters.XhtmlConverter.QTI_Base
             doc.PreserveWhitespace = True
             doc.LoadXml(htm)
 
-            Dim nsmgr As System.Xml.XmlNamespaceManager = New System.Xml.XmlNamespaceManager(doc.NameTable)
+            Dim nsmgr As XmlNamespaceManager = New XmlNamespaceManager(doc.NameTable)
             nsmgr.AddNamespace("htm", "http://www.w3.org/1999/htm")
             nsmgr.AddNamespace("cito", "http://www.cito.nl/citotester")
             nsmgr.AddNamespace("m", "http://www.w3.org/1998/Math/MathML")

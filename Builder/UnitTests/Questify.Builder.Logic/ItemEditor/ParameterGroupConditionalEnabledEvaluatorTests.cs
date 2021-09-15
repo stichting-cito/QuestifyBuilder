@@ -11,26 +11,36 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemEditor
     public class ParameterGroupConditionalEnabledEvaluatorTests
     {
 
-        [TestMethod, TestCategory("ParameterEditor")]
+        [TestMethod, TestCategory("ParameterEditor")]  
         public void GetGroups_WithTemplateAllGroupsShouldBeVisible_Eq2()
         {
-            var parameterSetCollection = ParameterSetCollectionCloner.DeSerializerFromString(_simpleTemplate_AllGroupsVisible.ToString()); var factory = new ParameterViewFactory(parameterSetCollection);
+            //Arrange
+            var parameterSetCollection = ParameterSetCollectionCloner.DeSerializerFromString(_simpleTemplate_AllGroupsVisible.ToString()); /*DeSerializes WITH designersettings*/
+            var factory = new ParameterViewFactory(parameterSetCollection);
+            //Act
             var groups = factory.GetGroups().ToList();
-            Assert.AreEqual(2, groups.Count());
+            //Assert
+            Assert.AreEqual(2,groups.Count());
             Assert.AreEqual(2, groups.Count(g => g.IsVisible));
         }
 
-        [TestMethod, TestCategory("ParameterEditor")]
+        [TestMethod, TestCategory("ParameterEditor")]  
         public void GetGroups_WithTemplate1GroupShouldBeVisible_Eq1()
         {
-            var parameterSetCollection = ParameterSetCollectionCloner.DeSerializerFromString(_simpleTemplate_1GroupVisible.ToString()); var factory = new ParameterViewFactory(parameterSetCollection);
+            //Arrange
+            var parameterSetCollection = ParameterSetCollectionCloner.DeSerializerFromString(_simpleTemplate_1GroupVisible.ToString()); /*DeSerializes WITH designersettings*/
+            var factory = new ParameterViewFactory(parameterSetCollection);
+            //Act
             var groups = factory.GetGroups().ToList();
-            Assert.AreEqual(2, groups.Count(), "Two groups,.. just 1 is not visible.");
+            //Assert
+            Assert.AreEqual(2, groups.Count(),"Two groups,.. just 1 is not visible.");
             Assert.AreEqual(1, groups.Count(g => g.IsVisible));
         }
 
+        #region Data
 
-
+        /* Groups : Master Control ; Switchee
+         */
         private readonly XElement _simpleTemplate_AllGroupsVisible = XElement.Parse(@"<?xml version=""1.0"" encoding=""utf-8""?>
 <ArrayOfParameterCollection xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
   <ParameterCollection id=""entireItem"">
@@ -56,7 +66,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemEditor
   </ParameterCollection>  
 </ArrayOfParameterCollection>");
 
-
+        /* Groups : Master Control ; Switchee
+       */
         private readonly XElement _simpleTemplate_1GroupVisible = XElement.Parse(@"<?xml version=""1.0"" encoding=""utf-8""?>
 <ArrayOfParameterCollection xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
   <ParameterCollection id=""entireItem"">
@@ -85,7 +96,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemEditor
   </ParameterCollection>  
 </ArrayOfParameterCollection>");
 
-
+        /* Groups : Master Control ; Switchee
+*/
         private readonly XElement _simpleTemplate_1GroupVisible2Switches = XElement.Parse(@"<?xml version=""1.0"" encoding=""utf-8""?>
 <ArrayOfParameterCollection xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
   <ParameterCollection id=""entireItem"">
@@ -127,5 +139,6 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemEditor
   </ParameterCollection>  
 </ArrayOfParameterCollection>");
 
+        #endregion
     }
 }

@@ -15,11 +15,14 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("Scoring"), TestCategory("ViewModel"), TestCategory("Scoring")]
         public void WhenChangingTheOperator_ValueShouldClear()
         {
-            var sp = new MathScoringParameter() { ControllerId = "math" }.AddSubParameters("A");
+            //Arrange
+            var sp = new MathScoringParameter() {ControllerId = "math"}.AddSubParameters("A");
             var manipulator = sp.GetScoreManipulator(new Solution());
             var vm = new MathBlockRowViewModel(sp, manipulator, "A", 0);
             vm.Value.DataValue = MathVoorbeeld.ToString();
+            //Act
             vm.ComparisonType.DataValue = GapComparisonType.Evaluate;
+            //Assert
             Assert.AreEqual(string.Empty, vm.Value.DataValue);
         }
 

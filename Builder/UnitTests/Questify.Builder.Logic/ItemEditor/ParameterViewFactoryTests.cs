@@ -13,13 +13,19 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemEditor
         [TestMethod, TestCategory("ParameterEditor")]
         public void CountNumberOfGroups()
         {
-            var parameterSetCollection = ParameterSetCollectionCloner.DeSerializerFromString(MCTemplate.ToString()); var factory = new ParameterViewFactory(parameterSetCollection);
+            //Arrange
+            var parameterSetCollection = ParameterSetCollectionCloner.DeSerializerFromString(MCTemplate.ToString()); /*DeSerializes WITH designersettings*/
+            var factory = new ParameterViewFactory(parameterSetCollection);
+            //Act
             var groups = factory.GetGroups().ToList();
-            Assert.AreEqual(8, groups.Count());
+            //Assert
+            Assert.AreEqual(8,groups.Count());
         }
 
+        #region Data
 
-
+        /* Groups : 0 Hulpmiddelen ; 1 Hulpmidelen ; 2 Verklanking ; 3 Linkerkolom ; 4 Stam ; 5 Lay-outalternatieven ; 6 Alternatieven ; 7 Algemeen tekstveld
+         */
         private readonly XElement MCTemplate = XElement.Parse(@"<?xml version=""1.0"" encoding=""utf-8""?>
 <ArrayOfParameterCollection xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
   <ParameterCollection id=""entireItem"">
@@ -930,5 +936,6 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemEditor
   </ParameterCollection>
 </ArrayOfParameterCollection>");
 
+        #endregion
     }
 }

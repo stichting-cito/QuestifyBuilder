@@ -277,7 +277,7 @@ Public Class ExcelReport
                 For Each dc As DataColumn In dataTableToExport.Columns
 
                     Dim cellValue = dataRow.Item(dc.ColumnName).ToString
-                    cellValue = cellValue.Replace(PARAGRAPHENDTAG, PARAGRAPHENDTAG + " ")
+                    cellValue = cellValue.Replace(PARAGRAPHENDTAG, PARAGRAPHENDTAG + " ") 'Add a space to the end of a paragraph for readability purposes
 
                     newDataRow.Item(dc.ColumnName) = StripHtmlTags(cellValue)
                 Next

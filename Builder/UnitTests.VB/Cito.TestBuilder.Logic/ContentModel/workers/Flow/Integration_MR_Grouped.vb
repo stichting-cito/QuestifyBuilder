@@ -12,6 +12,7 @@ Public Class Integration_MR_Grouped
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Add mr, set keys and group")>
     Public Sub IntegrationTest_Step1()
+        'Arrange     
         Dim solution = New Solution()
         Dim sp = ChoiceScoringParameters()
         sp.GetScoreManipulator(solution).SetKey("A")
@@ -22,10 +23,12 @@ Public Class Integration_MR_Grouped
         Dim map = New ScoringMap(New ScoringParameter() {sp}, solution).GetMap().ToList()
 
         WriteToDebug(solution, "Arrange")
-
+        
+        'Act
         Dim grouper = New FactTargetManipulator(solution)
         Dim factId = grouper.GroupInteractions(map.SelectMany(Function(csm) csm))
 
+        'Assert
         WriteToDebug(solution, "Assert")
 
         Assert.IsTrue(UnitTestHelper.AreSame(Step1.ToString(), solution.DoSerialize().ToString()))
@@ -35,20 +38,24 @@ Public Class Integration_MR_Grouped
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Get concept")>
     Public Sub IntegrationTest_Step2()
+        'Arrange     
         Dim solution = Step1.To(Of Solution)()
         Dim sp = ChoiceScoringParameters()
         Dim combinedScoringMap = New ScoringMap(New ScoringParameter() {sp}, solution).GetMap().Single()
         WriteToDebug(solution, "Arrange")
-
+        
+        'Act
         Dim conceptManipulator = combinedScoringMap.GetConceptManipulator(solution)
         Dim conceptIds = conceptManipulator.GetConceptIds().ToList()
-
+        
+        'Assert
         WriteToDebug(solution, "Assert")
         Assert.IsTrue(UnitTestHelper.AreSame(Step2.ToString(), solution.DoSerialize().ToString()))
-        Assert.AreEqual("0", conceptIds(0))
-        Assert.AreEqual("1", conceptIds(1))
+        Assert.AreEqual("0", conceptIds(0)) 'These are factSet numbers
+        Assert.AreEqual("1", conceptIds(1)) 'These are factSet numbers
     End Sub
 
+#Region "Data"
     ReadOnly Step1 As XElement = <solution xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                                      <keyFindings>
                                          <keyFinding id="Opgave" scoringMethod="None">
@@ -181,6 +188,7 @@ Public Class Integration_MR_Grouped
                                      <aspectReferences/>
                                  </solution>
 
+#End Region
 
     Private Function ChoiceScoringParameters() As MultiChoiceScoringParameter
         Return New MultiChoiceScoringParameter() With {.Name = "MC1", .FindingOverride = "Opgave", .ControllerId = "mc_1"}.AddSubParameters("A", "B", "C", "D")

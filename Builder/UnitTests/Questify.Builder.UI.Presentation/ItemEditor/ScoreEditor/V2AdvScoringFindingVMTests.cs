@@ -21,6 +21,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void TestFactSetNumberOfBlockRowVM_newSolution()
         {
+            //Arrange
             var solution = new Solution();
             var integerSP =
                 new IntegerScoringParameter() { FindingOverride = "sharedIntegerFinding", ControllerId = "integerScore", Name = "Int" }
@@ -29,7 +30,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                 new V2AdvScoringFindingVM(
                     new CreateObjectJIT<KeyFinding>(() => solution.GetFindingOrMakeIt("sharedIntegerFinding")), new[] { integerSP },
                     solution);
+            //Act
             vm.AddBlockGridData();
+            //Assert
 
             Assert.AreEqual(3, vm.BlockGridData.Count);
 
@@ -50,6 +53,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void TestFactSetNumberOfBlockRowVM_solutionWith2IntPrmsIn1Grp()
         {
+            //Arrange
             var solution = solutionWith2IntPrmsIn1Grp.Deserialize<Solution>();
             var integerSP =
                 new IntegerScoringParameter() { FindingOverride = "sharedIntegerFinding", ControllerId = "integerScore", Name = "Int" }
@@ -58,7 +62,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                 new V2AdvScoringFindingVM(
                     new CreateObjectJIT<KeyFinding>(() => solution.GetFindingOrMakeIt("sharedIntegerFinding")), new[] { integerSP },
                     solution);
+            //Act
             vm.AddBlockGridData();
+            //Assert
 
             Assert.AreEqual(2, vm.BlockGridData.Count);
 
@@ -75,6 +81,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void Test_ScoringParameterWithMultipleSubParameters_IsSubfixedWithSubParameterId()
         {
+            //Arrange
             var solution = new Solution();
             var integerSP =
                 new IntegerScoringParameter() { FindingOverride = "sharedIntegerFinding", ControllerId = "integerScore", Name = "Int" }
@@ -83,8 +90,10 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                 new V2AdvScoringFindingVM(
                     new CreateObjectJIT<KeyFinding>(() => solution.GetFindingOrMakeIt("sharedIntegerFinding")), new[] { integerSP },
                     solution);
+            //Act
             vm.AddBlockGridData();
 
+            //Assert
             Assert.AreEqual("Int.1", ((List<IBlockRowViewModel>)vm.BlockGridData[0][0].Values.First()).First().Name);
             Assert.AreEqual("Int.2", ((List<IBlockRowViewModel>)vm.BlockGridData[1][0].Values.First()).First().Name);
             Assert.AreEqual("Int.3", ((List<IBlockRowViewModel>)vm.BlockGridData[2][0].Values.First()).First().Name);
@@ -94,6 +103,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void Test_ScoringParameterWithOneSubParameter_IsNotSubfixedWithSubParameterId()
         {
+            //Arrange
             var solution = new Solution();
             var integerSP =
                 new IntegerScoringParameter() { FindingOverride = "sharedIntegerFinding", ControllerId = "integerScore", Name = "Int" }
@@ -102,14 +112,17 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                 new V2AdvScoringFindingVM(
                     new CreateObjectJIT<KeyFinding>(() => solution.GetFindingOrMakeIt("sharedIntegerFinding")), new[] { integerSP },
                     solution);
+            //Act
             vm.AddBlockGridData();
 
+            //Assert
             Assert.AreEqual("Int", ((List<IBlockRowViewModel>)vm.BlockGridData[0][0].Values.First()).First().Name);
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void NoSolutionAndOrderParameter_GridIsInitializedAsGroup()
         {
+            //Arrange
             var solution = new Solution();
             var orderParam =
                 new OrderScoringParameter() { FindingOverride = "sharedFinding", ControllerId = "global", Name = "order" }.AddSubParameters("A", "B", "C", "D");
@@ -118,7 +131,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                 new V2AdvScoringFindingVM(
                     new CreateObjectJIT<KeyFinding>(() => solution.GetFindingOrMakeIt("sharedFinding")), new[] { orderParam },
                     solution);
+            //Act
             vm.AddBlockGridData();
+            //Assert
             Assert.AreEqual(1, vm.BlockGridData.Count, "Expects 1 BlockGridBlockRow");
             Assert.AreEqual(1, vm.BlockGridData[0].Count, "Expects 1 Block in Row");
             Assert.AreEqual(4, vm.BlockGridData[0][0].Count, "Expected to create 4 blockRows");
@@ -127,17 +142,18 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void NoSolutionAndOrderParameter_GridIsInitializedAsGroup_SetScore_GetConcept()
         {
+            //Arrange
             var solution = new Solution();
             var orderParam =
                 new OrderScoringParameter() { FindingOverride = "sharedFinding", ControllerId = "global", Name = "order" }.AddSubParameters("A", "B", "C", "D");
-
+                    
             var vm =
                 new V2AdvScoringFindingVM(
                     new CreateObjectJIT<KeyFinding>(() => solution.GetFindingOrMakeIt("sharedFinding")), new[] { orderParam },
                     solution);
 
             vm.AddBlockGridData();
-
+            
             var viewModels = new List<OrderBlockRowViewModel>();
             foreach (var values in vm.BlockGridData[0][0].Values)
             {
@@ -146,16 +162,19 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                     viewModels.Add((OrderBlockRowViewModel)value);
                 }
             }
-
-            viewModels[0].ScoreManipulator.SetKey("A", 1);
+            
+            //Act
+            viewModels[0].ScoreManipulator.SetKey("A",1);
             viewModels[1].ScoreManipulator.SetKey("B", 2);
-            new ScoringMap(new[] { orderParam }, solution).GetMap().First().GetConceptManipulator(solution);
+            new ScoringMap(new[] {orderParam}, solution).GetMap().First().GetConceptManipulator(solution);
+            //Assert
             Assert.AreEqual(ExpectedResultOrder1.ToString(), solution.DoSerialize().ToString());
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void NoSolutionAndOrderParameter_GridIsInitializedAsGroup_GetConcept_SetScore()
         {
+            //Arrange
             var solution = new Solution();
             var orderParam =
                 new OrderScoringParameter() { FindingOverride = "sharedFinding", ControllerId = "global", Name = "order" }.AddSubParameters("A", "B", "C", "D");
@@ -176,14 +195,17 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                 }
             }
 
+            //Act
             new ScoringMap(new[] { orderParam }, solution).GetMap().First().GetConceptManipulator(solution);
             viewModels[0].ScoreManipulator.SetKey("A", 1);
             viewModels[1].ScoreManipulator.SetKey("B", 2);
-
+            
+            //Assert
             Assert.AreEqual(ExpectedResultOrder2.ToString(), solution.DoSerialize().ToString());
         }
 
-
+        
+        #region Data
 
         private readonly XElement solutionWith2IntPrmsIn1Grp =
             XElement.Parse(@"<solution>
@@ -327,6 +349,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                                                                             </solution>");
 
 
+        #endregion
 
         private List<IBlockRowViewModel> lst(Cinch.ObservableDictionary<string, System.Collections.IEnumerable> observableDictionary, string key)
         {

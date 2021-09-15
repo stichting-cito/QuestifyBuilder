@@ -6,8 +6,9 @@ Imports System.Threading
 <TestClass()> Public Class DesignerSettingCollectionTest
     Inherits SerializationTestBase
 
-    <TestMethod()> <TestCategory("ContentModel")>
+    <TestMethod()> <TestCategory("ContentModel")> 
     Public Sub GetSettingValueByKeyShouldAlwaysReturnDefaultValueWhenNoGlobalizedValuesArePresent()
+        'Arrange
         Dim key As String = "label"
         Dim value As String = "Engels"
         Dim desingerSetting As New DesignerSetting With {.Key = key, .Value = value}
@@ -17,21 +18,30 @@ Imports System.Threading
         Dim settingValueNL As String = String.Empty
         Dim settingValueEN As String = String.Empty
 
+        'Act
         Try
+            'Set the culture to NL
             SetLanguage("NL")
+            'Get the NL value.
             settingValueNL = designerSettingCollection.GetSettingValueByKey(key)
+            'Set the culture to EN
             SetLanguage("EN")
+            'Get the EN value.
             settingValueEN = designerSettingCollection.GetSettingValueByKey(key)
         Catch ex As Exception
             Assert.Inconclusive("An error occured while trying to set the language.")
         End Try
 
+        'Assert
+        'Check the NL value.
         Assert.AreEqual(value, settingValueNL)
+        'Check the EN value.
         Assert.AreEqual(value, settingValueEN)
     End Sub
 
-    <TestMethod()> <TestCategory("ContentModel")>
+    <TestMethod()> <TestCategory("ContentModel")> 
     Public Sub GetSettingValueByKeyShouldReturnDutchValueWhenUILanguageIsSetToDutch()
+        'Arrange
         Dim keyDefault As String = "label"
         Dim valueDefault As String = "Engels"
         Dim keyNL As String = "label-NL"
@@ -46,18 +56,24 @@ Imports System.Threading
 
         Dim settingValueNL As String = String.Empty
 
+        'Act
         Try
+            'Set the culture to NL
             SetLanguage("NL")
+            'Get the NL value.
             settingValueNL = designerSettingCollection.GetSettingValueByKey(keyDefault)
         Catch ex As Exception
             Assert.Inconclusive("An error occured while trying to set the language.")
         End Try
 
+        'Assert
+        'Check the NL value.
         Assert.AreEqual(valueNL, settingValueNL)
     End Sub
 
-    <TestMethod()> <TestCategory("ContentModel")>
+    <TestMethod()> <TestCategory("ContentModel")> 
     Public Sub GetSettingValueByKeyShouldReturnEnglishValueWhenUILanguageIsSetToEnglish()
+        'Arrange
         Dim keyDefault As String = "label"
         Dim valueDefault As String = "Engels"
         Dim keyNL As String = "label-NL"
@@ -72,18 +88,24 @@ Imports System.Threading
 
         Dim settingValueEN As String = String.Empty
 
+        'Act
         Try
+            'Set the culture to EN
             SetLanguage("EN")
+            'Get the EN value.
             settingValueEN = designerSettingCollection.GetSettingValueByKey(keyDefault)
         Catch ex As Exception
             Assert.Inconclusive("An error occured while trying to set the language.")
         End Try
 
+        'Assert
+        'Check the EN value.
         Assert.AreEqual(valueDefault, settingValueEN)
     End Sub
 
-    <TestMethod()> <TestCategory("ContentModel")>
+    <TestMethod()> <TestCategory("ContentModel")> 
     Public Sub GetSettingValueByKeyShouldReturnDefaultValueWhenUILanguageIsSetToANotSupportedLanguage()
+        'Arrange
         Dim keyDefault As String = "label"
         Dim valueDefault As String = "Engels"
         Dim keyNL As String = "label-NL"
@@ -98,18 +120,24 @@ Imports System.Threading
 
         Dim settingValueDE As String = String.Empty
 
+        'Act
         Try
+            'Set the culture to DE
             SetLanguage("DE")
+            'Get the DE value.
             settingValueDE = designerSettingCollection.GetSettingValueByKey(keyDefault)
         Catch ex As Exception
             Assert.Inconclusive("An error occured while trying to set the language.")
         End Try
 
+        'Assert
+        'Check the EN value.
         Assert.AreEqual(valueDefault, settingValueDE)
     End Sub
 
-    <TestMethod()> <TestCategory("ContentModel")>
+    <TestMethod()> <TestCategory("ContentModel")> 
     Public Sub GetSettingListValueByKeyShouldAlwaysReturnDefaultListValueWhenNoGlobalizedListValuesArePresent()
+        'Arrange
         Dim key As String = "label"
         Dim value As String = "Engels"
         Dim listValue As New ListValue() With {.Key = "listValueKey", .DisplayValue = value}
@@ -125,23 +153,34 @@ Imports System.Threading
         Dim settingListEN As List(Of ListValue) = Nothing
         Dim settingValueEN As String = String.Empty
 
+        'Act
         Try
+            'Set the culture to NL
             SetLanguage("NL")
+            'Get the NL list.
             settingListNL = designerSettingCollection.GetListValuesByKey(key)
+            'Get the NL value.
             settingValueNL = settingListNL(0).DisplayValue
+            'Set the culture to EN
             SetLanguage("EN")
+            'Get the EN list.
             settingListEN = designerSettingCollection.GetListValuesByKey(key)
+            'Get the EN value.
             settingValueEN = settingListEN(0).DisplayValue
         Catch ex As Exception
             Assert.Inconclusive("An error occured while trying to set the language.")
         End Try
 
+        'Assert
+        'Check the NL value.
         Assert.AreEqual(value, settingValueNL)
+        'Check the EN value.
         Assert.AreEqual(value, settingValueEN)
     End Sub
 
-    <TestMethod()> <TestCategory("ContentModel")>
+    <TestMethod()> <TestCategory("ContentModel")> 
     Public Sub GetSettingListValueByKeyShouldReturnDutchListValueWhenUILanguageIsSetToDutch()
+        'Arrange
         Dim keyDefault As String = "label"
         Dim valueDefault As String = "Engels"
         Dim listValueDefault As New ListValue() With {.Key = "listValueKey", .DisplayValue = valueDefault}
@@ -164,19 +203,26 @@ Imports System.Threading
         Dim settingListNL As List(Of ListValue) = Nothing
         Dim settingValueNL As String = String.Empty
 
+        'Act
         Try
+            'Set the culture to NL
             SetLanguage("NL")
+            'Get the NL list.
             settingListNL = designerSettingCollection.GetListValuesByKey(keyDefault)
+            'Get the NL value.
             settingValueNL = settingListNL(0).DisplayValue
         Catch ex As Exception
             Assert.Inconclusive("An error occured while trying to set the language.")
         End Try
 
+        'Assert
+        'Check the NL value.
         Assert.AreEqual(valueNL, settingValueNL)
     End Sub
 
-    <TestMethod()> <TestCategory("ContentModel")>
+    <TestMethod()> <TestCategory("ContentModel")> 
     Public Sub GetSettingListValueByKeyShouldReturnEnglishListValueWhenUILanguageIsSetToEnglish()
+        'Arrange
         Dim keyDefault As String = "label"
         Dim valueDefault As String = "Engels"
         Dim listValueDefault As New ListValue() With {.Key = "listValueKey", .DisplayValue = valueDefault}
@@ -199,19 +245,26 @@ Imports System.Threading
         Dim settingListEN As List(Of ListValue) = Nothing
         Dim settingValueEN As String = String.Empty
 
+        'Act
         Try
+            'Set the culture to EN
             SetLanguage("EN")
+            'Get the EN list.
             settingListEN = designerSettingCollection.GetListValuesByKey(keyDefault)
+            'Get the EN value.
             settingValueEN = settingListEN(0).DisplayValue
         Catch ex As Exception
             Assert.Inconclusive("An error occured while trying to set the language.")
         End Try
 
+        'Assert
+        'Check the EN value.
         Assert.AreEqual(valueDefault, settingValueEN)
     End Sub
 
-    <TestMethod()> <TestCategory("ContentModel")>
+    <TestMethod()> <TestCategory("ContentModel")> 
     Public Sub GetSettingListValueByKeyShouldReturnDefaultValueWhenUILanguageIsSetToANotSupportedLanguage()
+        'Arrange
         Dim keyDefault As String = "list"
         Dim valueDefault As String = "Engels"
         Dim listValueDefault As New ListValue() With {.Key = "listValueKey", .DisplayValue = valueDefault}
@@ -234,17 +287,27 @@ Imports System.Threading
         Dim settingListDE As List(Of ListValue) = Nothing
         Dim settingValueDE As String = String.Empty
 
+        'Act
         Try
+            'Set the culture to DE
             SetLanguage("DE")
+            'Get the DE list.
             settingListDE = designerSettingCollection.GetListValuesByKey(keyDefault)
+            'Get the DE value.
             settingValueDE = settingListDE(0).DisplayValue
         Catch ex As Exception
             Assert.Inconclusive("An error occured while trying to set the language.")
         End Try
 
+        'Assert
+        'Check the EN value.
         Assert.AreEqual(valueDefault, settingValueDE)
     End Sub
 
+    '''<summary>
+    '''Sets the language for the current thread.
+    '''</summary>
+    '''<param name="languageSetting">The language to set.</param>
     Public Shared Sub SetLanguage(languageSetting As String)
         Dim cultureInfo As CultureInfo
         Try

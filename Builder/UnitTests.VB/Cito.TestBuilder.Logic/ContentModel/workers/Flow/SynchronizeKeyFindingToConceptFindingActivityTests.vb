@@ -12,13 +12,16 @@ Public Class SynchronizeKeyFindingToConceptFindingActivityTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub EnsureCopyWorkingOfActivity()
+        'Arrange
         Dim solution = Deserialize(Of Solution)(keyFindingToSynchronize)
         Dim scorePrm = GetScoreParam(Of MultiChoiceScoringParameter)("mc_1", "A", "B", "C", "D")
         Dim inputs As New Dictionary(Of String, Object) From {{"Solution", solution}, {"ScoreParameter", scorePrm}}
         WriteSolution("Arrange", solution)
 
+        'Act
         WorkflowInvoker.Invoke(New SynchronizeKeyFindingToConceptFindingActivity(), inputs)
 
+        'Assert
         WriteSolution("Assert", solution)
 
         Assert.IsTrue(solution.ConceptFindingsSpecified, "ConceptFindings should be there.")
@@ -26,6 +29,7 @@ Public Class SynchronizeKeyFindingToConceptFindingActivityTests
         Assert.AreEqual(4, solution.ConceptFindings(0).Facts.Count, "Expect four facts")
     End Sub
 
+#Region "Data"
     Private keyFindingToSynchronize As XElement = <solution>
                                                       <keyFindings>
                                                           <keyFinding id="Opgave" scoringMethod="Dichotomous">
@@ -69,6 +73,7 @@ Public Class SynchronizeKeyFindingToConceptFindingActivityTests
                                                       </ItemScoreTranslationTable>
                                                   </solution>
 
+#End Region
 
     Private Function GetScoreParam(Of T As {ScoringParameter, New})(id As String, ParamArray ids As String()) As T
         Dim param = New T() With {.ControllerId = id, .FindingOverride = "Opgave"}

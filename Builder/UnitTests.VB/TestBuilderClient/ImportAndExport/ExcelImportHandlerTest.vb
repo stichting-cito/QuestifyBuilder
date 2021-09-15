@@ -22,9 +22,10 @@ Public Class ExcelImportHandlerTest
     Public Sub Init()
         _resourceIdColumnName = "id"
 
+        'Add first the columns used in the thPro excelsheet.
         _listOfKnownColumns = New List(Of String)
-        _listOfKnownColumns.Add("itm-nr")
-        _listOfKnownColumns.Add("code")
+        _listOfKnownColumns.Add("itm-nr") 'Name in thPro Export
+        _listOfKnownColumns.Add("code") 'Name in TestBuilder
         _listOfKnownColumns.Add("itm-nr")
         _listOfKnownColumns.Add("mk-sleutel")
         _listOfKnownColumns.Add("itm-naam")
@@ -43,27 +44,34 @@ Public Class ExcelImportHandlerTest
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub FreeValuecustomPropertyWithNoValueCanBeImported()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1"}
         Dim customPropertyDictionary = GetCustomPropertyDictionary(My.Resources.FreeValue, importer, item)
         Dim existingProperties = New EntityCollection : existingProperties.Add(GetFreeValue())
-
+        
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
-
+        
+        'Assert
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 1)
     End Sub
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub FreeValuecustomPropertyWithValueCanBeImported()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1"}
         Dim customPropertyDictionary = GetCustomPropertyDictionary(My.Resources.FreeValue, importer, item)
         Dim freeValue = GetFreeValue()
         Dim existingProperties = New EntityCollection : existingProperties.Add(freeValue)
+        'Add value
         item.CustomBankPropertyValueCollection.Add(New FreeValueCustomBankPropertyValueEntity With {.Value = "test123", .CustomBankPropertyId = freeValue.CustomBankPropertyId})
-
+        
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
-
+        
+        'Assert
         Dim fvProperty = CType(item.CustomBankPropertyValueCollection(0), FreeValueCustomBankPropertyValueEntity)
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 1)
         Assert.IsTrue(fvProperty.Value = "testValue1")
@@ -71,11 +79,13 @@ Public Class ExcelImportHandlerTest
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub SingleListValuecustomPropertyWithValuesCanBeImported()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1"}
         Dim customPropertyDictionary = GetCustomPropertyDictionary(My.Resources.SingleListValue, importer, item)
         Dim singleValue = GetSingleList()
         Dim existingProperties = New EntityCollection : existingProperties.Add(singleValue)
+        'Add value 2, value 1 will be overwritten from excel
         Dim listValue As New ListCustomBankPropertyValueEntity With {.CustomBankPropertyId = singleValue.CustomBankPropertyId}
         Dim selectedValue = New ListCustomBankPropertySelectedValueEntity
         Dim value1 = singleValue.ListValueCustomBankPropertyCollection.Where(Function(v) v.Name = "Value1").FirstOrDefault
@@ -86,36 +96,48 @@ Public Class ExcelImportHandlerTest
         listValue.ListCustomBankPropertySelectedValueCollection.Add(selectedValue)
         item.CustomBankPropertyValueCollection.Add(listValue)
 
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
 
+        'Assert
         Dim listProperty = CType(item.CustomBankPropertyValueCollection(0), ListCustomBankPropertyValueEntity)
+        'Property is added
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 1)
+        'One value is added
         Assert.IsTrue(listProperty.ListCustomBankPropertySelectedValueCollection.Count = 1)
+        'One value is added
         Assert.IsTrue(listProperty.ListCustomBankPropertySelectedValueCollection(0).CustomBankPropertyId = value1.CustomBankPropertyId)
     End Sub
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub SingleListValuecustomPropertyMultiValuesWillbeIgnored()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1"}
         Dim customPropertyDictionary = GetCustomPropertyDictionary(My.Resources.SingleListValueDoubleValue, importer, item)
         Dim singleValue = GetSingleList()
         Dim existingProperties = New EntityCollection : existingProperties.Add(singleValue)
+        'Add value 2, value 1 will be added from excel
         Dim value2 = singleValue.ListValueCustomBankPropertyCollection.Where(Function(v) v.Name = "Value2").FirstOrDefault
-
+       
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
 
+        'Assert
+        'Property is not added
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 0)
     End Sub
 
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub MultiListValuecustomPropertyWithValuesCanBeImported()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1"}
         Dim customPropertyDictionary = GetCustomPropertyDictionary(My.Resources.MultiListValue, importer, item)
         Dim multiValue = GetMultiList(True)
         Dim existingProperties = New EntityCollection : existingProperties.Add(multiValue)
+        'Add value 3, value 1 and 2 will be added from excel
         Dim listValue As New ListCustomBankPropertyValueEntity With {.CustomBankPropertyId = multiValue.CustomBankPropertyId}
         Dim selectedValue = New ListCustomBankPropertySelectedValueEntity
         Dim value1 = multiValue.ListValueCustomBankPropertyCollection.Where(Function(v) v.Name = "Value1").FirstOrDefault
@@ -127,32 +149,43 @@ Public Class ExcelImportHandlerTest
         listValue.ListCustomBankPropertySelectedValueCollection.Add(selectedValue)
         item.CustomBankPropertyValueCollection.Add(listValue)
 
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
 
+        'Assert
         Dim listProperty = CType(item.CustomBankPropertyValueCollection(0), ListCustomBankPropertyValueEntity)
+        'Property is added
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 1)
+        'Two values are added
         Assert.IsTrue(listProperty.ListCustomBankPropertySelectedValueCollection.Count = 2)
+        'These values must be value one and two
         Assert.IsTrue(listProperty.ListCustomBankPropertySelectedValueCollection(0).CustomBankPropertyId = value1.CustomBankPropertyId)
         Assert.IsTrue(listProperty.ListCustomBankPropertySelectedValueCollection(1).CustomBankPropertyId = value2.CustomBankPropertyId)
     End Sub
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub ConceptCustomPropertyCanBeImported()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1", .ResourceData = New ResourceDataEntity() With {.BinData = GetBytes(_asssessmentItem.ToString)}}
         Dim customPropertyDictionary = GetCustomPropertyDictionary(My.Resources.Concept, importer, item)
         Dim conceptValue = GetConceptStructure()
         Dim existingProperties = New EntityCollection : existingProperties.Add(conceptValue)
-
+       
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
 
+        'Assert
         Dim conceptProperty = CType(item.CustomBankPropertyValueCollection(0), ConceptStructureCustomBankPropertyValueEntity)
+        'Property is added
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 1)
+        'Two values are added
         Assert.IsTrue(conceptProperty.ConceptStructureCustomBankPropertySelectedPartCollection.Count = 1)
     End Sub
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub ConceptCustomPropertyCanBeChanged()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1", .ResourceData = New ResourceDataEntity() With {.BinData = GetBytes(_asssessmentItem.ToString)}}
         Dim dummyConceptProperty = New ConceptStructureCustomBankPropertyValueEntity()
@@ -160,17 +193,22 @@ Public Class ExcelImportHandlerTest
         Dim customPropertyDictionary = GetCustomPropertyDictionary(My.Resources.Concept, importer, item)
         Dim conceptValue = GetConceptStructure()
         Dim existingProperties = New EntityCollection : existingProperties.Add(conceptValue)
-
+       
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
 
+        'Assert
         Dim conceptProperty = CType(item.CustomBankPropertyValueCollection(0), ConceptStructureCustomBankPropertyValueEntity)
+        'Property is added
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 1)
+        'Two values are added
         Assert.IsTrue(conceptProperty.ConceptStructureCustomBankPropertySelectedPartCollection.Count = 1)
         Assert.AreNotEqual(item.CustomBankPropertyValueCollection(0), dummyConceptProperty)
     End Sub
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub ConceptCustomPropertyCanBeRemoved()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1", .ResourceData = New ResourceDataEntity() With {.BinData = GetBytes(_asssessmentItem.ToString)}}
         Dim customPropertyDictionary = GetCustomPropertyDictionary(My.Resources.ConceptEmpty, importer, item)
@@ -179,14 +217,17 @@ Public Class ExcelImportHandlerTest
         conceptPropertyToRemove.CustomBankProperty = conceptValue
         item.CustomBankPropertyValueCollection.Add(conceptPropertyToRemove)
         Dim existingProperties = New EntityCollection : existingProperties.Add(conceptValue)
-
+      
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
 
+        'Assert
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 0)
     End Sub
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub ConceptCustomPropertyCannotBeRemovedIfCoupled()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1", .ResourceData = New ResourceDataEntity() With {.BinData = GetBytes(_assessmentItemWithConcepts.ToString)}}
 
@@ -196,15 +237,18 @@ Public Class ExcelImportHandlerTest
         conceptPropertyToRemove.CustomBankProperty = conceptValue
         item.CustomBankPropertyValueCollection.Add(conceptPropertyToRemove)
         Dim existingProperties = New EntityCollection : existingProperties.Add(conceptValue)
-
+        
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
 
+        'Assert
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 1)
         Assert.AreEqual(item.CustomBankPropertyValueCollection(0), conceptPropertyToRemove)
     End Sub
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub ConceptCustomPropertyCannotBeChangedIfConceptsAreAdded()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1", .ResourceData = New ResourceDataEntity() With {.BinData = GetBytes(_assessmentItemWithConcepts.ToString)}}
         Dim dummyConceptProperty = New ConceptStructureCustomBankPropertyValueEntity()
@@ -212,43 +256,57 @@ Public Class ExcelImportHandlerTest
         Dim customPropertyDictionary = GetCustomPropertyDictionary(My.Resources.Concept, importer, item)
         Dim conceptValue = GetConceptStructure()
         Dim existingProperties = New EntityCollection : existingProperties.Add(conceptValue)
-
+       
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
 
+        'Assert
+        'Property is added
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 1)
+        'Two values are added
         Assert.AreEqual(item.CustomBankPropertyValueCollection(0), dummyConceptProperty)
     End Sub
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub ConceptCustomPropertyNotapplicableToItemCanNotBeImported()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1", .ResourceData = New ResourceDataEntity() With {.BinData = GetBytes(_asssessmentItem.ToString)}}
         Dim customPropertyDictionary = GetCustomPropertyDictionary(My.Resources.ConceptAttribute, importer, item)
         Dim conceptValue = GetConceptStructure()
         Dim existingProperties = New EntityCollection : existingProperties.Add(conceptValue)
-
+       
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
-
+       
+        'Assert
+        'Property is not added because the conceptvaluetype is not applicable to an item
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 0)
     End Sub
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub TreeStructureCustomPropertyCanBeImported()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1"}
         Dim customPropertyDictionary = GetCustomPropertyDictionary(My.Resources.Tree, importer, item)
         Dim treeValue = GetTree()
         Dim existingProperties = New EntityCollection : existingProperties.Add(treeValue)
-
+       
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
 
+        'Assert
         Dim conceptProperty = CType(item.CustomBankPropertyValueCollection(0), TreeStructureCustomBankPropertyValueEntity)
+        'Property is not added because the conceptvaluetype is not applicable to an item
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 1)
+        'Value has parents 1.1 and 1 as parents which should be added as well
         Assert.IsTrue(conceptProperty.TreeStructureCustomBankPropertySelectedPartCollection.Count = 3)
     End Sub
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub TreeStructureCustomPropertyCanBeRemoved()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1"}
         Dim customPropertyDictionary = GetCustomPropertyDictionary(My.Resources.TreeEmpty, importer, item)
@@ -257,14 +315,18 @@ Public Class ExcelImportHandlerTest
         treePropertyToRemove.CustomBankProperty = treeValue
         item.CustomBankPropertyValueCollection.Add(treePropertyToRemove)
         Dim existingProperties = New EntityCollection From {treeValue}
-
+       
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
 
+        'Assert
+        'Property is removed
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 0)
     End Sub
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub TreeStructureCustomPropertyCanBeRemoved2()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1"}
         Dim customPropertyDictionary = GetCustomPropertyDictionary(My.Resources.TreeEmpty, importer, item)
@@ -275,36 +337,46 @@ Public Class ExcelImportHandlerTest
         Dim freeValueProperty = New FreeValueCustomBankPropertyValueEntity() With {.Value = "someFreeValue"}
         item.CustomBankPropertyValueCollection.Add(freeValueProperty)
         Dim existingProperties = New EntityCollection From {treeValue}
-
+       
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
 
+        'Assert
+        'Property is removed
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 1)
         Assert.AreEqual(item.CustomBankPropertyValueCollection(0), freeValueProperty)
     End Sub
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub TreeStructureCustomPropertyMultiCanBeImported()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1"}
         Dim customPropertyDictionary = GetCustomPropertyDictionary(My.Resources.TreeMulti, importer, item)
         Dim treeValue = GetTree()
         Dim existingProperties = New EntityCollection : existingProperties.Add(treeValue)
-
+        
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
 
+        'Assert
         Dim conceptProperty = CType(item.CustomBankPropertyValueCollection(0), TreeStructureCustomBankPropertyValueEntity)
+        'Property is not added because the conceptvaluetype is not applicable to an item
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 1)
+        'Values 1.1.1 and 1.1.2 will be added, both have parents 1.1 and 1 as parents which should be added as well
         Assert.IsTrue(conceptProperty.TreeStructureCustomBankPropertySelectedPartCollection.Count = 4)
     End Sub
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub TreeStructureCustomPropertyMultiWithExistingValuesCanBeImported()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1"}
         Dim customPropertyDictionary = GetCustomPropertyDictionary(My.Resources.Tree, importer, item)
         Dim treeValue = GetTree()
         Dim existingProperties = New EntityCollection : existingProperties.Add(treeValue)
 
+        'Add value 1.1.2, value 1.1.1 will be overwritten from excel
         Dim existingTreeValue As New TreeStructureCustomBankPropertyValueEntity With {.CustomBankPropertyId = treeValue.CustomBankPropertyId}
 
         Dim value1 = treeValue.TreeStructurePartCustomBankPropertyCollection.Where(Function(v) v.Name = "1.1.2").FirstOrDefault
@@ -325,34 +397,46 @@ Public Class ExcelImportHandlerTest
 
         item.CustomBankPropertyValueCollection.Add(existingTreeValue)
 
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
 
+        'Assert
         Dim conceptProperty = CType(item.CustomBankPropertyValueCollection(0), TreeStructureCustomBankPropertyValueEntity)
+        'Property is not added because the conceptvaluetype is not applicable to an item
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 1)
 
         Assert.IsTrue(conceptProperty.TreeStructureCustomBankPropertySelectedPartCollection.Count = 3)
+        '1.1.2 should not be part of the selectedValues
         Assert.IsTrue(conceptProperty.TreeStructureCustomBankPropertySelectedPartCollection.Where(Function(v) v.TreeStructurePartId = value1.TreeStructurePartCustomBankPropertyId).Count = 0)
+        '1.1.1 should be part of the selectedValues
         Assert.IsTrue(conceptProperty.TreeStructureCustomBankPropertySelectedPartCollection.Where(Function(v) v.TreeStructurePartId = value4.TreeStructurePartCustomBankPropertyId).Count = 1)
     End Sub
 
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub TreeStructureCustomPropertyMultiCanBeImportedWithoutDoubleValues()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1"}
         Dim customPropertyDictionary = GetCustomPropertyDictionary(My.Resources.TreeMulti, importer, item)
         Dim treeValue = GetTree()
         Dim existingProperties = New EntityCollection : existingProperties.Add(treeValue)
-
+       
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
 
+        'Assert
         Dim conceptProperty = CType(item.CustomBankPropertyValueCollection(0), TreeStructureCustomBankPropertyValueEntity)
+        'Property is not added because the conceptvaluetype is not applicable to an item
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 1)
+        'Values 1.1.1, 1.1.2 and 1.1 are in the excel
+        '1.1 should be added because it's a parent of 1.1.1/1.1.2 but should be double in the selected collection
         Assert.IsTrue(conceptProperty.TreeStructureCustomBankPropertySelectedPartCollection.Count = 4)
     End Sub
 
     <TestMethod(), TestCategory("ImportLogic")>
     Public Sub TreeStructureCustomPropertyJustOneTreePerItem()
+        'Arrange
         Dim importer As New ExcelImportHandler
         Dim item As New ItemResourceEntity With {.ResourceId = New Guid("77b934f6-9cc9-4fdb-91f3-a9015d19606b"), .BankId = 123, .Name = "Item1"}
         item.CustomBankPropertyValueCollection.Add(New TreeStructureCustomBankPropertyValueEntity() With {.ResourceId = Guid.NewGuid, .CustomBankProperty = New CustomBankPropertyEntity With {.Name = "Test"}})
@@ -365,12 +449,15 @@ Public Class ExcelImportHandlerTest
                                                                           removedEventRaised = True
                                                                       End Sub
 
+        'Act
         importer.AddPropertiesToResource(customPropertyDictionary, item, existingProperties)
 
+        'Assert
         Assert.IsTrue(removedEventRaised)
         Assert.IsTrue(item.CustomBankPropertyValueCollection.Count = 0)
     End Sub
 
+#Region " Private Functions "
 
     Private Function GetCustomPropertyDictionary(resource As Byte(), importer As ExcelImportHandler, item As ResourceEntity) As Dictionary(Of String, String)
         Dim excelReader As New OpenXmlExcelReader
@@ -418,7 +505,9 @@ Public Class ExcelImportHandlerTest
         Return bytes
     End Function
 
+#End Region
 
+#Region " Fields "
 
     Private ReadOnly _freeValue As XElement = <FreeValueCustomBankPropertyEntity>
                                                   <FreeValueCustomBankPropertyEntity EntityType="19" ObjectID="001fb514-fc9b-4564-b823-07da90f53e5a" Format="Compact25">
@@ -870,5 +959,6 @@ Public Class ExcelImportHandlerTest
                                                            </parameters>
                                                        </assessmentItem>
 
+#End Region
 
 End Class

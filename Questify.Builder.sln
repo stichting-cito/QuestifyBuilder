@@ -115,35 +115,57 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pictures", "Pictures", "{94
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Questify.Builder.Plugins.QTI", "Builder\Plugins\QTI\Questify.Builder.Plugins.QTI\Questify.Builder.Plugins.QTI.csproj", "{3A73DC63-3314-41E3-BFA7-91A99071BAA3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Open Source", "Open Source", "{A3A1E34E-4268-43CF-BB25-2F11E3E7805A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aanlevering Open Source", "Aanlevering Open Source", "{A3A1E34E-4268-43CF-BB25-2F11E3E7805A}"
 	ProjectSection(SolutionItems) = preProject
-		Open Source\Draaiboekje.txt = Open Source\Draaiboekje.txt
+		Aanleveren Open Source\Draaiboekje.txt = Aanleveren Open Source\Draaiboekje.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configs", "Configs", "{779FEA83-52C4-4C6D-9E8F-9B608F8512E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Builder.Client", "Builder.Client", "{933F46A9-0927-4512-B7B4-338B369BAF08}"
+	ProjectSection(SolutionItems) = preProject
+		Aanleveren Open Source\Configs\Client\app.config = Aanleveren Open Source\Configs\Client\app.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Publication.Services.PublicationService", "Publication.Services.PublicationService", "{2A319AA1-BC73-490D-B171-5F9B8B535E62}"
+	ProjectSection(SolutionItems) = preProject
+		Aanleveren Open Source\Configs\PublicationService\Web.config = Aanleveren Open Source\Configs\PublicationService\Web.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Builder.Services.TaskService", "Builder.Services.TaskService", "{7D5BAC2A-E051-4065-8C16-049625B809D5}"
+	ProjectSection(SolutionItems) = preProject
+		Aanleveren Open Source\Configs\TaskService\Web.config = Aanleveren Open Source\Configs\TaskService\Web.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Builder.Model.ContentModel.DatabaseSpecific", "Builder.Model.ContentModel.DatabaseSpecific", "{F51D5EB6-D1C4-417A-9416-5330BF81CCFE}"
+	ProjectSection(SolutionItems) = preProject
+		Aanleveren Open Source\Configs\ContentModel.DatabaseSpecific\App.config = Aanleveren Open Source\Configs\ContentModel.DatabaseSpecific\App.config
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{9F3E79D7-4333-47BD-B59A-369898A4EE86}"
 	ProjectSection(SolutionItems) = preProject
-		Open Source\Database\Script.PostDeployment.sql = Open Source\Database\Script.PostDeployment.sql
+		Aanleveren Open Source\Database\Script.PostDeployment.sql = Aanleveren Open Source\Database\Script.PostDeployment.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StaticData", "StaticData", "{7461991C-32B3-44DE-A984-C7B7370D6B99}"
 	ProjectSection(SolutionItems) = preProject
-		Open Source\Database\StaticData\Populate_Action_Data.sql = Open Source\Database\StaticData\Populate_Action_Data.sql
-		Open Source\Database\StaticData\Populate_Bank_Data.sql = Open Source\Database\StaticData\Populate_Bank_Data.sql
-		Open Source\Database\StaticData\Populate_ConceptType_Data.sql = Open Source\Database\StaticData\Populate_ConceptType_Data.sql
-		Open Source\Database\StaticData\Populate_Permission_Data.sql = Open Source\Database\StaticData\Populate_Permission_Data.sql
-		Open Source\Database\StaticData\Populate_PermissionTarget_Data.sql = Open Source\Database\StaticData\Populate_PermissionTarget_Data.sql
-		Open Source\Database\StaticData\Populate_Role_Data.sql = Open Source\Database\StaticData\Populate_Role_Data.sql
-		Open Source\Database\StaticData\Populate_RolePermission_Data.sql = Open Source\Database\StaticData\Populate_RolePermission_Data.sql
-		Open Source\Database\StaticData\Populate_State_Data.sql = Open Source\Database\StaticData\Populate_State_Data.sql
-		Open Source\Database\StaticData\Populate_StateAction_Data.sql = Open Source\Database\StaticData\Populate_StateAction_Data.sql
-		Open Source\Database\StaticData\Populate_User_Data.sql = Open Source\Database\StaticData\Populate_User_Data.sql
-		Open Source\Database\StaticData\Populate_UserApplicationRole_Data.sql = Open Source\Database\StaticData\Populate_UserApplicationRole_Data.sql
-		Open Source\Database\StaticData\Populate_UserBankRole_Data.sql = Open Source\Database\StaticData\Populate_UserBankRole_Data.sql
+		Aanleveren Open Source\Database\StaticData\Populate_Action_Data.sql = Aanleveren Open Source\Database\StaticData\Populate_Action_Data.sql
+		Aanleveren Open Source\Database\StaticData\Populate_Bank_Data.sql = Aanleveren Open Source\Database\StaticData\Populate_Bank_Data.sql
+		Aanleveren Open Source\Database\StaticData\Populate_ConceptType_Data.sql = Aanleveren Open Source\Database\StaticData\Populate_ConceptType_Data.sql
+		Aanleveren Open Source\Database\StaticData\Populate_Permission_Data.sql = Aanleveren Open Source\Database\StaticData\Populate_Permission_Data.sql
+		Aanleveren Open Source\Database\StaticData\Populate_PermissionTarget_Data.sql = Aanleveren Open Source\Database\StaticData\Populate_PermissionTarget_Data.sql
+		Aanleveren Open Source\Database\StaticData\Populate_Role_Data.sql = Aanleveren Open Source\Database\StaticData\Populate_Role_Data.sql
+		Aanleveren Open Source\Database\StaticData\Populate_RolePermission_Data.sql = Aanleveren Open Source\Database\StaticData\Populate_RolePermission_Data.sql
+		Aanleveren Open Source\Database\StaticData\Populate_State_Data.sql = Aanleveren Open Source\Database\StaticData\Populate_State_Data.sql
+		Aanleveren Open Source\Database\StaticData\Populate_StateAction_Data.sql = Aanleveren Open Source\Database\StaticData\Populate_StateAction_Data.sql
+		Aanleveren Open Source\Database\StaticData\Populate_User_Data.sql = Aanleveren Open Source\Database\StaticData\Populate_User_Data.sql
+		Aanleveren Open Source\Database\StaticData\Populate_UserApplicationRole_Data.sql = Aanleveren Open Source\Database\StaticData\Populate_UserApplicationRole_Data.sql
+		Aanleveren Open Source\Database\StaticData\Populate_UserBankRole_Data.sql = Aanleveren Open Source\Database\StaticData\Populate_UserBankRole_Data.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{A5B3E6B4-1004-40C1-B9F2-FA1EB58A8E86}"
 	ProjectSection(SolutionItems) = preProject
-		Open Source\Content\OpenSource.export = Open Source\Content\OpenSource.export
+		Aanleveren Open Source\Content\OpenSource.export = Aanleveren Open Source\Content\OpenSource.export
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Licenses", "Licenses", "{D08C5E1C-4A35-4190-BF1B-B1C7EE3BCB1B}"
@@ -852,6 +874,11 @@ Global
 		{4EAED194-88C5-4EFB-AC35-81253AE840B6} = {89778C32-88CE-47FD-8B2B-95D7CE190442}
 		{94E44CD4-2724-4F3B-9A61-CC9B4CB11E14} = {4FA3288C-482C-4E4D-8EEA-F4611872247A}
 		{3A73DC63-3314-41E3-BFA7-91A99071BAA3} = {AFC2728B-7A95-4E11-BC09-FB5637D8178E}
+		{779FEA83-52C4-4C6D-9E8F-9B608F8512E1} = {A3A1E34E-4268-43CF-BB25-2F11E3E7805A}
+		{933F46A9-0927-4512-B7B4-338B369BAF08} = {779FEA83-52C4-4C6D-9E8F-9B608F8512E1}
+		{2A319AA1-BC73-490D-B171-5F9B8B535E62} = {779FEA83-52C4-4C6D-9E8F-9B608F8512E1}
+		{7D5BAC2A-E051-4065-8C16-049625B809D5} = {779FEA83-52C4-4C6D-9E8F-9B608F8512E1}
+		{F51D5EB6-D1C4-417A-9416-5330BF81CCFE} = {779FEA83-52C4-4C6D-9E8F-9B608F8512E1}
 		{9F3E79D7-4333-47BD-B59A-369898A4EE86} = {A3A1E34E-4268-43CF-BB25-2F11E3E7805A}
 		{7461991C-32B3-44DE-A984-C7B7370D6B99} = {9F3E79D7-4333-47BD-B59A-369898A4EE86}
 		{A5B3E6B4-1004-40C1-B9F2-FA1EB58A8E86} = {A3A1E34E-4268-43CF-BB25-2F11E3E7805A}

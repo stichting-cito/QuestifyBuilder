@@ -13,6 +13,16 @@ using Questify.Builder.UI.Wpf.Presentation.Services;
 
 namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor.ScoreEditor
 {
+    /// <summary>
+    /// This class tests the StringGapViewModel.
+    /// 
+    /// There are more scoring view models, if you think you can pull a certain test to the
+    /// GenericScoreViewModelTests<...> then please do,.. you will cover much more.
+    /// </summary>
+    /// <remarks>
+    /// The StringGapViewModel uses a generic GapViewModel[string] to store value. Updating an removing originate from that
+    /// view model and will be handled by 
+    /// </remarks>
     [TestClass]
     public class StringGapViewModelTests : GenericScoreViewModelTests<StringScoringParameter>
     {
@@ -23,7 +33,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             StringGapViewModel vm = new StringGapViewModel(fakeVAS, A.Fake<ICurrentItemEditorContext>());
             var workspaceData = Factory.Create(ScoreParam("Controller"), Solution);
             InitViewModel(workspaceData);
+            //Act            
             var result = vm.ScorableItems.Keys;
+            //Assert
             Assert.AreEqual(0, result.Count);
         }
 
@@ -33,7 +45,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             StringGapViewModel vm = new StringGapViewModel(fakeVAS, A.Fake<ICurrentItemEditorContext>());
             var workspaceData = Factory.Create(ScoreParam("Controller", "a"), Solution);
             InitViewModel(workspaceData);
+            //Act            
             var result = vm.ScorableItems["a"];
+            //Assert
             Assert.AreEqual(1, result.Count);
         }
 
@@ -43,7 +57,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             StringGapViewModel vm = new StringGapViewModel(fakeVAS, A.Fake<ICurrentItemEditorContext>());
             var workspaceData = Factory.Create(ScoreParam("Controller", "a"), Solution);
             InitViewModel(workspaceData);
+            //Act            
             var result = vm.ScorableItems["a"].First();
+            //Assert
             Assert.AreEqual(string.Empty, result.Value, "this value was supposed to be empty");
             Assert.IsFalse(result.IsValid);
         }
@@ -57,7 +73,10 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             var result = vm.ScorableItems["a"].First();
 
-            result.Value = "     ";
+            //Act            
+            result.Value = "     "; //Spaces are not allowed
+
+            //Assert
             Assert.IsFalse(result.IsValid);
         }
 
@@ -69,7 +88,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             InitViewModel(workspaceData);
 
             var result = vm.ScorableItems["a"].First();
+            //Act            
             result.Value = "Some Value";
+            //Assert
 
             Assert.IsTrue(result.IsValid);
         }
@@ -83,7 +104,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             var largestNrOfVals = vm.ScorableItems["a"].Count;
             var result = vm.ScorableItems["a"].First();
+            //Act            
             result.RemoveItem.Execute(null);
+            //Assert
             Assert.AreEqual(1, vm.ScorableItems["a"].Count);
             Assert.AreEqual(string.Empty, vm.ScorableItems["a"].First().Value);
         }
@@ -100,8 +123,10 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             var result = vm.ScorableItems["a"].Last();
 
+            //Act            
             result.RemoveItem.Execute(null);
 
+            //Assert
             Assert.AreEqual(2, largestNrOfVals);
             Assert.AreEqual(1, vm.ScorableItems["a"].Count);
             Assert.AreEqual(string.Empty, vm.ScorableItems["a"].First().Value);
@@ -116,8 +141,11 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             var workspaceData = Factory.Create(ScoreParam("Controller"), Solution);
             InitViewModel(workspaceData);
 
+            //Act
             vm.AddItem.Execute("a");
 
+            //Assert
+            //Expecting exception.
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring")]
@@ -126,41 +154,54 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             StringGapViewModel vm = new StringGapViewModel(fakeVAS, A.Fake<ICurrentItemEditorContext>());
             var workspaceData = Factory.Create(ScoreParam("Controller", "a"), Solution);
             InitViewModel(workspaceData);
+            //Act
             vm.AddItem.Execute("a");
             var result = vm.ScorableItems["a"];
+            //Assert
             Assert.AreEqual(2, result.Count);
         }
-
-
+        
+        //---------------------------------
+        
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring")]
         public void Get2Types()
         {
+            //Arrange
             var fakeContext = A.Fake<ICurrentItemEditorContext>();
             StringGapViewModel vm = new StringGapViewModel(fakeVAS, fakeContext);
             var str = "(type1,type2)";
+            //Act
             var lst = PreProcessingHelper.UnCollapseStrToList(str);
+            //Assert
             Assert.AreEqual(2, lst.Count);
             Assert.AreEqual("type1", lst[0]);
         }
-
+        
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring")]
         public void GetNothingFromEmptyInputString()
         {
+            //Arrange
             StringGapViewModel vm = new StringGapViewModel(fakeVAS, A.Fake<ICurrentItemEditorContext>());
             var str = "";
+            //Act
             var lst = PreProcessingHelper.UnCollapseStrToList(str);
+            //Assert
             Assert.AreEqual(0, lst.Count);
         }
-
+        
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring")]
         public void GetNothingFromWrongInputString()
         {
+            //Arrange
             StringGapViewModel vm = new StringGapViewModel(fakeVAS, A.Fake<ICurrentItemEditorContext>());
             var str = "adk;sgaklsdjfhjkahw48yua-sdvha;kjw34hrlaushdcv7iaph38&()*(&^%*%$";
+            //Act
             var lst = PreProcessingHelper.UnCollapseStrToList(str);
+            //Assert
             Assert.AreEqual(0, lst.Count);
         }
 
+        //---------------------------------
 
         protected override StringScoringParameter ScoreParam(string scoreId, params string[] ids)
         {

@@ -10,6 +10,7 @@ Public Class GapMatchScoringParameterTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Deserialize_InAssessmentItem_Test()
+        'Arrange
         Dim xmlData = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="someIdentifier" title="someTitle" layoutTemplateSrc="someIlt">
                           <solution>
                               <keyFindings/>
@@ -22,9 +23,11 @@ Public Class GapMatchScoringParameterTest
                           </parameters>
                       </assessmentItem>
 
+        'Act
         Dim result = Deserialize(Of AssessmentItem)(xmlData)
         Dim param = CType(result.Parameters(0).InnerParameters(0), GapMatchScoringParameter)
 
+        'Assert
         Assert.IsInstanceOfType(result.Parameters(0).InnerParameters(0), GetType(GapMatchScoringParameter))
         Assert.AreEqual("gapMatchController", param.FindingOverride)
         Assert.AreEqual("scoreParam", param.Name)
@@ -32,9 +35,12 @@ Public Class GapMatchScoringParameterTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Deserialize_InRealWorldAssessmentItem_Test()
+        'Arrange
 
+        'Act
         Dim result = Deserialize(Of AssessmentItem)(_serializedGapMatchItem)
 
+        'Assert
         Assert.IsInstanceOfType(result.Parameters(0).InnerParameters(0), GetType(GapMatchScoringParameter))
 
         Dim result2 = DoSerialize(result)
@@ -43,6 +49,7 @@ Public Class GapMatchScoringParameterTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Serialize_Test()
+        'Arrange
         Dim gm = New GapMatchScoringParameter() With {.ControllerId = "gm1"}
 
         gm.BluePrint = New ParameterCollection()
@@ -65,31 +72,39 @@ Public Class GapMatchScoringParameterTest
         gm.GapXhtmlParameter = New XHtmlParameter() With {.Name = "itemInlineInput"}
         gm.GapXhtmlParameter.DesignerSettings.Add(New DesignerSetting() With {.Key = "required", .Value = "true"})
 
+        'Act
         Dim result = DoSerialize(Of GapMatchScoringParameter)(gm)
 
+        'Assert
         Assert.AreEqual(_serializedGapMatchScoringParameter.ToString(), result.ToString())
     End Sub
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub SerializeInParameterSet_Test()
+        'Arrange
         Dim parameterset As New ParameterSetCollection()
         parameterset.Add(New ParameterCollection())
         parameterset(0).InnerParameters.Add(Deserialize(Of GapMatchScoringParameter)(_serializedGapMatchScoringParameter))
 
+        'Act
         Dim result = DoSerialize(parameterset)
-
+       
+        'Assert
         Assert.AreEqual(_serializedParameterSet.ToString(), result.ToString())
     End Sub
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub GetGapIds_Test()
+        'Arrange
         Dim gapXhtmlParameter = Deserialize(Of XHtmlParameter)(_gapXhtmlParameter)
         Dim gmScoringParameter = Deserialize(Of GapMatchScoringParameter)(_serializedGapMatchScoringParameter)
 
         gmScoringParameter.GapXhtmlParameter = gapXhtmlParameter
 
+        'Act
         Dim gapInlines = gmScoringParameter.Gaps
 
+        'Assert
         Dim expected As New List(Of String)()
         expected.Add("I23a0653b-b574-4d5e-ad66-e05af1a169da")
         expected.Add("I47a1295a-c729-49d5-9da0-bac0799a019e")
@@ -104,14 +119,17 @@ Public Class GapMatchScoringParameterTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub TransformViaParameterSet_Test()
+        'Arrange
         Dim expected As New List(Of String)()
         expected.Add("I123d5b20-b6e9-409d-a0aa-6da1effdcb13")
         expected.Add("I05fb9f7d-6bf5-4ba3-90b1-f6d7642bcbc2")
         Dim item = Deserialize(Of AssessmentItem)(_serializedGapMatchItem)
 
-        Dim params = item.Parameters.DeepFetchInlineScoringParameters()
+        'Act
+        Dim params = item.Parameters.DeepFetchInlineScoringParameters() 'Transforming is done inside this method
         Dim scoreParam As GapMatchScoringParameter = CType(params.First(), GapMatchScoringParameter)
 
+        'Assert
         Assert.IsTrue(scoreParam.Gaps.ContainsKey(1.ToString()))
         Assert.IsTrue(scoreParam.Gaps.ContainsKey(2.ToString()))
         Assert.IsTrue(scoreParam.Value(0).Id = expected(0))
@@ -121,10 +139,13 @@ Public Class GapMatchScoringParameterTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Transform_Test()
+        'Arrange
         Dim gmScoringParameter = Deserialize(Of GapMatchScoringParameter)(_serializedGapMatchScoringParameterWithGaps)
 
+        'Act
         gmScoringParameter = gmScoringParameter.Transform()
 
+        'Assert
         Assert.IsTrue(gmScoringParameter.Gaps.ContainsKey(1.ToString()))
         Assert.IsTrue(gmScoringParameter.Gaps.ContainsKey(2.ToString()))
         Assert.AreEqual(gmScoringParameter.Gaps("2")("Value"), "Giraffe")
@@ -135,23 +156,30 @@ Public Class GapMatchScoringParameterTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub GetAlternativesCount_Test()
-
+        'Arrange
+        
+        'Act
         Dim gmScoringParameter = Deserialize(Of GapMatchScoringParameter)(_serializedGapMatchScoringParameter)
 
+        'Assert
         Assert.AreEqual(3, gmScoringParameter.AlternativesCount)
     End Sub
 
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Default_GapMatchScoringParameter_HasInitializedXHtmlParameter()
+        'Arrange
 
+        'Act
         Dim gmScoringParameter = New GapMatchScoringParameter()
-
+        
+        'Assert
         Assert.IsNotNull(gmScoringParameter.GapXhtmlParameter)
     End Sub
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub WhenTransformingGM_XhtmlInlineNeeds_inlineGapMatchLabel()
+        'Arrange
         Dim gmScoringParameter = New GapMatchScoringParameter()
         gmScoringParameter.Value = New ParameterSetCollection()
         Dim collection = New ParameterCollection() With {.Id = "A"}
@@ -168,15 +196,18 @@ Public Class GapMatchScoringParameterTest
                                                              </cito:parameters>
                                                          </cito:InlineElement>
                                                      </p>.ToString()
-
+        
+        'Act
         Dim result = gmScoringParameter.Transform
-
+        
+        'Assert
         Assert.AreEqual(1, result.Value.Count())
     End Sub
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     <ExpectedException(GetType(ContentModelException))>
     Public Sub WhenTransformingGM_XhtmlInlineNeeds_inlineGapMatchLabel_ProofThatItThrows()
+        'Arrange
         Dim gmScoringParameter = New GapMatchScoringParameter()
         gmScoringParameter.Value = New ParameterSetCollection()
         Dim collection = New ParameterCollection() With {.Id = "A"}
@@ -192,9 +223,12 @@ Public Class GapMatchScoringParameterTest
                                                              </cito:parameters>
                                                          </cito:InlineElement>
                                                      </p>.ToString()
-
+     
+        'Act
         Dim result = gmScoringParameter.Transform
-
+       
+        'Assert
+        'Expects Exception
     End Sub
 
     Private ReadOnly _serializedGapMatchItem As XElement = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="2001" title="2001" layoutTemplateSrc="ilt.gapmatch">

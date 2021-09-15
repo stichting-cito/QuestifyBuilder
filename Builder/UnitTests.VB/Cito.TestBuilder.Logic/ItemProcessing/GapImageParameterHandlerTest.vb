@@ -6,13 +6,16 @@ Imports Questify.Builder.Logic.ItemProcessing
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub MergeResultHoldsAllPropertyValues()
+        'Arrange
         Dim currParam As New GapImageParameter() With {.Name = "gip", .MatchMax = 4, .ContentType = GapImageParameter.GapImageParameterContentType.Text, .Width = 20, .Height = 25}
         Dim newParam As New GapImageParameter()
         Dim warnErr As New WarningsAndErrors
         Dim pMerger As New GapImageParameterHandler()
 
+        'Act
         pMerger.Merge(newParam, currParam, warnErr)
 
+        'Assert
         Assert.AreEqual(currParam.ContentType, newParam.ContentType)
         Assert.AreEqual(currParam.EnteredText, newParam.EnteredText)
         Assert.AreEqual(currParam.Width, newParam.Width)

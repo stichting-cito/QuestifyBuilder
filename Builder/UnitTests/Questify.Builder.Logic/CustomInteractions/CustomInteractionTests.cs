@@ -14,7 +14,7 @@ using Questify.Builder.UnitTests.Framework.Faketory;
 
 namespace Questify.Builder.UnitTests.Questify.Builder.Logic.CustomInteractions
 {
-
+    
     [TestClass]
     public class CustomInteractionTests
     {
@@ -38,13 +38,16 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.CustomInteractions
         [TestMethod, TestCategory("customInteractionProcessing")]
         public void ParameterCollection_HasContractName()
         {
+            //Arrange
             var assessment = new AssessmentItem();
             var prmColl = new ParameterCollection();
             prmColl.InnerParameters.Add(new PlainTextParameter() { Name = "controllerId", Value = Guid.NewGuid().ToString() });
             prmColl.InnerParameters.Add(new CustomInteractionResourceParameter() { Name = "sourceCI", Scorable = true });
             assessment.Parameters.Add(prmColl);
             SetUpZipPackage(two_Coordinates);
+            //Act
             CustomInteraction.AddParameters("", 1, assessment.Parameters, assessment.Solution);
+            //Assert
             Assert.AreEqual(2, assessment.Parameters.Count);
             Assert.AreEqual(IdentifierHelper.CI_ParameterCollectionName, assessment.Parameters[1].Id);
         }
@@ -52,13 +55,16 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.CustomInteractions
         [TestMethod, TestCategory("customInteractionProcessing")]
         public void ParameterCollection_2DecimalScoringParameters()
         {
+            //Arrange
             var assessment = new AssessmentItem();
             var prmColl = new ParameterCollection();
             prmColl.InnerParameters.Add(new PlainTextParameter() { Name = "controllerId", Value = Guid.NewGuid().ToString() });
             prmColl.InnerParameters.Add(new CustomInteractionResourceParameter() { Name = "sourceCI", Scorable = true });
             assessment.Parameters.Add(prmColl);
             SetUpZipPackage(two_Coordinates);
+            //Act
             CustomInteraction.AddParameters("", 1, assessment.Parameters, assessment.Solution);
+            //Assert
             var innerParams = assessment.Parameters[1].InnerParameters;
             Assert.AreEqual(2, innerParams.Count);
             Assert.IsTrue(innerParams.All(param => param is DecimalScoringParameter));
@@ -67,13 +73,16 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.CustomInteractions
         [TestMethod, TestCategory("customInteractionProcessing")]
         public void ParameterCollection_DefinitionShouldBeInitialized()
         {
+            //Arrange
             var assessment = new AssessmentItem();
             var prmColl = new ParameterCollection();
             prmColl.InnerParameters.Add(new PlainTextParameter() { Name = "controllerId", Value = Guid.NewGuid().ToString() });
             prmColl.InnerParameters.Add(new CustomInteractionResourceParameter() { Name = "sourceCI", Scorable = true });
             assessment.Parameters.Add(prmColl);
             SetUpZipPackage(two_Coordinates);
+            //Act
             CustomInteraction.AddParameters("", 1, assessment.Parameters, assessment.Solution);
+            //Assert
             var scoringParameter = assessment.Parameters[1].InnerParameters.First(parameter => parameter is ScoringParameter);
             Assert.IsNotNull(scoringParameter);
             Assert.IsNotNull(((ScoringParameter)scoringParameter).BluePrint);
@@ -82,6 +91,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.CustomInteractions
         [TestMethod, TestCategory("customInteractionProcessing")]
         public void ParameterCollection_2GeogebraScoringParameters()
         {
+            //Arrange
             var assessment = new AssessmentItem();
             var prmColl = new ParameterCollection();
             prmColl.InnerParameters.Add(new PlainTextParameter() { Name = "controllerId", Value = Guid.NewGuid().ToString() });
@@ -89,7 +99,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.CustomInteractions
             prmColl.InnerParameters.Add(new ListedParameter() { Name = "ciType", Value = "ggb" });
             assessment.Parameters.Add(prmColl);
             SetUpZipPackage(GeogebraXml.ToString(), true);
+            //Act
             CustomInteraction.AddParameters("", 1, assessment.Parameters, assessment.Solution);
+            //Assert
             var innerParams = assessment.Parameters[1].InnerParameters;
             Assert.AreEqual(2, innerParams.Count);
             Assert.IsTrue(innerParams.All(param => param is GeogebraScoringParameter));
@@ -121,6 +133,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.CustomInteractions
             return ret;
         }
 
+        #region Data
 
         private readonly string two_Coordinates = @"{  
                                                         ""title"":""customInteraction coordinates"",
@@ -245,5 +258,6 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.CustomInteractions
                                           </construction>
                                       </geogebra>");
 
+        #endregion
     }
 }

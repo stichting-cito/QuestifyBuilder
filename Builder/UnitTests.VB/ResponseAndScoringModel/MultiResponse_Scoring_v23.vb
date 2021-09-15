@@ -10,19 +10,25 @@ Public Class MultiResponse_Scoring_v23
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub MaxScore_MR_Poly()
+        'Arrange
         Dim solution = toSolution(MultiResponse_Scoring.MrFindingPolytomous)
-
+      
+        'Act
         Dim result = solution.MaxSolutionRawScore
-
+        
+        'Assert
         Assert.AreEqual(2, result)
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub MaxScore_MR_Dich()
+        'Arrange
         Dim solution = toSolution(MultiResponse_Scoring.MrFindingAllCorrectDichotomous)
-
+       
+        'Act
         Dim result = solution.MaxSolutionRawScore
-
+       
+        'Assert
         Assert.AreEqual(1, result)
     End Sub
 
@@ -67,6 +73,30 @@ Public Class MultiResponse_Scoring_v23
     End Sub
 
     Private ReadOnly _responseMr As XElement = <Response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" active="false" responseNr="-9223372036854775808" translatedScore="0" rawScore="0" navigatedToIndex="-2147483648">
+                                         <ResponseProperties xmlns="http://Cito.Tester.Server/xml/serialization"/>
+                                         <responseFindings xmlns="http://Cito.Tester.Server/xml/serialization">
+                                             <responseFinding id="mc">
+                                                 <responseFact id="mc">
+                                                     <responseValue domain="mc" occur="1">
+                                                         <stringValue>
+                                                             <typedValue>B</typedValue>
+                                                         </stringValue>
+                                                     </responseValue>
+                                                 </responseFact>
+                                                 <responseFact id="mc">
+                                                     <responseValue domain="mc" occur="1">
+                                                         <stringValue>
+                                                             <typedValue>C</typedValue>
+                                                         </stringValue>
+                                                     </responseValue>
+                                                 </responseFact>
+                                             </responseFinding>
+                                             <responseFinding id="audioController1"/>
+                                         </responseFindings>
+                                         <ItemIndexInTest xmlns="http://Cito.Tester.Server/xml/serialization">0</ItemIndexInTest>
+                                     </Response>
+    
+    Private ReadOnly _responseMrIncorrect As XElement = <Response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" active="false" responseNr="-9223372036854775808" translatedScore="0" rawScore="0" navigatedToIndex="-2147483648">
                                                    <ResponseProperties xmlns="http://Cito.Tester.Server/xml/serialization"/>
                                                    <responseFindings xmlns="http://Cito.Tester.Server/xml/serialization">
                                                        <responseFinding id="mc">
@@ -80,7 +110,7 @@ Public Class MultiResponse_Scoring_v23
                                                            <responseFact id="mc">
                                                                <responseValue domain="mc" occur="1">
                                                                    <stringValue>
-                                                                       <typedValue>C</typedValue>
+                                                                       <typedValue>D</typedValue>
                                                                    </stringValue>
                                                                </responseValue>
                                                            </responseFact>
@@ -89,29 +119,5 @@ Public Class MultiResponse_Scoring_v23
                                                    </responseFindings>
                                                    <ItemIndexInTest xmlns="http://Cito.Tester.Server/xml/serialization">0</ItemIndexInTest>
                                                </Response>
-
-    Private ReadOnly _responseMrIncorrect As XElement = <Response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" active="false" responseNr="-9223372036854775808" translatedScore="0" rawScore="0" navigatedToIndex="-2147483648">
-                                                            <ResponseProperties xmlns="http://Cito.Tester.Server/xml/serialization"/>
-                                                            <responseFindings xmlns="http://Cito.Tester.Server/xml/serialization">
-                                                                <responseFinding id="mc">
-                                                                    <responseFact id="mc">
-                                                                        <responseValue domain="mc" occur="1">
-                                                                            <stringValue>
-                                                                                <typedValue>B</typedValue>
-                                                                            </stringValue>
-                                                                        </responseValue>
-                                                                    </responseFact>
-                                                                    <responseFact id="mc">
-                                                                        <responseValue domain="mc" occur="1">
-                                                                            <stringValue>
-                                                                                <typedValue>D</typedValue>
-                                                                            </stringValue>
-                                                                        </responseValue>
-                                                                    </responseFact>
-                                                                </responseFinding>
-                                                                <responseFinding id="audioController1"/>
-                                                            </responseFindings>
-                                                            <ItemIndexInTest xmlns="http://Cito.Tester.Server/xml/serialization">0</ItemIndexInTest>
-                                                        </Response>
 
 End Class

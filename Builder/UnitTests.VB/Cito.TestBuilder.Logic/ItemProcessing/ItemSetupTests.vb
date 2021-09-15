@@ -22,6 +22,7 @@ Public Class ItemSetupTests
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub Create2NewItems_ParameterSetAreNotRefEqual()
+        'Arrange
         Dim ilt As ItemLayoutTemplateResourceEntity = Nothing
         Dim newItem_A As New ItemResourceEntity(Guid.NewGuid()) With {.ResourceData = New ResourceDataEntity()}
         Dim newItem_B As New ItemResourceEntity(Guid.NewGuid()) With {.ResourceData = New ResourceDataEntity()}
@@ -38,14 +39,17 @@ Public Class ItemSetupTests
         Dim a = New AssessmentItemHelper(ResourceManager, ilt.Name, newItem_A, cache)
         Dim b = New AssessmentItemHelper(ResourceManager, ilt.Name, newItem_B, cache)
 
+        'Act
         Dim result1 = a.CreateNewAssessmentItem(newItem_A, ilt, warnErr)
         Dim result2 = b.CreateNewAssessmentItem(newItem_B, ilt, warnErr)
 
+        'Assert
         Assert.AreNotSame(result1.Parameters(0), result2.Parameters(0))
     End Sub
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub LoadExistingItem()
+        'Arrange
         Dim itm As ItemResourceEntity = Nothing
         Dim ilt As ItemLayoutTemplateResourceEntity = Nothing
 
@@ -62,16 +66,20 @@ Public Class ItemSetupTests
         Dim ResourceManager = FakeDal.GetFakeResourceManager()
         Dim _itemSetupHelper = New AssessmentItemHelper(ResourceManager, ilt.Name, itm, cache)
 
+        'Act
         Dim _assessmentItem = _itemSetupHelper.GetExistingAssessmentItem()
         _itemSetupHelper.MergeParameters(_assessmentItem, warnErr)
         _itemSetupHelper.ReFillParameterSet(_assessmentItem)
-
+        
+        'Assert
+        'Verify that parm is not empty.
         Dim xhtml = DirectCast(_assessmentItem.Parameters(0).InnerParameters(0), XHtmlParameter)
         Assert.IsTrue(xhtml.Value.Contains("Dit is tekst."))
     End Sub
 
     <TestMethod(), TestCategory("ItemProcessing")> <WorkItem(11029)>
     Public Sub LoadExistingItem_ValidateThatDesignerSettings_AreAvailable()
+        'Arrange
         Dim itm As ItemResourceEntity = Nothing
         Dim ilt As ItemLayoutTemplateResourceEntity = Nothing
 
@@ -88,16 +96,20 @@ Public Class ItemSetupTests
         Dim ResourceManager = FakeDal.GetFakeResourceManager()
         Dim _itemSetupHelper = New AssessmentItemHelper(ResourceManager, ilt.Name, itm, cache)
 
+        'Act
         Dim _assessmentItem = _itemSetupHelper.GetExistingAssessmentItem()
         _itemSetupHelper.MergeParameters(_assessmentItem, warnErr)
         _itemSetupHelper.ReFillParameterSet(_assessmentItem)
-
+        
+        'Assert
+        'Verify that parm is not empty.
         Dim xhtml = DirectCast(_assessmentItem.Parameters(0).InnerParameters(0), XHtmlParameter)
         Assert.AreEqual(4, xhtml.DesignerSettings.Count)
     End Sub
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub SortTemplateDesignerSetting_IsAppliedToParameterSet_TemplateHasSortedDesignerSetting_ExpectTrue()
+        'Arrange
         Dim ilt As ItemLayoutTemplateResourceEntity = Nothing
         Dim itemA As New ItemResourceEntity(Guid.NewGuid()) With {.ResourceData = New ResourceDataEntity()}
 
@@ -111,20 +123,23 @@ Public Class ItemSetupTests
         Dim resourceManager = FakeDal.GetFakeResourceManager()
         Dim assessmentHelper = New AssessmentItemHelper(resourceManager, ilt.Name, itemA, cache)
 
+        'Act                                    
         Dim result = assessmentHelper.GetExtractedParameters()
 
+        'Assert
         Assert.IsTrue(result.ShouldSort)
     End Sub
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub SortTemplateDesignerSetting_IsAppliedToParameterSet_Template_HasNO_SortedDesignerSetting_ExpectFalse()
+        'Arrange
         Dim ilt As ItemLayoutTemplateResourceEntity = Nothing
         Dim itemA As New ItemResourceEntity(Guid.NewGuid()) With {.ResourceData = New ResourceDataEntity()}
 
 
         FakeDal.Add.ControlTemplate("min.html", Sub(i) FillWithControlTemplate(i)).
             IsUsedBy.ItemTemplate("ilt.html", Sub(i)
-                                                  FillWithTemplate(i)
+                                                  FillWithTemplate(i) 'Has no template designer setting 
                                                   ilt = i
                                               End Sub)
 
@@ -132,8 +147,10 @@ Public Class ItemSetupTests
         Dim resourceManager = FakeDal.GetFakeResourceManager()
         Dim assessmentHelper = New AssessmentItemHelper(resourceManager, ilt.Name, itemA, cache)
 
+        'Act                                    
         Dim result = assessmentHelper.GetExtractedParameters()
 
+        'Assert
         Assert.IsFalse(result.ShouldSort)
     End Sub
 
@@ -238,17 +255,21 @@ Public Class ItemSetupTests
 
     Class SimpleCache : Implements IITemSetupCacheHelper
 
+#Region "Fields"
 
         Private _cachedParameterSetCollection As Dictionary(Of String, ParameterSetCollection)
         Private _cachedIsTransformed As Dictionary(Of String, Boolean)
 
+#End Region
 
+#Region "Constructor"
 
         Sub New()
             _cachedParameterSetCollection = New Dictionary(Of String, ParameterSetCollection)()
             _cachedIsTransformed = New Dictionary(Of String, Boolean)
         End Sub
 
+#End Region
 
         Public Function GetCachedExtractedParameters(iltName As String) As ParameterSetCollection Implements IITemSetupCacheHelper.GetCachedExtractedParameters
             If (_cachedParameterSetCollection.ContainsKey(iltName)) Then

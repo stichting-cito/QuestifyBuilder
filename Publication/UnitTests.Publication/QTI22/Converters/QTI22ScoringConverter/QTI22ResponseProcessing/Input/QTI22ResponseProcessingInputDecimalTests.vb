@@ -12,84 +12,102 @@ Public Class QTI22ResponseProcessingInputDecimalTests
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("ResponseProcessing")>
     Public Sub DecimalTest()
 
+        'Arrange
         Dim responseIdentifierAttributeList As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody1)
         Dim solution As Solution = _solution1.Deserialize(Of Solution)()
         Dim finding As KeyFinding = solution.Findings(0)
         Dim findingIndex As Integer = 0
         Dim processor = New QTI22ResponseProcessing(responseIdentifierAttributeList, solution, finding, findingIndex, Nothing, New QTI22CombinedScoringConverter, False)
 
+        'Act
         Dim result = processor.GetProcessing().ToXmlDocument()
 
+        'Assert
         Assert.IsTrue(UnitTestHelper.AreSame(_responseProcessing1, result))
     End Sub
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("ResponseProcessing")>
     Public Sub DecimalRangeTest()
 
+        'Arrange
         Dim responseIdentifierAttributeList As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody2)
         Dim solution As Solution = _solution2.Deserialize(Of Solution)()
         Dim finding As KeyFinding = solution.Findings(0)
         Dim findingIndex As Integer = 0
         Dim processor = New QTI22ResponseProcessing(responseIdentifierAttributeList, solution, finding, findingIndex, Nothing, New QTI22CombinedScoringConverter, False)
 
+        'Act
         Dim result = processor.GetProcessing().ToXmlDocument()
 
+        'Assert
         Assert.IsTrue(UnitTestHelper.AreSame(_responseProcessing2, result))
     End Sub
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("ResponseProcessing")>
     Public Sub DecimalAlternativesTest()
 
+        'Arrange
         Dim responseIdentifierAttributeList As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody3)
         Dim solution As Solution = _solution3.Deserialize(Of Solution)()
         Dim finding As KeyFinding = solution.Findings(0)
         Dim findingIndex As Integer = 0
         Dim processor = New QTI22ResponseProcessing(responseIdentifierAttributeList, solution, finding, findingIndex, Nothing, New QTI22CombinedScoringConverter, False)
 
+        'Act
         Dim result = processor.GetProcessing().ToXmlDocument()
 
+        'Assert
         Assert.IsTrue(UnitTestHelper.AreSame(_responseProcessing3, result))
     End Sub
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("ResponseProcessing")>
     Public Sub DecimalComparisonTest()
 
+        'Arrange
         Dim responseIdentifierAttributeList As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody4)
         Dim solution As Solution = _solution4.Deserialize(Of Solution)()
         Dim finding As KeyFinding = solution.Findings(0)
         Dim findingIndex As Integer = 0
         Dim processor = New QTI22ResponseProcessing(responseIdentifierAttributeList, solution, finding, findingIndex, Nothing, New QTI22CombinedScoringConverter, False)
 
+        'Act
         Dim result = processor.GetProcessing().ToXmlDocument()
 
+        'Assert
         Assert.IsTrue(UnitTestHelper.AreSame(_responseProcessing4, result))
     End Sub
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("ResponseProcessing")>
     Public Sub DecimalComparisonAlternativesTest()
 
+        'Arrange
         Dim responseIdentifierAttributeList As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody5)
         Dim solution As Solution = _solution5.Deserialize(Of Solution)()
         Dim finding As KeyFinding = solution.Findings(0)
         Dim findingIndex As Integer = 0
         Dim processor = New QTI22ResponseProcessing(responseIdentifierAttributeList, solution, finding, findingIndex, Nothing, New QTI22CombinedScoringConverter, False)
 
+        'Act
         Dim result = processor.GetProcessing().ToXmlDocument()
 
+        'Assert
         Assert.IsTrue(UnitTestHelper.AreSame(_responseProcessing5, result))
     End Sub
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("ResponseProcessing")>
     Public Sub DecimalFactSetTest()
 
+        'Arrange
         Dim responseIdentifierAttributeList As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody6)
         Dim solution As Solution = _solution6.Deserialize(Of Solution)()
         Dim finding As KeyFinding = solution.Findings(0)
         Dim findingIndex As Integer = 0
         Dim processor = New QTI22ResponseProcessing(responseIdentifierAttributeList, solution, finding, findingIndex, Nothing, New QTI22CombinedScoringConverter, False)
 
+        'Act
         Dim result = processor.GetProcessing().ToXmlDocument()
 
+        'Assert
         Assert.IsTrue(UnitTestHelper.AreSame(_responseProcessing6, result))
     End Sub
 

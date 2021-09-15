@@ -53,6 +53,8 @@ Namespace QTI30
 
         <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessing")>
         Public Sub GetResponseProcessingInRightOrder_Dichotomous_Test()
+            'The gaps are actually guids in the itembody (but are renamed later on during publication to G1, G2, etc)
+            'The response processing should be in the right order (so G1, G2, etc) and not the order of the guids
             GetResponseProcessingTest(_itemBody2, _finding8, _responseProcessing8, GetGapMatchScoringParams_2, False)
         End Sub
 
@@ -67,6 +69,7 @@ Namespace QTI30
         End Sub
 
         Public Sub GetResponseProcessingTest(itemBody As XElement, findingElement As XElement, responseProcessingElement As XElement, scoringPrms As HashSet(Of ScoringParameter), Optional fixGapNames As Boolean = True)
+            'Arrange
             Dim responseIdentifierAttributeList As XmlNodeList = PublicationTestHelper.GetResponseIdentifiers(itemBody)
             Dim scoringHelper = New CombinedScoringConverter(scoringPrms)
 
@@ -79,6 +82,7 @@ Namespace QTI30
             Dim processor = New ResponseProcessing(responseIdentifierAttributeList, s, finding, findingIndex, scoringPrms, New CombinedScoringConverter, False, useResponseProcessingTemplate)
             Dim assessmentItemType As New AssessmentItemType() With {.qtiitembody = CType(ChainHandlerHelper.StringToObject(itemBody.ToString, GetType(ItemBodyType)), ItemBodyType)}
 
+            'Act
             Dim result = processor.GetProcessing().ToXmlDocument
             If fixGapNames Then
                 assessmentItemType.qtiresponseprocessing = CType(ChainHandlerHelper.StringToObject(result.OuterXml.Replace("<qti-response-processing>", "<qti-response-processing xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns=""http://www.imsglobal.org/xsd/imsqtiasi_v3p0"">"), GetType(ResponseProcessingType)), ResponseProcessingType)
@@ -87,6 +91,7 @@ Namespace QTI30
                 result = XElement.Parse(XDocument.Parse(itemDocument.OuterXml).Descendants.FirstOrDefault(Function(d) d.Name.LocalName = "qti-response-processing").ToString.Replace("xmlns=""http://www.imsglobal.org/xsd/imsqtiasi_v3p0""", String.Empty)).ToXmlDocument
             End If
 
+            'Assert
             Assert.IsTrue(UnitTestHelper.AreSame(responseProcessingElement, result))
         End Sub
 

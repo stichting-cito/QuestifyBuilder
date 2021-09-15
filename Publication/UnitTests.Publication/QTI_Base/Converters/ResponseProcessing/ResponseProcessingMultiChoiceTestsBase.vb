@@ -29,6 +29,7 @@ Namespace QTI_Base
             Return scoreParams
         End Function
 
+#Region "Solutions/findings"
 
         Protected _finding1 As XElement =
             <keyFinding id="mc" scoringMethod="Dichotomous">
@@ -511,6 +512,7 @@ Namespace QTI_Base
                 </ItemScoreTranslationTable>
             </solution>
 
+#End Region
 
     End Class
 

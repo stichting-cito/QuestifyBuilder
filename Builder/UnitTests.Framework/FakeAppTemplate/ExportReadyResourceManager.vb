@@ -31,7 +31,7 @@ Namespace FakeAppTemplate
                     resource.AddMetaDataTo(ret)
                     Return ret
                 End If
-            Next
+            Next        
 
             Debug.Assert(False)
 
@@ -44,6 +44,7 @@ Namespace FakeAppTemplate
             Dim resource = GetResource(name)
             If (resource IsNot Nothing) Then
                 Try
+                    ' Extract information from stream resource; The URI isn't a real address.
                     Return New ResourceEntry(name, resource.Version, GetResourceUri(name).ToString(), resource.Type, False, resource.DependentResources, resource.OriginalName, resource.OriginalVersion, resource.State)
                 Finally
                     resource.Dispose()
@@ -54,6 +55,7 @@ Namespace FakeAppTemplate
         End Function
 
         Private Function GetResourceUri(ByVal name As String) As Uri
+            'Remove spaces and replace multiple periods with underscores, but prevent multiple underscores.
             Return New Uri($"db://{name.Replace(" ", "").Replace(".....", "_").Replace("....", "_").Replace("...", "_").Replace("..", "_")}")
         End Function
 

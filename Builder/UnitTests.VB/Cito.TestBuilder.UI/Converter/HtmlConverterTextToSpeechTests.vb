@@ -10,33 +10,37 @@ Public Class HtmlConverterTextToSpeechTests
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub EditorToParamTest()
+        'Arrange
         Dim inputHtml As XElement = <html xmlns="http://www.w3.org/1999/xhtml">
                                         <body style="padding: 2px; margin: 0; box-sizing: border-box; height: auto; width: 100%;">
                                             <p><span class="TTSAlternative"><span class="TTSAlias">Bah</span>Misschien</span></p>
                                         </body>
                                     </html>
         Dim expectedOutput As New XDocument(<html xmlns="http://www.w3.org/1999/xhtml">
-                                                <body style="padding: 2px; margin: 0; box-sizing: border-box; height: auto; width: 100%;">
-                                                    <p><span class="TTSAlternative"><span class="TTSAlias" data-alias="Bah"></span>Misschien</span></p>
-                                                </body>
-                                            </html>)
+                                        <body style="padding: 2px; margin: 0; box-sizing: border-box; height: auto; width: 100%;">
+                                            <p><span class="TTSAlternative"><span class="TTSAlias" data-alias="Bah"></span>Misschien</span></p>
+                                        </body>
+                                    </html>)
 
         Dim converter = New HtmlConverter_TextToSpeechToHtml()
 
+        'Act
         Dim result = XDocument.Parse(converter.ConvertHtml(inputHtml.ToString()))
 
+        'Assert
         Dim areEqual = UnitTestHelper.AreSame(result, expectedOutput)
         If Not areEqual Then CompareFiles(result, expectedOutput)
         Assert.IsTrue(areEqual)
     End Sub
 
     <TestMethod, TestCategory("UILogic")>
-    Public Sub ParamToEditorTest()
+     Public Sub ParamToEditorTest()
+        'Arrange
         Dim expectedOutput As New XDocument(<html xmlns="http://www.w3.org/1999/xhtml">
-                                                <body style="padding: 2px; margin: 0; box-sizing: border-box; height: auto; width: 100%;">
-                                                    <p><span class="TTSAlternative"><span class="TTSAlias">Bah</span>Misschien</span></p>
-                                                </body>
-                                            </html>)
+                                        <body style="padding: 2px; margin: 0; box-sizing: border-box; height: auto; width: 100%;">
+                                            <p><span class="TTSAlternative"><span class="TTSAlias">Bah</span>Misschien</span></p>
+                                        </body>
+                                    </html>)
         Dim inputHtml As XElement = <html xmlns="http://www.w3.org/1999/xhtml">
                                         <body style="padding: 2px; margin: 0; box-sizing: border-box; height: auto; width: 100%;">
                                             <p><span class="TTSAlternative"><span class="TTSAlias" data-alias="Bah"></span>Misschien</span></p>
@@ -45,8 +49,10 @@ Public Class HtmlConverterTextToSpeechTests
 
         Dim converter = New HtmlConverter_HtmlToTextToSpeech()
 
+        'Act
         Dim result = XDocument.Parse(converter.ConvertHtml(inputHtml.ToString()))
 
+        'Assert
         Dim areEqual = UnitTestHelper.AreSame(result, expectedOutput)
         If Not areEqual Then CompareFiles(result, expectedOutput)
         Assert.IsTrue(areEqual)

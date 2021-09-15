@@ -8,8 +8,11 @@ using Questify.Builder.UI.Wpf.Presentation.Services;
 
 namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor.ScoreEditor.Factory
 {
+    /// <summary>
+    /// Tests basic Factory functionality
+    /// </summary>
     [TestClass]
-    public class StringScoringFactoryTests : Runner
+    public class StringScoringFactoryTests : Runner 
     {
         public StringScoringFactoryTests()
             : base(new ScoreFactoryBoilerplate<StringScoringFactory, StringScoringParameter, StringGapViewModel>())
@@ -19,7 +22,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
         private StringGapViewModel MakeViewModel(Cinch.TestViewAwareStatus fakeVAS)
         {
-            return new StringGapViewModel(fakeVAS, A.Fake<ICurrentItemEditorContext>());
+            return new StringGapViewModel(fakeVAS, A.Fake <ICurrentItemEditorContext>());
         }
     }
 }

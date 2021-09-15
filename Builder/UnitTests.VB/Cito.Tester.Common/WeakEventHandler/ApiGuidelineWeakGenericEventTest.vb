@@ -3,6 +3,10 @@ Imports System.Linq
 Imports System.Threading
 Imports Cito.Tester.Common.WeakEventHandler
 
+''' <summary>
+''' These are the same tests as the WeakEventTests, but this test serves as a demonstration how to incorporate the WeakEventhandler in your Design.
+''' </summary>
+''' <remarks></remarks>
 <TestClass()>
 Public Class ApiGuidelineWeakGenericEventTest
 
@@ -10,7 +14,13 @@ Public Class ApiGuidelineWeakGenericEventTest
 
         Private myHandlers As IList(Of IWeakGenericEventHandler(Of EventArgs))
 
+        'A possible way to incorporate the WeakEventHandeler in your design
+        'This allows code to just add an event handler, and have the possibility of forgetting
+        'to remove the handler.
 
+        'This construction will allow setting handlers just like normal, e.g.:
+        'AddHandler test.MyEvent, AddressOf aHandler.SomeHandler
+        'RemoveHandler test.MyEvent, AddressOf aHandler.SomeHandler
 
         Public Custom Event MyEvent As EventHandler(Of EventArgs)
             AddHandler(value As EventHandler(Of EventArgs))
@@ -63,6 +73,7 @@ Public Class ApiGuidelineWeakGenericEventTest
 
     <TestMethod(), TestCategory("HelperMethods")>
     Public Sub AddAndRemoveHandler_NoHandlerGetsExecuted()
+        'Arrange
         Dim count As Integer = 0
         Dim test As New Tester
         Dim aHandler As New AHandler
@@ -71,93 +82,124 @@ Public Class ApiGuidelineWeakGenericEventTest
         AddHandler test.MyEvent, AddressOf aHandler.SomeHandler
         RemoveHandler test.MyEvent, AddressOf aHandler.SomeHandler
 
+        'Act
         test.FireEvent()
 
-        Assert.AreEqual(0, test.NrOfAliveHandlers())
-        Assert.AreEqual(0, count)
+        'Assert
+        Assert.AreEqual(0, test.NrOfAliveHandlers()) 'No handlers should exist
+        Assert.AreEqual(0, count) 'Count should not have been increased.
     End Sub
 
     <TestMethod(), TestCategory("HelperMethods")>
     Public Sub VerifyHandlerIsCollected()
+        'Arrange
         Dim test As New Tester
         Dim aHandler As New AHandler
-        Dim weak_refToHandler As New WeakReference(aHandler)
+        Dim weak_refToHandler As New WeakReference(aHandler) 'Holds a reference to an object, but GC is free to reclaim the memory.
         AddHandler test.MyEvent, AddressOf aHandler.SomeHandler
 
-        aHandler = Nothing
-        GC.Collect(GC.MaxGeneration)
-        GC.WaitForPendingFinalizers()
+        'Act
+        aHandler = Nothing 'No more refs to eventHandler
+        GC.Collect(GC.MaxGeneration) 'Collect memory
+        GC.WaitForPendingFinalizers() 'Wait until all is cleaned.
 
-        Assert.AreEqual(False, weak_refToHandler.IsAlive)
+        'Assert
+        Assert.AreEqual(False, weak_refToHandler.IsAlive) 'Object should not be alive
     End Sub
 
     <TestMethod(), TestCategory("HelperMethods")>
     Public Sub CallEventAfterCleanup_ExpectsEventHandlerDeregisterd()
+        'Arrange
         Dim test As New Tester
         Dim aHandler As New AHandler
-        Dim weak_refToHandler As New WeakReference(aHandler)
+        Dim weak_refToHandler As New WeakReference(aHandler) 'Holds a reference to an object, but GC is free to reclaim the memory.
         AddHandler test.MyEvent, AddressOf aHandler.SomeHandler
 
-        aHandler = Nothing
-        GC.Collect(GC.MaxGeneration)
-        GC.WaitForPendingFinalizers()
+        'Act
+        aHandler = Nothing 'No more refs to eventHandler
+        GC.Collect(GC.MaxGeneration) 'Collect memory
+        GC.WaitForPendingFinalizers() 'Wait until all is cleaned.
 
+        'Fires event. Since handler is gone, the event will be de-registerd.
         test.FireEvent()
 
-        Assert.AreEqual(False, weak_refToHandler.IsAlive)
+        'Assert
+        Assert.AreEqual(False, weak_refToHandler.IsAlive) 'Object should not be alive
     End Sub
 
     <TestMethod(), TestCategory("HelperMethods")>
     Public Sub HandlerNotReleased_CallEventAfterGC_ExpectsEventFired()
+        'Arrange
         Dim count As Integer
         Dim test As New Tester
         Dim aHandler As New AHandler
-        Dim weak_refToHandler As New WeakReference(aHandler)
+        Dim weak_refToHandler As New WeakReference(aHandler) 'Holds a reference to an object, but GC is free to reclaim the memory.
 
+        'Locally increment.
         aHandler.DiveredCall = Sub() Interlocked.Increment(count)
 
         AddHandler test.MyEvent, AddressOf aHandler.SomeHandler
 
+        'Act
+        'We do not release the ref handler!
 
-        GC.Collect(GC.MaxGeneration)
-        GC.WaitForPendingFinalizers()
+        GC.Collect(GC.MaxGeneration) 'Collect memory
+        GC.WaitForPendingFinalizers() 'Wait until all is cleaned.
 
+        'Fires event. Since handler is gone, the event will be de-registered.
         test.FireEvent()
 
-        Assert.AreEqual(True, weak_refToHandler.IsAlive)
-        Assert.AreEqual(1, test.NrOfAliveHandlers())
+        'Assert
+        Assert.AreEqual(True, weak_refToHandler.IsAlive) 'Object should be alive
+        Assert.AreEqual(1, test.NrOfAliveHandlers()) 'Deregister has not occurred since this 
         Assert.AreEqual(1, count)
         Assert.IsNotNull(aHandler)
     End Sub
 
     <TestMethod(), TestCategory("HelperMethods")>
     Public Sub VerifyBehaviourOverMultipleCollects()
+        'Path:
+        '1)Collect
+        '2)Fire Event
+        '3)ReleaseHandler
+        '4)Collect
+        '5)Fire Event
+        'Result: Count = 1, handler is gone, event is deregistered
 
+        'Arrange
         Dim count As Integer
         Dim test As New Tester
         Dim aHandler As New AHandler
-        Dim weak_refToHandler As New WeakReference(aHandler)
+        Dim weak_refToHandler As New WeakReference(aHandler) 'Holds a reference to an object, but GC is free to reclaim the memory.
 
+        'Locally increment.
         aHandler.DiveredCall = Sub() Interlocked.Increment(count)
 
         AddHandler test.MyEvent, AddressOf aHandler.SomeHandler
+       
+        'Act
+        '1)Collect
+        GC.Collect(GC.MaxGeneration) 'Collect memory
+        GC.WaitForPendingFinalizers() 'Wait until all is cleaned.
 
-        GC.Collect(GC.MaxGeneration)
-        GC.WaitForPendingFinalizers()
-
-        test.FireEvent()
+        '2)Fire Event
+        test.FireEvent() 'We fire (count should be 1 after this)
 
 
+        '3)ReleaseHandler
         Assert.IsNotNull(aHandler, "Should not be empty")
-        aHandler = Nothing
+        aHandler = Nothing 'no more refs to eventHandler
 
-        GC.Collect(GC.MaxGeneration)
-        GC.WaitForPendingFinalizers()
+        '4)Collect
+        GC.Collect(GC.MaxGeneration) 'Collect memory
+        GC.WaitForPendingFinalizers() 'Wait until all is cleaned.
 
-        test.FireEvent()
+        '5)Fire Event
+        test.FireEvent() 'Fires event. Since handler is gone, the event will be de-registered.
 
-        Assert.AreEqual(False, weak_refToHandler.IsAlive)
-        Assert.AreEqual(0, test.NrOfAliveHandlers())
+        'Assert
+        Assert.AreEqual(False, weak_refToHandler.IsAlive) 'Object should be alive
+        Assert.AreEqual(0, test.NrOfAliveHandlers()) 'Deregister has occurred 
         Assert.AreEqual(1, count)
     End Sub
 

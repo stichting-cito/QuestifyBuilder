@@ -399,19 +399,6 @@ Namespace QTI.Helpers
             Return mimeType
         End Function
 
-        Public Shared Function IsSourceTextFile(resourceFile() As Byte, resourceName As String) As Boolean
-            Dim mimeType As String = GetMimeTypeFromFile(resourceFile, resourceName)
-
-            If mimeType.Contains("application/xhtml+xml") _
-               OrElse mimeType.Contains("text/plain") _
-               OrElse mimeType.Contains("text/html") _
-                Then
-                Return True
-            End If
-
-            Return False
-        End Function
-
         Public Shared Sub SaveDocument(objectToSave As Object, filePath As String, ByVal entityName As String, ByRef filesPerEntity As ConcurrentDictionary(Of String, List(Of String)), ns As XmlSerializerNamespaces)
             Dim xmlDocument = ObjectToXmlDocument(objectToSave, ns)
             SaveDocument(xmlDocument, filePath, entityName, filesPerEntity)

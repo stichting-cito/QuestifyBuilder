@@ -1,0 +1,58 @@
+<qti-response-processing xmlns="http://www.imsglobal.org/xsd/imsqtiasi_v3p0">
+  <qti-response-condition>
+    <qti-response-if>
+      <qti-or>
+        <qti-and>
+          <qti-equal tolerance="">
+            <qti-variable identifier="RESPONSE" />
+            <qti-base-value base-type="integer">2</qti-base-value>
+          </qti-equal>
+          <qti-equal tolerance="">
+            <qti-variable identifier="RESPONSE2" />
+            <qti-base-value base-type="integer">3</qti-base-value>
+          </qti-equal>
+          <qti-equal tolerance="">
+            <qti-variable identifier="RESPONSE3" />
+            <qti-base-value base-type="integer">5</qti-base-value>
+          </qti-equal>
+        </qti-and>
+        <qti-and>
+          <qti-equal tolerance="">
+            <qti-variable identifier="RESPONSE" />
+            <qti-base-value base-type="integer">3</qti-base-value>
+          </qti-equal>
+          <qti-equal tolerance="">
+            <qti-variable identifier="RESPONSE2" />
+            <qti-base-value base-type="integer">2</qti-base-value>
+          </qti-equal>
+          <qti-equal tolerance="">
+            <qti-variable identifier="RESPONSE3" />
+            <qti-base-value base-type="integer">5</qti-base-value>
+          </qti-equal>
+        </qti-and>
+      </qti-or>
+      <qti-set-outcome-value identifier="SCORE">
+        <qti-sum>
+          <qti-base-value base-type="float">1</qti-base-value>
+          <qti-variable identifier="SCORE" />
+        </qti-sum>
+      </qti-set-outcome-value>
+    </qti-response-if>
+  </qti-response-condition>
+  <qti-response-condition>
+    <qti-response-if>
+      <qti-gte>
+        <qti-variable identifier="SCORE" />
+        <qti-base-value base-type="float">1</qti-base-value>
+      </qti-gte>
+      <qti-set-outcome-value identifier="SCORE">
+        <qti-base-value base-type="float">1</qti-base-value>
+      </qti-set-outcome-value>
+    </qti-response-if>
+    <qti-response-else>
+      <qti-set-outcome-value identifier="SCORE">
+        <qti-base-value base-type="float">0</qti-base-value>
+      </qti-set-outcome-value>
+    </qti-response-else>
+  </qti-response-condition>
+</qti-response-processing>

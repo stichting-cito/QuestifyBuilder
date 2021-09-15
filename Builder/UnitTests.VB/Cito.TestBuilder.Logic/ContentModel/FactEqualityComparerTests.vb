@@ -9,107 +9,132 @@ Public Class FactEqualityComparerTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("ScoringAdv")>
     Public Sub SimpleFactsWithSameId_AreEqual()
+        'Arrange
         Dim solution = _simpleFact.To(Of Solution)()
         Dim comparer = GetComparer()
         Dim fact1 = DirectCast(solution.Findings(0).Facts(0), KeyFact)
         Dim fact2 = DirectCast(solution.Findings(0).Facts(1), KeyFact)
-
+        
+        'Act
         Dim result = comparer.Equals(fact1, fact2)
-
+        
+        'Assert
         Assert.IsTrue(result)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("ScoringAdv")>
     Public Sub SimpleFactsWithSameId_HashcodeEquals()
+        'Arrange
         Dim solution = _simpleFact.To(Of Solution)()
 
         Dim fact1 = DirectCast(solution.Findings(0).Facts(0), KeyFact)
         Dim fact2 = DirectCast(solution.Findings(0).Facts(1), KeyFact)
         Dim areSame = GetComparer().Equals(fact1, fact2)
-
+        
+        'Act
         Dim result1 = New FactEqualityComparer().CompareGetHashCode(fact1)
         Dim result2 = New FactEqualityComparer().CompareGetHashCode(fact2)
-
+        
+        'Assert
         Assert.AreEqual(result1, result2)
         Assert.IsTrue(areSame)
     End Sub
+    '--
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("ScoringAdv")>
     Public Sub SimpleFactsWithDifferentSameId_AreNotEqual()
+        'Arrange
         Dim solution = _simpleFactDifferentFactId.To(Of Solution)()
         Dim comparer As IEqualityComparer(Of KeyFact) = New FactEqualityComparer()
         Dim fact1 = DirectCast(solution.Findings(0).Facts(0), KeyFact)
         Dim fact2 = DirectCast(solution.Findings(0).Facts(1), KeyFact)
 
+        'Act
         Dim result = comparer.Equals(fact1, fact2)
-
+        
+        'Assert
         Assert.IsFalse(result)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("ScoringAdv")>
     Public Sub SimpleFactsWithDifferentSameId_HashcodeNotEquals()
+        'Arrange
         Dim solution = _simpleFactDifferentFactId.To(Of Solution)()
 
         Dim fact1 = DirectCast(solution.Findings(0).Facts(0), KeyFact)
         Dim fact2 = DirectCast(solution.Findings(0).Facts(1), KeyFact)
         Dim areSame = GetComparer().Equals(fact1, fact2)
-
+       
+        'Act
         Dim result1 = GetComparer().GetHashCode(fact1)
         Dim result2 = GetComparer().GetHashCode(fact2)
-
+        
+        'Assert
         Assert.AreNotEqual(result1, result2)
         Assert.IsFalse(areSame)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("ScoringAdv")>
     Public Sub SimpleFactsWithDifferentDomainId_AreNotEqual()
+        'Arrange
         Dim solution = _simpleFactDifferentDomainId.To(Of Solution)()
         Dim comparer As IEqualityComparer(Of KeyFact) = New FactEqualityComparer()
         Dim fact1 = DirectCast(solution.Findings(0).Facts(0), KeyFact)
         Dim fact2 = DirectCast(solution.Findings(0).Facts(1), KeyFact)
 
+        'Act
         Dim result = comparer.Equals(fact1, fact2)
-
+        
+        'Assert
         Assert.IsFalse(result)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("ScoringAdv")>
     Public Sub SimpleFactsWithDifferentDomainId_HashcodeNotEquals()
+        'Arrange
         Dim solution = _simpleFactDifferentDomainId.To(Of Solution)()
 
         Dim fact1 = DirectCast(solution.Findings(0).Facts(0), KeyFact)
         Dim fact2 = DirectCast(solution.Findings(0).Facts(1), KeyFact)
         Dim areSame = GetComparer().Equals(fact1, fact2)
-
+        
+        'Act
         Dim result1 = GetComparer().GetHashCode(fact1)
         Dim result2 = GetComparer().GetHashCode(fact2)
-
+        
+        'Assert
         Assert.AreNotEqual(result1, result2)
         Assert.IsFalse(areSame)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("ScoringAdv")>
     Public Sub SimpleFactsWithDifferentValues_AreNotEqual()
+        'Arrange
         Dim solution = _simpleFactValuesNotSame.To(Of Solution)()
         Dim comparer As IEqualityComparer(Of KeyFact) = New FactEqualityComparer()
         Dim fact1 = DirectCast(solution.Findings(0).Facts(0), KeyFact)
         Dim fact2 = DirectCast(solution.Findings(0).Facts(1), KeyFact)
 
+        'Act
         Dim result = comparer.Equals(fact1, fact2)
-
+        
+        'Assert
         Assert.IsFalse(result)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("ScoringAdv")>
     Public Sub SimpleFactsWithDifferentValues_HashcodeNotEquals()
+        'Arrange
         Dim solution = _simpleFactValuesNotSame.To(Of Solution)()
 
         Dim fact1 = DirectCast(solution.Findings(0).Facts(0), KeyFact)
         Dim fact2 = DirectCast(solution.Findings(0).Facts(1), KeyFact)
         Dim areSame = GetComparer().Equals(fact1, fact2)
-
+        
+        'Act
         Dim result1 = GetComparer().GetHashCode(fact1)
         Dim result2 = GetComparer().GetHashCode(fact2)
-
+        
+        'Assert
         Assert.AreNotEqual(result1, result2)
         Assert.IsFalse(areSame)
     End Sub

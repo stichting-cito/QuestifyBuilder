@@ -13,46 +13,55 @@ using Questify.Builder.UnitTests.Fakes;
 namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 {
     [TestClass]
-    public class OpenItemEditor_SubView_WithErrors : ItemEditorTestBase
+    public class OpenItemEditor_SubView_WithErrors : ItemEditorTestBase 
     {
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), FakeObjectFactoryBehavior(ItemEditorObjectStrategy.GiveException)]
         public void ItmVmInError_PresentationVM_Test()
         {
+            //Arrange
             var ItemEditorVm_InError = new ItemEditorViewModel(); ItemEditorVm_InError.DoActualLoadOnItemId(Guid.NewGuid());
             var view = A.Fake<IPresentationControl>(); view.WorkSpaceContextualData.DataValue = ItemEditorVm_InError;
             var fake_MsgBoxServ = FakeMessageBoxService.MakeNewFake();
             var viewAwareStatus = new TestViewAwareStatus();
-            var resouceEditor = A.Fake<IResourceEditorService>();
-            var presentationVm = new PresentationViewModel(viewAwareStatus, resouceEditor);
+			var resouceEditor = A.Fake<IResourceEditorService>();
+			var presentationVm = new PresentationViewModel(viewAwareStatus, resouceEditor);
+            //Act
             viewAwareStatus.View = view;
             viewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert            
             A.CallTo(() => view.RefreshPreview()).MustNotHaveHappened();
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), FakeObjectFactoryBehavior(ItemEditorObjectStrategy.GiveException)]
         public void ItmVmInError_MetaDataVM_Test()
         {
+            //Arrange
             var ItemEditorVm_InError = new ItemEditorViewModel(); ItemEditorVm_InError.DoActualLoadOnItemId(Guid.NewGuid());
             var view = A.Fake<IMetaDataControl>(); view.WorkSpaceContextualData.DataValue = ItemEditorVm_InError;
-            var fake_MsgBoxServ = FakeMessageBoxService.MakeNewFake();
-            var viewAwareStatus = new TestViewAwareStatus();
+            var fake_MsgBoxServ = FakeMessageBoxService.MakeNewFake();            
+            var viewAwareStatus = new TestViewAwareStatus();            
             var metaVm = new MetaDataViewModel(viewAwareStatus, fake_MsgBoxServ, null);
+            //Act
             viewAwareStatus.View = view;
             viewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             A.CallTo(() => view.Update(A<AssessmentItem>.Ignored, A<ResourceEntity>.Ignored)).MustNotHaveHappened();
         }
-
+        
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), FakeObjectFactoryBehavior(ItemEditorObjectStrategy.GiveException)]
         public void ItmVmInError_SourceVm_Test()
         {
+            //Arrange
             var ItemEditorVm_InError = new ItemEditorViewModel(); ItemEditorVm_InError.DoActualLoadOnItemId(Guid.NewGuid());
             var view = A.Fake<ISourceControl>(); view.WorkSpaceContextualData.DataValue = ItemEditorVm_InError;
             var fake_MsgBoxServ = FakeMessageBoxService.MakeNewFake();
             var viewAwareStatus = new TestViewAwareStatus();
             var sourceVm = new SourceViewerViewModel(viewAwareStatus);
+            //Act
             viewAwareStatus.View = view;
             viewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert            
             A.CallTo(() => view.SetAssessmentItem(A<AssessmentItem>.Ignored)).MustNotHaveHappened();
         }
     }

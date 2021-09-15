@@ -9,13 +9,12 @@ Imports Cito.Tester.ContentModel
 Imports Enums
 Imports Questify.Builder.Logic.Publication
 Imports Questify.Builder.Logic.QTI.Helpers.QTI_Base
-Imports Questify.Builder.Logic.QTI.PackageCreators.QTI_Base
-Imports Questify.Builder.Logic.QTI.Xsd.QTI30
-Imports Questify.Builder.Logic.QTI.Model.QTI30
-Imports Questify.Builder.Logic.QTI.PackageCreators.QTI30
-Imports ResourceType = Questify.Builder.Logic.QTI.Xsd.QTI30.ResourceType
 Imports Questify.Builder.Logic.QTI.Interfaces.QTI30
-Imports System.Xml.Serialization
+Imports Questify.Builder.Logic.QTI.Model.QTI30
+Imports Questify.Builder.Logic.QTI.PackageCreators.QTI_Base
+Imports Questify.Builder.Logic.QTI.PackageCreators.QTI30
+Imports Questify.Builder.Logic.QTI.Xsd.QTI30
+Imports ResourceType = Questify.Builder.Logic.QTI.Xsd.QTI30.ResourceType
 
 Namespace QTI.Helpers.QTI30.QtiModelHelpers
 
@@ -112,6 +111,7 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
             Dependencies.AddRange(attachmentDependencies)
 
             AssessmentItemType.qticompanionmaterialsinfo = CreateCompanionMaterialsInfo(tempDoc)
+            AssessmentItemType.qtiassessmentstimulusref = CreateAssessmentStimulusRef(tempDoc)
             AssessmentItemType.qtiitembody = CreateItemBody(tempDoc, AssessmentItem)
 
             CssContent = QtiTemplate.Css
@@ -119,6 +119,46 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
             ProcessItemType(AssessmentItem)
             ProcessTts(AssessmentItem)
         End Sub
+
+        Private Function CreateAssessmentStimulusRef(doc As XmlDocument) As List(Of AssessmentStimulusRefType)
+            Dim sharedStimuli As XmlNodeList = doc.SelectNodes($"//div[@data-stimulus-idref]")
+            If sharedStimuli.Count <= 0 Then
+                Return Nothing
+            End If
+
+            Dim stimulusRefTypes = ProcessStimuliNodes(sharedStimuli)
+            If Not stimulusRefTypes.Any() Then
+                Return Nothing
+            End If
+            Return stimulusRefTypes
+        End Function
+
+        Private Function ProcessStimuliNodes(sharedStimuli As XmlNodeList) As List(Of AssessmentStimulusRefType)
+            Dim result = New List(Of AssessmentStimulusRefType)
+            For Each node As XmlNode In sharedStimuli
+                Dim stimulusIdentifier = ChainHandlerHelper.GetIdentifierFromResourceId($"{node.Attributes("data-stimulus-idref").Value}.xml", PackageCreatorConstants.TypeOfResource.resource)
+                Dim stimulusRef = ProcessStimulusNode(node, stimulusIdentifier)
+                If Not String.IsNullOrEmpty(stimulusRef) Then
+                    Dim newStimulus = New AssessmentStimulusRefType() With {
+                        .identifier = stimulusIdentifier,
+                        .href = stimulusRef
+                    }
+                    result.Add(newStimulus)
+                End If
+            Next
+            Return result
+        End Function
+
+        Private Function ProcessStimulusNode(node As XmlNode, stimulusIdentifier As String) As String
+            Dim result As String = String.Empty
+            Dim fileAttribute = node.Attributes("data-stimulus-file")
+            If fileAttribute IsNot Nothing Then
+                result = fileAttribute.Value
+                node.Attributes("data-stimulus-idref").Value = stimulusIdentifier
+                node.Attributes.Remove(fileAttribute)
+            End If
+            Return result
+        End Function
 
         Protected Overridable Sub CreateAndUpdateItemDocuments(ByRef itemDocument As XmlDocument, ByRef itemExtensionDocument As XmlDocument)
             itemDocument = GetItemDocumentXml(AssessmentItemType)
@@ -217,28 +257,23 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
         Public Overridable Sub AddItemToManifest(publishedItem As PublishedItem, resources As ConcurrentDictionary(Of String, Dictionary(Of ResourceType, List(Of String))), testDocumentSet As TestDocumentSet, itemCode As String,
                                                  testCode As String, itemDir As String, itemMetaDataCollection As MetaDataCollection, packageCreator As PackageCreator)
             Dim item As AssessmentItem = packageCreator.GetItemByCode(itemCode)
-            Dim fileNameItem As String = $"{itemCode}.xml"
+            Dim fileNameItem As String = $"{GetItemResourceIdentifier()}.xml"
             Dim hrefItem As String = $"{itemDir}/{fileNameItem}"
-            Dim resourceType As ResourceType = CreateItemResourceType(item, hrefItem, publishedItem, itemMetaDataCollection)
+            Dim resourceType As ResourceType = CreateItemResourceType(hrefItem, publishedItem, itemMetaDataCollection)
             PackageCreator.AddResourceToManifest(resources, resourceType, publishedItem.FileList.ToArray)
 
             Dim testId As String = ChainHandlerHelper.GetIdentifierFromResourceId(testCode, PackageCreatorConstants.TypeOfResource.test)
-            Dim itemId As String = ChainHandlerHelper.GetIdentifierFromResourceId(item.Identifier, PackageCreatorConstants.TypeOfResource.item)
+            Dim itemId As String = ChainHandlerHelper.GetIdentifierFromResourceId(GetItemResourceIdentifier(), PackageCreatorConstants.TypeOfResource.item)
             PackageCreator.AddDependentResourceToManifest(resources, testId, itemId)
 
             PackageCreator.AddDependentResourceToManifest(resources, itemId, publishedItem.DepencencyList)
         End Sub
 
-        Protected Overridable Function CreateItemResourceType(item As AssessmentItem, hrefItem As String, publishedItem As PublishedItem, itemMetaDataCollection As MetaDataCollection) As ResourceType
+        Protected Overridable Function CreateItemResourceType(hrefItem As String, publishedItem As PublishedItem, itemMetaDataCollection As MetaDataCollection) As ResourceType
             Dim returnValue = GetNewResourceType(itemMetaDataCollection)
-            returnValue.identifier = ChainHandlerHelper.GetIdentifierFromResourceId(item.Identifier, PackageCreatorConstants.TypeOfResource.item)
+            returnValue.identifier = ChainHandlerHelper.GetIdentifierFromResourceId(GetItemResourceIdentifier, PackageCreatorConstants.TypeOfResource.item)
             returnValue.type = ResourceTypeType.imsqti_item_xmlv3p0
             returnValue.href = hrefItem
-
-
-
-
-
             Return returnValue
         End Function
 
@@ -251,14 +286,17 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
         End Function
 
         Protected Overridable Function GetItemFileType(isExtension As Boolean) As FileType
-            Dim format As String = "{0}.xml"
-            Dim fileNameItem As String = String.Format(format, AssessmentItem.Identifier)
+            Dim fileNameItem As String = $"{GetItemResourceIdentifier()}.xml"
             Dim hrefItem As String = $"{ResourceHelper.FolderDirectory(PackageCreatorConstants.FileDirectoryType.items)}/{fileNameItem}"
             Dim itemFile As New FileType
 
             itemFile.href = hrefItem
 
             Return itemFile
+        End Function
+
+        Public Overridable Function GetItemResourceIdentifier() As String
+            Return AssessmentItem.Identifier
         End Function
 
         Protected Overridable Function GetAttachmentResourceNames(ByVal item As AssessmentItem) As List(Of String)
@@ -307,7 +345,7 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
         Protected Overridable Sub GetDependentStylesheetsFromSourceText(ByRef styleSheetList As List(Of StyleSheetType))
         End Sub
 
-        Private Function CreateItem() As AssessmentItemType
+        Protected Overridable Function CreateItem() As AssessmentItemType
             Dim asssement = GetAssessmentItemType()
             asssement.identifier = ChainHandlerHelper.GetIdentifierFromResourceId(AssessmentItem.Identifier, PackageCreatorConstants.TypeOfResource.item)
             asssement.title = AssessmentItem.Title
@@ -369,7 +407,6 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
         Protected Sub AddScore(doc As XmlDocument, item As AssessmentItemType)
             Dim xmlNamespaceManager As New XmlNamespaceManager(doc.NameTable)
             xmlNamespaceManager.AddNamespace("qti", doc.DocumentElement.NamespaceURI)
-            xmlNamespaceManager.AddNamespace("html", "http://www.w3.org/1999/xhtml")
 
             Dim responseIdentifierAttributeList As XmlNodeList = ResponseIdentifierHelper.GetResponseIdentifiers(doc, xmlNamespaceManager)
             Dim outcomeDeclarations = New List(Of OutcomeDeclarationType)
@@ -378,9 +415,9 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
 
             If ScoringMethod IsNot Nothing AndAlso HasScore() Then
                 responseDeclarations.AddRange(GetResponseDeclarations(responseIdentifierAttributeList))
-                outcomeDeclarations.AddRange(ScoringMethod.GetOutcomeDeclarations(AssessmentItem.Solution, responseIdentifierAttributeList, TranslationTable))
+                outcomeDeclarations.AddRange(ScoringMethod.GetOutcomeDeclarations(AssessmentItem.Solution, responseIdentifierAttributeList, TranslationTable, Me.PackageCreator))
 
-                Dim responseProcessing As XmlDocument = ScoringMethod.GetResponseProcessing(AssessmentItem.Solution, responseIdentifierAttributeList, shouldScoreBeTranslated)
+                Dim responseProcessing As XmlDocument = ScoringMethod.GetResponseProcessing(AssessmentItem.Solution, responseIdentifierAttributeList, shouldScoreBeTranslated, Me.PackageCreator)
                 If responseProcessing IsNot Nothing Then item.qtiresponseprocessing = ResponseProcessingHelper.MergeResponseProcessing(item.qtiresponseprocessing, CreateResponseProcessing(responseProcessing.OuterXml))
             End If
 
@@ -478,27 +515,21 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
             Dim xDoc As XDocument = XDocument.Parse(xmlDoc.DocumentElement.OuterXml, LoadOptions.PreserveWhitespace)
             Dim uniqueIdentifiers As New Dictionary(Of String, Integer)
 
-            xDoc.Descendants().Where(Function(n) n.Attributes.Any(Function(a) a.Name.ToString.Equals("id") AndAlso a.Value.StartsWith("c1-id-"))).ToList().ForEach(Sub(d)
-                                                                                                                                                                       Dim attr = d.Attributes.First(Function(at) at.Name.ToString.Equals("id") AndAlso at.Value.StartsWith("c1-id-"))
-                                                                                                                                                                       If attr IsNot Nothing AndAlso attr.Value IsNot Nothing Then
-                                                                                                                                                                           If uniqueIdentifiers.ContainsKey(attr.Value) Then
-                                                                                                                                                                               uniqueIdentifiers(attr.Value) += 1
-                                                                                                                                                                               attr.Value =
-                                                                                                                                                                                                                                                                                                                             $"{attr.Value}-{ _
-                                                                                                                                                                                                                                                                                                                             uniqueIdentifiers(attr.Value)}"
-                                                                                                                                                                           Else
-                                                                                                                                                                               uniqueIdentifiers.Add(attr.Value, 1)
-                                                                                                                                                                           End If
-                                                                                                                                                                       End If
-                                                                                                                                                                   End Sub)
+            xDoc.Descendants().Where(Function(n) n.Attributes.Any(Function(a) a.Name.ToString.Equals("id") AndAlso a.Value.StartsWith("c1-id-"))).
+                ToList().ForEach(Sub(d)
+                                     Dim attr = d.Attributes.First(Function(at) at.Name.ToString.Equals("id") AndAlso at.Value.StartsWith("c1-id-"))
+                                     If attr IsNot Nothing AndAlso attr.Value IsNot Nothing Then
+                                         If uniqueIdentifiers.ContainsKey(attr.Value) Then
+                                             uniqueIdentifiers(attr.Value) += 1
+                                             attr.Value = $"{attr.Value}-{uniqueIdentifiers(attr.Value)}"
+                                         Else
+                                             uniqueIdentifiers.Add(attr.Value, 1)
+                                         End If
+                                     End If
+                                 End Sub)
             xmlDoc = xDoc.ToXmlDocument()
-
         End Sub
 
-
-        Function [IsNot]() As Integer
-            Throw New NotImplementedException
-        End Function
 
     End Class
 End Namespace

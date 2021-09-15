@@ -15,6 +15,9 @@ Namespace Conversion
         Private _resourceCodeColumnName As String
         Private _knownColumnHeaders As List(Of String)
 
+        ''' <summary>
+        ''' Gets the custom property definitions.
+        ''' </summary>
         Public ReadOnly Property CustomPropertyDefinitions As List(Of String)
             Get
                 Dim newList As New List(Of String)
@@ -25,21 +28,31 @@ Namespace Conversion
             End Get
         End Property
 
+        ''' <summary>
+        ''' Gets the custom property values.
+        ''' </summary>
         Public ReadOnly Property CustomPropertyValues As Dictionary(Of String, Dictionary(Of String, String))
             Get
                 Return _customPropertyValues
             End Get
         End Property
 
+        ''' <summary>
+        ''' Read the Excel document
+        ''' </summary>
         Public Function ReadExcelDocument(filename As String, knownColumnHeaders As List(Of String), resourceCodeColumnName As String) As List(Of String)
             Dim fileStream As FileStream = Nothing
             Try
                 Try
+                    ' Try to open the file with FileShare.Read. 
                     fileStream = New FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.Read)
                     Return ReadExcelDocument(fileStream, knownColumnHeaders, resourceCodeColumnName)
                 Catch ex As Exception
+                    ' Unable to open in FileShare.Read mode, trying FileShare.ReadWrite next.
                 End Try
                 Try
+                    ' If the file is open in a program like Word or Excel, FileShare.ReadWrite will be required to open it. 
+                    ' If this fails as well, then we can't open the file.
                     fileStream = New FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)
                     Return ReadExcelDocument(fileStream, knownColumnHeaders, resourceCodeColumnName)
                 Catch ex As Exception
@@ -55,6 +68,9 @@ Namespace Conversion
             Return _errorMessages
         End Function
 
+        ''' <summary>
+        ''' Read the Excel document
+        ''' </summary>
         Public Function ReadExcelDocument(stream As Stream, knownColumnHeaders As List(Of String), resourceCodeColumnName As String) As List(Of String)
             Try
                 _resourceCodeColumnName = resourceCodeColumnName
@@ -67,12 +83,18 @@ Namespace Conversion
             Return _errorMessages
         End Function
 
+        ''' <summary>
+        ''' Opens the excel document.
+        ''' </summary>
+        ''' <param name="stream">Stream of the file.</param>
         Private Sub OpenExcelDocument(stream As Stream)
             Using document As SpreadsheetDocument = SpreadsheetDocument.Open(stream, False)
                 Dim sheets As IEnumerable(Of Sheet) = document.WorkbookPart.Workbook.Descendants(Of Sheet)()
                 If sheets.Count() = 0 Then
+                    ' The specified worksheet does not exist.
                     Exit Sub
                 End If
+                'we'll work with the first workbook
                 Dim worksheetPart As WorksheetPart = CType(document.WorkbookPart.GetPartById(sheets.First().Id), WorksheetPart)
                 Dim worksheet As Worksheet = worksheetPart.Worksheet
 
@@ -92,7 +114,9 @@ Namespace Conversion
                             cellValue = cell.InlineString.InnerText
                         End If
                         If rowIndex = 0 Then
+                            'first row should be the caption
                             If Not String.IsNullOrEmpty(cellValue) Then
+                                'we cannot count the rows because empty rows are skipped so we should use the reference
                                 If Not _knownColumnHeaders.Contains(cellValue.ToLower) AndAlso Not _resourceCodeColumnName.Equals(cellValue.ToLower) Then
                                     _customPropertiesDefinition.Add(OnlyAlphaNumericChars(cell.CellReference), cellValue)
                                 End If
@@ -122,6 +146,7 @@ Namespace Conversion
                             If Not _customPropertyValues.ContainsKey(code) Then
                                 _customPropertyValues.Add(code, itemCustomPropertyValues)
                             Else
+                                'we'll take the last one
                                 _customPropertyValues(code) = itemCustomPropertyValues
                             End If
                         End If
@@ -132,6 +157,11 @@ Namespace Conversion
             End Using
         End Sub
 
+        ''' <summary>
+        ''' Gets the shared string item by id.
+        ''' </summary>
+        ''' <param name="workbookPart">The workbook part.</param>
+        ''' <param name="id">The id.</param><returns></returns>
         Public Function GetSharedStringItemById(workbookPart As WorkbookPart, id As Integer) As String
             Return workbookPart.SharedStringTablePart.SharedStringTable.Elements(Of SharedStringItem)().ElementAt(id).Text.Text
         End Function

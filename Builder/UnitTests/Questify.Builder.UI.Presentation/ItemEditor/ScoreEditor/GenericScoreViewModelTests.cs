@@ -14,9 +14,15 @@ using Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels.ScoreEditors;
 
 namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor.ScoreEditor
 {
+    /// <summary>
+    /// Use this class to get *free* unit tests for your ViewModel that is involved in scoring.
+    /// This class exists to not be forced to make your objects public.
+    /// 
+    /// This class will test some basic functionality that each view model needs to have.
+    /// </summary>
     [TestClass]
     public abstract class GenericScoreViewModelTests<TScoreParam>
-    where TScoreParam : ScoringParameter
+        where TScoreParam : ScoringParameter        
     {
         TestViewAwareStatus _fakeVAS;
         Solution solution;
@@ -36,8 +42,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             Bootstrapper.InitLanguageAndResources();
         }
 
+        #region Generic tests
 
-        [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring")]
+        [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring")] 
         public void EmptySolutions_ShouldBeInitialized_WithAScoringMethod_OtherThan_None()
         {
             ScoringViewModel<TScoreParam> vm = (ScoringViewModel<TScoreParam>)CreateVM(fakeVAS);
@@ -46,12 +53,14 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             var finding = solution.Findings.FindById(scorePrm.FindingId);
             var jit = new CreateObjectJIT<KeyFinding>(finding, () => solution.GetFindingOrMakeIt(scorePrm.FindingId));
-
+            
             var findingViewModel = new KeyFindingGroupScoreViewModel(jit);
             findingViewModel.ScoreEditorsViews.Add(workspaceData);
 
+            //Act
             InitViewModel(workspaceData);
 
+            //Assert
             Assert.AreNotEqual(EnumScoringMethod.None, findingViewModel.SelectedScoringMethod.DataValue);
         }
 
@@ -68,8 +77,10 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             var findingViewModel = new KeyFindingGroupScoreViewModel(jit);
             findingViewModel.ScoreEditorsViews.Add(workspaceData);
 
+            //Act
             InitViewModel(workspaceData);
 
+            //Assert            
             Assert.AreEqual(0, Solution.Findings.Count, "No Findings should have been made.");
 
         }
@@ -88,9 +99,11 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             findingViewModel.ScoreEditorsViews.Add(workspaceData);
 
             InitViewModel(workspaceData);
+            //Act
             findingViewModel.SelectedScoringMethod.DataValue = EnumScoringMethod.Dichotomous;
 
-            Assert.AreNotEqual(0, Solution.Findings.Count, "No Findings should have been made.");
+            //Assert            
+            Assert.AreNotEqual (0, Solution.Findings.Count, "No Findings should have been made.");
 
         }
 
@@ -108,8 +121,10 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             findingViewModel.ScoreEditorsViews.Add(workspaceData);
 
             InitViewModel(workspaceData);
+            //Act
             findingViewModel.SelectedScoringMethod.DataValue = EnumScoringMethod.Polytomous;
 
+            //Assert            
             Assert.AreNotEqual(0, Solution.Findings.Count, "No Findings should have been made.");
 
         }
@@ -128,23 +143,26 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             findingViewModel.ScoreEditorsViews.Add(workspaceData);
 
             InitViewModel(workspaceData);
+            //Act
             SetSomeScore(scorePrm);
 
+            //Assert            
             Assert.AreNotEqual(0, Solution.Findings.Count, "No Findings should have been made.");
 
         }
 
+        #endregion
 
-        internal virtual IScoringViewModel CreateVM(TestViewAwareStatus fakeVas)
+        internal  virtual  IScoringViewModel CreateVM(TestViewAwareStatus fakeVas)
         {
             Debug.Assert(false, "Please override this function");
-            return null;
+            return null; 
         }
 
         protected abstract TScoreParam ScoreParam(string scoreId, params string[] ids);
         protected abstract IScoringParameterWorkspaceFactory CreateFactory();
         protected abstract void SetSomeScore(TScoreParam scorePrm);
-
+        
         public Solution Solution
         {
             get { return solution; }
@@ -152,18 +170,18 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
         public TestViewAwareStatus fakeVAS
         {
-            get { return _fakeVAS; }
+            get{return _fakeVAS;}
         }
 
         public IScoringParameterWorkspaceFactory Factory
         {
-            get { return _factory; }
+            get{return _factory;}
         }
 
         public void InitViewModel(WorkspaceData workspaceData)
         {
             workspaceAware.WorkSpaceContextualData.DataValue = workspaceData.DataValue;
-            fakeVAS.SimulateViewIsLoadedEvent();
+            fakeVAS.SimulateViewIsLoadedEvent();            
         }
 
         public void WriteSolution(string currentState)

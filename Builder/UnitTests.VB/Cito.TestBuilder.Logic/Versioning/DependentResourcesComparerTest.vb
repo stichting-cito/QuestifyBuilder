@@ -12,6 +12,7 @@ Public Class DependentResourcesComparerTest
 
     <TestMethod(), Description("Compare two resourceHistory entities with identical DependentResource names."), TestCategory("Logic")>
     Public Sub TestCompareTwoResourceHistoryEntitiesWithTwoIdenticalDependentResources()
+        'Arrange
         Dim versionableEntity1 As IVersionable = CreateResourceEntity(New ItemResourceEntity(), Helper.CreateAssessmentItem("Title of AssessmentItem 1"))
         Dim versionableEntity2 As IVersionable = CreateResourceEntity(New ItemResourceEntity(), Helper.CreateAssessmentItem("Title of AssessmentItem 2"))
         Dim propertyEntity1 As IPropertyEntity = CType(versionableEntity1, IPropertyEntity)
@@ -32,11 +33,13 @@ Public Class DependentResourcesComparerTest
         propertyEntity1.DependentResourceCollection.Add(dependentResourceEntity1)
         propertyEntity2.DependentResourceCollection.Add(dependentResourceEntity2)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsTrue(metaDataCompareResults.Count = 0)
@@ -44,6 +47,7 @@ Public Class DependentResourcesComparerTest
 
     <TestMethod(), Description("Compare two resourceHistory entities each with a DependentResource. They have the same id but different names."), TestCategory("Logic")>
     Public Sub TestCompareTwoResourceHistoryEntitiesWithTwoDependentResourcesWithSameIdButDifferentNames()
+        'Arrange
         Dim versionableEntity1 As IVersionable = CreateResourceEntity(New ItemResourceEntity(), Helper.CreateAssessmentItem("Title of AssessmentItem 1"))
         Dim versionableEntity2 As IVersionable = CreateResourceEntity(New ItemResourceEntity(), Helper.CreateAssessmentItem("Title of AssessmentItem 2"))
         Dim propertyEntity1 As IPropertyEntity = CType(versionableEntity1, IPropertyEntity)
@@ -64,11 +68,13 @@ Public Class DependentResourcesComparerTest
         propertyEntity1.DependentResourceCollection.Add(dependentResourceEntity1)
         propertyEntity2.DependentResourceCollection.Add(dependentResourceEntity2)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsTrue(metaDataCompareResults.Count = 1)
@@ -77,6 +83,7 @@ Public Class DependentResourcesComparerTest
 
     <TestMethod(), Description("Compare two resourceHistory entities with different DependentResources. The first propertyEntity contains a DependentResource, the second doesn't"), TestCategory("Logic")>
     Public Sub TestCompareTwoResourceHistoryEntitiesWithDifferentDependentResources1()
+        'Arrange
         Dim versionableEntity1 As IVersionable = CreateResourceEntity(New ItemResourceEntity(), Helper.CreateAssessmentItem("Title of AssessmentItem 1"))
         Dim versionableEntity2 As IVersionable = CreateResourceEntity(New ItemResourceEntity(), Helper.CreateAssessmentItem("Title of AssessmentItem 2"))
         Dim propertyEntity1 As IPropertyEntity = CType(versionableEntity1, IPropertyEntity)
@@ -89,11 +96,13 @@ Public Class DependentResourcesComparerTest
 
         propertyEntity1.DependentResourceCollection.Add(dependentResourceEntity1)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsTrue(metaDataCompareResults.Count = 1)
@@ -102,6 +111,7 @@ Public Class DependentResourcesComparerTest
 
     <TestMethod(), Description("Compare two resourceHistory entities with different DependentResources. The second propertyEntity contains a DependentResource, the first doesn't"), TestCategory("Logic")>
     Public Sub TestCompareTwoResourceHistoryEntitiesWithDifferentDependentResources2()
+        'Arrange
         Dim versionableEntity1 As IVersionable = CreateResourceEntity(New ItemResourceEntity(), Helper.CreateAssessmentItem("Title of AssessmentItem 1"))
         Dim versionableEntity2 As IVersionable = CreateResourceEntity(New ItemResourceEntity(), Helper.CreateAssessmentItem("Title of AssessmentItem 2"))
         Dim propertyEntity1 As IPropertyEntity = CType(versionableEntity1, IPropertyEntity)
@@ -114,11 +124,13 @@ Public Class DependentResourcesComparerTest
 
         propertyEntity2.DependentResourceCollection.Add(dependentResourceEntity1)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsTrue(metaDataCompareResults.Count = 1)
@@ -127,6 +139,7 @@ Public Class DependentResourcesComparerTest
 
     <TestMethod(), Description("Compare two resourceHistory entities with different DependentResources. They both have one dependent resource but are different from each other."), TestCategory("Logic")>
     Public Sub TestCompareTwoResourceHistoryEntitiesWithTwoDifferentResources()
+        'Arrange
         Dim versionableEntity1 As IVersionable = CreateResourceEntity(New ItemResourceEntity(), Helper.CreateAssessmentItem("Title of AssessmentItem 1"))
         Dim versionableEntity2 As IVersionable = CreateResourceEntity(New ItemResourceEntity(), Helper.CreateAssessmentItem("Title of AssessmentItem 2"))
         Dim propertyEntity1 As IPropertyEntity = CType(versionableEntity1, IPropertyEntity)
@@ -145,11 +158,13 @@ Public Class DependentResourcesComparerTest
         propertyEntity1.DependentResourceCollection.Add(dependentResourceEntity1)
         propertyEntity2.DependentResourceCollection.Add(dependentResourceEntity2)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsTrue(metaDataCompareResults.Count = 2)
@@ -159,6 +174,7 @@ Public Class DependentResourcesComparerTest
 
     <TestMethod(), Description("Compare two resourceHistory entities with different number of DependentResources. The first has two dependent resources and the second has three. They share only one dependent resource."), TestCategory("Logic")>
     Public Sub TestCompareSeveralResourceHistoryEntitiesWithOneSharedResource()
+        'Arrange
         Dim versionableEntity1 As IVersionable = CreateResourceEntity(New ItemResourceEntity(), Helper.CreateAssessmentItem("Title of AssessmentItem 1"))
         Dim versionableEntity2 As IVersionable = CreateResourceEntity(New ItemResourceEntity(), Helper.CreateAssessmentItem("Title of AssessmentItem 2"))
         Dim propertyEntity1 As IPropertyEntity = CType(versionableEntity1, IPropertyEntity)
@@ -194,11 +210,13 @@ Public Class DependentResourcesComparerTest
         propertyEntity2.DependentResourceCollection.Add(dependentResourceEntity2_2)
         propertyEntity2.DependentResourceCollection.Add(dependentResourceEntity2_3)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsTrue(metaDataCompareResults.Count = 3)

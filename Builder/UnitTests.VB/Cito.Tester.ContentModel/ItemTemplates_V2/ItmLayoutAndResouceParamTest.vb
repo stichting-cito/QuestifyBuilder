@@ -11,6 +11,7 @@ Public Class ItmLayoutAndResouceParamTest
 
     <TestMethod()> <TestCategory("ContentModel")>
     Public Sub LoadSimple_ILT_WithSimpleControlTemplateAndXhtmlParameter_ExpectsIltLoadedAndXhtmlParamFilled()
+        'Arrange
 
         Dim control = <?xml version="1.0" encoding="utf-8"?>
                       <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="2">
@@ -32,6 +33,7 @@ Public Class ItmLayoutAndResouceParamTest
         Dim handler As EventHandler(Of ResourceNeededEventArgs) = a.Fake(Of EventHandler(Of ResourceNeededEventArgs))()
         A.CallTo(Sub() handler.Invoke(A(Of Object).Ignored, A(Of ResourceNeededEventArgs).Ignored)).
             Invokes(Sub(i)
+                        'This is the Resource Needed Handler.
                         Dim e = i.GetArgument(Of ResourceNeededEventArgs)(1)
                         If e.ResourceName = "SecretDoc.txt" Then
                             e.BinaryResource = New BinaryResource(e.ResourceName, Nothing, Encoding.UTF8.GetBytes(txt.ToString()), Nothing)
@@ -41,24 +43,28 @@ Public Class ItmLayoutAndResouceParamTest
                     End Sub)
 
 
+        'Act if merging has taken place. Normally when an item is opened an empty parameter-set is retrieved from Ilt, which enumerates all ControlTemplates.
         Dim paramsSet = New ParameterSetCollection()
-        Dim params = New ParameterCollection() With {.Id = "Test"}
+        Dim params = New ParameterCollection() With {.Id = "Test"} 'See ILT
         params.InnerParameters.Add(New XhtmlResourceParameter() With {.Name = "itemBody", .Value = "SecretDoc.txt"})
         paramsSet.Add(params)
 
+        'Act
         Dim itmlayout As New ItemLayoutAdapter("ItemLayout", paramsSet, handler)
         itmlayout.ValidateSolution(New KeyFindingCollection())
 
+        'Assert
         A.CallTo(handler).MustHaveHappened(Repeated.Exactly.Times(3))
 
         Dim p As XhtmlResourceParameter = DirectCast(params.InnerParameters(0), XhtmlResourceParameter)
         Assert.IsNotNull(p.Content)
-        Assert.IsTrue(p.Content.StartsWith(txt_metRef.ToString().Substring(0, 5)))
+        Assert.IsTrue(p.Content.StartsWith(txt_metRef.ToString().Substring(0, 5))) 'Check if param is filled.
     End Sub
 
 
     <TestMethod()> <TestCategory("ContentModel")> <WorkItem(10139)>
     Public Sub LoadSimple_ILT_WithSimpleControlTemplate_ExpectsOnly_OnlyILT_Loaded()
+        'Arrange
         Dim control = <?xml version="1.0" encoding="utf-8"?>
                       <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="2">
                           <Description></Description>
@@ -79,27 +85,33 @@ Public Class ItmLayoutAndResouceParamTest
         Dim handler As EventHandler(Of ResourceNeededEventArgs) = a.Fake(Of EventHandler(Of ResourceNeededEventArgs))()
         A.CallTo(Sub() handler.Invoke(A(Of Object).Ignored, A(Of ResourceNeededEventArgs).Ignored)).
             Invokes(Sub(i)
+                        'This is the Resource Needed Handler.
                         Dim e = i.GetArgument(Of ResourceNeededEventArgs)(1)
                         If e.ResourceName = "SecretDoc.avi" Then
-                            Assert.Fail()
+                            Assert.Fail() 'Should not occur!
                         Else
                             e.BinaryResource = New BinaryResource(e.ResourceName, Nothing, If(e.ResourceName = "ItemLayout", ilt.ToString(), control.ToString()), Nothing)
                         End If
                     End Sub)
 
+        'Act if merging has taken place. Normally when an item is opened an empty parameter-set is retrieved from Ilt, which enumerates all ControlTemplates.
         Dim paramsSet = New ParameterSetCollection()
-        Dim params = New ParameterCollection() With {.Id = "Test"}
+        Dim params = New ParameterCollection() With {.Id = "Test"} 'See ILT
         params.InnerParameters.Add(New ResourceParameter() With {.Name = "itemBody", .Value = "SecretDoc.avi"})
         paramsSet.Add(params)
 
+        'Act
         Dim itmlayout As New ItemLayoutAdapter("ItemLayout", paramsSet, handler)
         itmlayout.ValidateSolution(New KeyFindingCollection())
 
+        'Assert
         A.CallTo(handler).MustHaveHappened(Repeated.Exactly.Times(2))
         Dim p As ResourceParameter = DirectCast(params.InnerParameters(0), ResourceParameter)
     End Sub
 
+#Region "Privates"
 
+    'Default Item Layout template
     Private ilt As XElement = <Template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" definitionVersion="2">
                                   <Description></Description>
                                   <Targets>
@@ -146,5 +158,6 @@ Public Class ItmLayoutAndResouceParamTest
                                   </body>
                               </html>
 
+#End Region
 
 End Class

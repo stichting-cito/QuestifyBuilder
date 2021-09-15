@@ -1718,32 +1718,45 @@ Public Class OpenXmlGenerator
     End Function
 
     Private Sub UpdateStyles(ByRef xhtmlString As String)
-        Dim classRegex As New Regex(_regexClass, RegexOptions.IgnoreCase)
-        Dim result As String = String.Empty
-        Dim classValue As String = String.Empty
-
         If _styleSheetsToReference Is Nothing Then
             Return
         End If
 
+        Dim classRegex As New Regex(_regexClass, RegexOptions.IgnoreCase)
         For Each match As Match In classRegex.Matches(xhtmlString.Trim)
             If match.Value = "class=""UserSROpmerkingNietInAfname""" Then
                 xhtmlString = RemoveRemarks(xhtmlString)
             Else
-                For Each stylesheet As String In _styleSheetsToReference.Values
-                    classValue = match.Value
-                    result = GetStyle(stylesheet, match.Value)
-                    If result = "" Then
-                        Continue For
-                    End If
-
-                    xhtmlString = xhtmlString.Replace(match.Value.ToString(), result)
-                    Exit For
-
-                Next
+                ReplaceClassWithStyle(xhtmlString, match.Value)
             End If
         Next
     End Sub
+
+    Private Sub ReplaceClassWithStyle(ByRef xhtmlString As String, className As String)
+        Dim presentStyle = GetPresentStyle(xhtmlString)
+        For Each stylesheet As String In _styleSheetsToReference.Values
+            Dim newStyle = GetStyle(stylesheet, className, presentStyle)
+            If String.IsNullOrEmpty(newStyle) OrElse newStyle.Equals(presentStyle, StringComparison.InvariantCultureIgnoreCase) Then
+                Continue For
+            End If
+            If String.IsNullOrEmpty(presentStyle) Then
+                xhtmlString = xhtmlString.Replace(className, newStyle)
+            Else
+                xhtmlString = xhtmlString.Replace(className, "")
+                xhtmlString = xhtmlString.Replace(presentStyle, newStyle)
+            End If
+            Exit For
+        Next
+    End Sub
+
+    Private Function GetPresentStyle(xhtmlString As String) As String
+        Dim styleRegEx As New Regex("style=""([^""]*)""", RegexOptions.IgnoreCase)
+        Dim matches = styleRegEx.Matches(xhtmlString.Trim)
+        If matches.Count > 0 Then
+            Return matches.Item(0).Value
+        End If
+        Return String.Empty
+    End Function
 
     Public Function RemoveRemarks(xhtmlString As String) As String
 
@@ -1851,38 +1864,51 @@ Public Class OpenXmlGenerator
         xhtmlString = xDoc.Descendants("root").First().InnerXml()
     End Sub
 
-    Private Function GetStyle(cssFile As String, className As String) As String
-        Dim startStyle As Integer = 0
-        Dim endStyle As Integer = 0
-        Dim result As String = String.Empty
-        Dim returnValue As New StringBuilder(String.Empty)
+    Private Function GetStyle(cssFile As String, className As String, presentStyle As String) As String
+        Dim result = GetStylesForClass(cssFile, className)
+        If String.IsNullOrEmpty(result) Then
+            Return presentStyle
+        End If
+
+        result = FormatStylesForClass(result)
+        If String.IsNullOrEmpty(result) Then
+            Return presentStyle
+        End If
+
+        If String.IsNullOrEmpty(presentStyle) Then
+            Return $"style=""{result}"""
+        Else
+            Return $"{AppendColon(presentStyle)} {result}"""
+        End If
+    End Function
+
+    Private Function GetStylesForClass(cssFile As String, className As String) As String
+        Dim styles As New StringBuilder()
 
         className = Replace(className, "class=", "")
         className = Replace(className, """", "")
 
         Dim matches As MatchCollection = Regex.Matches(cssFile, String.Format(".{0}[^{{]+\{{[^}}]+?}}", className))
-
         For Each match As Match In matches
-            returnValue.Append(Regex.Replace(Regex.Replace(match.Value, "/\*.+?\*/", String.Empty, RegexOptions.Singleline), "\s", String.Empty))
+            styles.Append(Regex.Replace(Regex.Replace(match.Value, "/\*.+?\*/", String.Empty, RegexOptions.Singleline), "\s", String.Empty))
         Next
 
-        result = returnValue.ToString()
+        Return styles.ToString()
+    End Function
 
-        If result <> "" Then
-            startStyle = InStr(result, "{")
-
-            If startStyle > 0 Then
-                endStyle = InStr(startStyle, result, "}")
-            End If
-            If startStyle > 0 AndAlso endStyle > 0 Then
-                result = Mid(result, (startStyle + 1), (endStyle - startStyle) - 1)
-                result = "style=" & """" & result + """"
-            Else
-                result = ""
-            End If
+    Private Function FormatStylesForClass(styles As String) As String
+        Dim startIndex = InStr(styles, "{")
+        Dim endIndex = DirectCast(IIf(startIndex > 0, InStr(startIndex, styles, "}"), 0), Integer)
+        If startIndex = 0 OrElse endIndex = 0 Then
+            Return String.Empty
+        Else
+            Return Mid(styles, (startIndex + 1), (endIndex - startIndex) - 1)
         End If
+    End Function
 
-        Return result
+    Private Function AppendColon(presentStyle As String) As String
+        Dim result = presentStyle.Remove(presentStyle.LastIndexOf(""""))
+        Return result + ";"
     End Function
 
     Private Function GetReferencedStylesheets(item As AssessmentItem) As Dictionary(Of String, String)

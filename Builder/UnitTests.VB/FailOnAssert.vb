@@ -1,5 +1,21 @@
 ﻿
+'Code taken from http://blogs.iis.net/yigalatz/archive/2011/03/31/unit-tests-should-not-debug-assert.aspx
 
+''' <summary>
+''' This class helps to let tests fail when an assert message is shown
+''' 
+''' Usage:
+'''        
+''' [TestInitialize]
+''' Public Sub MyTestInitialize()
+'''    FailOnAssert.Disable = True 'Disable 
+''' End Sub
+'''
+''' [TestCleanup]
+''' Public Sub MyTestCleanup()
+'''    FailOnAssert.Disable = False
+''' End Sub
+''' </summary>
 Public Class FailOnAssert
     Inherits Diagnostics.TraceListener
     <ThreadStatic> _

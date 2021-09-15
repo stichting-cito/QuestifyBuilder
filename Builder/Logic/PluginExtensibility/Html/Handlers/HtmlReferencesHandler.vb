@@ -10,6 +10,9 @@ Imports Questify.Builder.Logic.PluginExtensibility.Html.Converters
 
 Namespace PluginExtensibility.Html.Handlers
 
+    ''' <summary>
+    ''' This class is responsible for adding references to Html
+    ''' </summary>
     Public Class HtmlReferencesHandler
         Inherits HtmlHandlerBase
 
@@ -25,17 +28,26 @@ Namespace PluginExtensibility.Html.Handlers
 
         Public Event ActiveReferenceChanged As EventHandler(Of EventArgs)
 
+        ''' <summary>
+        ''' Initializes a new instance of the <see cref="HtmlReferencesHandler" /> class.
+        ''' </summary>
+        ''' <param name="editor">The editor.</param>
+        ''' <param name="defaultNameSpaceManager">The default name space manager.</param>
+        ''' <param name="contextIdentifier">The context identifier.</param>
         Public Sub New(editor As IXHtmlEditor,
-               resourceManager As ResourceManagerBase,
-               defaultNameSpaceManager As XmlNamespaceManager,
-               contextIdentifier As Nullable(Of Integer),
-               canCreateReferences As Boolean)
+                       resourceManager As ResourceManagerBase,
+                       defaultNameSpaceManager As XmlNamespaceManager,
+                       contextIdentifier As Nullable(Of Integer),
+                       canCreateReferences As Boolean)
             MyBase.New(editor, Nothing, resourceManager, Nothing)
 
             _contextIdentifier = contextIdentifier
             _canCreateReferences = canCreateReferences
         End Sub
 
+        ''' <summary>
+        ''' Gets a value indicating whether this instance is reference.
+        ''' </summary>
         Public Function IsReference() As Boolean
             Dim currentNode As XmlNode = editor.Selection.Node
 
@@ -47,6 +59,7 @@ Namespace PluginExtensibility.Html.Handlers
                         If currentNode.ParentNode IsNot Nothing Then
                             currentNode = currentNode.ParentNode
                         Else
+                            'Apparently after copy paste a paragraph has no body node. Shouldn't keep looping here.
                             Return False
                         End If
                     End If
@@ -55,6 +68,10 @@ Namespace PluginExtensibility.Html.Handlers
             Return False
         End Function
 
+        ''' <summary>
+        ''' Gets or sets the active reference.
+        ''' </summary>
+        ''' <value>The active reference.</value>
         <Browsable(False)>
         Public Property ActiveReference() As XhtmlReference
             Get
@@ -72,6 +89,7 @@ Namespace PluginExtensibility.Html.Handlers
 
         Public Sub LoadReferences()
             If _canCreateReferences Then
+                ' get xhtmlreference information
                 Dim conf As New C1HtmlConverter
                 Dim html As String = conf.ToCitoFormatForReferenceReadOut().ConvertHtml(editor.Document.DocumentElement.OuterXml)
                 For Each reference As XhtmlReference In XhtmlReferenceFactory.ParseXhtmlReference(html)
@@ -85,9 +103,13 @@ Namespace PluginExtensibility.Html.Handlers
                 Next
             End If
 
+            ' update (if needed the active reference in html)
             ChangeActiveReferenceInHtml()
         End Sub
-
+        
+        ''' <summary>
+        ''' Handles the Click event of the ReferToToolStripButton control.
+        ''' </summary>
         Public Sub DoReferToToolStripButton()
             If ActiveReference IsNot Nothing Then
                 Dim newReference As XmlElement = editor.Document.CreateElement("span", "http://www.w3.org/1999/xhtml")
@@ -136,7 +158,7 @@ Namespace PluginExtensibility.Html.Handlers
             End If
         End Sub
 
-        Private Function GetReferToElements() As List(Of XmlNode)
+        Private Function GetReferToElements() As List(Of XmlNode) '2Interface
             Dim nodes As New List(Of XmlNode)
 
             For Each node As XmlNode In editor.Document.SelectNodes(
@@ -150,11 +172,13 @@ Namespace PluginExtensibility.Html.Handlers
         Public Sub RemoveReference()
             Dim currentNode As XmlNode = editor.Selection.Node
 
+            ' check whether the current element is encapsulated in a reference element
             While currentNode.Name.ToLower() <> "body" AndAlso Not (currentNode.Attributes IsNot Nothing AndAlso IsReferenceNode(currentNode))
                 currentNode = currentNode.ParentNode
             End While
 
             If currentNode IsNot Nothing AndAlso currentNode.Name.ToLower() <> "body" Then
+                ' keep innerhtml in case our reference is of symbol or highlight type
                 Dim referenceTypeToDelete As XhtmlReferenceType = DirectCast([Enum].Parse(GetType(XhtmlReferenceType), currentNode.Attributes("cito_reftype").Value), XhtmlReferenceType)
                 Dim keepInnerHtml As Boolean = referenceTypeToDelete = XhtmlReferenceType.Symbol OrElse referenceTypeToDelete = XhtmlReferenceType.Highlight
 
@@ -190,14 +214,17 @@ Namespace PluginExtensibility.Html.Handlers
             CreateReferenceAtt(newReference)
             CreateRefTypeAtt(newReference, XhtmlReferenceType.Element)
 
+            ' have to use formatted document because added attribute id doesn't get quotes surrounding it and xhtmldocument doesn't eat that.
             Dim references As XhtmlReferenceList = GetCurrentReferences(XhtmlReferenceType.Element)
             Dim index As Integer = references.GetIndexById(id)
 
+            ' add to list (needed for deletion check (see contentchanged event on HtmlEditorControl)
             _xhtmlElementReferences.Insert(index, newReference)
             CreateDescriptionAtt(newReference, $"Element {(index + 1)}")
             CreateValueAtt(newReference, (index + 1).ToString())
             newReference.InnerXml = String.Format(ElementRefTemplate, index + 1)
 
+            ' update all references after the new reference
             For i As Integer = index + 1 To references.Count - 1
                 Dim reference As XmlElement = editor.Document.GetElementById(references(i).ID)
                 reference.SetAttribute("description", $"Element {(i + 1)}")
@@ -223,6 +250,7 @@ Namespace PluginExtensibility.Html.Handlers
                             matches(matches.Count - 1).Value}"
                 End If
 
+                'Wrap current selection with <span> element
                 Dim newReference As XmlElement = editor.Document.CreateElement("span", "http://www.w3.org/1999/xhtml")
 
                 newReference.InnerText = editor.Selection.Text
@@ -241,27 +269,30 @@ Namespace PluginExtensibility.Html.Handlers
 
                 If index = -1 Then index = 0
 
+                ' set value attribute
 
                 If referenceTypeToInsert = XhtmlReferenceType.Symbol Then
                     CreateValueAtt(newReference,
                                    $"{Constants.ResourceProtocolPrefix}referencesymbol{(index + 1)}")
-                Else
+                Else 'Highlight reference
                     CreateValueAtt(newReference, (index + 1).ToString())
                 End If
 
+                ' add to list (needed for deletion check (see contentchanged event on HtmlEditorControl)
                 If referenceTypeToInsert = XhtmlReferenceType.Symbol Then
                     _xhtmlSymbolReferences.Insert(index, newReference)
-                Else
+                Else 'Highlight reference
                     _xhtmlHighlightReferences.Insert(index, newReference)
                 End If
 
+                ' update all references after the new reference
                 For i As Integer = index + 1 To references.Count - 1
                     Dim reference As XmlElement = editor.Document.GetElementById(references(i).ID)
                     If referenceTypeToInsert = XhtmlReferenceType.Symbol Then
                         reference.SetAttribute("value",
                                                $"{Constants.ResourceProtocolPrefix}referencesymbol{ _
                                                   (i + 1)}")
-                    Else
+                    Else 'Highlight reference
                         reference.SetAttribute("value", (index + 1).ToString())
                     End If
                 Next

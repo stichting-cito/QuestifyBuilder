@@ -10,13 +10,16 @@ Public Class MatrixScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub SetKeyForARow_ShouldCreateFactForEachRow()
+        'Arrange
         Dim param = CreateMatrixScoringParameter("matrix", 2, 3)
         Dim solution As New Solution()
-
+        
+        'Act
         Dim manipulator = DirectCast(param.GetScoreManipulator(solution), IChoiceArrayScoringManipulator)
         manipulator.SetKey("1", "A")
         manipulator.SetKey("2", "C")
-
+        
+        'Assert
         Assert.AreEqual(1, solution.Findings.Count)
         Assert.AreEqual(2, solution.Findings(0).Facts.Count)
         Assert.AreEqual("1-matrix", solution.Findings(0).Facts(0).Id)
@@ -29,9 +32,11 @@ Public Class MatrixScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub ScoreDisplayValueForMatrix()
+        'Arrange
         Dim param = CreateMatrixScoringParameter("matrix", 2, 3)
         Dim solution As New Solution()
-
+        
+        'Act
         Dim manipulator = DirectCast(param.GetScoreManipulator(solution), IChoiceArrayScoringManipulator)
         manipulator.SetKey("1", "A")
         manipulator.SetKey("2", "C")
@@ -39,6 +44,7 @@ Public Class MatrixScoringManipulatorTests
         solution.WriteToDebug("pp")
         Dim keyValueString = New ScoringDisplayValueCalculator({param}, solution).GetScoreDisplayValue()
 
+        'Assert
         keyValueString = ScoringPropertiesCalculator.GetKeyValuesAsString(solution, 0)
 
         Assert.AreEqual("A&C", keyValueString)
@@ -47,35 +53,44 @@ Public Class MatrixScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), ExpectedException(GetType(KeyNotFoundException))>
     Public Sub SetKeyForANonExistingRow_ShouldThrowException()
+        'Arrange
         Dim param = CreateMatrixScoringParameter("matrix", 2, 3)
         Dim solution As New Solution()
-
+        
+        'Act
         Dim manipulator = DirectCast(param.GetScoreManipulator(solution), IChoiceArrayScoringManipulator)
         manipulator.SetKey("3", "A")
 
+        'Assert
         Assert.Fail()
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), ExpectedException(GetType(KeyNotFoundException))>
     Public Sub SetKeyForANonExistinColumn_ShouldThrowException()
+        'Arrange
         Dim param = CreateMatrixScoringParameter("matrix", 2, 3)
         Dim solution As New Solution()
-
+        
+        'Act
         Dim manipulator = DirectCast(param.GetScoreManipulator(solution), IChoiceArrayScoringManipulator)
         manipulator.SetKey("1", "D")
 
+        'Assert
         Assert.Fail()
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub DomainForEachMatrixShouldBeIdentifiable()
+        'Arrange
         Dim param = CreateMatrixScoringParameter(controllerId:="matrix", rows:=2, columns:=3)
         Dim solution As New Solution()
-
+        
+        'Act
         Dim manipulator = DirectCast(param.GetScoreManipulator(solution), IChoiceArrayScoringManipulator)
         manipulator.SetKey("1", "B")
         manipulator.SetKey("2", "C")
-
+        
+        'Assert                         
         Dim result1 = solution.Findings.Single().Facts.First().Values.Single()
         Dim result2 = solution.Findings.Single().Facts.Skip(1).First.Values.Single()
 
@@ -86,26 +101,38 @@ Public Class MatrixScoringManipulatorTests
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     <ExpectedException(GetType(KeyNotFoundException))>
     Public Sub SettingIncorrectSolutionShouldThrowAnException_1()
+        'Arrange
         Dim param = CreateMatrixScoringParameter(controllerId:="matrix", rows:=2, columns:=3)
         Dim solution As New Solution()
 
+        'Act
         Dim manipulator = DirectCast(param.GetScoreManipulator(solution), IChoiceArrayScoringManipulator)
         manipulator.SetKey("B", "1")
-
+        
+        'Assert
+        'Expects exception    
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     <ExpectedException(GetType(KeyNotFoundException))>
     Public Sub SettingIncorrectSolutionShouldThrowAnException_2()
+        'Arrange
         Dim param = CreateMatrixScoringParameter(controllerId:="matrix", rows:=2, columns:=3)
         Dim solution As New Solution()
 
+        'Act
         Dim manipulator = DirectCast(param.GetScoreManipulator(solution), IChoiceArrayScoringManipulator)
         manipulator.SetKey("1", "Z")
-
+        
+        'Assert
+        'Expects exception    
     End Sub
 
 
+    'Column is A, B or C
+    'Row is number
+    'ROWS is equivalent to SubParameterSetId 
+    'Parameter is number
     Private Function CreateMatrixScoringParameter(controllerId As String, rows As Integer, columns As Integer) As MatrixScoringParameter
         Dim param As New MatrixScoringParameter() With {.ControllerId = controllerId}
         param.Value = New ParameterSetCollection()

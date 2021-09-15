@@ -37,7 +37,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
         protected override void SetSomeScore(MultiChoiceScoringParameter scorePrm)
         {
-            scorePrm.Value.Add(new ParameterCollection() { Id = "A" });
+            scorePrm.Value.Add(new ParameterCollection() {Id="A"});
             scorePrm.GetScoreManipulator(Solution).SetKey("A");
         }
     }

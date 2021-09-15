@@ -11,15 +11,19 @@ Public Class EditCellInnerMarginPropertiesDialog
     Private ReadOnly _namespaceManager As XmlNamespaceManager
     Private _item As XHTMLCellItem
 
+#Region "Constructor"
 
     Public Sub New(ByVal editor As XHtmlEditor, ByVal namespaceManager As XmlNamespaceManager)
 
+        ' This call is required by the designer.
         InitializeComponent()
 
+        ' Add any initialization after the InitializeComponent() call.
         _namespaceManager = namespaceManager
         _editor = editor
     End Sub
 
+#End Region
 
     <Flags()> _
     Public Enum TargetBorder
@@ -79,6 +83,11 @@ Public Class EditCellInnerMarginPropertiesDialog
         End Get
     End Property
 
+    ''' <summary>
+    ''' Extracts the style value.
+    ''' </summary>
+    ''' <param name="elementName">Name of the element.</param>
+    ''' <param name="entireStyleString">The entire style string.</param>
     Private Shared Function ExtractStyleValue(ByVal elementName As String, ByRef entireStyleString As String) As String
         Dim styleValue As String = String.Empty
 
@@ -116,16 +125,26 @@ Public Class EditCellInnerMarginPropertiesDialog
         Return styleValue
     End Function
 
+    ''' <summary>
+    ''' Constructs the cell style.
+    ''' </summary>
+    ''' <param name="currentCellStyle">The current cell style.</param>
+    ''' <param name="paddingTop">The padding top.</param>
+    ''' <param name="paddingBottom">The padding bottom.</param>
+    ''' <param name="paddingLeft">The padding left.</param>
+    ''' <param name="paddingRight">The padding right.</param>
     <CLSCompliant(False)> _
     Private Function ConstructCellStyle(
-        ByVal currentCellStyle As String,
-        ByVal paddingTop As UInteger,
-        ByVal paddingBottom As UInteger,
-        ByVal paddingLeft As UInteger,
-        ByVal paddingRight As UInteger) As String
+            ByVal currentCellStyle As String, 
+            ByVal paddingTop As UInteger, 
+            ByVal paddingBottom As UInteger, 
+            ByVal paddingLeft As UInteger, 
+            ByVal paddingRight As UInteger) As String
 
         Dim newStyle As String = String.Empty
 
+        ' Start by extracting and thus removing the padding related elements from the
+        ' current cell style.
         If Not String.IsNullOrEmpty(currentCellStyle) Then
             ExtractStyleValue("PADDING-TOP:", currentCellStyle)
             ExtractStyleValue("PADDING-BOTTOM:", currentCellStyle)
@@ -149,6 +168,11 @@ Public Class EditCellInnerMarginPropertiesDialog
         Return newStyle
     End Function
 
+    ''' <summary>
+    ''' Parses the border attributes and sets the state of related UI controls accordingly.
+    ''' </summary>
+    ''' <param name="sourceBorder">The source border.</param>
+    ''' <param name="paddingString">The cell padding string.</param>
     Private Sub ParsePaddingAttributes(ByVal sourceBorder As TargetBorder, ByVal paddingString As String)
         Dim currentPaddingAttribs As String()
 
@@ -161,6 +185,7 @@ Public Class EditCellInnerMarginPropertiesDialog
             Int32.TryParse(numberOfPixelsString, numberOfPixels)
         End If
 
+        ' Set the current margin values 
         Select Case sourceBorder
             Case TargetBorder.Top
                 MaskedTextBoxMarginTop.Text = numberOfPixels.ToString()
@@ -175,6 +200,7 @@ Public Class EditCellInnerMarginPropertiesDialog
     End Sub
 
     Private Sub SetCurrentCellStyle(ByVal cellStyle As String)
+        'Sample cell style valie = "BORDER-RIGHT: #000000 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #000000 1px solid; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; VERTICAL-ALIGN: middle; BORDER-LEFT: #000000 1px solid; WIDTH: 44px; PADDING-TOP: 3px; BORDER-BOTTOM: #000000 1px solid; HEIGHT: 55px; TEXT-ALIGN: right"
         Dim currentPadding As String
 
         currentPadding = ExtractStyleValue("PADDING-TOP:", cellStyle)
@@ -190,16 +216,28 @@ Public Class EditCellInnerMarginPropertiesDialog
         ParsePaddingAttributes(TargetBorder.Left, currentPadding)
     End Sub
 
+    ''' <summary>
+    ''' Sets the table inner margin style.
+    ''' </summary>
+    ''' <param name="table">The table.</param>
+    ''' <param name="fromRow">From row.</param>
+    ''' <param name="toRow">To row.</param>
+    ''' <param name="fromColumn">From column.</param>
+    ''' <param name="toColumn">To column.</param>
+    ''' <param name="paddingTop">The padding top.</param>
+    ''' <param name="paddingBottom">The padding bottom.</param>
+    ''' <param name="paddingLeft">The padding left.</param>
+    ''' <param name="paddingRight">The padding right.</param>
     Private Sub SetTableInnerMarginStyle(
-    ByVal table As XmlElement,
-    ByVal fromRow As Integer,
-    ByVal toRow As Integer,
-    ByVal fromColumn As Integer,
-    ByVal toColumn As Integer,
-    ByVal paddingTop As UInteger,
-    ByVal paddingBottom As UInteger,
-    ByVal paddingLeft As UInteger,
-    ByVal paddingRight As UInteger)
+        ByVal table As XmlElement, 
+        ByVal fromRow As Integer, 
+        ByVal toRow As Integer, 
+        ByVal fromColumn As Integer, 
+        ByVal toColumn As Integer, 
+        ByVal paddingTop As UInteger, 
+        ByVal paddingBottom As UInteger, 
+        ByVal paddingLeft As UInteger, 
+        ByVal paddingRight As UInteger)
 
         For rowIndex As Integer = fromRow To toRow
             If rowIndex < table.SelectNodes("*/def:tr", _namespaceManager).Count Then
@@ -209,7 +247,7 @@ Public Class EditCellInnerMarginPropertiesDialog
                     If colIndex < row.SelectNodes("def:td", _namespaceManager).Count Then
                         Dim cell As XmlElement = DirectCast(table.SelectSingleNode(String.Format("*/def:tr[{0}]/def:td[{1}]", rowIndex + 1, colIndex + 1), _namespaceManager), XmlElement)
 
-                        If cell IsNot Nothing Then
+                        If cell IsNot Nothing Then 'Cell can be nothing because of row/colspan. 
                             Dim styleToSet As String = ConstructCellStyle(_item.Style, paddingTop, paddingBottom, paddingLeft, paddingRight)
 
                             ApplyStyle(cell, styleToSet, _cntHlp.GetWidthOfCell(cell), _cntHlp.GetHeightOfCell(cell), _cntHlp.GetVerticalAlignmentFromCell(cell), _cntHlp.GetHorizontalAlignmentFromCell(cell))
@@ -220,13 +258,22 @@ Public Class EditCellInnerMarginPropertiesDialog
         Next rowIndex
     End Sub
 
+    ''' <summary>
+    ''' Applies the style.
+    ''' </summary>
+    ''' <param name="cell">The cell.</param>
+    ''' <param name="cssStyle">The CSS style.</param>
+    ''' <param name="width">The width.</param>
+    ''' <param name="height">The height.</param>
+    ''' <param name="vAlign">The v align.</param>
+    ''' <param name="align">The align.</param>
     Private Sub ApplyStyle(
-         ByVal cell As XmlElement,
-         ByVal cssStyle As String,
-         ByVal width As Web.UI.WebControls.Unit,
-         ByVal height As Web.UI.WebControls.Unit,
-         ByVal vAlign As Web.UI.WebControls.VerticalAlign,
-         ByVal align As Web.UI.WebControls.HorizontalAlign)
+             ByVal cell As XmlElement, 
+             ByVal cssStyle As String, 
+             ByVal width As Web.UI.WebControls.Unit, 
+             ByVal height As Web.UI.WebControls.Unit, 
+             ByVal vAlign As Web.UI.WebControls.VerticalAlign, 
+             ByVal align As Web.UI.WebControls.HorizontalAlign)
 
         cell.SetAttribute("style", cssStyle)
         If align <> Web.UI.WebControls.HorizontalAlign.NotSet Then
@@ -257,6 +304,9 @@ Public Class EditCellInnerMarginPropertiesDialog
         Me.Close()
     End Sub
 
+    ''' <summary>
+    ''' Performs the set table inner margin style.
+    ''' </summary>
     Private Sub PerformSetTableInnerMarginStyle()
         Dim fromRow As Integer = -1
         Dim toRow As Integer = -1
@@ -306,14 +356,28 @@ Public Class EditCellInnerMarginPropertiesDialog
         ComboBoxApplyTo.SelectedIndex = 0
     End Sub
 
+#Region "ICellItemDialog Members"
 
+    ''' <summary>
+    ''' Binds data from the item to GUI controls on the form.
+    ''' Data can be bound either using the <see cref="Control.DataBindings"/> collection or any other way allowing 
+    ''' to read data from the item and write it back.
+    ''' </summary>
+    ''' <param name="item">The item to be bound to the GUI controls.</param>
     Private Sub ITableItemDialog_BindData(ByVal item As XHTMLCellItem) Implements ICellItemDialog.BindData
         _item = item
         SetCurrentCellStyle(_item.Style)
     End Sub
 
+    ''' <summary>
+    ''' Shows the form with the specified owner to the user.
+    ''' </summary>
+    ''' <param name="owner">Any object that implements <see cref="System.Windows.Forms.IWin32Window"/> and represents 
+    ''' the top-level window that will own this form.</param>
+    ''' <returns>True if the form was displayed successfully and the item was changed.</returns>
     Private Function ITableItemDialog_Show(ByVal owner As IWin32Window) As Boolean Implements ICellItemDialog.Show
         Return ShowDialog(owner) = DialogResult.OK
     End Function
 
+#End Region
 End Class

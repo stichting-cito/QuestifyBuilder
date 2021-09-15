@@ -7,6 +7,9 @@ Imports Questify.Builder.Model.ContentModel.EntityClasses
 
 Namespace PluginExtensibility.Html.EditBehavior
 
+    ''' <summary>
+    ''' Defines the edit behavior for Aspect.
+    ''' </summary>
     Public Class AspectEditorBehavior
         Inherits BaseHtmlEditorBehavior
 
@@ -15,10 +18,17 @@ Namespace PluginExtensibility.Html.EditBehavior
         Private _toParam As IHtmlConverter
         Private _inlineRetriever As IInlineRetriever
 
+        ''' <summary>
+        ''' Initializes a new instance of the <see cref="AspectEditorBehavior" /> class.
+        ''' </summary>
+        ''' <param name="resourceEntity">The resource entity.</param>
+        ''' <param name="resourceManager">The resource manager.</param>
+        ''' <param name="contextIdentifier">The context identifier.</param>
+        ''' <param name="aspect">The aspect.</param>
         Public Sub New(resourceEntity As ResourceEntity,
-               resourceManager As ResourceManagerBase,
-               contextIdentifier As Integer?,
-               aspect As Aspect)
+                       resourceManager As ResourceManagerBase,
+                       contextIdentifier As Integer?,
+                       aspect As Aspect)
             MyBase.New(resourceEntity, resourceManager, contextIdentifier)
 
             _param = aspect
@@ -77,7 +87,7 @@ Namespace PluginExtensibility.Html.EditBehavior
         Public Overrides Function GetHtml() As String
             If (_toEditor Is Nothing) Then _toEditor = ConstructChainToEditor()
             Dim tmp As String = _toEditor.ConvertHtml(_param.Description)
-            Debug.Assert(_inlineRetriever IsNot Nothing)
+            Debug.Assert(_inlineRetriever IsNot Nothing) 'The chain should have this .
             SetInlineElements(_inlineRetriever.InlineElements)
 
             Return MyBase.AddStylePlaceholder(tmp)
@@ -100,31 +110,35 @@ Namespace PluginExtensibility.Html.EditBehavior
             End If
         End Function
 
+#Region "Chain"
 
         Private Function ConstructChainToEditor() As IHtmlConverter
             Dim ret As IHtmlConverter
-            _inlineRetriever = New HtmlConverter_OldHtmlToInline(Me)
+            _inlineRetriever = New HtmlConverter_OldHtmlToInline(Me) 'Converts the Html and produces the INLINE element list.
             ret = _inlineRetriever
-            ret.LastConverter.NextConverter = New HtmlConverter_AddContextNumber(Me.ContextIdentifier)
-            ret.LastConverter.NextConverter = New HtmlConverter_MathMLToMathImage(PluginHelper.MathMlPlugin)
-            ret.LastConverter.NextConverter = New HtmlConverter_PartialToFull(GetStyle(), String.Empty, ContextIdentifier, DefaultNamespaceManager)
+            ret.LastConverter.NextConverter = New HtmlConverter_AddContextNumber(Me.ContextIdentifier) 'Adds the contextIdentifier to url's
+            ret.LastConverter.NextConverter = New HtmlConverter_MathMLToMathImage(PluginHelper.MathMlPlugin) 'Converts the MathML to a math img tag
+            ret.LastConverter.NextConverter = New HtmlConverter_PartialToFull(GetStyle(), String.Empty, ContextIdentifier, DefaultNamespaceManager) 'converts the partial html to a whole html document
             Return ret
         End Function
 
         Private Function ConstructChainToParameter() As IHtmlConverter
             Dim ret As IHtmlConverter
-            ret = New HtmlConverter_RemoveContextNumber()
+            ret = New HtmlConverter_RemoveContextNumber() 'Removes the contextIdentifier
             ret.LastConverter.NextConverter = New HtmlConverter_OldInlineToHtml(Me, DefaultNamespaceManager)
-            ret.LastConverter.NextConverter = New HtmlConverter_MathImageToMathML()
-            ret.LastConverter.NextConverter = New HtmlConverter_FullToPartial()
-            ret.LastConverter.NextConverter = New HtmlConverter_RemoveFontInSpan()
+            ret.LastConverter.NextConverter = New HtmlConverter_MathImageToMathML() 'Only save MathML, not img tag, in html
+            ret.LastConverter.NextConverter = New HtmlConverter_FullToPartial() 'Retrieve only the content of the body, do not store full html
+            ret.LastConverter.NextConverter = New HtmlConverter_RemoveFontInSpan() 'Removes the <font> when it occurs within a <span>
             Return ret
         End Function
 
+#End Region
 
 
+#Region "Get stylesheet"
 
         Public Overrides Function GetStyleFromResource() As System.Collections.Generic.Dictionary(Of String, String)
+            'In this case we retrieve the stylesheets form the aspect type
             Dim styleSheetsToReference As New Dictionary(Of String, String)
 
             Dim stylesheets As String = _param.Stylesheet
@@ -146,6 +160,7 @@ Namespace PluginExtensibility.Html.EditBehavior
             Return Nothing
         End Function
 
+#End Region
 
     End Class
 

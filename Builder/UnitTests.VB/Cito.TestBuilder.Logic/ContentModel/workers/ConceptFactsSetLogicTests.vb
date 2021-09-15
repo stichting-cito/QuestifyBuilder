@@ -11,41 +11,51 @@ Public Class ConceptFactsSetLogicTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("ScoringAdv")>
     Public Sub GetOrphanedConceptFactSets_From_OkSolution_ShouldReturnNotNothing()
+        'Arrange
         Dim solution = _okSolutuion.To(Of Solution)()
         Dim integerScoringParameter = New IntegerScoringParameter() With
                                       {.FindingOverride = "sharedIntegerFinding", .ControllerId = "integerScore"}.AddSubParameters("1", "2")
         Dim firstCombined = New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
-
+        
+        'Act
         Dim result = firstCombined.GetConceptSetIdsWithoutKeySet(solution)
-
+        
+        'Assert
         Assert.IsNotNull(result)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("ScoringAdv")>
     Public Sub GetOrphanedConceptFactSets_From_OkSolution_ShouldEmptyList()
+        'Arrange
         Dim solution = _okSolutuion.To(Of Solution)()
         Dim integerScoringParameter = New IntegerScoringParameter() With
                                       {.FindingOverride = "sharedIntegerFinding", .ControllerId = "integerScore"}.AddSubParameters("1", "2")
         Dim firstCombined = New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
-
+        
+        'Act
         Dim result = firstCombined.GetConceptSetIdsWithoutKeySet(solution)
-
+        
+        'Assert
         Assert.AreEqual(0, result.Count())
     End Sub
 
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("ScoringAdv")>
     Public Sub GetOrphanedConceptFactSets_From_TestSolution_ShouldReturnSingleItem()
+        'Arrange
         Dim solution = _solutionWithOrhpanedConceptFactSet.To(Of Solution)()
         Dim integerScoringParameter = New IntegerScoringParameter() With
                                       {.FindingOverride = "sharedIntegerFinding", .ControllerId = "integerScore"}.AddSubParameters("1", "2")
         Dim firstCombined = New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
-
+        
+        'Act
         Dim result = firstCombined.GetConceptSetIdsWithoutKeySet(solution)
-
+        
+        'Assert
         Assert.AreEqual(1, result.Count())
     End Sub
 
+#Region "Data"
     Private _okSolutuion As XElement = <solution>
                                            <keyFindings>
                                                <keyFinding id="sharedIntegerFinding" scoringMethod="Dichotomous">
@@ -238,5 +248,6 @@ Public Class ConceptFactsSetLogicTests
                                                                   </ItemScoreTranslationTable>
                                                               </solution>
 
+#End Region
 
 End Class

@@ -1,0 +1,69 @@
+<itemBody class="defaultBody">
+	<div class="content">
+		<div>
+			<div id="question">
+				<p>Een vraag met een datum gap</p>
+			</div>
+			<div id="answer">
+				<table class="interactionTable">
+					<tbody>
+						<tr>
+							<td class="td_gap">
+								<div class="cito_genclass_GapDateSC_1">
+									<p>Tekst voor de datum</p>
+								</div>
+							</td>
+							<td class="td_gap" />
+							<td class="td_gap">
+								<div class="cito_genclass_GapDateSC_2">
+									<textEntryInteraction patternMask="^(([0-2]?[0-9])|([3][0-1]))$" responseIdentifier="gapController" expectedLength="2" dateSubType="dutch" />
+									-
+									<textEntryInteraction patternMask="^(([0-9])|([1][0-2]))$" responseIdentifier="gapController" expectedLength="2" dateSubType="dutch" />
+									-
+									<textEntryInteraction patternMask="^([0-9][0-9][0-9][0-9])$" responseIdentifier="gapController" expectedLength="4" dateSubType="dutch" />
+								</div>
+							</td>
+							<td class="td_gap" />
+							<td class="td_gap">
+								<div class="cito_genclass_GapDateSC_3">
+									<p>tekst achter de datum. Het goede antwoord is 01-01-2013</p>
+								</div>
+							</td>
+							<td class="td_gap" />
+						</tr>
+					</tbody>
+				</table>
+				<table class="interactionTable">
+					<tbody>
+						<tr>
+							<td class="td_gap">
+								<div class="cito_genclass_GapDateSC_4">
+									<textEntryInteraction patternMask="^(([0-9])|([1][0-2]))$" responseIdentifier="gapController" expectedLength="2" dateSubType="american" />
+									/
+									<textEntryInteraction patternMask="^(([0-2]?[0-9])|([3][0-1]))$" responseIdentifier="gapController" expectedLength="2" dateSubType="american" />
+									/
+									<textEntryInteraction patternMask="^([0-9][0-9][0-9][0-9])$" responseIdentifier="gapController" expectedLength="4" dateSubType="american" />
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="interactionTable">
+					<tbody>
+						<tr>
+							<td class="td_gap">
+								<div class="cito_genclass_GapDateSC_5">
+									<textEntryInteraction patternMask="^(([0-2]?[0-9])|([3][0-1]))$" responseIdentifier="gapController" expectedLength="2" dateSubType="scandinavian" />
+									.
+									<textEntryInteraction patternMask="^(([0-9])|([1][0-2]))$" responseIdentifier="gapController" expectedLength="2" dateSubType="scandinavian" />
+									.
+									<textEntryInteraction patternMask="^([0-9][0-9][0-9][0-9])$" responseIdentifier="gapController" expectedLength="4" dateSubType="scandinavian" />
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</itemBody>

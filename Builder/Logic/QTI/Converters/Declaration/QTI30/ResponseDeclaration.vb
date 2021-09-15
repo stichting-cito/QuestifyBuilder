@@ -37,7 +37,6 @@ Namespace QTI.Converters.Declaration.QTI30
             For Each responseIdentifierAttribute As XmlNode In _responseIdentifierAttributeList
                 Dim addEmptyDeclaration = True
                 _finding = QTI30CombinedScoringHelper.GetFindingByResponseIdentifier(_solution, responseIdentifierAttribute.Value)
-                Dim addResponseDeclarationMappings = QTI30CombinedScoringHelper.ShouldAddResponseDeclarationMappingsForResponseProcessingTemplateUsage(_solution, _finding, _scoringParams)
                 InstantiateResponseTypeFactory()
                 Dim keyValue = GetKeyValueForResponse(responseIdentifierAttribute)
                 DetermineIfResponseIsPartOfComposedInteraction(responseIdentifierAttribute, keyValue)
@@ -48,8 +47,11 @@ Namespace QTI.Converters.Declaration.QTI30
                     Dim facts As List(Of BaseFact) = GetFactsForResponse(responseIdentifierAttribute, groups, shouldAddToCorrectResponse)
                     If facts.Any OrElse responseIsInFactSet Then
                         addEmptyDeclaration = False
+
                         Dim interPretationValue As String = String.Empty
                         Dim responseIsFirstInteractionInFactSet As Boolean = DetermineIfResponseIsFirstInteractionInFactSet(responseIdentifierAttribute.Value, groups)
+                        Dim addResponseDeclarationMappings = QTI30CombinedScoringHelper.ShouldAddResponseDeclarationMappingsForResponseProcessingTemplateUsage(_solution, _finding, _scoringParams)
+
                         If (Not responseIsInFactSet AndAlso Not _indexOfSubPartInComposedInteraction > 1) OrElse (responseIsInFactSet AndAlso responseIsFirstInteractionInFactSet) Then
                             interPretationValue = GetInterpretationValue(responseIdentifierAttribute, groups)
                         End If

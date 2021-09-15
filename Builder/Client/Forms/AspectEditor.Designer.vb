@@ -20,9 +20,6 @@ Partial Class AspectEditor
         Dim FormStatusStrip As System.Windows.Forms.StatusStrip
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AspectEditor))
         Me.StatusTextLabel = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.AspectGeneral = New Questify.Builder.UI.AspectGeneralProperties()
-        Me.AspectResourceMetaData = New Questify.Builder.UI.ResourceMetaData()
-        Me.AspectPropertyEditor = New Questify.Builder.UI.AspectEditor()
         Me.AspectEditorToolStrip = New System.Windows.Forms.ToolStrip()
         Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.SaveAsToolStripButton = New System.Windows.Forms.ToolStripButton()
@@ -37,6 +34,11 @@ Partial Class AspectEditor
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
+        Me.AspectGeneral = New Questify.Builder.UI.AspectGeneralProperties()
+        Me.AspectResourceMetaData = New Questify.Builder.UI.ResourceMetaData()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.AspectPropertyEditor = New Questify.Builder.UI.AspectEditor()
+        Me.AspectScoreTranslationTableEditor = New Questify.Builder.UI.AspectScoreTranslationTableControl()
         FormStatusStrip = New System.Windows.Forms.StatusStrip()
         FormStatusStrip.SuspendLayout()
         Me.AspectEditorToolStrip.SuspendLayout()
@@ -49,22 +51,13 @@ Partial Class AspectEditor
         Me.SplitContainer2.Panel1.SuspendLayout()
         Me.SplitContainer2.Panel2.SuspendLayout()
         Me.SplitContainer2.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         resources.ApplyResources(FormStatusStrip, "FormStatusStrip")
         FormStatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StatusTextLabel})
         FormStatusStrip.Name = "FormStatusStrip"
         Me.StatusTextLabel.Name = "StatusTextLabel"
         resources.ApplyResources(Me.StatusTextLabel, "StatusTextLabel")
-        Me.AspectGeneral.Aspect = Nothing
-        resources.ApplyResources(Me.AspectGeneral, "AspectGeneral")
-        Me.AspectGeneral.Name = "AspectGeneral"
-        resources.ApplyResources(Me.AspectResourceMetaData, "AspectResourceMetaData")
-        Me.AspectResourceMetaData.IsNameChangable = False
-        Me.AspectResourceMetaData.Name = "AspectResourceMetaData"
-        Me.AspectResourceMetaData.ResourceEntity = Nothing
-        resources.ApplyResources(Me.AspectPropertyEditor, "AspectPropertyEditor")
-        Me.AspectPropertyEditor.ContextIdentifier = Nothing
-        Me.AspectPropertyEditor.Name = "AspectPropertyEditor"
         resources.ApplyResources(Me.AspectEditorToolStrip, "AspectEditorToolStrip")
         Me.AspectEditorToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveToolStripButton, Me.SaveAsToolStripButton, Me.SaveCloseToolStripButton})
         Me.AspectEditorToolStrip.Name = "AspectEditorToolStrip"
@@ -102,11 +95,29 @@ Partial Class AspectEditor
         resources.ApplyResources(Me.SplitContainer1, "SplitContainer1")
         Me.SplitContainer1.Name = "SplitContainer1"
         Me.SplitContainer1.Panel1.Controls.Add(Me.SplitContainer2)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.AspectPropertyEditor)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.TableLayoutPanel1)
         resources.ApplyResources(Me.SplitContainer2, "SplitContainer2")
+        Me.SplitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
         Me.SplitContainer2.Name = "SplitContainer2"
         Me.SplitContainer2.Panel1.Controls.Add(Me.AspectGeneral)
         Me.SplitContainer2.Panel2.Controls.Add(Me.AspectResourceMetaData)
+        Me.AspectGeneral.Aspect = Nothing
+        resources.ApplyResources(Me.AspectGeneral, "AspectGeneral")
+        Me.AspectGeneral.Name = "AspectGeneral"
+        resources.ApplyResources(Me.AspectResourceMetaData, "AspectResourceMetaData")
+        Me.AspectResourceMetaData.IsNameChangable = False
+        Me.AspectResourceMetaData.Name = "AspectResourceMetaData"
+        Me.AspectResourceMetaData.ResourceEntity = Nothing
+        resources.ApplyResources(Me.TableLayoutPanel1, "TableLayoutPanel1")
+        Me.TableLayoutPanel1.Controls.Add(Me.AspectPropertyEditor, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.AspectScoreTranslationTableEditor, 0, 1)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        resources.ApplyResources(Me.AspectPropertyEditor, "AspectPropertyEditor")
+        Me.AspectPropertyEditor.ContextIdentifier = Nothing
+        Me.AspectPropertyEditor.Name = "AspectPropertyEditor"
+        resources.ApplyResources(Me.AspectScoreTranslationTableEditor, "AspectScoreTranslationTableEditor")
+        Me.AspectScoreTranslationTableEditor.DataSource = Nothing
+        Me.AspectScoreTranslationTableEditor.Name = "AspectScoreTranslationTableEditor"
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.SplitContainer1)
@@ -122,13 +133,14 @@ Partial Class AspectEditor
         Me.AspectEditorMenuStrip.PerformLayout()
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
-        Me.SplitContainer1.Panel2.PerformLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
         Me.SplitContainer2.Panel1.ResumeLayout(False)
         Me.SplitContainer2.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -146,9 +158,11 @@ Partial Class AspectEditor
     Friend WithEvents toolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AspectResourceMetaData As Questify.Builder.UI.ResourceMetaData
-    Friend WithEvents AspectPropertyEditor As Questify.Builder.UI.AspectEditor
     Friend WithEvents AspectGeneral As Questify.Builder.UI.AspectGeneralProperties
     Friend WithEvents StatusTextLabel As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents SplitContainer2 As SplitContainer
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents AspectPropertyEditor As UI.AspectEditor
+    Friend WithEvents AspectScoreTranslationTableEditor As UI.AspectScoreTranslationTableControl
 End Class

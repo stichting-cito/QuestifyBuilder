@@ -1,4 +1,8 @@
 ﻿
+''' <summary>
+''' An attribute to override the default behavior of scoring.
+''' This class can be used in combination with baseScoringTest
+''' </summary>
 <AttributeUsage(AttributeTargets.Class Or AttributeTargets.Method)>
 Public Class ScoringMethodAttribute
     Inherits Attribute

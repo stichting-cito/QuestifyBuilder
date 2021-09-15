@@ -11,6 +11,7 @@ Public Class ConceptScoreInFindingManipulatorTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub GetConceptIdsFrom_exampleNotSynced_Expects_1()
+        'Arrange
         Dim solution = exampleNotSynced.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -18,15 +19,18 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         Dim conceptIds = manipulator.GetConceptIds().ToList()
-
-        Assert.AreEqual(1 + 1, conceptIds.Count)
+        
+        'Assert
+        Assert.AreEqual(1 + 1, conceptIds.Count) 'Catch all
         Assert.AreEqual("1", conceptIds.First())
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub GetDisplayValueForFactFrom_exampleNotSynced_Expects_6()
+        'Arrange
         Dim solution = exampleNotSynced.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -34,14 +38,17 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         Dim displayValue = manipulator.GetDisplayValueForConceptId("1")
-
+        
+        'Assert
         Assert.AreEqual("6", displayValue)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub IsConceptIdDeletable_exampleNotSynced_Expects_false()
+        'Arrange
         Dim solution = exampleNotSynced.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -49,14 +56,17 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         Dim boolResult1 = manipulator.IsConceptIdDeletable("1")
-
+        
+        'Assert
         Assert.IsFalse(boolResult1, "1 is part of the Keyfining and thus NOT deletable")
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub ContainsCatchAllAnswerCategory_exampleNotSynced_Expects_true()
+        'Arrange
         Dim solution = exampleNotSynced.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -64,14 +74,17 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         Dim boolResult1 = manipulator.ContainsCatchAllAnswerCategory()
-
+        
+        'Assert
         Assert.IsTrue(boolResult1, "Catch All Should be present ")
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub AddCatchAllAnswerCategory_ContainsCatchAllAnswerCategory_exampleNotSynced_Expects_true()
+        'Arrange
         Dim solution = exampleNotSynced.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -79,15 +92,18 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         manipulator.AddCatchAllAnswerCategory()
         Dim boolResult1 = manipulator.ContainsCatchAllAnswerCategory()
-
+        
+        'Assert
         Assert.IsTrue(boolResult1, "Catch All Should be present ")
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub GetConceptIdsFrom_exampleWithConceptFindingSynced_Expects_1()
+        'Arrange
         Dim solution = exampleWithConceptFindingSynced.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -95,15 +111,18 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         Dim conceptIds = manipulator.GetConceptIds().ToList()
-
+        
+        'Assert
         Assert.AreEqual(1 + 1, conceptIds.Count, "Expected a single concept id + a catch all id.")
         Assert.AreEqual("1", conceptIds.First())
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub GetDisplayValueForFactFrom_exampleWithConceptFindingSynced_Expects_6()
+        'Arrange
         Dim solution = exampleWithConceptFindingSynced.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -111,14 +130,17 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         Dim displayValue = manipulator.GetDisplayValueForConceptId("1")
-
+        
+        'Assert
         Assert.AreEqual("6", displayValue)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub IsConceptIdDeletable_exampleWithConceptFindingSynced_Expects_false()
+        'Arrange
         Dim solution = exampleWithConceptFindingSynced.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -126,14 +148,17 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         Dim boolResult1 = manipulator.IsConceptIdDeletable("1")
-
+        
+        'Assert
         Assert.IsFalse(boolResult1, "1 is part of the Keyfining and thus NOT deletable")
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub ContainsCatchAllAnswerCategory_exampleWithConceptFindingSynced_Expects_true()
+        'Arrange
         Dim solution = exampleWithConceptFindingSynced.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -141,14 +166,17 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         Dim boolResult1 = manipulator.ContainsCatchAllAnswerCategory()
-
+        
+        'Assert
         Assert.IsTrue(boolResult1, "Catch All Should be present ")
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub AddCatchAllAnswerCategory_ContainsCatchAllAnswerCategory_exampleWithConceptFindingSynced_Expects_true()
+        'Arrange
         Dim solution = exampleWithConceptFindingSynced.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -156,15 +184,18 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         manipulator.AddCatchAllAnswerCategory()
         Dim boolResult1 = manipulator.ContainsCatchAllAnswerCategory()
-
+        
+        'Assert
         Assert.IsTrue(boolResult1, "Catch All Should be present ")
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub GetConceptIdsFrom_exampleWithAddedConceptFacts_Expects_1_11_12()
+        'Arrange
         Dim solution = exampleWithAddedConceptFacts.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -172,9 +203,11 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         Dim conceptIds = manipulator.GetConceptIds().ToList()
-
+        
+        'Assert
         Assert.AreEqual(3 + 1, conceptIds.Count)
         Assert.AreEqual("1", conceptIds(0))
         Assert.AreEqual("1[1]", conceptIds(1))
@@ -184,6 +217,7 @@ Public Class ConceptScoreInFindingManipulatorTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub GetDisplayValueForFactFrom_exampleWithAddedConceptFacts_Expects_6_8_9()
+        'Arrange
         Dim solution = exampleWithAddedConceptFacts.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -191,11 +225,13 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         Dim displayValue1 = manipulator.GetDisplayValueForConceptId("1")
         Dim displayValue2 = manipulator.GetDisplayValueForConceptId("1[1]")
         Dim displayValue3 = manipulator.GetDisplayValueForConceptId("1[2]")
-
+        
+        'Assert
         Assert.AreEqual("6", displayValue1)
         Assert.AreEqual("8", displayValue2)
         Assert.AreEqual("9", displayValue3)
@@ -203,6 +239,7 @@ Public Class ConceptScoreInFindingManipulatorTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub IsConceptIdDeletable_exampleWithAddedConceptFacts_Expects_false_true_true()
+        'Arrange
         Dim solution = exampleWithAddedConceptFacts.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -210,11 +247,13 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         Dim boolResult1 = manipulator.IsConceptIdDeletable("1")
         Dim boolResult2 = manipulator.IsConceptIdDeletable("1[1]")
         Dim boolResult3 = manipulator.IsConceptIdDeletable("1[2]")
-
+        
+        'Assert
         Assert.IsFalse(boolResult1, "1 is part of the Keyfining and thus NOT deletable")
         Assert.IsTrue(boolResult2, "1[1] is NOT part of the Keyfining and thus deletable")
         Assert.IsTrue(boolResult3, "1[2] is NOT part of the Keyfining and thus deletable")
@@ -222,6 +261,7 @@ Public Class ConceptScoreInFindingManipulatorTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub RemoveConcept_exampleWithAddedConceptFacts()
+        'Arrange
         Dim solution = exampleWithAddedConceptFacts.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -231,9 +271,11 @@ Public Class ConceptScoreInFindingManipulatorTest
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim beforeIds = combinedScoringMapKey.GetConceptManipulator(solution).GetConceptIds().ToList()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         manipulator.RemoveConcept("1[1]")
-
+        
+        'Assert
         Dim resultIds = combinedScoringMapKey.GetConceptManipulator(solution).GetConceptIds().ToList()
 
         Assert.AreEqual(3 + 1, beforeIds.Count(), "Before state expected 3 scoringMapKeys (+1 Catch all)")
@@ -242,6 +284,7 @@ Public Class ConceptScoreInFindingManipulatorTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub ContainsCatchAllAnswerCategory_exampleWithAddedConceptFacts_Expects_true()
+        'Arrange
         Dim solution = exampleWithAddedConceptFacts.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -249,14 +292,17 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         Dim boolResult1 = manipulator.ContainsCatchAllAnswerCategory()
-
+        
+        'Assert
         Assert.IsTrue(boolResult1, "Catch All Should be present ")
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub AddCatchAllAnswerCategory_ContainsCatchAllAnswerCategory_exampleWithAddedConceptFacts_Expects_true()
+        'Arrange
         Dim solution = exampleWithAddedConceptFacts.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -264,29 +310,34 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         manipulator.AddCatchAllAnswerCategory()
         Dim boolResult1 = manipulator.ContainsCatchAllAnswerCategory()
-
+        
+        'Assert
         Assert.IsTrue(boolResult1, "Catch All Should be present ")
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub GetConceptIdsForMR_4SubPrms_ShouldReturn_2()
+        'Arrange
         Dim solution = New Solution()
         Dim mrParameter = New MultiChoiceScoringParameter() With {.ControllerId = "MRScore", .FindingOverride = "sharedFinding", .MaxChoices = 4}.AddSubParameters("1", "2", "3", "4")
 
-        mrParameter.GetScoreManipulator(solution).SetKey("1")
+        mrParameter.GetScoreManipulator(solution).SetKey("1") 'Set a key
         mrParameter.GetScoreManipulator(solution).RemoveKey("2")
         mrParameter.GetScoreManipulator(solution).RemoveKey("3")
         mrParameter.GetScoreManipulator(solution).SetKey("4")
         Dim combinedScoringMapKey = New ScoringMap(New ScoringParameter() {mrParameter}, solution).GetMap().First()
 
         solution.WriteToDebug("Arrange")
-
-        Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
+        
+        'Act
+        Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution) 'Note that the manipulator has been created on a combinedScoringMap that has 1 ScoringKey!
         Dim ids = manipulator.GetConceptIds()
-
+        
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.IsFalse(mrParameter.IsSingleChoice)
         Assert.AreEqual(2, ids.Count())
@@ -296,10 +347,11 @@ Public Class ConceptScoreInFindingManipulatorTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub GetConceptIdsForMC_4SubPrms_ShouldReturn_1()
+        'Arrange
         Dim solution = New Solution()
         Dim mcParameter = New MultiChoiceScoringParameter() With {.ControllerId = "McScore", .FindingOverride = "sharedFinding", .MaxChoices = 1}.AddSubParameters("1", "2", "3", "4")
 
-        mcParameter.GetScoreManipulator(solution).SetKey("1")
+        mcParameter.GetScoreManipulator(solution).SetKey("1") 'Set a key
         mcParameter.GetScoreManipulator(solution).RemoveKey("2")
         mcParameter.GetScoreManipulator(solution).RemoveKey("3")
         mcParameter.GetScoreManipulator(solution).SetKey("4")
@@ -307,9 +359,11 @@ Public Class ConceptScoreInFindingManipulatorTest
 
         solution.WriteToDebug("Arrange")
 
-        Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
+        'Act
+        Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution) 'Note that the manipulator has been created on a combinedScoringMap that has 1 ScoringKey!
         Dim ids = manipulator.GetConceptIds()
-
+        
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.IsTrue(mcParameter.IsSingleChoice)
         Assert.AreEqual(4, ids.Count())
@@ -317,6 +371,7 @@ Public Class ConceptScoreInFindingManipulatorTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub ScoreHasNoPreprocessingRules_PropertyShouldReturnFalse()
+        'Arrange
         Dim solution = exampleWithAddedConceptFacts.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -324,14 +379,17 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         Dim boolResult1 = manipulator.HasPreProcessingRules("1[1]")
-
+        
+        'Assert
         Assert.IsFalse(boolResult1, "No Preprocessing rule should be present.")
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub ScoreHasPreProcessingRules_PropertyShouldReturnTrue()
+        'Arrange
         Dim solution = exampleWithPreProcessingRules.To(Of Solution)()
         Dim integerScoringParameter =
                 New IntegerScoringParameter() _
@@ -339,12 +397,15 @@ Public Class ConceptScoreInFindingManipulatorTest
         Dim combinedScoringMapKey =
                 New ScoringMap(New ScoringParameter() {integerScoringParameter}, solution).GetMap().First()
         Dim manipulator = combinedScoringMapKey.GetConceptManipulator(solution)
-
+        
+        'Act
         Dim boolResult1 = manipulator.HasPreProcessingRules("1[1]")
-
+        
+        'Assert
         Assert.IsTrue(boolResult1, "No Preprocessing rule should be present.")
     End Sub
 
+#Region "Data"
 
     Private exampleNotSynced As XElement = <solution>
                                                <keyFindings>
@@ -477,5 +538,6 @@ Public Class ConceptScoreInFindingManipulatorTest
                                                             <aspectReferences/>
                                                         </solution>
 
+#End Region
 
 End Class

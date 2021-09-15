@@ -12,6 +12,7 @@ Public Class AddMissingAnswerCatagoryToMCTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GetSolutionWithMissingParamForD_ExpectsFactD_ToBeCreated()
+        'Arrange     
         Dim solution = solutionMissingParam.To(Of Solution)()
         Dim sp = ChoiceScoringParameterABCD()
 
@@ -19,14 +20,17 @@ Public Class AddMissingAnswerCatagoryToMCTests
         Dim inputs As New Dictionary(Of String, Object) From {{"CombinedScoringMapKey", combinedScoringMap}, {"Solution", solution}}
         WriteToDebug(solution, "Arrange")
 
+        'Act
         WorkflowInvoker.Invoke(New AddMissingAnswerCatagoryToMC(), inputs)
 
+        'Assert
         WriteToDebug(solution, "Assert")
         Assert.IsTrue(UnitTestHelper.AreSame(expectedResult.ToString(), solution.DoSerialize().ToString()))
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub SolutionWithoutMissingInput_EqualsOutcome()
+        'Arrange     
         Dim solution = expectedResult.To(Of Solution)()
         Dim sp = ChoiceScoringParameterABCD()
 
@@ -34,12 +38,15 @@ Public Class AddMissingAnswerCatagoryToMCTests
         Dim inputs As New Dictionary(Of String, Object) From {{"CombinedScoringMapKey", combinedScoringMap}, {"Solution", solution}}
         WriteToDebug(solution, "Arrange")
 
+        'Act
         WorkflowInvoker.Invoke(New AddMissingAnswerCatagoryToMC(), inputs)
 
+        'Assert
         WriteToDebug(solution, "Assert")
         Assert.IsTrue(UnitTestHelper.AreSame(expectedResult.ToString(), solution.DoSerialize().ToString()))
     End Sub
 
+#Region "Data"
     ReadOnly solutionMissingParam As XElement = <solution xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                                                     <keyFindings>
                                                         <keyFinding id="Integratie" scoringMethod="None">
@@ -126,6 +133,7 @@ Public Class AddMissingAnswerCatagoryToMCTests
                                               </conceptFindings>
                                               <aspectReferences/>
                                           </solution>
+#End Region
 
     Private Function ChoiceScoringParameterABCD() As ChoiceScoringParameter
         Return New ChoiceScoringParameter() With {.FindingOverride = "Integratie", .ControllerId = "Controller", .MaxChoices = 1}.AddSubParameters("A", "B", "C", "D")

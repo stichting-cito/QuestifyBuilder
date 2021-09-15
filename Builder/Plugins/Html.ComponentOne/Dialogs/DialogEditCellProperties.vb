@@ -20,13 +20,21 @@ Public Class DialogEditCellProperties
 
     Public Sub New(ByVal editor As XHtmlEditor, ByVal namespaceManager As XmlNamespaceManager)
 
+        ' This call is required by the designer.
         InitializeComponent()
 
+        ' Add any initialization after the InitializeComponent() call.
         _editor = editor
         _namespaceManager = namespaceManager
     End Sub
 
+#Region "Properties"
 
+    ''' <summary>
+    ''' Gets to what part of the table to apply the cell properties to.
+    ''' An english term is returned independant of what language is being selected by the end-user.
+    ''' </summary>
+    ''' <value>The apply cell properties to.</value>
     Public ReadOnly Property ApplyCellPropertiesTo() As String
         Get
             Dim myResMan As New System.ComponentModel.ComponentResourceManager(GetType(DialogEditCellProperties))
@@ -133,8 +141,23 @@ Public Class DialogEditCellProperties
         End Set
     End Property
 
+#End Region 'Properties
 
+#Region "Methods"
 
+    ''' <summary>
+    ''' Sets the cell style and properties.
+    ''' </summary>
+    ''' <param name="cellStyle">The cell style.</param>
+    ''' <param name="horizontalAlignment">The horizontal alignment.</param>
+    ''' <param name="verticalAlignment">The vertical alignment.</param>
+    ''' <param name="cellWidth">The width.</param>
+    ''' <param name="cellHeight">The height.</param>
+    ''' <remarks>
+    ''' In an older version of TestBuilder, the width, height, align and v-align properties were set as a CSS style.
+    ''' To support the older Items, this old style is read here and then removed from the cellstyle 
+    ''' and converted to the new width, height, align and v-align html properties.
+    ''' </remarks>
     Private Sub SetCellStyleAndProperties(ByVal cellStyle As String, ByVal horizontalAlignment As HorizontalAlign, ByVal verticalAlignment As VerticalAlign, ByVal cellWidth As Unit, ByVal cellHeight As Unit)
         Me.CellHorizontalAlignment = horizontalAlignment
         Me.CellVerticalAlignment = verticalAlignment
@@ -147,6 +170,7 @@ Public Class DialogEditCellProperties
         Dim heightFromCellStyle As String = String.Empty
 
         Dim styleParts() As String = cellStyle.Split(";".ToCharArray())
+        ' Get the align and valign properties from the CSS style.
         For index As Integer = 0 To styleParts.GetUpperBound(0)
             Dim stylePart As String = styleParts(index)
             If stylePart.Trim().ToLower().StartsWith("text-align") Then
@@ -164,9 +188,11 @@ Public Class DialogEditCellProperties
             End If
             If Not (String.IsNullOrEmpty(alignFromCellStyle) OrElse String.IsNullOrEmpty(valignFromCellStyle) OrElse
              String.IsNullOrEmpty(widthFromCellStyle) OrElse String.IsNullOrEmpty(heightFromCellStyle)) Then
+                ' No need to search any further.
                 Exit For
             End If
         Next
+        ' Reconstruct the CSS style from the separated parts.
         Dim styleBuilder As StringBuilder = New StringBuilder()
         For Each stylePart As String In styleParts
             If Not String.IsNullOrEmpty(stylePart) Then
@@ -175,6 +201,7 @@ Public Class DialogEditCellProperties
             End If
         Next
         Me.CellStyle = styleBuilder.ToString()
+        ' Try to use the width, height, align and valign styles. 
         If Not String.IsNullOrEmpty(alignFromCellStyle) Then
             CellHorizontalAlignment = GetHorizontalAlignmentFromString(alignFromCellStyle)
         End If
@@ -195,16 +222,26 @@ Public Class DialogEditCellProperties
         End If
     End Sub
 
+    ''' <summary>
+    ''' Gets the horizontal alignment from string.
+    ''' </summary>
+    ''' <param name="horizontalAlignment">The horizontal alignment.</param>
+    ''' <returns></returns>
     Private Function GetHorizontalAlignmentFromString(ByVal horizontalAlignment As String) As HorizontalAlign
         Dim tconverter As System.ComponentModel.TypeConverter = System.ComponentModel.TypeDescriptor.GetConverter(GetType(System.Web.UI.WebControls.HorizontalAlign))
         Return DirectCast(tconverter.ConvertFromString(Nothing, System.Threading.Thread.CurrentThread.CurrentUICulture, horizontalAlignment), System.Web.UI.WebControls.HorizontalAlign)
     End Function
 
+    ''' <summary>
+    ''' Gets the vertical alignment from string.
+    ''' </summary>
+    ''' <param name="verticalAlignment">The vertical alignment.</param>
+    ''' <returns></returns>
     Private Function GetVerticalAlignmentFromString(ByVal verticalAlignment As String) As VerticalAlign
         Dim tconverter As System.ComponentModel.TypeConverter = System.ComponentModel.TypeDescriptor.GetConverter(GetType(System.Web.UI.WebControls.VerticalAlign))
         Return DirectCast(tconverter.ConvertFromString(Nothing, System.Threading.Thread.CurrentThread.CurrentUICulture, verticalAlignment), System.Web.UI.WebControls.VerticalAlign)
     End Function
-
+    
     Private Function GetUnitFromString(ByVal unitString As String) As Unit
         If Not String.IsNullOrEmpty(unitString) Then
             Dim value As Integer
@@ -229,6 +266,7 @@ Public Class DialogEditCellProperties
     Private Function ConstructCellStyle() As String
         Dim Style As String
 
+        'The style to return always includes all values that we didn't extract.
         Style = _cellStyle
 
         Return Style
@@ -247,12 +285,15 @@ Public Class DialogEditCellProperties
     Private Sub InitComboboxWithEnumValues(ByVal etype As System.Type, ByVal evalue As Object, ByVal combo As ComboBox)
         System.ComponentModel.TypeDescriptor.AddAttributes(etype, New System.ComponentModel.TypeConverterAttribute(GetType(LocalEnumLocalizer)))
 
+        'Fill the ComboBox with the translated values that correspond to the enum values.
         For Each kv As KeyValuePair(Of System.Enum, String) In LocalEnumLocalizer.GetValues(etype)
+            'Never add Justify because we don't support it.
             If Not kv.Value.Equals("Justify") Then
                 combo.Items.Add(kv.Value)
             End If
         Next
 
+        'Set the selected item and index according to the evalue.
         Dim tconverter As System.ComponentModel.TypeConverter = System.ComponentModel.TypeDescriptor.GetConverter(etype)
         Dim SelectedText As String = tconverter.ConvertToString(Nothing, Threading.Thread.CurrentThread.CurrentUICulture, evalue)
         Dim SelectedIndex As Integer = 0
@@ -277,6 +318,7 @@ Public Class DialogEditCellProperties
             PerformApplyCellPropertiesTo()
             _editor.CommitTransaction()
 
+            'Remove colgroup elements to ensure proper responding to styling set at column level.
             Dim htmlHelper As New HtmlContentHelper
             If htmlHelper.RemoveColGroupFromTables(_item.Node, _namespaceManager) Then
                 _editor.LoadXml(_editor.Document.OuterXml)
@@ -303,6 +345,7 @@ Public Class DialogEditCellProperties
                 ApplyStyle(element, CellHorizontalAlignment, CellVerticalAlignment, CellWidth, CellHeight)
         End Select
 
+        ' If table has only one column, and width of cell/column is set, also change the width of the table.
         If Not CellWidth.IsEmpty Then
             Dim table As XmlElement = _cntHlp.GetTable(element)
             If table Is Nothing Then Return
@@ -374,6 +417,7 @@ Public Class DialogEditCellProperties
         Dim columns As XmlNodeList = row.SelectNodes("def:td", _namespaceManager)
         Dim columnIndex As Integer = 0
 
+        'Find the columnindex of the cell
         For i As Integer = 0 To columns.Count - 1
             If columns(i).Equals(cell) Then
                 columnIndex = i
@@ -406,8 +450,13 @@ Public Class DialogEditCellProperties
         ComboBoxWidthUnit.Enabled = RadioButtonFixedWidth.Checked
     End Sub
 
+#End Region 'Methods
 
+#Region "Nested Types"
 
+    ''' <summary>
+    ''' This private class facilitates translation of enum members.
+    ''' </summary>
     Private Class LocalEnumLocalizer
         Inherits Cito.Tester.Common.ResourceEnumConverter
 
@@ -417,15 +466,30 @@ Public Class DialogEditCellProperties
 
     End Class
 
+#End Region 'Nested Types
 
+#Region "ICellItemDialog Members"
 
+    ''' <summary>
+    ''' Binds data from the item to GUI controls on the form.
+    ''' Data can be bound either using the <see cref="Control.DataBindings"/> collection or any other way allowing 
+    ''' to read data from the item and write it back.
+    ''' </summary>
+    ''' <param name="item">The item to be bound to the GUI controls.</param>
     Private Sub ITableItemDialog_BindData(ByVal item As XHTMLCellItem) Implements ICellItemDialog.BindData
         _item = item
     End Sub
 
+    ''' <summary>
+    ''' Shows the form with the specified owner to the user.
+    ''' </summary>
+    ''' <param name="owner">Any object that implements <see cref="System.Windows.Forms.IWin32Window"/> and represents 
+    ''' the top-level window that will own this form.</param>
+    ''' <returns>True if the form was displayed successfully and the item was changed.</returns>
     Private Function ITableItemDialog_Show(ByVal owner As IWin32Window) As Boolean Implements ICellItemDialog.Show
         Return ShowDialog(owner) = DialogResult.OK
     End Function
 
+#End Region
 
 End Class

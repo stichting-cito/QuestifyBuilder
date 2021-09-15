@@ -12,20 +12,24 @@ Public Class ScoreFixTests
 
     <TestMethod(), TestCategory("Scoring"), TestCategory("Scoring"), Description("Test whether a valid solution is modified. Expected: Not modified.")>
     Public Sub ValidSolution_NotModified()
+        'Arrange
         Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
         Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.InlineChoice_SingleAnswer)
         Dim solution = item.Solution
         Dim scoringParameters As HashSet(Of ScoringParameter) = item.Parameters.DeepFetchInlineScoringParameters()
         Dim factsBeforeRemoval = solution.Findings(0).Facts.Count
 
+        'Act
         solution.FixRemovedScoringParameters(scoringParameters)
 
+        'Assert
         Assert.AreEqual(2, solution.Findings(0).Facts.Count)
         Assert.AreEqual(factsBeforeRemoval, solution.Findings(0).Facts.Count)
     End Sub
 
     <TestMethod(), TestCategory("Scoring"), Description("Test whether a broken solution (with invalid facts) is fixed.")>
     Public Sub RemoveScoringParameter_SolutionIsFixed_SingleAnswer()
+        'Arrange
         Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
         Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.InlineChoice_SingleAnswer)
         Dim solution = item.Solution
@@ -35,14 +39,17 @@ Public Class ScoreFixTests
 
         Dim factsBeforeRemoval = solution.Findings(0).Facts.Count
 
+        'Act
         solution.FixRemovedScoringParameters(scoringParameters)
 
+        'Assert
         Assert.AreEqual(1, solution.Findings(0).Facts.Count)
         Assert.AreNotEqual(factsBeforeRemoval, solution.Findings(0).Facts.Count)
     End Sub
 
     <TestMethod(), TestCategory("Scoring"), Description("Test whether a broken solution (with invalid findings) is fixed.")>
     Public Sub FindingIdNotFound_SolutionIsFixed_FindingIsRemoved()
+        'Arrange
         Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
         Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.InlineChoice_SingleAnswer)
         Dim solution = item.Solution
@@ -52,14 +59,17 @@ Public Class ScoreFixTests
 
         Dim findingsBeforeRemoval = solution.Findings.Count
 
+        'Act
         solution.FixRemovedScoringParameters(scoringParameters)
 
+        'Assert
         Assert.AreEqual(0, solution.Findings.Count)
         Assert.AreNotEqual(findingsBeforeRemoval, solution.Findings.Count)
     End Sub
 
     <TestMethod(), TestCategory("Scoring"), Description("Test whether a broken solution (with multiple answers) is fixed.")>
     Public Sub RemoveScoringParameter_FixGroupedSolution_SolutionIsFixedAndUngrouped()
+        'Arrange
         Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
         Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.InlineChoice_MultipleAnswer)
         Dim solution = item.Solution
@@ -69,8 +79,10 @@ Public Class ScoreFixTests
 
         solution.WriteToDebug("Arrange")
 
+        'Act
         solution.FixRemovedScoringParameters(scoringParameters)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.AreEqual(0, solution.Findings(0).KeyFactsets.Count, "Expected no KeyFactSets, the facts should be moved to the finding.facts ")
         Assert.AreEqual(2, solution.Findings(0).Facts.Count)
@@ -78,6 +90,7 @@ Public Class ScoreFixTests
 
     <TestMethod(), TestCategory("Scoring"), TestCategory("Scoring"), Description("Test whether a broken solution (with empty facts) is fixed.")>
     Public Sub InvalidSolutionWithEmptyFacts_SolutionIsFixed()
+        'Arrange
         Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
         Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.InlineChoice_EmptyFacts)
         Dim solution = item.Solution
@@ -85,14 +98,17 @@ Public Class ScoreFixTests
         Dim scoringParameters As HashSet(Of ScoringParameter) = item.Parameters.DeepFetchInlineScoringParameters()
         Dim factsBeforeRemoval = solution.Findings(0).Facts.Count
 
+        'Act
         solution.FixRemovedScoringParameters(scoringParameters)
 
+        'Assert
         Assert.AreEqual(0, solution.Findings(0).Facts.Count)
         Assert.AreNotEqual(factsBeforeRemoval, solution.Findings(0).Facts.Count)
     End Sub
 
     <TestMethod(), TestCategory("Scoring"), Description("Correct fix of grouped scoring when removing alternatives from score parameter")>
     Public Sub SolutionWithRemovedIntegerAlternatives_FactsFor4and5_areRemoved_factsFor3AreMoved()
+        'Arrange
         Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
         Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.IntegerGrouping)
         Dim solution = item.Solution
@@ -100,8 +116,10 @@ Public Class ScoreFixTests
         Dim scoringParameters As HashSet(Of ScoringParameter) = item.Parameters.DeepFetchInlineScoringParameters()
         solution.WriteToDebug("Arrange")
 
+        'Act
         solution.FixRemovedScoringParameters(scoringParameters)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.AreEqual(1, solution.Findings(0).Facts.Count, "Expecting a single fact to be found in the finding")
         Assert.AreEqual(2, solution.Findings(0).KeyFactsets.Count, "Expecting 2 fact sets")
@@ -117,6 +135,7 @@ Public Class ScoreFixTests
 
     <TestMethod(), TestCategory("Scoring"), Description("Correct fix of grouped scoring when removing alternatives (Multi response")>
     Public Sub SolutionWithRemovedMRAlternatives_SolutionIsFixed()
+        'Arrange
         Dim xmlSerializer As New XmlSerializer(GetType(AssessmentItem))
         Dim item = xmlSerializer.Deserialize(Of AssessmentItem)(My.Resources.MRGroupedRemovedAlternative)
         Dim solution = item.Solution
@@ -124,8 +143,10 @@ Public Class ScoreFixTests
         Dim scoringParameters As HashSet(Of ScoringParameter) = item.Parameters.DeepFetchInlineScoringParameters()
         solution.WriteToDebug("Arrange")
 
+        'Act
         solution.FixRemovedScoringParameters(scoringParameters)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.AreEqual(2, solution.Findings(0).Facts.Count)
         Assert.AreEqual(0, solution.Findings(0).KeyFactsets.Count)
@@ -141,6 +162,8 @@ Public Class ScoreFixTests
 
     <TestMethod(), TestCategory("Scoring")>
     Public Sub ConceptSolution_AnswerCategoriesFacts_ShouldNotBeRemoved()
+        'Answer fact Ids look something like: 1[1]-Ice32c0ba-73db-456d-b3d3-c92265282cf7
+        'Arrange
         Dim solution = _conceptSolution1.To(Of Solution)()
 
         Dim scoringParameters = New ScoringParameter() {
@@ -148,9 +171,11 @@ Public Class ScoreFixTests
             New StringScoringParameter() With {.Name = "str2", .FindingOverride = "gapController", .InlineId = "If62b4c70-e785-4b2d-892f-5ecaea3824a3"}.AddSubParameters("1")
             }
         solution.WriteToDebug("arrange")
-
+        
+        'Act
         solution.FixRemovedScoringParameters(scoringParameters)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.AreEqual(0, solution.ConceptFindings(0).Facts.Count, "No facts on finding level expected")
         Assert.AreEqual(2, solution.ConceptFindings(0).KeyFactsets.Count, "2 factsets expected")

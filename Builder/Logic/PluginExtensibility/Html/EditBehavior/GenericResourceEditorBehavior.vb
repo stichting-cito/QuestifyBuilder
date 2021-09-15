@@ -14,20 +14,26 @@ Namespace PluginExtensibility.Html.EditBehavior
 
         Private Const TTS_STYLESHEET_NAME As String = "Edituserstyle.css"
         Private ReadOnly param As GenericResourceEntity
-        Private _toParam As IHtmlConverter
-        Private _toEditor As IHtmlConverter
+        Private _toParam As IHtmlConverter 'How to convert the html to value to be stored
+        Private _toEditor As IHtmlConverter 'how to convert the stored value to html
         Private _inlineRetriever As IInlineRetriever
         Private _hideToolstrip As Boolean
 
+        ''' <summary>
+        ''' Initializes a new instance of the <see cref="GenericResourceEditorBehaviour" /> class.
+        ''' </summary>
+        ''' <param name="resourceEntity">The resource entity.</param>
+        ''' <param name="resourceManager">The resource manager.</param>
+        ''' <param name="contextIdentifier">The context identifier.</param>
         Public Sub New(resourceEntity As ResourceEntity,
-               resourceManager As ResourceManagerBase,
-               contextIdentifier As Integer?, hideToolstrip As Boolean)
+                       resourceManager As ResourceManagerBase,
+                       contextIdentifier As Integer?, hideToolstrip As Boolean)
             MyBase.New(resourceEntity, resourceManager, contextIdentifier)
 
             param = DirectCast(resourceEntity, GenericResourceEntity)
             Debug.Assert(param IsNot Nothing, "ResourceEntity Is nothing??!!")
 
-            MyBase.ForOldItem = True
+            MyBase.ForOldItem = True 'Assume that it is plain html instead of an InlineElement object
 
             _hideToolstrip = hideToolstrip
         End Sub
@@ -54,6 +60,7 @@ Namespace PluginExtensibility.Html.EditBehavior
             If (_toEditor Is Nothing) Then InitConverter()
             Dim tmp As String = Encoding.UTF8.GetString(param.ResourceData.BinData())
 
+            ' Strip documenttype declarations:
             tmp = Regex.Replace(tmp, "^((<\?xml.+?>)|(<!DOCTYPE.+?>))", "")
             tmp = _toEditor.ConvertHtml(tmp)
 
@@ -75,6 +82,7 @@ Namespace PluginExtensibility.Html.EditBehavior
         End Sub
 
         Public Overrides Function addDependency(nameOfResource As String, isItemLayoutTemplate As Boolean) As Boolean
+            'a dependent resource won't be added because Questify Player before version 2.1 can't handle it.
             If isItemLayoutTemplate Then
                 Return True
             Else
@@ -82,6 +90,7 @@ Namespace PluginExtensibility.Html.EditBehavior
             End If
         End Function
 
+#Region "Business Logic"
 
         Public Overrides ReadOnly Property CanInsertControls As Boolean
             Get
@@ -119,16 +128,18 @@ Namespace PluginExtensibility.Html.EditBehavior
             End Get
         End Property
 
+#End Region
 
+#Region "Chain"
 
         Function ConstructChain_FromEditor2Param() As IHtmlConverter
-            Dim ret As IHtmlConverter = New HtmlConverter_C1RefToCitoRef()
+            Dim ret As IHtmlConverter = New HtmlConverter_C1RefToCitoRef() 'Translates "fixed" referential tags to cito format (brontekst)
             ret.LastConverter.NextConverter = New HtmlConverter_OldInlineToHtml(Me, DefaultNamespaceManager)
-            ret.LastConverter.NextConverter = New HtmlConverter_RemoveContextNumber()
-            ret.LastConverter.NextConverter = New HtmlConverter_MathImageToMathML()
-            ret.LastConverter.NextConverter = New HtmlConverter_FullToPartial()
+            ret.LastConverter.NextConverter = New HtmlConverter_RemoveContextNumber() 'Removes the contextId
+            ret.LastConverter.NextConverter = New HtmlConverter_MathImageToMathML() 'Only save MathML, not img tag, in html
+            ret.LastConverter.NextConverter = New HtmlConverter_FullToPartial() 'Retrieve only the content of the body, do not store full html
             ret.LastConverter.NextConverter = New HtmlConverter_RemoveHyperlinks()
-            ret.LastConverter.NextConverter = New HtmlConverter_TextToSpeechToHtml()
+            ret.LastConverter.NextConverter = New HtmlConverter_TextToSpeechToHtml() ' Removes textual contents from TTS pause-tags
             Return ret
         End Function
 
@@ -138,22 +149,27 @@ Namespace PluginExtensibility.Html.EditBehavior
         End Function
 
         Function ConstructChain_FromParam2Editor() As IHtmlConverter
-            Dim ret = New HtmlConverter_CitoRefToC1Ref()
-            ret.LastConverter.NextConverter = New HtmlConverter_AssignDivId()
-            ret.LastConverter.NextConverter = New HtmlConverter_RepairElementReference(DefaultNamespaceManager)
+            Dim ret = New HtmlConverter_CitoRefToC1Ref() 'Converts sourcetext reference tags to C1 editor specific tags.          
+            ret.LastConverter.NextConverter = New HtmlConverter_AssignDivId() 'C1 editor translates empty DIVS this is a fix to preserve lines.
+            ret.LastConverter.NextConverter = New HtmlConverter_RepairElementReference(DefaultNamespaceManager) 'Swaps <u> inside <span> to surround <span>
             Dim inline As New HtmlConverter_OldHtmlToInline(Me)
             _inlineRetriever = DirectCast(inline, IInlineRetriever)
             ret.LastConverter.NextConverter = inline
-            ret.LastConverter.NextConverter = New HtmlConverter_MathMLToMathImage(PluginHelper.MathMlPlugin)
-            ret.LastConverter.NextConverter = New HtmlConverter_AddContextNumber(Me.ContextIdentifier)
-            ret.LastConverter.NextConverter = New HtmlConverter_HtmlToTextToSpeech()
+            ret.LastConverter.NextConverter = New HtmlConverter_MathMLToMathImage(PluginHelper.MathMlPlugin) 'Converts the MathML to a math img tag
+            ret.LastConverter.NextConverter = New HtmlConverter_AddContextNumber(Me.ContextIdentifier) 'Adds the contextIdentifier to url's
+            ret.LastConverter.NextConverter = New HtmlConverter_HtmlToTextToSpeech() 'Adds the contextual contents for TTS pause-tags
             Return ret
         End Function
 
+#End Region
 
+#Region "StyleSheet"
 
+        ''' <summary>
+        ''' Gets the style sheets from dependencies.
+        ''' </summary>
         Public Overrides Function GetStyleFromResource() As Dictionary(Of String, String)
-            Dim styleSheetsToReference As New Dictionary(Of String, String)
+            Dim styleSheetsToReference As New Dictionary(Of String, String) 'Name - Content of the stylesheet
             Dim sbHeaderStyleElementContent As New StringBuilder()
 
             For Each dependentResource As DependentResourceEntity In ResourceEntity.DependentResourceCollection
@@ -166,6 +182,8 @@ Namespace PluginExtensibility.Html.EditBehavior
 
                     styleSheetsToReference.Add(dependentResource.DependentResource.Name, New System.Text.UTF8Encoding().GetString(resourceDataEntity.BinData))
 
+                    ' Now check if a stylesheet exists with the name "Edit" + Name and if so load it and append its content to the headerStyleElementContent var. "Edit" stylesheets are intended to set or extend styles that are specific to "Edit" mode.
+                    ' This feature is introduced because the userstyle.css UserSRGroep needs a visual effect during edit that is not allowed during presentation.
                     Dim stylesheetEditCounterpart As ResourceEntity = ResourceFactory.Instance.GetResourceByNameWithOption(ResourceEntity.BankId, $"Edit{dependentStylesheetResource.Name}", New ResourceRequestDTO())
 
                     If TypeOf stylesheetEditCounterpart Is GenericResourceEntity AndAlso
@@ -202,6 +220,7 @@ Namespace PluginExtensibility.Html.EditBehavior
             Return String.Empty
         End Function
 
+#End Region
     End Class
 
 End Namespace

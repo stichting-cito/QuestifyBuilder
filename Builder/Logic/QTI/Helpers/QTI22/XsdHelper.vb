@@ -12,7 +12,7 @@ Namespace QTI.Helpers.QTI22
             Dim controlXsdsPath As String = paths("controlxsds")
 
             If Not Directory.Exists(tempXsdsPath) Then
-                Using memoryStream As New IO.MemoryStream(My.Resources.Schemas, 0, My.Resources.Schemas.Count)
+                Using memoryStream As New IO.MemoryStream(My.Resources.nonqtischemas_qti22, 0, My.Resources.nonqtischemas_qti22.Count)
                     memoryStream.Position = 0
                     Using streamReader As New StreamReader(memoryStream)
                         ChainHandlerHelper.ExtractZipToDirectory(streamReader, tempXsdsPath)

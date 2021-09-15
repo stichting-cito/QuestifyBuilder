@@ -216,6 +216,9 @@
   <data name="TestSetControl.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="TestSetControl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="TestSetControl.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -1069,7 +1072,7 @@
     <value>0</value>
   </data>
   <data name="TabPage4.Text" xml:space="preserve">
-    <value>TabPage4</value>
+    <value>Metadata</value>
   </data>
   <data name="&gt;&gt;TabPage4.Name" xml:space="preserve">
     <value>TabPage4</value>
@@ -1126,7 +1129,7 @@
     <value>1</value>
   </data>
   <data name="TabPage5.Text" xml:space="preserve">
-    <value>TabPage5</value>
+    <value>Properties</value>
   </data>
   <data name="&gt;&gt;TabPage5.Name" xml:space="preserve">
     <value>TabPage5</value>

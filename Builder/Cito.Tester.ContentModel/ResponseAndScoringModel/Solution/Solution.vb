@@ -71,7 +71,8 @@ Public Class Solution
     <XmlIgnore>
     Public ReadOnly Property ItemScoreTranslationTableSpecified As Boolean
         Get
-            Return _itemScoreTranslationTable IsNot Nothing AndAlso Not _itemScoreTranslationTable.Count = 0
+            Return _itemScoreTranslationTable IsNot Nothing AndAlso
+                _itemScoreTranslationTable.Any()
         End Get
     End Property
 

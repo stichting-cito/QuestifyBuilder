@@ -925,9 +925,6 @@ Continue?</value>
   <data name="XsdValidationFile" xml:space="preserve">
     <value>Item '{0}' File '{1}': {2}</value>
   </data>
-  <data name="Schemas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\QTI\Resources\Schemas.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="schema_qti22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\QTI\Resources\schema_qti22.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -981,5 +978,11 @@ Continue?</value>
   </data>
   <data name="schema_qti30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\QTI\Resources\schema_qti30.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nonqtischemas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\QTI\Resources\nonqtischemas.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nonqtischemas_qti22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\QTI\Resources\nonqtischemas_qti22.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

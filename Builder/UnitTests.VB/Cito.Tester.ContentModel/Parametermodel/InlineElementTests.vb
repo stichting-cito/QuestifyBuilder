@@ -10,9 +10,12 @@ Public Class InlineElementTests
 
     <TestMethod()> <TestCategory("ContentModel")>
     Public Sub DeserializeInlineElement()
-
+        'Arrange
+     
+        'Act
         Dim res As InlineElement = DirectCast(SerializeHelper.XmlDeserializeFromString(data.ToString(), GetType(InlineElement)), InlineElement)
-
+      
+        'Assert
         Assert.AreEqual(1, res.Parameters.Count)
         Assert.AreEqual(1, res.Parameters.Count)
         Assert.AreEqual(1, res.Parameters(0).InnerParameters.Count)
@@ -22,9 +25,12 @@ Public Class InlineElementTests
 
     <TestMethod()> <TestCategory("ContentModel")> <WorkItem(9658)>
     Public Sub DeserializeInlineElementShouldNotContainDesignerSettings()
-
+        'Arrange
+      
+        'Act
         Dim res As InlineElement = DirectCast(SerializeHelper.XmlDeserializeFromString(data.ToString(), GetType(InlineElement)), InlineElement)
-
+      
+        'Assert
         Assert.IsInstanceOfType(res.Parameters(0).InnerParameters(0), GetType(ResourceParameter))
         Dim p As ResourceParameter = DirectCast(res.Parameters(0).InnerParameters(0), ResourceParameter)
         Assert.IsFalse(p.Value.Contains("designersetting"))
@@ -32,10 +38,13 @@ Public Class InlineElementTests
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub DeserializeInlineElement_ExpectsPlainTextParametersToHaveValue()
+        'Arrange
         Dim inline = someInlineElementWithFilledParams
-
+      
+        'Act
         Dim result = Deserialize(Of InlineElement)(inline)
-
+      
+        'Assert
         Assert.AreEqual(1, result.Parameters.Count, "Expects 1 parameter collection")
         Dim prms = result.Parameters(0).InnerParameters
         Assert.AreEqual(4, prms.Count, "Expects 4 parameters")
@@ -47,10 +56,13 @@ Public Class InlineElementTests
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub DeserializeInlineElement_ExpectsXhtmlParametersofInineChoiceToHaveValue()
+        'Arrange
         Dim inline = someInlineElementWithFilledParams
-
+    
+        'Act
         Dim result = Deserialize(Of InlineElement)(inline)
-
+     
+        'Assert
         Assert.AreEqual(1, result.Parameters.Count, "Expects 1 parameter collection")
         Dim prms = result.Parameters(0).InnerParameters
         Assert.AreEqual(4, prms.Count, "Expects 4 parameters")
@@ -69,9 +81,12 @@ Public Class InlineElementTests
 
     <TestMethod(), TestCategory("ContentModel")>
     Public Sub DeserializeInlineElementWithMathParameter()
-
+        'Arrange
+       
+        'Act
         Dim res As InlineElement = Deserialize(Of InlineElement)(inlineElementWithMathMLParameter)
 
+        'Assert
         Assert.AreEqual(1, res.Parameters.Count)
         Assert.AreEqual(8, res.Parameters(0).InnerParameters.Count)
         Assert.IsInstanceOfType(res.Parameters(0).InnerParameters(6), GetType(MathMLParameter))
@@ -81,12 +96,16 @@ Public Class InlineElementTests
 
     <TestMethod(), TestCategory("ContentModel")>
     Public Sub DeserializeInlineElementWithResourceDimensions()
-
+        'Arrange
+       
+        'Act
         Dim res As InlineElement = Deserialize(Of InlineElement)(inlineElementDimensions)
 
+        'Assert
         Assert.AreEqual(95, res.Parameters(0).Parameters.OfType(Of ResourceParameter).First.Height)
     End Sub
 
+#Region "DATA"
 
     Private data As XElement = <cito:InlineElement id="3b2b1940-0510-48d5-a4b8-91ce41e50d77" layoutTemplateSourceName="InlineImageLayoutTemplate" xmlns:cito="http://www.cito.nl/citotester">
                                    <cito:parameters>
@@ -172,5 +191,6 @@ Public Class InlineElementTests
                                                        </cito:parameters>
                                                    </cito:InlineElement>
 
+#End Region
 
 End Class

@@ -1,60 +1,36 @@
-﻿Imports System.Globalization
+﻿Imports System.Collections.Concurrent
+Imports System.Globalization
 Imports System.Linq
 Imports System.Xml
+Imports System.Xml.Linq
+Imports System.Xml.XPath
 Imports Cito.Tester.Common
 Imports Cito.Tester.ContentModel
+Imports Questify.Builder.Logic.ContentModel
 Imports Questify.Builder.Logic.QTI.Converters.XhtmlConverter.QTI30
-Imports Questify.Builder.Logic.QTI.PackageCreators.QTI30
+Imports Questify.Builder.Logic.QTI.PackageCreators.QTI_Base
+Imports Questify.Builder.Logic.QTI.Xsd.QTI30
 
 Namespace QTI.Helpers.QTI30
 
     Public Class AspectScoringHelper
 
-        Public Shared Sub UpdateExtensionDocument(solution As Solution, itemExtensionDocument As XmlDocument, packageCreator As PackageCreator)
-            If solution Is Nothing _
-               OrElse solution.AspectReferenceSetCollection Is Nothing _
-               OrElse solution.AspectReferenceSetCollection.Count = 0 _
-               OrElse solution.AspectReferenceSetCollection(0).Items.Count = 0 Then _
-                Return
+        Private _solution As Solution
+        Private _packageCreator As IPackageCreator
+        Private _aspects As New ConcurrentDictionary(Of String, Aspect)
+        Private _scoringParameters As HashSet(Of ScoringParameter)
 
-            Dim depNamespace As String = itemExtensionDocument.DocumentElement.Attributes("xmlns:dep").Value
-            Dim xmlNamespaceManager As New XmlNamespaceManager(itemExtensionDocument.NameTable)
-            xmlNamespaceManager.AddNamespace("dep", depNamespace)
-
-            Dim depItemNode As XmlNode = itemExtensionDocument.SelectSingleNode("/dep:depItem", xmlNamespaceManager)
-            If depItemNode Is Nothing Then Throw New XmlException("AspectScoringHelper.UpdateExtensionDocument: failed to find depItem element")
-
-            Dim scoringInfoElement As XmlElement = itemExtensionDocument.CreateElement("dep", "scoringInfo", depNamespace)
-            Dim instructionElement As XmlElement = itemExtensionDocument.CreateElement("dep", "instruction", depNamespace)
-            instructionElement.Attributes.Append(itemExtensionDocument.CreateAttribute("qtiRubricBlockIdentifierRef")).Value = "qtiScoringRubricBlock"
-            scoringInfoElement.AppendChild(instructionElement)
-
-            If solution.AspectReferenceSetCollection IsNot Nothing AndAlso Not solution.AspectReferenceSetCollection.Count = 0 Then
-                For Each aspectReference As AspectReference In solution.AspectReferenceSetCollection(0).Items
-                    Dim aspect As Aspect = packageCreator.GetAspectByCode(aspectReference.SourceName)
-                    Dim aspectElement As XmlElement = CreateAspectElement(itemExtensionDocument, depNamespace, aspect.Title, aspectReference.SourceName)
-                    scoringInfoElement.AppendChild(aspectElement)
-                Next
-            End If
-
-            itemExtensionDocument.DocumentElement.InsertAfter(scoringInfoElement, depItemNode.LastChild)
+        Public Sub New(solution As Solution, packageCreator As IPackageCreator, scoringParameters As HashSet(Of ScoringParameter))
+            _solution = solution
+            _packageCreator = packageCreator
+            _scoringParameters = scoringParameters
         End Sub
 
-        Private Shared Function CreateAspectElement(itemExtensionDocument As XmlDocument, depNamespace As String, title As String, sourceName As String) As XmlElement
-            Dim aspectElement As XmlElement = itemExtensionDocument.CreateElement("dep", "aspect", depNamespace)
-            aspectElement.Attributes.Append(itemExtensionDocument.CreateAttribute("qtiOutcomeDeclarationIdentifierRef")).Value = String.Format(CultureInfo.InvariantCulture, "qtiAspect{0}OutcomeDeclaration", sourceName)
-            aspectElement.Attributes.Append(itemExtensionDocument.CreateAttribute("qtiRubricBlockIdentifierRef")).Value = String.Format(CultureInfo.InvariantCulture, "qtiAspect{0}RubricBlock", sourceName)
-            Dim captionElement As XmlElement = itemExtensionDocument.CreateElement("dep", "caption", depNamespace)
-            captionElement.InnerText = title
-            aspectElement.AppendChild(captionElement)
-            Return aspectElement
-        End Function
-
-        Public Shared Sub UpdateDocumentBeforeProcessing(solution As Solution, itemDocument As XmlDocument, packageCreator As PackageCreator)
-            If solution Is Nothing _
-               OrElse solution.AspectReferenceSetCollection Is Nothing _
-               OrElse solution.AspectReferenceSetCollection.Count = 0 _
-               OrElse solution.AspectReferenceSetCollection(0).Items.Count = 0 _
+        Friend Sub UpdateDocumentBeforeProcessing(itemDocument As XmlDocument)
+            If _solution Is Nothing _
+               OrElse _solution.AspectReferenceSetCollection Is Nothing _
+               OrElse _solution.AspectReferenceSetCollection.Count = 0 _
+               OrElse _solution.AspectReferenceSetCollection(0).Items.Count = 0 _
                 Then
                 Return
             End If
@@ -69,8 +45,8 @@ Namespace QTI.Helpers.QTI30
 
             itemDocument.SelectSingleNode("//qti-item-body").AppendChild(rubricBlockElement)
 
-            For Each aspectReference As AspectReference In solution.AspectReferenceSetCollection(0).Items
-                Dim aspect As Aspect = packageCreator.GetAspectByCode(aspectReference.SourceName)
+            For Each aspectReference As AspectReference In _solution.AspectReferenceSetCollection(0).Items
+                Dim aspect As Aspect = GetAspectByCode(aspectReference.SourceName)
                 Dim description As String = String.Empty
 
                 If Not String.IsNullOrEmpty(aspect.Description) Then
@@ -93,18 +69,25 @@ Namespace QTI.Helpers.QTI30
 
                 tempDoc.LoadXml(String.Format(CultureInfo.InvariantCulture, "<wrapper>{0}</wrapper>", description))
 
-                ConvertInlineElementAnchorsToHtml(tempDoc.DocumentElement, packageCreator.GetAssessmentTestViewType, packageCreator)
+                ConvertInlineElementAnchorsToHtml(tempDoc.DocumentElement, _packageCreator.GetAssessmentTestViewType)
                 description = tempDoc.DocumentElement.InnerXml.ToString.Trim
 
                 Using converter As New QTI30XhtmlConverter
-                    converter.Initialise(String.Format(CultureInfo.InvariantCulture, "{0}_{1}", aspect.Identifier, solution.AspectReferenceSetCollection(0).Items.IndexOf(aspectReference)))
+                    converter.Initialise(String.Format(CultureInfo.InvariantCulture, "{0}_{1}", aspect.Identifier, _solution.AspectReferenceSetCollection(0).Items.IndexOf(aspectReference)))
                     description = converter.ConvertXhtmlToQti(description, False)
                 End Using
 
                 aspectToAdd = itemDocument.CreateElement("qti-rubric-block", itemDocument.DocumentElement.NamespaceURI)
-                aspectToAdd.Attributes.Append(itemDocument.CreateAttribute("id")).Value = String.Format(CultureInfo.InvariantCulture, "qtiAspect{0}RubricBlock", aspectReference.SourceName)
-                aspectToAdd.Attributes.Append(itemDocument.CreateAttribute("use")).Value = "instructions"
+                aspectToAdd.Attributes.Append(itemDocument.CreateAttribute("id")).Value = String.Format(CultureInfo.InvariantCulture, "qtiAspect{0}RubricBlock", GetCorrectAspectIdentifier(aspectReference.SourceName))
+                aspectToAdd.Attributes.Append(itemDocument.CreateAttribute("use")).Value = "scoring"
                 aspectToAdd.Attributes.Append(itemDocument.CreateAttribute("view")).Value = "scorer"
+                aspectToAdd.Attributes.Append(itemDocument.CreateAttribute("data-dep-caption")).Value = aspect.Title
+
+                If AspectScoreIsTranslated(aspectReference) Then
+                    aspectToAdd.Attributes.Append(itemDocument.CreateAttribute("data-outcome-idref")).Value = GetAspectOutcomeIdentifierForTranslatedScoring(aspectReference)
+                Else
+                    aspectToAdd.Attributes.Append(itemDocument.CreateAttribute("data-outcome-idref")).Value = GetAspectOutcomeIdentifier(aspectReference)
+                End If
 
                 Dim contentElement As XmlElement = itemDocument.CreateElement("qti-content-body", itemDocument.DocumentElement.NamespaceURI)
                 contentElement.InnerXml = description
@@ -115,15 +98,190 @@ Namespace QTI.Helpers.QTI30
             Next
         End Sub
 
-        Private Shared Function CreateCatalogElement(itemDocument As XmlDocument, identifier As String) As XmlElement
-            Dim catalogInfoElement As XmlElement = itemDocument.CreateElement("qti-catalog-info", itemDocument.DocumentElement.NamespaceURI)
-            Dim catalogElement As XmlElement = itemDocument.CreateElement("qti-catalog", itemDocument.DocumentElement.NamespaceURI)
-            catalogElement.Attributes.Append(itemDocument.CreateAttribute("id")).Value = identifier
-            catalogInfoElement.AppendChild(catalogElement)
-            Return catalogInfoElement
+        Private Function GetCorrectAspectIdentifier(aspectIdentifier As String) As String
+            Return aspectIdentifier.Replace(" ", "_").Replace(".", "_")
         End Function
 
-        Private Shared Sub ConvertInlineElementAnchorsToHtml(ByVal xml As Xml.XmlNode, ByVal target As String, packageCreator As PackageCreator)
+        Friend Function GetOutcomeDeclarations() As IEnumerable(Of OutcomeDeclarationType)
+            Dim result = New List(Of OutcomeDeclarationType)
+            For Each aspectReference As AspectReference In _solution.AspectReferenceSetCollection(0).Items
+                Dim rawScoreOutcomeDeclarationType = GetRawScoreOutcomeDeclarationForAspect(aspectReference)
+                If rawScoreOutcomeDeclarationType IsNot Nothing Then
+                    result.Add(rawScoreOutcomeDeclarationType)
+                End If
+
+                Dim outcomeDeclarationType = GetOutcomeDeclarationForAspect(aspectReference)
+                result.Add(outcomeDeclarationType)
+            Next
+            Return result
+        End Function
+
+        Friend Sub AddLookUpOutComeValues(navigator As XPathNavigator)
+            For Each aspectReference As AspectReference In _solution.AspectReferenceSetCollection(0).Items
+                If AspectScoreIsTranslated(aspectReference) Then
+                    AddLookUpOutComeValue(aspectReference, navigator)
+                End If
+            Next
+        End Sub
+
+        Friend Sub AddOverallSumOfAspectOutcomes(identifier As String, navigator As XPathNavigator)
+            If Not ShouldAddAspectResponseProcessing() Then
+                Return
+            End If
+
+            Dim outcomeVariable As XElement = <qti-variable identifier="{0}"/>
+            Dim variableProcessing As XElement = <root></root>
+
+            For Each aspectReference As AspectReference In _solution.AspectReferenceSetCollection(0).Items
+                variableProcessing.Add(XElement.Parse(String.Format(outcomeVariable.ToString, GetAspectOutcomeIdentifier(aspectReference))))
+            Next
+
+            If variableProcessing.HasElements() Then
+                Dim outcome As XElement = <qti-set-outcome-value identifier=<%= identifier %>>
+                                              <qti-sum>
+                                                  <%= variableProcessing.Elements %>
+                                              </qti-sum>
+                                          </qti-set-outcome-value>
+
+                ResponseProcessingHelper.AddResponseProcessingIfNeeded(navigator)
+
+                navigator.AppendChild(outcome.ToString)
+                navigator.MoveToRoot()
+                navigator.MoveToFirstChild()
+            End If
+        End Sub
+
+        Private Function ShouldAddAspectResponseProcessing() As Boolean
+            If _scoringParameters IsNot Nothing Then
+                Dim aspectScoringPrm = _scoringParameters.OfType(Of AspectScoringParameter).FirstOrDefault()
+                Return aspectScoringPrm IsNot Nothing AndAlso Not aspectScoringPrm.SingleAspectScoringEditor
+            End If
+            Return False
+        End Function
+
+        Private Function GetOutcomeDeclarationForAspect(aspectReference As AspectReference) As OutcomeDeclarationType
+            Dim interpolationTableForAspect = GetInterpolationTableIfAspectIsTranslated(aspectReference)
+
+            Dim outcomeDeclarationType As OutcomeDeclarationType = New OutcomeDeclarationType With {
+                .identifier = GetAspectOutcomeIdentifier(aspectReference),
+                .basetype = OutcomeDeclarationTypeBasetype.integer,
+                .basetypeSpecified = True,
+                .cardinality = OutcomeDeclarationTypeCardinality.single,
+                .view = New List(Of ViewType) From {ViewType.scorer},
+                .normalminimum = GetMinScoreFromInterpolationTable(interpolationTableForAspect),
+                .normalminimumSpecified = True,
+                .normalmaximum = GetMaxScoreForAspectOutcomeDeclaration(interpolationTableForAspect, aspectReference),
+                .normalmaximumSpecified = True
+            }
+
+            outcomeDeclarationType.Item = interpolationTableForAspect
+
+            Return outcomeDeclarationType
+        End Function
+
+        Private Function GetRawScoreOutcomeDeclarationForAspect(aspectReference As AspectReference) As OutcomeDeclarationType
+            If Not AspectScoreIsTranslated(aspectReference) Then
+                Return Nothing
+            End If
+
+            Dim outcomeDeclarationType As OutcomeDeclarationType = New OutcomeDeclarationType With {
+                .identifier = GetAspectOutcomeIdentifierForTranslatedScoring(aspectReference),
+                .basetype = OutcomeDeclarationTypeBasetype.integer,
+                .basetypeSpecified = True,
+                .cardinality = OutcomeDeclarationTypeCardinality.single,
+                .view = New List(Of ViewType) From {ViewType.scorer},
+                .normalminimum = 0,
+                .normalminimumSpecified = True,
+                .normalmaximum = aspectReference.MaxScore,
+                .normalmaximumSpecified = True
+            }
+
+            Return outcomeDeclarationType
+        End Function
+
+        Private Function GetInterpolationTableIfAspectIsTranslated(aspectReference As AspectReference) As InterpolationTableType
+            If Not AspectScoreIsTranslated(aspectReference) Then
+                Return Nothing
+            End If
+
+            Dim interpolationTable = New InterpolationTableType() With {
+                    .qtiinterpolationtableentry = New List(Of InterpolationTableEntryType)()
+                }
+
+            Dim aspect = GetAspectByCode(aspectReference.SourceName)
+            For Each st In aspect.AspectScoreTranslationTable
+                Dim interpolationTableEntry = New InterpolationTableEntryType With {.sourcevalue = st.RawScore, .targetvalue = st.TranslatedScore.ToString()}
+                interpolationTable.qtiinterpolationtableentry.Add(interpolationTableEntry)
+            Next
+
+            Return interpolationTable
+        End Function
+
+        Private Function GetAspectByCode(aspectCode As String) As Aspect
+            Dim aspect As Aspect
+            If Not _aspects.TryGetValue(aspectCode, aspect) Then
+                aspect = _packageCreator.GetAspectByCode(aspectCode)
+                _aspects.TryAdd(aspectCode, aspect)
+            End If
+            Return aspect
+        End Function
+
+        Private Function GetMaxScoreForAspectOutcomeDeclaration(interpolationTable As InterpolationTableType, aspectRef As AspectReference) As Double
+            If interpolationTable IsNot Nothing Then
+                Return GetMaxScoreFromInterpolationTable(interpolationTable)
+            Else
+                Return aspectRef.MaxScore
+            End If
+        End Function
+
+        Private Function GetMaxScoreFromInterpolationTable(interpolationTable As InterpolationTableType) As Double
+            If interpolationTable Is Nothing Then
+                Return 0
+            End If
+            Dim maxTargetValue = interpolationTable.qtiinterpolationtableentry.Max(Function(entry) GetInterpolationTargetValue(entry.targetvalue))
+            Return maxTargetValue
+        End Function
+
+        Private Function GetMinScoreFromInterpolationTable(interpolationTable As InterpolationTableType) As Double
+            If interpolationTable Is Nothing Then
+                Return 0
+            End If
+            Dim minTargetValue = interpolationTable.qtiinterpolationtableentry.Min(Function(entry) GetInterpolationTargetValue(entry.targetvalue))
+            Return minTargetValue
+        End Function
+
+        Private Function GetInterpolationTargetValue(stringValue As String) As Double
+            Dim result As Double
+            If Double.TryParse(stringValue, result) Then
+                Return result
+            End If
+            Return 0
+        End Function
+
+        Private Function AspectScoreIsTranslated(aspectReference As AspectReference) As Boolean
+            Dim aspect = GetAspectByCode(aspectReference.SourceName)
+            Return aspect.AspectScoreIsTranslated()
+        End Function
+
+        Private Function GetAspectOutcomeIdentifier(aspectReference As AspectReference) As String
+            Dim aspectIdentifier = GetCorrectAspectIdentifier(aspectReference.SourceName)
+            Return $"qtiAspect{aspectIdentifier}OutcomeDeclaration"
+        End Function
+
+        Private Function GetAspectOutcomeIdentifierForTranslatedScoring(aspectReference As AspectReference) As String
+            Return $"{GetAspectOutcomeIdentifier(aspectReference)}_{PackageCreatorConstants.RAW_SCORE}"
+        End Function
+
+        Private Sub AddLookUpOutComeValue(aspectReference As AspectReference, navigator As XPathNavigator)
+            ResponseProcessingHelper.AddResponseProcessingIfNeeded(navigator)
+
+            ChainHandlerHelper.AppendChild(navigator, "qti-lookup-outcome-value", True)
+            ChainHandlerHelper.AddAttribute(navigator, "identifier", GetAspectOutcomeIdentifier(aspectReference))
+            ChainHandlerHelper.AppendChild(navigator, "qti-variable", True)
+            ChainHandlerHelper.AddAttribute(navigator, "identifier", GetAspectOutcomeIdentifierForTranslatedScoring(aspectReference))
+        End Sub
+
+        Private Sub ConvertInlineElementAnchorsToHtml(ByVal xml As Xml.XmlNode, ByVal target As String)
             Dim nsmgr As Xml.XmlNamespaceManager = New Xml.XmlNamespaceManager(xml.OwnerDocument.NameTable)
             nsmgr.AddNamespace("xhtml", "http://www.w3.org/1999/xhtml")
             nsmgr.AddNamespace("cito", "http://www.cito.nl/citotester")
@@ -133,7 +291,7 @@ Namespace QTI.Helpers.QTI30
                 Using reader As New IO.StringReader(node.OuterXml)
                     Dim inlineElement As InlineElement = DirectCast(SerializeHelper.XmlDeserializeFromReader(reader, GetType(InlineElement)), InlineElement)
 
-                    Dim adapter As ItemLayoutAdapter = New ItemLayoutAdapter(inlineElement.LayoutTemplateSourceName, Nothing, AddressOf packageCreator.ResourceNeeded)
+                    Dim adapter As ItemLayoutAdapter = New ItemLayoutAdapter(inlineElement.LayoutTemplateSourceName, Nothing, AddressOf _packageCreator.ResourceNeeded)
                     Dim xHtmlDocument As XHtmlDocument = adapter.ParseTemplate(target, inlineElement.Parameters, False)
 
                     Dim newNodeList As Xml.XmlNodeList = xHtmlDocument.SelectNodes("html/*")

@@ -26,14 +26,17 @@ Public Class ProposalCreatorTest
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub ItemCount_10()
+        'Arrange
         Dim proposalCreator = New ProposalCreator
         Dim assessmentTestResource = CreateRegularTest()
         Dim rm As New DataBaseResourceManager(1)
         Dim sectionsWithDatasources As New Dictionary(Of TestSection2, ItemDataSource)
         sectionsWithDatasources.Add(assessmentTestResource.GetAssessmentTest.TestParts(0).Sections(0), New UnitTestSeedingConfig(Nothing, New List(Of Integer)({1, 2, 3}.ToList)))
-
+        
+        'Act
         Dim proposals = proposalCreator.CreateProposalsFromDataSourceList(assessmentTestResource, sectionsWithDatasources, 6, rm)
-
+        
+        'Assert
         Assert.AreEqual(6, proposals.Count)
         Assert.AreEqual(11, proposals(0).GetAssessmentTest.GetAllItemReferencesInTest.Count)
         Assert.AreEqual(12, proposals(1).GetAssessmentTest.GetAllItemReferencesInTest.Count)
@@ -45,14 +48,17 @@ Public Class ProposalCreatorTest
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub ItemDividedEqual_10()
+        'Arrange
         Dim proposalCreator = New ProposalCreator
         Dim assessmentTestResource = CreateRegularTest()
         Dim rm As New DataBaseResourceManager(1)
         Dim sectionsWithDatasources As New Dictionary(Of TestSection2, ItemDataSource)
         sectionsWithDatasources.Add(assessmentTestResource.GetAssessmentTest.TestParts(0).Sections(0), New UnitTestSeedingConfig(Nothing, New List(Of Integer)({1, 2, 3}.ToList)))
-
+        
+        'Act
         Dim proposals = proposalCreator.CreateProposalsFromDataSourceList(assessmentTestResource, sectionsWithDatasources, 6, rm)
-
+        
+        'Assert
         Assert.AreEqual(6, proposals.Count)
 
         Assert.AreEqual("Group1_Item1", proposals(0).GetAssessmentTest.GetAllItemReferencesInTest(5).SourceName)
@@ -78,29 +84,36 @@ Public Class ProposalCreatorTest
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub ItemDividedEqualItemFunctionalType_10()
+        'Arrange
         Dim proposalCreator = New ProposalCreator
         Dim assessmentTestResource = CreateRegularTest()
         Dim rm As New DataBaseResourceManager(1)
         Dim sectionsWithDatasources As New Dictionary(Of TestSection2, ItemDataSource)
         sectionsWithDatasources.Add(assessmentTestResource.GetAssessmentTest.TestParts(0).Sections(0), New UnitTestSeedingConfig(Nothing, New List(Of Integer)({1, 2, 3}.ToList)))
-
+       
+        'Act
         Dim proposals = proposalCreator.CreateProposalsFromDataSourceList(assessmentTestResource, sectionsWithDatasources, 6, rm)
-
+        
+        'Assert
         Assert.AreEqual(6, proposals.Count)
+        'Check two items that should be marked as seeding item. There are more items that are marked as seeding item
         Assert.AreEqual(ItemFunctionalType.Seeding, proposals(1).GetAssessmentTest.GetAllItemReferencesInTest(3).ItemFunctionalType)
         Assert.AreEqual(ItemFunctionalType.Seeding, proposals(4).GetAssessmentTest.GetAllItemReferencesInTest(6).ItemFunctionalType)
     End Sub
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub ItemWeight_0()
+        'Arrange
         Dim proposalCreator = New ProposalCreator
         Dim assessmentTestResource = CreateRegularTest(0)
         Dim rm As New DataBaseResourceManager(1)
         Dim sectionsWithDatasources As New Dictionary(Of TestSection2, ItemDataSource)
         sectionsWithDatasources.Add(assessmentTestResource.GetAssessmentTest.TestParts(0).Sections(0), New UnitTestSeedingConfig(Nothing, New List(Of Integer)({1, 2, 3}.ToList)))
-
+        
+        'Act
         Dim proposals = proposalCreator.CreateProposalsFromDataSourceList(assessmentTestResource, sectionsWithDatasources, 1, rm)
-
+        
+        'Assert
         Assert.AreEqual(1, CInt(proposals(0).GetAssessmentTest.GetAllItemReferencesInTest(0).Weight))
         Assert.AreEqual(1, CInt(proposals(0).GetAssessmentTest.GetAllItemReferencesInTest(1).Weight))
         Assert.AreEqual(1, CInt(proposals(0).GetAssessmentTest.GetAllItemReferencesInTest(2).Weight))
@@ -116,14 +129,17 @@ Public Class ProposalCreatorTest
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub ItemWeight_1()
+        'Arrange
         Dim proposalCreator = New ProposalCreator
         Dim assessmentTestResource = CreateRegularTest(1)
         Dim rm As New DataBaseResourceManager(1)
         Dim sectionsWithDatasources As New Dictionary(Of TestSection2, ItemDataSource)
         sectionsWithDatasources.Add(assessmentTestResource.GetAssessmentTest.TestParts(0).Sections(0), New UnitTestSeedingConfig(Nothing, New List(Of Integer)({1, 2, 3}.ToList)))
-
+        
+        'Act
         Dim proposals = proposalCreator.CreateProposalsFromDataSourceList(assessmentTestResource, sectionsWithDatasources, 1, rm)
-
+        
+        'Assert
         Assert.AreEqual(1, CInt(proposals(0).GetAssessmentTest.GetAllItemReferencesInTest(0).Weight))
         Assert.AreEqual(1, CInt(proposals(0).GetAssessmentTest.GetAllItemReferencesInTest(1).Weight))
         Assert.AreEqual(1, CInt(proposals(0).GetAssessmentTest.GetAllItemReferencesInTest(2).Weight))
@@ -139,37 +155,44 @@ Public Class ProposalCreatorTest
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub AssessmentTestTitle()
+        'Arrange
         Dim proposalCreator = New ProposalCreator
         Dim assessmentTestResource = CreateRegularTest()
         Dim rm As New DataBaseResourceManager(1)
         Dim sectionsWithDatasources As New Dictionary(Of TestSection2, ItemDataSource)
         sectionsWithDatasources.Add(assessmentTestResource.GetAssessmentTest.TestParts(0).Sections(0), New UnitTestSeedingConfig(Nothing, New List(Of Integer)({1, 2, 3}.ToList)))
-
+       
+        'Act
         Dim proposals = proposalCreator.CreateProposalsFromDataSourceList(assessmentTestResource, sectionsWithDatasources, 4, rm)
-
+       
+        'Assert
         For i = 0 To 3
             Assert.IsTrue(proposals(i).Title = proposals(i).GetAssessmentTest.Title)
         Next
-        Assert.IsTrue(proposals(0).GetAssessmentTest.Title.Contains("_1_"))
-        Assert.IsTrue(proposals(1).GetAssessmentTest.Title.Contains("_2_"))
-        Assert.IsTrue(proposals(1).GetAssessmentTest.Title.Contains("_1"))
-        Assert.IsTrue(proposals(2).GetAssessmentTest.Title.Contains("_3_"))
-        Assert.IsTrue(proposals(2).GetAssessmentTest.Title.Contains("_1"))
-        Assert.IsTrue(proposals(3).GetAssessmentTest.Title.Contains("_2_"))
-        Assert.IsTrue(proposals(3).GetAssessmentTest.Title.Contains("_2"))
+        Assert.IsTrue(proposals(0).GetAssessmentTest.Title.Contains("_1_")) 'Group1
+        Assert.IsTrue(proposals(1).GetAssessmentTest.Title.Contains("_2_")) 'Group2
+        Assert.IsTrue(proposals(1).GetAssessmentTest.Title.Contains("_1")) 'Item1
+        Assert.IsTrue(proposals(2).GetAssessmentTest.Title.Contains("_3_")) 'Group3
+        Assert.IsTrue(proposals(2).GetAssessmentTest.Title.Contains("_1")) 'Item1
+        Assert.IsTrue(proposals(3).GetAssessmentTest.Title.Contains("_2_")) 'Group3
+        Assert.IsTrue(proposals(3).GetAssessmentTest.Title.Contains("_2")) 'Item2
 
     End Sub
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub ItemDividedEqualWithSections_10()
+        'Arrange
         Dim proposalCreator = New ProposalCreator
         Dim assessmentTestResource = CreateTestWithSubSection()
         Dim rm As New DataBaseResourceManager(1)
         Dim sectionsWithDatasources As New Dictionary(Of TestSection2, ItemDataSource)
         sectionsWithDatasources.Add(assessmentTestResource.GetAssessmentTest.TestParts(1).Sections(0), New UnitTestSeedingConfig(Nothing, New List(Of Integer)({1, 2, 3}.ToList)))
+        'Section contains 2x regular, 1x inclusion, 2x regular, 1x inclusion, 2x regular
 
+        'Act
         Dim proposals = proposalCreator.CreateProposalsFromDataSourceList(assessmentTestResource, sectionsWithDatasources, 6, rm)
-
+        
+        'Assert
         Assert.AreEqual(6, proposals.Count)
 
         Assert.AreEqual("Group1_Item1", proposals(0).GetAssessmentTest.TestParts(1).Sections(0).Components(5).Title)
@@ -196,21 +219,30 @@ Public Class ProposalCreatorTest
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub ItemDividedEqualWithSections_FunctionalType_10()
+        'Arrange
         Dim proposalCreator = New ProposalCreator
         Dim assessmentTestResource = CreateTestWithSubSection()
         Dim rm As New DataBaseResourceManager(1)
         Dim sectionsWithDatasources As New Dictionary(Of TestSection2, ItemDataSource)
         sectionsWithDatasources.Add(assessmentTestResource.GetAssessmentTest.TestParts(1).Sections(0), New UnitTestSeedingConfig(Nothing, New List(Of Integer)({1, 2, 3}.ToList)))
+        'Section contains 2x regular, 1x inclusion, 2x regular, 1x inclusion, 2x regular
 
+        'Act
         Dim proposals = proposalCreator.CreateProposalsFromDataSourceList(assessmentTestResource, sectionsWithDatasources, 6, rm)
-
+        
+        'Assert
         Assert.AreEqual(6, proposals.Count)
+        'Check two items that should be marked as seeding item. There are more items that are marked as seeding item
         Assert.AreEqual(ItemFunctionalType.Seeding, CType(proposals(0).GetAssessmentTest.TestParts(1).Sections(0).Components(5), ItemReference2).ItemFunctionalType)
         Assert.AreEqual(ItemFunctionalType.Seeding, CType(proposals(5).GetAssessmentTest.TestParts(1).Sections(0).Components(6), ItemReference2).ItemFunctionalType)
 
     End Sub
 
+#Region " Private Methods "
 
+    ''' <summary>
+    ''' Creates a test with 10 regular items
+    ''' </summary>
     Private Function CreateRegularTest(Optional weight As Double? = Nothing) As AssessmentTestResourceEntity
         Dim assessmentTestResource = New AssessmentTestResourceEntity With {
            .ResourceId = New Guid, .Name = "MYTEST", .Title = "my test", .BankId = 1}
@@ -238,6 +270,14 @@ Public Class ProposalCreatorTest
         Return assessmentTestResource
     End Function
 
+    ''' <summary>
+    ''' Creates the test with 2 testparts. Second testpart contains a section with two inclusion sections
+    ''' 2x regular
+    ''' 1x inclusion
+    ''' 3x regular
+    ''' 1x inclusion
+    ''' 3x regular
+    ''' </summary>
     Private Function CreateTestWithSubSection(Optional weight As Double? = Nothing) As AssessmentTestResourceEntity
         Dim assessmentTestResource = New AssessmentTestResourceEntity With {
             .ResourceId = New Guid, .Name = "MYTEST", .Title = "my test", .BankId = 1}
@@ -320,6 +360,7 @@ Public Class ProposalCreatorTest
                         {"seeding", "true"}, {"equallyDivided", "true"},
                         {"seeding_group", (groupIndex + 1).ToString}, {"seeding_group_first_item", firstItem}}
                     }
+                    'Add to fake resourceService so it can be found during adding to the test.
                     Dim item = New ItemResourceEntity With {.ResourceId = Guid.NewGuid, .Name = resourceName, .Title = resourceName}
 
                     FakeDal.FakeServices.FakeResourceService.UpdateItemResource(item)
@@ -348,5 +389,6 @@ Public Class ProposalCreatorTest
         End Function
     End Class
 
+#End Region
 
 End Class

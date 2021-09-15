@@ -11,8 +11,13 @@ Imports Questify.Builder.UnitTests.Framework.My.Resources
 
 Namespace FakeAppTemplate
 
+    ''' <summary>
+    ''' Acts as a fake data access layer for test projects.
+    ''' This module is NOT bank aware!
+    ''' </summary>
     Public Module FakeDal
 
+#Region "fields"
         Private _idGen As New SequentialGuid
         Private _fakeServices As IFakeServices
         Private _addAll As IAddAll
@@ -21,14 +26,21 @@ Namespace FakeAppTemplate
 
         Private _fakeDtoRepository As IFakeDtoRepository
         Dim _genericResourceDtoRepository As FakeGenericResourceDtoRepositoryHandler
+#End Region
 
+#Region "Public Api"
 
+        ''' <summary>
+        ''' Initializes services.
+        ''' </summary>
         Public Sub Init()
             _addAll = Nothing
             _fakeServices = FakeFactory.FakeServices
-            _fakeServices.SetupFakeServices()
+            _fakeServices.SetupFakeServices() 'Initialize fakes
+            'Default handler for ResourceService
             _resourceServiceHandler = New FakeResourceServiceHandler(_fakeServices.FakeResourceService)
             _resourceServiceHandler.InitDefault()
+            'Default handler for BankService
             _bankServiceHandler = New FakeBankServiceHandler(_fakeServices.FakeBankService)
             _bankServiceHandler.InitDefault()
         End Sub
@@ -36,10 +48,14 @@ Namespace FakeAppTemplate
         Public Sub InitDtoService()
             If (_resourceServiceHandler Is Nothing) Then Throw New Exception("Call Init First")
             _fakeDtoRepository = FakeFactory.FakeDtoRepository
-            _fakeDtoRepository.SetupFakeServices()
+            _fakeDtoRepository.SetupFakeServices() 'initialize fakes
+            'Default handler for GenericResourceDtoRepository
             _genericResourceDtoRepository = New FakeGenericResourceDtoRepositoryHandler(_fakeDtoRepository.FakeGenericResourceDtoRepository)
         End Sub
 
+        ''' <summary>
+        ''' De-init this module.
+        ''' </summary>
         Public Sub Deinit()
             _addAll = Nothing
             If (_fakeServices IsNot Nothing) Then _fakeServices.CleanFakeServices()
@@ -49,29 +65,44 @@ Namespace FakeAppTemplate
             _fakeDtoRepository = Nothing
         End Sub
 
+        ''' <summary>
+        ''' Gets the fake services.
+        ''' </summary>
         Public ReadOnly Property FakeServices As IFakeServices
             Get
                 Return _fakeServices
             End Get
         End Property
 
+        ''' <summary>
+        ''' Gets the faked resources
+        ''' </summary>
         Public ReadOnly Property Resources As IEnumerable(Of ResourceEntity)
             Get
                 Return _resourceServiceHandler.ResourceCollection.Select(Function(e) TryCast(e, ResourceEntity))
             End Get
         End Property
 
+        ''' <summary>
+        ''' Access point for Fluent interface for adding objects to the dal.
+        ''' </summary>
         Public ReadOnly Property Add As IAddAll
             Get
                 If _addAll Is Nothing Then
                     _addAll = New AddNoParent()
-                    CanSaveResources()
+                    CanSaveResources() 'Setup stuff so we can save objects.
                 End If
 
                 Return _addAll
             End Get
         End Property
 
+        ''' <summary>
+        ''' Creates an aspect.
+        ''' </summary>
+        ''' <param name="title">The title.</param>
+        ''' <param name="score">The score.</param>
+        ''' <returns>the id of the object</returns>
         Public Function MakeAspect(title As String, score As Integer) As Guid
             Dim id = NextId()
             Dim ret = New AspectResourceEntity(id) With {.Title = title, .Name = title, .RawScore = score}
@@ -175,9 +206,20 @@ Namespace FakeAppTemplate
 
         Public Sub CanSaveResources()
             If (_fakeServices Is Nothing) Then
+                'Hello Developer,.. so you have come here and gotten an error
+                'If you are writing unit tests then you probably need to add these lines (vb.net sytax) to your unit test.
 
+                '<TestInitialize()>
+                'Public Sub Init()
+                '    FakeDal.Init()
+                'End Sub
 
+                '<TestCleanup()>
+                'Public Sub DeInit()
+                '    FakeDal.Deinit()
+                'End Sub
 
+                'That's it! DO NOT FORGET THE DEINIT.
                 Debug.Assert(False, "FakeDal Service Init / Deinit probably missing")
             End If
             _resourceServiceHandler.EnableSaveResources()
@@ -194,6 +236,7 @@ Namespace FakeAppTemplate
             Return New ExportReadyResourceManager(resourceCollection)
         End Function
 
+#End Region
 
         Friend Function NextId() As Guid
             _idGen.Inc()

@@ -9,6 +9,7 @@ Public Class ConceptWithFactsSet
 
     <TestMethod()> <TestCategory("ContentModel")>
     Public Sub ConceptWithSingleFactsetIsSerialized()
+        'Arrange
         Dim sol = New Solution
         Dim conceptFinding = New ConceptFinding("ConceptId")
         Dim conceptFactSet = New ConceptFactsSet()
@@ -30,16 +31,20 @@ Public Class ConceptWithFactsSet
 
         sol.ConceptFindings.Add(conceptFinding)
 
+        'Act
         Dim result = MyBase.DoSerialize(Of Solution)(sol)
-
+        
+        'Assert
         Assert.IsTrue(XmlTools.DeepEqualsWithNormalization(New XDocument(recordedExample), New XDocument(result), Nothing))
     End Sub
 
     <TestMethod()> <TestCategory("ContentModel")>
     Public Sub ConceptWithTwoFactSetIsSerialized()
+        'Arrange
         Dim sol = New Solution
         Dim conceptFinding = New ConceptFinding("ConceptId")
 
+        'FactSet1
         Dim conceptFactSet1 = New ConceptFactsSet()
 
         Dim conceptFact1 = New ConceptFact("SomeFactId")
@@ -54,7 +59,8 @@ Public Class ConceptWithFactsSet
 
         conceptFactSet1.Facts.Add(conceptFact1)
         conceptFactSet1.Facts.Add(conceptFact2)
-
+       
+        'FactSet2
         Dim conceptFactSet2 = New ConceptFactsSet()
 
         conceptFact1 = New ConceptFact("SomeFactId")
@@ -70,13 +76,16 @@ Public Class ConceptWithFactsSet
         conceptFactSet2.Facts.Add(conceptFact1)
         conceptFactSet2.Facts.Add(conceptFact2)
 
+        'Adding
         conceptFinding.KeyFactsets.Add(conceptFactSet1)
         conceptFinding.KeyFactsets.Add(conceptFactSet2)
 
         sol.ConceptFindings.Add(conceptFinding)
 
+        'Act
         Dim result = MyBase.DoSerialize(Of Solution)(sol)
-
+        
+        'Assert
         Assert.IsTrue(XmlTools.DeepEqualsWithNormalization(New XDocument(recordedExample2), New XDocument(result), Nothing))
     End Sub
 

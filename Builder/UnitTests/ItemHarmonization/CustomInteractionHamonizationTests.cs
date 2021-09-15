@@ -30,18 +30,21 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
         [TestMethod, TestCategory("Logic")]
         public void HarmonizeAnItemWithCiParameters()
         {
+            //Arrange
             AddTemplates().IsUsedBy.Item("someItem", i => SetItemData(i, itemData));
 
             var items = ResourceFactory.Instance.GetItemsForBank(0);
             ItemResourceEntity item = (ItemResourceEntity)items.First();
 
             var x = new BaseTemplateHarmonization();
+            //Act
             var result = x.Harmonize(item);
+            //Assert
             var stringResult = item.ResourceData.BinData.AsString();
             Debug.WriteLine(stringResult);
             var assessment = item.ResourceData.BinData.To<AssessmentItem>();
-            Assert.AreEqual(2, assessment.Parameters.Count, "Two parameter sets should be present.");
-            Assert.AreEqual(itemData.ToString(), XElement.Parse(stringResult).ToString());
+            Assert.AreEqual(2,assessment.Parameters.Count,"Two parameter sets should be present.");
+            Assert.AreEqual(itemData.ToString(),XElement.Parse(stringResult).ToString());
         }
 
         private IActionsAfter AddTemplates()
@@ -67,6 +70,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
         }
 
 
+        #region DATA
 
         readonly XElement controltemplateCI = XElement.Parse(@"<Template xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" definitionVersion=""2"">
                                                                   <Description></Description>
@@ -132,5 +136,6 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Logic.ItemHarmonization
                                                               </parameters>                                                            
                                                             </assessmentItem>");
 
+        #endregion
     }
 }

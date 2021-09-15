@@ -10,7 +10,7 @@ namespace Questify.Builder.UnitTests.Fakes
 
         private readonly Type _typeOfScoreAttribute;
 
-        public AddParameterAttribute(Type typeOfScoreAttribute, [CallerLineNumber] int order = 0)
+        public AddParameterAttribute(Type typeOfScoreAttribute, [CallerLineNumber]int order = 0)
             : base(order)
         {
             _typeOfScoreAttribute = typeOfScoreAttribute;

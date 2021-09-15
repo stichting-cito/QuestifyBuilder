@@ -14,9 +14,11 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring")]
         public void FormattedDisplayValueForCurrency()
         {
+            //Arrange
             var solution = new Solution();
             var param = new CurrencyScoringParameter() { FindingOverride = "Opgave", Value = new ParameterSetCollection(), IntegerPartMaxLength = 4, FractionPartMaxLength = 2 };
             param.Value.Add(new ParameterCollection() { Id = "A", });
+            //Act
             var manipulator = param.GetScoreManipulator(solution);
             manipulator.ReplaceKeyValueAt("A", 123m, 0);
 
@@ -25,15 +27,17 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             var sep1 = Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator;
             var money = Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencySymbol;
 
-            Assert.AreEqual(money + " 0123" + sep1 + "00", vm.DisplayValue);
+            Assert.AreEqual(money+" 0123" + sep1 + "00", vm.DisplayValue);
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring")]
         public void FormattedDisplayValueForCurrencyWithSpecificCulture()
         {
+            //Arrange
             var solution = new Solution();
-            var param = new CurrencyScoringParameter() { CurrencyCulture = "ja-JP", FindingOverride = "Opgave", Value = new ParameterSetCollection(), IntegerPartMaxLength = 4, FractionPartMaxLength = 2 };
+            var param = new CurrencyScoringParameter() { CurrencyCulture="ja-JP", FindingOverride = "Opgave", Value = new ParameterSetCollection(), IntegerPartMaxLength = 4, FractionPartMaxLength = 2 };
             param.Value.Add(new ParameterCollection() { Id = "A", });
+            //Act
             var manipulator = param.GetScoreManipulator(solution);
             manipulator.ReplaceKeyValueAt("A", 123m, 0);
 
@@ -49,9 +53,11 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring")]
         public void NonExistingCurrencyCultureShouldFallbackToCurrentCulture()
         {
+            //Arrange
             var solution = new Solution();
             var param = new CurrencyScoringParameter() { CurrencyCulture = "ja-JP", FindingOverride = "Opgave", Value = new ParameterSetCollection(), IntegerPartMaxLength = 4, FractionPartMaxLength = 2 };
             param.Value.Add(new ParameterCollection() { Id = "A", });
+            //Act
             var manipulator = param.GetScoreManipulator(solution);
             manipulator.ReplaceKeyValueAt("A", 123m, 0);
 

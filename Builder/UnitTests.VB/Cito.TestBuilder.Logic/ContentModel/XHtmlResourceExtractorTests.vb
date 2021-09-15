@@ -9,11 +9,14 @@ Public Class XHtmlResourceExtractorTests
 
     <TestMethod(), TestCategory("Logic")>
     Public Sub ExtractResourcesFromProblematicParam()
+        'Arrange
         Dim param As XHtmlParameter = DirectCast(SerializeHelper.XmlDeserializeFromString(testCase2.ToString(), GetType(XHtmlParameter)), XHtmlParameter)
         Dim tst As New XHtmlResourceExtractor(param)
-
+        
+        'Act
         Dim result As HashSet(Of String) = tst.ExtractResources()
-
+        
+        'Assert
         Assert.AreEqual(3, result.Count)
         Assert.IsTrue(result.Contains("InlineImageLayoutTemplate"))
         Assert.IsTrue(result.Contains("cultivator3.jpg"))

@@ -9,11 +9,14 @@ Public Class XHtmlInlineElementsManipulatorTests
 
     <TestMethod(), TestCategory("Logic")>
     Public Sub ExtractInlineElementsFromXhtmlParameter_ShouldHave2()
+        'Arrange
         Dim xHtmlParam As XHtmlParameter
         xHtmlParam = DirectCast(SerializeHelper.XmlDeserializeFromString(_xhtmlParam.ToString(), GetType(XHtmlParameter)), XHtmlParameter)
 
+        'Act
         Dim result = xHtmlParam.GetInlineElements()
-
+        
+        'Assert
         Assert.AreEqual(2, result.Values.Count)
         Assert.IsNotNull(result("3b2b1940-0510-48d5-a4b8-91ce41e50d77"))
         Assert.IsNotNull(result("3b2b1940-0220-48d5-a4b8-91ce41e50d77"))
@@ -23,13 +26,16 @@ Public Class XHtmlInlineElementsManipulatorTests
 
     <TestMethod(), TestCategory("Logic")>
     Public Sub ReplaceInlineElement_ShouldHave2()
+        'Arrange
         Dim xHtmlParam As XHtmlParameter
         xHtmlParam = DirectCast(SerializeHelper.XmlDeserializeFromString(_xhtmlParam.ToString(), GetType(XHtmlParameter)), XHtmlParameter)
         Dim manipulator As New XHtmlInlineElementsManipulator(xHtmlParam)
         Dim ReplacementInline As New InlineElement() With {.Identifier = "Replaced"}
-
+        
+        'Act
         manipulator.ReplaceInlineElement("3b2b1940-0220-48d5-a4b8-91ce41e50d77", ReplacementInline)
-
+        
+        'Assert
         Dim result = xHtmlParam.GetInlineElements()
         Assert.AreEqual(2, result.Values.Count)
         Assert.IsNotNull(result("Replaced"))
@@ -39,11 +45,14 @@ Public Class XHtmlInlineElementsManipulatorTests
 
     <TestMethod(), TestCategory("Logic")>
     Public Sub ReplaceInlineElement_NameSpaceShouldHaveSpecificFormat()
+        'Arrange
         Dim xHtmlParam As XHtmlParameter
         xHtmlParam = DirectCast(SerializeHelper.XmlDeserializeFromString(_xhtmlParam2.ToString(), GetType(XHtmlParameter)), XHtmlParameter)
         Dim manipulator As New XHtmlInlineElementsManipulator(xHtmlParam)
         Dim ReplacementInline As New InlineElement() With {.Identifier = "Replaced"}
+        'Act
         manipulator.ReplaceInlineElement("ToReplace", ReplacementInline)
+        'Assert
         Assert.IsTrue(xHtmlParam.Value.Contains("<cito:InlineElement "))
     End Sub
 

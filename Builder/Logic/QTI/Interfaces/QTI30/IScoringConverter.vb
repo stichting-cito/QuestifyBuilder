@@ -10,9 +10,11 @@ Namespace QTI.Interfaces.QTI30
 
         Function GetResponseDeclarations(ByVal solution As Solution, ByVal responseIdentifierAttributeList As XmlNodeList, ByVal type As Nullable(Of ItemTypeEnum)) As List(Of ResponseDeclarationType)
 
-        Function GetOutcomeDeclarations(solution As Solution, ByVal responseIdentifierAttributeList As XmlNodeList, translationTable As ItemScoreTranslationTable) As List(Of OutcomeDeclarationType)
+        Function GetOutcomeDeclarations(solution As Solution, ByVal responseIdentifierAttributeList As XmlNodeList, translationTable As ItemScoreTranslationTable,
+                                        packageCreator As IPackageCreator) As List(Of OutcomeDeclarationType)
 
-        Function GetResponseProcessing(ByVal solution As Solution, ByVal responseIdentifierAttributeList As XmlNodeList, shouldBeTranslated As Boolean) As XmlDocument
+        Function GetResponseProcessing(ByVal solution As Solution, ByVal responseIdentifierAttributeList As XmlNodeList, shouldBeTranslated As Boolean,
+                                       packageCreator As IPackageCreator) As XmlDocument
 
         Sub UpdateDocumentBeforeProcessing(solution As Solution, itemDocument As XmlDocument, packageCreator As PackageCreator)
 

@@ -155,120 +155,11 @@
   <data name="&gt;&gt;FormStatusStrip.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="AspectGeneral.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="AspectGeneral.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="AspectGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="AspectGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 80</value>
-  </data>
-  <data name="AspectGeneral.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AspectGeneral.Name" xml:space="preserve">
-    <value>AspectGeneral</value>
-  </data>
-  <data name="&gt;&gt;AspectGeneral.Type" xml:space="preserve">
-    <value>Questify.Builder.UI.AspectGeneralProperties, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
-  </data>
-  <data name="&gt;&gt;AspectGeneral.Parent" xml:space="preserve">
-    <value>SplitContainer2.Panel1</value>
-  </data>
-  <data name="&gt;&gt;AspectGeneral.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="AspectResourceMetaData.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="AspectResourceMetaData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="AspectResourceMetaData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="AspectResourceMetaData.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>300, 390</value>
-  </data>
-  <data name="AspectResourceMetaData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 435</value>
-  </data>
-  <data name="AspectResourceMetaData.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AspectResourceMetaData.Name" xml:space="preserve">
-    <value>AspectResourceMetaData</value>
-  </data>
-  <data name="&gt;&gt;AspectResourceMetaData.Type" xml:space="preserve">
-    <value>Questify.Builder.UI.ResourceMetaData, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
-  </data>
-  <data name="&gt;&gt;AspectResourceMetaData.Parent" xml:space="preserve">
-    <value>SplitContainer2.Panel2</value>
-  </data>
-  <data name="&gt;&gt;AspectResourceMetaData.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="AspectPropertyEditor.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="AspectPropertyEditor.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="AspectPropertyEditor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="AspectPropertyEditor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>474, 519</value>
-  </data>
-  <data name="AspectPropertyEditor.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AspectPropertyEditor.Name" xml:space="preserve">
-    <value>AspectPropertyEditor</value>
-  </data>
-  <data name="&gt;&gt;AspectPropertyEditor.Type" xml:space="preserve">
-    <value>Questify.Builder.UI.AspectEditor, Questify.Builder.UI, Version=2.18.0.0, Culture=neutral, PublicKeyToken=4027d14efbd44f11</value>
-  </data>
-  <data name="&gt;&gt;AspectPropertyEditor.Parent" xml:space="preserve">
-    <value>SplitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;AspectPropertyEditor.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="AspectEditorToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 24</value>
   </metadata>
   <data name="AspectEditorToolStrip.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="AspectEditorToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="AspectEditorToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>778, 25</value>
-  </data>
-  <data name="AspectEditorToolStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="AspectEditorToolStrip.Text" xml:space="preserve">
-    <value>ToolStrip1</value>
-  </data>
-  <data name="&gt;&gt;AspectEditorToolStrip.Name" xml:space="preserve">
-    <value>AspectEditorToolStrip</value>
-  </data>
-  <data name="&gt;&gt;AspectEditorToolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AspectEditorToolStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;AspectEditorToolStrip.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="SaveToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -300,11 +191,81 @@
   <data name="SaveCloseToolStripButton.ToolTipText" xml:space="preserve">
     <value>Save &amp; close</value>
   </data>
+  <data name="AspectEditorToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="AspectEditorToolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>778, 25</value>
+  </data>
+  <data name="AspectEditorToolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="AspectEditorToolStrip.Text" xml:space="preserve">
+    <value>ToolStrip1</value>
+  </data>
+  <data name="&gt;&gt;AspectEditorToolStrip.Name" xml:space="preserve">
+    <value>AspectEditorToolStrip</value>
+  </data>
+  <data name="&gt;&gt;AspectEditorToolStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AspectEditorToolStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AspectEditorToolStrip.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="AspectEditorMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 0</value>
   </metadata>
   <data name="AspectEditorMenuStrip.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="toolStripSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 6</value>
+  </data>
+  <data name="SaveToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="SaveToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+S</value>
+  </data>
+  <data name="SaveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
+  </data>
+  <data name="SaveToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Save</value>
+  </data>
+  <data name="SaveAsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
+  </data>
+  <data name="SaveAsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Save as...</value>
+  </data>
+  <data name="SaveCloseToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="SaveCloseToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
+  </data>
+  <data name="SaveCloseToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Save &amp;&amp; close</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 6</value>
+  </data>
+  <data name="ExitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
+  </data>
+  <data name="ExitToolStripMenuItem.Text" xml:space="preserve">
+    <value>E&amp;xit</value>
+  </data>
+  <data name="FileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 20</value>
+  </data>
+  <data name="FileToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;File</value>
   </data>
   <data name="AspectEditorMenuStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -330,51 +291,6 @@
   <data name="&gt;&gt;AspectEditorMenuStrip.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="FileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 20</value>
-  </data>
-  <data name="FileToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;File</value>
-  </data>
-  <data name="toolStripSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
-  </data>
-  <data name="SaveToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="SaveToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+S</value>
-  </data>
-  <data name="SaveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="SaveToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Save</value>
-  </data>
-  <data name="SaveAsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="SaveAsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Save as...</value>
-  </data>
-  <data name="SaveCloseToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="SaveCloseToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="SaveCloseToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Save &amp;&amp; close</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
-  </data>
-  <data name="ExitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="ExitToolStripMenuItem.Text" xml:space="preserve">
-    <value>E&amp;xit</value>
-  </data>
   <data name="SplitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -384,11 +300,35 @@
   <data name="SplitContainer2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="SplitContainer2.IsSplitterFixed" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="SplitContainer2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="SplitContainer2.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
+  </data>
+  <data name="AspectGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="AspectGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 50</value>
+  </data>
+  <data name="AspectGeneral.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;AspectGeneral.Name" xml:space="preserve">
+    <value>AspectGeneral</value>
+  </data>
+  <data name="&gt;&gt;AspectGeneral.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.AspectGeneralProperties, Questify.Builder.UI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;AspectGeneral.Parent" xml:space="preserve">
+    <value>SplitContainer2.Panel1</value>
+  </data>
+  <data name="&gt;&gt;AspectGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;SplitContainer2.Panel1.Name" xml:space="preserve">
     <value>SplitContainer2.Panel1</value>
@@ -403,7 +343,37 @@
     <value>0</value>
   </data>
   <data name="SplitContainer2.Panel1MinSize" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>55</value>
+  </data>
+  <data name="AspectResourceMetaData.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="AspectResourceMetaData.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="AspectResourceMetaData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="AspectResourceMetaData.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>300, 390</value>
+  </data>
+  <data name="AspectResourceMetaData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 460</value>
+  </data>
+  <data name="AspectResourceMetaData.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;AspectResourceMetaData.Name" xml:space="preserve">
+    <value>AspectResourceMetaData</value>
+  </data>
+  <data name="&gt;&gt;AspectResourceMetaData.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.ResourceMetaData, Questify.Builder.UI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;AspectResourceMetaData.Parent" xml:space="preserve">
+    <value>SplitContainer2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;AspectResourceMetaData.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;SplitContainer2.Panel2.Name" xml:space="preserve">
     <value>SplitContainer2.Panel2</value>
@@ -418,13 +388,13 @@
     <value>1</value>
   </data>
   <data name="SplitContainer2.Panel2MinSize" type="System.Int32, mscorlib">
-    <value>300</value>
+    <value>50</value>
   </data>
   <data name="SplitContainer2.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 519</value>
   </data>
   <data name="SplitContainer2.SplitterDistance" type="System.Int32, mscorlib">
-    <value>80</value>
+    <value>55</value>
   </data>
   <data name="SplitContainer2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -455,6 +425,102 @@
   </data>
   <data name="SplitContainer1.Panel1MinSize" type="System.Int32, mscorlib">
     <value>300</value>
+  </data>
+  <data name="TableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="AspectPropertyEditor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AspectPropertyEditor.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="AspectPropertyEditor.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="AspectPropertyEditor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="AspectPropertyEditor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>468, 409</value>
+  </data>
+  <data name="AspectPropertyEditor.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;AspectPropertyEditor.Name" xml:space="preserve">
+    <value>AspectPropertyEditor</value>
+  </data>
+  <data name="&gt;&gt;AspectPropertyEditor.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.AspectEditor, Questify.Builder.UI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;AspectPropertyEditor.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;AspectPropertyEditor.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AspectScoreTranslationTableEditor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AspectScoreTranslationTableEditor.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="AspectScoreTranslationTableEditor.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="AspectScoreTranslationTableEditor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 418</value>
+  </data>
+  <data name="AspectScoreTranslationTableEditor.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="AspectScoreTranslationTableEditor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>468, 97</value>
+  </data>
+  <data name="AspectScoreTranslationTableEditor.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;AspectScoreTranslationTableEditor.Name" xml:space="preserve">
+    <value>AspectScoreTranslationTableEditor</value>
+  </data>
+  <data name="&gt;&gt;AspectScoreTranslationTableEditor.Type" xml:space="preserve">
+    <value>Questify.Builder.UI.AspectScoreTranslationTableControl, Questify.Builder.UI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;AspectScoreTranslationTableEditor.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;AspectScoreTranslationTableEditor.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="TableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>474, 519</value>
+  </data>
+  <data name="TableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Name" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Parent" xml:space="preserve">
+    <value>SplitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="AspectPropertyEditor" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="AspectScoreTranslationTableEditor" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,80,Percent,20,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="&gt;&gt;SplitContainer1.Panel2.Name" xml:space="preserve">
     <value>SplitContainer1.Panel2</value>

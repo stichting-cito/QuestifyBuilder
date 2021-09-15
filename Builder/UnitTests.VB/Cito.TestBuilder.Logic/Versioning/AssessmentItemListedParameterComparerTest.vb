@@ -30,14 +30,17 @@ Public Class AssessmentItemListedParameterComparerTest
         paramCollection1.InnerParameters.Add(listedParam1)
         paramCollection2.InnerParameters.Add(listedParam2)
 
+        'Arrange
         Dim versionableEntity1 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem1)
         Dim versionableEntity2 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem2)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsNotNull(resourceHistoryEntity1.BinData)

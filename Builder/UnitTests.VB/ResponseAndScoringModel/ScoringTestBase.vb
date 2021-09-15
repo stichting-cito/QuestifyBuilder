@@ -24,10 +24,12 @@ Public MustInherit Class ScoringTestBase
     End Sub
 
     Public Sub New()
+        'A construct to override the scoring strategy
         AddAttributteInitializer(Of ScoringMethodAttribute)(AddressOf DealWithScoring)
     End Sub
 
     Private Sub DealWithScoring(a As Attribute)
+        'A construct to override the scoring strategy
         Dim scoreOverride = DirectCast(a, ScoringMethodAttribute)
         _scoringMethod = scoreOverride.Method
         ScoringFactory.OverrideScoreMethod(scoreOverride.Method)
@@ -54,7 +56,7 @@ Public MustInherit Class ScoringTestBase
     Protected Function CreateResponseValue(Of T)(value As T, domain As String) As ResponseValue
         Return New ResponseValue(domain, CreateBaseValue(value))
     End Function
-
+    
     protected Function GetResponse(of T)(valuesToCreate As List(Of T)) As Response
         return GetResponse(valuesToCreate, "mc")
     End Function
@@ -64,9 +66,9 @@ Public MustInherit Class ScoringTestBase
         Dim i As Integer = 1
 
         valuesToCreate.ForEach(Sub(v)
-                                   valuesToCreateTuple.Add(New Tuple(of T, String)(v, AlphabeticIdentifierHelper.GetAlphabeticIdentifier(i)))
-                                   i += 1
-                               End Sub)
+            valuesToCreateTuple.Add(New Tuple(of T, String)(v , AlphabeticIdentifierHelper.GetAlphabeticIdentifier(i)))
+            i +=1
+        End Sub)
 
         return GetResponse(valuesToCreateTuple, findingId)
     End Function
@@ -75,10 +77,10 @@ Public MustInherit Class ScoringTestBase
         Dim r As New Response()
         Dim rF As New ResponseFinding(id:=findingId)
         Dim respFact As New ResponseFact()
-
+        
         valuesToCreate.ForEach(Sub(v)
-                                   respFact.Values.Add(CreateResponseValue(v.Item1, v.Item2))
-                               End Sub)
+            respFact.Values.Add(CreateResponseValue(v.Item1, v.Item2))
+        End Sub)
         rF.Facts.Add(respFact) : r.Findings.Add(rF)
         Return r
     End Function
@@ -86,7 +88,7 @@ Public MustInherit Class ScoringTestBase
     Protected Function GetScoreSolution(element As XElement, response As XElement) As Integer
         Dim solution = toSolution(element)
         Dim r = toResponse(response)
-        Write("Response", "Arrange", r)
+        Write("Response", "Arrange", r) 'Write for debugging
         Return solution.ScoreSolution(r)
     End Function
 
@@ -99,6 +101,7 @@ Public MustInherit Class ScoringTestBase
             a.Serialize(stream, obj)
 
             Debug.WriteLine(stream.ToString())
+            'Console.WriteLine(stream.ToString())
         End Using
     End Sub
 
@@ -119,6 +122,7 @@ Public MustInherit Class ScoringTestBase
 
 
     Private Sub RunInitializers()
+        'Per test method, DOES take inherited attributtes
         Dim meth = Me.GetType().GetMethod(TestContext.TestName)
         For Each a As Object In meth.GetCustomAttributes(True)
             Dim doInit4Att As Action(Of Attribute) = Nothing
@@ -126,7 +130,8 @@ Public MustInherit Class ScoringTestBase
                 doInit4Att(TryCast(a, Attribute))
             End If
         Next
-
+        
+        'Per test class, Does NOT take inherited attributtes
         Dim clss = Me.GetType()
         For Each a As Object In clss.GetCustomAttributes(False)
             Dim doInit4Att As Action(Of Attribute) = Nothing

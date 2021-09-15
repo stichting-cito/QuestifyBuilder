@@ -16,71 +16,92 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void ScoringParameterWithSingleParamCollection_NoSolution_CreatesSingleBlockRowVM()
         {
-            var solution = new Solution();
-            var param = new HotTextScoringParameter() { Name = "hottext", ControllerId = "HT", HotTextText = new XHtmlParameter() { Value = HotTextTextWithOneInlineHottextElement.ToString() } };
+            //Arrange
+            var solution = new Solution(); 
+            var param = new HotTextScoringParameter() { Name = "hottext", ControllerId = "HT" , HotTextText = new XHtmlParameter() { Value = HotTextTextWithOneInlineHottextElement.ToString() } };
 
+            //Act
             CombinedScoringMapKey combinedKey = param.AsCombinedScoringMap();
             var result = BlockRowViewModelFactory.CreateInstances(combinedKey, solution)
                 .ToList();
+            //Assert
             Assert.AreEqual(1, result.Count);
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void CreatedTypeIs_HotTextBlockRowViewModel()
         {
+            //Arrange
             var solution = new Solution();
             var param = new HotTextScoringParameter() { Name = "hottext", ControllerId = "HT", HotTextText = new XHtmlParameter() { Value = HotTextTextWithOneInlineHottextElement.ToString() } };
 
+            //Act
             var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(), solution)
-    .ToList();
+                .ToList();
+            //Assert
             Assert.IsInstanceOfType(result.First(), typeof(HotTextBlockRowViewModel));
         }
 
+        /// <summary>
+        /// ScoringParameter with three parameter collection_ no solution_ creates three block row vm.
+        /// </summary>
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void ScoringParameterWithThreeParamCollection_NoSolution_CreatesThreeBlockRowVM()
         {
+            //Arrange
             var solution = new Solution();
             var param = new HotTextScoringParameter() { Name = "hottext", ControllerId = "HT", HotTextText = new XHtmlParameter() { Value = HotTextTextWithThreeInlineHottextElements.ToString() } };
 
+            //Act
             var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(0), solution, 0)
-    .ToList();
+                .ToList();
+            //Assert
             Assert.AreEqual(3, result.Count);
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv"), ExpectedException(typeof(NotImplementedException))]
         public void InsertingBlockRowViewModelThrowsException()
         {
+            //Arrange
             var solution = Deserialize<Solution>(SolutionData);
             var param = new HotTextScoringParameter() { FindingOverride = "sharedHotTextFinding", ControllerId = "HT", HotTextText = new XHtmlParameter() { Value = HotTextTextWithThreeInlineHottextElements.ToString() } };
             var viewModels = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(0), solution, 0).ToList();
+            //Act
             var result = BlockRowViewModelFactory.InsertInstance(param, viewModels[1].ScoreKey, 0, 1, solution);
+            //Assert
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void TheContentLabelOfTheInlineElementsBecomeTheNameOfTheViewModel()
         {
+            //Arrange
             var solution = new Solution();
             var param = new HotTextScoringParameter() { FindingOverride = "sharedHotTextFinding", ControllerId = "HT", HotTextText = new XHtmlParameter() { Value = HotTextTextWithOneInlineHottextElement.ToString() } };
 
+            //Act
             var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(0), solution, 0)
-    .ToList();
+                .ToList();
 
+            //Assert
             Assert.AreEqual("Ruim 100 jaar lang werden alle huizen en kantoren ...", ((HotTextBlockRowViewModel)result[0]).Name);
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void TheContentLabelOfTheInlineElementsIsHtmlDecoded()
         {
+            //Arrange
             var solution = new Solution();
             var param = new HotTextScoringParameter() { FindingOverride = "sharedHotTextFinding", ControllerId = "HT", HotTextText = new XHtmlParameter() { Value = HotTextTextWithOneInlineHottextElementWithEncodedLabel.ToString() } };
 
+            //Act
             var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(0), solution, 0)
-    .ToList();
+                .ToList();
 
+            //Assert
             Assert.AreEqual("This & that.", ((HotTextBlockRowViewModel)result[0]).Name);
         }
 
-        private static XElement HotTextTextWithOneInlineHottextElement =
+        private static XElement HotTextTextWithOneInlineHottextElement = 
             XElement.Parse(@"<p id=""c1-id-11"" xmlns=""http://www.w3.org/1999/xhtml"">
             <strong id=""c1-id-12"">
               Het einde van de gloeilamp<br id=""c1-id-13"" />

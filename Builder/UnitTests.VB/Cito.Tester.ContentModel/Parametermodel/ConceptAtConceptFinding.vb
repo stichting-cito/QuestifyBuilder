@@ -9,6 +9,7 @@ Public Class ConceptAtConceptFinding
 
     <TestMethod()> <TestCategory("ContentModel")>
     Public Sub ConceptScoringIsSetToConceptFact()
+        'Arrange
         Dim cFinding = New ConceptFinding("SomeId")
         cFinding.Method = EnumScoringMethod.Polytomous
         cFinding.Facts.Add(New ConceptFact("SomeFactId"))
@@ -18,8 +19,10 @@ Public Class ConceptAtConceptFinding
         firstFact.Concepts.Add(New Concept("Concept x", 2))
         firstFact.Concepts.Add("Concept y", -5)
 
+        'Act
         Dim result = MyBase.DoSerialize(Of ConceptFinding)(cFinding)
 
+        'Assert
         Assert.IsTrue(XmlTools.DeepEqualsWithNormalization(New XDocument(example1), new XDocument(result), Nothing))
     End Sub
 
@@ -34,6 +37,7 @@ Public Class ConceptAtConceptFinding
 
     <TestMethod()> <TestCategory("ContentModel")>
     Public Sub ConceptIsSerialized()
+        'Arrange
         Dim sol = New Solution
         Dim conceptFinding = New ConceptFinding("ConceptId")
         Dim conceptFact = New ConceptFact("SomeFactId")
@@ -45,8 +49,10 @@ Public Class ConceptAtConceptFinding
         conceptFinding.Facts.Add(conceptFact)
         sol.ConceptFindings.Add(conceptFinding)
 
+        'Act
         Dim result = MyBase.DoSerialize(Of Solution)(sol)
-
+       
+        'Assert
         Assert.IsTrue(XmlTools.DeepEqualsWithNormalization(New XDocument(recordedExample), New XDocument(result), Nothing))
     End Sub
 

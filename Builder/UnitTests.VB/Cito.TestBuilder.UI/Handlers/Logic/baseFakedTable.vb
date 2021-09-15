@@ -45,7 +45,7 @@ Public Class baseFakedTable
     Friend Function TabelCelWithSolidBorder(owner As Table, x As Integer, y As Integer, dict As Dictionary(Of Point, TableCell),
                                             overrideStyle As Action(Of CssStyleList, Integer, Integer),
                                             postaction As Func(Of Integer, Integer, Dictionary(Of Point, TableCell), TableCell, TableCell)) As TableCell
-        Dim style = GetStyleList(Function() BlackSolid1px())
+        Dim style = GetStyleList(Function() BlackSolid1px()) 'Default
         overrideStyle(style, x, y)
         Dim ret = GetFakeTableCell(owner, style)
         ret.ColNumber = x
@@ -57,7 +57,7 @@ Public Class baseFakedTable
 
     Friend Function TabelCelWithSolidBorder(owner As Table, x As Integer, y As Integer, overrideStyle As Action(Of CssStyleList, Integer, Integer)) As TableCell
 
-        Dim style = GetStyleList(Function() BlackSolid1px())
+        Dim style = GetStyleList(Function() BlackSolid1px()) 'Default
         overrideStyle(style, x, y)
 
         Dim ret = GetFakeTableCell(owner, style)

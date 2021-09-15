@@ -8,18 +8,32 @@ Imports Cito.Tester.Common.WeakEventHandler
 Imports Questify.Builder.Logic
 Imports Questify.Builder.Logic.PluginExtensibility.Html.Handlers
 
+''' <summary>
+''' A collection of commands for C1Editor that COULD be reused.
+''' </summary>
 Public Class XHtmlEditorCommands
 
-    Private _contentChangedHandlers As IList(Of IWeakGenericEventHandler(Of EventArgs))
+    Private _contentChangedHandlers As IList(Of IWeakGenericEventHandler(Of EventArgs)) 'List of handlers to notify that control was updated
     Private ReadOnly _editor As IXHtmlEditor
     Private ReadOnly _defaultNamespaceManager As XmlNamespaceManager
     Private ReadOnly _cntHlp As New HtmlTableContentHelper
 
+    ''' <summary>
+    ''' Initializes a new instance of the <see cref="XHtmlEditorCommands" /> class.
+    ''' </summary>
+    ''' <param name="editor">The editor.</param>
     Public Sub New(editor As IXHtmlEditor, ByVal namespaceManager As XmlNamespaceManager)
         _editor = editor
         _defaultNamespaceManager = namespaceManager
     End Sub
 
+    ''' <summary>
+    ''' (Weak Event) Occurs when [content changed].
+    ''' </summary>
+    ''' <remarks>
+    ''' This is a weak event with ordinary event API.
+    ''' So consumer of this event does not need to make this weak.
+    ''' </remarks>
     Public Custom Event ContentChanged As EventHandler(Of EventArgs)
         AddHandler(value As EventHandler(Of EventArgs))
             WeakEventUtils.AddWeakGenericEventHandler(_contentChangedHandlers, value, Sub(e) RemoveHandler ContentChanged, e)
@@ -39,9 +53,22 @@ Public Class XHtmlEditorCommands
     End Event
 
 
+    ''' <summary>
+    ''' Determines whether [is in table].
+    ''' </summary>
+    ''' <returns>
+    '''   <c>true</c> if [is in table]; otherwise, <c>false</c>.
+    ''' </returns>
     Public Function IsInTable() As Boolean
         Return IsInTable(_editor.Selection.Node)
     End Function
+    ''' <summary>
+    ''' Determines whether the node is within a table.
+    ''' </summary>
+    ''' <param name="node">The node.</param>
+    ''' <returns>
+    ''' <c>true</c> if the specified node is within the table; otherwise, <c>false</c>.
+    ''' </returns>
     Private Function IsInTable(ByVal node As XmlNode) As Boolean
         If node IsNot Nothing AndAlso node.Name.ToLower() <> "body" Then
             If node.Name.ToLower() = "table" Then
@@ -56,13 +83,14 @@ Public Class XHtmlEditorCommands
     Public Sub AddTable()
         Try
             _editor.BeginTransaction()
+            'Override dialog.
             _editor.ShowNewTableDialog(Control.MousePosition)
-
+           
             Dim singleList As IEnumerable = _editor.Document.SelectNodes("//def:td[not(@style)]", _defaultNamespaceManager).Cast(Of XmlNode)().Concat(_editor.Document.SelectNodes("//def:tr[not(@style)]", _defaultNamespaceManager).Cast(Of XmlNode)())
             _cntHlp.SetStyleToTableColumns(singleList)
             _editor.CommitTransaction()
 
-            RaiseContentChanged()
+            RaiseContentChanged()    'Results in a size-update of the IxHtmlEditor
         Catch ex As Exception
             MessageBox.Show(String.Format("Failed to insert Table. {0} {1}", vbNewLine, ex.Message), "Error", MessageBoxButtons.OK)
             _editor.RollbackTransaction()
@@ -76,7 +104,7 @@ Public Class XHtmlEditorCommands
 
             SetStyleToTableColumns(singleList)
 
-            RaiseContentChanged()
+            RaiseContentChanged()    'Results in a size-update of the IxHtmlEditor
         Catch ex As Exception
             MessageBox.Show(String.Format("Failed to insert row (above) in table. {0} {1}", vbNewLine, ex.Message), "Error", MessageBoxButtons.OK)
         End Try
@@ -89,7 +117,7 @@ Public Class XHtmlEditorCommands
 
             SetStyleToTableColumns(singleList)
 
-            RaiseContentChanged()
+            RaiseContentChanged()    'Results in a size-update of the IxHtmlEditor
         Catch ex As Exception
             MessageBox.Show(String.Format("Failed to insert row (below) in table. {0} {1}", vbNewLine, ex.Message), "Error", MessageBoxButtons.OK)
         End Try
@@ -98,7 +126,7 @@ Public Class XHtmlEditorCommands
     Public Sub DoDeleteRow()
         Try
             _editor.Selection.DeleteRows()
-            RaiseContentChanged()
+            RaiseContentChanged()    'Results in a size-update of the IxHtmlEditor
         Catch ex As Exception
             MessageBox.Show(String.Format("Failed to delete row in table. {0} {1}", vbNewLine, ex.Message), "Error", MessageBoxButtons.OK)
         End Try
@@ -220,6 +248,19 @@ Public Class XHtmlEditorCommands
         End If
     End Sub
 
+    ''' <summary>
+    ''' Gets the styles.
+    ''' </summary>
+    ''' <param name="styleSheets">The style sheets.</param>
+    ''' <returns>Dictionary key Name of UserStyle, value CSS</returns>
+    ''' <remarks>
+    ''' Part of CSS.
+    '''  .UserSRCourier {
+    '''  font-family: Courier New, Courier;
+    '''  font-size: 15px;
+    '''  }
+    ''' Key = Courier ,.. CSS Name stripped of 'UserSR'
+    ''' </remarks>
     Function GetStyles(styleSheets As Dictionary(Of String, String)) As Dictionary(Of String, String)
         Dim ret As New Dictionary(Of String, String)
         Dim reg1 As New Regex("([^{]*){([^}]*)}", RegexOptions.Singleline)
@@ -228,7 +269,7 @@ Public Class XHtmlEditorCommands
         Dim a = (From e In styleSheets Select reg1.Matches(e.Value)).SelectMany(Function(e) e.AsIEnumerable)
         Dim b = From e2 In a Where reg2.IsMatch(e2.Value) Select New KeyValuePair(Of String, String)(reg2.Match(e2.Value).Groups("style").Value, e2.Value)
         For Each kvp In b
-            If (Not ret.ContainsKey(kvp.Key)) Then ret.Add(kvp.Key, kvp.Value)
+            If (Not ret.ContainsKey(kvp.Key)) Then ret.Add(kvp.Key, kvp.Value) 'Double values??,.. well too bad.
         Next
         Return ret
     End Function
@@ -242,7 +283,7 @@ Public Class XHtmlEditorCommands
         Dim b = From e2 In a Where reg2.IsMatch(e2.Value) Select New KeyValuePair(Of String, String)(reg2.Match(e2.Value).Groups("language").Value, e2.Value)
         For Each kvp In b
             If (Not ret.ContainsKey(kvp.Key)) Then
-                ret.Add(kvp.Key, kvp.Value)
+                ret.Add(kvp.Key, kvp.Value) 
             End If
         Next
         Return ret

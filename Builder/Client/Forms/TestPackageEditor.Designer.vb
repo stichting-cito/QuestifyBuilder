@@ -71,41 +71,41 @@ Partial Class TestPackageEditor
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.ResourceCustomProperties1 = New Questify.Builder.UI.ResourceCustomProperties()
-        Me.TestPackageEditorMenu.SuspendLayout
-        Me.TestPackageEditorToolStrip.SuspendLayout
-        Me.FormStatusStrip.SuspendLayout
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SplitContainer1.Panel1.SuspendLayout
-        Me.SplitContainer1.Panel2.SuspendLayout
-        Me.SplitContainer1.SuspendLayout
-        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SplitContainer2.Panel1.SuspendLayout
-        Me.SplitContainer2.Panel2.SuspendLayout
-        Me.SplitContainer2.SuspendLayout
-        Me.TabControl1.SuspendLayout
-        Me.TabPage1.SuspendLayout
-        Me.TabPage2.SuspendLayout
-        Me.TabPage3.SuspendLayout
-        Me.TabControl2.SuspendLayout
-        Me.TabPage4.SuspendLayout
-        Me.TabPage5.SuspendLayout
-        Me.SuspendLayout
-        Me.HierarchyControl.AllowDrop = true
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TestPackageEditorMenu.SuspendLayout()
+        Me.TestPackageEditorToolStrip.SuspendLayout()
+        Me.FormStatusStrip.SuspendLayout()
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer1.Panel1.SuspendLayout()
+        Me.SplitContainer1.Panel2.SuspendLayout()
+        Me.SplitContainer1.SuspendLayout()
+        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer2.Panel1.SuspendLayout()
+        Me.SplitContainer2.Panel2.SuspendLayout()
+        Me.SplitContainer2.SuspendLayout()
+        Me.TabControl2.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
+        Me.TabPage5.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        Me.SuspendLayout()
+        Me.HierarchyControl.AllowDrop = True
         resources.ApplyResources(Me.HierarchyControl, "HierarchyControl")
         Me.HierarchyControl.Name = "HierarchyControl"
         Me.HierarchyControl.SelectedComponent = Nothing
         Me.HierarchyControl.TestPackage = Nothing
-        Me.HierarchyControl.TestPackageIsNew = false
+        Me.HierarchyControl.TestPackageIsNew = False
         resources.ApplyResources(Me.MetaDataControl, "MetaDataControl")
-        Me.MetaDataControl.IsNameChangable = false
+        Me.MetaDataControl.IsNameChangable = False
         Me.MetaDataControl.Name = "MetaDataControl"
         Me.MetaDataControl.ResourceEntity = Nothing
         resources.ApplyResources(Me.TestReferenceControl, "TestReferenceControl")
@@ -114,6 +114,7 @@ Partial Class TestPackageEditor
         Me.TestReferenceControl.TestPackageEntity = Nothing
         resources.ApplyResources(Me.TestSetControl, "TestSetControl")
         Me.TestSetControl.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
+        Me.TestSetControl.BackColor = System.Drawing.SystemColors.Control
         Me.TestSetControl.Name = "TestSetControl"
         Me.TestSetControl.TestPackageEntity = Nothing
         resources.ApplyResources(Me.TestPackagePropertiesControl, "TestPackagePropertiesControl")
@@ -231,6 +232,22 @@ Partial Class TestPackageEditor
         Me.SplitContainer2.Name = "SplitContainer2"
         Me.SplitContainer2.Panel1.Controls.Add(Me.HierarchyControl)
         Me.SplitContainer2.Panel2.Controls.Add(Me.TabControl2)
+        resources.ApplyResources(Me.TabControl2, "TabControl2")
+        Me.TabControl2.Controls.Add(Me.TabPage4)
+        Me.TabControl2.Controls.Add(Me.TabPage5)
+        Me.TabControl2.Name = "TabControl2"
+        Me.TabControl2.SelectedIndex = 0
+        Me.TabPage4.Controls.Add(Me.MetaDataControl)
+        resources.ApplyResources(Me.TabPage4, "TabPage4")
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage5.Controls.Add(Me.ResourceCustomProperties1)
+        resources.ApplyResources(Me.TabPage5, "TabPage5")
+        Me.TabPage5.Name = "TabPage5"
+        resources.ApplyResources(Me.ResourceCustomProperties1, "ResourceCustomProperties1")
+        Me.ResourceCustomProperties1.CustomPropertyFilter = Nothing
+        Me.ResourceCustomProperties1.CustomPropertyTypeFilter = Enums.ResourceTypeEnum.TestPackageResource
+        Me.ResourceCustomProperties1.Name = "ResourceCustomProperties1"
+        Me.ResourceCustomProperties1.ResourceEntity = Nothing
         resources.ApplyResources(Me.TabControl1, "TabControl1")
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
@@ -246,55 +263,40 @@ Partial Class TestPackageEditor
         Me.TabPage3.Controls.Add(Me.TestPackagePropertiesControl)
         resources.ApplyResources(Me.TabPage3, "TabPage3")
         Me.TabPage3.Name = "TabPage3"
-        resources.ApplyResources(Me.TabControl2, "TabControl2")
-        Me.TabControl2.Controls.Add(Me.TabPage4)
-        Me.TabControl2.Controls.Add(Me.TabPage5)
-        Me.TabControl2.Name = "TabControl2"
-        Me.TabControl2.SelectedIndex = 0
-        Me.TabPage4.Controls.Add(Me.MetaDataControl)
-        resources.ApplyResources(Me.TabPage4, "TabPage4")
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage5.Controls.Add(Me.ResourceCustomProperties1)
-        resources.ApplyResources(Me.TabPage5, "TabPage5")
-        Me.TabPage5.Name = "TabPage5"
-        resources.ApplyResources(Me.ResourceCustomProperties1, "ResourceCustomProperties1")
-        Me.ResourceCustomProperties1.CustomPropertyFilter = Nothing
-        Me.ResourceCustomProperties1.CustomPropertyTypeFilter = ResourceTypeEnum.TestPackageResource
-        Me.ResourceCustomProperties1.Name = "ResourceCustomProperties1"
-        Me.ResourceCustomProperties1.ResourceEntity = Nothing
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
-        Me.CausesValidation = false
+        Me.CausesValidation = False
         Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.TestPackageEditorToolStrip)
         Me.Controls.Add(Me.TestPackageEditorMenu)
         Me.Controls.Add(Me.FormStatusStrip)
         Me.MainMenuStrip = Me.TestPackageEditorMenu
         Me.Name = "TestPackageEditor"
-        Me.TestPackageEditorMenu.ResumeLayout(false)
-        Me.TestPackageEditorMenu.PerformLayout
-        Me.TestPackageEditorToolStrip.ResumeLayout(false)
-        Me.TestPackageEditorToolStrip.PerformLayout
-        Me.FormStatusStrip.ResumeLayout(false)
-        Me.FormStatusStrip.PerformLayout
-        Me.SplitContainer1.Panel1.ResumeLayout(false)
-        Me.SplitContainer1.Panel2.ResumeLayout(false)
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit
-        Me.SplitContainer1.ResumeLayout(false)
-        Me.SplitContainer2.Panel1.ResumeLayout(false)
-        Me.SplitContainer2.Panel2.ResumeLayout(false)
-        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit
-        Me.SplitContainer2.ResumeLayout(false)
-        Me.TabControl1.ResumeLayout(false)
-        Me.TabPage1.ResumeLayout(false)
-        Me.TabPage1.PerformLayout
-        Me.TabPage2.ResumeLayout(false)
-        Me.TabPage3.ResumeLayout(false)
-        Me.TabControl2.ResumeLayout(false)
-        Me.TabPage4.ResumeLayout(false)
-        Me.TabPage5.ResumeLayout(false)
-        Me.ResumeLayout(false)
+        Me.TestPackageEditorMenu.ResumeLayout(False)
+        Me.TestPackageEditorMenu.PerformLayout()
+        Me.TestPackageEditorToolStrip.ResumeLayout(False)
+        Me.TestPackageEditorToolStrip.PerformLayout()
+        Me.FormStatusStrip.ResumeLayout(False)
+        Me.FormStatusStrip.PerformLayout()
+        Me.SplitContainer1.Panel1.ResumeLayout(False)
+        Me.SplitContainer1.Panel2.ResumeLayout(False)
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer1.ResumeLayout(False)
+        Me.SplitContainer2.Panel1.ResumeLayout(False)
+        Me.SplitContainer2.Panel2.ResumeLayout(False)
+        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer2.ResumeLayout(False)
+        Me.TabControl2.ResumeLayout(False)
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage5.ResumeLayout(False)
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.ResumeLayout(False)
         Me.PerformLayout
 
     End Sub

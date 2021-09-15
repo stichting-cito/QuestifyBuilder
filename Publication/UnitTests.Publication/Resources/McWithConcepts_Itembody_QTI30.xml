@@ -1,0 +1,22 @@
+<qti-item-body class="defaultBody">
+    <div class="content">
+      <div>
+        <div id="question">
+          <p>Wat is het juiste antwoord ?</p>
+        </div>
+        <div>
+          <qti-choice-interaction id="choiceInteraction1" class="" max-choices="1" shuffle="false" response-identifier="mc">
+            <qti-simple-choice identifier="A">
+              <p>Kies voor A</p>
+            </qti-simple-choice>
+            <qti-simple-choice identifier="B">
+              <p>Nee, liever voor B</p>
+            </qti-simple-choice>
+			  <qti-simple-choice identifier="C">
+				  <p>Nee, liever voor C</p>
+			  </qti-simple-choice>
+          </qti-choice-interaction>
+        </div>
+      </div>
+    </div>
+  </qti-item-body>

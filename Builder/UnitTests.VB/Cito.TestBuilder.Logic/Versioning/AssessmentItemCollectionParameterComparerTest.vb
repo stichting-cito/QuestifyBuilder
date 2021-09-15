@@ -19,10 +19,10 @@ Public Class AssessmentItemCollectionParameterComparerTest
         Dim assessmentItem2 As AssessmentItem = Helper.CreateAssessmentItem("Title of AssessmentItem 2", _iltName1)
         Dim integerParameter1 As New IntegerParameter()
         Dim integerParameter2 As New IntegerParameter()
-        integerParameter1.Name = "integerParameter1"
-        integerParameter2.Name = "integerParameter1"
-        integerParameter1.Value = 10
-        integerParameter2.Value = 10
+        integerParameter1.Name = "integerParameter1" 'Same parameter names!
+        integerParameter2.Name = "integerParameter1" 'Same parameter names!
+        integerParameter1.Value = 10 'Same values!
+        integerParameter2.Value = 10 'Same values!
 
         Dim integerParamCollection1 As New ParameterCollection()
         Dim integerParamCollection2 As New ParameterCollection()
@@ -37,8 +37,8 @@ Public Class AssessmentItemCollectionParameterComparerTest
 
         Dim collectionParam1 As New CollectionParameter()
         Dim collectionParam2 As New CollectionParameter()
-        collectionParam1.Name = "collectionParam1"
-        collectionParam2.Name = "collectionParam1"
+        collectionParam1.Name = "collectionParam1" 'Same parameter names!
+        collectionParam2.Name = "collectionParam1" 'Same parameter names!
         collectionParam1.Value = integerParamSet1
         collectionParam2.Value = integerParamSet2
         collectionParam1.BluePrint = New ParameterCollection()
@@ -54,14 +54,17 @@ Public Class AssessmentItemCollectionParameterComparerTest
         assessmentItem1.Parameters.Add(parameterCollection1)
         assessmentItem2.Parameters.Add(parameterCollection2)
 
+        'Arrange
         Dim versionableEntity1 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem1)
         Dim versionableEntity2 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem2)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsNotNull(resourceHistoryEntity1.BinData)
@@ -76,10 +79,10 @@ Public Class AssessmentItemCollectionParameterComparerTest
         Dim assessmentItem2 As AssessmentItem = Helper.CreateAssessmentItem("Title of AssessmentItem 2", _iltName1)
         Dim integerParameter1 As New IntegerParameter()
         Dim integerParameter2 As New IntegerParameter()
-        integerParameter1.Name = "integerParameter1"
-        integerParameter2.Name = "integerParameter1"
-        integerParameter1.Value = 10
-        integerParameter2.Value = 20
+        integerParameter1.Name = "integerParameter1" 'Same parameter names!
+        integerParameter2.Name = "integerParameter1" 'Same parameter names!
+        integerParameter1.Value = 10 'Different values!
+        integerParameter2.Value = 20 'Different values!
 
         Dim integerParamCollection1 As New ParameterCollection()
         Dim integerParamCollection2 As New ParameterCollection()
@@ -94,8 +97,8 @@ Public Class AssessmentItemCollectionParameterComparerTest
 
         Dim collectionParam1 As New CollectionParameter()
         Dim collectionParam2 As New CollectionParameter()
-        collectionParam1.Name = "collectionParam1"
-        collectionParam2.Name = "collectionParam1"
+        collectionParam1.Name = "collectionParam1" 'Same parameter names!
+        collectionParam2.Name = "collectionParam1" 'Same parameter names!
         collectionParam1.Value = integerParamSet1
         collectionParam2.Value = integerParamSet2
         collectionParam1.BluePrint = New ParameterCollection()
@@ -111,14 +114,17 @@ Public Class AssessmentItemCollectionParameterComparerTest
         assessmentItem1.Parameters.Add(parameterCollection1)
         assessmentItem2.Parameters.Add(parameterCollection2)
 
+        'Arrange
         Dim versionableEntity1 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem1)
         Dim versionableEntity2 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem2)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsNotNull(resourceHistoryEntity1.BinData)
@@ -137,10 +143,10 @@ Public Class AssessmentItemCollectionParameterComparerTest
         Dim assessmentItem2 As AssessmentItem = Helper.CreateAssessmentItem("Title of AssessmentItem 2", _iltName1)
         Dim integerParameter1 As New IntegerParameter()
         Dim integerParameter2 As New IntegerParameter()
-        integerParameter1.Name = "integerParameter1"
-        integerParameter2.Name = "integerParameter2"
-        integerParameter1.Value = 10
-        integerParameter2.Value = 10
+        integerParameter1.Name = "integerParameter1" 'Different parameter names!
+        integerParameter2.Name = "integerParameter2" 'Different parameter names!
+        integerParameter1.Value = 10 'Same values!
+        integerParameter2.Value = 10 'Same values!
 
         Dim integerParamCollection1 As New ParameterCollection()
         Dim integerParamCollection2 As New ParameterCollection()
@@ -155,8 +161,8 @@ Public Class AssessmentItemCollectionParameterComparerTest
 
         Dim collectionParam1 As New CollectionParameter()
         Dim collectionParam2 As New CollectionParameter()
-        collectionParam1.Name = "collectionParam1"
-        collectionParam2.Name = "collectionParam1"
+        collectionParam1.Name = "collectionParam1" 'Same parameter names!
+        collectionParam2.Name = "collectionParam1" 'Same parameter names!
         collectionParam1.Value = integerParamSet1
         collectionParam2.Value = integerParamSet2
         collectionParam1.BluePrint = New ParameterCollection()
@@ -172,14 +178,17 @@ Public Class AssessmentItemCollectionParameterComparerTest
         assessmentItem1.Parameters.Add(parameterCollection1)
         assessmentItem2.Parameters.Add(parameterCollection2)
 
+        'Arrange
         Dim versionableEntity1 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem1)
         Dim versionableEntity2 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem2)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsNotNull(resourceHistoryEntity1.BinData)
@@ -204,10 +213,10 @@ Public Class AssessmentItemCollectionParameterComparerTest
         Dim assessmentItem2 As AssessmentItem = Helper.CreateAssessmentItem("Title of AssessmentItem 2", _iltName2)
         Dim integerParameter1 As New IntegerParameter()
         Dim integerParameter2 As New IntegerParameter()
-        integerParameter1.Name = "integerParameter1"
-        integerParameter2.Name = "integerParameter1"
-        integerParameter1.Value = 10
-        integerParameter2.Value = 10
+        integerParameter1.Name = "integerParameter1" 'Same parameter names!
+        integerParameter2.Name = "integerParameter1" 'Same parameter names!
+        integerParameter1.Value = 10 'Same values!
+        integerParameter2.Value = 10 'Same values!
 
         Dim integerParamCollection1 As New ParameterCollection()
         Dim integerParamCollection2 As New ParameterCollection()
@@ -222,8 +231,8 @@ Public Class AssessmentItemCollectionParameterComparerTest
 
         Dim collectionParam1 As New CollectionParameter()
         Dim collectionParam2 As New CollectionParameter()
-        collectionParam1.Name = "collectionParam1"
-        collectionParam2.Name = "collectionParam2"
+        collectionParam1.Name = "collectionParam1" 'Different parameter names!
+        collectionParam2.Name = "collectionParam2" 'Different parameter names!
         collectionParam1.Value = integerParamSet1
         collectionParam2.Value = integerParamSet2
         collectionParam1.BluePrint = New ParameterCollection()
@@ -239,14 +248,17 @@ Public Class AssessmentItemCollectionParameterComparerTest
         assessmentItem1.Parameters.Add(parameterCollection1)
         assessmentItem2.Parameters.Add(parameterCollection2)
 
+        'Arrange
         Dim versionableEntity1 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem1)
         Dim versionableEntity2 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem2)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsNotNull(resourceHistoryEntity1.BinData)
@@ -271,10 +283,10 @@ Public Class AssessmentItemCollectionParameterComparerTest
         Dim assessmentItem2 As AssessmentItem = Helper.CreateAssessmentItem("Title of AssessmentItem 2", _iltName2)
         Dim integerParameter1 As New IntegerParameter()
         Dim integerParameter2 As New IntegerParameter()
-        integerParameter1.Name = "integerParameter1"
-        integerParameter2.Name = "integerParameter1"
-        integerParameter1.Value = 10
-        integerParameter2.Value = 20
+        integerParameter1.Name = "integerParameter1" 'Same parameter names!
+        integerParameter2.Name = "integerParameter1" 'Same parameter names!
+        integerParameter1.Value = 10 'Different values!
+        integerParameter2.Value = 20 'Different values!
 
         Dim integerParamCollection1 As New ParameterCollection()
         Dim integerParamCollection2 As New ParameterCollection()
@@ -289,8 +301,8 @@ Public Class AssessmentItemCollectionParameterComparerTest
 
         Dim collectionParam1 As New CollectionParameter()
         Dim collectionParam2 As New CollectionParameter()
-        collectionParam1.Name = "collectionParam1"
-        collectionParam2.Name = "collectionParam2"
+        collectionParam1.Name = "collectionParam1" 'Different parameter names!
+        collectionParam2.Name = "collectionParam2" 'Different parameter names!
         collectionParam1.Value = integerParamSet1
         collectionParam2.Value = integerParamSet2
         collectionParam1.BluePrint = New ParameterCollection()
@@ -306,14 +318,17 @@ Public Class AssessmentItemCollectionParameterComparerTest
         assessmentItem1.Parameters.Add(parameterCollection1)
         assessmentItem2.Parameters.Add(parameterCollection2)
 
+        'Arrange
         Dim versionableEntity1 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem1)
         Dim versionableEntity2 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem2)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsNotNull(resourceHistoryEntity1.BinData)
@@ -339,12 +354,12 @@ Public Class AssessmentItemCollectionParameterComparerTest
         Dim integerParameter1_1 As New IntegerParameter()
         Dim integerParameter2_1 As New IntegerParameter()
         Dim integerParameter2_2 As New IntegerParameter()
-        integerParameter1_1.Name = "integerParameter1"
-        integerParameter2_1.Name = "integerParameter2"
-        integerParameter2_2.Name = "integerParameter1"
-        integerParameter1_1.Value = 10
-        integerParameter2_1.Value = 20
-        integerParameter2_2.Value = 10
+        integerParameter1_1.Name = "integerParameter1" 'Same parameter names!
+        integerParameter2_1.Name = "integerParameter2" 'Different parameter name!
+        integerParameter2_2.Name = "integerParameter1" 'Same parameter names!
+        integerParameter1_1.Value = 10 'Same values!
+        integerParameter2_1.Value = 20 'Different value!
+        integerParameter2_2.Value = 10 'Same values!
 
         Dim integerParamCollection1 As New ParameterCollection()
         Dim integerParamCollection2 As New ParameterCollection()
@@ -360,8 +375,8 @@ Public Class AssessmentItemCollectionParameterComparerTest
 
         Dim collectionParam1 As New CollectionParameter()
         Dim collectionParam2 As New CollectionParameter()
-        collectionParam1.Name = "collectionParam1"
-        collectionParam2.Name = "collectionParam1"
+        collectionParam1.Name = "collectionParam1" 'Same parameter names!
+        collectionParam2.Name = "collectionParam1" 'Same parameter names!
         collectionParam1.Value = integerParamSet1
         collectionParam2.Value = integerParamSet2
         collectionParam1.BluePrint = New ParameterCollection()
@@ -377,14 +392,17 @@ Public Class AssessmentItemCollectionParameterComparerTest
         assessmentItem1.Parameters.Add(parameterCollection1)
         assessmentItem2.Parameters.Add(parameterCollection2)
 
+        'Arrange
         Dim versionableEntity1 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem1)
         Dim versionableEntity2 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem2)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsNotNull(resourceHistoryEntity1.BinData)
@@ -404,12 +422,12 @@ Public Class AssessmentItemCollectionParameterComparerTest
         Dim integerParameter1_1 As New IntegerParameter()
         Dim integerParameter2_1 As New IntegerParameter()
         Dim integerParameter2_2 As New IntegerParameter()
-        integerParameter1_1.Name = "integerParameter1"
-        integerParameter2_1.Name = "integerParameter2"
-        integerParameter2_2.Name = "integerParameter1"
-        integerParameter1_1.Value = 10
-        integerParameter2_1.Value = 20
-        integerParameter2_2.Value = 30
+        integerParameter1_1.Name = "integerParameter1" 'Same parameter names!
+        integerParameter2_1.Name = "integerParameter2" 'Different parameter name!
+        integerParameter2_2.Name = "integerParameter1" 'Same parameter names!
+        integerParameter1_1.Value = 10 'Different values!
+        integerParameter2_1.Value = 20 'Different value!
+        integerParameter2_2.Value = 30 'Different values!
 
         Dim integerParamCollection1 As New ParameterCollection()
         Dim integerParamCollection2 As New ParameterCollection()
@@ -425,8 +443,8 @@ Public Class AssessmentItemCollectionParameterComparerTest
 
         Dim collectionParam1 As New CollectionParameter()
         Dim collectionParam2 As New CollectionParameter()
-        collectionParam1.Name = "collectionParam1"
-        collectionParam2.Name = "collectionParam1"
+        collectionParam1.Name = "collectionParam1" 'Same parameter names!
+        collectionParam2.Name = "collectionParam1" 'Same parameter names!
         collectionParam1.Value = integerParamSet1
         collectionParam2.Value = integerParamSet2
         collectionParam1.BluePrint = New ParameterCollection()
@@ -442,14 +460,17 @@ Public Class AssessmentItemCollectionParameterComparerTest
         assessmentItem1.Parameters.Add(parameterCollection1)
         assessmentItem2.Parameters.Add(parameterCollection2)
 
+        'Arrange
         Dim versionableEntity1 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem1)
         Dim versionableEntity2 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem2)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsNotNull(resourceHistoryEntity1.BinData)
@@ -476,12 +497,12 @@ Public Class AssessmentItemCollectionParameterComparerTest
         Dim integerParameter1_1 As New IntegerParameter()
         Dim integerParameter1_2 As New IntegerParameter()
         Dim integerParameter2_1 As New IntegerParameter()
-        integerParameter1_1.Name = "integerParameter1"
-        integerParameter1_2.Name = "integerParameter2"
-        integerParameter2_1.Name = "integerParameter1"
-        integerParameter1_1.Value = 10
-        integerParameter1_2.Value = 20
-        integerParameter2_1.Value = 10
+        integerParameter1_1.Name = "integerParameter1" 'Same parameter names!
+        integerParameter1_2.Name = "integerParameter2" 'Different parameter name!
+        integerParameter2_1.Name = "integerParameter1" 'Same parameter names!
+        integerParameter1_1.Value = 10 'Same values!
+        integerParameter1_2.Value = 20 'Different value!
+        integerParameter2_1.Value = 10 'Same values!
 
         Dim integerParamCollection1 As New ParameterCollection()
         Dim integerParamCollection2 As New ParameterCollection()
@@ -497,8 +518,8 @@ Public Class AssessmentItemCollectionParameterComparerTest
 
         Dim collectionParam1 As New CollectionParameter()
         Dim collectionParam2 As New CollectionParameter()
-        collectionParam1.Name = "collectionParam1"
-        collectionParam2.Name = "collectionParam1"
+        collectionParam1.Name = "collectionParam1" 'Different parameter names!
+        collectionParam2.Name = "collectionParam1" 'Different parameter names!
         collectionParam1.Value = integerParamSet1
         collectionParam2.Value = integerParamSet2
         collectionParam1.BluePrint = New ParameterCollection()
@@ -514,14 +535,17 @@ Public Class AssessmentItemCollectionParameterComparerTest
         assessmentItem1.Parameters.Add(parameterCollection1)
         assessmentItem2.Parameters.Add(parameterCollection2)
 
+        'Arrange
         Dim versionableEntity1 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem1)
         Dim versionableEntity2 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem2)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsNotNull(resourceHistoryEntity1.BinData)
@@ -541,12 +565,12 @@ Public Class AssessmentItemCollectionParameterComparerTest
         Dim integerParameter1_1 As New IntegerParameter()
         Dim integerParameter1_2 As New IntegerParameter()
         Dim integerParameter2_1 As New IntegerParameter()
-        integerParameter1_1.Name = "integerParameter1"
-        integerParameter1_2.Name = "integerParameter2"
-        integerParameter2_1.Name = "integerParameter1"
-        integerParameter1_1.Value = 10
-        integerParameter1_2.Value = 20
-        integerParameter2_1.Value = 30
+        integerParameter1_1.Name = "integerParameter1" 'Same parameter names!
+        integerParameter1_2.Name = "integerParameter2" 'Different parameter name!
+        integerParameter2_1.Name = "integerParameter1" 'Same parameter names!
+        integerParameter1_1.Value = 10 'Different values!
+        integerParameter1_2.Value = 20 'Different values!
+        integerParameter2_1.Value = 30 'Different values!
 
         Dim integerParamCollection1 As New ParameterCollection()
         Dim integerParamCollection2 As New ParameterCollection()
@@ -562,8 +586,8 @@ Public Class AssessmentItemCollectionParameterComparerTest
 
         Dim collectionParam1 As New CollectionParameter()
         Dim collectionParam2 As New CollectionParameter()
-        collectionParam1.Name = "collectionParam1"
-        collectionParam2.Name = "collectionParam1"
+        collectionParam1.Name = "collectionParam1" 'Different parameter names!
+        collectionParam2.Name = "collectionParam1" 'Different parameter names!
         collectionParam1.Value = integerParamSet1
         collectionParam2.Value = integerParamSet2
         collectionParam1.BluePrint = New ParameterCollection()
@@ -579,14 +603,17 @@ Public Class AssessmentItemCollectionParameterComparerTest
         assessmentItem1.Parameters.Add(parameterCollection1)
         assessmentItem2.Parameters.Add(parameterCollection2)
 
+        'Arrange
         Dim versionableEntity1 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem1)
         Dim versionableEntity2 As IVersionable = Helper.CreateResourceEntity(New ItemResourceEntity(), assessmentItem2)
 
+        'Act
         Dim resourceHistoryEntity1 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity1, "user")
         Dim resourceHistoryEntity2 As ResourceHistoryEntity = ResourceHistoryCreator.CreateResourceHistoryEntity(versionableEntity2, "user")
         Dim metaDataCompareResults As New List(Of MetaDataCompareResult)
         metaDataCompareResults.AddRange(ResourceHistoryComparer.CompareResourceHistoryEntities(resourceHistoryEntity1, resourceHistoryEntity2, GetType(ItemResourceEntity), _resourceManager))
 
+        'Assert
         Assert.IsNotNull(resourceHistoryEntity1.MetaData)
         Assert.IsNotNull(resourceHistoryEntity2.MetaData)
         Assert.IsNotNull(resourceHistoryEntity1.BinData)

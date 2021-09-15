@@ -4,7 +4,7 @@ Imports Questify.Builder.Logic.QTI.Converters.ScoringConverter.QTI30
 Namespace QTI30
 
     <TestClass()>
-    Public Class QTI22ResponseProcessingOrderTests
+    Public Class ResponseProcessingOrderTests
         Inherits QTI_Base.ResponseProcessingOrderTestsBase
 
         <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessing")>
@@ -14,12 +14,12 @@ Namespace QTI30
 
         <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessing")>
         Public Sub GetResponseProcessingForFactsOnFinding_Dichotomous_Test()
-            GetResponseProcessingTest(_finding2, PublicationTestHelper.ResponseProcessingTemplateMatchCorrect)
+            GetResponseProcessingTest(_finding2, _responseProcessing2)
         End Sub
 
         <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessing")>
         Public Sub GetResponseProcessingForFactsOnFinding_ReverseFinding_Dichotomous_Test()
-            GetResponseProcessingTest(_finding5, PublicationTestHelper.ResponseProcessingTemplateMatchCorrect)
+            GetResponseProcessingTest(_finding5, _responseProcessing2)
         End Sub
 
         <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessing")>
@@ -29,12 +29,12 @@ Namespace QTI30
 
         <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessing")>
         Public Sub OrderItemWithPolytomousScoringWhenCreatingResponseProcessingReturnsMapResponseResponseProcessingTemplate()
-            GetResponseProcessingTest(_finding4, PublicationTestHelper.ResponseProcessingTemplateMapResponse)
+            GetResponseProcessingTest(_finding4, _responseProcessing4)
         End Sub
 
         <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessing")>
         Public Sub GetResponseProcessingForFactsOnFinding_ReverseFinding_Polytomous_Test()
-            GetResponseProcessingTest(_finding6, PublicationTestHelper.ResponseProcessingTemplateMapResponse)
+            GetResponseProcessingTest(_finding6, _responseProcessing4)
         End Sub
 
         Public Sub GetResponseProcessingTest(findingElement As XElement, responseProcessingElement As XElement)
@@ -141,6 +141,56 @@ Namespace QTI30
                 </qti-response-condition>
             </qti-response-processing>
 
+        Private _responseProcessing2 As XElement =
+            <qti-response-processing>
+                <qti-response-condition>
+                    <qti-response-if>
+                        <qti-and>
+                            <qti-match>
+                                <qti-index n="1">
+                                    <qti-variable identifier="RESPONSE"/>
+                                </qti-index>
+                                <qti-base-value base-type="identifier">C</qti-base-value>
+                            </qti-match>
+                            <qti-match>
+                                <qti-index n="2">
+                                    <qti-variable identifier="RESPONSE"/>
+                                </qti-index>
+                                <qti-base-value base-type="identifier">B</qti-base-value>
+                            </qti-match>
+                            <qti-match>
+                                <qti-index n="3">
+                                    <qti-variable identifier="RESPONSE"/>
+                                </qti-index>
+                                <qti-base-value base-type="identifier">A</qti-base-value>
+                            </qti-match>
+                        </qti-and>
+                        <qti-set-outcome-value identifier="SCORE">
+                            <qti-sum>
+                                <qti-base-value base-type="float">1</qti-base-value>
+                                <qti-variable identifier="SCORE"/>
+                            </qti-sum>
+                        </qti-set-outcome-value>
+                    </qti-response-if>
+                </qti-response-condition>
+                <qti-response-condition>
+                    <qti-response-if>
+                        <qti-gte>
+                            <qti-variable identifier="SCORE"/>
+                            <qti-base-value base-type="float">1</qti-base-value>
+                        </qti-gte>
+                        <qti-set-outcome-value identifier="SCORE">
+                            <qti-base-value base-type="float">1</qti-base-value>
+                        </qti-set-outcome-value>
+                    </qti-response-if>
+                    <qti-response-else>
+                        <qti-set-outcome-value identifier="SCORE">
+                            <qti-base-value base-type="float">0</qti-base-value>
+                        </qti-set-outcome-value>
+                    </qti-response-else>
+                </qti-response-condition>
+            </qti-response-processing>
+
         Private _responseProcessing3 As XElement =
             <qti-response-processing>
                 <qti-response-condition>
@@ -187,6 +237,58 @@ Namespace QTI30
                                 </qti-match>
                             </qti-and>
                         </qti-or>
+                        <qti-set-outcome-value identifier="SCORE">
+                            <qti-sum>
+                                <qti-base-value base-type="float">1</qti-base-value>
+                                <qti-variable identifier="SCORE"/>
+                            </qti-sum>
+                        </qti-set-outcome-value>
+                    </qti-response-if>
+                </qti-response-condition>
+            </qti-response-processing>
+
+        Private _responseProcessing4 As XElement =
+            <qti-response-processing>
+                <qti-response-condition>
+                    <qti-response-if>
+                        <qti-match>
+                            <qti-index n="1">
+                                <qti-variable identifier="RESPONSE"/>
+                            </qti-index>
+                            <qti-base-value base-type="identifier">C</qti-base-value>
+                        </qti-match>
+                        <qti-set-outcome-value identifier="SCORE">
+                            <qti-sum>
+                                <qti-base-value base-type="float">1</qti-base-value>
+                                <qti-variable identifier="SCORE"/>
+                            </qti-sum>
+                        </qti-set-outcome-value>
+                    </qti-response-if>
+                </qti-response-condition>
+                <qti-response-condition>
+                    <qti-response-if>
+                        <qti-match>
+                            <qti-index n="2">
+                                <qti-variable identifier="RESPONSE"/>
+                            </qti-index>
+                            <qti-base-value base-type="identifier">B</qti-base-value>
+                        </qti-match>
+                        <qti-set-outcome-value identifier="SCORE">
+                            <qti-sum>
+                                <qti-base-value base-type="float">1</qti-base-value>
+                                <qti-variable identifier="SCORE"/>
+                            </qti-sum>
+                        </qti-set-outcome-value>
+                    </qti-response-if>
+                </qti-response-condition>
+                <qti-response-condition>
+                    <qti-response-if>
+                        <qti-match>
+                            <qti-index n="3">
+                                <qti-variable identifier="RESPONSE"/>
+                            </qti-index>
+                            <qti-base-value base-type="identifier">A</qti-base-value>
+                        </qti-match>
                         <qti-set-outcome-value identifier="SCORE">
                             <qti-sum>
                                 <qti-base-value base-type="float">1</qti-base-value>

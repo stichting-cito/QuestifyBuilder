@@ -9,39 +9,48 @@ Public Class SolutionPreprocessingTests : Inherits SerializationTestBase
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("Solution")>
     Public Sub KeyPreprocessingRuleTest()
+        'Arrange
         Dim preProcRef = New SelectedPreprocessor() With {.Rule = "t"}
         Dim integerValue = New IntegerValue(42)
         Dim v = New KeyValue("someDomain", 1, integerValue) : v.PreProcessingRules.Add(preProcRef)
         Dim f = New KeyFact("keyId") : f.Values.Add(v)
         Dim finding = New KeyFinding("Finding") : finding.Facts.Add(f)
         Dim solution = New Solution() : solution.Findings.Add(finding)
-
+      
+        'Act
         Dim result = DoSerialize(solution)
-
+       
+        'Assert
         Assert.IsTrue(XmlTools.DeepEqualsWithNormalization(New XDocument(solution_keyPreprocessingRule), New XDocument(result), Nothing))
     End Sub
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("Solution")>
     Public Sub ConteptPreprocessingRuleTest()
+        'Arrange
         Dim preProcRef = New SelectedPreprocessor() With {.Rule = "t"}
         Dim integerValue = New IntegerValue(42)
         Dim v = New ConceptValue("someDomain", 1, integerValue) : v.PreProcessingRules.Add(preProcRef)
         Dim f = New ConceptFact("keyId") : f.Values.Add(v)
         Dim finding = New ConceptFinding("Finding") : finding.Facts.Add(f)
         Dim solution = New Solution() : solution.ConceptFindings.Add(finding)
-
+      
+        'Act
         Dim result = DoSerialize(solution)
-
+       
+        'Assert
         Assert.IsTrue(XmlTools.DeepEqualsWithNormalization(New XDocument(solution_conceptProcessingRule), New XDocument(result), Nothing))
     End Sub
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("Solution")>
     Public Sub DeserializeSolutionWithConceptPreprocessingRule_Hasit()
+        'Arrange
         Dim solution = Deserialize(Of Solution)(solution_conceptProcessingRule)
-
+      
+        'Act
         Dim tmp = solution.ConceptFindings.First().Facts.First().Values.First()
         Dim conceptFact = DirectCast(tmp, ConceptValue)
-
+       
+        'Assert
         Assert.IsTrue(conceptFact.PreProcessingRules.Count > 0)
     End Sub
 

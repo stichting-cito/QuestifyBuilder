@@ -110,7 +110,11 @@ namespace Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels.ScoreEditor
                     AspectScoringParameter aspectScoringPrm = (AspectScoringParameter)scoringParameters.First(sp => sp.GetType() == typeof(AspectScoringParameter) && ((AspectScoringParameter)sp).SingleAspectScoringEditor == false);
                     if (AspectScoreEditor.DataValue == null)
                     {
-                        AspectScoreEditor.DataValue = new WorkspaceData(String.Empty, Constants.AspectScoringAdvancedWorkSpace, new Tuple<IItemEditorViewModel, String>(_itemEditorVm, aspectScoringPrm.ControllerId), String.Empty, false);
+                        var aspectEditorDataValue = new Tuple<IItemEditorViewModel, String, String>(
+                            _itemEditorVm,
+                            aspectScoringPrm.ControllerId,
+                            aspectScoringPrm.AspectScoreEditorBoundAspect);
+                        AspectScoreEditor.DataValue = new WorkspaceData(String.Empty, Constants.AspectScoringAdvancedWorkSpace, aspectEditorDataValue, String.Empty, false);
                     }
                 }
                 else if (scoringParameters.Any(sp => sp.GetType() == typeof(AspectScoringParameter) && ((AspectScoringParameter)sp).SingleAspectScoringEditor))
@@ -118,7 +122,14 @@ namespace Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels.ScoreEditor
                     AspectScoringParameter aspectScoringPrm = (AspectScoringParameter)scoringParameters.First(sp => sp.GetType() == typeof(AspectScoringParameter) && ((AspectScoringParameter)sp).SingleAspectScoringEditor);
                     if (AspectScoreEditor.DataValue == null)
                     {
-                        AspectScoreEditor.DataValue = new WorkspaceData(String.Empty, Constants.AspectScoringSingleWorkSpace, new Tuple<IItemEditorViewModel, IAspectReferencesScoringViewModel, String, String, bool, bool>(_itemEditorVm, null, aspectScoringPrm.AspectScoreEditorBoundAspect, aspectScoringPrm.ControllerId, (ScoreEditor.DataValue == null) || _itemEditorVm.AssessmentItem.DataValue.Solution.AutoScoring == false, false), String.Empty, false);
+                        var aspectEditorDataValue = new Tuple<IItemEditorViewModel, IAspectReferencesScoringViewModel, String, String, bool, bool, bool>(
+                            _itemEditorVm,
+                            null,
+                            aspectScoringPrm.AspectScoreEditorBoundAspect,
+                            aspectScoringPrm.ControllerId,
+                            (ScoreEditor.DataValue == null) || _itemEditorVm.AssessmentItem.DataValue.Solution.AutoScoring == false,
+                            false,
+                            true); AspectScoreEditor.DataValue = new WorkspaceData(String.Empty, Constants.AspectScoringSingleWorkSpace, aspectEditorDataValue, String.Empty, false);
                     }
                 }
                 else if (!scoringParameters.Any(sp => sp.GetType() == typeof(AspectScoringParameter)))

@@ -46,10 +46,12 @@ Public Class XHtmlEditor
     Private _lastCopiedInlineElements As List(Of InlineElement) = Nothing
     Private _mouseFocused As Boolean = False
 
+    'Item Variables
     Private _stylesheets As Dictionary(Of String, String)
     Private _userStyles As Dictionary(Of String, String)
     Private _editorCss As String = String.Empty
 
+    'Class with commands
     Private _behavior As IInlineHtmlEditBehavior
     Private _htmlEditorBehaviour As IHtmlEditorBehaviour
 
@@ -58,12 +60,14 @@ Public Class XHtmlEditor
     Private _htmlFormulaHandler As HtmlFormulaHandler
     Private ReadOnly _htmlTableHandler As HtmlTableHandler
 
+    '--Command References
     Private _insPic As DelegateCommand(Of Boolean)
     Private _insMov As DelegateCommand(Of Boolean)
     Private _insAud As DelegateCommand(Of Boolean)
     Private _insCi As DelegateCommand(Of Boolean)
     Private _insPop As DelegateCommand(Of Boolean)
 
+    '--HtmlInlineHandlers
     Private _htmlInlineHandler As HtmlInlineHandler
     Private _imageHtmlInlineHandler As HtmlInlineHandler
     Private _audioHtmlInlineHandler As HtmlInlineHandler
@@ -72,10 +76,12 @@ Public Class XHtmlEditor
     Private _customInteractionHtmlInlineHandler As HtmlInlineHandler
     Private _popupHtmlInlineHandler As HtmlInlineHandler
 
+    'Class with reusable stuff
     Private ReadOnly _cntHlp As New HtmlContentHelper
 
-    Private _contentChangedHandlers As IList(Of IWeakGenericEventHandler(Of EventArgs))
-    Private _inlineChangedHandlers As IList(Of IWeakGenericEventHandler(Of NotifyCollectionChangedEventArgs))
+    '-Weak event    
+    Private _contentChangedHandlers As IList(Of IWeakGenericEventHandler(Of EventArgs)) 'List of handlers to notify that control was updated
+    Private _inlineChangedHandlers As IList(Of IWeakGenericEventHandler(Of NotifyCollectionChangedEventArgs)) 'List of handlers to notify that control was updated
 
     Public Event AddedInlineCustomInteraction As EventHandler(Of InlineElementEventArgs) Implements IXHtmlEditor.AddedInlineCustomInteraction
     Public Event RemovedInlineCustomInteraction As EventHandler(Of InlineElementEventArgs) Implements IXHtmlEditor.RemovedInlineCustomInteraction
@@ -85,14 +91,17 @@ Public Class XHtmlEditor
     Public Sub New()
         Interlocked.Increment(InstanceCount)
 
+        'Initialize synchronizationContext (For thread save UI calls)
+        ' This call is required by the designer.
         InitializeComponent()
-        C1Editor1.KeyboardShortcutsEnabled = False
+        C1Editor1.KeyboardShortcutsEnabled = False 'Disables special keys  => CTRL + {N|P|O|S}  New Print Open Save
 
+        'Initialize Handlers
         _htmlTableHandler = New HtmlTableHandler(Me)
 
         DefaultNamespaceManager = GetNamespaceManager()
-        AddHandler DirectCast(cbStyle.Control, ComboBox).SelectionChangeCommitted, AddressOf HandleCssCombo
-        AddHandler DirectCast(cbLanguage.Control, ComboBox).SelectionChangeCommitted, AddressOf HandleLanguageCombo
+        AddHandler DirectCast(cbStyle.Control, ComboBox).SelectionChangeCommitted, AddressOf HandleCssCombo 'SelectionChangeCommitted is not available directly
+        AddHandler DirectCast(cbLanguage.Control, ComboBox).SelectionChangeCommitted, AddressOf HandleLanguageCombo 'SelectionChangeCommitted is not available directly
 
         AddHandler bBold.CheckedChanged, Sub(s, o) RaiseEvent IsButtonCheckedChanged(Me, New ButtonCheckChangedEventArgs(Questify.Builder.Logic.Service.Interfaces.UI.Button.BOLD, bBold.Checked))
         AddHandler bItalic.CheckedChanged, Sub(s, o) RaiseEvent IsButtonCheckedChanged(Me, New ButtonCheckChangedEventArgs(Questify.Builder.Logic.Service.Interfaces.UI.Button.ITALIC, bItalic.Checked))
@@ -146,7 +155,7 @@ Public Class XHtmlEditor
                                                         Dim compensateY As Integer = 0
                                                         GetCursorPos(currentPoint)
                                                         If toolstripVisible Then
-                                                            compensateY = 35
+                                                            compensateY = 35 'Toolstrip compensation
                                                         End If
                                                         Dim caretPoint = IIf(isMouseFocused, New Point(currentPoint.X, currentPoint.Y + compensateY), New Point(x, y - compensateY))
                                                         Dim screenPoint = C1Editor1.PointToScreen(caretPoint)
@@ -243,16 +252,19 @@ Public Class XHtmlEditor
         _stylesheets = _behavior.GetStyle()
 
         Dim html As String = behavior.GetHtml()
-        _xhtmlEditorCommands = New XHtmlEditorCommands(Me, DefaultNamespaceManager)
+        _xhtmlEditorCommands = New XHtmlEditorCommands(Me, DefaultNamespaceManager) 'Initialize commands
         _htmlReferencesHandler = _behavior.CreateHtmlReferencesHandler(Me)
         _htmlFormulaHandler = behavior.CreateFormulaHandler(Me)
         InitCss(_stylesheets)
         InitLanguages(_stylesheets)
 
-        AddHandler _xhtmlEditorCommands.ContentChanged, Sub(s, e) RaiseContentChanged(s, e)
+        AddHandler _xhtmlEditorCommands.ContentChanged, Sub(s, e) RaiseContentChanged(s, e) 'Kick Event
         If _htmlReferencesHandler IsNot Nothing Then
             AddHandler _htmlReferencesHandler.ActiveReferenceChanged, AddressOf HtmlreferencesHandler_ActiveReferenceChanged
 
+            'Do not call C1Editor1.LoadXml(currentHtmlValue, Nothing) directly it will add flicker behavior!
+            'FYI:It's unlikely this call came from another thread. 
+            'Also convert the some html tags to C1 Compatible Tags
             _currentHtmlValue = If(String.IsNullOrEmpty(html), DEFAULTHTML, html)
 
             If _formClosing Then
@@ -297,6 +309,7 @@ Public Class XHtmlEditor
     Private Function SelectedInlineElements() As List(Of InlineElement)
         Dim result As New List(Of InlineElement)
         If Me.Selection.Node IsNot Nothing Then
+            ' both with and without namespace. C1Editor sometimes adds xmlns="" to pasted html, causing the "def:img" not to be found.
             Dim selectedInlines = Me.Selection.Node.SelectNodes("//img[@isinlineelement='true' or @isinlinecontrol='true'] | //def:img[@isinlineelement='true' or @isinlinecontrol='true']", DefaultNamespaceManager)
             Dim allInlineElements = _behavior.InlineElements
 
@@ -317,6 +330,7 @@ Public Class XHtmlEditor
         End If
         Dim node As XmlNode = Me.Document.SelectSingleNode("//def:html", DefaultNamespaceManager)
         If node IsNot Nothing Then
+            'Also convert C1 Tags back to Cito style nodes.
             _behavior.SetHtml(node.OuterXml)
         End If
     End Sub
@@ -325,6 +339,9 @@ Public Class XHtmlEditor
         If _formClosing Then
             Return
         End If
+        '
+        '==[ToolStip]==
+        'Define commands
         Dim pasteFromWord As New DelegateCommand(Of Boolean)(bPasteFromWord.Text, Sub() DoPasteOperation(False), Function() C1Editor1.CanPaste)
         Dim pasteAsText As New DelegateCommand(Of Boolean)(bPasteFromWord.Text, Sub() DoPasteOperation(True), Function() C1Editor1.CanPasteAsText)
         Dim copyCmd As New DelegateCommand(Of Boolean)(bCopy.Text, Sub() Copy(), Function() C1Editor1.CanCopy)
@@ -332,17 +349,17 @@ Public Class XHtmlEditor
 
         Dim insControl As New DelegateCommand(Of Boolean)(bInsertControl.Text, Sub() ExecuteInline(InlineHandler), Function() _behavior.CanInsertControls AndAlso InlineHandler.CanExecute())
 
-        _insPic = New DelegateCommand(Of Boolean)(bImage.Text, Sub() ExecuteInline(ImageHtmlInlineHandler), Function() _behavior.CanInsertImages AndAlso ImageHtmlInlineHandler.CanExecute())
-        _insMov = New DelegateCommand(Of Boolean)(bMovie.Text, Sub() ExecuteInline(VideoHtmlInlineHandler), Function() _behavior.CanInsertMovies AndAlso VideoHtmlInlineHandler.CanExecute())
-        _insAud = New DelegateCommand(Of Boolean)(bAudio.Text, Sub() ExecuteInline(AudioHtmlInlineHandler), Function() _behavior.CanInsertAudio AndAlso AudioHtmlInlineHandler.CanExecute())
+        _insPic = New DelegateCommand(Of Boolean)(bImage.Text, Sub() ExecuteInline(ImageHtmlInlineHandler), Function() _behavior.CanInsertImages AndAlso ImageHtmlInlineHandler.CanExecute()) 'Images
+        _insMov = New DelegateCommand(Of Boolean)(bMovie.Text, Sub() ExecuteInline(VideoHtmlInlineHandler), Function() _behavior.CanInsertMovies AndAlso VideoHtmlInlineHandler.CanExecute()) 'Movie
+        _insAud = New DelegateCommand(Of Boolean)(bAudio.Text, Sub() ExecuteInline(AudioHtmlInlineHandler), Function() _behavior.CanInsertAudio AndAlso AudioHtmlInlineHandler.CanExecute()) 'Audio
         _insCi = New DelegateCommand(Of Boolean)(bCustomInteraction.Text, Sub() ExecuteInline(CustomInteractionHtmlInlineHandler), Function() _behavior.CanInsertCI AndAlso CustomInteractionHtmlInlineHandler.CanExecute())
-        If PopupHtmlInlineHandler IsNot Nothing Then
+        If PopupHtmlInlineHandler IsNot Nothing Then 'temp fix until all templates have been assigned a popuptemplate
             _insPop = New DelegateCommand(Of Boolean)(bPopup.Text, Sub() ExecuteInline(PopupHtmlInlineHandler), Function() _behavior.CanInsertPopup AndAlso PopupHtmlInlineHandler.CanExecute())
         End If
 
         Dim insTbl As New DelegateCommand(Of Boolean)(bTable.Text, Sub() _xhtmlEditorCommands.AddTable(), Function() C1Editor1.CanSelect)
         Dim lckImg As New DelegateCommand(Of Boolean)(bLockEditImg.Text, Sub() _xhtmlEditorCommands.CreateTextBlock(), Function() True)
-        Dim convertToRomanImg As New DelegateCommand(Of Boolean)(bConvertToRoman.Text, Sub() _xhtmlEditorCommands.ConvertListToRomanNumerals(), Function() True)
+        Dim convertToRomanImg As New DelegateCommand(Of Boolean)(bConvertToRoman.Text, Sub() _xhtmlEditorCommands.ConvertListToRomanNumerals(), Function() True) 'TODO : Detectie toevoegen dat het een list betreft?!
         Dim insertSymbolImg As New DelegateCommand(Of Boolean)(bInsertSymbol.Text, Sub() OpenSymbolDialog(), Function() True)
         Dim insertFormulaImg As New DelegateCommand(Of Boolean)(bInsertFormula.Text, Sub() EditMathFormula(), Function() _behavior.CanInsertFormula)
         Dim fitToContentsImg As New DelegateCommand(Of Boolean)(bFitToContents.Text, Sub() FitToContents(), Function() True)
@@ -358,6 +375,7 @@ Public Class XHtmlEditor
         Dim alternativeTTS As New DelegateCommand(Of Boolean)(bTTSAlternative.Text, Sub() AlternativeTextToSpeech(), Function() _behavior.CanSetTextToSpeechOptions)
         Dim deleteTTS As New DelegateCommand(Of Boolean)(bTTSDelete.Text, Sub() RemoveTextToSpeech(), Function() _behavior.CanSetTextToSpeechOptions)
 
+        'couple commands
         CmdManager.Bind(pasteFromWord, bPasteFromWord)
         CmdManager.Bind(pasteAsText, bPasteAsText)
         CmdManager.Bind(copyCmd, bCopy)
@@ -389,7 +407,9 @@ Public Class XHtmlEditor
             bTTSPause.DropDownItems.Add(duration.Name, Nothing, Sub() PauseTextToSpeech(duration.Duration))
         Next
 
+        '==[ContextMenu]==
         Dim inline As New DelegateCommand(Of Boolean)(tsmInline.Text, Sub() DoInlineProperties(), Function() IsInline)
+        '-
         If _formClosing Then
             Return
         End If
@@ -412,8 +432,10 @@ Public Class XHtmlEditor
         Dim removeTable As New DelegateCommand(Of Boolean)(tsmRemoveTable.Text, Sub() _xhtmlEditorCommands.DoRemoveTable(), Function() _xhtmlEditorCommands.IsInTable())
 
         CmdManager.Bind(inline, tsmInline)
+        '-
         CmdManager.Bind(editFormula, tsmEditFormula)
 
+        '-
         CmdManager.Bind(removeRef, tsmRemoveReference)
         CmdManager.Bind(insertRowAbove, tsmInsertRowAbove)
         CmdManager.Bind(insertRowBelow, tsmInsertRowBelow)
@@ -681,20 +703,22 @@ Public Class XHtmlEditor
     End Sub
 
     Private Sub ExecuteInline(inl As HtmlInlineHandler, isNew As Boolean)
-        If (inl.CanExecute()) Then
+        If (inl.CanExecute()) Then 'Check if resource is available.
             Dim inlDialogHandler = New HtmlInlineDialogHandler(inl)
             Dim result As KeyValuePair(Of InlineElement, XmlNode) = inlDialogHandler.Execute()
             If (result.Key IsNot Nothing) Then
                 Dim node = If(_behavior.ContextIdentifier.HasValue,
                               _cntHlp.GiveResourceElementsContextNumber(result.Value.OuterXml.ToString(), _behavior.ContextIdentifier).ToXmlElement(),
                               result.Value)
-                AddNodeAfterCurrentNode(node, isNew)
+                AddNodeAfterCurrentNode(node, isNew) 'add rendered node to html
                 DoAddInlineElementPlaceholder(result.Key, result.Value)
+                'Add inline to observable collection (will cause events to fire!)
                 DoAddInline(result.Key)
                 RaiseContentChanged(Me, EventArgs.Empty)
             End If
             SetFocus()
         Else
+            'Show a resource is missing.
             Dim _logger = LogManager.GetCurrentClassLogger()
             _logger.Log(LogLevel.Warn, String.Format("IxHtmlEditor - While executing inline functionality it is missing a resource: " & My.Resources.ItemLayoutTemplateInlineMultimediaMissing, inl.RequiredResource))
             MessageBox.Show(String.Format(My.Resources.ItemLayoutTemplateInlineMultimediaMissing, inl.RequiredResource))
@@ -778,6 +802,7 @@ Public Class XHtmlEditor
     End Sub
 
     Private Sub HtmlreferencesHandler_ActiveReferenceChanged(sender As Object, e As EventArgs)
+        'ToDo: Update xhtmlViewer to reflect the changes made to the C1Editor.
     End Sub
 
     Private Sub DetermineVisibleStrips(sender As Object, e As CancelEventArgs) Handles mainContextStrip.Opening
@@ -796,7 +821,7 @@ Public Class XHtmlEditor
     End Sub
 
     Private Sub XHtmlEditor2_Load(sender As Object, e As EventArgs) Handles Me.Load
-        BackColor = Color.White
+        BackColor = Color.White 'Force Back Color.
     End Sub
 
     Private Sub HandleCssCombo(sender As Object, e As EventArgs)
@@ -823,6 +848,7 @@ Public Class XHtmlEditor
         End If
 
         If (keyEventArgs.KeyCode = Keys.Delete OrElse keyEventArgs.KeyCode = Keys.Back) AndAlso IsInline Then
+            ' Only the inline-element is selected. Remove it and all related dependent resources.
             RemoveResourcesForSelectedInlineElement()
         ElseIf keyEventArgs.KeyCode = Keys.Delete Then
             Dim nodeToDelete = ShouldRemoveParagraphBeforeTable()
@@ -839,9 +865,11 @@ Public Class XHtmlEditor
 
         If keyEventArgs.KeyCode = Keys.Enter AndAlso ShouldAddParagraphBeforeTable() Then
             AddParagraphBeforeTable()
-            keyEventArgs.Handled = True
+            keyEventArgs.Handled = True    ' the above code replaces normal operation, cancel normal operation...
         End If
 
+        ' Raise ContentChanged event on the first keydown in the editor, so it knows the item is dirty
+        ' Afterwards, only resize the editor if user pressed Shift+Enter, Enter, Delete/Back
         If Not keyEventArgs.Handled Then
             _suppressRaiseContentChangedOnDocumentChanged = True
 
@@ -859,13 +887,13 @@ Public Class XHtmlEditor
         If keyEventArgs.Control AndAlso keyEventArgs.KeyCode = Keys.V Then
             If Me.CanPaste Then
                 If keyEventArgs.Shift Then
-                    DoPasteOperation(True)
+                    DoPasteOperation(True) 'Paste as text
                 Else
                     DoPasteOperation(False)
                 End If
             End If
 
-            keyEventArgs.Handled = True
+            keyEventArgs.Handled = True    ' the above code replaces normal operation, cancel normal operation... 
         End If
     End Sub
 
@@ -875,7 +903,7 @@ Public Class XHtmlEditor
                 Cut()
             End If
 
-            keyEventArgs.Handled = True
+            keyEventArgs.Handled = True    ' the above code replaces normal operation, cancel normal operation... 
         End If
     End Sub
 
@@ -885,16 +913,18 @@ Public Class XHtmlEditor
                 Copy()
             End If
 
-            keyEventArgs.Handled = True
+            keyEventArgs.Handled = True    ' the above code replaces normal operation, cancel normal operation... 
         End If
     End Sub
 
     Private Sub HandleCtrlSpace(keyEventArgs As KeyEventArgs)
         If keyEventArgs.Control AndAlso keyEventArgs.KeyCode = Keys.Space Then
             If keyEventArgs.Shift Then
-                Me.SelectionText = Encoding.Unicode.GetString(BitConverter.GetBytes(160))(0)
+                'Add Nonbreaking space
+                Me.SelectionText = Encoding.Unicode.GetString(BitConverter.GetBytes(160))(0) '160 is utf16 code for  NO-BREAK SPACE
             Else
-                Me.SelectionText = Encoding.Unicode.GetString(BitConverter.GetBytes(8239))(0)
+                'Add narrow Nonbreaking space
+                Me.SelectionText = Encoding.Unicode.GetString(BitConverter.GetBytes(8239))(0) '8239 is utf16 code for NARROW NO-BREAK SPACE
             End If
             keyEventArgs.Handled = True
         End If
@@ -962,8 +992,9 @@ Public Class XHtmlEditor
             RemoveResources(New InlineElement() {inlineElement})
             If (node.NextSibling IsNot Nothing AndAlso node.NextSibling.LocalName = "span") Then
                 Dim span = DirectCast(node.NextSibling, XmlElement)
+                'Check if Id matches that of the removed ID.
                 If (span.HasAttribute("id") AndAlso
-    span.Attributes("id").Value.Contains(id)) Then
+                    span.Attributes("id").Value.Contains(id)) Then
                     Dim prefNode As XmlNode = span
                     For Each n As XmlNode In span.ChildNodes
                         span.ParentNode.InsertAfter(n, prefNode)
@@ -980,12 +1011,14 @@ Public Class XHtmlEditor
         For Each inlineElement In inlineElements
             Dim usedResourceNames = inlineElement.GetResourcesFromResourceParameter()
 
+            ' Remove the layouttemplate, if not used somewhere else
             If Not _behavior.InlineElements.Any(Function(el)
                                                     Return el.Value.Item1.LayoutTemplateSourceName = inlineElement.LayoutTemplateSourceName AndAlso el.Key <> inlineElement.Identifier
                                                 End Function) Then
                 _behavior.RemoveDependency(inlineElement.LayoutTemplateSourceName)
             End If
 
+            ' Remove other, no longer used, resources as well.
             For Each resourceName In usedResourceNames
                 If Not _behavior.InlineElements.Any(Function(el)
                                                         Return el.Key <> inlineElement.Identifier AndAlso el.Value.Item1.GetResourcesFromResourceParameter().Contains(resourceName)
@@ -996,6 +1029,7 @@ Public Class XHtmlEditor
 
             _behavior.InlineElements.Remove(inlineElement.Identifier)
 
+            'Raise event in case of removal of inline custom interaction
             If InlineElementIsCustomInteraction(inlineElement) Then
                 HtmlHandler_RemovedInlineCustomInteraction(Me, New InlineElementEventArgs(inlineElement))
             ElseIf InlineElementIsAspect(inlineElement) Then
@@ -1006,13 +1040,15 @@ Public Class XHtmlEditor
 
     Private Sub C1Editor1_KeyUp(sender As Object, keyEventArgs As KeyEventArgs) Handles C1Editor1.KeyUp
         If (keyEventArgs.KeyCode = Keys.Enter OrElse keyEventArgs.KeyCode = Keys.Delete OrElse keyEventArgs.KeyCode = Keys.Back) Then
+            ' It is possible selection contained more than just the inline element or that backspace was used with the cursor positioned just before the inline element.
+            ' so we need to detect if any of the inline elements are missing in the editor and delete remove those.
             DetectAndRemoveDeletedInlineElements()
         End If
     End Sub
 
     Private Sub C1Editor1_DocumentChanged(sender As Object, e As EventArgs) Handles C1Editor1.DocumentChanged
         If Not _suppressRaiseContentChangedOnDocumentChanged Then
-            RaiseContentChanged(Me, e)
+            RaiseContentChanged(Me, e) 'Will cause a refit. Size determined by HtmlViewer.
             If _raiseContentChangedOnFirstKeyDown.HasValue AndAlso _raiseContentChangedOnFirstKeyDown Then
                 _raiseContentChangedOnFirstKeyDown = False
             End If
@@ -1032,6 +1068,10 @@ Public Class XHtmlEditor
         SetFocus()
     End Sub
 
+    ''' <summary>
+    ''' Inserts 4 non-breaking spaces
+    ''' </summary>
+    ''' <remarks>Replaces TAB-behaviour when tab was not used to go to the next control</remarks>
     Private Sub InsertSpaces()
         Dim range As C1TextRange = Me.C1Editor1.Selection
         range.Select()
@@ -1052,6 +1092,7 @@ Public Class XHtmlEditor
         Set(value As String)
             Dim range As C1TextRange = C1Editor1.Selection.Clone()
             range.Text = value
+            'after inserting text we must collapse selection to the end
             range.Normalize()
             range.Start.MoveTo(range.[End])
             range.[Select]()
@@ -1141,6 +1182,7 @@ Public Class XHtmlEditor
     Private Sub StoreInlineElements()
         Dim inlineElements = SelectedInlineElements()
         If inlineElements.Any() Then
+            ' Store the inline elements, so we can use it again when they are being pasted..
             _lastCopiedInlineElements = inlineElements
         Else
             _lastCopiedInlineElements = Nothing
@@ -1269,6 +1311,9 @@ Public Class XHtmlEditor
         End Get
     End Property
 
+    'Xhtml Editor executes commands by a tool buttons,.. these buttons will look at the Html data to check their state.
+    'See ButtonAdapter.GetButtonState,.. all this is not a PUBLIC API
+    'To make things WAY simpler,.. just use the buttons on the toolbar.
 
     Public ReadOnly Property CurrentStyle As String Implements IXHtmlEditor.CurrentStyle
         Get
@@ -1292,6 +1337,7 @@ Public Class XHtmlEditor
         Dim currentStylesProperty = sel.GetType().GetProperty("CurrentStyle", BindingFlags.NonPublic Or BindingFlags.Instance)
         If currentStylesProperty IsNot Nothing Then
             Dim currentStylesValue = currentStylesProperty.GetValue(sel, Nothing)
+            'in C1Editor v2 there was a property 'CurrentStyles', in v4 the equivalent is the field 'n'
             Dim styleNamesField = currentStylesValue.GetType().GetField("n", BindingFlags.Instance Or BindingFlags.NonPublic)
             If styleNamesField IsNot Nothing Then
                 Dim styleNamesValue = DirectCast(styleNamesField.GetValue(currentStylesValue), IEnumerable(Of String))
@@ -1592,6 +1638,8 @@ Public Class XHtmlEditor
     Private Sub MakeNumbered() Implements IXHtmlEditor.MakeNumbered
         Dim orderedlists = GetSelectedListElements().Where(Function(e) String.Equals(e.Name, "ol", StringComparison.OrdinalIgnoreCase))
 
+        ' Perform click if we have not created an orderedlist yet. 
+        ' Or if the ordered list is of the 'number' type. In which case we perform the click to remove the ordered list.
         If Not orderedlists.Any() OrElse orderedlists.Any(Function(e) e.GetAttribute("type") = "1") Then
             bNumberedList.PerformClick()
 
@@ -1601,6 +1649,7 @@ Public Class XHtmlEditor
             orderedlists = GetSelectedListElements().Where(Function(e) String.Equals(e.Name, "ol", StringComparison.OrdinalIgnoreCase))
         End If
 
+        ' If we end up with an ordered list make sure its type attribute is removed so we have a numbered list (default).
         For Each element In orderedlists
             element.SetAttribute("type", "1")
         Next
@@ -1616,6 +1665,8 @@ Public Class XHtmlEditor
     Private Sub MakeRomanNumbered() Implements IXHtmlEditor.MakeRomanNumbered
         Dim orderedlists = GetSelectedListElements().Where(Function(e) String.Equals(e.Name, "ol", StringComparison.OrdinalIgnoreCase))
 
+        ' Perform click if we have not created an orderedlist yet. 
+        ' Or if the ordered list is of the 'roman' type. In which case we perform the click to remove the ordered list.
         If Not orderedlists.Any() OrElse orderedlists.Any(Function(e) e.GetAttribute("type") = "I") Then
             bNumberedList.PerformClick()
 
@@ -1625,6 +1676,7 @@ Public Class XHtmlEditor
             orderedlists = GetSelectedListElements().Where(Function(e) String.Equals(e.Name, "ol", StringComparison.OrdinalIgnoreCase))
         End If
 
+        ' If we end up with an ordered list make sure its type attribute is removed so we have a numbered list (default).
         For Each element In orderedlists
             element.SetAttribute("type", "I")
         Next
@@ -1667,9 +1719,9 @@ Public Class XHtmlEditor
         If Me.IsInline Then
             Me.DoInlineProperties()
         ElseIf _htmlReferencesHandler.IsReference Then
-            Me._htmlReferencesHandler.InsertElementReference()
+            Me._htmlReferencesHandler.InsertElementReference()  'Images
         ElseIf _htmlFormulaHandler.IsMathMLImage Then
-            Me.EditMathFormula()
+            Me.EditMathFormula()  'Formulas 
         End If
     End Sub
 
@@ -1755,13 +1807,15 @@ Public Class XHtmlEditor
                         End If
                     End If
                     If Not String.IsNullOrEmpty(existingClass) Then
+                        'Strip existing style class first
                         Dim regex As New Regex("\bUserSR\w+\b")
                         existingClass = regex.Replace(existingClass, String.Empty)
                         If Not String.IsNullOrEmpty(existingClass) Then classToSet = String.Concat(Trim(existingClass), " ", classToSet)
                     End If
                     C1Editor1.Selection.ApplyClass(classToSet)
+                    ' colgroups are removed from tables to ensure correct styling of the cells. If any colgroup has been removed then reload the xml.
                     If _cntHlp.RemoveColGroupFromTables(C1Editor1.Selection.Node, DefaultNamespaceManager) Then
-                        C1Editor1.LoadXml(C1Editor1.Document.OuterXml, Nothing)
+                        C1Editor1.LoadXml(C1Editor1.Document.OuterXml, Nothing) 'Make the editor reflect the changes.
                     End If
                 End If
             Catch ex As Exception
@@ -1781,13 +1835,15 @@ Public Class XHtmlEditor
                     Dim existingClass As String = GetExistingClassName()
 
                     If Not String.IsNullOrEmpty(existingClass) Then
+                        'Strip existing language class first
                         Dim regex As New Regex("\bLangTTS\w+\b")
                         existingClass = regex.Replace(existingClass, String.Empty)
                         If Not String.IsNullOrEmpty(existingClass) Then classToSet = String.Concat(Trim(existingClass), " ", classToSet)
                     End If
                     C1Editor1.Selection.ApplyClass(classToSet)
+                    ' colgroups are removed from tables to ensure correct styling of the cells. If any colgroup has been removed then reload the xml.
                     If _cntHlp.RemoveColGroupFromTables(C1Editor1.Selection.Node, DefaultNamespaceManager) Then
-                        C1Editor1.LoadXml(C1Editor1.Document.OuterXml, Nothing)
+                        C1Editor1.LoadXml(C1Editor1.Document.OuterXml, Nothing) 'Make the editor reflect the changes.
                     End If
                 End If
             Catch ex As Exception
@@ -1868,7 +1924,7 @@ Public Class XHtmlEditor
 
     Public ReadOnly Property CanAddInline As Boolean Implements IXHtmlEditor.CanAddInline
         Get
-            Return _behavior.CanInsertControls() AndAlso CanSetFormatting
+            Return _behavior.CanInsertControls() AndAlso CanSetFormatting 'If default inline can be created
         End Get
     End Property
 
@@ -1897,12 +1953,14 @@ Public Class XHtmlEditor
 
             Next
 
+            'and notify
             Me.CommitTransaction()
 
-            C1Editor1.LoadXml(Me.Document.OuterXml, Nothing)
+            C1Editor1.LoadXml(Me.Document.OuterXml, Nothing) 'reload to remove problems. This is a workaround.
 
             RaiseContentChanged(Me, EventArgs.Empty)
         Else
+            'Normal operation
             AddHandler inlineHandler.AddingInlineAspect, AddressOf HtmlHandler_AddedInlineAspect
 
             ExecuteInline(inlineHandler)
@@ -1994,6 +2052,7 @@ Public Class XHtmlEditor
     End Sub
 
     Private Sub C1Editor1_DragDrop(sender As Object, e As DragEventArgs) Handles C1Editor1.DragDrop
+        'Must "paste" dropped content to handle inline elements correctly.
         If Not e.Data.GetDataPresent(DataFormats.Html) Then
             Return
         End If
@@ -2001,6 +2060,7 @@ Public Class XHtmlEditor
         Dim html = e.Data.GetData(DataFormats.Html).ToString()
         Dim droppedInlineElements = DoDropOperation(html)
 
+        ' Replace the id's by the newly assigned id's to prevent the inline element from being removed:
         For Each kvp As KeyValuePair(Of String, String) In droppedInlineElements
             html = html.Replace(kvp.Key, kvp.Value)
         Next
@@ -2008,6 +2068,7 @@ Public Class XHtmlEditor
     End Sub
 
     Private Sub C1Editor1_DragEnter(sender As Object, e As DragEventArgs) Handles C1Editor1.DragEnter
+        ' Only accept HTML data (data from other editor is in HTML format), deny other data-formats:
         If (e.Data.GetDataPresent(DataFormats.Html)) Then
             e.Effect = DragDropEffects.Move
         Else
@@ -2032,16 +2093,17 @@ Public Class XHtmlEditor
         End If
     End Function
 
-    Private _disposedValue As Boolean = False
+    Private _disposedValue As Boolean = False        ' To detect redundant calls
 
+    ' IDisposable
     Private Sub DisposeEditor(ByVal disposing As Boolean)
         If Me._disposedValue Then
             Return
         End If
 
         If disposing Then
-            RemoveHandler DirectCast(cbStyle.Control, ComboBox).SelectionChangeCommitted, AddressOf HandleCssCombo
-            RemoveHandler DirectCast(cbLanguage.Control, ComboBox).SelectionChangeCommitted, AddressOf HandleLanguageCombo
+            RemoveHandler DirectCast(cbStyle.Control, ComboBox).SelectionChangeCommitted, AddressOf HandleCssCombo 'SelectionChangeCommitted is not available directly
+            RemoveHandler DirectCast(cbLanguage.Control, ComboBox).SelectionChangeCommitted, AddressOf HandleLanguageCombo 'SelectionChangeCommitted is not available directly
 
             RemoveHandler C1Editor1.SelectionChanged, AddressOf SelectionChanged
 
@@ -2072,7 +2134,9 @@ Public Class XHtmlEditor
         Me._disposedValue = True
     End Sub
 
+    ' This code added by Visual Basic to correctly implement the disposable pattern.
     Public Overloads Sub Dispose() Implements IDisposable.Dispose, IXHtmlEditor.Dispose
+        ' Do not change this code.  Put cleanup code in Dispose(ByVal disposing As Boolean) above.
         DisposeEditor(True)
         GC.SuppressFinalize(Me)
         MyBase.Dispose()

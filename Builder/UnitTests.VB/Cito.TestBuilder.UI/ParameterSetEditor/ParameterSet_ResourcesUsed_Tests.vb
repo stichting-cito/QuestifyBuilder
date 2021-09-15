@@ -23,6 +23,7 @@ Public Class ParameterSet_ResourcesUsed_Tests
 
     <TestMethod(), TestCategory("UILogic")>
     Public Sub AssertThatNoResourcesAreLost()
+        'Arrange
         FakeDal.AddInline() : FakeDal.AddTransparentPix()
         Dim parametersetEdtr As New ParameterSetsEditor(Nothing, Nothing, False) With
             {.ResourceManager = FakeDal.GetFakeResourceManager()}
@@ -41,8 +42,10 @@ Public Class ParameterSet_ResourcesUsed_Tests
 
         parametersetEdtr.ParameterSets = extractedParameterSets
 
+        'Act
         Dim allUsed As Boolean = _itemResource.DependentResourceCollection.Count = 2
 
+        'Assert
         Assert.IsTrue(allUsed)
     End Sub
 

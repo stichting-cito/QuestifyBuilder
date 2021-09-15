@@ -19,10 +19,15 @@ Public Class AuthorizationManagementDialog
     Private _removedUserApplicationRoleCollection As New EntityCollection
     Private _removedUserBankRoleCollection As New EntityCollection
 
+    ''' <summary>
+    ''' Initializes a new instance of the <see cref="AuthorizationManagementDialog" /> class.
+    ''' </summary>
     Public Sub New()
 
+        ' This call is required by the Windows Form Designer.
         InitializeComponent()
 
+        ' Add any initialization after the InitializeComponent() call.
         ImportButton.Enabled = Questify.Builder.Security.ActiveDirectory.ActiveDirectoryHelper.IsComputerInDomain
 
         Dim currentUser = New UserEntity(CType(Thread.CurrentPrincipal.Identity, TestBuilderIdentity).UserId)
@@ -31,6 +36,10 @@ Public Class AuthorizationManagementDialog
     End Sub
 
 
+    ''' <summary>
+    ''' Builds the role permission data set based on the LLBLGen collections/entities.
+    ''' This is done to make use of the native support that the Janus GridEx offers for datasets.
+    ''' </summary>
     Private Function BuildRolePermissionDataSet() As DataSet
         Dim rolePermissionDS As New DataSet("RolePermissionDS")
 
@@ -49,6 +58,8 @@ Public Class AuthorizationManagementDialog
         addedColumn.Caption = "Permissie onderwerp"
 
         For Each enumValue As TestBuilderPermissionAccess In [Enum].GetValues(GetType(TestBuilderPermissionAccess))
+            'Skip the low-level Data Access Layer permissions and the AnyTask permission because those
+            'permissions are never explicitly granted.
             Dim DalAll As TestBuilderPermissionAccess = (TestBuilderPermissionAccess.DALCreate Or TestBuilderPermissionAccess.DALRead Or TestBuilderPermissionAccess.DALUpdate Or TestBuilderPermissionAccess.DALDelete)
             If enumValue > DalAll AndAlso
                 enumValue <> TestBuilderPermissionAccess.AnyTask Then
@@ -56,9 +67,20 @@ Public Class AuthorizationManagementDialog
             End If
         Next
 
+        'Create primary key on rolePermissions to facilitate row finding on that table.
         rolePermissions.PrimaryKey = New DataColumn() {rolePermissions.Columns("RoleId"), rolePermissions.Columns("PermissionTargetId")}
+        'Link roles and permissions via a relation to facilitate hierarchical display in the gridex.
         rolePermissionDS.Relations.Add("RolePermissions", roleTable.Columns("Id"), rolePermissions.Columns("RoleId"))
 
+        ' Sample of resulting structure:
+        ' Role 1 -
+        '         |
+        '         Permission target A | p1 | p2 | p3 | p4 | p5 | p6 etc...
+        '         Permission target B | p1 | p2 | p3 | p4 | p5 | p6 etc...
+        ' Role 2 -
+        '         |
+        '         Permission target A | p1 | p2 | p3 | p4 | p5 | p6 etc...
+        '         Permission target C | p1 | p2 | p3 | p4 | p5 | p6 etc...
         Dim roles As EntityCollection = AuthorizationFactory.Instance.GetRolePermissionCollection()
 
         For Each role As RoleEntity In roles
@@ -80,6 +102,7 @@ Public Class AuthorizationManagementDialog
                     Debug.Assert(existingRow IsNot Nothing)
                 End If
 
+                'Mark the appropriate permission as granted.
                 existingRow(rolePermission.Permission.Name) = True
             Next
         Next
@@ -95,19 +118,24 @@ Public Class AuthorizationManagementDialog
         RoleEntityBindingSource.DataSource = BuildRolePermissionDataSet()
         RoleEntityBindingSource.DataMember = "Roles"
 
+        'Let the role GridEx retrieve the structure from the dataset created by BuildRolePermissionDataSet()
         RoleGridEX.RetrieveStructure(True)
 
+        'Hide the id colunms.
         RoleGridEX.Tables("Roles").Columns("Id").Visible = False
         RoleGridEX.Tables("RolePermissions").Columns("RoleId").Visible = False
         RoleGridEX.Tables("RolePermissions").Columns("PermissionTargetId").Visible = False
 
+        'Alter the caption of the PermissionTargetName column.
         RoleGridEX.Tables("RolePermissions").Columns("PermissionTargetName").Caption = My.Resources.PermissionTarget
 
+        'Sort roles ascending on Name column.
         Dim column As GridEXColumn = RoleGridEX.RootTable.Columns("Name")
         Dim sortKey As GridEXSortKey = New GridEXSortKey(column, SortOrder.Ascending)
         RoleGridEX.RootTable.SortKeys.Clear()
         RoleGridEX.RootTable.SortKeys.Add(sortKey)
 
+        'Sort permissions ascending on permission target name column.
         column = RoleGridEX.Tables("RolePermissions").Columns("PermissionTargetName")
         sortKey = New GridEXSortKey(column, SortOrder.Ascending)
         RoleGridEX.Tables("RolePermissions").SortKeys.Add(sortKey)
@@ -115,19 +143,24 @@ Public Class AuthorizationManagementDialog
     End Sub
 
     Private Sub ShowUserProperties(ByVal user As UserEntity)
+        'Use a copy of the user object
         Dim userClone = BinaryCloner.DeepClone(user)
 
+        'Prepare and show dialog window
         Dim userProperty As New UserPropertyDialog(user, True, True)
         userProperty.RemovedUserApplicationRoleCollection.AddRange(_removedUserApplicationRoleCollection)
         userProperty.RemovedUserBankRoleCollection.AddRange(_removedUserBankRoleCollection)
         AddHandler userProperty.DataChanged, AddressOf UserProperty_DataChanged
 
         If userProperty.ShowDialog() = DialogResult.OK Then
+            'Collections back because they may have been altered.
             _removedUserApplicationRoleCollection = userProperty.RemovedUserApplicationRoleCollection
             _removedUserBankRoleCollection = userProperty.RemovedUserBankRoleCollection
 
+            'Make the changes visible. 
             UserSelectionGrid.Refresh()
         Else
+            'Rollback
             Dim clonedUser As UserEntity = _users.OfType(Of UserEntity).SingleOrDefault(Function(u) u.Id = userClone.Id)
             If (clonedUser IsNot Nothing) Then
                 _users(_users.IndexOf(clonedUser)) = userClone
@@ -202,11 +235,16 @@ Public Class AuthorizationManagementDialog
 
 
     Private Sub AuthorizationTabControl_Click(ByVal sender As Object, ByVal e As EventArgs) Handles AuthorizationTabControl.Click
+        'Autosize the gridex column, for the first time.
+        'This only works if the columns are visible so that's the reason for the use of this event.
         RoleGridEX.ColumnAutoSizeMode = ColumnAutoSizeMode.AllCellsAndHeader
         RoleGridEX.AutoSizeColumns()
     End Sub
 
+    ''' <param name="e">The <see cref="Janus.Windows.GridEX.RowActionEventArgs" /> instance containing the event data.</param>
     Private Sub RoleGridEX_RowExpanded(ByVal sender As Object, ByVal e As RowActionEventArgs) Handles RoleGridEX.RowExpanded
+        'Autosize the gridex subcolumns, for the first time.
+        'This only works if the columns are visible so that's the reason for the use of this event.
         For i As Integer = 0 To RoleGridEX.Tables("RolePermissions").Columns.Count - 1
             RoleGridEX.Tables("RolePermissions").Columns(i).AutoSizeMode = ColumnAutoSizeMode.AllCellsAndHeader
             RoleGridEX.Tables("RolePermissions").Columns(i).AutoSize()
@@ -230,6 +268,9 @@ Public Class AuthorizationManagementDialog
         ShowUserProperties(UserSelectionGrid.SelectedUser)
     End Sub
 
+    ''' <remarks>
+    ''' Active Directory users only for the moment.
+    ''' </remarks>
     Private Sub ImportButton_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ImportButton.Click
         Dim picker As New DirectoryObjectPicker()
         If picker.ShowDialog(Handle) = DialogResult.OK Then

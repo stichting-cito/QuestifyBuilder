@@ -1,0 +1,58 @@
+<responseProcessing xmlns="http://www.imsglobal.org/xsd/imsqti_v2p2">
+  <responseCondition>
+    <responseIf>
+      <or>
+        <and>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE"/>
+            <baseValue baseType="integer">2</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE2"/>
+            <baseValue baseType="integer">3</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE3"/>
+            <baseValue baseType="integer">5</baseValue>
+          </equal>
+        </and>
+        <and>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE"/>
+            <baseValue baseType="integer">3</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE2"/>
+            <baseValue baseType="integer">2</baseValue>
+          </equal>
+          <equal toleranceMode="exact">
+            <variable identifier="RESPONSE3"/>
+            <baseValue baseType="integer">5</baseValue>
+          </equal>
+        </and>
+      </or>
+      <setOutcomeValue identifier="SCORE">
+        <sum>
+          <baseValue baseType="float">1</baseValue>
+          <variable identifier="SCORE" />
+        </sum>
+      </setOutcomeValue>
+    </responseIf>
+  </responseCondition>
+  <responseCondition>
+    <responseIf>
+      <gte>
+        <variable identifier="SCORE" />
+        <baseValue baseType="float">1</baseValue>
+      </gte>
+      <setOutcomeValue identifier="SCORE">
+        <baseValue baseType="float">1</baseValue>
+      </setOutcomeValue>
+    </responseIf>
+    <responseElse>
+      <setOutcomeValue identifier="SCORE">
+        <baseValue baseType="float">0</baseValue>
+      </setOutcomeValue>
+    </responseElse>
+  </responseCondition>
+</responseProcessing>

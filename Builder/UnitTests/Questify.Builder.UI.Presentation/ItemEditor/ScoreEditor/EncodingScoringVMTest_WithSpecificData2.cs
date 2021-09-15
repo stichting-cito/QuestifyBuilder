@@ -30,9 +30,12 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [SetAssessmentItem(itemWithEncodedText)]
         public void AvailableParamsNamesAreHtmlDecoded()
         {
+            //Arrange
             var encodingViewModel = new EncodingScoringViewModel(ViewAwareStatus, A.Fake<IAddAnswerCategory>());
             ViewAwareStatus.SimulateViewIsLoadedEvent();
+            //Act
             var availableParams = encodingViewModel.AvailableParams.ToList();
+            //Assert
             Assert.AreEqual(1, availableParams.Count);
 
             Assert.AreEqual("De firma V&D heeft in het jaar 2015 zware probleme...", availableParams[0].Value);
@@ -53,16 +56,17 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         {
             Debug.Assert(_currentAssessmentItem != null, "Please use the SetAssessmentItemAttribute");
             var prms = _currentAssessmentItem.Parameters.FlattenParameters().OfType<ScoringParameter>().ToList();
-
+ 
             fakeView.WorkSpaceContextualData.DataValue =
-                new Tuple<IEnumerable<ScoringParameter>, Solution, IItemEditorViewModel>(prms, _currentAssessmentItem.Solution, itemEditorViewModel);
+                new Tuple<IEnumerable<ScoringParameter>, Solution, IItemEditorViewModel>(prms, _currentAssessmentItem.Solution,itemEditorViewModel);
         }
 
-        protected override IEnumerable<ComposablePartCatalog> GetTypesForInjection()
+        protected override IEnumerable<ComposablePartCatalog>GetTypesForInjection()
         {
             return new[] { MyComposer.NoExportTypes() };
         }
 
+        #region DATA
 
         const string itemWithEncodedText = @"<assessmentItem xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" identifier=""TI_HotText"" title=""TI_HotText"" layoutTemplateSrc=""ilt.hottext"">
               <solution>
@@ -107,5 +111,6 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
               </parameters>
             </assessmentItem>";
 
+        #endregion
     }
 }

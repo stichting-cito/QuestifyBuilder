@@ -30,11 +30,13 @@ Namespace QTI.PackageCreators.QTI30
     Public Class PackageCreator
         Inherits PackageCreatorBase(Of PublicationRequest)
 
+
         Private Shared ReadOnly Lock As New Object
         Private Shared ReadOnly LockDependencies As New Object
         Private _listOfItems As ConcurrentDictionary(Of String, List(Of KeyValuePair(Of String, Tuple(Of Double, Integer))))
 
         Private ReadOnly _encryptionHandlerTypeName As String
+
         Private _itemPreviewServiceLocation As String = String.Empty
         Private _replacedIds As ConcurrentDictionary(Of String, String)
         Private _facade As PackageCreatorFacade
@@ -65,6 +67,7 @@ Namespace QTI.PackageCreators.QTI30
         Public AdditionalItemCssStyles As String = String.Empty
         Public CurrentAssessmentTest As GeneralAssessmentTest
         Public CurrentAssessmentPackage As TestPackage
+        Public AnonymizeItemIdentifiers As Boolean = False
 
         Public Property TimeStamper As ITimeStamp
 
@@ -103,22 +106,24 @@ Namespace QTI.PackageCreators.QTI30
         Public Property TypeOfPackage As PackageCreatorConstants.PackageType
 
         Public Enum QTIManifestResourceType
-            <DescriptionAttribute("imsqti_test_xmlv2p2")>
+            <Description("imsqti_test_xmlv2p2")>
             imsqti_test
-            <DescriptionAttribute("imsqti_item_xmlv2p2")>
+            <Description("imsqti_item_xmlv2p2")>
             imsqti_item
-            <DescriptionAttribute("associatedcontent/xmlv1p0/learning-application-resource")>
+            <Description("associatedcontent/xmlv1p0/learning-application-resource")>
             associatedcontent
-            <DescriptionAttribute("controlfile/xmlv1p0")>
+            <Description("controlfile/xmlv1p0")>
             controlfile
-            <DescriptionAttribute("webcontent")>
+            <Description("webcontent")>
             webcontent
-            <DescriptionAttribute("ade-theme")>
+            <Description("ade-theme")>
             theme
-            <DescriptionAttribute("imsqti_module")>
+            <Description("imsqti_module")>
             adaptive_module
-            <DescriptionAttribute("imsqti_driver")>
+            <Description("imsqti_driver")>
             adaptive_driver
+            <Description("shared_stimulus")>
+            sharedstimulus
         End Enum
 
         Public Overridable Function Create(bw As BackgroundWorker, bankId As Integer, testNames As IList(Of String), testPackageNames As IList(Of String), ByVal targetPackageFileSystemInfo As FileInfo, validate As Boolean, testToPublish As String, isPreview As Boolean) As Boolean
@@ -159,6 +164,8 @@ Namespace QTI.PackageCreators.QTI30
             ElseIf testPackage IsNot Nothing Then
                 TypeOfPackage = PackageCreatorConstants.PackageType.TestPackagePublication
                 CurrentAssessmentPackage = testPackage
+            Else
+                TypeOfPackage = PackageCreatorConstants.PackageType.TestPublication
             End If
             Dim returnValue As Boolean
             Dim sessionContext As ISessionContext = New SessionContext()
@@ -614,23 +621,20 @@ Namespace QTI.PackageCreators.QTI30
             Return xsdFolders
         End Function
 
-        Public Overridable Sub CopySchemaFiles(xsdFolder As String)
-            CopySchemas(My.Resources.schema_qti30, xsdFolder)
+        Public Overridable Sub CopySchemaFiles(targetPath As String)
+            CopySchemas(My.Resources.schema_qti30, targetPath)
         End Sub
 
-        Public Overridable Function GetAssessmentTestViewType() As String
-            Return GenericTestModelPlugin.PLUGIN_NAME
-        End Function
+        Public Overridable Sub CopyExtensionSchemaFile(targetPath As String)
+        End Sub
 
         Protected Sub CopySchemas(schemasZip As Byte(), xsdFolder As String)
-            If Not New DirectoryInfo(xsdFolder).Exists Then
-                Using memoryStream As New MemoryStream(schemasZip, 0, schemasZip.Count)
-                    memoryStream.Position = 0
-                    Using streamReader As New StreamReader(memoryStream)
-                        ChainHandlerHelper.ExtractZipToDirectory(streamReader, xsdFolder)
-                    End Using
+            Using memoryStream As New MemoryStream(schemasZip, 0, schemasZip.Count)
+                memoryStream.Position = 0
+                Using streamReader As New StreamReader(memoryStream)
+                    ChainHandlerHelper.ExtractZipToDirectory(streamReader, xsdFolder)
                 End Using
-            End If
+            End Using
         End Sub
 
         Public Sub ValidationEventHandler(ByVal sender As Object, ByVal e As ValidationEventArgs)

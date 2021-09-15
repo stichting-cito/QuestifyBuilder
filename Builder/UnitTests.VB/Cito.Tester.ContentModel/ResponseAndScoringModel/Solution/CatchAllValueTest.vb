@@ -8,6 +8,7 @@ Public Class CatchAllValueTest : Inherits SerializationTestBase
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("Solution")>
     Public Sub SerializeTestAndCompare()
+        'Arrange
         Dim solution = New Solution
         Dim conceptFinding = New ConceptFinding With {.Id = "Id needs to be set"}
         Dim conceptFact = New ConceptFact
@@ -17,9 +18,11 @@ Public Class CatchAllValueTest : Inherits SerializationTestBase
         conceptFact.Values.Add(conceptValue)
         conceptFinding.Facts.Add(conceptFact)
         solution.Findings.Add(conceptFinding)
-
+       
+        'Act
         Dim result = DoSerialize(Of Solution)(solution)
-
+       
+        'Assert
         Assert.IsTrue(XmlTools.DeepEqualsWithNormalization(New XDocument(_recorderd), New XDocument(result), Nothing))
     End Sub
 

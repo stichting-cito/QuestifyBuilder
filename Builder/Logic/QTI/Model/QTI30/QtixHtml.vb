@@ -125,7 +125,9 @@ Namespace QTI.Model.QTI30
         End Function
 
         Private Function GetAndProcessDepenciesFromTemplate(ByRef content As String) As List(Of String)
-            Return If(String.IsNullOrWhiteSpace(content), _dependencies, _dependencies.Union(_resourceHelper.ProcessResources(content, _resources, _resourceMimeTypeDictionary, _isPreview, _itemCode)).ToList())
+            Return If(String.IsNullOrWhiteSpace(content),
+                _dependencies,
+                _dependencies.Union(_resourceHelper.ProcessResources(content, _resources, _resourceMimeTypeDictionary, _isPreview, _itemCode)).ToList())
         End Function
 
         Public Overrides Function ToString() As String

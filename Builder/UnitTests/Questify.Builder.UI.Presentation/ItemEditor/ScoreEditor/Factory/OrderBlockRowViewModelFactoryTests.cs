@@ -17,47 +17,65 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void ScoringParameterWithSingleParamCollection_NoSolution_CreatesSingleBlockRowVM()
         {
+            //Arrange
             var solution = new Solution();
             var param = new OrderScoringParameter() { Value = new ParameterSetCollection() };
 
             param.Value.Add(new ParameterCollection() { Id = "A" });
+            //Act
             CombinedScoringMapKey combinedKey = param.AsCombinedScoringMap();
             var result = BlockRowViewModelFactory.CreateInstances(combinedKey, solution)
                 .ToList();
+            //Assert
             Assert.AreEqual(1, result.Count);
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void CreatedTypeIs_OrderBlockRowViewModel()
         {
+            //Arrange
             var solution = new Solution();
             var param = new OrderScoringParameter() { Value = new ParameterSetCollection() };
             param.Value.Add(new ParameterCollection() { Id = "A" });
+            //Act
             var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(), solution)
-    .ToList();
+                .ToList();
+            //Assert
             Assert.IsInstanceOfType(result.First(), typeof(OrderBlockRowViewModel));
         }
 
+        /// <summary>
+        /// ScoringParameter with three parameter collection_ no solution_ creates three block row vm.
+        /// </summary>
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void ScoringParameterWithThreeParamCollection_NoSolution_CreatesThreeBlockRowVM()
         {
+            //Arrange
             var solution = new Solution();
             var param = new OrderScoringParameter() { Value = new ParameterSetCollection() };
             param.Value.Add(new ParameterCollection() { Id = "A" });
             param.Value.Add(new ParameterCollection() { Id = "B" });
             param.Value.Add(new ParameterCollection() { Id = "C" });
+            //Act
             var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(0), solution, 0)
-    .ToList();
+                .ToList();
+            //Assert
             Assert.AreEqual(3, result.Count);
         }
 
+        /// <summary>
+        /// ScoringParameter with three parameter collection_ no solution_ creates three block row vm.
+        /// </summary>
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void GetAllBlockRowViewModelsFromFactSet0()
         {
+            //Arrange
             var solution = _data.To<Solution>();
             var param = new OrderScoringParameter() { FindingOverride = "sharedOrderFinding", ControllerId = "OC" }.AddSubParameters("A", "B");
+            //Act
             var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(0), solution, 0)
-    .ToList();
+                .ToList();
+            //Assert
             Assert.AreEqual(2, result.Count);
             Assert.IsTrue(result[0].Name.EndsWith("1"));
             Assert.IsTrue(result[1].Name.EndsWith("2"));
@@ -66,23 +84,29 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv"), ExpectedException(typeof(NotImplementedException))]
         public void InsertingBlockRowViewModelThrowsException()
         {
+            //Arrange
             var solution = _data.To<Solution>();
             var param = new OrderScoringParameter() { FindingOverride = "sharedOrderFinding", ControllerId = "OC" }.AddSubParameters("A", "B");
             var viewModels = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(0), solution, 0).ToList();
+            //Act
             var result = BlockRowViewModelFactory.InsertInstance(param, viewModels[1].ScoreKey, 0, 1, solution);
+            //Assert
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void EachScoreSubParameterBecomesAMovableElement()
         {
+            //Arrange
             var solution = _data.To<Solution>();
             var param = new OrderScoringParameter() { FindingOverride = "sharedOrderFinding", ControllerId = "OC", }.AddSubParameters("A", "B");
 
             param.Value[0].InnerParameters.Add(new PlainTextParameter() { Name = "elementLabel", Value = "alinea 1" });
 
+            //Act
             var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(0), solution, 0)
-    .ToList();
+                .ToList();
 
+            //Assert
             foreach (IBlockRowViewModel brvw in result)
             {
                 OrderBlockRowViewModel obrvm = (OrderBlockRowViewModel)(brvw);
@@ -95,21 +119,25 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void MovableElementValuesShouldNotBeEscaped()
         {
+            //Arrange
             var item = _data2.To<AssessmentItem>();
             var parameters = item.Parameters.DeepFetchInlineScoringParameters();
             var param = parameters.OfType<OrderScoringParameter>().First();
 
+            //Act
             var combinedScoringMap = param.AsCombinedScoringMap();
             var result = BlockRowViewModelFactory.CreateInstances(combinedScoringMap, item.Solution, 0).ToList();
 
+            //Assert
             var vm = (OrderBlockRowViewModel)result.First();
             Assert.AreEqual(">", vm.MovableElements.DataValue[0].Value);
             Assert.AreEqual("<", vm.MovableElements.DataValue[1].Value);
             Assert.AreEqual("&", vm.MovableElements.DataValue[2].Value);
         }
 
+        #region data
         readonly XElement _data =
-    XElement.Parse(@"<solution>
+            XElement.Parse(@"<solution>
                                 <keyFindings>
                                   <keyFinding id=""sharedOrderFinding"" scoringMethod=""Dichotomous"">
                                     <keyFactSet>
@@ -270,6 +298,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
               </parameters>
             </assessmentItem>");
 
+        #endregion
 
     }
 }

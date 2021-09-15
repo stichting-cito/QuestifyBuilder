@@ -21673,62 +21673,6 @@ Namespace QTI.Xsd.QTI30
 
         Private itemsElementNameField() As ItemsChoiceType54
 
-        <System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-associate-interaction", GetType(AssociateInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-choice-interaction", GetType(ChoiceInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-custom-interaction", GetType(CustomInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-drawing-interaction", GetType(DrawingInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-extended-text-interaction", GetType(ExtendedTextInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-gap-match-interaction", GetType(GapMatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-associate-interaction", GetType(GraphicAssociateInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-gap-match-interaction", GetType(GraphicGapMatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-order-interaction", GetType(GraphicOrderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hotspot-interaction", GetType(HotspotInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hottext-interaction", GetType(HotTextInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-match-interaction", GetType(MatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-media-interaction", GetType(MediaInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-order-interaction", GetType(OrderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-portable-custom-interaction", GetType(PortableCustomInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-position-object-stage", GetType(PositionObjectStageType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-select-point-interaction", GetType(SelectPointInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-slider-interaction", GetType(SliderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-upload-interaction", GetType(UploadInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
-        Public Property Items() As Object()
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
         Public Property ItemsElementName() As ItemsChoiceType54()
@@ -23256,6 +23200,8 @@ Namespace QTI.Xsd.QTI30
 
         Private identifierField As String
 
+        Private titleField As String
+
         Private navigationmodeField As TestPartTypeNavigationmode
 
         Private submissionmodeField As TestPartTypeSubmissionmode
@@ -23328,6 +23274,16 @@ Namespace QTI.Xsd.QTI30
             End Get
             Set
                 Me.identifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
+        Public Property title() As String
+            Get
+                Return Me.titleField
+            End Get
+            Set(value As String)
+                Me.titleField = value
             End Set
         End Property
 

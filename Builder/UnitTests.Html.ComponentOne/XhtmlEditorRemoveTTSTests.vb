@@ -10,6 +10,7 @@ Public Class XhtmlEditorRemoveTTSTests
 
     <TestMethod()>
     Public Sub RemoveAlternativeTTSClassShownTextSelectedTest()
+        'Arrange
         Dim inputHtml As New XDocument(<html xmlns="http://www.w3.org/1999/xhtml">
                                            <body style="padding: 2px; margin: 0; box-sizing: border-box; height: auto; width: 100%;">
                                                <p>Hier wordt iets <span class="TTSAlternative"><span class="TTSAlias">Alternatief </span>moois </span>verklankt</p>
@@ -22,7 +23,7 @@ Public Class XhtmlEditorRemoveTTSTests
         Dim doc = New XmlDocument()
         doc.LoadXml(inputHtml.ToString())
         editor.Document = doc
-        editor.Select(30, 0)
+        editor.Select(30, 0) 'set cursor in 'moois'
 
         RemoveTTSAndCompare(editor, expected)
         editor.Dispose()
@@ -30,6 +31,7 @@ Public Class XhtmlEditorRemoveTTSTests
 
     <TestMethod()>
     Public Sub RemoveAlternativeTTSClassAlternativeTextSelectedTest()
+        'Arrange
         Dim inputHtml As New XDocument(<html xmlns="http://www.w3.org/1999/xhtml">
                                            <body style="padding: 2px; margin: 0; box-sizing: border-box; height: auto; width: 100%;">
                                                <p>Hier wordt iets <span class="TTSAlternative"><span class="TTSAlias">Alternatief </span>moois </span>verklankt</p>
@@ -42,7 +44,7 @@ Public Class XhtmlEditorRemoveTTSTests
         Dim doc = New XmlDocument()
         doc.LoadXml(inputHtml.ToString())
         editor.Document = doc
-        editor.Select(25, 0)
+        editor.Select(25, 0) 'set cursor in 'Alternatief'
 
         RemoveTTSAndCompare(editor, expected)
         editor.Dispose()
@@ -51,6 +53,7 @@ Public Class XhtmlEditorRemoveTTSTests
 
     <TestMethod()>
     Public Sub RemovePauseTTSClassTest()
+        'Arrange
         Dim inputHtml As New XDocument(<html xmlns="http://www.w3.org/1999/xhtml">
                                            <body style="padding: 2px; margin: 0; box-sizing: border-box; height: auto; width: 100%;">
                                                <p>En hier staat een <span class="TTSPause PauseDuration_200">Kort</span> pauze in</p>
@@ -63,7 +66,7 @@ Public Class XhtmlEditorRemoveTTSTests
         Dim doc = New XmlDocument()
         doc.LoadXml(inputHtml.ToString())
         editor.Document = doc
-        editor.Select(19, 0)
+        editor.Select(19, 0) 'set cursor in 'Kort'
 
         RemoveTTSAndCompare(editor, expected)
         editor.Dispose()
@@ -71,6 +74,7 @@ Public Class XhtmlEditorRemoveTTSTests
 
     <TestMethod()>
     Public Sub RemoveMuteTTSClassTest()
+        'Arrange
         Dim inputHtml As New XDocument(<html xmlns="http://www.w3.org/1999/xhtml">
                                            <body style="padding: 2px; margin: 0; box-sizing: border-box; height: auto; width: 100%;">
                                                <p>Dit hoeft <span class="TTSMute">niet</span> uitgesproken</p>
@@ -83,7 +87,7 @@ Public Class XhtmlEditorRemoveTTSTests
         Dim doc = New XmlDocument()
         doc.LoadXml(inputHtml.ToString())
         editor.Document = doc
-        editor.Select(10, 0)
+        editor.Select(10, 0) 'set cursor in 'niet'
 
         RemoveTTSAndCompare(editor, expected)
         editor.Dispose()
@@ -91,6 +95,7 @@ Public Class XhtmlEditorRemoveTTSTests
 
     <TestMethod()>
     Public Sub RemoveTTSLanguageTest()
+        'Arrange
         Dim inputHtml As New XDocument(<html xmlns="http://www.w3.org/1999/xhtml">
                                            <body style="padding: 2px; margin: 0; box-sizing: border-box; height: auto; width: 100%;">
                                                <p>Dit is <span class="LangTTSFrans">en francais</span> gesproken</p>
@@ -103,16 +108,18 @@ Public Class XhtmlEditorRemoveTTSTests
         Dim doc = New XmlDocument()
         doc.LoadXml(inputHtml.ToString())
         editor.Document = doc
-        editor.Select(10, 0)
+        editor.Select(10, 0) 'set cursor in 'en francais'
 
         RemoveTTSAndCompare(editor, expected)
         editor.Dispose()
     End Sub
 
     Private Sub RemoveTTSAndCompare(editor As XHtmlEditor, expected As XDocument)
+        'Act
         editor.RemoveTextToSpeech()
         Dim result = XDocument.Parse(editor.Document().DocumentElement.OuterXml)
 
+        'Assert
         result.Should().BeEquivalentTo(expected)
     End Sub
 End Class

@@ -12,13 +12,15 @@ Public Class AddTableDialog
 
     Public Sub New(ByVal parentLocation As Point, ByVal editor As XHtmlEditor)
 
+        ' This call is required by the designer.
         InitializeComponent()
 
+        ' Add any initialization after the InitializeComponent() call.
         Me.Location = parentLocation
         _editor = editor
     End Sub
 
-    Public ReadOnly Property TableRows() As Integer
+   Public ReadOnly Property TableRows() As Integer
         Get
             Return _selectedRow + 1
         End Get
@@ -78,8 +80,15 @@ Public Class AddTableDialog
         Me.Close()
     End Sub
 
+    ''' <summary>
+    ''' Upon form load the table with panels for defining the table dimensions is constructed.
+    ''' </summary>
+    ''' <param name="sender">The source of the event.</param>
+    ''' <param name="e">The <see cref="System.EventArgs" /> instance containing the event data.</param>
     Private Sub AddTableDialog_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        'Start of by clearing the layout panel control because the child controls stay alive
+        'between subsequent calls.
         TableLayoutPanelSelectCells.Controls.Clear()
 
         For i As Integer = 0 To 9
@@ -99,6 +108,12 @@ Public Class AddTableDialog
         Next
     End Sub
 
+    ''' <summary>
+    ''' If the user enters the area above or left from the panels that define the table dimensions the 
+    ''' panels are rendered to reflect the situation of no selection.
+    ''' </summary>
+    ''' <param name="sender">The source of the event.</param>
+    ''' <param name="e">The <see cref="System.EventArgs" /> instance containing the event data.</param>
     Private Sub AddTableDialog_MouseEnter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.MouseEnter
         Dim ClientCoord As Drawing.Point = Me.PointToClient(Control.MousePosition)
 
@@ -107,16 +122,30 @@ Public Class AddTableDialog
         End If
     End Sub
 
+#Region "ITableItemDialog Members"
 
+    ''' <summary>
+    ''' Binds data from the item to GUI controls on the form.
+    ''' Data can be bound either using the <see cref="Control.DataBindings"/> collection or any other way allowing 
+    ''' to read data from the item and write it back.
+    ''' </summary>
+    ''' <param name="item">The item to be bound to the GUI controls.</param>
     Private Sub ITableItemDialog_BindData(ByVal item As XHTMLTableItem) Implements ITableItemDialog.BindData
         _item = item
         _item.Border = 0
         _item.Style = String.Format("BORDER-COLLAPSE: collapse; ")
     End Sub
 
+    ''' <summary>
+    ''' Shows the form with the specified owner to the user.
+    ''' </summary>
+    ''' <param name="owner">Any object that implements <see cref="System.Windows.Forms.IWin32Window"/> and represents 
+    ''' the top-level window that will own this form.</param>
+    ''' <returns>True if the form was displayed successfully and the item was changed.</returns>
     Private Function ITableItemDialog_Show(ByVal owner As IWin32Window) As Boolean Implements ITableItemDialog.Show
         Return ShowDialog(owner) = DialogResult.OK
     End Function
 
+#End Region
 
 End Class

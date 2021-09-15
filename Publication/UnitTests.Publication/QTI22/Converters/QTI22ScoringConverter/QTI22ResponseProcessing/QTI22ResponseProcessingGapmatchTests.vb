@@ -50,6 +50,8 @@ Public Class QTI22ResponseProcessingGapmatchTests
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessing")>
     Public Sub GetResponseProcessingInRightOrder_Dichotomous_Test()
+        'The gaps are actually guids in the itembody (but are renamed later on during publication to G1, G2, etc)
+        'The response processing should be in the right order (so G1, G2, etc) and not the order of the guids
         GetResponseProcessingTest(_itemBody2, _finding8, _responseProcessing8, GetGapMatchScoringParams_2, False)
     End Sub
 
@@ -65,6 +67,7 @@ Public Class QTI22ResponseProcessingGapmatchTests
 
     Public Sub GetResponseProcessingTest(itemBody As XElement, findingElement As XElement, responseProcessingElement As XElement, scoringPrms As HashSet(Of ScoringParameter), Optional fixGapNames As Boolean = True)
 
+        'Arrange
         Dim responseIdentifierAttributeList As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(itemBody)
         Dim scoringHelper = New QTI22CombinedScoringConverter(scoringPrms)
 
@@ -76,6 +79,7 @@ Public Class QTI22ResponseProcessingGapmatchTests
         Dim processor = New QTI22ResponseProcessing(responseIdentifierAttributeList, s, finding, findingIndex, scoringPrms, New QTI22CombinedScoringConverter, False)
         Dim assessmentItemType As New AssessmentItemType()
         assessmentItemType.itemBody = CType(ChainHandlerHelper.StringToObject(itemBody.ToString, GetType(ItemBodyType)), ItemBodyType)
+        'Act
         Dim result = processor.GetProcessing().ToXmlDocument
         If fixGapNames Then
             assessmentItemType.responseProcessing = CType(ChainHandlerHelper.StringToObject(result.OuterXml.Replace("<responseProcessing>", "<responseProcessing xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns=""http://www.imsglobal.org/xsd/imsqti_v2p2"">"), GetType(ResponseProcessingType)), ResponseProcessingType)
@@ -83,6 +87,7 @@ Public Class QTI22ResponseProcessingGapmatchTests
             scoringHelper.UpdateDocument(s, itemDocument, Nothing, Nothing)
             result = XElement.Parse(XDocument.Parse(itemDocument.OuterXml).Descendants.FirstOrDefault(Function(d) d.Name.LocalName = "responseProcessing").ToString.Replace("xmlns=""http://www.imsglobal.org/xsd/imsqti_v2p2""", String.Empty)).ToXmlDocument
         End If
+        'Assert
         Assert.IsTrue(UnitTestHelper.AreSame(responseProcessingElement, result))
     End Sub
 

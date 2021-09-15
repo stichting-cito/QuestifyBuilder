@@ -10,10 +10,12 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.Behaviours
         [TestMethod]
         public void OnlyLettersAreValidWhenAlphaRange()
         {
+            //Arrange
             var validator = new AlphaNumericRangeValidator();
             validator.NumericIdentifiers = false;
             validator.AlternativesCount = 26;
 
+            //Act, Assert
             Assert.IsTrue(validator.IsInputAllowed("A"));
             Assert.IsFalse(validator.IsInputAllowed("1"));
             Assert.IsFalse(validator.IsInputAllowed("."));
@@ -23,10 +25,12 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.Behaviours
         [TestMethod]
         public void OnlyDigitsAreValidWhenNumericRange()
         {
+            //Arrange
             var validator = new AlphaNumericRangeValidator();
             validator.NumericIdentifiers = true;
             validator.AlternativesCount = 11;
 
+            //Act, Assert
             Assert.IsFalse(validator.IsInputAllowed("A"));
             Assert.IsTrue(validator.IsInputAllowed("1"));
             Assert.IsFalse(validator.IsInputAllowed("."));

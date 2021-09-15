@@ -79,7 +79,7 @@ Namespace QTI.Converters.XhtmlConverter.QTI30
 
             Select Case elementName.ToLower
                 Case "h1", "h2", "h3", "h4", "h5", "h6", "p", "span", "div", "pre"
-                    returnValue = "class|id|label|xml:base|xml:lang|xsi:type|data-alias|data-dep-dialog~|data-stimulus~"
+                    returnValue = "class|id|label|xml:base|xml:lang|xsi:type|data-alias|data-dep-dialog~|data-dep-height|data-stimulus~"
                 Case "ol", "sup", "sub", "tbody", "tr", "ul"
                     returnValue = "class|id|label|xml:base|xml:lang|xsi:type"
                 Case "li"

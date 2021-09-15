@@ -9,14 +9,15 @@ using Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels.ScoreEditors.Fa
 
 namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor.ScoreEditor.Factory
 {
-    [TestClass]
+    [TestClass]      
     public class InlineChoiceBlockRowViewModelFactoryTests
     {
-        [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
+        [TestMethod,TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void CreateInstancesOfInlineChoiceBlockRowViewModel()
         {
             try
             {
+                //Arrange
                 var solution = new Solution();
                 var param = new InlineChoiceScoringParameter() { Label = "Roman", Value = new ParameterSetCollection() };
                 param.Value.Add(new ParameterCollection() { Id = "A" });
@@ -29,6 +30,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                 var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(), solution)
                     .ToList();
 
+                //Assert
                 Assert.AreEqual(1, result.Count);
                 Assert.IsInstanceOfType(result.First(), typeof(InlineChoiceBlockRowViewModel));
                 var vm = (InlineChoiceBlockRowViewModel)result.First();
@@ -47,17 +49,18 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                 }
                 throw;
             }
-
+            
         }
 
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void DisplayValueShouldBeMappedOnScoreKey()
         {
+            //Arrange
             var solution = new Solution();
             solution.Findings.Add(new KeyFinding("Opgave"));
             solution.Findings[0].Facts.Add(new KeyFact("B-InlineA"));
-            var param = new InlineChoiceScoringParameter() { FindingOverride = "Opgave", InlineId = "InlineA", Label = "Roman", Value = new ParameterSetCollection() };
+            var param = new InlineChoiceScoringParameter() { FindingOverride="Opgave", InlineId="InlineA", Label = "Roman", Value = new ParameterSetCollection() };
             param.Value.Add(new ParameterCollection() { Id = "A" });
             param.Value.Add(new ParameterCollection() { Id = "B" });
             param.Value.Add(new ParameterCollection() { Id = "C" });
@@ -67,6 +70,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             param.Value[2].InnerParameters.Add(new PlainTextParameter() { Value = "3e keuze" });
             var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(), solution).ToList();
 
+            //Assert
             Assert.AreEqual(1, result.Count);
             var vm = (InlineChoiceBlockRowViewModel)result.First();
 
@@ -75,8 +79,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
-        public void ChoiceIn2FactSets_VerifyResultSet1()
+        public void  ChoiceIn2FactSets_VerifyResultSet1()
         {
+            //Arrange
             var solution = new Solution();
             solution.Findings.Add(new KeyFinding("Opgave"));
             solution.Findings[0].KeyFactsets.Add(new KeyFactSet());
@@ -91,8 +96,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             param.Value[0].InnerParameters.Add(new PlainTextParameter() { Value = "1e keuze" });
             param.Value[1].InnerParameters.Add(new PlainTextParameter() { Value = "2e keuze" });
             param.Value[2].InnerParameters.Add(new PlainTextParameter() { Value = "3e keuze" });
-            var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(0, 1), solution, 0)
+            var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(0,1), solution,0)
                .ToList();
+            //Assert
             Assert.AreEqual(1, result.Count);
             var vm = (InlineChoiceBlockRowViewModel)result.First();
             Assert.AreEqual("B", vm.DisplayValue);
@@ -101,6 +107,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void ChoiceIn2FactSets_VerifyResultSet2()
         {
+            //Arrange
             var solution = new Solution();
             solution.Findings.Add(new KeyFinding("Opgave"));
             solution.Findings[0].KeyFactsets.Add(new KeyFactSet());
@@ -115,8 +122,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             param.Value[0].InnerParameters.Add(new PlainTextParameter() { Value = "1e keuze" });
             param.Value[1].InnerParameters.Add(new PlainTextParameter() { Value = "2e keuze" });
             param.Value[2].InnerParameters.Add(new PlainTextParameter() { Value = "3e keuze" });
-            var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(0, 1), solution, 1)
+            var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(0, 1), solution,1)
                .ToList();
+            //Assert
             Assert.AreEqual(1, result.Count);
             var vm = (InlineChoiceBlockRowViewModel)result.First();
             Assert.AreEqual("C", vm.DisplayValue);
@@ -126,6 +134,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void ChangeValueShouldUpdateDisplayValue()
         {
+            //Arrange
             var solution = new Solution();
             solution.Findings.Add(new KeyFinding("Opgave"));
             solution.Findings[0].Facts.Add(new KeyFact("B-InlineA"));
@@ -143,8 +152,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             Assert.AreEqual(1, result.Count);
             var vm = (InlineChoiceBlockRowViewModel)result.First();
             vm.Value.DataValue = "C";
-
+            
             Assert.AreEqual("C", vm.DisplayValue);
-        }
+        }    
     }
 }

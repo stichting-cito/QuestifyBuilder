@@ -2,6 +2,9 @@
 Imports System.Xml.Linq
 Imports Cito.Tester.ContentModel.ResponseAndScoringModel.Solution.ConcreteScoring
 
+''' <summary>
+''' These test exist to discover old behavior.
+''' </summary>
 <TestClass>
 <ScoringMethod(ScoringFactory.Methods.V23_Scoring)>
 Public Class V23Scoring_ScoreBehaviorCheckTest
@@ -10,25 +13,32 @@ Public Class V23Scoring_ScoreBehaviorCheckTest
     <TestMethod, TestCategory("ResponseAndScoringModel")>
     <Description("This test proofes that v2.3 scoring treats a factset when partial correctly answerd that the outcome is 1. Polytomous scoring.")>
     Public Sub ScoreFactSets_ANotB_or_NotAB_With_AB_Expects_1()
-        Dim solution = toSolution(_2factSetsAB)
-        Dim response = toResponse(incorrectResponse_2factSetsAB)
-
+        'Arrange
+        Dim solution = toSolution(_2factSetsAB) 'It is either a and not b, or not a and b
+        Dim response = toResponse(incorrectResponse_2factSetsAB) 'We respond with A and B 
+        
+        'Act
         Dim result = solution.ScoreSolution(response)
-
+       
+        'Assert
         Assert.AreEqual(1, result)
     End Sub
 
     <TestMethod, TestCategory("ResponseAndScoringModel")>
     <Description("This test proofes that v2.3 scoring treats a factset when  correctly answerd that the outcome is 2. Polytomous scoring.")>
     Public Sub ScoreFactSets_ANotB_or_NotAB_With_ANotB_Expects_2()
-        Dim solution = toSolution(_2factSetsAB)
-        Dim response = toResponse(response_2factSetsANotB)
-
+        'Arrange
+        Dim solution = toSolution(_2factSetsAB) 'It is either a and not b, or not a and b
+        Dim response = toResponse(response_2factSetsANotB) 'We respond with A and !B 
+       
+        'Act
         Dim result = solution.ScoreSolution(response)
-
+       
+        'Assert
         Assert.AreEqual(2, result)
     End Sub
 
+#Region "Data"
 
     ReadOnly _2factSetsAB As XElement = <solution xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                                             <keyFindings>
@@ -119,5 +129,6 @@ Public Class V23Scoring_ScoreBehaviorCheckTest
                                                       <ItemIndexInTest xmlns="http://Cito.Tester.Server/xml/serialization">0</ItemIndexInTest>
                                                   </Response>
 
+#End Region
 
 End Class

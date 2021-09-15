@@ -10,11 +10,14 @@ Public Class RemoveEmptyFactsTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub RemoveKeyFromAnEmptyFinding_StillEmpty()
+        'Arrange
         Dim solution = _testSolution.To(Of Solution)()
         Dim inputs As New Dictionary(Of String, Object) From {{"Facts", solution.GetFindingOrMakeIt("Empty").Facts}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New RemoveEmptyFacts(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.AreEqual(0, solution.GetFindingOrMakeIt("Empty").Facts.Count)
         Assert.AreEqual(1, solution.GetFindingOrMakeIt("Has1EmptyFact").Facts.Count)
@@ -23,11 +26,14 @@ Public Class RemoveEmptyFactsTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub RemoveKeyFromAFindingThatHas1EmptyFact_IsEmpty()
+        'Arrange
         Dim solution = _testSolution.To(Of Solution)()
         Dim inputs As New Dictionary(Of String, Object) From {{"Facts", solution.GetFindingOrMakeIt("Has1EmptyFact").Facts}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New RemoveEmptyFacts(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.AreEqual(0, solution.GetFindingOrMakeIt("Empty").Facts.Count)
         Assert.AreEqual(0, solution.GetFindingOrMakeIt("Has1EmptyFact").Facts.Count)
@@ -36,17 +42,21 @@ Public Class RemoveEmptyFactsTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub RemoveKeyFromAFindingThatHas2EmptyFactAnd1NotSoEmpty_2FactsRemoved1FactRemains()
+        'Arrange
         Dim solution = _testSolution.To(Of Solution)()
         Dim inputs As New Dictionary(Of String, Object) From {{"Facts", solution.GetFindingOrMakeIt("Has2EmptyFactAnd1NotSoEmpty").Facts}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New RemoveEmptyFacts(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.AreEqual(0, solution.GetFindingOrMakeIt("Empty").Facts.Count)
         Assert.AreEqual(1, solution.GetFindingOrMakeIt("Has1EmptyFact").Facts.Count)
         Assert.AreEqual(1, solution.GetFindingOrMakeIt("Has2EmptyFactAnd1NotSoEmpty").Facts.Count)
     End Sub
 
+#Region "Data"
     ReadOnly _testSolution As XElement = <solution>
                                              <keyFindings>
                                                  <keyFinding id="Empty" scoringMethod="Dichotomous"/>
@@ -68,5 +78,6 @@ Public Class RemoveEmptyFactsTests
 
                                              </keyFindings>
                                          </solution>
+#End Region
 
 End Class

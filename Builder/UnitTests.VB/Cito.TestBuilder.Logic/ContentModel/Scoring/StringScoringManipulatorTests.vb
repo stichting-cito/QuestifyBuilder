@@ -11,13 +11,16 @@ Public Class StringScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub FindKeysInSolution()
+        'Arrange
         Dim param = New StringScoringParameter() With {.ControllerId = "Gap"}
         param.Value = New ParameterSetCollection
         param.Value.Add(New ParameterCollection() With {.Id = "A"})
 
+        'Act
         Dim key = StringKeyFinding(CreateKeyValuePair("A", "ABC"))
         Dim manipulator As IGapScoringManipulator(Of String) = New StringScoringManipulator(New KeyManipulator(key), param)
 
+        'Assert
         Dim res = manipulator.GetKeyStatus()
         Assert.IsTrue(res.ContainsKey("A"))
         Assert.AreEqual(1, res("A").Count())
@@ -25,28 +28,34 @@ Public Class StringScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub SetKey_A_ShouldContainA()
+        'Arrange
         Dim param = New StringScoringParameter() With {.ControllerId = "Gap"}
         param.Value = New ParameterSetCollection
         param.Value.Add(New ParameterCollection() With {.Id = "A"})
 
+        'Act
         Dim key = StringKeyFinding(CreateKeyValuePair("A", "ABC"))
         Dim manipulator As IGapScoringManipulator(Of String) = New StringScoringManipulator(New KeyManipulator(key), param)
-
+        
+        'Assert
         Dim res = manipulator.GetKeyStatus()
         Assert.IsTrue(res.ContainsKey("A"))
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub SetKeyWithInterface_A_ShouldContainA()
+        'Arrange
         Dim param = New StringScoringParameter() With {.ControllerId = "Gap"}
         param.Value = New ParameterSetCollection
         param.Value.Add(New ParameterCollection() With {.Id = "A"})
 
         Dim key = StringKeyFinding()
         Dim manipulator As IGapScoringManipulator(Of String) = New StringScoringManipulator(New KeyManipulator(key), param)
-
+        
+        'Act
         manipulator.SetKey("A", "Abc")
-
+        
+        'Assert
         Dim res = manipulator.GetKeyStatus()
         Assert.IsTrue(res.ContainsKey("A"))
     End Sub
@@ -54,15 +63,18 @@ Public Class StringScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub SetKey_A_ShouldContainA_AndValue()
+        'Arrange
         Dim param = New StringScoringParameter() With {.ControllerId = "Gap"}
         param.Value = New ParameterSetCollection
         param.Value.Add(New ParameterCollection() With {.Id = "A"})
 
         Dim key = StringKeyFinding()
         Dim manipulator As IGapScoringManipulator(Of String) = New StringScoringManipulator(New KeyManipulator(key), param)
-
+        
+        'Act
         manipulator.SetKey("A", "Abc")
-
+        
+        'Assert
         Dim res = manipulator.GetKeyStatus()
         Assert.IsTrue(res.ContainsKey("A"))
         Assert.AreEqual(1, res("A").Count())
@@ -70,15 +82,18 @@ Public Class StringScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub SetKey_A_ShouldContainA_AndValues()
+        'Arrange
         Dim param = New StringScoringParameter() With {.ControllerId = "Gap"}
         param.Value = New ParameterSetCollection
         param.Value.Add(New ParameterCollection() With {.Id = "A"})
 
         Dim key = StringKeyFinding()
         Dim manipulator As IGapScoringManipulator(Of String) = New StringScoringManipulator(New KeyManipulator(key), param)
-
+        
+        'Act
         manipulator.SetKey("A", "Abc", "123")
-
+        
+        'Assert
         Dim res = manipulator.GetKeyStatus()
         Assert.IsTrue(res.ContainsKey("A"))
         Assert.AreEqual(2, res("A").Count())
@@ -86,6 +101,7 @@ Public Class StringScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub TakeKeysFromParameter()
+        'Arrange
         Dim param = New StringScoringParameter() With {.ControllerId = "Gap"}
         param.Value = New ParameterSetCollection
         param.Value.Add(New ParameterCollection() With {.Id = "A"})
@@ -94,9 +110,11 @@ Public Class StringScoringManipulatorTests
         param.Value.Add(New ParameterCollection() With {.Id = "G"})
 
         Dim key = StringKeyFinding()
-
+        
+        'Act
         Dim manipulator As IGapScoringManipulator(Of String) = New StringScoringManipulator(New KeyManipulator(key), param)
-
+        
+        'Assert
         Dim res = manipulator.GetKeyStatus()
         Assert.IsTrue(res.ContainsKey("A"))
         Assert.IsTrue(res.ContainsKey("C"))
@@ -108,15 +126,18 @@ Public Class StringScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub ClearKeys_Should_thus_have_Keys_noValue()
+        'Arrange
         Dim param = New StringScoringParameter() With {.ControllerId = "Gap"}
         param.Value = New ParameterSetCollection
         param.Value.Add(New ParameterCollection() With {.Id = "A"})
 
-        Dim key = StringKeyFinding(CreateKeyValuePair("A-Gap", "ABC"))
+        Dim key = StringKeyFinding(CreateKeyValuePair("A-Gap", "ABC")) 'Note that ControllerID has been set, thus finding id is A-Gap
         Dim manipulator As IGapScoringManipulator(Of String) = New StringScoringManipulator(New KeyManipulator(key), param)
-
-        manipulator.RemoveKey("A")
-
+        
+        'Act
+        manipulator.RemoveKey("A") ' This will not remove finding but its values.
+        
+        'Assert
         Dim res = manipulator.GetKeyStatus()
         Assert.IsTrue(res.ContainsKey("A"))
         Assert.AreEqual(0, key.Facts.Count)
@@ -125,6 +146,7 @@ Public Class StringScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub UnsetKey_A_Expects_JustKeysOnParam()
+        'Arrange
         Dim param = New StringScoringParameter() With {.ControllerId = "Gap"}
         param.Value = New ParameterSetCollection
         param.Value.Add(New ParameterCollection() With {.Id = "A"})
@@ -132,9 +154,11 @@ Public Class StringScoringManipulatorTests
         Dim key = StringKeyFinding(CreateKeyValuePair("A", "ABC", "Def"), CreateKeyValuePair("B", "123", "456"))
 
         Dim manipulator As IGapScoringManipulator(Of String) = New StringScoringManipulator(New KeyManipulator(key), param)
-
+        
+        'Act
         manipulator.Clear()
-
+        
+        'Assert
         Dim res = manipulator.GetKeyStatus()
         Assert.AreEqual(1, res.Count)
     End Sub
@@ -142,6 +166,7 @@ Public Class StringScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub IdOfFactIsParameterId()
+        'Arrange
         Dim param = New StringScoringParameter() With {.ControllerId = "Gap"}
         param.Value = New ParameterSetCollection
         param.Value.Add(New ParameterCollection() With {.Id = "A"})
@@ -150,16 +175,19 @@ Public Class StringScoringManipulatorTests
         Dim key = StringKeyFinding()
 
         Dim manipulator As IGapScoringManipulator(Of String) = New StringScoringManipulator(New KeyManipulator(key), param)
-
+        
+        'Act
         manipulator.SetKey("A", "123", "456")
         Dim result = DirectCast(key.Facts.First(), KeyFact)
-
+        
+        'Assert
         Assert.AreEqual("A-Gap", result.Id)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub DomainOfFactIsControllerID()
-        Dim param = New StringScoringParameter() With {.ControllerId = "Gap"}
+        'Arrange
+        Dim param = New StringScoringParameter() With {.ControllerId = "Gap"} '<= CONTROLLER ID MATCHES DOMAIN
         param.Value = New ParameterSetCollection
         param.Value.Add(New ParameterCollection() With {.Id = "A"})
         param.Value.Add(New ParameterCollection() With {.Id = "B"})
@@ -167,22 +195,27 @@ Public Class StringScoringManipulatorTests
         Dim key = StringKeyFinding()
 
         Dim manipulator As IGapScoringManipulator(Of String) = New StringScoringManipulator(New KeyManipulator(key), param)
-
+        
+        'Act
         manipulator.SetKey("B", "123", "456")
         Dim result = DirectCast(DirectCast(key.Facts.First(), KeyFact).Values(0), KeyValue)
-
-        Assert.AreEqual("Gap", result.Domain, "Domain does not have expected value")
+        
+        'Assert
+        Assert.AreEqual("Gap", result.Domain, "Domain does not have expected value") '<= CONTROLLER ID MATCHES DOMAIN
     End Sub
 
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GetDisplayValueForKey()
+        'Arrange
         Dim solution = sampleData.To(Of Solution)()
         Dim stringParam = New StringScoringParameter() With {.ControllerId = "stringScore"}.AddSubParameters("A")
         Dim manipulator = stringParam.GetScoreManipulator(solution)
-
+        
+        'Act
         Dim result = manipulator.GetDisplayValueForKey("A")
-
+        
+        'Assert
         Dim expected As String = "Value1#Value2#Value3"
         Assert.AreEqual(expected, result)
     End Sub
@@ -210,6 +243,7 @@ Public Class StringScoringManipulatorTests
         Return ret
     End Function
 
+#Region "Data"
     ReadOnly sampleData As XElement = <solution>
                                           <keyFindings>
                                               <keyFinding id="stringScore" scoringMethod="Dichotomous">
@@ -229,5 +263,6 @@ Public Class StringScoringManipulatorTests
                                               </keyFinding>
                                           </keyFindings>
                                       </solution>
+#End Region
 
 End Class

@@ -4,6 +4,8 @@
 Public Class QTI22ResponseDeclarationHotspotTests
     Inherits QTI_Base.ResponseDeclarationHotspotTestsBase
 
+    'Hotspot items are (scoring-wise) MR-items, so the response declaration is build using ResponseDeclarationMultipleResponse (for mc and mr items).
+    'This functionality may already be tested in other unittests, but still it's useful to check if it also correctly works for hotspot items.
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseDeclaration")>
     Public Sub GetResponseDeclarationForCombinationOfFactSetsAndFactsOnFindingTest()
@@ -30,6 +32,7 @@ Public Class QTI22ResponseDeclarationHotspotTests
         QTI22PublicationTestHelper.RunResponseDeclarationTest(_itemBody1, _solution5, GetHotspotScoringParams(), _result5, 1)
     End Sub
 
+#Region "Itembodies"
 
     Private _itemBody1 As XElement =
        <wrapper>
@@ -51,7 +54,9 @@ Public Class QTI22ResponseDeclarationHotspotTests
            </itemBody>
        </wrapper>
 
+#End Region
 
+#Region "Expected results"
 
     Private _result1 As XElement =
         <responseDeclarations>
@@ -102,5 +107,6 @@ Public Class QTI22ResponseDeclarationHotspotTests
             <responseDeclaration identifier="RESPONSE" cardinality="multiple" baseType="string"/>
         </responseDeclarations>
 
+#End Region
 
 End Class

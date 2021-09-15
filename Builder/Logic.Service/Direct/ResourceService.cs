@@ -38,7 +38,11 @@ namespace Questify.Builder.Logic.Service.Direct
         private readonly bool _fetchListWithCompleteBank;
         public IPermissionService PermissionService { get; }
 
+        #region " Constructors "
 
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="ResourceService" /> class.
+        /// </summary>
         public ResourceService()
         {
             _fetchListWithCompleteBank = true;
@@ -47,6 +51,11 @@ namespace Questify.Builder.Logic.Service.Direct
         }
 
 
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="ResourceService" /> class.
+        /// </summary>
+        /// <param name="permissionServiceOverride">The permission service override.</param>
+        /// <param name="fetchListWithCompleteBank"></param>
         public ResourceService(IPermissionService permissionServiceOverride, bool fetchListWithCompleteBank)
         {
             PermissionService = permissionServiceOverride;
@@ -54,15 +63,26 @@ namespace Questify.Builder.Logic.Service.Direct
             _excludeIncludeFieldsHelper = new ExcludeIncludeFieldsHelper();
         }
 
+        #endregion
 
+        #region " Deletion "
 
+        /// <summary>
+        ///     Deletes resources from the database
+        /// </summary>
+        /// <param name="resourcesToDelete">The resource.</param>
+        /// <param name="notDeletedResources"></param>
         public string DeleteResources(EntityCollection resourcesToDelete, ref EntityCollection notDeletedResources)
         {
             var checkedPermissionTargetsPerBank = new Dictionary<int, List<Tuple<TestBuilderPermissionTarget, bool>>>();
+            //The Key (Integer) contains the bankId, the Boolean in the Tuple indicates if the user has sufficient permissions
             var errorBuilder = new StringBuilder();
             var errorBuilderValidationException = new StringBuilder();
             var errorBuilderSecurityException = new StringBuilder();
 
+            // because of locking issues we now delete each entity seperately. Within the delete functionality the ValidateEntityBeforeDelete
+            // function checks for dependent resources and instantiates his own adapter for it. The second call (2nd entity to delete in the transaction) 
+            // times out cause the first call has locked the table.
             foreach (ResourceEntity resource in resourcesToDelete)
             {
                 var permissionTargetToDelete = ContentModelObjectToPermissionTarget(resource);
@@ -81,6 +101,7 @@ namespace Questify.Builder.Logic.Service.Direct
                     notDeletedResources.Add(resource);
                     errorBuilderSecurityException.AppendFormat(", '{0}'", resource.Name);
 
+                    //Add to dictionary, so that permission doesn't have to be determined for the next resource of the same type and in the same bank
                     if (checkedPermissionTargetsPerBank.ContainsKey(resource.BankId))
                     {
                         if (!checkedPermissionTargetsPerBank[resource.BankId]
@@ -130,8 +151,9 @@ namespace Questify.Builder.Logic.Service.Direct
                 checkedPermissionTargetsPerBank[resource.BankId]
                     .Any(p => p.Item1.Equals(permissionTargetToDelete)))
             {
+                //Permission for this type of resource has already been determined
                 if (checkedPermissionTargetsPerBank[resource.BankId]
-        .FirstOrDefault(p => p.Item1.Equals(permissionTargetToDelete)).Item2 == false)
+                        .FirstOrDefault(p => p.Item1.Equals(permissionTargetToDelete)).Item2 == false)
                 {
                     throw new SecurityException();
                 }
@@ -160,10 +182,13 @@ namespace Questify.Builder.Logic.Service.Direct
             }
         }
 
+        #endregion
 
+        #region "Resources"
 
         private bool ResourceExistsInBankHierarchy(int anchorBankId, Guid resourceId, bool checkInHierarchy, IEntityFactory2 factory)
         {
+            // Collection to hold result
             var resources = new EntityCollection(factory);
 
             int[] ids;
@@ -177,6 +202,7 @@ namespace Questify.Builder.Logic.Service.Direct
                 ids = new[] { anchorBankId };
             }
 
+            // Setup filter to query resources where ResourceFields.id = resourceId and ResourceFields.BankId in ids.
             IRelationPredicateBucket filter = new RelationPredicateBucket();
             var with1 = filter;
             with1.PredicateExpression.Add(ResourceFields.ResourceId == resourceId);
@@ -202,8 +228,16 @@ namespace Questify.Builder.Logic.Service.Direct
             return ResourceExistsInBankHierarchy(anchorBankId, resourceId, checkInHierarchy, new ResourceEntityFactory());
         }
 
+        /// <summary>
+        ///     Checks if a resource with the given name exists somewhere within the bank hierarchy of which
+        ///     anchorBank is a member.
+        /// </summary>
+        /// <param name="anchorBankId">The bank to start at.</param>
+        /// <param name="resourceName">The name of resource for which to check for existence.</param>
+        /// <returns>True if the resource exists, otherwise false</returns>
         public bool ResourceExists(int anchorBankId, string resourceName, bool checkInHierarchy, IEntityFactory2 factory)
         {
+            // Collection to hold result
             var resources = new EntityCollection(factory);
             if (String.IsNullOrEmpty(resourceName))
             {
@@ -221,6 +255,7 @@ namespace Questify.Builder.Logic.Service.Direct
                 ids = new[] { anchorBankId };
             }
 
+            // Setup filter to query resources where ResourceFields.Name = resourceName and ResourceFields.BankId in ids.
             IRelationPredicateBucket filter = new RelationPredicateBucket();
             var with2 = filter;
             with2.PredicateExpression.Add(ResourceFields.Name == resourceName);
@@ -246,8 +281,14 @@ namespace Questify.Builder.Logic.Service.Direct
             return ResourceExists(anchorBankId, resourceName, checkInHierarchy, new ResourceEntityFactory());
         }
 
+        /// <summary>
+        ///     Return the ResourceEntity prefetch path as to be used by GetResourceByName and GetResourceById.
+        ///     Was extracted, with no further modifications, from GetResourceById because of the introduction of the
+        ///     GetResourceById function.
+        /// </summary>
         private PrefetchPath2 GetResourcePrefetchPath(ResourceRequestDTO request)
         {
+            // add prefetch path to join dependent resources
             var resourcePrefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.ResourceEntity));
             resourcePrefetchPath.Add(ResourceEntity.PrefetchPathBank);
             if (request.WithDependencies)
@@ -255,44 +296,55 @@ namespace Questify.Builder.Logic.Service.Direct
 
             if (!request.WithCustomProperties) return resourcePrefetchPath;
 
+            // Add prefetch path to join customerpropertiescollection of the resource
             var customBankPropertyValuesPath =
-    resourcePrefetchPath.Add(ResourceEntity.PrefetchPathCustomBankPropertyValueCollection);
+                resourcePrefetchPath.Add(ResourceEntity.PrefetchPathCustomBankPropertyValueCollection);
             customBankPropertyValuesPath.SubPath.Add(ListCustomBankPropertyValueEntity
                 .PrefetchPathListCustomBankPropertySelectedValueCollection);
             customBankPropertyValuesPath.SubPath.Add(ListCustomBankPropertyValueEntity
                 .PrefetchPathListValueCustomBankPropertyCollectionViaListCustomBankPropertySelectedValue);
 
+            // add prefetch path to join ListCustomBankProperty
             var listCustomBankPath =
-    customBankPropertyValuesPath.SubPath.Add(ListCustomBankPropertyValueEntity
-        .PrefetchPathListCustomBankProperty);
+                customBankPropertyValuesPath.SubPath.Add(ListCustomBankPropertyValueEntity
+                    .PrefetchPathListCustomBankProperty);
+            // add prefetch path to add listvalues for customproperties of type 'ListCustomBankPropertyEntity'
             listCustomBankPath.SubPath.Add(ListCustomBankPropertyEntity
-    .PrefetchPathListValueCustomBankPropertyCollection);
+                .PrefetchPathListValueCustomBankPropertyCollection);
 
+            // add prefetch path to join FreeValueCustomBankProperty
             customBankPropertyValuesPath.SubPath.Add(CustomBankPropertyValueEntity
-    .PrefetchPathCustomBankProperty);
+                .PrefetchPathCustomBankProperty);
+            // add prefetch path to join RichTextValueCustomBankProperty
             customBankPropertyValuesPath.SubPath.Add(RichTextValueCustomBankPropertyValueEntity
-    .PrefetchPathRichTextValueCustomBankProperty);
+                .PrefetchPathRichTextValueCustomBankProperty);
 
+            // add prefetch path to join ConceptStructureCustomBankPropertySelectedPartEntity info.
             customBankPropertyValuesPath.SubPath.Add(ConceptStructureCustomBankPropertyValueEntity
-    .PrefetchPathConceptStructurePartCustomBankPropertyCollectionViaConceptStructureCustomBankPropertySelectedPart);
+                .PrefetchPathConceptStructurePartCustomBankPropertyCollectionViaConceptStructureCustomBankPropertySelectedPart);
             customBankPropertyValuesPath.SubPath.Add(ConceptStructureCustomBankPropertyValueEntity
                 .PrefetchPathConceptStructureCustomBankPropertySelectedPartCollection);
+            // add prefetch path to join ConceptStructureCustomBankProperty
             var conceptStructureCustomBankPath =
-    customBankPropertyValuesPath.SubPath.Add(ConceptStructureCustomBankPropertyValueEntity
-        .PrefetchPathConceptStructureCustomBankProperty);
+                customBankPropertyValuesPath.SubPath.Add(ConceptStructureCustomBankPropertyValueEntity
+                    .PrefetchPathConceptStructureCustomBankProperty);
+            // add prefetch path to add concept structure parts for customproperties of type 'ConceptStructureCustomBankPropertyEntity'
             conceptStructureCustomBankPath.SubPath.Add(ConceptStructureCustomBankPropertyEntity
-    .PrefetchPathConceptStructurePartCustomBankPropertyCollection);
+                .PrefetchPathConceptStructurePartCustomBankPropertyCollection);
 
+            // add prefetch path to join TreeStructureCustomBankPropertySelectedPartEntity info.
             customBankPropertyValuesPath.SubPath.Add(TreeStructureCustomBankPropertyValueEntity
-    .PrefetchPathTreeStructurePartCustomBankPropertyCollectionViaTreeStructureCustomBankPropertySelectedPart);
+                .PrefetchPathTreeStructurePartCustomBankPropertyCollectionViaTreeStructureCustomBankPropertySelectedPart);
             customBankPropertyValuesPath.SubPath.Add(TreeStructureCustomBankPropertyValueEntity
                 .PrefetchPathTreeStructureCustomBankPropertySelectedPartCollection);
 
+            // add prefetch path to join TreeStructureCustomBankProperty
             var treeStructureCustomBankPath =
-    customBankPropertyValuesPath.SubPath.Add(TreeStructureCustomBankPropertyValueEntity
-        .PrefetchPathTreeStructureCustomBankProperty);
+                customBankPropertyValuesPath.SubPath.Add(TreeStructureCustomBankPropertyValueEntity
+                    .PrefetchPathTreeStructureCustomBankProperty);
+            // add prefetch path to add tree structure parts for customproperties of type 'TreeStructureCustomBankPropertyEntity'
             treeStructureCustomBankPath.SubPath.Add(TreeStructureCustomBankPropertyEntity
-    .PrefetchPathTreeStructurePartCustomBankPropertyCollection);
+                .PrefetchPathTreeStructurePartCustomBankPropertyCollection);
             return resourcePrefetchPath;
         }
 
@@ -322,6 +374,10 @@ namespace Questify.Builder.Logic.Service.Direct
             }
         }
 
+        /// <summary>
+        ///     Adds the dependent resource path.
+        /// </summary>
+        /// <param name="resourcePrefetchPath">The resource prefetch path.</param>
         private void AddDependentResourcePrefetchPath(ref PrefetchPath2 resourcePrefetchPath)
         {
             var dependentResourceIsAdded = false;
@@ -352,19 +408,32 @@ namespace Questify.Builder.Logic.Service.Direct
             }
         }
 
+        /// <summary>
+        ///     Gets the specified resource.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
         public ResourceDataEntity GetResourceData(ResourceEntity resource)
         {
+            // validate parameters
             if (resource == null)
                 throw new ArgumentNullException(nameof(resource));
 
             return GetResourceData(resource.ResourceId);
         }
 
+        /// <summary>
+        ///     Gets the resource data by resource identifier.
+        /// </summary>
+        /// <param name="resourceId">The resource identifier.</param>
         public ResourceDataEntity GetResourceDataByResourceId(Guid resourceId)
         {
             return GetResourceData(resourceId);
         }
 
+        /// <summary>
+        ///     Gets the resource data by resource ids.
+        /// </summary>
+        /// <param name="resourceIds">The resource ids.</param>
         public EntityCollection GetResourceDataByResourceIds(List<Guid> resourceIds)
         {
             var resources = new EntityCollection(new ResourceDataEntityFactory());
@@ -391,6 +460,11 @@ namespace Questify.Builder.Logic.Service.Direct
             return resources;
         }
 
+        /// <summary>
+        ///     Gets the resource data.
+        /// </summary>
+        /// <param name="resourceId">The resource id.</param>
+        /// <remarks>This function does not implement the IResourceService interface</remarks>
         [SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
         private ResourceDataEntity GetResourceData(Guid resourceId)
         {
@@ -403,20 +477,37 @@ namespace Questify.Builder.Logic.Service.Direct
             return resourceData;
         }
 
+        /// <summary>
+        ///     Gets the resources for bank branch.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
         public EntityCollection GetResourcesForBank(int bankId)
         {
             return GetResourcesForBank(bankId, true);
         }
 
+        /// <summary>
+        ///     Gets all 'resources' for the specified bank.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
+        /// <param name="fetchCompleteBranch"></param>
         public EntityCollection GetResourcesForBank(int bankId, bool fetchCompleteBranch)
         {
             return GetResourcesForBank(bankId, new ResourceEntityFactory(), fetchCompleteBranch);
         }
 
+        /// <summary>
+        ///     Gets all 'resources' for the specified bank using factory
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
+        /// <param name="factory">The factory.</param>
+        /// <param name="fetchCompleteBranch">if set to <c>true</c> [fetch complete branch].</param>
         public EntityCollection GetResourcesForBank(int bankId, IEntityFactory2 factory, bool fetchCompleteBranch)
         {
+            // Create new prefetch path for this entity
             IPrefetchPath2 prefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.ResourceEntity));
 
+            // Add prefetch path to join bankentity in which this resource is placed
             prefetchPath.Add(ResourceEntity.PrefetchPathBank);
 
             return GetResourceCollection(bankId, factory, ResourceFields.BankId, prefetchPath, null,
@@ -424,17 +515,23 @@ namespace Questify.Builder.Logic.Service.Direct
         }
 
 
+        /// <summary>
+        ///     Gets the references for resource.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
         public EntityCollection GetReferencesForResource(ResourceEntity resource)
         {
             var resources = new EntityCollection(new ResourceEntityFactory());
 
             if (resource.IsNew)
             {
+                // Don't fetch from db - it does not exist there, fetching it will result in an out-of-sync entity.
                 if (resource.ReferencedResourceCollection != null)
                     resources.AddRange(resource.ReferencedResourceCollection.Select(r => r.Resource));
             }
             else
             {
+                // get the dependent resources
                 IPrefetchPath2 resourcePrefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.ResourceEntity));
 
                 var depResourcePrefethPath = ResourceEntity.PrefetchPathReferencedResourceCollection;
@@ -446,6 +543,7 @@ namespace Questify.Builder.Logic.Service.Direct
                     adapter.FetchEntity(resource, resourcePrefetchPath);
                 }
 
+                // now only return a collection of the referenced resources, no dependent resource collection.
                 foreach (var e in resource.ReferencedResourceCollection)
                 {
                     if (e.Resource != null)
@@ -458,8 +556,14 @@ namespace Questify.Builder.Logic.Service.Direct
             return resources;
         }
 
+        /// <summary>
+        ///     Gets the dependencies for the resource.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
+        /// <returns>The dependencies for the resource.</returns>
         public EntityCollection GetDependenciesForResource(ResourceEntity resource)
         {
+            // get the dependent resources
             var depResourcePrefethPath = new PrefetchPath2(Convert.ToInt32(EntityType.ResourceEntity));
             depResourcePrefethPath.Add(ResourceEntity.PrefetchPathDependentResourceCollection);
             depResourcePrefethPath.Add(DependentResourceEntity.PrefetchPathDependentResource);
@@ -468,6 +572,7 @@ namespace Questify.Builder.Logic.Service.Direct
                 adapter.FetchEntity(resource, depResourcePrefethPath);
             }
 
+            // now only return a collection of the dependend resources, no reference resource collection.
             var resources = new EntityCollection(new ResourceEntityFactory());
             foreach (var e in resource.DependentResourceCollection)
             {
@@ -480,12 +585,29 @@ namespace Questify.Builder.Logic.Service.Direct
             return resources;
         }
 
+        #endregion
 
+        #region "Updates"
 
+        /// <summary>
+        ///     Sets the bankId of the resources and custom bank properties identified by the resourceIdsToUpdate and
+        ///     customBankPropertyIdsToUpdate parameters to the
+        ///     value of the bankIdValue parameter.
+        /// </summary>
+        /// <param name="bankIdValue">
+        ///     The int value that identifies the bank to which the resources and custom bank properties must
+        ///     be moved.
+        /// </param>
+        /// <param name="resourceIdsToUpdate">A list with guids that identify the resources to move.</param>
+        /// <param name="customBankPropertyIdsToUpdate">A list with guids that identify the custom bank properties toe move.</param>
+        /// <returns>
+        ///     In case of success an empty list, otherwise a list of key/value pairs where the key is the guid of the resource
+        ///     or cbp for which the update gave problems and the value is a description of the problem.
+        /// </returns>
         public List<KeyValuePair<Guid, string>> UpdateBankIdOfResourceEntitiesAndCustomBankProperties(
-    int bankIdValue,
-    List<Guid> resourceIdsToUpdate,
-    List<Guid> customBankPropertyIdsToUpdate)
+            int bankIdValue,
+            List<Guid> resourceIdsToUpdate,
+            List<Guid> customBankPropertyIdsToUpdate)
         {
             var failedUpdates = new List<KeyValuePair<Guid, string>>();
 
@@ -528,11 +650,21 @@ namespace Questify.Builder.Logic.Service.Direct
             return failedUpdates;
         }
 
+        /// <summary>
+        ///     Updates the resource.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
         private string UpdateResource(ResourceEntity resource)
         {
             return UpdateResource(resource, true, true, true);
         }
 
+        /// <summary>
+        ///     Updates the resource.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
+        /// <param name="refetch">if set to <c>true</c> [refetch].</param>
+        /// <param name="recurse">if set to <c>true</c> [recurse].</param>
         private string UpdateResource(ResourceEntity resource, bool refetch, bool recurse)
         {
             return UpdateResource(resource, true, refetch, recurse);
@@ -613,6 +745,8 @@ namespace Questify.Builder.Logic.Service.Direct
                     throw new SecurityException("Cannot update resource due to current state");
                 }
 
+                // Check if resource is not marked dirty while topology contains changes.
+                // If this is the case then the resource should also update 
                 if (resource.IsDirty == false && resource.HasChangesInTopology())
                 {
                     resource.IsDirty = true;
@@ -667,12 +801,14 @@ namespace Questify.Builder.Logic.Service.Direct
                 {
                     if (string.IsNullOrEmpty(result))
                     {
+                        //ItemId can only be set after the itemresource has been assigned an ItemAutoId by saving to the database. Item was already saved, so we can set the itemId directly when necessary
                         if (!isNew && !skipSetItemIdIfNeeded)
                         {
                             SetItemIdIfNeeded(resource, useTransaction, adapter, recurse, updateResourceData, refetch, false);
                         }
                         adapter.Commit();
 
+                        //Item was new and was saved just now; now set the ItemId
                         if (isNew && !skipSetItemIdIfNeeded)
                         {
                             SetItemIdIfNeeded(resource, useTransaction, adapter, recurse, updateResourceData, refetch, true);
@@ -682,6 +818,7 @@ namespace Questify.Builder.Logic.Service.Direct
                         {
                             SaveResourceHistory(resource, adapter);
                         }
+                        //Do not enclose this in the transaction! It results in timeouts because of locking.
                     }
                     else
                     {
@@ -692,6 +829,7 @@ namespace Questify.Builder.Logic.Service.Direct
                 {
                     if (string.IsNullOrEmpty(result))
                     {
+                        //Do not enclose this in the transaction! It results in timeouts because of locking.
                         if (!skipSetItemIdIfNeeded)
                         {
                             SetItemIdIfNeeded(resource, useTransaction, adapter, recurse, updateResourceData, refetch, isNew);
@@ -704,6 +842,7 @@ namespace Questify.Builder.Logic.Service.Direct
                     }
                 }
 
+                //Clear the label so it is empty when a new version is created.
                 if (resource is IVersionable)
                 {
                     ((IVersionable)resource).MajorVersionLabel = string.Empty;
@@ -825,6 +964,13 @@ namespace Questify.Builder.Logic.Service.Direct
             }
         }
 
+        /// <summary>
+        ///     Refetches the resource. This is sometimes needed because when custom properties are changed for the first time, the
+        ///     needed record(s) are not in the database yet.
+        ///     When the item is saved, the record(s) will be created but isn't yet available in the ItemResourceEntity object. So
+        ///     a new fetch of the ItemResourceEntity is needed.
+        /// </summary>
+        /// <param name="resourceEntity">The resource entity.</param>
         private IVersionable RefetchResource(IVersionable resourceEntity)
         {
             var itemResourceEntity = resourceEntity as ItemResourceEntity;
@@ -852,48 +998,94 @@ namespace Questify.Builder.Logic.Service.Direct
             return UpdateResource(resource);
         }
 
+        /// <summary>
+        ///     Updates the assessmenttest resource.
+        /// </summary>
+        /// <param name="resource">The resource to be updated in the datasource.</param>
         public string UpdateAssessmentTestResource(AssessmentTestResourceEntity resource)
         {
             return UpdateResource(resource);
         }
 
 
+        /// <summary>
+        ///     Updates the assessment test resource.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
+        /// <param name="refetch">if set to <c>true</c> [refetch].</param>
+        /// <param name="recurse">if set to <c>true</c> [recurse].</param>
         public string UpdateAssessmentTestResource(AssessmentTestResourceEntity resource, bool refetch, bool recurse)
         {
             return UpdateResource(resource, refetch, recurse);
         }
 
+        /// <summary>
+        ///     Updates the item layout template resource.
+        /// </summary>
+        /// <param name="resource">The resource to be updated in the datasource.</param>
         public string UpdateControlTemplateResource(ControlTemplateResourceEntity resource)
         {
             return UpdateResource(resource);
         }
 
+        /// <summary>
+        ///     Updates the control template resource.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
+        /// <param name="refetch">if set to <c>true</c> [refetch].</param>
+        /// <param name="recurse">if set to <c>true</c> [recurse].</param>
         public string UpdateControlTemplateResource(ControlTemplateResourceEntity resource, bool refetch, bool recurse)
         {
             return UpdateResource(resource, refetch, recurse);
         }
 
+        /// <summary>
+        ///     Updates the generic resource.
+        /// </summary>
+        /// <param name="resource">The resource to be updated in the datasource.</param>
         public string UpdateGenericResource(GenericResourceEntity resource)
         {
             return UpdateResource(resource);
         }
 
+        /// <summary>
+        ///     Updates the generic resource.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
+        /// <param name="refetch">if set to <c>true</c> [refetch].</param>
+        /// <param name="recurse">if set to <c>true</c> [recurse].</param>
         public string UpdateGenericResource(GenericResourceEntity resource, bool refetch, bool recurse)
         {
             return UpdateResource(resource, refetch, recurse);
         }
 
+        /// <summary>
+        ///     Updates the item layout template resource.
+        /// </summary>
+        /// <param name="resource">The resource to be updated in the datasource.</param>
         public string UpdateItemLayoutTemplateResource(ItemLayoutTemplateResourceEntity resource)
         {
             return UpdateResource(resource);
         }
 
+        /// <summary>
+        ///     Updates the item layout template resource.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
+        /// <param name="refetch">if set to <c>true</c> [refetch].</param>
+        /// <param name="recurse">if set to <c>true</c> [recurse].</param>
         public string UpdateItemLayoutTemplateResource(ItemLayoutTemplateResourceEntity resource, bool refetch,
-    bool recurse)
+            bool recurse)
         {
             return UpdateResource(resource, refetch, recurse);
         }
 
+        /// <summary>
+        ///     Updates the item resource.
+        /// </summary>
+        /// <param name="resource">The resource to be updated in the datasource.</param>
+        /// <param name="refetch"></param>
+        /// <param name="recurse"></param>
         public string UpdateItemResource(ItemResourceEntity resource, bool refetch, bool recurse)
         {
             var result = UpdateResource(resource, refetch, recurse);
@@ -915,6 +1107,10 @@ namespace Questify.Builder.Logic.Service.Direct
             return result;
         }
 
+        /// <summary>
+        ///     Updates the item resources.
+        /// </summary>
+        /// <param name="resources">The resources.</param>
         public string UpdateItemResources(IEnumerable<ItemResourceEntity> resources)
         {
             var result = string.Empty;
@@ -926,6 +1122,10 @@ namespace Questify.Builder.Logic.Service.Direct
             return result;
         }
 
+        /// <summary>
+        ///     Updates the item resource.
+        /// </summary>
+        /// <param name="resource">The resource to be updated in the datasource.</param>
         public string UpdateItemResource(ItemResourceEntity resource)
         {
             return UpdateItemResource(resource, true, true);
@@ -964,6 +1164,12 @@ namespace Questify.Builder.Logic.Service.Direct
             return result;
         }
 
+        /// <summary>
+        ///     Marks a resource as visible or invisible starting at bank level setAtBankId
+        /// </summary>
+        /// <param name="resourceId"></param>
+        /// <param name="setAtBankId"></param>
+        /// <param name="makeResourceVisible"></param>
         public string UpdateResourceVisibility(Guid resourceId, int setAtBankId, bool makeResourceVisible)
         {
             var result = string.Empty;
@@ -977,6 +1183,7 @@ namespace Questify.Builder.Logic.Service.Direct
 
             using (var adapter = new DataAccessAdapter())
             {
+                //We make the resource visible in the setAtBankId by deleting the HiddenResource record for that bank.
                 if (makeResourceVisible)
                 {
                     var hiddenResourceToDelete = resourceToToggleTheVisibilityOf.HiddenResourceCollection.FirstOrDefault(
@@ -988,6 +1195,8 @@ namespace Questify.Builder.Logic.Service.Direct
                 }
                 else
                 {
+                    //We make the resource invisible by creating an HiddenResource record for it. 
+                    //But prior to that we remove all HiddenResource records that may have been created at sub-banks of the bankd identified by setAtBankId
                     var bankIds = BankstructureHelper.GetBankBrancheIds(adapter, setAtBankId);
                     var hiddenResourcesToDelete = resourceToToggleTheVisibilityOf.HiddenResourceCollection
                         .Where(x => x.BankId != setAtBankId && bankIds.Contains(x.BankId)).ToList();
@@ -1028,14 +1237,24 @@ namespace Questify.Builder.Logic.Service.Direct
             return result;
         }
 
+        /// <summary>
+        ///     Replaces the user currently linked to data as creator and/or modifier by a new one.
+        /// </summary>
+        /// <param name="currentUserId">The current user id.</param>
+        /// <param name="newUserId">The new user id.</param>
         public bool ChangeCreatorModifier(int currentUserId, int newUserId)
         {
             ActionProcedures.ChangeCreatorModifier(currentUserId, newUserId);
             return true;
         }
 
+        #endregion
 
+        #region " Items "
 
+        /// <summary>
+        ///     Gets or sets the removed dependent entities.
+        /// </summary>
         public ResourcePropertyValueCollection GetResourcePropertyValues(ResourceEntity resourceEntity)
         {
             var result = new ResourcePropertyValueCollection();
@@ -1046,8 +1265,13 @@ namespace Questify.Builder.Logic.Service.Direct
             return result;
         }
 
+        /// <summary>
+        ///     Gets the specified item-resource.
+        /// </summary>
+        /// <param name="item">The item.</param>
         public ItemResourceEntity GetItem(ItemResourceEntity item, ResourceRequestDTO request)
         {
+            // validate parameters
             if (item == null)
             {
                 throw new ArgumentNullException(nameof(item));
@@ -1078,14 +1302,20 @@ namespace Questify.Builder.Logic.Service.Direct
             return fetchedResource;
         }
 
+        /// <summary>
+        ///     Gets the resource history for resource.
+        /// </summary>
+        /// <param name="resourceId">The resource.</param>
         public EntityCollection GetResourceHistoryForResource(Guid resourceId)
         {
             var result = new EntityCollection(new ResourceHistoryEntityFactory());
 
+            // Create new prefetch path for this entity
             IPrefetchPath2 prefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.ResourceHistoryEntity));
             var filterPredicate = new PredicateExpression();
             IRelationPredicateBucket bucket = new RelationPredicateBucket();
 
+            // Add prefetch path to join bankentity in which this resource is placed
             var prefetchPathResource = prefetchPath.Add(ResourceHistoryEntity.PrefetchPathResource);
             prefetchPathResource.SubPath.Add(ResourceEntity.PrefetchPathBank);
             var depResourcePrefetchPath = ResourceEntity.PrefetchPathDependentResourceCollection;
@@ -1114,16 +1344,19 @@ namespace Questify.Builder.Logic.Service.Direct
 
             using (var itemItemresourceCollection = new ItemResourceEntityCollection())
             {
+                // determine permissions for bank structure and get banks
                 const TestBuilderPermissionTarget FETCH_TARGET = TestBuilderPermissionTarget.Any;
                 var bankBranchHelper = new BankBranchIdHelper(PermissionService);
                 var ids = bankBranchHelper.GetBankBrancheIds(bankId, FETCH_TARGET, TestBuilderPermissionAccess.DALRead);
 
                 var tempItemCodesList = new List<string>(itemcodeList);
 
+                // retrieve items in batches
                 var offSet = 0;
                 const int BATCH = 250;
                 while (offSet != itemcodeList.Count)
                 {
+                    // create batch
                     var tempResultSet = new ItemResourceEntityCollection();
                     var length = itemcodeList.Count - offSet;
                     if (length > BATCH)
@@ -1134,23 +1367,29 @@ namespace Questify.Builder.Logic.Service.Direct
                     var itemCodeBatchArray = (string[])Array.CreateInstance(typeof(string), length);
                     tempItemCodesList.CopyTo(offSet, itemCodeBatchArray, 0, length);
 
+                    // filter item codes and bank hierarchy
                     IRelationPredicateBucket filter = new RelationPredicateBucket();
                     filter.PredicateExpression.Add(new FieldCompareRangePredicate(ItemResourceFields.Name, null, itemCodeBatchArray));
                     filter.PredicateExpression.AddWithAnd(new FieldCompareRangePredicate(ItemResourceFields.BankId, null, ids));
 
+                    // fetch custom properties?
 
                     IPrefetchPath2 prefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.ResourceEntity));
 
+                    // Do we need the full tree incl. all joins?
                     if (request.WithFullCustomProperties)
                     {
                         GetFullCustomBankPropertiesPrefetchPath(prefetchPath);
                     }
-                    else if (request.WithCustomProperties)
+                    else if (request.WithCustomProperties) // or is a more limited set enough?
                     {
+                        // Create new prefetch path for this entity
+                        // Add prefetch path to include the Bank
                         prefetchPath.Add(ResourceEntity.PrefetchPathBank);
                         prefetchPath.Add(ResourceEntity.PrefetchPathCreatedByUser, _excludeIncludeFieldsHelper.GetUserIncludedFieldList());
                         prefetchPath.Add(ResourceEntity.PrefetchPathModifiedByUser, _excludeIncludeFieldsHelper.GetUserIncludedFieldList());
 
+                        // Add prefetch path to join customerpropertiescollection, the (selected)values, etc
                         var path1 = prefetchPath.Add(ResourceEntity.PrefetchPathCustomBankPropertyValueCollection);
                         path1.SubPath.Add(ListCustomBankPropertyValueEntity
                             .PrefetchPathListValueCustomBankPropertyCollectionViaListCustomBankPropertySelectedValue);
@@ -1158,11 +1397,13 @@ namespace Questify.Builder.Logic.Service.Direct
                             .PrefetchPathConceptStructurePartCustomBankPropertyCollectionViaConceptStructureCustomBankPropertySelectedPart);
                         path1.SubPath.Add(TreeStructureCustomBankPropertyValueEntity
                             .PrefetchPathTreeStructurePartCustomBankPropertyCollectionViaTreeStructureCustomBankPropertySelectedPart);
+                        // Add prefetch path to join CustomBankPropertyEntity
                         var path2 = path1.SubPath.Add(CustomBankPropertyValueEntity.PrefetchPathCustomBankProperty);
 
 
+                        // Add prefetch path to join ListValues of ListCustomBankProperty
                         path2.SubPath.Add(ListCustomBankPropertyEntity
-    .PrefetchPathListValueCustomBankPropertyCollection);
+                            .PrefetchPathListValueCustomBankPropertyCollection);
                         path2.SubPath.Add(ConceptStructureCustomBankPropertyEntity
                             .PrefetchPathConceptStructurePartCustomBankPropertyCollection);
                     }
@@ -1176,6 +1417,7 @@ namespace Questify.Builder.Logic.Service.Direct
                             prefetchPath.Add(ResourceEntity.PrefetchPathModifiedByUser, _excludeIncludeFieldsHelper.GetUserIncludedFieldList());
                         }
 
+                        // Add prefetch path to include the State, CreatedByUser and ModifiedByUser
                         prefetchPath.Add(ResourceEntity.PrefetchPathState, _excludeIncludeFieldsHelper.GetStateExcludedFieldList());
                         prefetchPath.Add(ResourceEntity.PrefetchPathReferencedResourceCollection);
                     }
@@ -1185,6 +1427,7 @@ namespace Questify.Builder.Logic.Service.Direct
                         if (!request.WithCustomProperties && !request.WithReportData)
                             prefetchPath.Add(ResourceEntity.PrefetchPathBank);
 
+                        // get the dependent resources
                         var depResourcePrefethPath = ResourceEntity.PrefetchPathDependentResourceCollection;
                         depResourcePrefethPath.SubPath.Add(DependentResourceEntity.PrefetchPathDependentResource);
                         prefetchPath.Add(depResourcePrefethPath);
@@ -1198,20 +1441,27 @@ namespace Questify.Builder.Logic.Service.Direct
                     itemItemresourceCollection.AddRange(tempResultSet);
                     offSet += length;
                 }
+                // make sure the sequence is preserved.
                 itemcodeList.ToList().ForEach(code =>
-{
-    var itemListToAdd = itemItemresourceCollection.Items.Where(item => item.Name == code).ToList();
-    if (itemListToAdd.Count() == 1)
-    {
-        returnValue.Add(itemListToAdd.First());
-    }
-});
+                {
+                    var itemListToAdd = itemItemresourceCollection.Items.Where(item => item.Name == code).ToList();
+                    if (itemListToAdd.Count() == 1)
+                    {
+                        returnValue.Add(itemListToAdd.First());
+                    }
+                });
             }
             return returnValue;
         }
 
+        /// <summary>
+        ///     Gets the test by code.
+        /// </summary>
+        /// <param name="testcodeList">The testcode list.</param>
+        /// <param name="bankId">The bank.</param>
+        /// <param name="withCustomProperties">if set to <c>true</c> [with custom properties].</param>
         public AssessmentTestResourceEntityCollection GetTestByCode(List<string> testcodeList, int bankId,
-    bool withCustomProperties)
+            bool withCustomProperties)
         {
             var returnValue = new AssessmentTestResourceEntityCollection();
             if (!testcodeList.Any())
@@ -1219,29 +1469,37 @@ namespace Questify.Builder.Logic.Service.Direct
                 return returnValue;
             }
 
+            // determine permissions for bank structure and get banks
             const TestBuilderPermissionTarget FETCH_TARGET = TestBuilderPermissionTarget.Any;
             var bankBranchHelper = new BankBranchIdHelper(PermissionService);
             var ids = bankBranchHelper.GetBankBrancheIds(bankId, FETCH_TARGET, TestBuilderPermissionAccess.DALRead);
 
+            // filter item codes and bank hierarcht
             IRelationPredicateBucket filter = new RelationPredicateBucket();
             var testCodeArray = new string[testcodeList.Count + 1];
             testcodeList.CopyTo(testCodeArray, 0);
             filter.PredicateExpression.Add(new FieldCompareRangePredicate(AssessmentTestResourceFields.Name, null, testCodeArray));
             filter.PredicateExpression.AddWithAnd(new FieldCompareRangePredicate(AssessmentTestResourceFields.BankId, null, ids));
 
+            // fetch custom properties?
             IPrefetchPath2 prefetchPath = null;
             if (withCustomProperties)
             {
+                // Create new prefetch path for this entity
                 prefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.ResourceEntity));
 
+                // Add prefetch path to include the Bank
                 prefetchPath.Add(ResourceEntity.PrefetchPathBank);
 
+                // Add prefetch path to join customerpropertiescollection, the (selected)values, etc
                 var path1 = prefetchPath.Add(ResourceEntity.PrefetchPathCustomBankPropertyValueCollection);
                 path1.SubPath.Add(ListCustomBankPropertyValueEntity
                     .PrefetchPathListValueCustomBankPropertyCollectionViaListCustomBankPropertySelectedValue);
 
+                //' Add prefetch path to join CustomBankPropertyEntity
                 var path2 = path1.SubPath.Add(CustomBankPropertyValueEntity.PrefetchPathCustomBankProperty);
 
+                //' Add prefetch path to join ListValues of ListCustomBankProperty
                 path2.SubPath.Add(ListCustomBankPropertyEntity.PrefetchPathListValueCustomBankPropertyCollection);
             }
 
@@ -1259,12 +1517,17 @@ namespace Questify.Builder.Logic.Service.Direct
             return GetTestByCode(testcodeList, bankId, withCustomProperties);
         }
 
+        /// <summary>
+        ///     Gets the pause items from bank.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
         public EntityCollection GetPauseItemsForBank(int bankId)
         {
             var filter = new RelationPredicateBucket();
 
+            // Add Relations using aliasses in order to join the ItemTemplateLayoutResource entity and be able to set a filter on them 
             filter.Relations.Add(ResourceEntity.Relations.DependentResourceEntityUsingResourceId,
-    "ResourceToDepResource");
+                "ResourceToDepResource");
             filter.Relations.Add(DependentResourceEntity.Relations.ResourceEntityUsingDependentResourceId,
                 "ResourceToDepResource", "DepResourceToItemLayoutResource", JoinHint.Inner);
             filter.Relations.Add(ResourceEntity.Relations.GetSubTypeRelation("ItemLayoutTemplateResourceEntity"),
@@ -1275,41 +1538,67 @@ namespace Questify.Builder.Logic.Service.Direct
 
             IPrefetchPath2 prefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.ResourceEntity));
 
+            // Add prefetch path to join customerpropertiescollection, the (selected)values, etc
             var path1 = prefetchPath.Add(ResourceEntity.PrefetchPathCustomBankPropertyValueCollection);
             path1.SubPath.Add(ListCustomBankPropertyValueEntity
                 .PrefetchPathListValueCustomBankPropertyCollectionViaListCustomBankPropertySelectedValue);
 
+            // Add prefetch path to join CustomBankPropertyEntity
             var path2 = path1.SubPath.Add(CustomBankPropertyValueEntity.PrefetchPathCustomBankProperty);
 
+            // Add prefetch path to join ListValues of ListCustomBankProperty
             path2.SubPath.Add(ListCustomBankPropertyEntity.PrefetchPathListValueCustomBankPropertyCollection);
 
+            // Add prefetch path to join bankentity in which this resource is placed
             prefetchPath.Add(ResourceEntity.PrefetchPathBank);
 
             var depCollPrefetch = prefetchPath.Add(ResourceEntity.PrefetchPathDependentResourceCollection);
             depCollPrefetch.SubPath.Add(DependentResourceEntity.PrefetchPathDependentResource);
 
+            // Get data and return results
             return GetResourceCollection(bankId, new ItemResourceEntityFactory(), ItemResourceFields.BankId,
-    prefetchPath, filter);
+                prefetchPath, filter);
         }
 
+        /// <summary>
+        ///     Gets all 'item-resources' for the specified bank.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
         public EntityCollection GetItemsForBank(int bankId)
         {
             return GetItemsForBank(bankId, false, null);
         }
 
+        /// <summary>
+        ///     Gets the items for bank with full custom properties.
+        /// </summary>
+        /// <param name="bankId">The bank identifier.</param>
         public EntityCollection GetItemsForBankWithFullCustomProperties(int bankId)
         {
             return GetItemsForBank(bankId, true, null);
         }
 
+        /// <summary>
+        ///     Searches for items in bank by predicate
+        /// </summary>
+        /// <param name="bankId">The bank</param>
+        /// <param name="bucket">The predicate</param>
         public EntityCollection GetItemsForBank(int bankId, RelationPredicateBucket bucket)
         {
             return GetItemsForBank(bankId, false, bucket);
         }
 
+        /// <summary>
+        ///     Gets all 'item-resources' for the specified bank.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
+        /// <param name="withCustomProperties"></param>
+        /// <param name="bucket">The bucket.</param>
         public EntityCollection GetItemsForBank(int bankId, bool withCustomProperties, RelationPredicateBucket bucket)
         {
+            // Create new prefetch path for this entity
             IPrefetchPath2 prefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.ResourceEntity));
+            // Add prefetch path to join customerpropertiescollection, the (selected)values, etc
             var path1 = prefetchPath.Add(ResourceEntity.PrefetchPathCustomBankPropertyValueCollection);
             if (withCustomProperties)
             {
@@ -1318,6 +1607,7 @@ namespace Questify.Builder.Logic.Service.Direct
                 path1.SubPath.Add(TreeStructureCustomBankPropertyValueEntity.PrefetchPathTreeStructurePartCustomBankPropertyCollectionViaTreeStructureCustomBankPropertySelectedPart);
             }
 
+            // Add prefetch path to join bankentity in which this resource is placed
             prefetchPath.Add(ResourceEntity.PrefetchPathBank);
 
             var depCollPrefetch = prefetchPath.Add(ResourceEntity.PrefetchPathDependentResourceCollection);
@@ -1325,16 +1615,26 @@ namespace Questify.Builder.Logic.Service.Direct
             depResSubPath.EntityFactoryToUse = new ItemLayoutTemplateResourceEntityFactory();
             depResSubPath.SubPath.Add(ResourceEntity.PrefetchPathDependentResourceCollection);
 
+            // Get data and return results
             return GetResourceCollection(bankId, new ItemResourceEntityFactory(), ItemResourceFields.BankId, prefetchPath, bucket);
         }
 
+        /// <summary>
+        ///     Searches for items in bank using keywords
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
+        /// <param name="searchKeyWords">The search key word.</param>
+        /// <param name="searchInBankProperties">if set to <c>true</c> [search in bank properties].</param>
+        /// <param name="searchInItemText">if set to <c>true</c> [search in item text].</param>
+        /// <param name="testContextResourceId"></param>
+        /// <param name="maxRecords"></param>
         public EntityCollection GetItemsForBank(
-    int bankId,
-    string searchKeyWords,
-    bool searchInBankProperties,
-    bool searchInItemText,
-    Guid testContextResourceId,
-    int maxRecords)
+            int bankId,
+            string searchKeyWords,
+            bool searchInBankProperties,
+            bool searchInItemText,
+            Guid testContextResourceId,
+            int maxRecords)
         {
             var resultCollection = new EntityCollection();
             var fullTextSearchString = searchKeyWords;
@@ -1356,14 +1656,17 @@ namespace Questify.Builder.Logic.Service.Direct
             {
                 var specificTestBucket = new RelationPredicateBucket();
 
+                // ** SPECIALIZED CASE WHEN NO SEARCH TERM IS GIVEN, BUT A TEST IS SELECTED. DISPLAY ALL ITEMS IN TEST
                 specificTestBucket.PredicateExpression.Add(new FieldCompareSetPredicate(ItemResourceFields.ResourceId,
-    null, DependentResourceFields.DependentResourceId, null, SetOperator.In,
-    DependentResourceFields.ResourceId == testContextResourceId));
+                    null, DependentResourceFields.DependentResourceId, null, SetOperator.In,
+                    DependentResourceFields.ResourceId == testContextResourceId));
 
+                // get items and add to main result collection
                 var subResultTestItems = GetItemsForBank(bankId, specificTestBucket);
                 AddSubResultItemCollectionToResultItemCollection(subResultTestItems, resultCollection);
             }
 
+            // Get data and return results
             return resultCollection;
         }
 
@@ -1371,8 +1674,10 @@ namespace Questify.Builder.Logic.Service.Direct
         {
             if (string.IsNullOrEmpty(searchKeyWords)) return;
 
+            // ** FREE VALUE CUSTOM PROPERTIES
             var freeValuePropertiesBucket = new RelationPredicateBucket();
 
+            // use test context
             if (testContextResourceId != Guid.Empty)
             {
                 freeValuePropertiesBucket.PredicateExpression.Add(new FieldCompareSetPredicate(
@@ -1380,17 +1685,21 @@ namespace Questify.Builder.Logic.Service.Direct
                     SetOperator.In, DependentResourceFields.ResourceId == testContextResourceId));
             }
 
+            // free value custom properties
             freeValuePropertiesBucket.Relations.Add(ResourceEntity.Relations.CustomBankPropertyValueEntityUsingResourceId);
             var freeValueCustomBankPropertyValueRelation = freeValuePropertiesBucket.Relations.Add(
                 CustomBankPropertyValueEntity.Relations.GetSubTypeRelation("FreeValueCustomBankPropertyValueEntity"), JoinHint.Inner);
             freeValueCustomBankPropertyValueRelation.CustomFilter = new PredicateExpression(
                 new FieldFullTextSearchPredicate(FreeValueCustomBankPropertyValueFields.Value, null, FullTextSearchOperator.Contains, fullTextSearchString));
 
+            // get items and add to main result collection
             var subResultFreeValue = GetItemsForBank(bankId, freeValuePropertiesBucket);
             AddSubResultItemCollectionToResultItemCollection(subResultFreeValue, resultCollection);
 
+            // ** MULTI-SELECT CUSTOM PROPERTIES
             var multiSelectPropertiesBucket = new RelationPredicateBucket();
 
+            // use test context
             if (testContextResourceId != Guid.Empty)
             {
                 multiSelectPropertiesBucket.PredicateExpression.Add(new FieldCompareSetPredicate(
@@ -1410,39 +1719,48 @@ namespace Questify.Builder.Logic.Service.Direct
                     ListValueCustomBankPropertyFields.Title
                 }, FullTextSearchOperator.Contains, fullTextSearchString));
 
+            // get items and add to main result collection
             var subResultMultiValue = GetItemsForBank(bankId, multiSelectPropertiesBucket);
             AddSubResultItemCollectionToResultItemCollection(subResultMultiValue, resultCollection);
 
+            // ** OTHER METADATA
             var otherMetaDataBucket = new RelationPredicateBucket();
             var filters = new PredicateExpression();
+            // wrapper predicate to wrap all OR expressions. This expression is later added to the bank id context expressions.
 
+            // use test context
             if (testContextResourceId != Guid.Empty)
             {
                 otherMetaDataBucket.PredicateExpression.Add(new FieldCompareSetPredicate(
                     ItemResourceFields.ResourceId, null, DependentResourceFields.DependentResourceId, null,
                     SetOperator.In, DependentResourceFields.ResourceId == testContextResourceId));
             }
+            // other meta-data columns
             DateTime searchForDate;
             if (DateTime.TryParse(searchKeyWords, out searchForDate) &&
                 searchForDate >= SqlDateTime.MinValue.Value && searchForDate <= SqlDateTime.MaxValue.Value)
             {
+                // search term is a date, so also search in 'created date' and 'modified date'
                 var searchFromDate = new DateTime(searchForDate.Year, searchForDate.Month, searchForDate.Day, 0, 0,
-    0);
+                    0);
                 var searchToDate = new DateTime(searchForDate.Year, searchForDate.Month, searchForDate.Day, 23, 59,
                     59);
                 filters.Add(new FieldBetweenPredicate(ResourceFields.CreationDate, null, searchFromDate, searchToDate));
                 filters.AddWithOr(new FieldBetweenPredicate(ResourceFields.ModifiedDate, null, searchFromDate, searchToDate));
             }
 
+            // search in 'created by' and 'modified by'
             var createdByRelation = otherMetaDataBucket.Relations.Add(ResourceEntity.Relations.UserEntityUsingCreatedBy, "CreatedBy", JoinHint.Inner);
             filters.AddWithOr(UserFields.FullName.SetObjectAlias("CreatedBy") == searchKeyWords);
 
             var modifiedByRelation = otherMetaDataBucket.Relations.Add(ResourceEntity.Relations.UserEntityUsingModifiedBy, "ModifiedBy", JoinHint.Inner);
             filters.AddWithOr(UserFields.FullName.SetObjectAlias("ModifiedBy") == searchKeyWords);
 
+            // search in main, title and description
             var fields = new List<EntityField2> { ResourceFields.Name, ResourceFields.Title, ResourceFields.Description };
             filters.AddWithOr(new FieldFullTextSearchPredicate(fields, FullTextSearchOperator.Contains, fullTextSearchString));
 
+            // get items and add to main result collection
             otherMetaDataBucket.PredicateExpression.Add(filters);
             var subResultOtherMetaData = GetItemsForBank(bankId, otherMetaDataBucket);
             AddSubResultItemCollectionToResultItemCollection(subResultOtherMetaData, resultCollection);
@@ -1452,6 +1770,7 @@ namespace Questify.Builder.Logic.Service.Direct
         {
             var itemTextBucket = new RelationPredicateBucket();
 
+            // use test context
             if (testContextResourceId != Guid.Empty)
             {
                 itemTextBucket.PredicateExpression.Add(new FieldCompareSetPredicate(ItemResourceFields.ResourceId,
@@ -1459,22 +1778,32 @@ namespace Questify.Builder.Logic.Service.Direct
                     DependentResourceFields.ResourceId == testContextResourceId));
             }
 
+            // When using FORMSOF INFLECTIONAL, the full-text engine will go through the stemming process, generating
+            // the words light, lightest, lit, and so on. But unlike FULLTEXT, it’ll stop and not go to the
+            // thesaurus to add any more words.
             IPredicate itemTextPredicate = new FieldFullTextSearchPredicate(ResourceDataFields.BinData, null,
-FullTextSearchOperator.Contains, fullTextSearchString);
+                FullTextSearchOperator.Contains, fullTextSearchString);
 
             itemTextBucket.Relations.Add(ResourceEntity.Relations.ResourceDataEntityUsingResourceId);
             itemTextBucket.PredicateExpression.Add(itemTextPredicate);
 
+            // get items and add to main result collection
             var subResultItemText = GetItemsForBank(bankId, itemTextBucket);
             AddSubResultItemCollectionToResultItemCollection(subResultItemText, resultCollection);
         }
 
 
+        /// <summary>
+        ///     Adds the sub result collection to result collection.
+        /// </summary>
+        /// <param name="subResultCollection">The sub result collection.</param>
+        /// <param name="resultCollection">The result collection.</param>
         private void AddSubResultItemCollectionToResultItemCollection(EntityCollection subResultCollection,
-    EntityCollection resultCollection)
+            EntityCollection resultCollection)
         {
             foreach (ItemResourceEntity subResult in subResultCollection)
             {
+                // does not exist in result collection?
                 var found = false;
                 foreach (ItemResourceEntity item in resultCollection)
                     if (item.ResourceId == subResult.ResourceId)
@@ -1488,10 +1817,17 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             }
         }
 
+        #endregion
 
+        #region " Test(template)s "
 
+        /// <summary>
+        ///     Gets the specified test-resource.
+        /// </summary>
+        /// <param name="test">The test.</param>
         public AssessmentTestResourceEntity GetAssessmentTest(AssessmentTestResourceEntity test)
         {
+            // validate parameters
             if (test == null)
                 throw new ArgumentNullException(nameof(test));
 
@@ -1502,18 +1838,33 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return fetchedResource;
         }
 
+        /// <summary>
+        ///     Gets all 'AssessmentTests' for the specified bank.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
+        /// <returns></returns>
         public EntityCollection GetAssessmentTestsForBank(int bankId)
         {
             return GetAssessmentTestsForBank(bankId, true, false, true);
         }
 
+        /// <summary>
+        ///     Get all 'test-resources' for the specified bank (plus possible parent/child banks)
+        /// </summary>
+        /// <param name="bankId"></param>
+        /// <param name="includeParentBanks"></param>
+        /// <param name="includeChildBanks"></param>
+        /// <param name="withCustomProperties"></param>
         public EntityCollection GetAssessmentTestsForBank(int bankId, bool includeParentBanks, bool includeChildBanks,
-    bool withCustomProperties)
+            bool withCustomProperties)
         {
+            // Create new prefetch path for this entity
             IPrefetchPath2 prefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.AssessmentTestResourceEntity));
 
+            // Add prefetch path to join bankentity in which this resource is placed
             prefetchPath.Add(ResourceEntity.PrefetchPathBank);
 
+            // Add prefetch path to join customerpropertiescollection, the (selected)values, etc
             if (withCustomProperties)
             {
                 var path1 = prefetchPath.Add(ResourceEntity.PrefetchPathCustomBankPropertyValueCollection);
@@ -1521,44 +1872,69 @@ FullTextSearchOperator.Contains, fullTextSearchString);
                     .PrefetchPathListValueCustomBankPropertyCollectionViaListCustomBankPropertySelectedValue);
             }
 
+            // Create filter to only get the tests
             IRelationPredicateBucket filter = new RelationPredicateBucket();
             filter.PredicateExpression.Add(AssessmentTestResourceFields.IsTemplate == false);
 
+            // Get data and return results
             return GetResourceCollection(bankId, new AssessmentTestResourceEntityFactory(),
-    AssessmentTestResourceFields.BankId, prefetchPath, filter, includeParentBanks, includeChildBanks, 0);
+                AssessmentTestResourceFields.BankId, prefetchPath, filter, includeParentBanks, includeChildBanks, 0);
         }
 
+        /// <summary>
+        ///     Gets the 'test template resources' for the specified bank.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
         public EntityCollection GetAssessmentTestTemplatesForBank(int bankId)
         {
+            // Create new prefetch path for this entity
             IPrefetchPath2 prefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.AssessmentTestResourceEntity));
 
+            // Add prefetch path to join bankentity in which this resource is placed
             prefetchPath.Add(ResourceEntity.PrefetchPathBank);
 
+            // Create filter to only get the test templates
             IRelationPredicateBucket filter = new RelationPredicateBucket();
             filter.PredicateExpression.Add(AssessmentTestResourceFields.IsTemplate == true);
 
+            // Get data and return results
             return GetResourceCollection(bankId, new AssessmentTestResourceEntityFactory(),
-    AssessmentTestResourceFields.BankId, prefetchPath, filter);
+                AssessmentTestResourceFields.BankId, prefetchPath, filter);
         }
 
+        #endregion
 
+        #region " TestPackage "
 
+        /// <summary>
+        ///     Gets the test packages for bank.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
         public EntityCollection GetTestPackagesForBank(int bankId)
         {
+            // Create new prefetch path for this entity
             IPrefetchPath2 prefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.AssessmentTestResourceEntity));
 
+            // Add prefetch path to join bankentity in which this resource is placed
             prefetchPath.Add(ResourceEntity.PrefetchPathBank);
 
+            // Add prefetch path to join customerpropertiescollection, the (selected)values, etc
             var path1 = prefetchPath.Add(ResourceEntity.PrefetchPathCustomBankPropertyValueCollection);
             path1.SubPath.Add(ListCustomBankPropertyValueEntity
                 .PrefetchPathListValueCustomBankPropertyCollectionViaListCustomBankPropertySelectedValue);
 
+            // Get data and return results
             return GetResourceCollection(bankId, new TestPackageResourceEntityFactory(),
-    TestPackageResourceFields.BankId, prefetchPath, null);
+                TestPackageResourceFields.BankId, prefetchPath, null);
         }
 
+        /// <summary>
+        ///     Gets the testPackage.
+        /// </summary>
+        /// <param name="testPackage">The testPackage.</param>
         public TestPackageResourceEntity GetTestPackage(TestPackageResourceEntity testPackage)
         {
+            // validate parameters
             if (testPackage == null)
                 throw new ArgumentNullException(nameof(testPackage));
 
@@ -1569,21 +1945,35 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return fetchedResource;
         }
 
+        #endregion
 
+        #region "Package"
 
+        /// <summary>
+        ///     Gets the packages for bank.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
         public EntityCollection GetPackagesForBank(int bankId)
         {
+            // Create new prefetch path for this entity
             IPrefetchPath2 prefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.PackageResourceEntity));
 
+            // Add prefetch path to join bankentity in which this resource is placed
             prefetchPath.Add(ResourceEntity.PrefetchPathBank);
 
+            // Get data and return results
             return GetResourceCollection(bankId, new PackageResourceEntityFactory(), PackageResourceFields.BankId,
-    prefetchPath, null);
+                prefetchPath, null);
         }
 
 
+        /// <summary>
+        ///     Gets the package.
+        /// </summary>
+        /// <param name="package">The package.</param>
         public PackageResourceEntity GetPackage(PackageResourceEntity package)
         {
+            // validate parameters
             if (package == null)
                 throw new ArgumentNullException(nameof(package));
 
@@ -1593,11 +1983,18 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return fetchedResource;
         }
 
+        #endregion
 
+        #region " ItemLayoutTemplates "
 
+        /// <summary>
+        ///     Gets the item template.
+        /// </summary>
+        /// <param name="itemLayoutTemplate">The item layout template.</param>
         public ItemLayoutTemplateResourceEntity GetItemLayoutTemplate(
-    ItemLayoutTemplateResourceEntity itemLayoutTemplate)
+            ItemLayoutTemplateResourceEntity itemLayoutTemplate)
         {
+            // validate parameters
             if (itemLayoutTemplate == null)
                 throw new ArgumentNullException(nameof(itemLayoutTemplate));
 
@@ -1608,14 +2005,24 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return fetchedResource;
         }
 
+        /// <summary>
+        ///     Gets the item layout templates for bank.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
         public EntityCollection GetItemLayoutTemplatesForBank(int bankId)
         {
             IRelationPredicateBucket bucket = new RelationPredicateBucket();
             return GetItemLayoutTemplates(bankId, bucket);
         }
 
+        /// <summary>
+        ///     Gets the item layout templates for bank with item type filter.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
+        /// <param name="itemTypes">The item types.</param>
+        /// <param name="exclude">if set to <c>true</c> [exclude]. otherwise include types</param>
         public EntityCollection GetItemLayoutTemplatesForBankWithItemTypeFilter(int bankId,
-    List<ItemTypeEnum> itemTypes, bool exclude)
+            List<ItemTypeEnum> itemTypes, bool exclude)
         {
             if (!itemTypes.Any())
             {
@@ -1729,17 +2136,31 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return returnValue;
         }
 
+        /// <summary>
+        ///     Gets the item layout templates.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
+        /// <param name="bucket">The bucket.</param>
         private EntityCollection GetItemLayoutTemplates(int bankId, IRelationPredicateBucket bucket)
         {
+            // Create new prefetch path for this entity
             IPrefetchPath2 prefetchPath =
-    new PrefetchPath2(Convert.ToInt32(EntityType.ItemLayoutTemplateResourceEntity));
+                new PrefetchPath2(Convert.ToInt32(EntityType.ItemLayoutTemplateResourceEntity));
+            // Add prefetch path to join bankentity in which this resource is placed
             prefetchPath.Add(ResourceEntity.PrefetchPathBank);
+            // Add prefetch path to join the hiddenresource entities which when present identify the banks at which this item layout template (resource) is set to hidden.
             prefetchPath.Add(ResourceEntity.PrefetchPathHiddenResourceCollection);
+            // Get data and return results
             return GetResourceCollection(bankId, new ItemLayoutTemplateResourceEntityFactory(),
-    ItemLayoutTemplateResourceFields.BankId, prefetchPath, bucket);
+                ItemLayoutTemplateResourceFields.BankId, prefetchPath, bucket);
         }
 
 
+        /// <summary>
+        ///     Gets the item layout template source names for item code list.
+        /// </summary>
+        /// <param name="bankId">The bankId.</param>
+        /// <param name="itemCodes">The item codes.</param>
         public List<string> GetItemLayoutTemplateSourceNamesForItemCodeList(int bankId, List<string> itemCodes)
         {
             var returnValue = new List<string>();
@@ -1748,6 +2169,7 @@ FullTextSearchOperator.Contains, fullTextSearchString);
                 return returnValue;
             }
 
+            // Get all ids for selected bank and parent banks
             var bankBranchHelper = new BankBranchIdHelper(PermissionService);
             var ids = bankBranchHelper.GetBankBrancheIds(bankId, TestBuilderPermissionTarget.Any,
                 TestBuilderPermissionAccess.AnyTask);
@@ -1755,6 +2177,7 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             var itemOffset = 0;
             const int ITEM_MAX_BATCH = 1000;
 
+            // execute the function in batches, because of the limitation of the sql parameters.
             while (itemOffset != itemCodes.Count)
             {
                 var itemsInThisBatch = ITEM_MAX_BATCH;
@@ -1801,10 +2224,12 @@ FullTextSearchOperator.Contains, fullTextSearchString);
         {
             var resources = new EntityCollection(new ItemLayoutTemplateResourceEntityFactory());
 
+            // Create new prefetch path for this entity
             IPrefetchPath2 prefetchPath =
-    new PrefetchPath2(Convert.ToInt32(EntityType.ItemLayoutTemplateResourceEntity));
+                new PrefetchPath2(Convert.ToInt32(EntityType.ItemLayoutTemplateResourceEntity));
 
 
+            // Add prefetch path to join bankentity in which this resource is placed
             prefetchPath.Add(ResourceEntity.PrefetchPathBank);
             if (withDependencies)
             {
@@ -1812,6 +2237,7 @@ FullTextSearchOperator.Contains, fullTextSearchString);
                 depPath.SubPath.Add(DependentResourceEntity.PrefetchPathDependentResource);
             }
 
+            // Get data and return results                                             
             var filter = new RelationPredicateBucket();
             var fieldCompareRange = new FieldCompareRangePredicate(ItemLayoutTemplateResourceFields.ResourceId, null, resourceIds);
             filter.PredicateExpression.Add(fieldCompareRange);
@@ -1822,10 +2248,17 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return resources;
         }
 
+        #endregion
 
+        #region " ControlTemplates "
 
+        /// <summary>
+        ///     Gets the specified control template-resource.
+        /// </summary>
+        /// <param name="controlTemplate">The control template.</param>
         public ControlTemplateResourceEntity GetControlTemplate(ControlTemplateResourceEntity controlTemplate)
         {
+            // validate parameters
             if (controlTemplate == null)
                 throw new ArgumentNullException(nameof(controlTemplate));
 
@@ -1836,20 +2269,34 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return fetchedResource;
         }
 
+        /// <summary>
+        ///     Gets all 'control template-resources' for the specified bank.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
         public EntityCollection GetControlTemplatesForBank(int bankId)
         {
+            // Create new prefetch path for this entity
             IPrefetchPath2 prefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.ControlTemplateResourceEntity));
 
+            // Add prefetch path to join bankentity in which this resource is placed
             prefetchPath.Add(ResourceEntity.PrefetchPathBank);
 
+            // Get data and return results
             return GetResourceCollection(bankId, new ControlTemplateResourceEntityFactory(),
-    ControlTemplateResourceFields.BankId, prefetchPath, null);
+                ControlTemplateResourceFields.BankId, prefetchPath, null);
         }
 
+        #endregion
 
+        #region " GenericResources "
 
+        /// <summary>
+        ///     Gets the specified generic resource.
+        /// </summary>
+        /// <param name="genericResource">The generic resource.</param>
         public GenericResourceEntity GetGenericResource(GenericResourceEntity genericResource)
         {
+            // validate parameters
             if (genericResource == null)
                 throw new ArgumentNullException(nameof(genericResource));
 
@@ -1860,19 +2307,31 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return fetchedResource;
         }
 
+        /// <summary>
+        ///     Gets all 'generic-resources' for the specified bank.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
+        /// <param name="filter">
+        /// </param>
+        /// <param name="filePrefix"></param>
+        /// <param name="templatesOnly"></param>
         public EntityCollection GetGenericResourceForBank(
-    int bankId,
-    string filter,
-    string filePrefix,
-    bool templatesOnly)
+            int bankId,
+            string filter,
+            string filePrefix,
+            bool templatesOnly)
         {
+            // Create new prefetch path for this entity
             IPrefetchPath2 prefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.GenericResourceEntity));
 
+            // Add prefetch path to join customerpropertiescollection, the (selected)values, etc
             var path1 = prefetchPath.Add(ResourceEntity.PrefetchPathCustomBankPropertyValueCollection);
             path1.SubPath.Add(ListCustomBankPropertyValueEntity.PrefetchPathListValueCustomBankPropertyCollectionViaListCustomBankPropertySelectedValue);
 
+            // Add prefetch path to join bankentity in which this resource is placed
             prefetchPath.Add(ResourceEntity.PrefetchPathBank);
 
+            // Create filter which only retrieves all resources with mediatype 'like' the given string.
             IRelationPredicateBucket bucket = null;
 
             if (!string.IsNullOrEmpty(filter))
@@ -1890,6 +2349,7 @@ FullTextSearchOperator.Contains, fullTextSearchString);
                 bucket?.PredicateExpression.Add(filterPredicate);
             }
 
+            // Create filter to only retrieve resources marked as template
             if (templatesOnly)
             {
                 if (bucket == null)
@@ -1899,6 +2359,7 @@ FullTextSearchOperator.Contains, fullTextSearchString);
                 bucket.PredicateExpression.AddWithAnd(GenericResourceFields.IsTemplate == true);
             }
 
+            // Create filter to only retrieve files with a specific prefix
             if (!string.IsNullOrEmpty(filePrefix))
             {
                 if (bucket == null)
@@ -1908,14 +2369,21 @@ FullTextSearchOperator.Contains, fullTextSearchString);
                 bucket.PredicateExpression.Add(GenericResourceFields.Name % (filePrefix + "%"));
             }
 
+            // Get data and return results
             return GetResourceCollection(bankId, new GenericResourceEntityFactory(), GenericResourceFields.BankId,
-    prefetchPath, bucket);
+                prefetchPath, bucket);
         }
 
+        #endregion
 
+        #region " States "
 
+        /// <summary>
+        ///     Gets the available states for all resources.
+        /// </summary>
         public EntityCollection GetAvailableStates()
         {
+            // Collection to hold result
             var states = new EntityCollection(new StateEntityFactory());
 
             using (var adapter = new DataAccessAdapter())
@@ -1926,14 +2394,20 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return states;
         }
 
+        /// <summary>
+        ///     Gets the state and actions for all targets
+        /// </summary>
+        /// <param name="stateId">The state id.</param>
         public StateEntity GetState(int stateId)
         {
             var stateToFetch = new StateEntity(stateId);
 
+            // Create new prefetch path for this entity
             IPrefetchPath2 prefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.StateEntity));
 
+            // Add prefetch path to join StateAction and action to state
             prefetchPath.Add(StateEntity.PrefetchPathStateActionCollection).SubPath
-    .Add(StateActionEntity.PrefetchPathAction);
+                .Add(StateActionEntity.PrefetchPathAction);
 
             using (var adapter = new DataAccessAdapter())
             {
@@ -1943,6 +2417,11 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return stateToFetch;
         }
 
+        /// <summary>
+        ///     Gets the stateAction for stateId.
+        /// </summary>
+        /// <param name="stateId">The state id.</param>
+        /// <param name="target">The target.</param>
         public ActionEntity GetStateAction(int stateId, string target)
         {
             var state = GetState(stateId);
@@ -1989,10 +2468,18 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return returnValue;
         }
 
+        #endregion
 
+        #region "Private helper functions"
 
+        /// <summary>
+        ///     Gets the state action name from resource.
+        /// </summary>
+        /// <param name="stateCollection">The state collection.</param>
+        /// <param name="resource">The resource.</param>
+        /// <param name="target"></param>
         private ActionEntity GetStateActionNameFromResource(EntityCollection stateCollection, ResourceEntity resource,
-    string target)
+            string target)
         {
             if (!resource.StateId.HasValue)
                 return null;
@@ -2013,16 +2500,22 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return null;
         }
 
+        /// <summary>
+        ///     Gets all states.
+        /// </summary>
         private EntityCollection GetAllStates()
         {
+            // Collection to hold result
             var states = new EntityCollection(new StateEntityFactory());
 
             using (var adapter = new DataAccessAdapter())
             {
+                // Create new prefetch path for this entity
                 IPrefetchPath2 prefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.StateEntity));
 
+                // Add prefetch path to join StateAction and action to state
                 prefetchPath.Add(StateEntity.PrefetchPathStateActionCollection).SubPath
-    .Add(StateActionEntity.PrefetchPathAction);
+                    .Add(StateActionEntity.PrefetchPathAction);
 
                 adapter.FetchEntityCollection(states, null, prefetchPath);
             }
@@ -2030,6 +2523,12 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return states;
         }
 
+        /// <summary>
+        ///     Gets the name of the resource by.
+        /// </summary>
+        /// <param name="bankIds">The bank ids.</param>
+        /// <param name="name">The name.</param>
+        /// <param name="request"></param>
         private ResourceEntity GetResourceByName(int[] bankIds, string name, ResourceRequestDTO request)
         {
             ResourceEntity returnValue = null;
@@ -2043,6 +2542,9 @@ FullTextSearchOperator.Contains, fullTextSearchString);
 
             var _with7 = filter;
             _with7.PredicateExpression.Add(ResourceFields.Name == name);
+            //for the first step to support versioning in TestBuilder we will raise the version each
+            //time the component is saved. In the next step we'll have to make a copy of the original component (at least when its 
+            //referenced in another component) In this case we should add the predicateExpression and specify the right version.
 
             _with7.PredicateExpression.AddWithAnd(new FieldCompareRangePredicate(ResourceFields.BankId, null, bankIds));
 
@@ -2051,6 +2553,7 @@ FullTextSearchOperator.Contains, fullTextSearchString);
                 adapter.FetchEntityCollection(resources, filter, 1, null,
                     GetResourcePrefetchPath(request));
 
+                // Check for valid result
                 if (resources.Count == 1)
                 {
                     var fetchedEntity = (ResourceEntity)resources[0];
@@ -2096,6 +2599,11 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return resources;
         }
 
+        /// <summary>
+        ///     Gets all states from resources.
+        /// </summary>
+        /// <param name="resourceNames">The resource names.</param>
+        /// <param name="bankId">The bank.</param>
         private EntityCollection GetAllStatesFromResources(string[] resourceNames, int bankId)
         {
             var returnValue = new EntityCollection(new ResourceEntityFactory());
@@ -2104,6 +2612,7 @@ FullTextSearchOperator.Contains, fullTextSearchString);
                 return returnValue;
             }
 
+            // Get all ids for selected bank and parent banks
             var bankBranchHelper = new BankBranchIdHelper(PermissionService);
             var ids = bankBranchHelper.GetBankBrancheIds(bankId, false, TestBuilderPermissionTarget.Any,
                 TestBuilderPermissionAccess.AnyTask);
@@ -2111,6 +2620,9 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             IRelationPredicateBucket filter = new RelationPredicateBucket();
             var with9 = filter;
             with9.PredicateExpression.Add(new FieldCompareRangePredicate(ResourceFields.Name, null, resourceNames));
+            //for the first step to support versioning in TestBuilder we will raise the version each
+            //time the component is saved. In the next step we'll have to make a copy of the original component (at least when its 
+            //referenced in another component) In this case we should add the predicateExpression and specify the right version.
 
             with9.PredicateExpression.AddWithAnd(new FieldCompareRangePredicate(ResourceFields.BankId, null, ids));
 
@@ -2159,6 +2671,7 @@ FullTextSearchOperator.Contains, fullTextSearchString);
 
             if (request.WithDependencies)
             {
+                // get the dependent resources
                 var depResourcePrefethPath = ResourceEntity.PrefetchPathDependentResourceCollection;
                 depResourcePrefethPath.SubPath.Add(DependentResourceEntity.PrefetchPathDependentResource);
                 prefetchPath.Add(depResourcePrefethPath);
@@ -2197,8 +2710,16 @@ FullTextSearchOperator.Contains, fullTextSearchString);
 
         }
 
+        /// <summary>
+        ///     Gets the resource collection.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
+        /// <param name="factory">The factory.</param>
+        /// <param name="fld">The FLD.</param>
+        /// <param name="prefetchPath">The prefetch path.</param>
+        /// <param name="filter">The filter.</param>
         private EntityCollection GetResourceCollection(int bankId, IEntityFactory2 factory, EntityField2 fld,
-    IPrefetchPath2 prefetchPath, IRelationPredicateBucket filter)
+            IPrefetchPath2 prefetchPath, IRelationPredicateBucket filter)
         {
             return GetResourceCollection(bankId, factory, fld, prefetchPath, filter, true, 0);
         }
@@ -2210,18 +2731,31 @@ FullTextSearchOperator.Contains, fullTextSearchString);
                 maxRecords);
         }
 
+        /// <summary>
+        ///     Gets the resource collection.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
+        /// <param name="factory">The factory.</param>
+        /// <param name="fld">The FLD.</param>
+        /// <param name="prefetchPath">The prefetch path.</param>
+        /// <param name="filter">The filter.</param>
+        /// <param name="includeParentBanks">if set to <c>true</c> [fetch parent banks as well].</param>
+        /// <param name="includeChildBanks">if set to <c>true</c> [fetch child banks as well].</param>
+        /// <param name="maxRecords">max number of records to return.</param>
         private EntityCollection GetResourceCollection(
-    int bankId,
-    IEntityFactory2 factory,
-    EntityField2 fld,
-    IPrefetchPath2 prefetchPath,
-    IRelationPredicateBucket filter,
-    bool includeParentBanks,
-    bool includeChildBanks,
-    int maxRecords)
+            int bankId,
+            IEntityFactory2 factory,
+            EntityField2 fld,
+            IPrefetchPath2 prefetchPath,
+            IRelationPredicateBucket filter,
+            bool includeParentBanks,
+            bool includeChildBanks,
+            int maxRecords)
         {
+            // Get all ids for selected bank and parent banks
             var fetchTarget = ContentModelObjectToPermissionTarget(factory);
 
+            // Add prefetch path to join dependent resource entities, to count the dependent itemresources of this template (shown in grid)
             prefetchPath?.Add(ResourceEntity.PrefetchPathReferencedResourceCollection);
 
             int[] ids = null;
@@ -2239,6 +2773,7 @@ FullTextSearchOperator.Contains, fullTextSearchString);
 
             var resources = new EntityCollection(factory);
 
+            //Only if there is at least one bank where the current user has permission to access the FetchTarget in the requested way.
 
             if (ids.Length <= 0)
                 return resources;
@@ -2251,23 +2786,27 @@ FullTextSearchOperator.Contains, fullTextSearchString);
                     filtr = new RelationPredicateBucket();
                 }
 
+                // Setup FieldCompareRange to return all entities for given bank ids
                 var fieldCompareRange = new FieldCompareRangePredicate(fld, null, ids);
                 filtr.PredicateExpression.Add(fieldCompareRange);
 
+                //conditionally use prefetch path
                 if (prefetchPath == null)
                 {
                     adapter.FetchEntityCollection(resources, filtr);
                 }
                 else
                 {
+                    // WorkFlow Prefetch data : resEnt->State->StateAction<-Action
                     prefetchPath
-    .Add(ResourceEntity.PrefetchPathState,
-        _excludeIncludeFieldsHelper.GetStateExcludedFieldList()).SubPath
-    .Add(StateEntity.PrefetchPathStateActionCollection).SubPath
-    .Add(StateActionEntity.PrefetchPathAction);
+                        .Add(ResourceEntity.PrefetchPathState,
+                            _excludeIncludeFieldsHelper.GetStateExcludedFieldList()).SubPath
+                        .Add(StateEntity.PrefetchPathStateActionCollection).SubPath
+                        .Add(StateActionEntity.PrefetchPathAction);
 
+                    // add prefetch paths to join auditing information 
                     prefetchPath.Add(ResourceEntity.PrefetchPathCreatedByUser,
-    _excludeIncludeFieldsHelper.GetUserIncludedFieldList());
+                        _excludeIncludeFieldsHelper.GetUserIncludedFieldList());
                     prefetchPath.Add(ResourceEntity.PrefetchPathModifiedByUser,
                         _excludeIncludeFieldsHelper.GetUserIncludedFieldList());
 
@@ -2275,9 +2814,19 @@ FullTextSearchOperator.Contains, fullTextSearchString);
                 }
             }
 
+            // return all resources for given bank and optionally all parent banks
             return resources;
         }
 
+        /// <summary>
+        ///     Fetches the dependent resource entities of resource using projection.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
+        /// <param name="adapter">The adapter.</param>
+        /// <remarks>
+        ///     This function is used instead of a prefetch path, because the dependent resource collection must
+        ///     only consist of ResourceEntities and not it's subclasses. This gives problems with webservices communication.
+        /// </remarks>
         private void FetchDependentResourceEntitiesOfResource(ResourceEntity resource, DataAccessAdapter adapter)
         {
             if (!resource.DependentResourceCollection.Any())
@@ -2285,14 +2834,17 @@ FullTextSearchOperator.Contains, fullTextSearchString);
                 return;
             }
 
+            // get dependent resource objects via projection.
             var dependentResources = new EntityCollection(new ResourceEntityFactory());
 
+            // get resourceguid's to fetch
             var fetchTheseResources = new List<Guid>();
             foreach (var dresource in resource.DependentResourceCollection)
             {
                 fetchTheseResources.Add(dresource.DependentResourceId);
             }
 
+            // construct field-information for projection
             var valueProjectors = new List<IDataValueProjector>();
             var fields = EntityFieldsFactory.CreateEntityFieldsObject(EntityType.ResourceEntity);
             var resultFields = new ResultsetFields(fields.Count);
@@ -2310,6 +2862,7 @@ FullTextSearchOperator.Contains, fullTextSearchString);
 
             foreach (var depResource in resource.DependentResourceCollection)
             {
+                // find resource in projected resultset
                 var resultIndex = dependentResources.FindMatches(ResourceFields.ResourceId == depResource.DependentResourceId);
                 if (resultIndex.Count == 1)
                 {
@@ -2320,6 +2873,10 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             }
         }
 
+        /// <summary>
+        ///     Map a content model object to a security permission target.
+        /// </summary>
+        /// <param name="resourceObject">Type of the resource.</param>
         private TestBuilderPermissionTarget ContentModelObjectToPermissionTarget(object resourceObject)
         {
             if (resourceObject is AssessmentTestResourceEntity || resourceObject is AssessmentTestResourceEntityFactory)
@@ -2348,51 +2905,89 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return TestBuilderPermissionTarget.None;
         }
 
+        #endregion
 
+        #region " AspectResources  "
 
+        /// <summary>
+        ///     Gets the specified aspect-resource.
+        /// </summary>
+        /// <param name="aspect">The aspect.</param>
         public AspectResourceEntity GetAspect(AspectResourceEntity aspect)
         {
+            // validate parameters
             if (aspect == null)
                 throw new ArgumentNullException(nameof(aspect));
 
             var fetchedResource = new AspectResourceEntity(aspect.ResourceId);
-            var request = new ResourceRequestDTO() { WithDependencies = true };
+            var request = new ResourceRequestDTO() { WithDependencies = true, WithState = true, WithUserInfo = true };
             PrefetchResource(fetchedResource, EntityType.AspectResourceEntity, request);
 
             return fetchedResource;
         }
 
+        /// <summary>
+        ///     Gets all 'aspect-resources' for the specified bank.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
         public EntityCollection GetAspectsForBank(int bankId)
         {
+            // Create new prefetch path for this entity
             IPrefetchPath2 prefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.ResourceEntity));
 
+            // todo: code between lines is generic for all resources (at least it's the same as in GetItemsForBank, but should be for all I think) 
+            //       and could therefore refactored into a method
+            //-------------------------------
+            // Add prefetch path to join customerpropertiescollection, the (selected)values, etc
             var path1 = prefetchPath.Add(ResourceEntity.PrefetchPathCustomBankPropertyValueCollection);
             path1.SubPath.Add(ListCustomBankPropertyValueEntity.PrefetchPathListValueCustomBankPropertyCollectionViaListCustomBankPropertySelectedValue);
 
+            //' Add prefetch path to join CustomBankPropertyEntity
             var path2 = path1.SubPath.Add(CustomBankPropertyValueEntity.PrefetchPathCustomBankProperty);
 
+            //' Add prefetch path to join ListValues of ListCustomBankProperty
             path2.SubPath.Add(ListCustomBankPropertyEntity.PrefetchPathListValueCustomBankPropertyCollection);
 
+            // Add prefetch path to join bankentity in which this resource is placed
             prefetchPath.Add(ResourceEntity.PrefetchPathBank);
+            //-------------------------------------------------------------------------------------------------------------------------------------
 
+            // Get data and return results
             return GetResourceCollection(bankId, new AspectResourceEntityFactory(), AspectResourceFields.BankId, prefetchPath, null);
         }
 
+        /// <summary>
+        ///     Updates the aspect resource.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
         public string UpdateAspectResource(AspectResourceEntity resource)
         {
             return UpdateResource(resource);
         }
 
+        /// <summary>
+        ///     Updates the aspect resource.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
+        /// <param name="refetch">if set to <c>true</c> [refetch].</param>
+        /// <param name="recurse">if set to <c>true</c> [recurse].</param>
         public string UpdateAspectResource(AspectResourceEntity resource, bool refetch, bool recurse)
         {
             return UpdateResource(resource, refetch, recurse);
         }
 
+        #endregion
 
 
+        #region " DataSources "
 
+        /// <summary>
+        ///     Gets the specified data source.
+        /// </summary>
+        /// <param name="dataSource">The data source.</param>
         public DataSourceResourceEntity GetDataSource(DataSourceResourceEntity dataSource)
         {
+            //' validate parameters
             if (dataSource == null)
             {
                 throw new ArgumentNullException(nameof(dataSource));
@@ -2405,11 +3000,19 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return fetchedResource;
         }
 
+        /// <summary>
+        ///     Gets the data sources for bank.
+        /// </summary>
+        /// <param name="bankId">The bank.</param>
+        /// <param name="isTemplate">Filter by template, set to nothing for all</param>
+        /// <param name="behaviours">Filter by behaviour, set nothing for all.</param>
         public EntityCollection GetDataSourcesForBank(int bankId, bool? isTemplate, params string[] behaviours)
         {
+            //' Create new prefetch path for this entity to join related bankentity
             IPrefetchPath2 prefetchPath = new PrefetchPath2(Convert.ToInt32(EntityType.DataSourceResourceEntity));
             prefetchPath.Add(ResourceEntity.PrefetchPathBank);
             prefetchPath.Add(ResourceEntity.PrefetchPathDependentResourceCollection);
+            //' Add prefetch path to join customerpropertiescollection, the (selected)values, etc
             var path1 = prefetchPath.Add(ResourceEntity.PrefetchPathCustomBankPropertyValueCollection);
             path1.SubPath.Add(ListCustomBankPropertyValueEntity
                 .PrefetchPathListValueCustomBankPropertyCollectionViaListCustomBankPropertySelectedValue);
@@ -2418,6 +3021,7 @@ FullTextSearchOperator.Contains, fullTextSearchString);
 
             if (isTemplate.HasValue)
             {
+                //' Create filter to filter out the templates
                 filter = new RelationPredicateBucket();
 
                 var isTemplatePredicate = DataSourceResourceFields.IsTemplate == isTemplate.Value;
@@ -2426,11 +3030,13 @@ FullTextSearchOperator.Contains, fullTextSearchString);
 
             if (behaviours != null && behaviours.Length > 0)
             {
+                //' Create filter to filter out the specific behaviour
                 if (filter == null)
                 {
                     filter = new RelationPredicateBucket();
                 }
 
+                //' Group the predicates
                 var behaviourPredicate = new PredicateExpression(DataSourceResourceFields.DataSourceType == behaviours[0]);
                 for (var i = 1; i <= behaviours.Length - 1; i++)
                 {
@@ -2440,17 +3046,28 @@ FullTextSearchOperator.Contains, fullTextSearchString);
                 filter.PredicateExpression.Add(behaviourPredicate);
             }
 
+            //' Get data and return results
             var col = GetResourceCollection(bankId, new DataSourceResourceEntityFactory(), DataSourceResourceFields.BankId, prefetchPath, filter);
 
             return col;
         }
 
+        /// <summary>
+        ///     Updates the dataSource resource.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
         public string UpdateDataSourceResource(DataSourceResourceEntity resource)
         {
             return UpdateResource(resource);
         }
 
 
+        /// <summary>
+        ///     Updates the data source resource.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
+        /// <param name="refetch">if set to <c>true</c> [refetch].</param>
+        /// <param name="recurse">if set to <c>true</c> [recurse].</param>
         public string UpdateDataSourceResource(DataSourceResourceEntity resource, bool refetch, bool recurse)
         {
             return UpdateResource(resource, refetch, recurse);
@@ -2459,6 +3076,7 @@ FullTextSearchOperator.Contains, fullTextSearchString);
         public ResourceEntity GetResourceByNameWithOption(int bankId, string name, ResourceRequestDTO request)
         {
             var bankBranchHelper = new BankBranchIdHelper(PermissionService);
+            // Get all ids for selected bank and parent banks
             var ids = bankBranchHelper.GetBankBrancheIds(bankId, TestBuilderPermissionTarget.Any, TestBuilderPermissionAccess.AnyTask);
             return GetResourceByName(ids, name, request);
         }
@@ -2466,6 +3084,7 @@ FullTextSearchOperator.Contains, fullTextSearchString);
         public EntityCollection GetResourcesByNamesWithOption(int bankId, List<string> names, ResourceRequestDTO request)
         {
             var bankBranchHelper = new BankBranchIdHelper(PermissionService);
+            // Get all ids for selected bank and parent banks
             var ids = bankBranchHelper.GetBankBrancheIds(bankId, TestBuilderPermissionTarget.Any, TestBuilderPermissionAccess.AnyTask);
             return GetResourcesByNames(ids, names, request);
         }
@@ -2535,6 +3154,7 @@ FullTextSearchOperator.Contains, fullTextSearchString);
                 }
                 if (request.WithReferences)
                 {
+                    // Get the referencing resources as well.
                     var refResourcePrefethPath = ResourceEntity.PrefetchPathReferencedResourceCollection;
                     refResourcePrefethPath.SubPath.Add(DependentResourceEntity.PrefetchPathResource);
                     resourcePrefetchPath.Add(refResourcePrefethPath);
@@ -2552,5 +3172,6 @@ FullTextSearchOperator.Contains, fullTextSearchString);
             return resources;
         }
 
+        #endregion
     }
 }

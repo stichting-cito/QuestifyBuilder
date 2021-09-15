@@ -128,7 +128,7 @@ Namespace QTI.Helpers.QTI22
                 End If
 
                 If Not resourceAlreadyProcessed Then
-                    If ChainHandlerHelper.IsSourceTextFile(resourceFile, resourceName) Then ProcessSourceText(resourceFile, resourceContent, resourceName, mimeType, eventArgs)
+                    If IsSourceTextFile(resourceFile, resourceName) Then ProcessSourceText(resourceFile, resourceContent, resourceName, mimeType, eventArgs)
                     If categoryDirectory = PackageCreatorConstants.FileDirectoryType.css Then ProcessStylesheet(resourceFile, resourceContent, resourceName, mimeType, eventArgs)
 
                     If String.IsNullOrEmpty(mimeType) Then mimeType = ChainHandlerHelper.GetMimeTypeFromFile(resourceFile, resourceName)
@@ -229,7 +229,7 @@ Namespace QTI.Helpers.QTI22
                 If Not contentShouldChange Then contentShouldChange = resourceDependenciesNested.Count > 0
             End If
 
-            If ChainHandlerHelper.IsSourceTextFile(resourceFile, resourceName) Then ProcessSourceTextStylesheets(resources, eventArgs)
+            If IsSourceTextFile(resourceFile, resourceName) Then ProcessSourceTextStylesheets(resources, eventArgs)
 
             If contentShouldChange Then
                 eventArgs.BinaryResource = New BinaryResource(Encoding.UTF8.GetBytes(resourceContent))
@@ -447,7 +447,7 @@ Namespace QTI.Helpers.QTI22
             Dim resourceContent As String = String.Empty
             Dim resName As String = ResourceNameHelper.GetQtiCompliantResourceName(resourceName, True)
 
-            If resourceFile IsNot Nothing AndAlso ChainHandlerHelper.IsSourceTextFile(resourceFile, resName) Then
+            If resourceFile IsNot Nothing AndAlso IsSourceTextFile(resourceFile, resName) Then
                 resourceContent = Encoding.UTF8.GetString(resourceFile)
                 Dim extension As String = GetExtensionForsourceFiles(resourceContent)
                 mimeType = GetMimeTypeForsourceFiles(resourceContent)
@@ -950,6 +950,18 @@ Namespace QTI.Helpers.QTI22
         Private Function ProcessTextToSpeech(ByRef xmlDoc As XmlDocument) As String
             TextToSpeechHelper.ConvertToSsml(xmlDoc, _namespaceHelper.GetSSMLNamespace().NamespaceName)
             Return xmlDoc.DocumentElement.InnerXml
+        End Function
+
+        Private Shared Function IsSourceTextFile(resourceFile() As Byte, resourceName As String) As Boolean
+            Dim mimeType As String = ChainHandlerHelper.GetMimeTypeFromFile(resourceFile, resourceName)
+
+            If mimeType.Contains("application/xhtml+xml") OrElse
+                mimeType.Contains("text/plain") OrElse
+                mimeType.Contains("text/html") Then
+                Return True
+            End If
+
+            Return False
         End Function
 
     End Class

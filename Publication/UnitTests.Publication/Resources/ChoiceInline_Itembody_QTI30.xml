@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qti-item-body class="defaultBody">
+	<div class="content">
+		<div>
+			<div id="questionwithinlinecontrol">
+				<p>1 m = <qti-inline-choice-interaction response-identifier="I258154ed-d63c-4408-b475-5a70acb58d71" shuffle="false" required="true">
+						<inlineChoice identifier="A">100</inlineChoice>
+						<inlineChoice identifier="B">1000</inlineChoice>
+						<inlineChoice identifier="C">1</inlineChoice>
+					</qti-inline-choice-interaction>
+ <qti-inline-choice-interaction response-identifier="Iba9a61f1-618c-4b49-aa6e-b6b32fe27e50" shuffle="false" required="true">
+						<inlineChoice identifier="A">cm</inlineChoice>
+						<inlineChoice identifier="B">mm</inlineChoice>
+						<inlineChoice identifier="C">km</inlineChoice>
+					</qti-inline-choice-interaction>
+ </p>
+			</div>
+			<div id="answer"/>
+		</div>
+	</div>
+</qti-item-body>

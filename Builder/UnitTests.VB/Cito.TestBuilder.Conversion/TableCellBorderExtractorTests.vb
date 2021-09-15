@@ -6,7 +6,7 @@ Imports Questify.Builder.Plugins.PaperBased
 
 <TestClass>
 Public Class TableCellBorderExtractorTests
-
+    
     <TestMethod>
     Public Sub BorderColorParsingBlack()
         TableCellBorderExtractor.TryParseBorderColor("black").Should().Be("000000")
@@ -93,7 +93,7 @@ Public Class TableCellBorderExtractorTests
     End Sub
 
     <TestMethod>
-    Public Sub GetWPBorderTypeNothing()
+    Public Sub GetWPBorderTypeNothing() 
         TableCellBorderExtractor.GetWordProcessingBorderType(Nothing).Should.BeNull()
     End Sub
 
@@ -129,24 +129,27 @@ Public Class TableCellBorderExtractorTests
 
     <TestMethod>
     Public Sub ApplyBorderStyleBorderTypeNothing()
+        ' Should not throw exception
         TableCellBorderExtractor.ApplyBorderStyle(Nothing, New BorderStyle())
     End Sub
 
     <TestMethod>
     Public Sub ApplyBorderStyleBorderStyleNothing()
+        ' Should not throw exception
         TableCellBorderExtractor.ApplyBorderStyle(New LeftBorder(), Nothing)
     End Sub
 
     <TestMethod>
     Public Sub ApplyBorderStyleBorderStyleAndBorderTypeNothing()
+        ' Should not throw exception
         TableCellBorderExtractor.ApplyBorderStyle(Nothing, Nothing)
     End Sub
 
     <TestMethod>
     Public Sub ApplyBorderStyle()
         Dim borderType As New LeftBorder()
-        Dim borderStyle As New BorderStyle With
-        {
+        Dim borderStyle As New BorderStyle With 
+        { 
             .BorderValue = BorderValues.Hearts,
             .BorderColor = "000000",
             .BorderWidth = Unit.Empty
@@ -162,8 +165,8 @@ Public Class TableCellBorderExtractorTests
     <TestMethod>
     Public Sub ApplyBorderStyleValidWidthBorderValueNil()
         Dim borderType As New LeftBorder()
-        Dim borderStyle As New BorderStyle With
-                {
+        Dim borderStyle As New BorderStyle With 
+                { 
                 .BorderValue = BorderValues.Nil,
                 .BorderColor = "000000",
                 .BorderWidth = Unit.Parse("1px")
@@ -178,8 +181,8 @@ Public Class TableCellBorderExtractorTests
     <TestMethod>
     Public Sub ApplyBorderStyleColorNothing()
         Dim borderType As New LeftBorder()
-        Dim borderStyle As New BorderStyle With
-                {
+        Dim borderStyle As New BorderStyle With 
+                { 
                 .BorderValue = BorderValues.Nil,
                 .BorderColor = Nothing,
                 .BorderWidth = Unit.Parse("1px")
@@ -199,8 +202,8 @@ Public Class TableCellBorderExtractorTests
     <TestMethod>
     Public Sub GetBorderSettings1pxSolidBlack()
         Dim expectation As BorderStyle = New BorderStyle() With {
-                .BorderValue = BorderValues.Single,
-                .BorderColor = "000000",
+                .BorderValue = BorderValues.Single, 
+                .BorderColor = "000000", 
                 .BorderWidth = Unit.Parse("1px")
         }
 
@@ -210,8 +213,8 @@ Public Class TableCellBorderExtractorTests
     <TestMethod>
     Public Sub GetBorderSettingsRidgeRed()
         Dim expectation As BorderStyle = New BorderStyle() With {
-                .BorderValue = BorderValues.Nil,
-                .BorderColor = String.Empty,
+                .BorderValue = BorderValues.Nil, 
+                .BorderColor = String.Empty, 
                 .BorderWidth = Unit.Empty
                 }
 

@@ -15,21 +15,25 @@ Public Class ConceptScoreManipulatorGroupTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub SetConceptScores()
+        'Arrange        
         Dim solution = Deserialize(Of Solution)(_withFactSets_AIs3_BIs7_or_AIs7_BIs3) _
+        'CRITICAL!! MUST HAVE KEYFACTSETS WITH PRE EXISTING FACT
         Dim integerPrmA =
-        New IntegerScoringParameter() _
-        With {.FindingOverride = "finding", .ControllerId = "FieldA", .Name = "Field A"}.AddSubParameters("A")
+                New IntegerScoringParameter() _
+                With {.FindingOverride = "finding", .ControllerId = "FieldA", .Name = "Field A"}.AddSubParameters("A")
         Dim integerPrmB =
                 New IntegerScoringParameter() _
                 With {.FindingOverride = "finding", .ControllerId = "FieldB", .Name = "Field B"}.AddSubParameters("A")
 
         Dim scoreMap = New ScoringMap(New ScoringParameter() {integerPrmA, integerPrmB}, solution).GetMap().First()
         Dim manipulator = scoreMap.GetConceptManipulator(solution)
-
+        
+        'Act   
         WriteSolution("BeforeAct", solution)
         manipulator.SetScore(CPartName, "0", 42)
         WriteSolution("AfterAct", solution)
-
+        
+        'Assert
         Assert.IsNotNull(solution.ConceptFindings, "Expected ConceptFindings to be initialized")
         Assert.AreEqual(1, solution.ConceptFindings.Count, "Expected precisly 1 conceptFinding")
         Assert.AreEqual(2 + 1, solution.ConceptFindings(0).KeyFactsets.Count,
@@ -44,20 +48,24 @@ Public Class ConceptScoreManipulatorGroupTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub GetConceptIds()
+        'Arrange        
         Dim solution = Deserialize(Of Solution)(_withFactSets_AIs3_BIs7_or_AIs7_BIs3_AndConceptScoringFirstSet) _
+        'CRITICAL!! MUST HAVE KEYFACTSETS WITH PRE EXISTING FACT
         Dim integerPrmA =
-        New IntegerScoringParameter() _
-        With {.FindingOverride = "finding", .ControllerId = "FieldA", .Name = "Field A"}.AddSubParameters("A")
+                New IntegerScoringParameter() _
+                With {.FindingOverride = "finding", .ControllerId = "FieldA", .Name = "Field A"}.AddSubParameters("A")
         Dim integerPrmB =
                 New IntegerScoringParameter() _
                 With {.FindingOverride = "finding", .ControllerId = "FieldB", .Name = "Field B"}.AddSubParameters("A")
 
         Dim scoreMap = New ScoringMap(New ScoringParameter() {integerPrmA, integerPrmB}, solution).GetMap().First()
         Dim manipulator = scoreMap.GetConceptManipulator(solution)
-
+        
+        'Act   
         Dim result = manipulator.GetConceptIds().ToList()
 
-        Assert.AreEqual(2 + 1, result.Count)
+        'Assert
+        Assert.AreEqual(2 + 1, result.Count) 'Catch All
         Assert.AreEqual("0", result(0))
         Assert.AreEqual("1", result(1))
         Assert.AreEqual("2", result(2))
@@ -65,37 +73,47 @@ Public Class ConceptScoreManipulatorGroupTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub GetDisplayValueForFact()
+        'Arrange        
         Dim solution = Deserialize(Of Solution)(_withFactSets_AIs3_BIs7_or_AIs7_BIs3_AndConceptScoringFirstSet) _
+        'CRITICAL!! MUST HAVE KEYFACTSETS WITH PRE EXISTING FACT
         Dim integerPrmA =
-        New IntegerScoringParameter() _
-        With {.FindingOverride = "finding", .ControllerId = "FieldA", .Name = "Field A"}.AddSubParameters("A")
+                New IntegerScoringParameter() _
+                With {.FindingOverride = "finding", .ControllerId = "FieldA", .Name = "Field A"}.AddSubParameters("A")
         Dim integerPrmB =
                 New IntegerScoringParameter() _
                 With {.FindingOverride = "finding", .ControllerId = "FieldB", .Name = "Field B"}.AddSubParameters("A")
 
         Dim scoreMap = New ScoringMap(New ScoringParameter() {integerPrmA, integerPrmB}, solution).GetMap().First()
         Dim manipulator = scoreMap.GetConceptManipulator(solution)
-
+        
+        'Act   
+        'The solution only has concept set on set 0, not on set 1.
         Dim result = manipulator.GetDisplayValueForConceptId("1")
 
+        'Assert
         Assert.AreEqual("7&3", result)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub GetScoreForPart_Expects_42_null()
+        'Arrange        
         Dim solution = Deserialize(Of Solution)(_withFactSets_AIs3_BIs7_or_AIs7_BIs3_AndConceptScoringFirstSet) _
+        'CRITICAL!! MUST HAVE KEYFACTSETS WITH PRE EXISTING FACT
         Dim integerPrmA =
-        New IntegerScoringParameter() _
-        With {.FindingOverride = "finding", .ControllerId = "FieldA", .Name = "Field A"}.AddSubParameters("A")
+                New IntegerScoringParameter() _
+                With {.FindingOverride = "finding", .ControllerId = "FieldA", .Name = "Field A"}.AddSubParameters("A")
         Dim integerPrmB =
                 New IntegerScoringParameter() _
                 With {.FindingOverride = "finding", .ControllerId = "FieldB", .Name = "Field B"}.AddSubParameters("A")
 
         Dim scoreMap = New ScoringMap(New ScoringParameter() {integerPrmA, integerPrmB}, solution).GetMap().First()
         Dim manipulator = scoreMap.GetConceptManipulator(solution)
-
+        
+        'Act   
+        'The solution only has concept set on set 0, not on set 1.
         Dim result = manipulator.GetScoreForPart(CPartName, New String() {"0", "1"})
 
+        'Assert
         Assert.AreEqual(2, result.Count)
         Assert.AreEqual(42, result(0))
         Assert.IsNull(result(1))
@@ -103,26 +121,31 @@ Public Class ConceptScoreManipulatorGroupTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Concept")>
     Public Sub GetConceptIdsFromNonSetInSetExample()
+        'Arrange        
         Dim solution = Deserialize(Of Solution)(TwoFactSets_1FactOnFinding) _
+        'CRITICAL!! MUST HAVE KEYFACTSETS WITH PRE EXISTING FACT
         Dim integerPrmA =
-        New IntegerScoringParameter() _
-        With {.FindingOverride = "sharedIntegerFinding", .ControllerId = "integerScore", .Name = "integerScore"} _
-        .AddSubParameters("1", "2", "3")
+                New IntegerScoringParameter() _
+                With {.FindingOverride = "sharedIntegerFinding", .ControllerId = "integerScore", .Name = "integerScore"} _
+                .AddSubParameters("1", "2", "3")
 
 
         Dim combinedScoringMapKey_NotIngroup =
                 New ScoringMap(New ScoringParameter() {integerPrmA}, solution).GetMap().Where(
                     Function(scoreKey) Not scoreKey.IsGroup).FirstOrDefault()
         Dim manipulator = combinedScoringMapKey_NotIngroup.GetConceptManipulator(solution)
-
+        
+        'Act   
         Dim result = manipulator.GetConceptIds()
 
+        'Assert
         Assert.AreEqual(1 + 1, result.Count)
         Assert.AreEqual("3", result(0))
         Assert.AreEqual("3[*]", result(1))
     End Sub
 
 
+#Region "Data"
 
     Private _withFactSets_AIs3_BIs7_or_AIs7_BIs3 As XElement =
                 <solution>
@@ -294,6 +317,7 @@ Public Class ConceptScoreManipulatorGroupTest
                                                          <aspectReferences/>
                                                      </solution>
 
+#End Region
 
 
     Function DoSerialize(Of T)(obj As T) As XElement

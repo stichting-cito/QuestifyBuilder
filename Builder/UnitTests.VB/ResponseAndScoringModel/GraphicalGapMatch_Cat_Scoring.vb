@@ -7,49 +7,61 @@ Public Class GraphicalGapMatch_Cat_Scoring
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub MaxScore_MR_Dich()
+        'Arrange
         Dim solution = toSolution(mr_Finding_Dich)
-
+      
+        'Act
         Dim result = solution.MaxSolutionRawScore
-
+      
+        'Assert
         Assert.AreEqual(1, result)
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub GiveCorrectAnswer_Dichotomous()
+        'Arrange
         Dim solution = toSolution(mr_Finding_Dich)
 
         Dim r = toResponse(responseMR)
 
-        Write("Response", "Arrange", r)
-
+        Write("Response", "Arrange", r) 'Write for debugging
+      
+        'Act
         Dim result = solution.ScoreSolution(r)
 
+        'Assert
         Assert.AreEqual(1, result)
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub GiveCorrectAnswer_Polytomous()
+        'Arrange
         Dim solution = toSolution(mr_Finding_OneFactPoly)
 
         Dim r = toResponse(responseMR)
 
-        Write("Response", "Arrange", r)
-
+        Write("Response", "Arrange", r) 'Write for debugging
+       
+        'Act
         Dim result = solution.ScoreSolution(r)
 
-        Assert.AreEqual(1, result)
+        'Assert
+        Assert.AreEqual(1, result)  '1 despite polytomous because finding only contains one fact
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub GiveCorrectAnswer_ResponseWithKeyValueAndConstructionPolytomous()
+        'Arrange
         Dim solution = toSolution(mr_Finding_TwoFactsPoly)
 
         Dim r = toResponse(responseWithKeyValueAndConstruction)
 
-        Write("Response", "Arrange", r)
-
+        Write("Response", "Arrange", r) 'Write for debugging
+       
+        'Act
         Dim result = solution.ScoreSolution(r)
 
+        'Assert
         Assert.AreEqual(1, result)
     End Sub
 

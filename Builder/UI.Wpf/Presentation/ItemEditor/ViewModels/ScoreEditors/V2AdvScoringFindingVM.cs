@@ -23,8 +23,8 @@ namespace Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels.ScoreEditor
 
             SelectedScoringMethod = new DataWrapper<EnumScoringMethod>(this, SelectedScoringMethodArgs, () =>
 {
-    if (!_skipFirstNotification || _jitKeyFinding.CurrentValue != null) _jitKeyFinding.GetEnsuredValue().Method = SelectedScoringMethod.DataValue;
-    _skipFirstNotification = false;
+if (!_skipFirstNotification || _jitKeyFinding.CurrentValue != null) _jitKeyFinding.GetEnsuredValue().Method = SelectedScoringMethod.DataValue;
+_skipFirstNotification = false;
 });
             SelectedScoringMethod.DataValue = (_jitKeyFinding.CurrentValue != null && _jitKeyFinding.CurrentValue.Method != EnumScoringMethod.None) ? _jitKeyFinding.CurrentValue.Method : EnumScoringMethod.Dichotomous;
         }

@@ -16,6 +16,9 @@ namespace Questify.Builder.Services.TasksService
         {
             InitFactories();
         }
+
+        //[oriS] 27-02-2015 updated bug #23477
+        //[oriS] 13-3-2015 updated. added extra SplitSqlQueryDecorator in case we wat to perform 'ItemHarmonization' bug#24070
         private static void InitFactories()
         {
             PermissionFactory.Instantiate(new CachePermissionService(new PermissionService()));

@@ -6,6 +6,8 @@ Imports Questify.Builder.Logic.QTI.Converters.ScoringConverter.QTI22
 Public Class QTI22ResponseProcessingHotspotTests
     Inherits QTI_Base.ResponseProcessingHotspotTestsBase
 
+    'Hotspot items are (scoring-wise) MR-items, so the response processing is build using CesResponseProcessingMC (for mc and mr items).
+    'This functionality may already be tested in other unittests, but still it's useful to check if it also correctly works for hotspot items.
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessing")>
     Public Sub GetResponseProcessingForCombinationOfFactSetsAndFactsOnFinding_Polytomous_Test()

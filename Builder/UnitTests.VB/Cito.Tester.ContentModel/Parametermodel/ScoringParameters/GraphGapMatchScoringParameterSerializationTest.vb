@@ -8,50 +8,69 @@ Public Class GraphGapMatchScoringParameterTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Deserialize_GraphGapMatchScoringParameterWidth_Test()
+        'Arrange
 
+        'Act
         Dim param = Deserialize(Of GraphGapMatchScoringParameter)(_serializedGraphGapMatchParameter)
 
+        'Assert
+        'Image
         Assert.AreEqual("clickableImage.jpg", CType(param.Area.Value(0).InnerParameters(0), ResourceParameter).Value)
 
+        'Hotspots
         Assert.AreEqual(2, param.Area.ShapeList.Count)
         Assert.AreEqual("A", param.Area.ShapeList(0).Identifier)
         Assert.AreEqual(100, CType(param.Value(0).InnerParameters(0), GapImageParameter).Height)
         Assert.AreEqual(GapImageParameter.GapImageParameterContentType.FormulaImage, CType(param.Value(0).InnerParameters(0), GapImageParameter).ContentType)
         Assert.AreEqual("A", param.Area.ShapeList(0).Label)
 
+        'Alternatives
         Assert.AreEqual(4, param.Value.Count)
     End Sub
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Deserialize_GraphGapMatchScoringParameter_Test()
+        'Arrange
 
+        'Act
         Dim param = Deserialize(Of GraphGapMatchScoringParameter)(_serializedGraphGapMatchParameter2)
 
+        'Assert
+        'Image
         Assert.AreNotEqual(0, CType(param.Area.Value(0).InnerParameters(0), ResourceParameter).Width)
     End Sub
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Deserialize_GraphGapMatchScoringParameter_InItem_Test()
+        'Arrange
 
+        'Act
         Dim item = Deserialize(Of AssessmentItem)(_serializedGraphicalGapMatchItem)
         Dim param = CType(item.Parameters(0).InnerParameters(9), GraphGapMatchScoringParameter)
 
+        'Assert
+        'Image
         Assert.AreEqual("clickableImage.jpg", CType(param.Area.Value(0).InnerParameters(0), ResourceParameter).Value)
 
+        'Hotspots
         Assert.AreEqual(2, param.Area.ShapeList.Count)
         Assert.AreEqual("A", param.Area.ShapeList(0).Identifier)
         Assert.AreEqual("A", param.Area.ShapeList(0).Label)
 
+        'Alternatives
         Assert.AreEqual(4, param.Value.Count)
     End Sub
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Transform_GraphGapMatchScoringParameter_Test()
+        'Arrange
 
+        'Act
         Dim item = Deserialize(Of AssessmentItem)(_serializedGraphicalGapMatchItem)
         Dim param = CType(item.Parameters(0).InnerParameters(9), GraphGapMatchScoringParameter)
         param.IsCategorizationVariant = True
 
+        'Assert
         Assert.AreEqual(False, param.CanTransform)
         param.DesignerSettings.Clear()
 

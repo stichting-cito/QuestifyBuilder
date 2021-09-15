@@ -41,10 +41,20 @@ namespace Questify.Builder.Services.PublicationService.Publication
 
         public static IEnumerable<IPublicationHandler> PublicationHandlers { get; set; }
 
+        /// <summary>
+        /// Gets the available publication handlers for the specified test(s)/testpackage(s).
+        /// </summary>
+        /// <param name="bankId">The bank unique identifier.</param>
+        /// <param name="testNames">The test names.</param>
+        /// <param name="testPackageNames">The test package names.</param>
+        /// <returns>
+        /// A list of handlers for the provided test(s)/testpackage(s). 
+        /// To get the list of handlers that really apply for the test(s)/testpackage(s) a .Where(Function(x) x.QualifiesForCurrentSelection) must be applied to the returned list.
+        /// </returns>
         public IList<PublicationHandlerIdentifier> GetAvailablePublicationHandlers(
-    int bankId,
-    IList<string> testNames,
-    IList<string> testPackageNames)
+            int bankId,
+            IList<string> testNames,
+            IList<string> testPackageNames)
         {
             var result = new List<PublicationHandlerIdentifier>();
             bool selectionHasDifferentAssessmentTestViewTypes;
@@ -81,6 +91,9 @@ namespace Questify.Builder.Services.PublicationService.Publication
             return result;
         }
 
+        /// <summary>
+        /// Gets all test preview handlers.
+        /// </summary>
         public IList<TestPreviewHandlerIdentifier> GetAllTestPreviewHandlers()
         {
             var config = GetPublicationHandlersConfiguration();
@@ -88,19 +101,32 @@ namespace Questify.Builder.Services.PublicationService.Publication
             return GetTestPreviewHandlers(handlers, null);
         }
 
+        /// <summary>
+        /// Gets the available test preview handlers.
+        /// </summary>
+        /// <param name="bankId">The bank identifier.</param>
+        /// <param name="testNames">The test names.</param>
+        /// <param name="testPackages">The test packages.</param>
         public IList<TestPreviewHandlerIdentifier> GetAvailableTestPreviewHandlers(int bankId, IList<string> testNames,
-    IList<string> testPackages)
+            IList<string> testPackages)
         {
             bool ignoreBoolParam;
             var publicationHanlderInfo = GetAvailablePublicationHandlerElements(bankId, testNames, testPackages, true, out ignoreBoolParam);
             return GetTestPreviewHandlers(publicationHanlderInfo.Item1, publicationHanlderInfo.Item2);
         }
 
+        /// <summary>
+        /// Gets the configuration options.
+        /// </summary>
+        /// <param name="publicationHandlerType">Type of the publication handler.</param>
+        /// <param name="bankId">The bank identifier.</param>
+        /// <param name="testNames">The test names.</param>
+        /// <param name="testPackageNames">The test package names.</param>
         public Dictionary<string, string> GetConfigurationOptions(
-    string publicationHandlerType,
-    int bankId,
-    IList<string> testNames,
-    IList<string> testPackageNames)
+            string publicationHandlerType,
+            int bankId,
+            IList<string> testNames,
+            IList<string> testPackageNames)
         {
             var config = GetPublicationHandlersConfiguration();
             var publicationHandlerElement =
@@ -117,8 +143,12 @@ namespace Questify.Builder.Services.PublicationService.Publication
             return publicationHandler.GetConfigurationOptions(bankId, testNames, testPackageNames);
         }
 
+        /// <summary>
+        /// Gets the available publication handlers. (Not filtering out if they are suitable for a specific test(package))
+        /// </summary>
+        /// <returns>All available publication handlers.</returns>
         public IList<PublicationHandlerIdentifier> GetAllPublicationHandlers(int bankId, IList<string> testNames,
-    IList<string> testPackageNames)
+            IList<string> testPackageNames)
         {
             var config = GetPublicationHandlersConfiguration();
             var result = new List<PublicationHandlerIdentifier>();
@@ -134,14 +164,24 @@ namespace Questify.Builder.Services.PublicationService.Publication
             return result;
         }
 
+        /// <summary>
+        /// Publicizes the specified publication handler type.
+        /// </summary>
+        /// <param name="publicationHandlerType">Type of the publication handler.</param>
+        /// <param name="configurationOptions">The configuration options.</param>
+        /// <param name="bankId">The bank unique identifier.</param>
+        /// <param name="testNames">The test names.</param>
+        /// <param name="testPackageNames">The test package names.</param>
+        /// <param name="isForPreview">Is for preview</param>
+        /// <param name="customName">Custom name for published file to use instead of package name</param>
         public string Publicize(
-    string publicationHandlerType,
-    Dictionary<string, string> configurationOptions,
-    int bankId,
-    IList<string> testNames,
-    IList<string> testPackageNames,
-    bool isForPreview,
-    string customName)
+            string publicationHandlerType,
+            Dictionary<string, string> configurationOptions,
+            int bankId,
+            IList<string> testNames,
+            IList<string> testPackageNames,
+            bool isForPreview,
+            string customName)
         {
             var taskProgress = new PublicationTaskProgress(Guid.NewGuid().ToString(), 0, 0);
             PublicationProgress[taskProgress.TaskId] = taskProgress;
@@ -149,8 +189,10 @@ namespace Questify.Builder.Services.PublicationService.Publication
             var baseUrl = requestUri.Substring(0, requestUri.LastIndexOf('/') + 1);
             baseUrl = baseUrl.Replace("/Publication/", "/");
 
+            // Add username of user performing the publication to configOptions. This is done to prevent an interface change and having
+            // If (for some reason) more metadata is needed during publication, the interface should be changed to allow adding additional data.
             var index = OperationContext.Current.IncomingMessageHeaders.FindHeader("QbCredentials",
-"http://www.Questify.eu");
+                "http://www.Questify.eu");
             if (index >= 0)
             {
                 var ident =
@@ -181,11 +223,24 @@ namespace Questify.Builder.Services.PublicationService.Publication
             return taskProgress.TaskId;
         }
 
+        /// <summary>
+        /// Gets the progress of the specified task.
+        /// </summary>
+        /// <param name="taskId">The task's unique identifier.</param>
+        /// <returns>
+        /// The progress of the publication task.
+        /// </returns>
         public PublicationTaskProgress GetProgress(string taskId)
         {
             return PublicationProgress.ContainsKey(taskId) ? PublicationProgress[taskId] : null;
         }
 
+        /// <summary>
+        /// Finishes the specified publication task. Should be called after the client
+        /// is aware that the publication has finished and the client no longer needs to poll
+        /// for progress. The server can then perform some cleanup tasks.
+        /// </summary>
+        /// <param name="taskId">The task's unique identifier.</param>
         public void FinishPublication(string taskId)
         {
             if (PublicationProgress.ContainsKey(taskId))
@@ -213,6 +268,12 @@ namespace Questify.Builder.Services.PublicationService.Publication
             }
         }
 
+        /// <summary>
+        /// Gets the item output.
+        /// </summary>
+        /// <param name="publicationHandlerType">Type of the publication handler.</param>
+        /// <param name="bankId">The bank identifier.</param>
+        /// <param name="itemCode">The item code.</param>
         public string GetItemOutput(string publicationHandlerType, int bankId, string itemCode)
         {
             var returnValue = string.Empty;
@@ -242,6 +303,13 @@ namespace Questify.Builder.Services.PublicationService.Publication
             return returnValue;
         }
 
+        /// <summary>
+        /// Builds a list of ConceptProcessingLabelEntry objects using an instance of publicationHandlerType for item itemResourceId.
+        /// Each ConceptProcessingLabelEntry object links together a concept code, the QTI processing label generated for it and the fact-id that caused the label being generated.
+        /// </summary>
+        /// <returns>Returns a list of ConceptProcessingLabelEntry objects</returns>
+        /// <param name="publicationHandlerType"></param>
+        /// <param name="itemResourceId"></param>
         public List<ConceptProcessingLabelEntry> GetConceptRelatedResponseProcessingForReportingPurposes(string publicationHandlerType, Guid itemResourceId)
         {
             var conceptProcessingEntries = new List<ConceptProcessingLabelEntry>();
@@ -407,7 +475,7 @@ namespace Questify.Builder.Services.PublicationService.Publication
                           publicationHandler.FileExtension)
                     : exportPath;
             }
-            else
+            else // in case of bank export
             {
                 exportPath = exportPath +
                              string.Format("{0}-{1}{2}", "PublicationPackage", Guid.NewGuid(),
@@ -451,8 +519,16 @@ namespace Questify.Builder.Services.PublicationService.Publication
             return result.Distinct().Where(s => availablePublicationHandlers.Contains(s)).ToList();
         }
 
+        /// <summary>
+        /// Gets the available publication handler instances.
+        /// </summary>
+        /// <param name="bankId">The bank identifier.</param>
+        /// <param name="testNameList">A list with test names.</param>
+        /// <param name="testPackageNameList">A list with test package names.</param>
+        /// <param name="isPreview"></param>
+        /// <param name="selectionHasDifferentAssessmentTestViewTypes"></param>
         private Tuple<List<PublicationHandlerElement>, List<IPublicationHandler>, List<IPublicationHandler>, List<string>> GetAvailablePublicationHandlerElements
-    (int bankId, IList<string> testNameList, IList<string> testPackageNameList, bool isPreview, out bool selectionHasDifferentAssessmentTestViewTypes)
+            (int bankId, IList<string> testNameList, IList<string> testPackageNameList, bool isPreview, out bool selectionHasDifferentAssessmentTestViewTypes)
         {
             var availablePublicationHandlerElements = new List<PublicationHandlerElement>();
             var availablePublicationHandlers = new List<IPublicationHandler>();
@@ -509,6 +585,9 @@ namespace Questify.Builder.Services.PublicationService.Publication
 
             var handlerQualifiesForHandlingSelectedEntities = false;
 
+            // Make reasonForNotQualifying empty by default because we don't want to add a publication handler that's disqualified because of 
+            // not supporting a requested view type to the list of unavailablePublicationHandlers. This to keep the final message
+            // shown to the end-user shorter and more readable.
             var reasonForNotQualifing = string.Empty;
 
             var handlerSupportsViewType = supportedTypes.Any(st => publicationHandler.SupportedViews.Select(s => s.ToString()).Contains(st));
@@ -601,6 +680,11 @@ namespace Questify.Builder.Services.PublicationService.Publication
             }
         }
 
+        /// <summary>
+        /// Gets the test preview handlers.
+        /// </summary>
+        /// <param name="publicationHandlerElements">The publication handler elements.</param>
+        /// <param name="publicationHandlers">The publication handlers.</param>
         private IList<TestPreviewHandlerIdentifier> GetTestPreviewHandlers(IEnumerable<PublicationHandlerElement> publicationHandlerElements, IReadOnlyList<IPublicationHandler> publicationHandlers)
         {
             var result = new List<TestPreviewHandlerIdentifier>();
@@ -637,6 +721,7 @@ namespace Questify.Builder.Services.PublicationService.Publication
             var manifests = assembly.GetManifestResourceNames();
             if (manifests.Length == 1 && assembly.GetManifestResourceStream(manifests[0]) != null)
             {
+                // ReSharper disable once AssignNullToNotNullAttribute
                 using (var reader = new ResourceReader(assembly.GetManifestResourceStream(manifests[0])))
                 {
                     var dict = reader.GetEnumerator();

@@ -21,10 +21,13 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddConcept(ConceptCreator.SomeConcept, ConceptPartId = ConceptCreator.SomeConcept_Part1)]
         public void UsingMediatorShouldNotKeepStuff()
         {
-            var target = new TestV2ScoreClass(new TestViewAwareStatus());
+            //Arrange
+            var target = new TestV2ScoreClass(/*Just a class do not store it*/new TestViewAwareStatus());
             var weakRef = new WeakReference<TestV2ScoreClass>(target);
+            //Act
             target = null;
             GC.Collect();
+            //Assert
             TestV2ScoreClass test;
             var gotIt = weakRef.TryGetTarget(out test);
             Assert.IsFalse(gotIt);
@@ -35,10 +38,13 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddConcept(ConceptCreator.SomeConcept, ConceptPartId = ConceptCreator.SomeConcept_Part1)]
         public void Mediator_SolutionGroupChanged_IsCalled()
         {
+            //Arrange
             var target = new TestV2ScoreClass(ViewAwareStatus);
             ViewAwareStatus.SimulateViewIsLoadedEvent();
+            //Act
             Mediator.Instance.NotifyColleagues(Constants.SolutionGroupChanged, true);
             var result = target.HandleSolutionGroupChangedCalled;
+            //Assert
             Assert.IsTrue(result);
         }
 
@@ -47,14 +53,17 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddXhtmlParameter(XhtmlWithInlineStringScoringParameter)]
         public void Mediator_AutoScoringChanged_ToFalse_AspectScoringPrmAdded()
         {
+            //Arrange
             var target = new TestV2ScoreClass(ViewAwareStatus);
             AddResource("InlineGapStringLayoutTemplate", InlineGapStringLayoutTemplate, ResourceEntityType.ItemTemplate);
             AddResource("InlineGap.String", InlineGapStringControlTemplate, ResourceEntityType.ControlTemplate);
             ViewAwareStatus.SimulateViewIsLoadedEvent();
             var nrOfAspectScoringPrmsBefore = target.ScoringParameters.Count(s => s is AspectScoringParameter);
+            //Act
             Mediator.Instance.NotifyColleagues(Constants.AutoScoringChanged, false);
             var autoScoringChangedCalled = target.HandleAutoScoringChangedCalled;
             var nrOfAspectScoringPrmsAfter = target.ScoringParameters.Count(s => s is AspectScoringParameter);
+            //Assert
             Assert.IsTrue(autoScoringChangedCalled);
             Assert.AreEqual(0, nrOfAspectScoringPrmsBefore);
             Assert.AreEqual(1, nrOfAspectScoringPrmsAfter);
@@ -66,15 +75,18 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddAspectScoringParameter(AutoScoringOffPrm = true, ControllerID = "MyController", FindingOverride = "mc", Name = "aspectScoringPrm", PrmCollToAddToId = "autoScoring", PrmCollToAddToIsDynCollection = true)]
         public void Mediator_AutoScoringChanged_ToTrue_AspectScoringPrmRemoved()
         {
+            //Arrange
             var target = new TestV2ScoreClass(ViewAwareStatus);
             AddResource("TestItem", TestItem, ResourceEntityType.Item);
             AddResource("InlineGapStringLayoutTemplate", InlineGapStringLayoutTemplate, ResourceEntityType.ItemTemplate);
             AddResource("InlineGap.String", InlineGapStringControlTemplate, ResourceEntityType.ControlTemplate);
             ViewAwareStatus.SimulateViewIsLoadedEvent();
             var nrOfAspectScoringPrmsBefore = target.ScoringParameters.Count(s => s is AspectScoringParameter);
+            //Act
             Mediator.Instance.NotifyColleagues(Constants.AutoScoringChanged, true);
             var autoScoringChangedCalled = target.HandleAutoScoringChangedCalled;
             var nrOfAspectScoringPrmsAfter = target.ScoringParameters.Count(s => s is AspectScoringParameter);
+            //Assert
             Assert.IsTrue(autoScoringChangedCalled);
             Assert.AreEqual(1, nrOfAspectScoringPrmsBefore);
             Assert.AreEqual(0, nrOfAspectScoringPrmsAfter);
@@ -84,10 +96,13 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddXhtmlParameter(XhtmlWithInlineStringScoringParameter)]
         public void EnrichScoringParametersWithDesignerSettingsForPreprocessingRulesTest()
         {
+            //Arrange
             var target = new TestV2ScoreClass(ViewAwareStatus);
             AddResource("InlineGapStringLayoutTemplate", InlineGapStringLayoutTemplate, ResourceEntityType.ItemTemplate);
             AddResource("InlineGap.String", InlineGapStringControlTemplate, ResourceEntityType.ControlTemplate);
+            //Act
             ViewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             Assert.IsTrue(target.ScoringParameters.Any(s => s.DesignerSettings.Count > 0));
             Assert.IsTrue(target.ScoringParameters.Any(s => s.DesignerSettings.Any(d => d.Key == "PreprocessRules")));
         }
@@ -97,11 +112,14 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddXhtmlParameter(XhtmlWithInlineStringScoringParameter)]
         public void EnrichScoringParametersWithDesignerSettingsForPreprocessingRulesXhtmlWithAndWithoutStringInlineElement()
         {
+            //Arrange
             var target = new TestV2ScoreClass(ViewAwareStatus);
 
             AddResource("InlineGapStringLayoutTemplate", InlineGapStringLayoutTemplate, ResourceEntityType.ItemTemplate);
             AddResource("InlineGap.String", InlineGapStringControlTemplate, ResourceEntityType.ControlTemplate);
+            //Act
             ViewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             Assert.IsTrue(target.ScoringParameters.Any(s => s.DesignerSettings.Count > 0));
             Assert.IsTrue(target.ScoringParameters.Any(s => s.DesignerSettings.Any(d => d.Key == "PreprocessRules")));
         }
@@ -111,20 +129,26 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddXhtmlParameter(XhtmlWithInlineStringScoringParameter)]
         public void EnrichScoringParametersWithDesignerSettingsForPreprocessingRulesXhtmlWithAndWithoutStringInlineElementWithInlineImage()
         {
+            //Arrange
             var target = new TestV2ScoreClass(ViewAwareStatus);
             AddResource("InlineGapStringLayoutTemplate", InlineGapStringLayoutTemplate, ResourceEntityType.ItemTemplate);
             AddResource("InlineGap.String", InlineGapStringControlTemplate, ResourceEntityType.ControlTemplate);
+            //Act
             ViewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             Assert.IsTrue(target.ScoringParameters.Any(s => s.DesignerSettings.Count > 0));
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("ItemEditor"), TestCategory("Scoring")]
         public void EnrichScoringParametersWithDesignerSettingsNoXhtml()
         {
+            //Arrange
             var target = new TestV2ScoreClass(ViewAwareStatus);
             AddResource("InlineGapStringLayoutTemplate", InlineGapStringLayoutTemplate, ResourceEntityType.ItemTemplate);
             AddResource("InlineGap.String", InlineGapStringControlTemplate, ResourceEntityType.ControlTemplate);
+            //Act
             ViewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             Assert.AreEqual(target.ScoringParameters.Count(), 0);
         }
 
@@ -132,10 +156,13 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddXhtmlParameter(XhtmlWithoutInlineElements)]
         public void EnrichScoringParametersWithDesignerSettingsXhtmlNoInline()
         {
+            //Arrange
             var target = new TestV2ScoreClass(ViewAwareStatus);
             AddResource("InlineGapStringLayoutTemplate", InlineGapStringLayoutTemplate, ResourceEntityType.ItemTemplate);
             AddResource("InlineGap.String", InlineGapStringControlTemplate, ResourceEntityType.ControlTemplate);
+            //Act
             ViewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             Assert.AreEqual(target.ScoringParameters.Count(), 0);
         }
 
@@ -144,10 +171,13 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddXhtmlParameter(XhtmlWithoutInlineElements)]
         public void EnrichScoringParametersWithDesignerSettingsXhtmlWithoutInlineString()
         {
+            //Arrange
             var target = new TestV2ScoreClass(ViewAwareStatus);
             AddResource("InlineGapStringLayoutTemplate", InlineGapStringLayoutTemplate, ResourceEntityType.ItemTemplate);
             AddResource("InlineGap.String", InlineGapStringControlTemplate, ResourceEntityType.ControlTemplate);
+            //Act
             ViewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             Assert.AreEqual(target.ScoringParameters.Count(), 0);
         }
 
@@ -157,10 +187,13 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddXhtmlParameter(XhtmlWithInlineStringScoringParameter)]
         public void EnrichScoringParametersWithDesignerSettingsXhtmlAllTypes()
         {
+            //Arrange
             var target = new TestV2ScoreClass(ViewAwareStatus);
             AddResource("InlineGapStringLayoutTemplate", InlineGapStringLayoutTemplate, ResourceEntityType.ItemTemplate);
             AddResource("InlineGap.String", InlineGapStringControlTemplate, ResourceEntityType.ControlTemplate);
+            //Act
             ViewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             Assert.IsTrue(target.ScoringParameters.Any(s => s.DesignerSettings.Count > 0));
         }
 
@@ -173,6 +206,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
         protected override IEnumerable<ComposablePartCatalog> GetTypesForInjection()
         {
+            //throw new NotImplementedException();
             return Enumerable.Empty<ComposablePartCatalog>();
         }
 
@@ -284,6 +318,9 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                                                             </SharedParameterSet>
                                                         </Template>";
 
+        /// <summary>
+        /// Test implementation of V2ScoringBase
+        /// </summary>
         private class TestV2ScoreClass : V2ScoringBase
         {
 

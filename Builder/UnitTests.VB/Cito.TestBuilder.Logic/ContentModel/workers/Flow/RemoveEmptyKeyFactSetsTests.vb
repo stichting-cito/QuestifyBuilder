@@ -10,11 +10,14 @@ Public Class RemoveEmptyKeyFactSetsTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub Remove_1FactSet()
+        'Arrange
         Dim solution = _testSolution1EmptySet.To(Of Solution)()
         Dim inputs As New Dictionary(Of String, Object) From {{"Finding", solution.Findings(0)}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New RemoveEmptyKeyFactSets(Of KeyFinding)(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Dim firsFinding = solution.Findings(0)
         Assert.AreEqual(0, firsFinding.KeyFactsets.Count)
@@ -22,11 +25,14 @@ Public Class RemoveEmptyKeyFactSetsTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub Remove_3FactSet()
+        'Arrange
         Dim solution = _testSolution3EmptySets.To(Of Solution)()
         Dim inputs As New Dictionary(Of String, Object) From {{"Finding", solution.Findings(0)}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New RemoveEmptyKeyFactSets(Of KeyFinding)(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Dim firsFinding = solution.Findings(0)
         Assert.AreEqual(0, firsFinding.KeyFactsets.Count)
@@ -34,16 +40,20 @@ Public Class RemoveEmptyKeyFactSetsTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub Remove_2FactSet()
+        'Arrange
         Dim solution = _testSolution2EmptySets_1NotEmpty.To(Of Solution)()
         Dim inputs As New Dictionary(Of String, Object) From {{"Finding", solution.Findings(0)}}
-
+        
+        'Act
         WorkflowInvoker.Invoke(New RemoveEmptyKeyFactSets(Of KeyFinding)(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Dim firsFinding = solution.Findings(0)
         Assert.AreEqual(1, firsFinding.KeyFactsets.Count)
     End Sub
 
+#Region "Data"
     ReadOnly _testSolution1EmptySet As XElement = <solution>
                                                       <keyFindings>
                                                           <keyFinding id="shared_finding" scoringMethod="None">
@@ -74,5 +84,6 @@ Public Class RemoveEmptyKeyFactSetsTests
                                                                  </keyFindings>
                                                              </solution>
 
+#End Region
 
 End Class

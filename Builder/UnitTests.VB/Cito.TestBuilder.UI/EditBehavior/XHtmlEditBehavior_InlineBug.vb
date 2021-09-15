@@ -17,49 +17,59 @@ Public Class XHtmlEditBehavior_InlineBug
     Public Sub DeInit()
         FakeDal.Deinit()
     End Sub
-
+    
     <TestMethod(), TestCategory("UILogic"), TestCategory("EditBehavior")>
     Public Sub ReorderingTagsOfInlineIdImgShouldNotMatter()
+        'Arrange
         Dim xhtmlparam As New XHtmlParameter() With {.Value = dataWith2InlinePrms.ToString()}
-        FakeDal.AddInline()
+        FakeDal.AddInline() 'Make Inine possible
         Dim _itemResource As New ItemResourceEntity()
         Dim _behavior As New XHtmlParameterBehavior(_itemResource, FakeDal.GetFakeResourceManager(), 123, xhtmlparam)
 
+        'Act
         _behavior.GetHtml()
         _behavior.SetHtml(htmlWithReorganizedInlineElements_has2Elements.ToString())
         _behavior.GetHtml()
 
+        'Assert
         Assert.AreEqual(2, _behavior.InlineElements.Count)
     End Sub
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("EditBehavior")>
     Public Sub MoveInlineElement()
+        'Arrange
         Dim xhtmlparam As New XHtmlParameter() With {.Value = dataWith2InlinePrms.ToString()}
-        FakeDal.AddInline()
+        FakeDal.AddInline() 'Make Inine possible
         Dim _itemResource As New ItemResourceEntity()
         Dim _behavior As New XHtmlParameterBehavior(_itemResource, FakeDal.GetFakeResourceManager(), 123, xhtmlparam)
 
+        'Act
         _behavior.GetHtml()
         _behavior.SetHtml(htmlMovingStep1.ToString())
         _behavior.GetHtml()
         _behavior.SetHtml(htmlMovingStep2.ToString())
 
+        'Assert
         Assert.AreEqual(2, _behavior.InlineElements.Count)
     End Sub
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("EditBehavior")>
     Public Sub NumberOfInlineElementsWillRemain()
+        'Arrange
         Dim xhtmlparam As New XHtmlParameter() With {.Value = dataWith2InlinePrms.ToString()}
-        FakeDal.AddInline()
+        FakeDal.AddInline() 'Make Inine possible
         Dim _itemResource As New ItemResourceEntity()
         Dim _behavior As New XHtmlParameterBehavior(_itemResource, FakeDal.GetFakeResourceManager(), 123, xhtmlparam)
 
+        'Act 
         _behavior.SetHtml(_behavior.GetHtml())
         _behavior.GetHtml()
 
+        'Assert
         Assert.AreEqual(2, _behavior.InlineElements.Count)
     End Sub
 
+#Region "Data"
     ReadOnly htmlWithReorganizedInlineElements_has2Elements As XElement = <html xmlns="http://www.w3.org/1999/xhtml" id="c1-id-1">
                                                                               <head id="c1-id-2">
                                                                                   <title id="c1-id-3">Document Title 3</title>
@@ -157,5 +167,6 @@ Public Class XHtmlEditBehavior_InlineBug
                                                    </cito:InlineElement>
                                                </p>
 
+#End Region
 
 End Class

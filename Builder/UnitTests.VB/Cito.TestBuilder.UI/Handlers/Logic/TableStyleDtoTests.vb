@@ -9,131 +9,167 @@ Public Class TableStyleDtoTests
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Table")>
     Public Sub WithMidGetVert_GetStyleLeftSide()
+        'Arrange
         Dim dto As TableStyleDto = GetStyleDtoForIncludingMidSections()
-
-        Dim result = dto.GetLeftVert(True)
-
+       
+        'Act
+        Dim result = dto.GetLeftVert(True) 'Borders = yes
+       
+        'Assert
         Assert.AreEqual(New CssBorder() With {.BorderStyle = LineStyle.Dashed.ToString(),
-                                      .Width = 3,
-                                      .Color = Color.Black}, result)
+                                              .Width = 3,
+                                              .Color = Color.Black}, result)
     End Sub
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Table")>
     Public Sub WithMidGetVert_GetStyleMidVert_AsLeftSide()
+        'Arrange
         Dim dto As TableStyleDto = GetStyleDtoForIncludingMidSections()
-
-        Dim result = dto.GetLeftVert(False)
-
+      
+        'Act
+        Dim result = dto.GetLeftVert(False) 'Borders = no
+       
+        'Assert
         Assert.AreEqual(New CssBorder() With {.BorderStyle = LineStyle.Solid.ToString(),
-                                      .Width = 2,
-                                      .Color = Color.Black}, result)
+                                              .Width = 2,
+                                              .Color = Color.Black}, result)
     End Sub
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Table")>
     Public Sub WithMidGetVert_GetStyleMidVert_AsRightSide()
+        'Arrange
         Dim dto As TableStyleDto = GetStyleDtoForIncludingMidSections()
-
-        Dim result = dto.GetRightVert(False)
-
+       
+        'Act
+        Dim result = dto.GetRightVert(False) 'Borders = no
+       
+        'Assert
         Assert.AreEqual(New CssBorder() With {.BorderStyle = LineStyle.Solid.ToString(),
-                                      .Width = 2,
-                                      .Color = Color.Black}, result)
+                                              .Width = 2,
+                                              .Color = Color.Black}, result)
     End Sub
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Table")>
     Public Sub WithMidGetVert_GetStyleMidVert_AsRightSide_shouldEqual_AsLeftSide()
+        'Arrange
         Dim dto As TableStyleDto = GetStyleDtoForIncludingMidSections()
-
-        Dim resultRight = dto.GetRightVert(False)
-        Dim resultLeft = dto.GetLeftVert(False)
-
+       
+        'Act
+        Dim resultRight = dto.GetRightVert(False) 'Borders = no
+        Dim resultLeft = dto.GetLeftVert(False) 'Borders = no
+     
+        'Assert
         Assert.AreEqual(resultLeft, resultRight)
     End Sub
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Table")>
     Public Sub WithMidGetVert_GetStyleRightSide()
+        'Arrange
         Dim dto As TableStyleDto = GetStyleDtoForIncludingMidSections()
-
-        Dim result = dto.GetRightVert(True)
-
+       
+        'Act
+        Dim result = dto.GetRightVert(True) 'Borders = yes
+     
+        'Assert
         Assert.AreEqual(New CssBorder() With {.BorderStyle = LineStyle.Double.ToString(),
-                                      .Width = 13,
-                                      .Color = Color.Black}, result)
+                                              .Width = 13,
+                                              .Color = Color.Black}, result)
     End Sub
 
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Table")>
     Public Sub WithMidGetVert_GetStyleTopSide()
+        'Arrange
         Dim dto As TableStyleDto = GetStyleDtoForIncludingMidSections()
-
-        Dim result = dto.GetTopHorizontal(True)
-
+      
+        'Act
+        Dim result = dto.GetTopHorizontal(True) 'Borders = yes
+      
+        'Assert
         Assert.AreEqual(New CssBorder() With {.BorderStyle = LineStyle.Double.ToString(),
-                                      .Width = 11,
-                                      .Color = Color.Black}, result)
+                                              .Width = 11,
+                                              .Color = Color.Black}, result)
     End Sub
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Table")>
     Public Sub WithMidGetVert_GetMidHor_asTop()
+        'Arrange
         Dim dto As TableStyleDto = GetStyleDtoForIncludingMidSections()
-
-        Dim result = dto.GetTopHorizontal(False)
-
+       
+        'Act
+        Dim result = dto.GetTopHorizontal(False) 'Borders = no
+       
+        'Assert
         Assert.AreEqual(New CssBorder() With {.BorderStyle = LineStyle.Solid.ToString(),
-                                      .Width = 7,
-                                      .Color = Color.Black}, result)
+                                              .Width = 7,
+                                              .Color = Color.Black}, result)
     End Sub
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Table")>
     Public Sub WithMidGetVert_GetMidHor_asBottom()
+        'Arrange
         Dim dto As TableStyleDto = GetStyleDtoForIncludingMidSections()
-
-        Dim result = dto.GetBottomHorizontal(False)
-
+       
+        'Act
+        Dim result = dto.GetBottomHorizontal(False) 'Borders = no
+       
+        'Assert
         Assert.AreEqual(New CssBorder() With {.BorderStyle = LineStyle.Solid.ToString(),
-                                      .Width = 7,
-                                      .Color = Color.Black}, result)
+                                              .Width = 7,
+                                              .Color = Color.Black}, result)
     End Sub
 
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Table")>
     Public Sub WithMidGetVert_GetMidHor_asBottom_eqausl_asTop()
+        'Arrange
         Dim dto As TableStyleDto = GetStyleDtoForIncludingMidSections()
-
-        Dim resultbottom = dto.GetBottomHorizontal(False)
-        Dim resulttop = dto.GetTopHorizontal(False)
-
+      
+        'Act
+        Dim resultbottom = dto.GetBottomHorizontal(False) 'Borders = no
+        Dim resulttop = dto.GetTopHorizontal(False) 'Borders = no
+      
+        'Assert
         Assert.AreEqual(resultbottom, resulttop)
     End Sub
 
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Table")>
     Public Sub WithMidGetVert_GetBottomSide()
+        'Arrange
         Dim dto As TableStyleDto = GetStyleDtoForIncludingMidSections()
-
-        Dim result = dto.GetBottomHorizontal(True)
-
+      
+        'Act
+        Dim result = dto.GetBottomHorizontal(True) 'Borders = no
+      
+        'Assert
         Assert.AreEqual(New CssBorder() With {.BorderStyle = LineStyle.Dotted.ToString(),
-                                      .Width = 5,
-                                      .Color = Color.Black}, result)
+                                              .Width = 5,
+                                              .Color = Color.Black}, result)
     End Sub
 
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Table")>
     Public Sub CheckIfOuter_BoxAndInnerSameStyle_WhenIsNothing()
+        'Arrange
         Dim dto As TableStyleDto = New TableStyleDto
-
+      
+        'Act
         Dim result = dto.BoxAndInnerSameStyle()
-
+      
+        'Assert
         Assert.IsFalse(result)
     End Sub
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Table")>
     Public Sub CheckIfOuter_BoxIsSameStyle_WhenIsNothing()
+        'Arrange
         Dim dto As TableStyleDto = New TableStyleDto
-
+     
+        'Act
         Dim result = dto.BoxIsSameStyle()
-
+     
+        'Assert
         Assert.IsFalse(result)
     End Sub
 

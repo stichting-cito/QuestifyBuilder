@@ -12,6 +12,7 @@ Public Class ScoringExamplesTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub Example_InlineId()
+        'Arrange
         Dim solution As Solution = New Solution()
         Dim param = New MultiChoiceScoringParameter() With {.BluePrint = New ParameterCollection(),
                                                             .Value = New ParameterSetCollection(),
@@ -20,9 +21,11 @@ Public Class ScoringExamplesTests
         param.Value.Add(New ParameterCollection() With {.Id = "B"})
         param.Value.Add(New ParameterCollection() With {.Id = "C"})
 
+        'Act
         Dim manipulator = param.GetScoreManipulator(solution)
         manipulator.SetKey("B")
 
+        'Assert
         Write(Of MultiChoiceScoringParameter)("param", param)
         Write(Of Solution)("solution", solution)
 
@@ -34,6 +37,7 @@ Public Class ScoringExamplesTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub Example_FindingOverride()
+        'Arrange
         Dim solution As New Solution()
         Dim param = New MultiChoiceScoringParameter() With {.BluePrint = New ParameterCollection(),
                                                             .Value = New ParameterSetCollection(),
@@ -41,10 +45,12 @@ Public Class ScoringExamplesTests
         param.Value.Add(New ParameterCollection() With {.Id = "A"})
         param.Value.Add(New ParameterCollection() With {.Id = "B"})
         param.Value.Add(New ParameterCollection() With {.Id = "C"})
-
+        
+        'Act
         Dim manipulator = param.GetScoreManipulator(solution)
         manipulator.SetKey("B")
 
+        'Assert
         Write(Of MultiChoiceScoringParameter)("param", param)
         Write(Of Solution)("solution", solution)
 
@@ -56,6 +62,7 @@ Public Class ScoringExamplesTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub Example_Combo_Finding_FindingOverride()
+        'Arrange
         Dim solution As New Solution()
         Dim param = New MultiChoiceScoringParameter() With {.BluePrint = New ParameterCollection(),
                                                             .Value = New ParameterSetCollection(),
@@ -65,9 +72,11 @@ Public Class ScoringExamplesTests
         param.Value.Add(New ParameterCollection() With {.Id = "B"})
         param.Value.Add(New ParameterCollection() With {.Id = "C"})
 
+        'Act
         Dim manipulator = param.GetScoreManipulator(solution)
         manipulator.SetKey("B")
 
+        'Assert
         Write(Of MultiChoiceScoringParameter)("param", param)
         Write(Of Solution)("solution", solution)
 
@@ -79,6 +88,7 @@ Public Class ScoringExamplesTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub Example_ControllerId()
+        'Arrange
         Dim solution As Solution = New Solution()
         Dim param = New MultiChoiceScoringParameter() With {.BluePrint = New ParameterCollection(),
                                                             .Value = New ParameterSetCollection(),
@@ -88,9 +98,11 @@ Public Class ScoringExamplesTests
         param.Value.Add(New ParameterCollection() With {.Id = "B"})
         param.Value.Add(New ParameterCollection() With {.Id = "C"})
 
+        'Act
         Dim manipulator = param.GetScoreManipulator(solution)
         manipulator.SetKey("B")
 
+        'Assert
         Write(Of MultiChoiceScoringParameter)("param", param)
         Write(Of Solution)("solution", solution)
 
@@ -102,6 +114,7 @@ Public Class ScoringExamplesTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub Example_ControllerId_And_Finding()
+        'Arrange
         Dim solution = New Solution()
         Dim param = New MultiChoiceScoringParameter() With {.BluePrint = New ParameterCollection(),
                                                     .Value = New ParameterSetCollection(),
@@ -112,9 +125,11 @@ Public Class ScoringExamplesTests
         param.Value.Add(New ParameterCollection() With {.Id = "B"})
         param.Value.Add(New ParameterCollection() With {.Id = "C"})
 
+        'Act
         Dim manipulator = param.GetScoreManipulator(solution)
         manipulator.SetKey("B")
 
+        'Assert
         Write(Of MultiChoiceScoringParameter)("param", param)
         Write(Of Solution)("solution", solution)
 
@@ -126,6 +141,7 @@ Public Class ScoringExamplesTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub Example_ControllerId_And_Inline()
+        'Arrange
         Dim solution = New Solution()
         Dim param = New MultiChoiceScoringParameter() With {.BluePrint = New ParameterCollection(),
                                                     .Value = New ParameterSetCollection(),
@@ -136,9 +152,11 @@ Public Class ScoringExamplesTests
         param.Value.Add(New ParameterCollection() With {.Id = "B"})
         param.Value.Add(New ParameterCollection() With {.Id = "C"})
 
+        'Act
         Dim manipulator = param.GetScoreManipulator(solution)
         manipulator.SetKey("B")
 
+        'Assert
         Write(Of MultiChoiceScoringParameter)("param", param)
         Write(Of Solution)("solution", solution)
 
@@ -149,6 +167,7 @@ Public Class ScoringExamplesTests
     End Sub
 
 
+#Region "Data"
 
     Private Data_Inline As XElement = <solution>
                                           <keyFindings>
@@ -241,6 +260,7 @@ Public Class ScoringExamplesTests
                                                        </solution>
 
 
+#End Region
 
     Function DoSerialize(Of T)(obj As T) As XElement
         Dim s = New XmlSerializer(GetType(T))

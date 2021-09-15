@@ -4,17 +4,23 @@ Imports System.Xml.Linq
 Imports FluentAssertions
 Imports Questify.Builder.Plugins.PaperBased
 
+''' <summary>
+''' OpenXmlGenerator test. 
+''' </summary>
 <TestClass()>
 Public Class OpenXmlGeneratorTests
 
     <TestMethod(), TestCategory("OpenXmlHelper")>
     Public Sub RemoveTtsStyles_WithTtsStyles_ShouldRemoveTtsSpans()
+        'Arrange
         Dim openXmlGenerator As New OpenXmlGenerator
         Dim input As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur <span class=""UserSRttsTonen"" id=""c1-id-11"">al</span> <span class=""UserSRttsFonetisch"" id=""c1-id-12"">al</span><span class=""UserSRttsPauze"" id=""c1-id-13""> </span><span class=""UserSRttsTonen"" id=""c1-id-14"">rijden?</span> <span class=""UserSRttsFonetisch"" id=""c1-id-15"">rijden</span></p>								</w:customXml>"
         Dim expectedResult As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur al rijden? </p>								</w:customXml>"
 
+        'Act
         openXmlGenerator.RemoveTtsStyles(input)
 
+        'Assert
         Assert.AreEqual(input, expectedResult)
         Assert.AreEqual(0, HtmlContainsTag(input, "span", "ttsFonetisch"))
         Assert.AreEqual(0, HtmlContainsTag(input, "span", "ttsPauze"))
@@ -23,12 +29,15 @@ Public Class OpenXmlGeneratorTests
 
     <TestMethod(), TestCategory("OpenXmlHelper")>
     Public Sub RemoveTtsStyles_WithTtsStyles_ShouldOnlyRemoveTtsSpans()
+        'Arrange
         Dim openXmlGenerator As New OpenXmlGenerator
         Dim input As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur <span style=""text-decoration:underline"" class=""UserSRttsTonen"" id=""c1-id-11"">al</span><span class=""UserSRttsFonetisch"" id=""c1-id-12""> <span style=""text-decoration:underline"" id=""c1-id-13"">al</span></span><span class=""UserSRttsPauze"" id=""c1-id-14""> </span><span class=""UserSRttsTonen"" id=""c1-id-15""> <span class=""UserSRVetOnderstreept"" id=""c1-id-16"">rijden?</span></span><span class=""UserSRttsFonetisch"" id=""c1-id-17""> <span class=""UserSRVetOnderstreept"" id=""c1-id-18"">rijden</span></span></p>								</w:customXml>"
         Dim expectedResult As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur <span style=""text-decoration:underline"" id=""c1-id-11"">al</span> <span class=""UserSRVetOnderstreept"" id=""c1-id-16"">rijden?</span></p>								</w:customXml>"
 
+        'Act
         openXmlGenerator.RemoveTtsStyles(input)
 
+        'Assert
         Assert.AreEqual(input, expectedResult)
         Assert.AreEqual(2, HtmlContainsTag(input, "span"))
         Assert.AreEqual(0, HtmlContainsTag(input, "span", "ttsFonetisch"))
@@ -38,24 +47,30 @@ Public Class OpenXmlGeneratorTests
 
     <TestMethod(), TestCategory("OpenXmlHelper")>
     Public Sub RemoveTtsStyles_NoTtsStyles_ShouldNotHaveChanged()
+        'Arrange
         Dim openXmlGenerator As New OpenXmlGenerator
         Dim input As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur <strong id=""c1-id-11"">al</strong> <span style=""text-decoration:underline"" id=""c1-id-12"">al</span> <span class=""UserSRDoorstrepen"" id=""c1-id-13""> rijden</span>?<span class=""UserSRVetOnderstreept"" id=""c1-id-14""> rijden</span></p>								</w:customXml>"
-        Dim expectedResult As String = input
+        Dim expectedResult As String = input    'The end result should be the same as the input
 
+        'Act
         openXmlGenerator.RemoveTtsStyles(input)
 
+        'Assert
         Assert.AreEqual(input, expectedResult)
         Assert.AreEqual(3, HtmlContainsTag(input, "span"))
     End Sub
 
     <TestMethod(), TestCategory("OpenXmlHelper")>
     Public Sub RemoveTtsStyles_WithTtsStyles_ShouldRemoveAllElementsWithTtsStyle()
+        'Arrange
         Dim openXmlGenerator As New OpenXmlGenerator
         Dim input As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur <span id=""c1-id-21"" class=""UserSRttsTonen"">al</span> <span id=""c1-id-22"" class=""UserSRttsFonetisch"">al</span> <span id=""c1-id-23"" class=""UserSRttsTonen"">rijden?</span> <span id=""c1-id-24"" class=""UserSRttsFonetisch"">rijden</span></p><p id=""c1-id-20"" class=""UserSRttsPauze"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Nou?</p><p id=""c1-id-19"" class=""UserSRttsFonetisch"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Nee dat mag hij niet.</p>								</w:customXml>"
         Dim expectedResult As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur al  rijden? </p>								</w:customXml>"
 
+        'Act
         openXmlGenerator.RemoveTtsStyles(input)
 
+        'Assert
         Assert.AreEqual(input, expectedResult)
         Assert.AreEqual(1, HtmlContainsTag(input, "p"))
         Assert.AreEqual(0, HtmlContainsTag(input, "span"))
@@ -68,12 +83,15 @@ Public Class OpenXmlGeneratorTests
 
     <TestMethod(), TestCategory("OpenXmlHelper")>
     Public Sub RemoveTtsStyles_ParagraphWithTtsTonen_ShouldOnlyRemoveTtsClassName()
+        'Arrange
         Dim openXmlGenerator As New OpenXmlGenerator
         Dim input As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p class=""UserSRttsTonen"" id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur al rijden?</p>								</w:customXml>"
         Dim expectedResult As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur al rijden?</p>								</w:customXml>"
 
+        'Act
         openXmlGenerator.RemoveTtsStyles(input)
 
+        'Assert
         Assert.AreEqual(input, expectedResult)
         Assert.AreEqual(1, HtmlContainsTag(input, "p"))
         Assert.AreEqual(0, HtmlContainsTag(input, "p", "ttsTonen"))
@@ -81,12 +99,15 @@ Public Class OpenXmlGeneratorTests
 
     <TestMethod(), TestCategory("OpenXmlHelper")>
     Public Sub RemoveTtsStyles_ParagraphWithTtsTonen_AndOtherClass_ShouldOnlyRemoveTtsClassName()
+        'Arrange
         Dim openXmlGenerator As New OpenXmlGenerator
         Dim input As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p class=""TestClassName UserSRttsTonen"" id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur al rijden?</p>								</w:customXml>"
         Dim expectedResult As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p class=""TestClassName"" id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur al rijden?</p>								</w:customXml>"
 
+        'Act
         openXmlGenerator.RemoveTtsStyles(input)
 
+        'Assert
         Assert.AreEqual(input, expectedResult)
         Assert.AreEqual(1, HtmlContainsTag(input, "p"))
         Assert.AreEqual(0, HtmlContainsTag(input, "p", "ttsTonen"))
@@ -94,12 +115,15 @@ Public Class OpenXmlGeneratorTests
 
     <TestMethod(), TestCategory("OpenXmlHelper")>
     Public Sub RemoveTtsStyles_SpanWithTtsTonen_AndStyleAttribute_ShouldOnlyRemoveTtsClassName()
+        'Arrange
         Dim openXmlGenerator As New OpenXmlGenerator
         Dim input As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur al <span style=""text-decoration:underline"" class=""UserSRttsTonen"" id=""c1-id-11"">rijden?</span></p>								</w:customXml>"
         Dim expectedResult As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur al <span style=""text-decoration:underline"" id=""c1-id-11"">rijden?</span></p>								</w:customXml>"
 
+        'Act
         openXmlGenerator.RemoveTtsStyles(input)
 
+        'Assert
         Assert.AreEqual(input, expectedResult)
         Assert.AreEqual(1, HtmlContainsTag(input, "span"))
         Assert.AreEqual(0, HtmlContainsTag(input, "span", "ttsTonen"))
@@ -107,12 +131,15 @@ Public Class OpenXmlGeneratorTests
 
     <TestMethod(), TestCategory("OpenXmlHelper")>
     Public Sub RemoveTtsStyles_SpanWithTtsTonen_AndOtherClass_ShouldOnlyRemoveTtsClassName()
+        'Arrange
         Dim openXmlGenerator As New OpenXmlGenerator
         Dim input As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur al <span class=""TestClassName UserSRttsTonen"" id=""c1-id-11"">rijden?</span></p>								</w:customXml>"
         Dim expectedResult As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur al <span class=""TestClassName"" id=""c1-id-11"">rijden?</span></p>								</w:customXml>"
 
+        'Act
         openXmlGenerator.RemoveTtsStyles(input)
 
+        'Assert
         Assert.AreEqual(input, expectedResult)
         Assert.AreEqual(1, HtmlContainsTag(input, "span"))
         Assert.AreEqual(0, HtmlContainsTag(input, "span", "ttsTonen"))
@@ -121,36 +148,46 @@ Public Class OpenXmlGeneratorTests
 
     <TestMethod>
     Public Sub RemoveVerklankingParagraphsThatIncludeBreaksKeepsBreaks()
+        'Arrange
         Dim openXmlGenerator As New OpenXmlGenerator
         Dim input As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main""> <p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur al <span class=""TestClassName UserSRttsTonen"" id=""c1-id-11"">rijden?</span><span class=""UserSRttsFonetisch"" id=""c1-id-24""><br id=""c1-id-16"" /></span></p></w:customXml>"
 
+        'Act
         openXmlGenerator.RemoveTtsStyles(input)
 
+        'Assert
         input.Should().Contain("<br ")
     End Sub
 
     <TestMethod(), TestCategory("OpenXmlHelper")>
     Public Sub RemoveRemarksFromSpanTest()
+        'Arrange
         Dim openXmlGenerator As New OpenXmlGenerator
         Dim input As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur al <span class=""UserSROpmerkingNietInAfname"" id=""c1-id-11"">rijden?</span></p>								</w:customXml>"
         Dim expectedResult As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur al </p>								</w:customXml>"
 
+        'Act
         Dim result As String = openXmlGenerator.RemoveRemarks(input)
 
+        'Assert
         Assert.AreEqual(expectedResult, result)
     End Sub
 
     <TestMethod(), TestCategory("OpenXmlHelper")>
     Public Sub RemoveRemarksFromParagraphTest()
+        'Arrange
         Dim openXmlGenerator As New OpenXmlGenerator
         Dim input As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur al <p class=""UserSROpmerkingNietInAfname"" id=""c1-id-11"">rijden?</p></p>								</w:customXml>"
         Dim expectedResult As String = "<w:customXml w:uri=""http://www.cito.nl/citotester"" w:element=""xhtmlElementToOpenXml"" xml:space=""preserve"" xmlns:w=""http://schemas.openxmlformats.org/wordprocessingml/2006/main"">									<p id=""c1-id-10"" xmlns=""http://www.w3.org/1999/xhtml"" xml:space=""preserve"">Mag de chauffeur al </p>								</w:customXml>"
 
+        'Act
         Dim result As String = openXmlGenerator.RemoveRemarks(input)
 
+        'Assert
         Assert.AreEqual(expectedResult, result)
     End Sub
-
+    
+#Region "Private methods"
 
     Private Function HtmlContainsTag(xhtmlString As String, searchForTag As String, Optional searchForClass As String = "") As Integer
         Dim result As Integer
@@ -170,6 +207,7 @@ Public Class OpenXmlGeneratorTests
         Return result
     End Function
 
-
+#End Region
+        
 End Class
 

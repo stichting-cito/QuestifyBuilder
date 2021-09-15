@@ -8,6 +8,7 @@ Public Class GapMatchRichTextParameterSerializationTests : Inherits Serializatio
 
     <TestMethod(), TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Deserialize_InAssessmentItem_Test()
+        'Arrange
         Dim xmlData = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="someIdentifier" title="someTitle" layoutTemplateSrc="someIlt">
                           <solution>
                               <keyFindings/>
@@ -20,9 +21,11 @@ Public Class GapMatchRichTextParameterSerializationTests : Inherits Serializatio
                           </parameters>
                       </assessmentItem>
 
+        'Act
         Dim result = Deserialize(Of AssessmentItem)(xmlData)
         Dim param = CType(result.Parameters(0).InnerParameters(0), GapMatchRichTextScoringParameter)
 
+        'Assert
         Assert.IsInstanceOfType(result.Parameters(0).InnerParameters(0), GetType(GapMatchRichTextScoringParameter))
         Assert.AreEqual("gapMatchController", param.FindingOverride)
         Assert.AreEqual("scoreParam", param.Name)
@@ -30,9 +33,12 @@ Public Class GapMatchRichTextParameterSerializationTests : Inherits Serializatio
 
     <TestMethod(), TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Deserialize_InRealWorldAssessmentItem_Test()
+        'Arrange
 
+        'Act
         Dim result = Deserialize(Of AssessmentItem)(_serializedGapMatchRichTextItem)
 
+        'Assert
         Assert.IsInstanceOfType(result.Parameters(1).InnerParameters(10), GetType(GapMatchRichTextScoringParameter))
 
         Dim result2 = DoSerialize(result)
@@ -41,15 +47,19 @@ Public Class GapMatchRichTextParameterSerializationTests : Inherits Serializatio
 
     <TestMethod(), TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Deserialize_InRealWorldAssessmentItem_Test_Alternatives()
+        'Arrange
 
+        'Act
         Dim assessmentItem = Deserialize(Of AssessmentItem)(_serializedGapMatchRichTextItem)
         Dim gapMatchRichTextScoringParameter = DirectCast(assessmentItem.Parameters(1).InnerParameters(10), GapMatchRichTextScoringParameter)
 
+        'Assert
         Assert.AreEqual(2, gapMatchRichTextScoringParameter.AlternativesCount)
         Assert.IsInstanceOfType(gapMatchRichTextScoringParameter.Value.First().InnerParameters.First(), GetType(GapTextRichTextParameter))
     End Sub
 
 
+#Region " Data "
 
     ReadOnly _serializedGapMatchRichTextItem As XElement =
         <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="GapMatchRichText1" title="GapMatchRichText1" layoutTemplateSrc="Cito.CTE.GapMatch.Inline.SC">
@@ -170,5 +180,6 @@ Public Class GapMatchRichTextParameterSerializationTests : Inherits Serializatio
             </parameters>
         </assessmentItem>
 
+#End Region
 
 End Class

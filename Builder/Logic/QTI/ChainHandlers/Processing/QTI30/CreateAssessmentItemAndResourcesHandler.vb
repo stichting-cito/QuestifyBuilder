@@ -70,16 +70,17 @@ Namespace QTI.ChainHandlers.Processing.QTI30
         End Function
 
         Protected Function GetFullItemPath(isExtension As Boolean) As String
-            Dim fileName As String = $"{_itemcode}.xml"
+            Dim _itemResourceIdentifier = _itemHelper.GetItemResourceIdentifier
+            Dim fileName As String = $"{_itemResourceIdentifier}.xml"
             If isExtension Then
-                fileName = $"{_itemcode}_extension.xml"
+                fileName = $"{_itemResourceIdentifier}_extension.xml"
             End If
             Return Path.Combine(Path.Combine(PackageCreator.TempWorkingDirectory.FullName, _folderDirectory(PackageCreatorConstants.FileDirectoryType.items)), fileName)
         End Function
 
         Protected Sub Validate(filesPerEntity As ConcurrentDictionary(Of String, List(Of String)))
             SyncLock _lock
-                For Each fileName As String In filesPerEntity.Item(_itemcode)
+                For Each fileName As String In filesPerEntity.Item(_assessmentItem.Identifier)
                     Using reader As XmlReader = XmlReader.Create(fileName, _settings)
                         While reader.Read()
                         End While

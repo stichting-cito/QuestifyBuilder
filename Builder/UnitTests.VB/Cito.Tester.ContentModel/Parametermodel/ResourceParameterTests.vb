@@ -9,18 +9,24 @@ Public Class ResourceParameterTests
 
     <TestMethod()> <TestCategory("ContentModel")>
     Public Sub DeserializeResourceParameterShoudlNotContainDesignerSettings()
+        'Arrange
 
+        'Act
         Dim res As ResourceParameter = DirectCast(SerializeHelper.XmlDeserializeFromString(data.ToString(), GetType(ResourceParameter)), ResourceParameter)
-
+        
+        'Assert
         Assert.IsFalse(res.Value.Contains("<designersetting"))
     End Sub
 
     <TestMethod()> <TestCategory("ContentModel")> <WorkItem(9658)>
     Public Sub DeserializeResourceWithDesignerSettings_WillLooseThoseWhenValueIsSet()
+        'Arrange
         Dim res As ResourceParameter = DirectCast(SerializeHelper.XmlDeserializeFromString(data.ToString(), GetType(ResourceParameter)), ResourceParameter)
-
+     
+        'Act
         res.Value = "aaa.png"
-
+     
+        'Assert
         Assert.IsFalse(res.Value.Contains("<designersetting"))
         Assert.IsFalse(res.Nodes.Any(Function(p) p.Name.Equals("designersetting", StringComparison.InvariantCultureIgnoreCase)))
     End Sub
@@ -34,11 +40,14 @@ Public Class ResourceParameterTests
 
     Private rp1 As XElement = <ResourceParameter name="clickableImage" height="75" width="100" editSize="true">L_Z3_FR_Les_A0148_00013_Bild11.png</ResourceParameter>
 
-    <TestMethod()> <TestCategory("ContentModel")>
+    <TestMethod()> <TestCategory("ContentModel")> 
     Public Sub SizeIsSerialisedCorrect()
+        'Arrange
 
+        'Act
         Dim res As ResourceParameter = DirectCast(SerializeHelper.XmlDeserializeFromString(rp1.ToString(), GetType(ResourceParameter)), ResourceParameter)
-
+       
+        'Assert
         Assert.AreEqual(100, res.Width)
         Assert.AreEqual(75, res.Height)
         Assert.AreEqual(True, res.EditSize)

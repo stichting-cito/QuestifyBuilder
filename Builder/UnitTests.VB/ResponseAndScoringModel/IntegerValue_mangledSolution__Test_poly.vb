@@ -1,19 +1,28 @@
 ﻿
 Imports System.Xml.Linq
 
+''' <summary>
+''' Test behavior of two facts (NOT IN A SET)
+''' 
+''' A needs to be 42
+''' B is present in the solution BUT NO VALUE SET
+''' </summary>
 <TestClass>
 Public Class IntegerValue_mangledSolution__Test_poly
     Inherits ScoringTestBase
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub GiveCorrectAnswer_experts_1()
+        'Arrange
         Dim solution = toSolution(INT_Dichotomous_42_AND_ERROR)
         Dim r = GetResponse(New List(Of Integer) From {42, 131})
 
-        Write("Response", "Arrange", r)
-
+        Write("Response", "Arrange", r) 'Write for debugging
+       
+        'Act
         Dim result = solution.ScoreSolution(r)
 
+        'Assert
         Assert.AreEqual(1, result)
     End Sub
 

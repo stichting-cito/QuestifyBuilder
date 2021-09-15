@@ -97,7 +97,7 @@
 
         Private _result1 As XElement =
             <root>
-                <qti-response-declaration identifier="RESPONSE" cardinality="multiple" base-type="identifier">
+                <qti-response-declaration identifier="RESPONSE" cardinality="multiple" base-type="directedPair">
                     <qti-correct-response interpretation="(A&amp;B)|(B&amp;A)&amp;C&amp;A">
                         <qti-value>y_A x_1</qti-value>
                         <qti-value>y_B x_2</qti-value>
@@ -109,7 +109,7 @@
 
         Private _result2 As XElement =
             <root>
-                <qti-response-declaration identifier="RESPONSE" cardinality="multiple" base-type="identifier">
+                <qti-response-declaration identifier="RESPONSE" cardinality="multiple" base-type="directedPair">
                     <qti-correct-response interpretation="(A&amp;B)|(B&amp;A)&amp;(C&amp;A)|(B&amp;C)">
                         <qti-value>y_A x_1</qti-value>
                         <qti-value>y_B x_2</qti-value>
@@ -121,7 +121,7 @@
 
         Private _result3 As XElement =
             <root>
-                <qti-response-declaration identifier="RESPONSE" cardinality="multiple" base-type="identifier">
+                <qti-response-declaration identifier="RESPONSE" cardinality="multiple" base-type="directedPair">
                     <qti-correct-response interpretation="(A&amp;B&amp;C&amp;A)|(B&amp;A&amp;B&amp;C)">
                         <qti-value>y_A x_1</qti-value>
                         <qti-value>y_B x_2</qti-value>
@@ -133,7 +133,7 @@
 
         Private _result4 As XElement =
             <root>
-                <qti-response-declaration identifier="RESPONSE" cardinality="multiple" base-type="identifier">
+                <qti-response-declaration identifier="RESPONSE" cardinality="multiple" base-type="directedPair">
                     <qti-correct-response interpretation="A&amp;B&amp;C&amp;A">
                         <qti-value>y_A x_1</qti-value>
                         <qti-value>y_B x_2</qti-value>
@@ -150,7 +150,7 @@
 
         Private _result6 As XElement =
             <root>
-                <qti-response-declaration identifier="RESPONSE" cardinality="multiple" base-type="identifier">
+                <qti-response-declaration identifier="RESPONSE" cardinality="multiple" base-type="directedPair">
                     <qti-correct-response interpretation="A&amp;B&amp;C&amp;A">
                         <qti-value>y_A x_1</qti-value>
                         <qti-value>y_B x_2</qti-value>

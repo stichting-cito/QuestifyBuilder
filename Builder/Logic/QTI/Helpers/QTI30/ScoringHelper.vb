@@ -106,9 +106,9 @@ Namespace QTI.Helpers.QTI30
 
                     Dim responseIdXmlAttribute = DirectCast(responseIdentifierAttribute, XmlAttribute)
                     If responseIdXmlAttribute.OwnerElement.HasChildNodes AndAlso
-                       responseIdXmlAttribute.OwnerElement.SelectNodes("html:object", xmlNamespaceManager).Count > 0 AndAlso
-                       responseIdXmlAttribute.OwnerElement.SelectNodes("html:object", xmlNamespaceManager).Item(0).Attributes("type") IsNot Nothing AndAlso
-                       responseIdXmlAttribute.OwnerElement.SelectNodes("html:object", xmlNamespaceManager).Item(0).Attributes("type").Value.Equals("application/vnd.GeoGebra.file") Then
+                       responseIdXmlAttribute.OwnerElement.SelectNodes("object", xmlNamespaceManager).Count > 0 AndAlso
+                       responseIdXmlAttribute.OwnerElement.SelectNodes("object", xmlNamespaceManager).Item(0).Attributes("type") IsNot Nothing AndAlso
+                       responseIdXmlAttribute.OwnerElement.SelectNodes("object", xmlNamespaceManager).Item(0).Attributes("type").Value.Equals("application/vnd.GeoGebra.file") Then
                         Return returnValue
                     End If
 
@@ -172,9 +172,9 @@ Namespace QTI.Helpers.QTI30
     Then
                         If Not scoringParams.Any(Function(s) QTI30CombinedScoringHelper.GetFormulaItemType(finding, s) = QTI30CombinedScoringHelper.FormulaItemType.EvaluateDependency) Then Return ResponseDeclarationTypeBasetype.float
                     End If
-                Case "qti-choice-interaction", "qti-match-interaction", "qti-hottext-interaction", "qti-order-interaction", "qti-inline-choice-interaction", "qti-hotspot-interaction"
+                Case "qti-choice-interaction", "qti-hottext-interaction", "qti-order-interaction", "qti-inline-choice-interaction", "qti-hotspot-interaction"
                     returnValue = ResponseDeclarationTypeBasetype.identifier
-                Case "qti-gap-match-interaction", "qti-graphic-gap-match-interaction"
+                Case "qti-gap-match-interaction", "qti-graphic-gap-match-interaction", "qti-match-interaction"
                     returnValue = ResponseDeclarationTypeBasetype.directedPair
                 Case "qti-select-point-interaction", "qti-position-object-interaction"
                     returnValue = ResponseDeclarationTypeBasetype.point
@@ -189,7 +189,6 @@ Namespace QTI.Helpers.QTI30
         Friend Shared Sub AddEmptyResponseDeclaration(ByRef itemDocument As XmlDocument, ByRef assessmentItemType As AssessmentItemType)
             Dim xmlNamespaceManager As New XmlNamespaceManager(itemDocument.NameTable)
             xmlNamespaceManager.AddNamespace("qti", itemDocument.DocumentElement.NamespaceURI)
-            xmlNamespaceManager.AddNamespace("html", XHTMLNAMESPACE)
 
             Dim responseIdentifierAttributeList As XmlNodeList = ResponseIdentifierHelper.GetResponseIdentifiers(itemDocument, xmlNamespaceManager)
             Dim responseIndex As Integer = 1
@@ -364,7 +363,9 @@ Namespace QTI.Helpers.QTI30
         End Function
         Friend Shared Function GetDefaultOutcomeDeclarationsList(translationTable As ItemScoreTranslationTable, baseType As OutcomeDeclarationTypeBasetype, responseId As Nullable(Of Integer)) As List(Of OutcomeDeclarationType)
             Dim shouldBeTranslated As Boolean = False
-            If translationTable IsNot Nothing Then shouldBeTranslated = ShouldScoreBeTranslated(translationTable)
+            If translationTable IsNot Nothing Then
+                shouldBeTranslated = ShouldScoreBeTranslated(translationTable)
+            End If
 
             Dim returnValue As New List(Of OutcomeDeclarationType) From {
                 GetDefaultOutComeDeclaration(baseType, responseId, Nothing, Nothing, shouldBeTranslated)
@@ -513,7 +514,6 @@ Namespace QTI.Helpers.QTI30
         Friend Shared Sub ConvertResponseIdentifierToFixedName(ByRef itemDocument As XmlDocument)
             Dim xmlNamespaceManager As New XmlNamespaceManager(itemDocument.NameTable)
             xmlNamespaceManager.AddNamespace("qti", itemDocument.DocumentElement.NamespaceURI)
-            xmlNamespaceManager.AddNamespace("html", XHTMLNAMESPACE)
 
             Dim responseIndex As Integer = 1
 
@@ -703,7 +703,11 @@ Namespace QTI.Helpers.QTI30
             Dim nodeList As XmlNodeList = Nothing
 
             If xmlNode IsNot Nothing Then
-                nodeList = xmlNode.SelectNodes("//*[@response-identifier][(name() = 'qti-custom-interaction' and not(./html:object/qti:param[contains(@name, 'responseLength')]) and not(./html:object[@type = 'application/vnd.GeoGebra.file']))]", xmlNamespaceManager)
+                Dim customInteractions = "name() = 'qti-custom-interaction'"
+                Dim notScorableCIs = "not(./qti:object/qti:param[contains(@name, 'responseLength')]) and not(./object/param[contains(@name, 'responseLength')])"
+                Dim notGeogebraCIs = "not(./qti:object[@type = 'application/vnd.GeoGebra.file']) and not(./object[@type = 'application/vnd.GeoGebra.file'])"
+                Dim notPortableCIs = "not(./qti-portable-custom-interaction)"
+                nodeList = xmlNode.SelectNodes($"//*[@response-identifier][({customInteractions} and {notScorableCIs} and {notGeogebraCIs} and {notPortableCIs})]", xmlNamespaceManager)
             End If
 
             Return nodeList

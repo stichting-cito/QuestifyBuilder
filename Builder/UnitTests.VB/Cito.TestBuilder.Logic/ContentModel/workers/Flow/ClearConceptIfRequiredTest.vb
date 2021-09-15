@@ -13,33 +13,40 @@ Public Class ClearConceptIfRequiredTest
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub SolutionThatIsSync_ConceptShouldNotBeCleared()
+        'Arrange
         Dim solution = inSyncSample.To(Of Solution)()
         Dim concept = sharedConceptFinding.To(Of ConceptFinding)() : solution.ConceptFindings.Add(concept)
         Dim scorePrm = New IntegerScoringParameter() With {.FindingOverride = "sharedIntegerFinding", .ControllerId = "integerScore"}.AddSubParameters("1", "2", "3", "4", "5")
 
         Dim inputs As New Dictionary(Of String, Object) From {{"Solution", solution}, {"ScoringParameters", New ScoringParameter() {scorePrm}}}
         WriteSolution("Arrange", solution)
-
+        
+        'Act
         WorkflowInvoker.Invoke(New ClearConceptIfRequired(), inputs)
-
+        
+        'Assert
         Assert.AreEqual(1, solution.ConceptFindings.Count)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub SolutionOutOfSyncSample_ConceptShouldNotBeCleared()
+        'Arrange
         Dim solution = OutOfSyncSample.To(Of Solution)()
         Dim concept = sharedConceptFinding.To(Of ConceptFinding)() : solution.ConceptFindings.Add(concept)
         Dim scorePrm = New IntegerScoringParameter() With {.FindingOverride = "sharedIntegerFinding", .ControllerId = "integerScore"}.AddSubParameters("1", "2", "3", "4", "5")
 
         Dim inputs As New Dictionary(Of String, Object) From {{"Solution", solution}, {"ScoringParameters", New ScoringParameter() {scorePrm}}}
         WriteSolution("Arrange", solution)
-
+                
+        'Act
         WorkflowInvoker.Invoke(New ClearConceptIfRequired(), inputs)
-
+        
+        'Assert
         Assert.AreEqual(0, solution.ConceptFindings.Count)
     End Sub
 
 
+#Region "Data"
     ReadOnly inSyncSample As XElement = <solution>
                                             <keyFindings>
                                                 <keyFinding id="sharedIntegerFinding" scoringMethod="Dichotomous">
@@ -268,6 +275,7 @@ Public Class ClearConceptIfRequiredTest
                                                     </conceptFactSet>
                                                 </conceptFinding>
 
+#End Region
 
     Sub WriteSolution(stateName As String, s As Solution)
         Dim a As New XmlSerializer(GetType(Solution))

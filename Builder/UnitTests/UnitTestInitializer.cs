@@ -4,6 +4,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Questify.Builder.UnitTests
 {
+    /// <summary>
+    /// This class is here for a construct to ensure that when a test Debug.Asserts the test fails.
+    /// </summary>
     [TestClass]
     public class UnitTestInitializer
     {

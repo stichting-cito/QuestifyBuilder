@@ -2,6 +2,13 @@
 Imports System.Xml.Linq
 
 Public Class TestData
+    '+-----+-----+-----+-----+
+    '|  1  |  2  |  3  |  4  |
+    '+-----|-----|-----+-----+
+    '|  5  |  6  |  7  |  8  |
+    '+-----|-----|-----+-----+
+    '|  9  |  10 |  11 |  12 |
+    '+-----+-----+-----+-----+
     Friend Shared tstData As XElement = <html xmlns="http://www.w3.org/1999/xhtml">
                                             <head>
                                                 <title>Document</title>
@@ -64,6 +71,13 @@ Public Class TestData
                                         </html>
 
 
+    '+-----+-----+-----+-----+
+    '|  1  |     2     |  3  |
+    '+-----|-----+-----+-----+
+    '|  4  |  5  |  6  |  7  |
+    '+-----|-----|-----+-----+
+    '|  8  |  9  |  10 |  11 |
+    '+-----+-----+-----+-----+
     Friend Shared tstDataColspan As XElement = <html xmlns="http://www.w3.org/1999/xhtml">
                                                    <head>
                                                        <title>Document</title>
@@ -122,6 +136,13 @@ Public Class TestData
                                                    </body>
                                                </html>
 
+    '+-----+-----+-----+-----+
+    '|     |  2  |  3  |  4  |
+    '+  1  +-----+-----+-----+
+    '|     |  5  |     |  7  |
+    '+-----|-----+  6  +-----+
+    '|  8  |  9  |     |  10 |
+    '+-----+-----+-----+-----+
     Friend Shared tstDataRowspan As XElement = <html xmlns="http://www.w3.org/1999/xhtml">
                                                    <head>
                                                        <title>Document</title>
@@ -177,6 +198,19 @@ Public Class TestData
                                                    </body>
                                                </html>
 
+    '+-----+-----+-----+
+    '|  1  |  2  |  3  |
+    '+-----+-----+-----+
+    '|     |  5  |     |
+    '+     |-----+     +
+    '|     |  6  |     |
+    '+  4  |-----+  9  +
+    '|     |  7  |     |
+    '+     |-----+     +
+    '|     |  8  |     |
+    '+-----|-----+-----+
+    '| 10  |  11 |  12 |
+    '+-----+-----+-----+
     Friend Shared tstDataRowspan3x6 As XElement = <html xmlns="http://www.w3.org/1999/xhtml">
                                                       <head>
                                                           <title>Document</title>
@@ -235,6 +269,21 @@ Public Class TestData
                                                       </body>
                                                   </html>
 
+    '+-----+-----+-----+
+    '|  1  |  2  |  3  |
+    '+-----+-----+-----+
+    '|     |  5  |     |
+    '+     |-----+     +
+    '|     |  6  |     |
+    '+     |-----+     +
+    '|  4  |  7  | 10  |
+    '+     |-----+     +
+    '|     |  8  |     |
+    '+     |-----+     +
+    '|     |  9  |     |
+    '+-----|-----+-----+
+    '| 11  |  12 |  13 |
+    '+-----+-----+-----+
     Friend Shared tstDataRowspan3x7 As XElement = <html xmlns="http://www.w3.org/1999/xhtml">
                                                       <head>
                                                           <title>Document</title>
@@ -295,6 +344,15 @@ Public Class TestData
                                                       </body>
                                                   </html>
 
+    '+-----+-----+-----+-----+
+    '|  1  |  2  |  3  |  4  |
+    '+-----|-----+-----+-----+
+    '|  5  |           |  7  |
+    '+-----|     6     |-----+
+    '|  8  |           |  9  |
+    '+-----+-----+-----+-----+
+    '|  10 |  11 |  12 |  13 |
+    '+-----+-----+-----+-----+
     Friend Shared tstData4x4 As XElement = <html xmlns="http://www.w3.org/1999/xhtml">
                                                <head>
                                                    <title>Document</title>
@@ -358,6 +416,19 @@ Public Class TestData
                                            </html>
 
 
+    '+----+----+----+----+
+    '|  1 |    |    |    |
+    '+----+    | [1]|    |
+    '|r[3]|    |    |    |
+    '+----+  2 +----+  3 |
+    '|r[2]|    |    |    |
+    '+----+    |r[4]|    |
+    '|r[1]|    |    |    |
+    '+-------------------+
+    '|  4 |    5    |  6 |
+    '+-------------------+
+    '|  7 |    8    |  9 |
+    '+-------------------+
     Friend Shared problem1 As XElement = <html xmlns="http://www.w3.org/1999/xhtml">
                                              <head>
                                                  <title>Document</title>
@@ -432,6 +503,13 @@ Public Class TestData
                                          </html>
 
 
+    '+-----+-----+-----+
+    '|  1  |  2  |  3  |
+    '+-----+-----+-----+
+    '|           |  5  |
+    '+     4     +-----|
+    '|           |  6  |
+    '+-----+-----+-----+    
     Friend Shared problem2 As XElement = <html xmlns="http://www.w3.org/1999/xhtml">
                                              <head>
                                                  <title>Document Title 2</title>
@@ -476,6 +554,12 @@ Public Class TestData
                                          </html>
 
 
+    'Single row with interesting tags.
+    '<td/>
+    '<td>text</td>
+    '<td><p>1</p></td>
+    '<td><p>2</p><p>3</p></td>
+    '<td><p>4</p>out of p tag<p>5</p></td>
     Friend Shared tableMergeData As XElement = <html xmlns="http://www.w3.org/1999/xhtml">
                                                    <head>
                                                        <title>Document Title 2</title>

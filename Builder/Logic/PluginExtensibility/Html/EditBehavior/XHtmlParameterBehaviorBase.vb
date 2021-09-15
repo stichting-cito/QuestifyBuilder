@@ -10,8 +10,8 @@ Namespace PluginExtensibility.Html.EditBehavior
         Inherits BaseHtmlEditorBehavior
 
         Private ReadOnly _param As XHtmlParameter
-        Private _toParam As IHtmlConverter
-        Private _toEditor As IHtmlConverter
+        Private _toParam As IHtmlConverter 'How to convert the html to value to be stored
+        Private _toEditor As IHtmlConverter 'how to convert the stored value to html
         Private _inlineRetriever As IInlineRetriever
         Private _prevPrmValue As String
         Private _prevHtml As String
@@ -46,7 +46,7 @@ Namespace PluginExtensibility.Html.EditBehavior
 
         Public Overrides ReadOnly Property CanCreateReferences As Boolean
             Get
-                Return False
+                Return False 'We can not create references (but can insert!)
             End Get
         End Property
 

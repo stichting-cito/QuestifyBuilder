@@ -8,22 +8,29 @@ Public Class Get_SolutionPropertyValuesFrom_Examples
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub Get_MaxFindingScore_FromDichotomousMatrixExample_ShouldBe1()
+        'Arrange
         Dim solution = toSolution(example1)
-
+        
+        'Act
         Dim result = solution.Findings.Sum(Function(f) f.MaxFindingScore)
-
+      
+        'Assert
         Assert.AreEqual(1, result)
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub Get_MaxFindingScore_FromPolytomousMatrixExample_ShouldBe3()
+        'Arrange
         Dim solution = toSolution(example2)
-
+      
+        'Act
         Dim result = solution.Findings.Sum(Function(f) f.MaxFindingScore)
-
+      
+        'Assert
         Assert.AreEqual(3, result)
     End Sub
 
+#Region "DATA"
 
     Private example1 As XElement = <solution>
                                        <keyFindings>
@@ -95,5 +102,6 @@ Public Class Get_SolutionPropertyValuesFrom_Examples
                                        </ItemScoreTranslationTable>
                                    </solution>
 
+#End Region
 
 End Class

@@ -16,7 +16,7 @@ namespace Questify.Builder.Services.Math.Controllers
     public class MathController : ControllerBase
     {
         [HttpPost("[action]")]
-        public async Task<ActionResult> Render([FromServices] INodeServices nodeServices, [FromBody] string mathMl)
+        public async Task<ActionResult> Render([FromServices]INodeServices nodeServices, [FromBody]string mathMl)
         {
             var result = await nodeServices.InvokeAsync<string>("./Scripts/renderMathMl", mathMl);
 

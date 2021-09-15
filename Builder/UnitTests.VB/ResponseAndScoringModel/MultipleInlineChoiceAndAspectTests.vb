@@ -9,45 +9,57 @@ Public Class MultipleInlineChoiceAndAspectTests
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub MultipleInlineChoiceAndAspect_poly()
+        'Arrange
         Dim solution = toSolution(sol_A)
         Dim response = toResponse(resp_A)
+        
+        'Act
+        Dim result = solution.ScoreSolution(response) 'Crashes
 
-        Dim result = solution.ScoreSolution(response)
-
+        'Assert
         Assert.AreEqual(13, result, "Score should be 13")
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub MultipleInlineChoiceAndAspect()
+        'Arrange
         Dim solution = toSolution(sol_A)
         solution.Findings.First().Method = EnumScoringMethod.Dichotomous
 
         Dim response = toResponse(resp_A)
+        
+        'Act
+        Dim result = solution.ScoreSolution(response) 'Crashes
 
-        Dim result = solution.ScoreSolution(response)
-
+        'Assert
         Assert.AreEqual(1, result, "Score should be 1")
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub MultipleInlineChoiceAndAspect_responeHas1Error_poly_Expects12()
+        'Arrange
         Dim solution = toSolution(sol_A)
         Dim response = toResponse(resp_1Error)
+       
+        'Act
+        Dim result = solution.ScoreSolution(response) 'Crashes
 
-        Dim result = solution.ScoreSolution(response)
-
+        'Assert
         Assert.AreEqual(12, result, "Score should be 12")
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub MultipleInlineChoiceAndAspect_responeHas1Error_Expects0()
+        'Arrange
         Dim solution = toSolution(sol_A)
         solution.Findings.First().Method = EnumScoringMethod.Dichotomous
 
         Dim response = toResponse(resp_1Error)
+      
+        'Act
+        Dim result = solution.ScoreSolution(response) 'Crashes
 
-        Dim result = solution.ScoreSolution(response)
-
+        'Assert
         Assert.AreEqual(0, result, "Score should be 0")
     End Sub
 

@@ -31,6 +31,13 @@ Imports LogHelper = Questify.Builder.Logic.Service.Logging.LogHelper
 Imports Questify.Builder.Logic.Service.Logging
 
 Namespace My
+    ' The following events are available for MyApplication:
+    ' 
+    ' Startup :                    Raised when the application starts, before the startup form is created.
+    ' Shutdown :                   Raised after all application forms are closed.  This event is not raised if the application terminates abnormally.
+    ' UnhandledException :         Raised if the application encounters an unhandled exception.
+    ' StartupNextInstance :        Raised when launching a single-instance application and the application is already active. 
+    ' NetworkAvailabilityChanged : Raised when the network connection is connected or disconnected.
     Partial Friend Class MyApplication
         Private Delegate Sub DisposeDelegate()
 
@@ -40,25 +47,31 @@ Namespace My
 
         <SecurityPermission(SecurityAction.Demand, Flags:=SecurityPermissionFlag.ControlAppDomain)>
         Private Sub MyApplication_Startup(ByVal sender As Object, ByVal e As StartupEventArgs) Handles Me.Startup
+            ' Thread exceptions
             AddHandler AppDomain.CurrentDomain.UnhandledException, AddressOf CurrentDomainOnUnhandledException
             AddHandler System.Windows.Forms.Application.ThreadException, AddressOf MyThreadExceptionHandler
 
             CheckRunningFromClickOnce()
 
+            'Send event to Application Insights
             LogAppInsightsEvent(EventsToTrack.StartQB)
 
+            ' Dependency injection
             IoCHelper.Init(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plugins"), True)
             AssessmentTestv2Factory.Plugins = IoCHelper.GetInstances(Of ITestModelPlugin)
             TestPackageFactory.Plugins = IoCHelper.GetInstances(Of ITestPackageModelPlugin)
             PluginHelper.MathMlPlugin = IoCHelper.GetInstances(Of IMathMlEditorPlugin).FirstOrDefault()
 
+            ' Close (after confirmation) already running instances of Questify.Builder.Client.exe
             CheckForRunningProcesses()
 
             _logger.Log(LogLevel.Info, "Logging initialized")
 
+            ' Initialize manager for resolving dynamically loaded plugings
             TestBuilderAssemblyResolveManager.Initialize()
 
-            MultiLanguageController.InitializeUILanguage()
+            ' Set UI-language
+            MultiLanguageController.InitializeUILanguage() 'Do this on main thread
             Dim currentLanguage = CultureInfo.DefaultThreadCurrentUICulture.TwoLetterISOLanguageName
             Try
                 Wpf.Presentation.Bootstrapper.InitLanguageAndResources()
@@ -66,6 +79,7 @@ Namespace My
                 Throw ex
             End Try
 
+            ' Init services
             Dim initTask = Task.Run(Sub()
                                         Try
                                             Bootstrapper.Init()
@@ -89,6 +103,7 @@ Namespace My
             If Not canConnectToDatabase Then
                 e.Cancel = True
             ElseIf Not e.Cancel Then
+                ' Login
                 Dim result As Boolean? = Authenticate()
                 If result.GetValueOrDefault() Then
                     InitServices()
@@ -97,15 +112,19 @@ Namespace My
                 End If
             End If
 
+            ' If we're about tot cancel application startup we have to close the SplashScreen explicitly from code.
+            ' This is due to a bug in the way MS handles application startup canceling.
             If e.Cancel Then
                 If Application.SplashScreen IsNot Nothing Then
                     Dim splashScreenDispose As New DisposeDelegate(AddressOf Application.SplashScreen.Dispose)
                     Application.SplashScreen.Invoke(splashScreenDispose)
                 End If
             Else
+                ' Try retrieving the usersettings from the database
                 Try
                     Dim currentUser = New UserEntity(CType(Thread.CurrentPrincipal.Identity, TestBuilderIdentity).UserId)
                     currentUser = AuthorizationFactory.Instance.GetUserWithRoles(currentUser, True)
+                    ' Check if password must be changed
                     If currentUser.ChangePassword Then
                         Dim dlg = New PasswordChangeDialog()
                         dlg.ShowDialog()
@@ -119,10 +138,12 @@ Namespace My
                     QbSettingsParser.SetSettings(currentUser.UserSettings)
                     currentUser = Nothing
                 Catch ex As Exception
+                    ' Too bad, did not work
                 End Try
 
+                ' Set UI-language again, because the language setting from the usersettings could differ from the previous language being set
                 If Not QbSettingsParser.GetUserSettingLanguage.Equals(currentLanguage) Then
-                    MultiLanguageController.InitializeUILanguage()
+                    MultiLanguageController.InitializeUILanguage() 'Do this on main thread
                     Try
                         Wpf.Presentation.Bootstrapper.InitLanguageAndResources()
                     Catch ex As Exception
@@ -159,6 +180,8 @@ Namespace My
         Private Sub LogAppInsightsEvent(eventName As EventsToTrack, Optional isShutDown As Boolean = False)
             LogHelper.TrackEvent(eventName)
             If isShutDown Then
+                ' Flush and allow some time for sending the data to Application Insights
+                ' Taken from: https://docs.microsoft.com/en-us/azure/azure-monitor/app/windows-desktop
                 LogHelper.Client?.Flush()
                 Thread.Sleep(1000)
             End If
@@ -189,11 +212,16 @@ Namespace My
         End Sub
 
         Private Shared Function IsLatestDeployment() As Boolean
+            ' CheckForUpdate returns True is there is an update available:
             Return Not ApplicationDeployment.CurrentDeployment.CheckForUpdate()
         End Function
 
+        ''' <summary>
+        ''' Determines whether QuestifyBuilder is already running
+        ''' </summary>
         Private Function CheckForRunningProcesses() As Boolean
             Dim ownProcess = Process.GetCurrentProcess()
+            ' This won't function in Debug Mode, the processname is the vshost's name.
             Dim processes As Process() = Process.GetProcessesByName(ownProcess.ProcessName).Where(Function(p) p.Id <> ownProcess.Id).ToArray()
             If processes IsNot Nothing AndAlso processes.Any() Then
                 While Not SplashScreen.IsHandleCreated
@@ -263,8 +291,12 @@ Namespace My
             End Try
         End Sub
 
+        ''' <summary>
+        ''' Tests the connection.
+        ''' </summary>
         Private Shared Function TestConnection() As Boolean
             Try
+                ' Just execute a low impact query
                 AuthorizationFactory.Instance.GetApplicationRoleCollection()
             Catch e As ORMQueryExecutionException
                 MessageBox.Show(String.Format("Error occured while accessing database." + vbCrLf + "Verify the connection string in the configuration file!" + vbCrLf + vbCrLf + "{0}", e.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -287,6 +319,7 @@ Namespace My
                 If Not IsAuthenticated Then
                     viewModel.Reset()
 
+                    ' Show the login dialog
                     LoginDialog = New LoginDialogView()
                     LoginDialog.Topmost = True
                     AddHandler viewModel.CloseRequest, AddressOf LoginCloseRequest
@@ -307,6 +340,7 @@ Namespace My
             Dim loginIsDisabled As Boolean = Not LoginPermitted()
 
             If loginIsDisabled Then
+                ' If loginIsDisabled then the only users allowed to login are users in the role of application administrators.
                 Dim user As New UserEntity(DirectCast(My.User.CurrentPrincipal.Identity(), TestBuilderIdentity).UserId)
                 loginIsDisabled = Not AuthorizationFactory.Instance.UserIsApplicationAdministrator(user)
 
@@ -347,12 +381,19 @@ Namespace My
             AuthorizationFactory.Instantiate(authorizationSrvDecorator)
         End Sub
 
+        ''' <summary>
+        ''' This event handler is invoked when there is already an instance of the application running. The end user is informed about this
+        ''' condition via a message.
+        ''' </summary>
+        ''' <param name="sender">The source of the event.</param>
+        ''' <param name="e">The <see cref="Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs" /> instance containing the event data.</param>
         Private Sub MyApplication_StartupNextInstance(ByVal sender As Object, ByVal e As StartupNextInstanceEventArgs) Handles Me.StartupNextInstance
             e.BringToForeground = True
             MessageBox.Show(ForegroundWindow.Instance, Resources.InstanceAlreadyOpened, Application.Info.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End Sub
 
         Protected Overrides Function OnInitialize(ByVal args As ReadOnlyCollection(Of String)) As Boolean
+            ' MinimumSplashScreenDisplayTime has to be set before OnInitialize to be effective
             MinimumSplashScreenDisplayTime = 1000
             Return MyBase.OnInitialize(args)
         End Function

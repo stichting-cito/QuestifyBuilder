@@ -5,6 +5,7 @@ Imports System.Xml.Linq
 Public Class MultiChoice_Scoring_Polytomous
     Inherits ScoringTestBase
 
+    'This is a typical multiple choice example. 
     Private MR_B_and_D As XElement = <solution>
                                          <keyFindings>
                                              <keyFinding id="mc" scoringMethod="Polytomous">
@@ -29,91 +30,112 @@ Public Class MultiChoice_Scoring_Polytomous
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub MaxScore()
+        'Arrange
         Dim solution = ToSolution(MR_B_and_D)
-
+        
+        'Act
         Dim result = solution.MaxSolutionRawScore
 
+        'Assert
         Assert.AreEqual(2, result)
     End Sub
 
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub ScoreSolution_CorrectResponse_Expects2()
+        'Arrange
         Dim solution = ToSolution(MR_B_and_D)
         Dim valuesToCreate As New List(Of Tuple(Of String, String)) From {New Tuple(Of String, String)("B", "mc"), New Tuple(Of String, String)("D", "mc")}
         Dim r = GetResponse(valuesToCreate, "mc")
 
-        Write("Response", "Arrange", r)
-
+        Write("Response", "Arrange", r) 'Write for debugging
+       
+        'Act
         Dim result = solution.ScoreSolution(r)
 
+        'Assert
         Assert.AreEqual(2, result)
     End Sub
 
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub ScoreSolution_CorrectResponseReversed_Expects2()
+        'Arrange
         Dim solution = ToSolution(MR_B_and_D)
         Dim valuesToCreate As New List(Of Tuple(Of String, String)) From {New Tuple(Of String, String)("D", "mc"), New Tuple(Of String, String)("B", "mc")}
         Dim r = GetResponse(valuesToCreate, "mc")
 
-        Write("Response", "Arrange", r)
-
+        Write("Response", "Arrange", r) 'Write for debugging
+       
+        'Act
         Dim result = solution.ScoreSolution(r)
 
+        'Assert
         Assert.AreEqual(2, result)
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub ScoreSolution_CompletelyWrongAnswer_Expects0()
+        'Arrange
         Dim solution = ToSolution(MR_B_and_D)
         Dim valuesToCreate As New List(Of Tuple(Of String, String)) From {New Tuple(Of String, String)("A", "mc"), New Tuple(Of String, String)("C", "mc")}
         Dim r = GetResponse(valuesToCreate, "mc")
 
-        Write("Response", "Arrange", r)
-
+        Write("Response", "Arrange", r) 'Write for debugging
+       
+        'Act
         Dim result = solution.ScoreSolution(r)
 
+        'Assert
         Assert.AreEqual(0, result)
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub ScoreSolution_PartialWrongAnswer_Expects1()
+        'Arrange
         Dim solution = ToSolution(MR_B_and_D)
         Dim valuesToCreate As New List(Of Tuple(Of String, String)) From {New Tuple(Of String, String)("B", "mc"), New Tuple(Of String, String)("C", "mc")}
         Dim r = GetResponse(valuesToCreate, "mc")
 
-        Write("Response", "Arrange", r)
-
+        Write("Response", "Arrange", r) 'Write for debugging
+        
+        'Act
         Dim result = solution.ScoreSolution(r)
 
+        'Assert
         Assert.AreEqual(1, result)
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub ScoreSolution_DoubleSameResponse_Expects1()
+        'Arrange
         Dim solution = ToSolution(MR_B_and_D)
         Dim valuesToCreate As New List(Of Tuple(Of String, String)) From {New Tuple(Of String, String)("B", "mc"), New Tuple(Of String, String)("B", "mc")}
         Dim r = GetResponse(valuesToCreate, "mc")
 
-        Write("Response", "Arrange", r)
+        Write("Response", "Arrange", r) 'Write for debugging
+        
+        'Act
+        Dim result = solution.ScoreSolution(r) 'Real
 
-        Dim result = solution.ScoreSolution(r)
-
+        'Assert
         Assert.AreEqual(1, result)
     End Sub
 
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub ScoreSolution_MissingValue_Expects1()
+        'Arrange
         Dim solution = ToSolution(MR_B_and_D)
         Dim valuesToCreate As New List(Of Tuple(Of String, String)) From {New Tuple(Of String, String)("B", "mc")}
         Dim r = GetResponse(valuesToCreate, "mc")
 
-        Write("Response", "Arrange", r)
+        Write("Response", "Arrange", r) 'Write for debugging
+        
+        'Act
+        Dim result = solution.ScoreSolution(r) 'Real
 
-        Dim result = solution.ScoreSolution(r)
-
+        'Assert
         Assert.AreEqual(1, result)
     End Sub
 

@@ -1,6 +1,9 @@
 ﻿
 Imports Cito.Tester.ContentModel
 
+''' <summary>
+''' Test Copy behavior from KeyFinding to ConceptFinding
+''' </summary>
 <TestClass>
 Public Class ConceptFindingToFindingManipulatorTests : Inherits BaseFindingToFindingManipulatorTests(Of ConceptFinding)
 

@@ -39,7 +39,16 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddParameter(typeof(ChoiceScoringParameter), InlineID = "Score", SubParameterIds = "ABCD")]
         public void LoadDataWithConceptScoringSet_ExpectsPartsToBeSelected()
         {
+            //SomeConcept4
+            //+Root
+            //   +Part 1
+            //   |-Part A 
+            //   |-Part B
+            //   +Part 2
+            //   |-Part A 
+            //   |-Part B
 
+            //Arrange
 
             var csVM = new EncodingScoringViewModel(ViewAwareStatus, A.Fake<IAddAnswerCategory>());
 
@@ -51,7 +60,10 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             WriteSolution("Arrange");
 
+            //Act
+            //No actions required,.. just testing that part is selected.
 
+            //Assert
             Assert.IsTrue(p1a.Selected.DataValue);
         }
 
@@ -61,6 +73,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddParameter(typeof(ChoiceScoringParameter), InlineID = "Score", SubParameterIds = "ABCD")]
         public void LoadDataWithConceptScoringSet_RefillSingleConceptScore_ExpectsPartsToBeSelected()
         {
+            //Arrange
 
             var csVM = new EncodingScoringViewModel(ViewAwareStatus, A.Fake<IAddAnswerCategory>());
 
@@ -72,6 +85,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             WriteSolution("Arrange");
 
+            //Act
+            //Assert
             Assert.IsTrue(p1a.Selected.DataValue);
         }
 
@@ -81,6 +96,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddParameter(typeof(MultiChoiceScoringParameter), FindingOverride = "Opgave", ControllerID = "mc_1", SubParameterIds = "ABCD", Name = "keuze")]
         public void LoadDataWithConceptScoringSet_ChangingCurrentScoringMap_ExpectsPartsToBeDeSelected()
         {
+            //Arrange
             var csVM = new EncodingScoringViewModel(ViewAwareStatus, A.Fake<IAddAnswerCategory>());
 
             var inlineSP = (MultiChoiceScoringParameter)
@@ -95,11 +111,13 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             WriteSolution("Arrange");
 
+            //Act
             csVM.CurrentScoringMap = csVM.AvailableParams.Keys.ElementAt<CombinedScoringMapKey>(0);
             bool p1SelectedWithFirstScoringMapKey = p1.Selected.DataValue;
             csVM.CurrentScoringMap = csVM.AvailableParams.Keys.ElementAt<CombinedScoringMapKey>(1);
             bool p1SelectedWithSecondScoringMapKey = p1.Selected.DataValue;
 
+            //Assert
             Assert.IsTrue(p1SelectedWithFirstScoringMapKey);
             Assert.IsFalse(p1SelectedWithSecondScoringMapKey);
         }
@@ -111,6 +129,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddParameter(typeof(ChoiceScoringParameter), InlineID = "Score", SubParameterIds = "ABCD")]
         public void LoadDataWithConceptScoringSet_RefillSingleConceptScore_ExpectsSamePartsInOtherPartInHierarchyToBeSelected()
         {
+            //Arrange
 
             var csVM = new EncodingScoringViewModel(ViewAwareStatus, A.Fake<IAddAnswerCategory>());
 
@@ -122,6 +141,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             WriteSolution("Arrange");
 
+            //Act
+            //Assert
             Assert.IsTrue(p2a.Selected.DataValue);
         }
 
@@ -133,13 +154,18 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             SubParameterIds = "ABCDEF")]
         public void DataGridColumnsShouldBeAlphabetical()
         {
+            //Arrange
 
             var csVM = new EncodingScoringViewModel(ViewAwareStatus, A.Fake<IAddAnswerCategory>());
             WriteSolution("Arrange");
+            //Act
             ViewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             Assert.AreEqual(6 + 2, csVM.DataGridColumns.Count,
-    "Expects 6 columns with id's and 2 for partname and selector");
-            Assert.AreEqual("B", csVM.DataGridColumns[2].Header.ToString()); Assert.AreEqual("A", csVM.DataGridColumns[3].Header.ToString()); Assert.AreEqual("C", csVM.DataGridColumns[4].Header.ToString());
+                "Expects 6 columns with id's and 2 for partname and selector");
+            Assert.AreEqual("B", csVM.DataGridColumns[2].Header.ToString()); //Since it is the key!
+            Assert.AreEqual("A", csVM.DataGridColumns[3].Header.ToString()); //Continue Alpha
+            Assert.AreEqual("C", csVM.DataGridColumns[4].Header.ToString());
             Assert.AreEqual("D", csVM.DataGridColumns[5].Header.ToString());
             Assert.AreEqual("E", csVM.DataGridColumns[6].Header.ToString());
             Assert.AreEqual("F", csVM.DataGridColumns[7].Header.ToString());
@@ -152,9 +178,12 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             ControllerID = "integerScore", SubParameterIds = "12345")]
         public void AvailableParamsFor2SetsAnd1Finding_ShouldBe3()
         {
+            //Arrange
             var csVM = new EncodingScoringViewModel(ViewAwareStatus, A.Fake<IAddAnswerCategory>());
             WriteSolution("Arrange");
+            //Act
             ViewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             Assert.AreEqual(3, csVM.AvailableParams.Count, "Expected 3, 2 sets of fact set and 1 finding.");
         }
 
@@ -165,10 +194,14 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             ControllerID = "integerScore", SubParameterIds = "12345")]
         public void AvailableParamsFor2SetsAnd1FindingNoConcepts_ShouldBe3()
         {
+            //Arrange
             var csVM = new EncodingScoringViewModel(ViewAwareStatus, A.Fake<IAddAnswerCategory>());
             WriteSolution("Arrange");
+            //Act
             ViewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             Assert.AreEqual(3, csVM.AvailableParams.Count, "Expected 3, 2 sets of fact set and 1 finding.");
+            /*If there was no synchronisation form keyfacts to concept then the result = 5*/
         }
 
 
@@ -179,10 +212,14 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddParameter(typeof(InlineChoiceScoringParameter), FindingOverride = "Opgave", InlineID = "I16746288-1b56-4c53-880d-2d54d060fba8", SubParameterIds = "ABCD")]
         public void DataGridColumns_With2InlineChoice_FactsNotRepeatedInConceptFinding()
         {
+            //Arrange
             var csVM = new EncodingScoringViewModel(ViewAwareStatus, A.Fake<IAddAnswerCategory>());
             WriteSolution("Arrange");
+            //Act
             ViewAwareStatus.SimulateViewIsLoadedEvent();
+            //Assert
             Assert.AreEqual(2 + 1 + 1 + 1, csVM.DataGridColumns.Count, "2 columns + 1 set + 1 additional define column.+catch all");
+            /*If there was no synchronisation form keyfacts to concept then the result = 5*/
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("Concept")]
@@ -192,6 +229,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddParameter(typeof(InlineChoiceScoringParameter), FindingOverride = "Opgave", InlineID = "I16746288-1b56-4c53-880d-2d54d060fba8", SubParameterIds = "ABCD", Name = "Inline 2")]
         public void DataGridColumns_With2InlineChoice_SetKey_WillRepeatFactsInConceptFinding()
         {
+            //Arrange
             var csVM = new EncodingScoringViewModel(ViewAwareStatus, A.Fake<IAddAnswerCategory>());
             WriteSolution("Arrange");
             ViewAwareStatus.SimulateViewIsLoadedEvent();
@@ -202,10 +240,13 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                         .First(prm => prm.Name == "Inline 2");
             var manipulator = inlineSP.GetScoreManipulator(_Solution);
 
+            //Act
             manipulator.SetKey("B");
-            csVM.RefreshScore.Execute(null);
+            csVM.RefreshScore.Execute(/*parameter*/null);
 
+            //Assert
             Assert.AreEqual(4 + 1, csVM.DataGridColumns.Count, "Expected 1 set (+1 column for additional answers button. + 1 catch all");
+            /*If there was no synchronisation form keyfacts to concept then the result = 5*/
         }
 
 
@@ -215,6 +256,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddParameter(typeof(ChoiceScoringParameter), FindingOverride = "Opgave", ControllerID = "mc_1", SubParameterIds = "ABCD", Name = "keuze")]
         public void DataGridColumns_MR_Grouped_ColumnsShouldIncludeCatchAllAndAdd()
         {
+            //Arrange
             var csVM = new EncodingScoringViewModel(ViewAwareStatus, A.Fake<IAddAnswerCategory>());
             WriteSolution("Arrange");
 
@@ -228,8 +270,10 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             ViewAwareStatus.SimulateViewIsLoadedEvent();
 
-            csVM.RefreshScore.Execute(null);
+            //Act
+            csVM.RefreshScore.Execute(/*parameter*/null);
 
+            //Assert
             Assert.IsFalse(condition: inlineSP.IsSingleChoice);
             Assert.AreEqual(7, csVM.DataGridColumns.Count, "2 trailing columns checkbox and name, ;Expected 2 set; +1 set that is answercatagory; + catch all; + addButton ");
             Assert.AreEqual("add", csVM.DataGridColumns.Last().Header);
@@ -241,10 +285,13 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddParameter(typeof(IntegerScoringParameter), FindingOverride = "sharedIntegerFinding", ControllerID = "integerScore", SubParameterIds = "1", Name = "Int")]
         public void ColumnsOrder_ShouldBe_Answer_AnswerCategory_CatchAll_Add()
         {
+            //Arrange
             var encodingViewModel = new EncodingScoringViewModel(ViewAwareStatus, A.Fake<IAddAnswerCategory>());
             WriteSolution("Arrange");
             ViewAwareStatus.SimulateViewIsLoadedEvent();
+            //Act
             var columns = encodingViewModel.DataGridColumns;
+            //Assert
             Assert.AreEqual("6", columns[2].Header.ToString());
             Assert.AreEqual("7", columns[3].Header.ToString());
             Assert.AreEqual("8", columns[4].Header.ToString());
@@ -259,10 +306,13 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [AddParameter(typeof(IntegerScoringParameter), FindingOverride = "sharedIntegerFinding", ControllerID = "integerScore", SubParameterIds = "12345", Name = "Int")]
         public void WithSetColumnsOrder_ShouldBe_Answer_AnswerCategory_CatchAll_Add()
         {
+            //Arrange
             var encodingViewModel = new EncodingScoringViewModel(ViewAwareStatus, A.Fake<IAddAnswerCategory>());
             WriteSolution("Arrange");
             ViewAwareStatus.SimulateViewIsLoadedEvent();
+            //Act
             var columns = encodingViewModel.DataGridColumns;
+            //Assert
             Assert.AreEqual("6&14", columns[2].Header.ToString());
             Assert.AreEqual("14&6", columns[3].Header.ToString());
             Assert.AreEqual("7&15", columns[4].Header.ToString());
@@ -279,6 +329,15 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [SetSolution(Defined_Solutions.EmptySolution.Id)]
         public void SetScore_Choice1_SetScore_Choice2_SwitchToChoice1_PartsAreSelectable()
         {
+            //SomeConcept4
+            //+Root
+            //   +Part 1
+            //   |-Part A 
+            //   |-Part B
+            //   +Part 2
+            //   |-Part A 
+            //   |-Part B
+            //Arrange
 
             SetScoreForChoiceKeyTo("A");
             var encodingVM = new EncodingScoringViewModel(ViewAwareStatus, A.Fake<IAddAnswerCategory>());
@@ -300,17 +359,20 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             WriteSolution("Arrange");
 
+            //Act
 
+            //Select another 
             encodingVM.CurrentScoringMap =
-    encodingVM.AvailableParams.Keys.First(key => encodingVM.CurrentScoringMap != key);
+                encodingVM.AvailableParams.Keys.First(key => encodingVM.CurrentScoringMap != key);
 
             WriteSolution("Act");
 
+            //Assert
             p1 = encodingVM.Data.Single(e => e.PartName == "Part 1");
             partAs = encodingVM.Data.Where(e => e.PartName.StartsWith("Part") && e.Parent.PartName == "Part 2").ToList();
             p1a = partAs[0];
             p2a = partAs[1];
-
+            
             Assert.IsTrue(p1.CanSelect.DataValue);
             Assert.IsFalse(p1a.CanSelect.DataValue);
             Assert.IsFalse(p2a.CanSelect.DataValue);
@@ -324,8 +386,17 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [SetSolution(Defined_Solutions.EmptySolution.Id)]
         public void SetScore_Choice1_SwitchToChoice2_PartsAreNotSelectable()
         {
+            //SomeConcept4
+            //+Root
+            //   +Part 1
+            //   |-Part A 
+            //   |-Part B
+            //   +Part 2
+            //   |-Part A 
+            //   |-Part B
+            //Arrange
 
-
+          
 
             SetScoreForChoiceKeyTo("A");
             var encodingVM = new EncodingScoringViewModel(ViewAwareStatus, A.Fake<IAddAnswerCategory>());
@@ -347,14 +418,17 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             WriteSolution("Arrange");
 
+            //Act
 
+            //Select another 
             encodingVM.CurrentScoringMap =
-    encodingVM.AvailableParams.Keys.First(key => encodingVM.CurrentScoringMap != key);
+                encodingVM.AvailableParams.Keys.First(key => encodingVM.CurrentScoringMap != key);
 
             WriteSolution("Act");
 
+            //Assert
             encodingVM.CurrentScoringMap =
-    encodingVM.AvailableParams.Keys.First(key => encodingVM.CurrentScoringMap != key);
+                encodingVM.AvailableParams.Keys.First(key => encodingVM.CurrentScoringMap != key);
 
             p1 = encodingVM.Data.Single(e => e.PartName == "Part 1");
             partAs = encodingVM.Data.Where(e => e.PartName.StartsWith("Part") && e.Parent.PartName == "Part 2").ToList();
@@ -390,6 +464,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                 .ForEach(choiceSPrm => choiceSPrm.GetScoreManipulator(_Solution).SetKey(scoreKey));
         }
 
+        //-------------
 
 
         internal override void SetFakeViewDataContext(ref IWorkSpaceAware fakeView,
@@ -405,6 +480,11 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                     itemEditorViewModel);
         }
 
+        /// <summary>
+        /// Deals the with_ set solution attribute. This method is called before the unit test is calle before SetFakeViewDataContext.
+        /// </summary>
+        /// <param name="setSolutionAttribute">The set solution attribute.</param>
+        /// <exception cref="System.NotImplementedException"></exception>
         private void DealWith_SetSolutionAttribute(SetSolutionAttribute setSolutionAttribute)
         {
             switch (setSolutionAttribute.SolutionName)
@@ -473,12 +553,15 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         {
             base.Initialize();
 
+            //Create new IItemEditorObjectFactory
             fake_Factory = FakeItemEditorObjectFactory.MakeNewFake();
 
+            //Ensure that when the property of the faked item editor returns the 'fake_Factory'
             A.CallTo(() => FakeItemEditorVM.ItemEditorObjectFactory).ReturnsLazily((arg) => fake_Factory);
 
+            //fake factory will respond to 'PopulateConceptCustomBankPropertyHierarchy'
             A.CallTo(() => fake_Factory.PopulateConceptCustomBankPropertyHierarchy(A<Guid>.Ignored))
-     .ReturnsLazily((args) => base.FakeConceptHandler.GetPartById(args.GetArgument<Guid>(0)));
+                 .ReturnsLazily((args) => base.FakeConceptHandler.GetPartById(args.GetArgument<Guid>(0)));
         }
 
         [TestCleanup]
@@ -487,7 +570,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             base.Clean();
 
             fake_Factory = null;
-            FakeItemEditorObjectFactory.MakeNewFake();
+            FakeItemEditorObjectFactory.MakeNewFake(); //Resets used fake object.
         }
 
         protected override IEnumerable<System.ComponentModel.Composition.Primitives.ComposablePartCatalog>
@@ -508,6 +591,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             }
         }
 
+        #region DATA USED
 
         private static class Defined_Solutions
         {
@@ -519,6 +603,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             public static class SolutionWithConceptsDefinedOnFacts
             {
                 public const string Id = "A2C566A9-DA35-4E15-9182-D6B53B65EC34";
+                //this value is not visible but should be unique. 
 
                 public static XElement Data =
                     XElement.Parse(
@@ -554,7 +639,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             public static class SolutionWithMC
             {
-                public const string Id = "A2C577A9-DA35-4E15-9182-D6B53B65EC34";
+                public const string Id = "A2C577A9-DA35-4E15-9182-D6B53B65EC34"; //Value not visible
+
                 public static XElement Data =
                     XElement.Parse(
                         @"<solution xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">  
@@ -627,7 +713,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             public static class Solution2FactSets1Fact
             {
-                public const string Id = "A2C577A9-DA35-4E15-9182-88853B65EC34"; public static XElement Data = XElement.Parse(@"  <solution>
+                public const string Id = "A2C577A9-DA35-4E15-9182-88853B65EC34"; //Value not visible
+                public static XElement Data = XElement.Parse(@"  <solution>
                                                                     <keyFindings>
                                                                       <keyFinding id=""sharedIntegerFinding"" scoringMethod=""Dichotomous"">
                                                                         <keyFact id=""5-integerScore"" score=""1"" xmlns=""http://Cito.Tester.Server/xml/serialization"">
@@ -790,7 +877,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             public static class Solution2FactSets1Fact_NoConcept
             {
-                public const string Id = "3DADDC92-7D36-4147-AF0A-639BE20ECD85"; public static XElement Data = XElement.Parse(@"  <solution>
+                public const string Id = "3DADDC92-7D36-4147-AF0A-639BE20ECD85"; //Value not visible
+                public static XElement Data = XElement.Parse(@"  <solution>
                                                                     <keyFindings>
                                                                       <keyFinding id=""sharedIntegerFinding"" scoringMethod=""Dichotomous"">
                                                                         <keyFact id=""5-integerScore"" score=""1"" xmlns=""http://Cito.Tester.Server/xml/serialization"">
@@ -872,7 +960,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             public static class Solution2InlineParamsInSet
             {
-                public const string Id = "EC1BE9D2-9EA2-4928-B21E-82599C1815B3"; public static XElement Data = XElement.Parse(@"<solution>
+                public const string Id = "EC1BE9D2-9EA2-4928-B21E-82599C1815B3"; //Value not visible
+                public static XElement Data = XElement.Parse(@"<solution>
 	                                                                <keyFindings>
                                                                       <keyFinding id=""Opgave"" scoringMethod=""Dichotomous"">
                                                                         <keyFactSet>
@@ -898,7 +987,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             public static class SolutionMRGroupedInTwoDistinctSets
             {
-                public const string Id = "EC1BE9D2-9EA2-4928-B21E-8123123324B3"; public static XElement Data = XElement.Parse(@"<solution>
+                public const string Id = "EC1BE9D2-9EA2-4928-B21E-8123123324B3"; //Value not visible
+                public static XElement Data = XElement.Parse(@"<solution>
 	                                                            <keyFindings>
                                                                         <keyFinding id=""Opgave"" scoringMethod=""Dichotomous"">
                                                                         <keyFactSet>
@@ -1074,7 +1164,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             public static class SolutionWithCatchAll
             {
-                public const string Id = "8532E917-A013-4705-8C76-5D6A25A0C4EB"; public static XElement Data = XElement.Parse(@"<solution>
+                public const string Id = "8532E917-A013-4705-8C76-5D6A25A0C4EB"; //Value not visible
+                public static XElement Data = XElement.Parse(@"<solution>
                                                                 <keyFindings>
                                                                   <keyFinding id=""sharedIntegerFinding"" scoringMethod=""Dichotomous"">
                                                                     <keyFact id=""1-integerScore"" score=""1"" xmlns=""http://Cito.Tester.Server/xml/serialization"">
@@ -1130,7 +1221,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             public static class SolutionWithSetsAndCathcAll
             {
-                public const string Id = "684BBF34-4184-4A22-9670-417A93A9D6C6"; public static XElement Data = XElement.Parse(@"<solution>
+                public const string Id = "684BBF34-4184-4A22-9670-417A93A9D6C6"; //Value not visible
+                public static XElement Data = XElement.Parse(@"<solution>
                                                                     <keyFindings>
                                                                       <keyFinding id=""sharedIntegerFinding"" scoringMethod=""Dichotomous"">
                                                                         <keyFact id=""5-integerScore"" score=""1"" xmlns=""http://Cito.Tester.Server/xml/serialization"">
@@ -1340,5 +1432,6 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
         }
 
+        #endregion
     }
 }

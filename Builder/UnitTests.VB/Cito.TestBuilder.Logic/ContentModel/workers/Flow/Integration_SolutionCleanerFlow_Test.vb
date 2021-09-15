@@ -10,6 +10,7 @@ Public Class Integration_SolutionCleanerFlow_Test
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub TestOneInteractionRemoved_SolutionIsCleaned()
+        'Arrange
         Dim solution = _testSolution1.To(Of Solution)()
         Dim sp = New DecimalScoringParameter() With {.ControllerId = "gapController",
                                                      .FindingOverride = "gapController",
@@ -17,8 +18,10 @@ Public Class Integration_SolutionCleanerFlow_Test
 
         Dim inputs As New Dictionary(Of String, Object) From {{"Solution", solution}, {"ScoringParameters", New ScoringParameter() {sp}}}
 
+        'Act
         WorkflowInvoker.Invoke(New SolutionCleaner(), inputs)
 
+        'Assert
         solution.WriteToDebug("Assert")
         Assert.IsTrue(UnitTestHelper.AreSame(_result1.ToString(), solution.DoSerialize().ToString()))
     End Sub

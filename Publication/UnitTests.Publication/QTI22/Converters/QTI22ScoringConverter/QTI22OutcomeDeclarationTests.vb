@@ -3,7 +3,6 @@ Imports System.Drawing
 Imports System.Xml
 Imports Cito.Tester.ContentModel
 Imports Questify.Builder.Logic.HelperClasses
-Imports System.Xml.Linq
 Imports Cito.Tester.Common
 Imports Questify.Builder.Logic.QTI.Converters.ScoringConverter.QTI22
 
@@ -13,12 +12,15 @@ Public Class QTI22OutcomeDeclarationTests
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring")>
     Public Sub OneGroupOneFactOnFinding_FourOutcomeDeclarations()
 
+        'Arrange
         Dim responseIdentifierAttributes As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody1)
         Dim solution As Solution = _solution1.Deserialize(Of Solution)()
         Dim converter = New QTI22CombinedScoringConverter()
 
+        'Act
         Dim result = converter.GetOutcomeDeclarations(solution, responseIdentifierAttributes, solution.ItemScoreTranslationTable)
 
+        'Assert
         Assert.AreEqual(2, result.Count)
         Assert.AreEqual("SCORE", result(0).identifier)
         Assert.AreEqual("MAXSCORE", result(1).identifier)
@@ -27,12 +29,15 @@ Public Class QTI22OutcomeDeclarationTests
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring")>
     Public Sub OneGroupOneFactOnFindingOneConcept_SixOutcomeDeclarations()
 
+        'Arrange
         Dim responseIdentifierAttributes As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody2)
         Dim solution As Solution = _solution2.Deserialize(Of Solution)()
         Dim converter = New QTI22CombinedScoringConverter(GetGapScoringParams())
 
+        'Act
         Dim result = converter.GetOutcomeDeclarations(solution, responseIdentifierAttributes, solution.ItemScoreTranslationTable)
 
+        'Assert
         Assert.AreEqual(4, result.Count)
         Assert.AreEqual("SCORE", result(0).identifier)
         Assert.AreEqual("MAXSCORE", result(1).identifier)
@@ -44,13 +49,18 @@ Public Class QTI22OutcomeDeclarationTests
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring")>
     Public Sub GM_CombinationOfFactSetsAndFactsOnFinding_OutcomeDeclarationsShouldBeInRightOrder()
 
+        'The outcomedeclarations should be created in the same order as the order in which the concept finding are processed in the response processing
+        'Because else it could occur that f.i. CONCEPTRESPONSE2_Bla is created as an outcomedeclaration, but CONCEPTRESPONSE3_Bla is used in the response processing
 
+        'Arrange
         Dim responseIdentifierAttributes As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody3)
         Dim solution As Solution = _solution3.Deserialize(Of Solution)()
         Dim converter = New QTI22CombinedScoringConverter(GetGapMatchScoringParams())
 
+        'Act
         Dim result = converter.GetOutcomeDeclarations(solution, responseIdentifierAttributes, solution.ItemScoreTranslationTable)
 
+        'Assert
         Assert.AreEqual(12, result.Count)
         Assert.AreEqual("SCORE", result(0).identifier)
         Assert.AreEqual("MAXSCORE", result(1).identifier)
@@ -70,13 +80,18 @@ Public Class QTI22OutcomeDeclarationTests
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring")>
     Public Sub GGM_CombinationOfFactSetsAndFactsOnFinding_OutcomeDeclarationsShouldBeInRightOrder()
 
+        'The outcomedeclarations should be created in the same order as the order in which the concept finding are processed in the response processing
+        'Because else it could occur that f.i. CONCEPTRESPONSE2_Bla is created as an outcomedeclaration, but CONCEPTRESPONSE3_Bla is used in the response processing
 
+        'Arrange
         Dim responseIdentifierAttributes As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody4)
         Dim solution As Solution = _solution4.Deserialize(Of Solution)()
         Dim converter = New QTI22CombinedScoringConverter(GetGraphicGapMatchScoringParams())
 
+        'Act
         Dim result = converter.GetOutcomeDeclarations(solution, responseIdentifierAttributes, solution.ItemScoreTranslationTable)
 
+        'Assert
         Assert.AreEqual(12, result.Count)
         Assert.AreEqual("SCORE", result(0).identifier)
         Assert.AreEqual("MAXSCORE", result(1).identifier)
@@ -96,12 +111,15 @@ Public Class QTI22OutcomeDeclarationTests
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring")>
     Public Sub Gaps_CombinationOfMultipleFactSetsAndFactsOnFinding()
 
+        'Arrange
         Dim responseIdentifierAttributes As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody5)
         Dim solution As Solution = _solution5.Deserialize(Of Solution)()
         Dim converter = New QTI22CombinedScoringConverter(GetFiveGapScoringParams())
 
+        'Act
         Dim result = converter.GetOutcomeDeclarations(solution, responseIdentifierAttributes, solution.ItemScoreTranslationTable)
 
+        'Assert
         Assert.AreEqual(6, result.Count)
         Assert.AreEqual("SCORE", result(0).identifier)
         Assert.AreEqual("MAXSCORE", result(1).identifier)
@@ -115,12 +133,15 @@ Public Class QTI22OutcomeDeclarationTests
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring")>
     Public Sub HottextCorrection_FactsOnFinding_OutcomeDeclarationsShouldBeInRightOrder()
 
+        'Arrange
         Dim responseIdentifierAttributes As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody6)
         Dim solution As Solution = _solution6.Deserialize(Of Solution)()
         Dim converter = New QTI22CombinedScoringConverter(GetHottextCorrectionScoringParams())
 
+        'Act
         Dim result = converter.GetOutcomeDeclarations(solution, responseIdentifierAttributes, solution.ItemScoreTranslationTable)
 
+        'Assert
         Assert.AreEqual(22, result.Count)
         Assert.AreEqual("SCORE", result(0).identifier)
         Assert.AreEqual("MAXSCORE", result(1).identifier)
@@ -150,12 +171,15 @@ Public Class QTI22OutcomeDeclarationTests
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring")>
     Public Sub HottextCorrection_FactSets_OutcomeDeclarationsShouldBeInRightOrder()
 
+        'Arrange
         Dim responseIdentifierAttributes As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody6)
         Dim solution As Solution = _solution7.Deserialize(Of Solution)()
         Dim converter = New QTI22CombinedScoringConverter(GetHottextCorrectionScoringParams())
 
+        'Act
         Dim result = converter.GetOutcomeDeclarations(solution, responseIdentifierAttributes, solution.ItemScoreTranslationTable)
 
+        'Assert
         Assert.AreEqual(7, result.Count)
         Assert.AreEqual("SCORE", result(0).identifier)
         Assert.AreEqual("MAXSCORE", result(1).identifier)
@@ -170,12 +194,15 @@ Public Class QTI22OutcomeDeclarationTests
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring")>
     Public Sub HottextCorrection_MultipleFactSets_OutcomeDeclarationsShouldBeInRightOrder()
 
+        'Arrange
         Dim responseIdentifierAttributes As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody6)
         Dim solution As Solution = _solution8.Deserialize(Of Solution)()
         Dim converter = New QTI22CombinedScoringConverter(GetHottextCorrectionScoringParams())
 
+        'Act
         Dim result = converter.GetOutcomeDeclarations(solution, responseIdentifierAttributes, solution.ItemScoreTranslationTable)
 
+        'Assert
         Assert.AreEqual(11, result.Count)
         Assert.AreEqual("SCORE", result(0).identifier)
         Assert.AreEqual("MAXSCORE", result(1).identifier)
@@ -194,12 +221,15 @@ Public Class QTI22OutcomeDeclarationTests
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring")>
     Public Sub HottextCorrection_CombinationOfFactSetsAndFactsOnFinding_OutcomeDeclarationsShouldBeInRightOrder()
 
+        'Arrange
         Dim responseIdentifierAttributes As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody6)
         Dim solution As Solution = _solution9.Deserialize(Of Solution)()
         Dim converter = New QTI22CombinedScoringConverter(GetHottextCorrectionScoringParams())
 
+        'Act
         Dim result = converter.GetOutcomeDeclarations(solution, responseIdentifierAttributes, solution.ItemScoreTranslationTable)
 
+        'Assert
         Assert.AreEqual(11, result.Count)
         Assert.AreEqual("SCORE", result(0).identifier)
         Assert.AreEqual("MAXSCORE", result(1).identifier)
@@ -215,27 +245,34 @@ Public Class QTI22OutcomeDeclarationTests
 
     End Sub
 
+    ''' <remarks>Replace 'I6cc75685-147c-4a91-a899-791aa0201e6f' with 'inlineMC' in the whole file and this test Succeeds.</remarks>
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring")>
     Public Sub MultiResponse_CorrectNumberOfOutcomeDeclarations()
 
+        'Arrange
         Dim responseIdentifierAttributes As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody10)
         Dim solution As Solution = _solution13.Deserialize(Of Solution)()
         Dim converter As QTI22CombinedScoringConverter = New QTI22CombinedScoringConverter(GetMultipleResponseScoringsParams())
 
-        Dim result = Converter.GetOutcomeDeclarations(Solution, responseIdentifierAttributes, Solution.ItemScoreTranslationTable)
+        'Act
+        Dim result = converter.GetOutcomeDeclarations(solution, responseIdentifierAttributes, solution.ItemScoreTranslationTable)
 
+        'Assert
         Assert.AreEqual(20, result.Count)
     End Sub
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring")>
     Public Sub Formula_CasEqual_FactsOnFinding()
 
+        'Arrange
         Dim responseIdentifierAttributes As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody7)
         Dim solution As Solution = _solution10.Deserialize(Of Solution)()
         Dim converter = New QTI22CombinedScoringConverter(GetFormulaCasEqualScoringParams())
 
+        'Act
         Dim result = converter.GetOutcomeDeclarations(solution, responseIdentifierAttributes, solution.ItemScoreTranslationTable)
 
+        'Assert
         Assert.AreEqual(6, result.Count)
         Assert.AreEqual("SCORE", result(0).identifier)
         Assert.AreEqual("MAXSCORE", result(1).identifier)
@@ -249,12 +286,15 @@ Public Class QTI22OutcomeDeclarationTests
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring")>
     Public Sub Formula_CasEqual_Multiple_FactsOnFinding()
 
+        'Arrange
         Dim responseIdentifierAttributes As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody8)
         Dim solution As Solution = _solution11.Deserialize(Of Solution)()
         Dim converter = New QTI22CombinedScoringConverter(GetFormulaCasEqualMultipleScoringParams())
 
+        'Act
         Dim result = converter.GetOutcomeDeclarations(solution, responseIdentifierAttributes, solution.ItemScoreTranslationTable)
 
+        'Assert
         Assert.AreEqual(10, result.Count)
         Assert.AreEqual("SCORE", result(0).identifier)
         Assert.AreEqual("MAXSCORE", result(1).identifier)
@@ -272,12 +312,15 @@ Public Class QTI22OutcomeDeclarationTests
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring")>
     Public Sub Formula_CasEqual_Mixed_FactsOnFinding()
 
+        'Arrange
         Dim responseIdentifierAttributes As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody9)
         Dim solution As Solution = _solution12.Deserialize(Of Solution)()
         Dim converter = New QTI22CombinedScoringConverter(GetFormulaCasEqualMixedScoringParams())
 
+        'Act
         Dim result = converter.GetOutcomeDeclarations(solution, responseIdentifierAttributes, solution.ItemScoreTranslationTable)
 
+        'Assert
         Assert.AreEqual(10, result.Count)
         Assert.AreEqual("SCORE", result(0).identifier)
         Assert.AreEqual("MAXSCORE", result(1).identifier)
@@ -295,12 +338,15 @@ Public Class QTI22OutcomeDeclarationTests
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring")>
     Public Sub McWithInlineCI_CombinationOfFactSetsAndFactsOnFinding()
 
+        'Arrange
         Dim responseIdentifierAttributes As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(_itemBody11)
         Dim solution As Solution = _solution14.Deserialize(Of Solution)()
         Dim converter = New QTI22CombinedScoringConverter(GetScoringParams_MC_And_InlineCI())
 
+        'Act
         Dim result = converter.GetOutcomeDeclarations(solution, responseIdentifierAttributes, solution.ItemScoreTranslationTable)
 
+        'Assert
         Assert.AreEqual(10, result.Count)
         Assert.AreEqual("SCORE", result(0).identifier)
         Assert.AreEqual("MAXSCORE", result(1).identifier)
@@ -315,6 +361,7 @@ Public Class QTI22OutcomeDeclarationTests
 
     End Sub
 
+#Region "Scoring parameters"
 
     Private Function GetGapScoringParams() As HashSet(Of ScoringParameter)
         Dim scoringParameters As New HashSet(Of ScoringParameter)()
@@ -643,7 +690,7 @@ Public Class QTI22OutcomeDeclarationTests
                     $"Input_{pair.Key}", .ExpectedLength = 0, .CorrectionIsApplicable = True}
             correctionScoreParam.AddSubParameters("Input")
             correctionScoreParam.RelatedControlLabelParameter = New PlainTextParameter() With {.Name = "controlLabel", .Value = pair.Value}
-            scoreParams.Add(correctionScoreParam)
+            scoreParams.Add(correctionScoreParam)   'For testpurposes... add to collection as well... during a normal publication the scoring parameters are being retrieved from the item using DeepFetchInlineScoringParameters
         Next
 
         Return scoreParams
@@ -713,7 +760,9 @@ Public Class QTI22OutcomeDeclarationTests
         Return scoreParams
     End Function
 
+#End Region
 
+#Region "Itembody"
 
     ReadOnly _itemBody1 As XElement =
         <wrapper>
@@ -1234,7 +1283,9 @@ Public Class QTI22OutcomeDeclarationTests
            </itemBody>
        </wrapper>
 
+#End Region
 
+#Region "Solution"
 
     ReadOnly _solution1 As XElement =
         <solution>
@@ -5684,5 +5735,6 @@ Public Class QTI22OutcomeDeclarationTests
             </ItemScoreTranslationTable>
         </solution>
 
+#End Region
 
 End Class

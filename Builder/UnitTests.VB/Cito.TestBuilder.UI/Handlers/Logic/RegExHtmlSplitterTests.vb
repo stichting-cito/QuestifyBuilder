@@ -12,15 +12,18 @@ Public Class RegExHtmlSplitterTests
     <TestMethod(), TestCategory("UILogic"), TestCategory("Inline")>
     <Description("Example selection over paragraphs")>
     Sub FlattenTests_withExample1()
+        'Arrange
         Dim doc As New XmlDocument : doc.LoadXml(example1.ToString())
         Dim startNode = doc.SelectSingleNode("/body/p[@id='c1-id-9']/text()")
         Dim endNode = doc.SelectSingleNode("/body/p[@id='c1-id-10']/text()")
 
         Dim splicer As New RegExHtmlSplitter(New Regex("\w+"), startNode, 6, endNode, 11)
-
+        
+        'Act
         Dim result = splicer.FlattenNodes()
-
-        Assert.AreEqual(4, result.Count)
+        
+        'Assert
+        Assert.AreEqual(4, result.Count) 'Textnode, parent P and textnode
         Assert.IsInstanceOfType(result(0), GetType(XmlText))
         Assert.AreEqual("p", result(1).LocalName)
         Assert.AreEqual("c1-id-9", result(1).Attributes("id").Value)
@@ -32,29 +35,35 @@ Public Class RegExHtmlSplitterTests
     <TestMethod(), TestCategory("UILogic"), TestCategory("Inline")>
     <Description("Example selection over paragraphs")>
     Sub GetStringMap_withExample1()
+        'Arrange
         Dim doc As New XmlDocument : doc.LoadXml(example1.ToString())
         Dim startNode = doc.SelectSingleNode("/body/p[@id='c1-id-9']/text()")
         Dim endNode = doc.SelectSingleNode("/body/p[@id='c1-id-12']/text()")
 
         Dim splicer As New RegExHtmlSplitter(New Regex("\w+"), startNode, 0, endNode, 4)
-
+        
+        'Act
         Dim result = splicer.GetStringMap()
-
-        Assert.AreEqual(4, result.Count)
+        
+        'Assert
+        Assert.AreEqual(4, result.Count) 'Textnode, parent P and textnode
     End Sub
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Inline")>
     <Description("start selection withing strong part")>
     Sub FlattenTests_withExample2()
+        'Arrange
         Dim doc As New XmlDocument : doc.LoadXml(example2.ToString())
         Dim startNode = doc.SelectSingleNode("//strong[@id='c1-id-13']/text()")
         Dim endNode = doc.SelectSingleNode("/p[@id='c1-id-10']/text()")
 
         Dim splicer As New RegExHtmlSplitter(New Regex("\w+"), startNode, 3, endNode, 45)
-
+        
+        'Act
         Dim result = splicer.FlattenNodes()
-
-        Assert.AreEqual(3, result.Count)
+        
+        'Assert
+        Assert.AreEqual(3, result.Count) 'Textnode, parent P and textnode
         Assert.IsInstanceOfType(result(0), GetType(XmlText))
         Assert.AreEqual("strong", result(1).LocalName)
         Assert.IsInstanceOfType(result(2), GetType(XmlText))
@@ -64,15 +73,18 @@ Public Class RegExHtmlSplitterTests
     <TestMethod(), TestCategory("UILogic"), TestCategory("Inline")>
     <Description("start selection withing strong part, that is not start.")>
     Sub FlattenTests_withExample3()
+        'Arrange
         Dim doc As New XmlDocument : doc.LoadXml(example3.ToString())
         Dim startNode = doc.SelectSingleNode("//strong[@id='c1-id-13']/text()")
         Dim endNode = doc.SelectSingleNode("/p[@id='c1-id-10']/text()[2]")
 
         Dim splicer As New RegExHtmlSplitter(New Regex("\w+"), startNode, 3, endNode, 45)
-
+        
+        'Act
         Dim result = splicer.FlattenNodes()
-
-        Assert.AreEqual(3, result.Count)
+        
+        'Assert
+        Assert.AreEqual(3, result.Count) 'Textnode, parent P and textnode
         Assert.IsInstanceOfType(result(0), GetType(XmlText))
         Assert.AreEqual("strong", result(1).LocalName)
         Assert.IsInstanceOfType(result(2), GetType(XmlText))
@@ -81,22 +93,28 @@ Public Class RegExHtmlSplitterTests
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Inline")>
     Sub SingleWordInP_ResultsWordInSpan()
+        'Arrange
         Dim doc As New XmlDocument : doc.LoadXml(<body><p>woord</p></body>.ToString())
         Dim splicer As New RegExHtmlSplitter(New Regex("\w+"), doc.SelectSingleNode("/body/p/text()"), 0, doc.SelectSingleNode("/body/p/text()"), 5)
 
+        'Act
         Dim result = splicer.Split()
 
+        'Assert
         Assert.AreEqual(1, result.Count())
         Assert.AreEqual(<span>woord</span>.ToString(), result(0).OuterXml)
     End Sub
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Inline")>
     Sub DoubleWordInP_ResultsWordInSpan()
+        'Arrange
         Dim doc As New XmlDocument : doc.LoadXml(<body><p>woord*waard</p></body>.ToString())
         Dim splicer As New RegExHtmlSplitter(New Regex("\w+"), doc.SelectSingleNode("/body/p/text()"), 2, doc.SelectSingleNode("/body/p/text()"), 9)
 
+        'Act
         Dim result = splicer.Split()
 
+        'Assert
         Assert.AreEqual(2, result.Count())
         Assert.AreEqual(<span>ord</span>.ToString(), result(0).OuterXml)
         Assert.AreEqual(<span>waa</span>.ToString(), result(1).OuterXml)
@@ -109,11 +127,14 @@ Public Class RegExHtmlSplitterTests
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Inline")>
     Sub Match2WordsWithStyle()
+        'Arrange
         Dim doc As New XmlDocument : doc.LoadXml(<body><p>woord <b>waard</b></p></body>.ToString())
         Dim splicer As New RegExHtmlSplitter(New Regex("\w+"), doc.SelectSingleNode("/body/p/text()"), 0, doc.SelectSingleNode("/body/p/b/text()"), 5)
 
+        'Act
         Dim result = splicer.Split()
 
+        'Assert
         Assert.AreEqual(2, result.Count())
         Assert.AreEqual(<span>woord</span>.ToString(), result(0).OuterXml)
         Assert.AreEqual(<span>waard</span>.ToString(), result(1).OuterXml)
@@ -126,11 +147,14 @@ Public Class RegExHtmlSplitterTests
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Inline")>
     Sub MatchWithEncodedHtml()
+        'Arrange
         Dim doc As New XmlDocument : doc.LoadXml(example4.ToString())
         Dim splicer As New RegExHtmlSplitter(New Regex(".+"), doc.SelectSingleNode("/body/p/text()"), 0, doc.SelectSingleNode("/body/p/text()"), 35)
 
+        'Act
         Dim result = splicer.Split()
 
+        'Assert
         Assert.AreEqual(1, result.Count())
         Assert.AreEqual("<span>De firma V&amp;D heeft in het jaar 2015</span>", result(0).OuterXml)
     End Sub

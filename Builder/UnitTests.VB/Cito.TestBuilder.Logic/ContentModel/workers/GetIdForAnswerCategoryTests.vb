@@ -11,80 +11,99 @@ Public Class GetIdForAnswerCategoryTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GetIdFromEmptySolution()
+        'Arrange
         Dim solution = solutionMC.To(Of Solution)()
         Dim sp = New ChoiceScoringParameter() With {.FindingOverride = "Integratie", .ControllerId = "Controller", .MaxChoices = 1}.AddSubParameters("A", "B", "C")
         Dim combinedScoringMapKey = New ScoringMap(New ScoringParameter() {sp}, solution).GetMap().First()
-
+        
+        'Act
         Dim result = combinedScoringMapKey.GetIdForAnswerCategory(solution)
-
+        
+        'Assert
         Assert.AreEqual(1, result)
     End Sub
 
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GetIdForFilled_maxIdIs1_Expexts2()
+        'Arrange
         Dim solution = solutionMCWithAnswerCategory_1.To(Of Solution)()
         Dim sp = New ChoiceScoringParameter() With {.FindingOverride = "Integratie", .ControllerId = "Controller", .MaxChoices = 1}.AddSubParameters("A", "B", "C")
         Dim combinedScoringMapKey = New ScoringMap(New ScoringParameter() {sp}, solution).GetMap().First()
-
+        
+        'Act
         Dim result = combinedScoringMapKey.GetIdForAnswerCategory(solution)
-
+        
+        'Assert
         Assert.AreEqual(2, result)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GetIdForFilled_maxIdIs500_Expexts501()
+        'Arrange
         Dim solution = solutionMCWithAnswerCategory_500.To(Of Solution)()
         Dim sp = New ChoiceScoringParameter() With {.FindingOverride = "Integratie", .ControllerId = "Controller", .MaxChoices = 1}.AddSubParameters("A", "B", "C")
         Dim combinedScoringMapKey = New ScoringMap(New ScoringParameter() {sp}, solution).GetMap().First()
-
+        
+        'Act
         Dim result = combinedScoringMapKey.GetIdForAnswerCategory(solution)
-
+        
+        'Assert
         Assert.AreEqual(501, result)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GetIdForGroupedMC_SolutionHasNoAnswerCategory_ButHasCatchAll_ExpectsId_1()
+        'Arrange
         Dim solution = solutionTwoMC_ConceptAndCatchAllButNoAnswerCategory.To(Of Solution)()
         Dim choiceSps = New ChoiceScoringParameter() {
             New ChoiceScoringParameter() With {.FindingOverride = "Opgave", .ControllerId = "een", .MaxChoices = 1}.AddSubParameters("A", "B", "C"),
             New ChoiceScoringParameter() With {.FindingOverride = "Opgave", .ControllerId = "twee", .MaxChoices = 1}.AddSubParameters("A", "B", "C")
         }
         Dim combinedScoringMapKey = New ScoringMap(choiceSps, solution).GetMap().First()
-
+        
+        'Act
         Dim result = combinedScoringMapKey.GetIdForAnswerCategory(solution)
-
+        
+        'Assert
         Assert.AreEqual(1, result)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GetIdForGroupedMC_SolutionHasAnswerCategory_ButHasCatchAll_ExpectsId_2()
+        'Arrange
         Dim solution = solutionTwoMC_ConceptAndCatchAllButSingleAnswerCategory.To(Of Solution)()
         Dim choiceSps = New ChoiceScoringParameter() {
             New ChoiceScoringParameter() With {.FindingOverride = "Opgave", .ControllerId = "een", .MaxChoices = 1}.AddSubParameters("A", "B", "C"),
             New ChoiceScoringParameter() With {.FindingOverride = "Opgave", .ControllerId = "twee", .MaxChoices = 1}.AddSubParameters("A", "B", "C")
         }
         Dim combinedScoringMapKey = New ScoringMap(choiceSps, solution).GetMap().First()
-
+        
+        'Act
         Dim result = combinedScoringMapKey.GetIdForAnswerCategory(solution)
-
+        
+        'Assert
         Assert.AreEqual(2, result)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GetIdForGroupedMC_SolutionHasNoAnswerCategory500_ButHasCatchAll_ExpectsId_501()
+        'Arrange
         Dim solution = solutionTwoMC_ConceptAndCatchAllButSingleAnswerCategory500.To(Of Solution)()
         Dim choiceSps = New ChoiceScoringParameter() {
             New ChoiceScoringParameter() With {.FindingOverride = "Opgave", .ControllerId = "een", .MaxChoices = 1}.AddSubParameters("A", "B", "C"),
             New ChoiceScoringParameter() With {.FindingOverride = "Opgave", .ControllerId = "twee", .MaxChoices = 1}.AddSubParameters("A", "B", "C")
         }
         Dim combinedScoringMapKey = New ScoringMap(choiceSps, solution).GetMap().First()
-
+        
+        'Act
         Dim result = combinedScoringMapKey.GetIdForAnswerCategory(solution)
-
+        
+        'Assert
         Assert.AreEqual(501, result)
     End Sub
 
+#Region "Data"
 
     ReadOnly solutionMC As XElement = <solution xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                                           <keyFindings>
@@ -484,5 +503,6 @@ Public Class GetIdForAnswerCategoryTests
                                                                                           </ItemScoreTranslationTable>
                                                                                       </solution>
 
+#End Region
 
 End Class

@@ -125,21 +125,21 @@ Public Class QTI22ResponseProcessingMatrixTests
                     <or>
                         <and>
                             <member>
-                                <baseValue baseType="identifier">y_A x_1</baseValue>
+                                <baseValue baseType="directedPair">y_A x_1</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                             <member>
-                                <baseValue baseType="identifier">y_B x_2</baseValue>
+                                <baseValue baseType="directedPair">y_B x_2</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                         </and>
                         <and>
                             <member>
-                                <baseValue baseType="identifier">y_A x_2</baseValue>
+                                <baseValue baseType="directedPair">y_A x_2</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                             <member>
-                                <baseValue baseType="identifier">y_B x_1</baseValue>
+                                <baseValue baseType="directedPair">y_B x_1</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                         </and>
@@ -155,7 +155,7 @@ Public Class QTI22ResponseProcessingMatrixTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_C x_3</baseValue>
+                        <baseValue baseType="directedPair">y_C x_3</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="SCORE">
@@ -169,7 +169,7 @@ Public Class QTI22ResponseProcessingMatrixTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_D x_1</baseValue>
+                        <baseValue baseType="directedPair">y_D x_1</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="SCORE">
@@ -189,21 +189,21 @@ Public Class QTI22ResponseProcessingMatrixTests
                     <or>
                         <and>
                             <member>
-                                <baseValue baseType="identifier">y_A x_1</baseValue>
+                                <baseValue baseType="directedPair">y_A x_1</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                             <member>
-                                <baseValue baseType="identifier">y_B x_2</baseValue>
+                                <baseValue baseType="directedPair">y_B x_2</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                         </and>
                         <and>
                             <member>
-                                <baseValue baseType="identifier">y_A x_2</baseValue>
+                                <baseValue baseType="directedPair">y_A x_2</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                             <member>
-                                <baseValue baseType="identifier">y_B x_1</baseValue>
+                                <baseValue baseType="directedPair">y_B x_1</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                         </and>
@@ -221,21 +221,21 @@ Public Class QTI22ResponseProcessingMatrixTests
                     <or>
                         <and>
                             <member>
-                                <baseValue baseType="identifier">y_C x_3</baseValue>
+                                <baseValue baseType="directedPair">y_C x_3</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                             <member>
-                                <baseValue baseType="identifier">y_D x_1</baseValue>
+                                <baseValue baseType="directedPair">y_D x_1</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                         </and>
                         <and>
                             <member>
-                                <baseValue baseType="identifier">y_C x_2</baseValue>
+                                <baseValue baseType="directedPair">y_C x_2</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                             <member>
-                                <baseValue baseType="identifier">y_D x_3</baseValue>
+                                <baseValue baseType="directedPair">y_D x_3</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                         </and>
@@ -257,37 +257,37 @@ Public Class QTI22ResponseProcessingMatrixTests
                     <or>
                         <and>
                             <member>
-                                <baseValue baseType="identifier">y_A x_1</baseValue>
+                                <baseValue baseType="directedPair">y_A x_1</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                             <member>
-                                <baseValue baseType="identifier">y_B x_2</baseValue>
+                                <baseValue baseType="directedPair">y_B x_2</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                             <member>
-                                <baseValue baseType="identifier">y_C x_3</baseValue>
+                                <baseValue baseType="directedPair">y_C x_3</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                             <member>
-                                <baseValue baseType="identifier">y_D x_1</baseValue>
+                                <baseValue baseType="directedPair">y_D x_1</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                         </and>
                         <and>
                             <member>
-                                <baseValue baseType="identifier">y_A x_2</baseValue>
+                                <baseValue baseType="directedPair">y_A x_2</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                             <member>
-                                <baseValue baseType="identifier">y_B x_1</baseValue>
+                                <baseValue baseType="directedPair">y_B x_1</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                             <member>
-                                <baseValue baseType="identifier">y_C x_2</baseValue>
+                                <baseValue baseType="directedPair">y_C x_2</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                             <member>
-                                <baseValue baseType="identifier">y_D x_3</baseValue>
+                                <baseValue baseType="directedPair">y_D x_3</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                         </and>
@@ -307,7 +307,7 @@ Public Class QTI22ResponseProcessingMatrixTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_A x_1</baseValue>
+                        <baseValue baseType="directedPair">y_A x_1</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="SCORE">
@@ -321,7 +321,7 @@ Public Class QTI22ResponseProcessingMatrixTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_B x_2</baseValue>
+                        <baseValue baseType="directedPair">y_B x_2</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="SCORE">
@@ -335,7 +335,7 @@ Public Class QTI22ResponseProcessingMatrixTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_C x_3</baseValue>
+                        <baseValue baseType="directedPair">y_C x_3</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="SCORE">
@@ -349,7 +349,7 @@ Public Class QTI22ResponseProcessingMatrixTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_D x_1</baseValue>
+                        <baseValue baseType="directedPair">y_D x_1</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="SCORE">
@@ -370,31 +370,31 @@ Public Class QTI22ResponseProcessingMatrixTests
                         <or>
                             <and>
                                 <member>
-                                    <baseValue baseType="identifier">y_A x_1</baseValue>
+                                    <baseValue baseType="directedPair">y_A x_1</baseValue>
                                     <variable identifier="RESPONSE"/>
                                 </member>
                                 <member>
-                                    <baseValue baseType="identifier">y_B x_2</baseValue>
+                                    <baseValue baseType="directedPair">y_B x_2</baseValue>
                                     <variable identifier="RESPONSE"/>
                                 </member>
                             </and>
                             <and>
                                 <member>
-                                    <baseValue baseType="identifier">y_A x_2</baseValue>
+                                    <baseValue baseType="directedPair">y_A x_2</baseValue>
                                     <variable identifier="RESPONSE"/>
                                 </member>
                                 <member>
-                                    <baseValue baseType="identifier">y_B x_1</baseValue>
+                                    <baseValue baseType="directedPair">y_B x_1</baseValue>
                                     <variable identifier="RESPONSE"/>
                                 </member>
                             </and>
                         </or>
                         <member>
-                            <baseValue baseType="identifier">y_C x_3</baseValue>
+                            <baseValue baseType="directedPair">y_C x_3</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_D x_1</baseValue>
+                            <baseValue baseType="directedPair">y_D x_1</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                     </and>
@@ -432,21 +432,21 @@ Public Class QTI22ResponseProcessingMatrixTests
                         <or>
                             <and>
                                 <member>
-                                    <baseValue baseType="identifier">y_A x_1</baseValue>
+                                    <baseValue baseType="directedPair">y_A x_1</baseValue>
                                     <variable identifier="RESPONSE"/>
                                 </member>
                                 <member>
-                                    <baseValue baseType="identifier">y_B x_2</baseValue>
+                                    <baseValue baseType="directedPair">y_B x_2</baseValue>
                                     <variable identifier="RESPONSE"/>
                                 </member>
                             </and>
                             <and>
                                 <member>
-                                    <baseValue baseType="identifier">y_A x_2</baseValue>
+                                    <baseValue baseType="directedPair">y_A x_2</baseValue>
                                     <variable identifier="RESPONSE"/>
                                 </member>
                                 <member>
-                                    <baseValue baseType="identifier">y_B x_1</baseValue>
+                                    <baseValue baseType="directedPair">y_B x_1</baseValue>
                                     <variable identifier="RESPONSE"/>
                                 </member>
                             </and>
@@ -454,21 +454,21 @@ Public Class QTI22ResponseProcessingMatrixTests
                         <or>
                             <and>
                                 <member>
-                                    <baseValue baseType="identifier">y_C x_3</baseValue>
+                                    <baseValue baseType="directedPair">y_C x_3</baseValue>
                                     <variable identifier="RESPONSE"/>
                                 </member>
                                 <member>
-                                    <baseValue baseType="identifier">y_D x_1</baseValue>
+                                    <baseValue baseType="directedPair">y_D x_1</baseValue>
                                     <variable identifier="RESPONSE"/>
                                 </member>
                             </and>
                             <and>
                                 <member>
-                                    <baseValue baseType="identifier">y_C x_2</baseValue>
+                                    <baseValue baseType="directedPair">y_C x_2</baseValue>
                                     <variable identifier="RESPONSE"/>
                                 </member>
                                 <member>
-                                    <baseValue baseType="identifier">y_D x_3</baseValue>
+                                    <baseValue baseType="directedPair">y_D x_3</baseValue>
                                     <variable identifier="RESPONSE"/>
                                 </member>
                             </and>
@@ -506,19 +506,19 @@ Public Class QTI22ResponseProcessingMatrixTests
                 <responseIf>
                     <and>
                         <member>
-                            <baseValue baseType="identifier">y_A x_1</baseValue>
+                            <baseValue baseType="directedPair">y_A x_1</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_B x_2</baseValue>
+                            <baseValue baseType="directedPair">y_B x_2</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_C x_3</baseValue>
+                            <baseValue baseType="directedPair">y_C x_3</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_D x_1</baseValue>
+                            <baseValue baseType="directedPair">y_D x_1</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                     </and>
@@ -553,7 +553,7 @@ Public Class QTI22ResponseProcessingMatrixTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_A x_1</baseValue>
+                        <baseValue baseType="directedPair">y_A x_1</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="SCOREFINDING">
@@ -567,7 +567,7 @@ Public Class QTI22ResponseProcessingMatrixTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_B x_2</baseValue>
+                        <baseValue baseType="directedPair">y_B x_2</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="SCOREFINDING">
@@ -581,7 +581,7 @@ Public Class QTI22ResponseProcessingMatrixTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_C x_3</baseValue>
+                        <baseValue baseType="directedPair">y_C x_3</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="SCOREFINDING">
@@ -595,7 +595,7 @@ Public Class QTI22ResponseProcessingMatrixTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_D x_1</baseValue>
+                        <baseValue baseType="directedPair">y_D x_1</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="SCOREFINDING">
@@ -614,19 +614,19 @@ Public Class QTI22ResponseProcessingMatrixTests
                 <responseIf>
                     <and>
                         <member>
-                            <baseValue baseType="identifier">y_A x_1</baseValue>
+                            <baseValue baseType="directedPair">y_A x_1</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_B x_2</baseValue>
+                            <baseValue baseType="directedPair">y_B x_2</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_C x_3</baseValue>
+                            <baseValue baseType="directedPair">y_C x_3</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_D x_1</baseValue>
+                            <baseValue baseType="directedPair">y_D x_1</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                     </and>
@@ -661,7 +661,7 @@ Public Class QTI22ResponseProcessingMatrixTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_A x_1</baseValue>
+                        <baseValue baseType="directedPair">y_A x_1</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="RAW_SCORE">
@@ -675,7 +675,7 @@ Public Class QTI22ResponseProcessingMatrixTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_B x_2</baseValue>
+                        <baseValue baseType="directedPair">y_B x_2</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="RAW_SCORE">
@@ -689,7 +689,7 @@ Public Class QTI22ResponseProcessingMatrixTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_C x_3</baseValue>
+                        <baseValue baseType="directedPair">y_C x_3</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="RAW_SCORE">
@@ -703,7 +703,7 @@ Public Class QTI22ResponseProcessingMatrixTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_D x_1</baseValue>
+                        <baseValue baseType="directedPair">y_D x_1</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="RAW_SCORE">
@@ -722,19 +722,19 @@ Public Class QTI22ResponseProcessingMatrixTests
                 <responseIf>
                     <and>
                         <member>
-                            <baseValue baseType="identifier">y_A x_1</baseValue>
+                            <baseValue baseType="directedPair">y_A x_1</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_B x_2</baseValue>
+                            <baseValue baseType="directedPair">y_B x_2</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_C x_3</baseValue>
+                            <baseValue baseType="directedPair">y_C x_3</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_D x_1</baseValue>
+                            <baseValue baseType="directedPair">y_D x_1</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                     </and>

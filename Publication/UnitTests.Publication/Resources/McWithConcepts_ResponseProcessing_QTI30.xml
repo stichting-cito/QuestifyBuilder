@@ -1,0 +1,16 @@
+<qti-response-processing template="https://purl.imsglobal.org/spec/qti/v3p0/rptemplates/match_correct.xml" xmlns="http://www.imsglobal.org/xsd/imsqtiasi_v3p0">
+  <qti-response-condition>
+    <qti-response-if>
+      <qti-member>
+        <qti-base-value base-type="identifier">B</qti-base-value>
+        <qti-variable identifier="RESPONSE" />
+      </qti-member>
+      <qti-set-outcome-value identifier="CONCEPTRESPONSE_CONCEPT1-1">
+        <qti-base-value base-type="float">1</qti-base-value>
+      </qti-set-outcome-value>
+      <qti-set-outcome-value identifier="CONCEPTRESPONSE_CONCEPT1-1-1">
+        <qti-base-value base-type="float">1</qti-base-value>
+      </qti-set-outcome-value>
+    </qti-response-if>
+  </qti-response-condition>
+</qti-response-processing>

@@ -15,16 +15,26 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
         End Sub
 
         Public Overridable Function CreateTestPart() As TestPartType
-            Dim testPart As New TestPartType
-            testPart.identifier = ChainHandlerHelper.GetIdentifierFromResourceId(_testPart.Identifier, PackageCreatorConstants.TypeOfResource.resource)
+            Dim testPart = GetTestPart()
+            testPart.qtitimelimits = GetTimeLimits()
+            Return testPart
+        End Function
+
+        Private Function GetTestPart() As TestPartType
+            Return New TestPartType With {
+                .identifier = ChainHandlerHelper.GetIdentifierFromResourceId(_testPart.Identifier, PackageCreatorConstants.TypeOfResource.resource),
+                .title = _testPart.Title
+            }
+        End Function
+
+        Private Function GetTimeLimits() As TimeLimitsType
             If TypeOf _testPart Is QTITestPartBase Then
                 Dim timeLimits = TimeLimitsHelper.GetTimeLimitsType(DirectCast(_testPart, QTITestPartBase).TimeLimits)
                 If timeLimits IsNot Nothing Then
-                    testPart.qtitimelimits = timeLimits
+                    Return timeLimits
                 End If
             End If
-
-            Return testPart
+            Return Nothing
         End Function
 
         Public Sub AddTestPartToAssessmentTestType(ByRef assessmentTestType As AssessmentTestType, testPartType As TestPartType)

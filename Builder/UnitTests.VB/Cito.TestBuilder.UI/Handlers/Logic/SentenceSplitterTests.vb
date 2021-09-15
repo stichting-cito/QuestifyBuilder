@@ -10,11 +10,14 @@ Public Class SentenceSplitterTests
 
     <TestMethod(), TestCategory("UILogic"), TestCategory("Inline")>
     Sub SplitInSentenceInP()
+        'Arrange
         Dim doc As New XmlDocument : doc.LoadXml(<body><p>Dit is een alinea. Er zijn velen die er op lijken.</p></body>.ToString())
         Dim splicer As New SentenceHtmlSplitter(doc.SelectSingleNode("/body/p/text()"), 0, doc.SelectSingleNode("/body/p/text()"), 19)
 
+        'Act
         Dim result = splicer.Split()
 
+        'Assert
         Assert.AreEqual(1, result.Count())
 
         Dim docExpected As New XDocument
@@ -23,24 +26,30 @@ Public Class SentenceSplitterTests
         docResult.Add(XElement.Parse(doc.OuterXml))
         Assert.IsTrue(UnitTestHelper.AreSame(docExpected, docResult))
     End Sub
-
+    
     <TestMethod(), TestCategory("UILogic"), TestCategory("Inline")>
     Sub SplitInSentenceInP_WithMarkup()
+        'Arrange
         Dim doc As New XmlDocument : doc.LoadXml(<body><p>Dit is een <b>alinea. Er</b> zijn velen die er op lijken.</p></body>.ToString())
         Dim splicer As New SentenceHtmlSplitter(doc.SelectSingleNode("/body/p/text()"), 0, doc.SelectSingleNode("/body/p/text()"), 19)
 
+        'Act
         Dim result = splicer.Split()
-
+        
+        'Assert
         Assert.AreEqual(0, result.Count())
     End Sub
-
+    
     <TestMethod(), TestCategory("UILogic"), TestCategory("Inline")>
     Sub ExampleWithSelectionOverParagraph()
+        'Arrange
         Dim doc As New XmlDocument : doc.LoadXml(data.ToString())
         Dim splicer As New SentenceHtmlSplitter(doc.SelectSingleNode("/body/p[@id='c1-id-9']/text()"), 6, doc.SelectSingleNode("/body/p[@id='c1-id-10']/text()"), 11)
 
+        'Act
         Dim result = splicer.Split()
-
+        
+        'Assert
         Assert.AreEqual(1, result.Count())
 
         Dim docExpected As New XDocument

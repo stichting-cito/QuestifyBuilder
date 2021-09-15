@@ -18,12 +18,18 @@ Public Class TestBuilderIdentityTest
         _testBuilderIdentity = New TestBuilderIdentity(_userId, _userName, _type)
     End Sub
 
+    '''<summary>
+    '''A test for IsAuthenticated()
+    '''</summary>
     <TestMethod()> _
     Public Sub TestBuilderIdentity_IsAuthenticatedTest()
         Assert.IsTrue(_testBuilderIdentity.IsAuthenticated, "Cito.TestBuilder.Security.TestBuilderIdentity.IsAuthenticated was not set correctly.")
         Assert.IsFalse((New TestBuilderIdentity).IsAuthenticated, "Cito.TestBuilder.Security.TestBuilderIdentity.IsAuthenticated was not set correctly.")
     End Sub
 
+    '''<summary>
+    '''A test for Name()
+    '''</summary>
     <TestMethod()> _
     Public Sub TestBuilderIdentity_NameTest()
         Dim val As String = "Haha"
@@ -31,11 +37,17 @@ Public Class TestBuilderIdentityTest
         Assert.AreEqual(Of String)(val, _testBuilderIdentity.Name, "Cito.TestBuilder.Security.TestBuilderIdentity.Name was not set correctly.")
     End Sub
 
+    '''<summary>
+    '''A test for New()
+    '''</summary>
     <TestMethod()> _
     Public Sub TestBuilderIdentity_ConstructorTest()
         Dim target As New TestBuilderIdentity()
     End Sub
 
+    '''<summary>
+    '''A test for New(ByVal Integer, ByVal String, ByVal Integer, ByVal String, ByVal String)
+    '''</summary>
     <TestMethod()> _
     Public Sub TestBuilderIdentity_ConstructorTest1()
         Assert.AreEqual(Of Integer)(_userId, _testBuilderIdentity.UserId, "UserId is not the same.")
@@ -43,6 +55,9 @@ Public Class TestBuilderIdentityTest
         Assert.AreEqual(Of String)(_type, _testBuilderIdentity.AuthenticationType, "Type is not the same.")
     End Sub
 
+    '''<summary>
+    '''A test for New(ByVal String)
+    '''</summary>
     <TestMethod()> _
     Public Sub TestBuilderIdentity_ConstructorTest2()
         Dim type As String = "type"
@@ -51,6 +66,9 @@ Public Class TestBuilderIdentityTest
         Assert.AreEqual(Of String)(type, target.AuthenticationType, "Type is not the same.")
     End Sub
 
+    '''<summary>
+    '''A test for UserId()
+    '''</summary>
     <TestMethod()> _
     Public Sub TestBuilderIdentity_UserIdTest()
         Dim val As Integer = 100
@@ -59,6 +77,9 @@ Public Class TestBuilderIdentityTest
         Assert.AreEqual(val, _testBuilderIdentity.UserId, "Cito.TestBuilder.Security.TestBuilderIdentity.UserId was not set correctly.")
     End Sub
 
+    '''<summary>
+    '''A test for UserName()
+    '''</summary>
     <TestMethod()> _
     Public Sub TestBuilderIdentity_UserNameTest()
         Dim val As String = "Martijn"

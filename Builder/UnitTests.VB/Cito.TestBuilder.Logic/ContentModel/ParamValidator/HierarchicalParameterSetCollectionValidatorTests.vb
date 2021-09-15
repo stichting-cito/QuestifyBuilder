@@ -9,96 +9,126 @@ Public Class HierarchicalParameterSetCollectionValidatorTests
 
     <TestMethod(), TestCategory("Logic")>
     Public Sub ValidateEmpty_returns_True()
+        'Arrange
         Dim parameterSetCol As New ParameterSetCollection
         Dim validator As New HierarchicalParameterSetCollectionValidator(parameterSetCol)
-
+        
+        'Act
         Dim result = validator.Validate()
-
+        
+        'Assert
         Assert.IsTrue(result)
     End Sub
 
     <TestMethod(), TestCategory("Logic")>
     Public Sub ValidatesPrmSetColl_WithEmptyPrmColl_returns_True()
+        'Arrange
         Dim parameterSetCol As New ParameterSetCollection
         parameterSetCol.Add(New ParameterCollection())
         Dim validator As New HierarchicalParameterSetCollectionValidator(parameterSetCol)
-
+        
+        'Act
         Dim result = validator.Validate()
-
+        
+        'Assert
         Assert.IsTrue(result)
     End Sub
 
     <TestMethod(), TestCategory("Logic")>
     Public Sub XhtmlWith_NoData_AndRequired_IsNotValid()
+        'Arrange
         Dim parameterSetCol = getParmsetWithColl(simple_Req_NoData_XhtmlPrm)
         Dim validator As New HierarchicalParameterSetCollectionValidator(parameterSetCol)
-
+        
+        'Act
         Dim result = validator.Validate()
-
+        
+        'Assert
         Assert.IsFalse(result)
     End Sub
 
     <TestMethod(), TestCategory("Logic")>
     Public Sub XhtmlWith_Data_AndRequired_IsValid()
+        'Arrange
         Dim parameterSetCol = getParmsetWithColl(simple_Req_Data_XhtmlPrm)
         Dim validator As New HierarchicalParameterSetCollectionValidator(parameterSetCol)
-
+        
+        'Act
         Dim result = validator.Validate()
-
+        
+        'Assert
         Assert.IsTrue(result)
     End Sub
 
     <TestMethod(), TestCategory("Logic")>
     Public Sub XhtmlWith_NoData_AndRequired_ButNotVisible_IsValid()
+        'Arrange
         Dim parameterSetCol = getParmsetWithColl(simple_ReqNotVis_NoData_XhtmlPrm)
         Dim validator As New HierarchicalParameterSetCollectionValidator(parameterSetCol)
-
+        
+        'Act
         Dim result = validator.Validate()
-
+        
+        'Assert
         Assert.IsTrue(result)
     End Sub
 
     <TestMethod(), TestCategory("Logic")>
     Public Sub XhtmlWith_Data_AndRequired_ButNotVisible_IsValid()
+        'Arrange
         Dim parameterSetCol = getParmsetWithColl(simple_ReqNotVis_Data_XhtmlPrm)
         Dim validator As New HierarchicalParameterSetCollectionValidator(parameterSetCol)
-
+        
+        'Act
         Dim result = validator.Validate()
-
+        
+        'Assert
         Assert.IsTrue(result)
     End Sub
 
     <TestMethod(), TestCategory("Logic")>
     Public Sub VisibleCollection_And_ReqXhtml_noData_IsNotValid()
+        'Arrange
         Dim parameterSetCol = getParmsetWithColl(collectionVisible_XhtmlReq_NoData)
         Dim validator As New HierarchicalParameterSetCollectionValidator(parameterSetCol)
-
+        
+        'Act
         Dim result = validator.Validate()
-
+        
+        'Assert
         Assert.IsFalse(result)
     End Sub
 
 
     <TestMethod(), TestCategory("Logic")>
     Public Sub VisibleCollection_And_ReqXhtml_Data_IsValid()
+        'Arrange
         Dim parameterSetCol = getParmsetWithColl(collectionVisible_XhtmlReq_Data)
         Dim validator As New HierarchicalParameterSetCollectionValidator(parameterSetCol)
-
+        
+        'Act
         Dim result = validator.Validate()
-
+        
+        'Assert
         Assert.IsTrue(result)
     End Sub
 
     <TestMethod(), TestCategory("Logic")>
     Public Sub HiddenCollection_And_ReqXhtml_noData_IsValid()
+        'Arrange
+        'The fact that the XhtmlParam is required is nice, but since the parent parameter (the collection) is not visible
+        'this will validate true.
         Dim parameterSetCol = getParmsetWithColl(collectionHidden_XhtmlReq_NoData)
         Dim validator As New HierarchicalParameterSetCollectionValidator(parameterSetCol)
-
+        
+        'Act
         Dim result = validator.Validate()
-
+        
+        'Assert
         Assert.IsTrue(result)
     End Sub
 
+#Region "Data"
 
 
     Private simple_Req_NoData_XhtmlPrm As XElement = <ArrayOfParameterCollection>
@@ -223,5 +253,6 @@ Public Class HierarchicalParameterSetCollectionValidatorTests
         Return ret
     End Function
 
+#End Region
 
 End Class

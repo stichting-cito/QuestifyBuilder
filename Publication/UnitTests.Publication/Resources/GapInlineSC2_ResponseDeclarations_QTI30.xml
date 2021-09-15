@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qti-response-declarations>
+  <qti-response-declaration identifier="RESPONSE" cardinality="single" base-type="integer">
+    <qti-correct-response interpretation="(19&amp;9&amp;10&amp;3&amp;6&amp;4)|(19&amp;10&amp;9&amp;4&amp;6&amp;3)|(17&amp;10&amp;7&amp;6&amp;4&amp;3)|(17&amp;7&amp;10&amp;3&amp;4&amp;6)|(16&amp;9&amp;7&amp;6&amp;3&amp;4)|(16&amp;7&amp;9&amp;4&amp;3&amp;6)">
+      <qti-value>19</qti-value>
+    </qti-correct-response>
+  </qti-response-declaration>
+  <qti-response-declaration identifier="RESPONSE2" cardinality="single" base-type="integer">
+    <qti-correct-response>
+      <qti-value>9</qti-value>
+    </qti-correct-response>
+  </qti-response-declaration>
+  <qti-response-declaration identifier="RESPONSE3" cardinality="single" base-type="integer">
+    <qti-correct-response>
+      <qti-value>10</qti-value>
+    </qti-correct-response>
+  </qti-response-declaration>
+  <qti-response-declaration identifier="RESPONSE4" cardinality="single" base-type="integer">
+    <qti-correct-response>
+      <qti-value>3</qti-value>
+    </qti-correct-response>
+  </qti-response-declaration>
+  <qti-response-declaration identifier="RESPONSE5" cardinality="single" base-type="integer">
+    <qti-correct-response>
+      <qti-value>6</qti-value>
+    </qti-correct-response>
+  </qti-response-declaration>
+  <qti-response-declaration identifier="RESPONSE6" cardinality="single" base-type="integer">
+    <qti-correct-response>
+      <qti-value>4</qti-value>
+    </qti-correct-response>
+  </qti-response-declaration>
+</qti-response-declarations>

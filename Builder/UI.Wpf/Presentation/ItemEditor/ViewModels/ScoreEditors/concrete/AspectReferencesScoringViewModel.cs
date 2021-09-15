@@ -8,7 +8,10 @@ using Cito.Tester.ContentModel;
 using MEFedMVVM.Common;
 using MEFedMVVM.ViewModelLocator;
 using Questify.Builder.Logic.ContentModel;
+using Questify.Builder.Logic.HelperClasses;
 using Questify.Builder.Logic.Service.Factories;
+using Questify.Builder.Logic.Service.Model.Entities;
+using Questify.Builder.Model.ContentModel.EntityClasses;
 using Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views;
 using Questify.Builder.UI.Wpf.Presentation.ItemEditor.Views.ScoreEditors;
 using Questify.Builder.UI.Wpf.Presentation.Services;
@@ -54,8 +57,10 @@ namespace Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels.ScoreEditor
                 _view = (AspectEditorMultipleView)view;
                 _view.SetViewModel(this);
 
-                _itemEditorVm = ((Tuple<IItemEditorViewModel, string>)workspaceData.WorkSpaceContextualData.DataValue).Item1;
-                _controllerId = ((Tuple<IItemEditorViewModel, string>)workspaceData.WorkSpaceContextualData.DataValue).Item2;
+                var dataValue = (Tuple<IItemEditorViewModel, string, string>)workspaceData.WorkSpaceContextualData.DataValue;
+                _itemEditorVm = dataValue.Item1;
+                _controllerId = dataValue.Item2;
+                var defaultAspectIdentifier = dataValue.Item3;
                 _itemSolution = _itemEditorVm.AssessmentItem.DataValue.Solution;
 
                 if (RefColl == null)
@@ -63,6 +68,11 @@ namespace Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels.ScoreEditor
                     _refColl = new AspectReferenceCollection(_controllerId);
                     _itemSolution.AspectReferenceSetCollection.Add(RefColl);
                 }
+                if (!string.IsNullOrEmpty(defaultAspectIdentifier) && !AspectHelper.IsDefaultResourceAspect(defaultAspectIdentifier))
+                {
+                    AddDefaultAspectRef(defaultAspectIdentifier);
+                }
+
                 AspectRefs.DataValue = ToViewModel(RefColl.Items);
                 UpdateMaxScore();
 
@@ -205,34 +215,94 @@ namespace Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels.ScoreEditor
         private System.Collections.ObjectModel.ObservableCollection<AspectReferenceViewModel> ToViewModel(List<AspectReference> aspectReferences)
         {
             var arViewModels = new System.Collections.ObjectModel.ObservableCollection<AspectReferenceViewModel>();
-            if (aspectReferences != null)
+            if (aspectReferences == null)
             {
-                var aspectsInBank = DtoFactory.Aspect.GetResourcesForBank(((ItemEditorViewModel)_itemEditorVm).ItemResourceEntity.DataValue.BankId);
-
-                foreach (var ar in aspectReferences)
-                {
-                    var aspect = aspectsInBank.FirstOrDefault(a => a.Name.Equals(ar.SourceName, StringComparison.InvariantCultureIgnoreCase));
-                    arViewModels.Add(new AspectReferenceViewModel() { name = ar.SourceName, title = aspect.Title, maxScore = ar.MaxScore });
-                }
+                return arViewModels;
             }
+
+            var aspectsInBank = DtoFactory.Aspect.GetResourcesForBank(((ItemEditorViewModel)_itemEditorVm).ItemResourceEntity.DataValue.BankId);
+
+            foreach (var ar in aspectReferences)
+            {
+                var aspectDto = aspectsInBank.FirstOrDefault(a => a.Name.Equals(ar.SourceName, StringComparison.InvariantCultureIgnoreCase));
+                var aspect = GetAspect(aspectDto.ResourceId);
+                arViewModels.Add(new AspectReferenceViewModel()
+                {
+                    name = ar.SourceName,
+                    title = aspectDto.Title,
+                    maxScore = ar.MaxScore,
+                    maxTranslatedScore = aspect != null && aspect.AspectScoreIsTranslated() ?
+                                            (int)aspect.AspectScoreTranslationTable.Max(t => t.TranslatedScore) :
+                                            (int?)null
+                });
+            }
+
             return arViewModels;
+        }
+
+        private Aspect GetAspect(Guid id)
+        {
+            var aspectResource = ResourceFactory.Instance.GetResourceByIdWithOption(id, new Cito.Tester.Common.ResourceRequestDTO()) as AspectResourceEntity;
+            aspectResource.EnsureResourceData();
+            if (aspectResource.ResourceData != null && aspectResource.ResourceData.BinData.Any())
+            {
+                return Cito.Tester.Common.SerializeHelper.XmlDeserializeFromByteArray(aspectResource.ResourceData.BinData, typeof(Aspect), true) as Aspect;
+            }
+
+            return null;
         }
 
         private void DoAddAspectRefs()
         {
-            var newAspectRefs = winFormsWindowService.OpenSelectAspectDialog(((ItemEditorViewModel)_itemEditorVm).ItemResourceEntity.DataValue.BankId, AspectRefs.DataValue.Select(a => a.name).ToList(), true, true);
-            if (newAspectRefs != null && newAspectRefs.Any())
+            var newAspectDtos = winFormsWindowService.OpenSelectAspectDialog(((ItemEditorViewModel)_itemEditorVm).ItemResourceEntity.DataValue.BankId, AspectRefs.DataValue.Select(a => a.name).ToList(), true, true);
+            if (newAspectDtos != null && newAspectDtos.Any())
             {
-                if (RefColl != null)
-                {
-                    newAspectRefs.ToList().ForEach(ar =>
-                    {
-                        RefColl.Items.Add(new AspectReference() { SourceName = ar.Name, MaxScore = ar.RawScore });
-                    });
-                    AspectRefs.DataValue = ToViewModel(RefColl.Items);
-                    UpdateMaxScore();
-                }
+                AddNewAspectRefs(ConvertToAspectRefs(newAspectDtos));
             }
+        }
+
+        private IEnumerable<AspectReference> ConvertToAspectRefs(IEnumerable<AspectResourceDto> aspectDtos)
+        {
+            var result = new List<AspectReference>();
+            aspectDtos.ToList().ForEach(ar =>
+            {
+                result.Add(new AspectReference() { SourceName = ar.Name, MaxScore = ar.RawScore });
+            });
+            return result.ToArray();
+        }
+
+        private void AddDefaultAspectRef(string aspectIdentifier)
+        {
+            var aspectEntity = AspectHelper.GetAspect(aspectIdentifier, ((ItemEditorViewModel)_itemEditorVm).ItemResourceEntity.DataValue.BankId);
+            if (aspectEntity != null)
+            {
+                AddNewAspectRefs(new AspectReference[] { new AspectReference() { SourceName = aspectEntity.Name, MaxScore = aspectEntity.RawScore } });
+            }
+        }
+
+        private void AddNewAspectRefs(IEnumerable<AspectReference> newAspectRefs)
+        {
+            var aspectRefsToAdd = GetAspectReferencesToAdd(newAspectRefs);
+            if (aspectRefsToAdd != null && aspectRefsToAdd.Any())
+            {
+                aspectRefsToAdd.ToList().ForEach(ar =>
+                {
+                    RefColl.Items.Add(ar);
+                });
+                AspectRefs.DataValue = ToViewModel(RefColl.Items);
+                UpdateMaxScore();
+            }
+        }
+
+        private IEnumerable<AspectReference> GetAspectReferencesToAdd(IEnumerable<AspectReference> newAspectRefs)
+        {
+            if (RefColl == null)
+            {
+                return Enumerable.Empty<AspectReference>();
+            }
+
+            var referencedAspectIdentifers = RefColl.Items.Select(ar => ar.SourceName);
+            return newAspectRefs.Where(a => !referencedAspectIdentifers.Contains(a.SourceName));
         }
 
         private void DoRemoveAspectRefs()
@@ -350,7 +420,22 @@ namespace Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels.ScoreEditor
                     ((AspectReferenceScoringViewModel)AspectScoreEditor.DataValue.ViewModelInstance).Dispose();
                     GC.Collect();
                 }
-                AspectScoreEditor.DataValue = new WorkspaceData(String.Empty, Constants.AspectScoringSingleWorkSpace, new Tuple<IItemEditorViewModel, IAspectReferencesScoringViewModel, string, string, bool, bool>(_itemEditorVm, this, SelectedItems.First().name, _controllerId, _itemEditorVm.AssessmentItem.DataValue.Solution.AutoScoring == false, true), String.Empty, false);
+
+                var aspectScoreEditorDataValue = new Tuple<IItemEditorViewModel, IAspectReferencesScoringViewModel, string, string, bool, bool, bool>(
+                    _itemEditorVm,
+                    this,
+                    SelectedItems.First().name,
+                    _controllerId,
+                    _itemEditorVm.AssessmentItem.DataValue.Solution.AutoScoring == false,
+                    true,
+                    SelectedItems.First().maxTranslatedScore == null);
+
+                AspectScoreEditor.DataValue = new WorkspaceData(
+                    String.Empty,
+                    Constants.AspectScoringSingleWorkSpace,
+                    aspectScoreEditorDataValue,
+                    String.Empty,
+                    false);
             }
             else
             {

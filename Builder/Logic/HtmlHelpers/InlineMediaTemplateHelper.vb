@@ -14,11 +14,17 @@ Public Class InlineMediaTemplateHelper
 
         Select Case mediaType.ToLower
             Case "image"
-                If htmlInlineTemplateNames.nrOneOptionForImage OrElse String.IsNullOrEmpty(result) Then result = htmlInlineTemplateNames.forImage
+                If (htmlInlineTemplateNames.nrOneOptionForImage OrElse String.IsNullOrEmpty(result)) AndAlso htmlInlineTemplateNames.forImage IsNot Nothing Then
+                    result = htmlInlineTemplateNames.forImage
+                End If
             Case "audio"
-                If htmlInlineTemplateNames.nrOneOptionForAudio OrElse String.IsNullOrEmpty(result) Then result = htmlInlineTemplateNames.forAudio
+                If (htmlInlineTemplateNames.nrOneOptionForAudio OrElse String.IsNullOrEmpty(result)) AndAlso htmlInlineTemplateNames.forAudio IsNot Nothing Then
+                    result = htmlInlineTemplateNames.forAudio
+                End If
             Case "video"
-                If htmlInlineTemplateNames.nrOneOptionForVideo OrElse String.IsNullOrEmpty(result) Then result = htmlInlineTemplateNames.forVideo
+                If (htmlInlineTemplateNames.nrOneOptionForVideo OrElse String.IsNullOrEmpty(result)) AndAlso htmlInlineTemplateNames.forVideo IsNot Nothing Then
+                    result = htmlInlineTemplateNames.forVideo
+                End If
         End Select
 
         Return result

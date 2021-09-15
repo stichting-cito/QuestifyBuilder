@@ -3,6 +3,7 @@ Imports System.Linq
 Imports System.Xml.Linq
 Imports Cito.Tester.Common
 Imports Cito.Tester.ContentModel
+Imports Questify.Builder.Logic.QTI.Helpers.QTI22
 
 Namespace QTI.Converters.Processing.QTI22
 
@@ -27,11 +28,9 @@ Namespace QTI.Converters.Processing.QTI22
         End Function
 
         Private Function GetProcessingForValue(value As BaseValue, valueY As Integer) As XElement
-
-            Dim correctResponse = $"y_{AlphabeticIdentifierHelper.GetAlphabeticIdentifier(valueY)} x_{(AscW(value.ToString) - 64)}"
-            Dim correctValue As XElement = <baseValue baseType="identifier"><%= correctResponse %></baseValue>
-            Return correctValue
-
+            Dim y = $"y_{AlphabeticIdentifierHelper.GetAlphabeticIdentifier(valueY)}"
+            Dim x = $"x_{(AscW(value.ToString) - 64)}"
+            Return QTI22ScoringHelper.GetDirectPairProcessingForValue(y, x)
         End Function
 
         Private Function GetMatrixRowIndexFromFact(fact As KeyFact) As Integer

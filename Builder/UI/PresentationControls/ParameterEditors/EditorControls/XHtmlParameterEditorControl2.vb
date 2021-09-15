@@ -11,7 +11,8 @@ Imports Questify.Builder.Logic.Service.Exceptions
 
 Public Class XHtmlParameterEditorControl2
     Inherits ParameterEditorControlBase
-
+    
+#Region "Fields"
     Private ReadOnly _xhtmlParameter As XHtmlParameter
     Private ReadOnly _resourceEntity As EntityClasses.ResourceEntity
 
@@ -20,15 +21,19 @@ Public Class XHtmlParameterEditorControl2
     Private _inlineTemplates As String
     Private _inlineFindingOverride As String
 
+    '----[Helper Classes]
     Private ReadOnly _htmlContentValidator As New HtmlContentValidator
     Private _behavior As BaseHtmlEditorBehavior = Nothing
+    '-----------------------------------------------------------
 
     Public Event AddedInlineCustomInteraction As EventHandler(Of InlineElementEventArgs)
     Public Event RemovedInlineCustomInteraction As EventHandler(Of InlineElementEventArgs)
     Public Event AddedInlineAspect As EventHandler(Of InlineElementEventArgs)
     Public Event RemovedInlineAspect As EventHandler(Of InlineElementEventArgs)
     Public Event HtmlSizeStored As EventHandler(Of SizeEventArgs)
+#End Region
 
+#Region "Constructor"
 
     Public Sub New(ByVal parent As ParameterSetsEditor,
                ByVal xhtmlParameter As XHtmlParameter,
@@ -36,8 +41,9 @@ Public Class XHtmlParameterEditorControl2
                ByVal resourceManager As ResourceManagerBase,
                ByVal hasLoadedOldItemLayoutTemplate As Boolean,
                ByVal contextIdentifier As Nullable(Of Integer))
-        MyBase.New(parent)
+        MyBase.New(parent) 'Call base constructor
 
+        'Take parameters.
         _xhtmlParameter = xhtmlParameter
         _resourceEntity = resourceEntity
         MyBase.ResourceManager = resourceManager
@@ -111,7 +117,9 @@ Public Class XHtmlParameterEditorControl2
     Private Function ParameterIsPopupContent() As Boolean
         Return _xhtmlParameter.Name = "popupContent"
     End Function
+#End Region
 
+#Region "Overrides"
 
     Public Overrides Property FormClosing As Boolean
         Get
@@ -204,6 +212,7 @@ Public Class XHtmlParameterEditorControl2
 
     Public Overrides Function ValidateParameter() As String
         If (_required) Then
+            'Does html contain value?
             If (Not _htmlContentValidator.HtmlContainsValue(_xhtmlParameter.Value)) Then
                 Dim result As String = String.Empty
                 Dim label As String = _xhtmlParameter.DesignerSettings.GetSettingValueByKey("label")
@@ -224,15 +233,20 @@ Public Class XHtmlParameterEditorControl2
         Return HtmlResourceExtractor.GetAllResourcesInHtml(_behavior.InlineElements.Values.Select(Function(v) v.Item1).ToList, _xhtmlParameter.Value).Contains(resource.Name)
     End Function
 
+#End Region
 
+#Region "Designer and Data Retrieval code"
 
     Private Sub LoadDesignerSetting(xhtmlParameter As XHtmlParameter)
+        ' get designer settings
         If Not Boolean.TryParse(xhtmlParameter.DesignerSettings.GetSettingValueByKey("required"), _required) Then
             Throw New AppLogicException(String.Format(My.Resources.ErrorParsingDesignerSettingsForParameterSetting, xhtmlParameter.Name, "required"))
         End If
 
+        'martijnh - 20121119 - retrieve value of inlinetemplate
         _inlineTemplate = xhtmlParameter.DesignerSettings.GetSettingValueByKey("inlinetemplate")
 
+        'Not that these is a plural form!  inlineTemplates 
         _inlineTemplates = If(xhtmlParameter.DesignerSettings.GetSettingValueByKey("inlinetemplates"), String.Empty)
         _inlineFindingOverride = If(xhtmlParameter.DesignerSettings.GetSettingValueByKey("inlinefindingoverride"), String.Empty)
         Debug.Assert(_inlineTemplates IsNot Nothing)
@@ -242,24 +256,31 @@ Public Class XHtmlParameterEditorControl2
         Me.Height = editor.Height + 2
     End Sub
 
+#End Region
 
+#Region "Control Validation"
 
     Protected Overrides Sub OnValidated(e As EventArgs)
         If Me.EditorParent IsNot Nothing Then
-            Me.EditorParent.ValidateThisEditor(Me)
+            Me.EditorParent.ValidateThisEditor(Me) 'Validate            
         End If
     End Sub
 
+#End Region
 
+#Region "handling of consumed resources"
 
     Public Sub AddDependentResource(ByVal resourceName As String)
         OnAddingResource(New ResourceNameEventArgs(resourceName))
     End Sub
 
+#End Region
 
+#Region "Dispose Behaviour"
 
     Private Sub DoDispose(disposing As Boolean)
 
+        'Dispose Behavior
         If disposing Then
             If editor IsNot Nothing Then
                 RemoveHandler editor.AddedInlineCustomInteraction, AddressOf HtmlEditor_AddedInlineCustomInteraction
@@ -276,5 +297,6 @@ Public Class XHtmlParameterEditorControl2
 
     End Sub
 
+#End Region
 
 End Class

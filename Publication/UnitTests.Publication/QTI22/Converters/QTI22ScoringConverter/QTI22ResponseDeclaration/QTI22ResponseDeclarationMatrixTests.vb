@@ -85,7 +85,7 @@ Public Class QTI22ResponseDeclarationMatrixTests
 
     Private _result1 As XElement =
         <responseDeclarations>
-            <responseDeclaration identifier="RESPONSE" cardinality="multiple" baseType="identifier">
+            <responseDeclaration identifier="RESPONSE" cardinality="multiple" baseType="directedPair">
                 <correctResponse interpretation="(A&amp;B)|(B&amp;A)&amp;C&amp;A">
                     <value>y_A x_1</value>
                     <value>y_B x_2</value>
@@ -97,7 +97,7 @@ Public Class QTI22ResponseDeclarationMatrixTests
 
     Private _result2 As XElement =
         <responseDeclarations>
-            <responseDeclaration identifier="RESPONSE" cardinality="multiple" baseType="identifier">
+            <responseDeclaration identifier="RESPONSE" cardinality="multiple" baseType="directedPair">
                 <correctResponse interpretation="(A&amp;B)|(B&amp;A)&amp;(C&amp;A)|(B&amp;C)">
                     <value>y_A x_1</value>
                     <value>y_B x_2</value>
@@ -109,7 +109,7 @@ Public Class QTI22ResponseDeclarationMatrixTests
 
     Private _result3 As XElement =
         <responseDeclarations>
-            <responseDeclaration identifier="RESPONSE" cardinality="multiple" baseType="identifier">
+            <responseDeclaration identifier="RESPONSE" cardinality="multiple" baseType="directedPair">
                 <correctResponse interpretation="(A&amp;B&amp;C&amp;A)|(B&amp;A&amp;B&amp;C)">
                     <value>y_A x_1</value>
                     <value>y_B x_2</value>
@@ -121,7 +121,7 @@ Public Class QTI22ResponseDeclarationMatrixTests
 
     Private _result4 As XElement =
         <responseDeclarations>
-            <responseDeclaration identifier="RESPONSE" cardinality="multiple" baseType="identifier">
+            <responseDeclaration identifier="RESPONSE" cardinality="multiple" baseType="directedPair">
                 <correctResponse interpretation="A&amp;B&amp;C&amp;A">
                     <value>y_A x_1</value>
                     <value>y_B x_2</value>

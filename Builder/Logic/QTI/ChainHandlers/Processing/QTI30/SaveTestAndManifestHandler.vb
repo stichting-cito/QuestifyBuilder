@@ -92,13 +92,13 @@ Namespace QTI.ChainHandlers.Processing.QTI30
             For Each resourceKey In resourceKeys
                 Dim resourceTypeDictionary = resources(resourceKey)
                 For Each resourceType As ResourceType In resourceTypeDictionary.Keys
-                    Dim dependecyList As New List(Of DependencyType)
+                    Dim dependencyList As New List(Of DependencyType)
                     For Each dependentResource As String In resourceTypeDictionary.Item(resourceType)
                         Dim dependencyType As New DependencyType
                         dependencyType.identifierref = dependentResource
-                        dependecyList.Add(dependencyType)
+                        dependencyList.Add(dependencyType)
                     Next
-                    resourceType.dependency = dependecyList.ToArray
+                    resourceType.dependency = dependencyList.ToArray
                     resourceTypeList.Add(resourceType)
                 Next
             Next
@@ -138,12 +138,14 @@ Namespace QTI.ChainHandlers.Processing.QTI30
             Return New QTI30NamespaceHelper
         End Function
 
-        Private Sub AddTestResourcesToManifest(requestData As PublicationRequest, testDocumentSet As TestDocumentSet)
+        Protected Overridable Sub AddTestResourcesToManifest(requestData As PublicationRequest, testDocumentSet As TestDocumentSet)
             Dim testname = testDocumentSet.Test.Identifier.Replace(Chr(32), "_"c)
-            Dim resourceType As ResourceType = PackageCreator.GetResourceType(requestData.Resources, ChainHandlerHelper.GetIdentifierFromResourceId(testname, PackageCreatorConstants.TypeOfResource.test))
-            AddPropertiesToResourceType(requestData, testDocumentSet, resourceType, testname)
             Dim files = GetTestFiles(testname)
-            PackageCreator.AddResourceToManifest(requestData.Resources, resourceType, files.ToArray)
+            If files.Any() Then
+                Dim resourceType As ResourceType = PackageCreator.GetResourceType(requestData.Resources, ChainHandlerHelper.GetIdentifierFromResourceId(testname, PackageCreatorConstants.TypeOfResource.test))
+                AddPropertiesToResourceType(requestData, testDocumentSet, resourceType, testname)
+                PackageCreator.AddResourceToManifest(requestData.Resources, resourceType, files.ToArray)
+            End If
         End Sub
 
         Protected Overridable Sub AddPropertiesToResourceType(requestData As PublicationRequest, testDocumentSet As TestDocumentSet, ByRef resourceType As ResourceType, testName As String)

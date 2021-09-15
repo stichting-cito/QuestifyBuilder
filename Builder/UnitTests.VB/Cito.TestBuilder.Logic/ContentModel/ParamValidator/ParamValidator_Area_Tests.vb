@@ -7,10 +7,13 @@ Imports Questify.Builder.Logic.ContentModel
 
     <TestMethod(), TestCategory("Logic")>
     Public Sub DefaultTest()
+        'Arrange
         Dim prm = GetValidAreaParam()
-
+        
+        'Act
         Dim result = prm.IsValid()
-
+        
+        'Assert
         Assert.IsTrue(result)
     End Sub
 

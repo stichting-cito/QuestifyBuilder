@@ -5,9 +5,13 @@ Imports System.Text
 Imports Cito.Tester.Common
 Imports System.Reflection
 
+''' <summary>
+''' Dialog for showing productinformation of this application
+''' </summary>
 Public NotInheritable Class AboutDialog
 
     Private Sub AboutBox_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+        ' Set the title of the form.
         Dim applicationTitle As String
         If My.Application.Info.Title <> String.Empty Then
             applicationTitle = My.Application.Info.Title
@@ -16,6 +20,7 @@ Public NotInheritable Class AboutDialog
         End If
         Text = $"{My.Resources.AboutDialog_About} {applicationTitle}"
 
+        ' Initialize all of the text displayed on the About Box.
         Dim thisAssembly As Assembly = Assembly.GetExecutingAssembly()
         LabelProductName.Text = My.Application.Info.ProductName
 

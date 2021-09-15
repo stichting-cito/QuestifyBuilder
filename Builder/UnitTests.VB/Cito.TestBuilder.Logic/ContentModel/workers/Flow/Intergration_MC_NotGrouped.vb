@@ -13,6 +13,7 @@ Public Class Intergration_MC_NotGrouped
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("MC set Key to X. GetConceptManipulator, validate outcome")>
     Public Sub IntegrationTest_Step1()
+        'Arrange     
         Dim solution = New Solution()
         Dim sp = ChoiceScoringParameter()
         sp.GetScoreManipulator(solution).SetKey("X")
@@ -20,9 +21,11 @@ Public Class Intergration_MC_NotGrouped
         Dim combinedScoringMap = New ScoringMap(New ScoringParameter() {sp}, solution).GetMap().First()
 
         WriteToDebug(solution, "Arrange")
-
+        
+        'Act
         Dim conceptManipulator = combinedScoringMap.GetConceptManipulator(solution)
-
+        
+        'Assert
         WriteToDebug(solution, "Assert")
 
         Assert.IsTrue(UnitTestHelper.AreSame(Step1.ToString(), solution.DoSerialize().ToString()))
@@ -32,6 +35,7 @@ Public Class Intergration_MC_NotGrouped
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("From step1, set key to Z. X no longer key, should end up as answerCatagory, GetConceptManipulator, validate outcome")>
     Public Sub IntegrationTest_Step2()
+        'Arrange     
         Dim solution = Step1.To(Of Solution)()
         Dim sp = New ChoiceScoringParameter() With {.FindingOverride = "Integratie", .ControllerId = "Controller", .MaxChoices = 1}.AddSubParameters("X", "Y", "Z")
 
@@ -40,13 +44,16 @@ Public Class Intergration_MC_NotGrouped
         Dim combinedScoringMap = New ScoringMap(New ScoringParameter() {sp}, solution).GetMap().First()
 
         WriteToDebug(solution, "Arrange")
-
+        
+        'Act
         Dim conceptManipulator = combinedScoringMap.GetConceptManipulator(solution)
+        'Assert
         WriteToDebug(solution, "Assert")
 
-        Assert.IsTrue(UnitTestHelper.AreSame(Step2.ToString(), solution.DoSerialize().ToString()))
+         Assert.IsTrue(UnitTestHelper.AreSame(Step2.ToString(), solution.DoSerialize().ToString()))
     End Sub
 
+#Region "Data"
     ReadOnly Step1 As XElement = <solution xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                                      <keyFindings>
                                          <keyFinding id="Integratie" scoringMethod="None">
@@ -126,6 +133,7 @@ Public Class Intergration_MC_NotGrouped
                                      </conceptFindings>
                                      <aspectReferences/>
                                  </solution>
+#End Region
 
     Private Function ChoiceScoringParameter() As ChoiceScoringParameter
         Return New ChoiceScoringParameter() With {.FindingOverride = "Integratie", .ControllerId = "Controller", .MaxChoices = 1}.AddSubParameters("X", "Y", "Z")

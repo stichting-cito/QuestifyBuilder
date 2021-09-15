@@ -10,8 +10,11 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
     public class MCScoringWSFactoryTests : Runner
     {
 
+        /// <summary>
+        /// Tests basic Factory functionality
+        /// </summary>
         public MCScoringWSFactoryTests()
-    : base(new ScoreFactoryBoilerplate<MCScoringVWFactory, MultiChoiceScoringParameter, MCScoringViewModel>())
+            : base(new ScoreFactoryBoilerplate<MCScoringVWFactory, MultiChoiceScoringParameter, MCScoringViewModel>())
         {
             decoree.CreateViewModel = MakeViewModel;
         }

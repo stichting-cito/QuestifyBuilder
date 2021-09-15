@@ -15,50 +15,62 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
     {
         private List<int> _updatedBanks;
         private List<int> _deletedBanks;
-        private List<KeyValuePair<int, int?>> _currentBanks; private List<KeyValuePair<int, int?>> _addedBanks;
+        private List<KeyValuePair<int, int?>> _currentBanks;//bankId, parentBank
+        private List<KeyValuePair<int, int?>> _addedBanks;//bankId, parentBank
+
         [TestMethod, TestCategory("Cache")]
         public void GetAllIsCached()
         {
+            //Arrange
             var bankDtoService = A.Fake<IBankDtoRepository>();
             var fakeGetAllBanks = A.CallTo(() => bankDtoService.All());
 
             fakeGetAllBanks.ReturnsLazily(args => GetAllBanks());
             var bankSrvDecorator = new CacheBankDtoService(bankDtoService);
+            //Act
             bankSrvDecorator.All();
             bankSrvDecorator.All();
             bankSrvDecorator.All();
             bankSrvDecorator.All();
-            fakeGetAllBanks.MustHaveHappened(Repeated.Exactly.Times(1));
+            //Assert
+            fakeGetAllBanks.MustHaveHappened(Repeated.Exactly.Times(1)); //Object should be retrieved 1 from service  
         }
-
+        
         [TestMethod, TestCategory("Cache")]
         public void GetIsCached()
         {
+            //Arrange
             var bankDtoService = A.Fake<IBankDtoRepository>();
             var fakeGetBank = A.CallTo(() => bankDtoService.All());
             fakeGetBank.ReturnsLazily(args => GetAllBanks());
             var bankSrvDecorator = new CacheBankDtoService(bankDtoService);
+            //Act
             bankSrvDecorator.Get(1);
             bankSrvDecorator.Get(1);
             bankSrvDecorator.Get(1);
             bankSrvDecorator.Get(1);
+            //Assert
 
-            fakeGetBank.MustHaveHappened(Repeated.Exactly.Times(1));
+            fakeGetBank.MustHaveHappened(Repeated.Exactly.Times(1)); //Object should be retrieved 1 from service  
         }
 
         [TestMethod, TestCategory("Cache")]
         public void GetAllIsInvalidatedInBankCollection()
         {
+            //Arrange
             var bankDtoService = A.Fake<IBankDtoRepository>();
             var fakeGetAllBanks = A.CallTo(() => bankDtoService.All());
             var fakeGetBank = A.CallTo(() => bankDtoService.Get(A<int>.Ignored));
             fakeGetAllBanks.ReturnsLazily(args => GetAllBanks());
             fakeGetBank.ReturnsLazily(args => GetBank((int)args.Arguments[0]));
             var bankSrvDecorator = new CacheBankDtoService(bankDtoService);
+            //Act
             bankSrvDecorator.All();
             _updatedBanks.Add(2);
-            bankSrvDecorator.EntityChanged(2); var list = bankSrvDecorator.All();
+            bankSrvDecorator.EntityChanged(2); //we use bankId = 2 for the child bank
+            var list = bankSrvDecorator.All();
 
+            //Assert
             var parentBank = list.FirstOrDefault(b => b.Id == 1);
             if (parentBank != null)
             {
@@ -68,27 +80,31 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
                     Assert.IsTrue(childBank != null && childBank.Name == "updated");
                 }
             }
-            fakeGetAllBanks.MustHaveHappened(Repeated.Exactly.Times(2));
+            fakeGetAllBanks.MustHaveHappened(Repeated.Exactly.Times(2)); //Object should be retrieved 2x from service  
         }
 
         [TestMethod, TestCategory("Cache")]
         public void GetIsInvalidatedInBankCollectionWhenChildBankIsDeleted()
         {
+            //Arrange
             var bankDtoService = A.Fake<IBankDtoRepository>();
             var fakeGetAllBanks = A.CallTo(() => bankDtoService.All());
             fakeGetAllBanks.ReturnsLazily(args => GetAllBanks());
 
             var bankSrvDecorator = new CacheBankDtoService(bankDtoService);
+            //Act
             bankSrvDecorator.Get(1);
             _deletedBanks.Add(2);
-            bankSrvDecorator.EntityChanged(2); var parentBank = bankSrvDecorator.Get(1);
+            bankSrvDecorator.EntityChanged(2); //we use bankId = 2 for the child bank
+            var parentBank = bankSrvDecorator.Get(1);
 
+            //Assert
             BankDto childBank = null;
             if (parentBank.BankCollection != null)
             {
-                childBank = parentBank.BankCollection.FirstOrDefault(cb => cb.Id == 2);
+                childBank =  parentBank.BankCollection.FirstOrDefault(cb => cb.Id == 2);
             }
-
+            
             if (childBank != null)
             {
                 Assert.IsTrue(childBank == null);
@@ -98,6 +114,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
         [TestMethod, TestCategory("Cache")]
         public void NewBankIsAddedToCacheList()
         {
+            //Arrange
             var bankDtoService = A.Fake<IBankDtoRepository>();
             var fakeGetAllBanks = A.CallTo(() => bankDtoService.All());
             var fakeGetBank = A.CallTo(() => bankDtoService.Get(A<int>.Ignored));
@@ -106,11 +123,13 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
                 args => GetBank((int)args.Arguments[0])
                 );
             var bankSrvDecorator = new CacheBankDtoService(bankDtoService);
+            //Act
             bankSrvDecorator.All();
             _addedBanks.Add(new KeyValuePair<int, int?>(99, 1));
             bankSrvDecorator.EntityChanged(99);
             var parentBank = bankSrvDecorator.Get(1);
             var all = bankSrvDecorator.All();
+            //Assert
             Assert.IsTrue(parentBank.BankCollection.Any(cb => cb.Id == 99));
             Assert.IsTrue(all.FirstOrDefault(b => b.Id == 1).BankCollection.Any(cb => cb.Id == 99));
         }
@@ -118,6 +137,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
         [TestMethod, TestCategory("Cache")]
         public void NewParentBankIsAddedToCacheList()
         {
+            //Arrange
             var bankDtoService = A.Fake<IBankDtoRepository>();
             var fakeGetAllBanks = A.CallTo(() => bankDtoService.All());
             var fakeGetBank = A.CallTo(() => bankDtoService.Get(A<int>.Ignored));
@@ -126,17 +146,20 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
                 args => GetBank((int)args.Arguments[0])
                 );
             var bankSrvDecorator = new CacheBankDtoService(bankDtoService);
+            //Act
             bankSrvDecorator.All();
             _addedBanks.Add(new KeyValuePair<int, int?>(99, null));
             bankSrvDecorator.EntityChanged(99);
             var all = bankSrvDecorator.All();
 
+            //Assert
             Assert.IsTrue(all.Any(b => b.Id == 99));
         }
 
         [TestMethod, TestCategory("Cache")]
         public void ParentBankIsUpdatedToCacheList()
         {
+            //Arrange
             var bankDtoService = A.Fake<IBankDtoRepository>();
             var fakeGetAllBanks = A.CallTo(() => bankDtoService.All());
             var fakeGetBank = A.CallTo(() => bankDtoService.Get(A<int>.Ignored));
@@ -146,12 +169,14 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
                 );
             _currentBanks.Add(new KeyValuePair<int, int?>(99, null));
             var bankSrvDecorator = new CacheBankDtoService(bankDtoService);
+            //Act
             bankSrvDecorator.All();
             _updatedBanks.Add(99);
             bankSrvDecorator.EntityChanged(99);
             var all = bankSrvDecorator.All();
             var single = bankSrvDecorator.Get(99);
 
+            //Assert
             Assert.IsTrue(all.FirstOrDefault(b => b.Id == 99).Name == "updated");
             Assert.IsTrue(single.Name == "updated");
         }
@@ -159,6 +184,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
         [TestMethod, TestCategory("Cache")]
         public void ChildBankIsUpdatedToCacheList()
         {
+            //Arrange
             var bankDtoService = A.Fake<IBankDtoRepository>();
             var fakeGetAllBanks = A.CallTo(() => bankDtoService.All());
             var fakeGetBank = A.CallTo(() => bankDtoService.Get(A<int>.Ignored));
@@ -167,55 +193,69 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
                 args => GetBank((int)args.Arguments[0])
                 );
             var bankSrvDecorator = new CacheBankDtoService(bankDtoService);
+            //Act
             bankSrvDecorator.Get(1);
             bankSrvDecorator.All();
-            _updatedBanks.Add(2); bankSrvDecorator.EntityChanged(2); var parentBank = bankSrvDecorator.Get(1);
+            _updatedBanks.Add(2);//update the bank, so the name changes when returning bankId == 2
+            bankSrvDecorator.EntityChanged(2); //we use bankId = 2 for the child bank
+            var parentBank = bankSrvDecorator.Get(1);
             var list = bankSrvDecorator.All();
+            //Assert
             Assert.IsTrue(parentBank.BankCollection.FirstOrDefault(cb => cb.Id == 2).Name == "updated");
             Assert.IsTrue(list.FirstOrDefault(b => b.Id == 1).BankCollection.FirstOrDefault(cb => cb.Id == 2).Name == "updated");
-            fakeGetAllBanks.MustHaveHappened(Repeated.Exactly.Times(2));
+            fakeGetAllBanks.MustHaveHappened(Repeated.Exactly.Times(2)); //Object should be retrieved 2 from database  
         }
 
         [TestMethod, TestCategory("Cache")]
         public void ChildBankIsDeletedFromCacheList()
         {
+            //Arrange
             var bankDtoService = A.Fake<IBankDtoRepository>();
             var fakeGetAllBanks = A.CallTo(() => bankDtoService.All());
-            fakeGetAllBanks.ReturnsLazily(args => GetAllBanks());
-            var bankSrvDecorator = new CacheBankDtoService(bankDtoService);
+        fakeGetAllBanks.ReturnsLazily(args => GetAllBanks());
+     var bankSrvDecorator = new CacheBankDtoService(bankDtoService);
+            //Act
             bankSrvDecorator.Get(1);
             bankSrvDecorator.All();
-            _deletedBanks.Add(2); bankSrvDecorator.EntityChanged(2); var parentBank = bankSrvDecorator.Get(1);
+            _deletedBanks.Add(2);//update the bank, so the name changes when returning bankId == 2
+            bankSrvDecorator.EntityChanged(2); //we use bankId = 2 for the child bank
+            var parentBank = bankSrvDecorator.Get(1);
             var list = bankSrvDecorator.All();
             var collection = list.FirstOrDefault(b => b.Id == 1).BankCollection;
+            //Assert
             Assert.IsTrue(parentBank.BankCollection == null || parentBank.BankCollection.All(cb => cb.Id != 2));
             Assert.IsTrue(collection == null || collection.Count == 0);
 
-            fakeGetAllBanks.MustHaveHappened(Repeated.Exactly.Times(2));
+            fakeGetAllBanks.MustHaveHappened(Repeated.Exactly.Times(2)); //Object should be retrieved 1 from service  
         }
 
         [TestMethod, TestCategory("Cache")]
         public void ParentBankIsDeletedFromCacheList()
         {
+            //Arrange
             var bankDtoService = A.Fake<IBankDtoRepository>();
             var fakeGetAllBanks = A.CallTo(() => bankDtoService.All());
             var fakeGetBank = A.CallTo(() => bankDtoService.Get(A<int>.Ignored));
             fakeGetAllBanks.ReturnsLazily(args => GetAllBanks());
             fakeGetBank.ReturnsLazily(
-                args => GetBank((int)args.Arguments[0]));
+                args => GetBank((int)args.Arguments[0])//(int)args.Arguments[0]
+                );
             _currentBanks.Add(new KeyValuePair<int, int?>(99, null));
             var bankSrvDecorator = new CacheBankDtoService(bankDtoService);
+            //Act
             bankSrvDecorator.All();
             _deletedBanks.Add(99);
             bankSrvDecorator.EntityChanged(99);
             var all = bankSrvDecorator.All();
             var single = bankSrvDecorator.Get(99);
 
+            //Assert
             Assert.IsFalse(all.Any(b => b.Id == 99));
             Assert.IsTrue(single == null);
         }
 
 
+        #region Helper Functions
 
         [TestInitialize()]
         public void Init()
@@ -246,7 +286,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
 
         private List<BankDto> FillCollection(IEnumerable<KeyValuePair<int, int?>> banks)
         {
-            return banks.Where(b => b.Value.HasValue == false).Select(bank => GetBank(bank.Key)).Where(b => b != null).ToList();
+            return banks.Where(b => b.Value.HasValue == false).Select(bank => GetBank(bank.Key)).Where(b => b!=null).ToList();
         }
 
         private void AddBank(BankDto bankToAdd, ref List<BankDto> banks, ref bool isAdded)
@@ -263,7 +303,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
                 }
             }
         }
-
+        
         private BankDto GetBank(int bankId)
         {
             return AddBank(bankId, null);
@@ -329,6 +369,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.Service.Cache
                 bank.BankCollection = collection;
             }
         }
-
+        
+        #endregion
     }
 }

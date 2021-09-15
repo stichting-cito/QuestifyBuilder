@@ -10,48 +10,64 @@ Public Class KeyFindingToConceptFinding_SpecificExamples_Tests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), WorkItem(20802)>
     Public Sub ShouldNotOverwrite_Answer_Category()
+        'Arrange
+        'This solution consists of 3 keyFactSet. Of these, 2 are synced to the ConceptFindings. Yet 1 keyfinding needs to be synced.
+        'This tests validates that keyfactsets are inserted and do not overwrite answer catagories.
         Dim solution = _3KeySets_2_ConceptSetsAnd1CatchAll.To(Of Solution)()
 
         Dim keyFindingManipulator = New KeyManipulator(solution.Findings.First())
         Dim conceptFindingManipulator = New ConceptManipulator(solution.ConceptFindings.First())
         Dim copier As New FindingToFindingManipulator(keyFindingManipulator, conceptFindingManipulator)
         copier.Logic = New SkipAnswerCategoriesAsTarget(copier.Logic)
-
+        
+        'Act
         copier.Execute()
-
+        
+        'Assert
         Assert.AreEqual(4, solution.ConceptFindings.First().KeyFactsets.Count, "Should Not Overwrite Answer Catagory")
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), WorkItem(20802)>
     Public Sub ShouldNotOverwrite_Answer_Category_2()
+        'Arrange
+        'This solution consists of 3 keyFactSet. Of these 2 are synced to the ConceptFindings. Yet 1 keyfinding needs to be synced.
+        'This tests validates that keyfactsets are inserted and do not overwrite answer catagories.
         Dim solution = _4KeySets_2_ConceptSetsAnd1CatchAll.To(Of Solution)()
 
         Dim keyFindingManipulator = New KeyManipulator(solution.Findings.First())
         Dim conceptFindingManipulator = New ConceptManipulator(solution.ConceptFindings.First())
         Dim copier As New FindingToFindingManipulator(keyFindingManipulator, conceptFindingManipulator)
         copier.Logic = New SkipAnswerCategoriesAsTarget(copier.Logic)
-
+        
+        'Act
         copier.Execute()
-
+        
+        'Assert
         Assert.AreEqual(5, solution.ConceptFindings.First().KeyFactsets.Count, "Should Not Overwrite Answer Catagory")
     End Sub
 
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), WorkItem(20802)>
     Public Sub ShouldSkipCatchAll()
+        'Arrange
+        'This solution consists of 3 keyFactSet. Of these 2 are synced to the ConceptFindings. Yet 1 keyfinding needs to be synced.
+        'This tests validates that keyfactsets are inserted and do not overwrite answer catagories.
         Dim solution = _2KeySets_ConceptSetsWithOnlyCatchAll.To(Of Solution)()
 
         Dim keyFindingManipulator = New KeyManipulator(solution.Findings.First())
         Dim conceptFindingManipulator = New ConceptManipulator(solution.ConceptFindings.First())
         Dim copier As New FindingToFindingManipulator(keyFindingManipulator, conceptFindingManipulator)
         copier.Logic = New SkipAnswerCategoriesAsTarget(copier.Logic)
-
+        
+        'Act
         copier.Execute()
-
+        
+        'Assert
         Assert.AreEqual(3, solution.ConceptFindings.First().KeyFactsets.Count, "Should skip catch all.")
 
     End Sub
 
+#Region "Data"
     Private _3KeySets_2_ConceptSetsAnd1CatchAll As XElement = <solution>
                                                                   <keyFindings>
                                                                       <keyFinding id="gapMatchController" scoringMethod="Dichotomous">
@@ -355,5 +371,6 @@ Public Class KeyFindingToConceptFinding_SpecificExamples_Tests
                                                                     </conceptFindings>
                                                                     <aspectReferences/>
                                                                 </solution>
+#End Region
 
 End Class

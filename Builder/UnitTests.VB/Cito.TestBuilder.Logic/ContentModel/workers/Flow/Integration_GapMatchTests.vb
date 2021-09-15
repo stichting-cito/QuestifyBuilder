@@ -12,13 +12,16 @@ Public Class Integration_GapMatchTests
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Add GapMatch, set some score")>
     Public Sub IntegrationTest_Step1()
+        'Arrange     
         Dim solution = New Solution()
         WriteToDebug(solution, "Arrange")
-
+        
+        'Act
         Dim sp = GapMatchScoringParameter()
         sp.GetScoreManipulator(solution).SetKey("1", "A")
         sp.GetScoreManipulator(solution).SetKey("2", "C")
-
+        
+        'Assert
         WriteToDebug(solution, "Assert")
 
         Assert.IsTrue(UnitTestHelper.AreSame(Step1.ToString(), solution.DoSerialize().ToString()))
@@ -27,13 +30,16 @@ Public Class Integration_GapMatchTests
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Change score")>
     Public Sub IntegrationTest_Step2()
+        'Arrange     
         Dim solution = Step1.To(Of Solution)()
         WriteToDebug(solution, "Arrange")
-
+        
+        'Act
         Dim sp = GapMatchScoringParameter()
         sp.GetScoreManipulator(solution).SetKey("2", "A")
         sp.GetScoreManipulator(solution).SetKey("1", "B")
 
+        'Assert
         WriteToDebug(solution, "Assert")
 
         Assert.IsTrue(UnitTestHelper.AreSame(Step2.ToString(), solution.DoSerialize().ToString()))
@@ -42,18 +48,22 @@ Public Class Integration_GapMatchTests
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Get Concept Manipulator")>
     Public Sub IntegrationTest_Step3()
+        'Arrange     
         Dim solution = Step1.To(Of Solution)()
 
         Dim sp = GapMatchScoringParameter()
         Dim combinedScoringMap = New ScoringMap(New ScoringParameter() {sp}, solution).GetMap().First()
-
+        
+        'Act
         combinedScoringMap.GetConceptManipulator(solution)
-
+        
+        'Assert
         WriteToDebug(solution, "Assert")
 
         Assert.IsTrue(UnitTestHelper.AreSame(Step3.ToString(), solution.DoSerialize().ToString()))
     End Sub
 
+#Region "Data"
     ReadOnly Step1 As XElement = <solution xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                                      <keyFindings>
                                          <keyFinding id="gapMatchFinding" scoringMethod="None">
@@ -142,6 +152,7 @@ Public Class Integration_GapMatchTests
                                      </conceptFindings>
                                      <aspectReferences/>
                                  </solution>
+#End Region
 
     Private Function GapMatchScoringParameter() As GapMatchScoringParameter
         Dim toReturn = New GapMatchScoringParameter() With {.Name = "gap", .ControllerId = "gapMatch", .FindingOverride = "gapMatchFinding"}.AddSubParameters("A", "B", "C")

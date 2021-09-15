@@ -18,13 +18,14 @@ Imports Questify.Builder.Logic.QTI.PackageCreators.QTI30
 Imports Questify.Builder.Logic.CustomInteractions
 Imports System.Xml.XPath
 Imports Questify.Builder.Logic.Service.HelperFunctions
+Imports Questify.Builder.Logic.QTI.Converters.XhtmlConverter.QTI30
 
 Namespace QTI.Helpers.QTI30
 
     Public Class ResourceHelper
 
         Protected _packageCreator As PackageCreator
-        Protected _stylesheetHelper As StyleSheetHelper = Nothing
+        Protected _stylesheetHelper As QTI30StyleSheetHelper = Nothing
         Protected _htmlHelper As HtmlHelper = Nothing
         Protected _namespaceHelper As NamespaceHelper
 
@@ -78,8 +79,7 @@ Namespace QTI.Helpers.QTI30
             Return processedDependencies
         End Function
 
-        Private Function ProcessResources(
-                                          matchedResources As MatchCollection,
+        Private Function ProcessResources(matchedResources As MatchCollection,
                                           ByRef parsedTemplate As String,
                                           ByRef resources As ConcurrentDictionary(Of String, Dictionary(Of ResourceType, List(Of String))),
                                           ByRef resourceMimeTypeDictionary As ConcurrentDictionary(Of String, String),
@@ -87,94 +87,116 @@ Namespace QTI.Helpers.QTI30
                                           itemCode As String) As List(Of String)
 
             Dim resourceDependencies As New List(Of String)
-
             For Each match As Match In matchedResources
-
-                Dim resourceNameOrg As String = ChainHandlerHelper.GetFilenameFromPath(match.Value)
-                Dim resourceName As String = Uri.UnescapeDataString(resourceNameOrg)
-                Dim resourceAlreadyProcessed As Boolean = ResourceNameAlreadyProcessed(resourceName, resources)
-                Dim eventArgs As ResourceNeededEventArgs = Nothing
-                Dim resourceFile As Byte() = Nothing
-                Dim mimeType As String = String.Empty
-                Dim resourceContent As String = String.Empty
-                Dim categoryDirectory As PackageCreatorConstants.FileDirectoryType = PackageCreatorConstants.FileDirectoryType.other
-
-                If Not resourceAlreadyProcessed Then
-                    eventArgs = New ResourceNeededEventArgs(resourceName, AddressOf StreamConverters.ConvertStreamToByteArray)
-                    _packageCreator.ResourceNeeded(Nothing, eventArgs)
-                    resourceName = ResourceNameHelper.GetQtiCompliantResourceName(resourceName)
-                    categoryDirectory = ChainHandlerHelper.GetCategoryFolderFromFileName(resourceName)
-
-                    If eventArgs.BinaryResource Is Nothing OrElse eventArgs.BinaryResource.ResourceObject Is Nothing Then
-                        ProcessPlaceholders(match, resourceFile, resourceName, resourceNameOrg)
-                        Debug.Assert(resourceFile IsNot Nothing, "Resourcefile is nothing... not expected !")
-                    Else
-                        resourceFile = CType(eventArgs.BinaryResource.ResourceObject, Byte())
-                    End If
-                    If resourceFile Is Nothing Then Throw New Exception($"resource {match.Value} cannot be found in the package!")
-                Else
-                    resourceName = ResourceNameHelper.GetQtiCompliantResourceName(resourceName)
-                    categoryDirectory = ChainHandlerHelper.GetCategoryFolderFromFileName(resourceName)
-                    Dim resourceNameToSearchFor As String = resourceName
-                    If categoryDirectory = PackageCreatorConstants.FileDirectoryType.css Then resourceNameToSearchFor = GetStylesheetHelper().PrefixStylesheet(resourceNameToSearchFor)
-
-                    If resourceMimeTypeDictionary.ContainsKey(resourceNameToSearchFor) Then
-                        mimeType = resourceMimeTypeDictionary(resourceNameToSearchFor)
-                    End If
-                    Debug.Assert(Not String.IsNullOrEmpty(mimeType), "Mimetype of already processed resource is empty... not expected !")
-                End If
-
-                If Not resourceAlreadyProcessed Then
-                    If ChainHandlerHelper.IsSourceTextFile(resourceFile, resourceName) Then ProcessSourceText(resourceFile, resourceContent, resourceName, mimeType, eventArgs)
-                    If categoryDirectory = PackageCreatorConstants.FileDirectoryType.css Then ProcessStylesheet(resourceFile, resourceContent, resourceName, mimeType, eventArgs)
-
-                    If String.IsNullOrEmpty(mimeType) Then mimeType = ChainHandlerHelper.GetMimeTypeFromFile(resourceFile, resourceName)
-                    mimeType = ChainHandlerHelper.ConvertMimeType(mimeType, resourceName)
-                    If Not resourceMimeTypeDictionary.ContainsKey(resourceName) Then
-                        resourceMimeTypeDictionary.TryAdd(resourceName, mimeType)
-                    End If
-                End If
-                If categoryDirectory = PackageCreatorConstants.FileDirectoryType.other Then categoryDirectory = ChainHandlerHelper.GetCategoryFolderFromFile(mimeType, resourceName)
-
-                Select Case categoryDirectory
-                    Case PackageCreatorConstants.FileDirectoryType.css
-                        resourceName = GetStylesheetHelper.PrefixStylesheet(resourceName)
-                    Case PackageCreatorConstants.FileDirectoryType.other
-                        categoryDirectory = ChainHandlerHelper.GetCategoryFolderFromFile(mimeType, resourceName)
-                End Select
-
-                If categoryDirectory = PackageCreatorConstants.FileDirectoryType.audio Then
-                    AudioAdded(resourceName, itemCode)
-                End If
-
-                If mimeType = "application/x-customInteraction" Then
-                    ProcessCustomInteractions(categoryDirectory, resourceFile, resources, resourceDependencies, isPreview, parsedTemplate, resourceNameOrg, _packageCreator.RelativePathToResources)
-                ElseIf mimeType.Equals("application/x-portableCustomInteraction", StringComparison.InvariantCultureIgnoreCase) Then
-                    ProcessPortableCustomInteraction(categoryDirectory, resourceFile, resources, resourceDependencies, isPreview, parsedTemplate, resourceNameOrg, _packageCreator.RelativePathToResources)
-                ElseIf mimeType = "application/vnd.geogebra.file" Then
-                    ProcessGeogebraResources(categoryDirectory, resourceFile, resources, resourceDependencies, isPreview, parsedTemplate, resourceNameOrg, _packageCreator.RelativePathToResources)
-                Else
-                    Dim resourceDependenciesNested As New List(Of String)
-                    Dim newReference As String = String.Concat(_FolderDirectory(categoryDirectory), "/", resourceName)
-
-                    If Not resourceAlreadyProcessed Then
-                        If MimeTypeCanHaveDependencies(mimeType) Then ProcessDependedResources(resourceFile, resourceContent, resourceName, mimeType, resources, resourceMimeTypeDictionary, isPreview, resourceDependenciesNested, eventArgs, itemCode)
-
-                        Dim resourcePath As String = Path.Combine(_packageCreator.TempWorkingDirectory.FullName, newReference)
-                        ChainHandlerHelper.SaveFile(resourceFile, resourcePath)
-
-                        If Not isPreview Then
-                            AddResourcesToManifest(resourceName, eventArgs.ResourceName, categoryDirectory, mimeType, resources, resourceDependenciesNested)
-                        End If
-                    End If
-
-                    ChainHandlerHelper.UpdateReferenceInTemplate(parsedTemplate, resourceNameOrg, $"{_packageCreator.RelativePathToResources}{newReference}".Replace("\", "/"))
-                    resourceDependencies.Add(ChainHandlerHelper.GetIdentifierFromResourceId(resourceName, PackageCreatorConstants.TypeOfResource.resource))
-                End If
+                ProcessResource(match, parsedTemplate, resources, resourceMimeTypeDictionary, isPreview, itemCode, resourceDependencies)
             Next
 
             Return resourceDependencies
         End Function
+
+        Private Sub ProcessResource(match As Match,
+                                    ByRef parsedTemplate As String,
+                                    ByRef resources As ConcurrentDictionary(Of String, Dictionary(Of ResourceType, List(Of String))),
+                                    ByRef resourceMimeTypeDictionary As ConcurrentDictionary(Of String, String),
+                                    isPreview As Boolean,
+                                    itemCode As String,
+                                    ByRef resourceDependencies As List(Of String))
+            Dim resourceNameOrg As String = ChainHandlerHelper.GetFilenameFromPath(match.Value)
+            Dim resourceName As String = Uri.UnescapeDataString(resourceNameOrg)
+            Dim resourceAlreadyProcessed As Boolean = ResourceNameAlreadyProcessed(resourceName, resources)
+            Dim eventArgs As ResourceNeededEventArgs = Nothing
+            Dim resourceFile As Byte() = Nothing
+            Dim mimeType As String = String.Empty
+            Dim resourceContent As String = String.Empty
+            Dim categoryDirectory As PackageCreatorConstants.FileDirectoryType = PackageCreatorConstants.FileDirectoryType.other
+
+            If Not resourceAlreadyProcessed Then
+                eventArgs = New ResourceNeededEventArgs(resourceName, AddressOf StreamConverters.ConvertStreamToByteArray)
+                _packageCreator.ResourceNeeded(Nothing, eventArgs)
+                resourceName = ResourceNameHelper.GetQtiCompliantResourceName(resourceName)
+                categoryDirectory = ChainHandlerHelper.GetCategoryFolderFromFileName(resourceName)
+
+                If eventArgs.BinaryResource Is Nothing OrElse eventArgs.BinaryResource.ResourceObject Is Nothing Then
+                    ProcessPlaceholders(match, resourceFile, resourceName, resourceNameOrg)
+                    Debug.Assert(resourceFile IsNot Nothing, "Resourcefile is nothing... not expected !")
+                Else
+                    resourceFile = CType(eventArgs.BinaryResource.ResourceObject, Byte())
+                End If
+                If resourceFile Is Nothing Then
+                    Throw New Exception($"resource {match.Value} cannot be found in the package!")
+                End If
+            Else
+                resourceName = ResourceNameHelper.GetQtiCompliantResourceName(resourceName)
+                categoryDirectory = ChainHandlerHelper.GetCategoryFolderFromFileName(resourceName)
+                Dim resourceNameToSearchFor As String = resourceName
+                If categoryDirectory = PackageCreatorConstants.FileDirectoryType.css Then
+                    resourceNameToSearchFor = GetStylesheetHelper().PrefixStylesheet(resourceNameToSearchFor)
+                End If
+
+                If resourceMimeTypeDictionary.ContainsKey(resourceNameToSearchFor) Then
+                    mimeType = resourceMimeTypeDictionary(resourceNameToSearchFor)
+                End If
+                Debug.Assert(Not String.IsNullOrEmpty(mimeType), "Mimetype of already processed resource is empty... not expected !")
+            End If
+
+            If Not resourceAlreadyProcessed Then
+                If IsSourceTextFile(resourceFile, resourceName) Then
+                    ProcessSourceText(resourceFile, resourceContent, resourceName, mimeType, eventArgs, resources)
+                End If
+                If categoryDirectory = PackageCreatorConstants.FileDirectoryType.css Then
+                    ProcessStylesheet(resourceFile, resourceContent, resourceName, mimeType, eventArgs)
+                End If
+
+                If String.IsNullOrEmpty(mimeType) Then
+                    mimeType = ChainHandlerHelper.GetMimeTypeFromFile(resourceFile, resourceName)
+                End If
+                mimeType = ChainHandlerHelper.ConvertMimeType(mimeType, resourceName)
+                If Not resourceMimeTypeDictionary.ContainsKey(resourceName) Then
+                    resourceMimeTypeDictionary.TryAdd(resourceName, mimeType)
+                End If
+            End If
+            If categoryDirectory = PackageCreatorConstants.FileDirectoryType.other Then
+                categoryDirectory = ChainHandlerHelper.GetCategoryFolderFromFile(mimeType, resourceName)
+            End If
+
+            Select Case categoryDirectory
+                Case PackageCreatorConstants.FileDirectoryType.css
+                    resourceName = GetStylesheetHelper.PrefixStylesheet(resourceName)
+                Case PackageCreatorConstants.FileDirectoryType.other
+                    categoryDirectory = ChainHandlerHelper.GetCategoryFolderFromFile(mimeType, resourceName)
+            End Select
+
+            If categoryDirectory = PackageCreatorConstants.FileDirectoryType.audio Then
+                AudioAdded(resourceName, itemCode)
+            End If
+
+            If mimeType = "application/x-customInteraction" Then
+                ProcessCustomInteractions(categoryDirectory, resourceFile, resources, resourceDependencies, isPreview, parsedTemplate, resourceNameOrg, _packageCreator.RelativePathToResources)
+            ElseIf mimeType.Equals("application/x-portableCustomInteraction", StringComparison.InvariantCultureIgnoreCase) Then
+                ProcessPortableCustomInteraction(categoryDirectory, resourceFile, resources, resourceDependencies, isPreview, parsedTemplate, resourceNameOrg, _packageCreator.RelativePathToResources)
+            ElseIf mimeType = "application/vnd.geogebra.file" Then
+                ProcessGeogebraResources(categoryDirectory, resourceFile, resources, resourceDependencies, isPreview, parsedTemplate, resourceNameOrg, _packageCreator.RelativePathToResources)
+            Else
+                Dim resourceDependenciesNested As New List(Of String)
+                Dim newReference As String = String.Concat(_FolderDirectory(categoryDirectory), "/", resourceName)
+
+                If Not resourceAlreadyProcessed Then
+                    If MimeTypeCanHaveDependencies(mimeType) Then
+                        ProcessDependentResources(resourceFile, resourceContent, resourceName, mimeType, resources, resourceMimeTypeDictionary, isPreview, resourceDependenciesNested, eventArgs, itemCode)
+                    End If
+
+                    Dim resourcePath As String = Path.Combine(_packageCreator.TempWorkingDirectory.FullName, newReference)
+                    ChainHandlerHelper.SaveFile(resourceFile, resourcePath)
+
+                    If Not isPreview Then
+                        AddResourcesToManifest(resourceName, eventArgs.ResourceName, categoryDirectory, mimeType, resources, resourceDependenciesNested)
+                    End If
+                End If
+
+                ChainHandlerHelper.UpdateReferenceInTemplate(parsedTemplate, resourceNameOrg, $"{_packageCreator.RelativePathToResources}{newReference}".Replace("\", "/"))
+                resourceDependencies.Add(ChainHandlerHelper.GetIdentifierFromResourceId(resourceName, PackageCreatorConstants.TypeOfResource.resource))
+            End If
+        End Sub
 
         Private Function ResourceNameAlreadyProcessed(resourceName As String, resources As ConcurrentDictionary(Of String, Dictionary(Of ResourceType, List(Of String)))) As Boolean
             For Each identifier As String In ChainHandlerHelper.GetPossibleIdentifiersForResourceName(resourceName, GetStylesheetHelper())
@@ -205,8 +227,7 @@ Namespace QTI.Helpers.QTI30
             End If
         End Sub
 
-        Private Sub ProcessDependedResources(
-                                             ByRef resourceFile As Byte(),
+        Private Sub ProcessDependentResources(ByRef resourceFile As Byte(),
                                              ByRef resourceContent As String,
                                              ByRef resourceName As String,
                                              ByRef mimeType As String,
@@ -226,75 +247,198 @@ Namespace QTI.Helpers.QTI30
                 If Not contentShouldChange Then contentShouldChange = resourceDependenciesNested.Count > 0
             End If
 
-            If ChainHandlerHelper.IsSourceTextFile(resourceFile, resourceName) Then ProcessSourceTextStylesheets(resources, eventArgs)
-
             If contentShouldChange Then
                 eventArgs.BinaryResource = New BinaryResource(Encoding.UTF8.GetBytes(resourceContent))
                 resourceFile = CType(eventArgs.BinaryResource.ResourceObject, Byte())
             End If
         End Sub
 
-        Private Sub ProcessSourceText(
-                                      ByRef resourceFile As Byte(),
-                                      ByRef resourceContent As String,
-                                      ByRef resourceName As String,
+        Private Sub ProcessSourceText(ByRef sourceTextFile As Byte(),
+                                      ByRef sourceTextContent As String,
+                                      ByRef sourceTextName As String,
                                       ByRef mimeType As String,
-                                      ByRef eventArgs As ResourceNeededEventArgs)
-            resourceContent = Encoding.UTF8.GetString(resourceFile)
-            Dim extension As String = GetExtensionForsourceFiles(resourceContent)
-            mimeType = GetMimeTypeForsourceFiles(resourceContent)
-            StripTablerowStylesFromSourcetexts(resourceContent)
-
-            If ReplaceLanguageStyles(resourceContent) Then
-                eventArgs.BinaryResource = New BinaryResource(Encoding.UTF8.GetBytes(resourceContent))
-                resourceFile = CType(eventArgs.BinaryResource.ResourceObject, Byte())
-            End If
-
-            Dim xmlDoc As New XmlDocument
-            xmlDoc.PreserveWhitespace = True
-            xmlDoc.LoadXml($"<wrapper>{resourceContent}</wrapper>")
-
-            If xmlDoc.SelectNodes("//*[contains(@class, 'TTS')]").Count > 0 Then
-                resourceContent = ProcessTextToSpeech(xmlDoc)
-                eventArgs.BinaryResource = New BinaryResource(Encoding.UTF8.GetBytes(resourceContent))
-                resourceFile = CType(eventArgs.BinaryResource.ResourceObject, Byte())
-            End If
-
-            If Not String.IsNullOrEmpty(extension) Then resourceName = String.Concat(Path.GetFileNameWithoutExtension(resourceName), ".", extension)
+                                      ByRef eventArgs As ResourceNeededEventArgs,
+                                      ByRef resources As ConcurrentDictionary(Of String, Dictionary(Of ResourceType, List(Of String))))
+            sourceTextContent = Encoding.UTF8.GetString(sourceTextFile)
+            Dim name = Path.GetFileNameWithoutExtension(sourceTextName)
+            StripTablerowStylesFromSourceTexts(sourceTextContent)
+            ReplaceLanguageStylesForSourceText(sourceTextContent, sourceTextFile, eventArgs)
+            ProcessTextToSpeechForSourceText(sourceTextContent, sourceTextFile, eventArgs)
+            ConvertSourceTextToAssessmentStimulus(name, sourceTextContent, sourceTextFile, eventArgs, resources)
+            mimeType = "text/xml"
+            sourceTextName = String.Concat(name, ".", "xml")
         End Sub
 
-        Private Sub ProcessSourceTextStylesheets(ByRef resources As ConcurrentDictionary(Of String, Dictionary(Of ResourceType, List(Of String))), ByRef eventArgs As ResourceNeededEventArgs)
+        Private Sub ReplaceLanguageStylesForSourceText(ByRef sourceTextContent As String,
+                                                       ByRef sourceTextFile As Byte(),
+                                                       ByRef eventArgs As ResourceNeededEventArgs)
+            If ReplaceLanguageStyles(sourceTextContent) Then
+                eventArgs.BinaryResource = New BinaryResource(Encoding.UTF8.GetBytes(sourceTextContent))
+                sourceTextFile = CType(eventArgs.BinaryResource.ResourceObject, Byte())
+            End If
+        End Sub
+
+        Private Sub ConvertSourceTextToAssessmentStimulus(ByRef sourceTextName As String,
+                                                          ByRef sourceTextContent As String,
+                                                          ByRef sourceTextFile As Byte(),
+                                                          ByRef eventArgs As ResourceNeededEventArgs,
+                                                          ByRef resources As ConcurrentDictionary(Of String, Dictionary(Of ResourceType, List(Of String))))
+            Dim stimulus = New AssessmentStimulusType() With {
+                .identifier = ChainHandlerHelper.GetIdentifierFromResourceId($"{sourceTextName}.xml", PackageCreatorConstants.TypeOfResource.resource),
+                .title = sourceTextName,
+                .qtistylesheet = CreateSourceTextStylesheet(sourceTextName, sourceTextContent, resources, eventArgs),
+                .qtistimulusbody = New StimulusBodyType() With {
+                    .Items = GetSourceTextAsXmlNodes(sourceTextContent)
+                }
+            }
+            sourceTextContent = ChainHandlerHelper.ObjectToString(stimulus, Nothing, True)
+            sourceTextContent = UpdateSourceTextNamespaces(sourceTextContent)
+            eventArgs.BinaryResource = New BinaryResource(Encoding.UTF8.GetBytes(sourceTextContent))
+            sourceTextFile = CType(eventArgs.BinaryResource.ResourceObject, Byte())
+        End Sub
+
+        Private Function CreateSourceTextStylesheet(ByRef sourceTextName As String,
+                                                    ByRef sourceTextContent As String,
+                                                    ByRef resources As ConcurrentDictionary(Of String, Dictionary(Of ResourceType, List(Of String))),
+                                                    ByRef eventArgs As ResourceNeededEventArgs) As List(Of StyleSheetType)
+            Dim result = New List(Of StyleSheetType)
+
+            Dim dependentStylesheets = ProcessSourceTextStylesheets(resources, eventArgs)
+            If dependentStylesheets.Any() Then
+                dependentStylesheets.ForEach(Sub(stylesheetType)
+                                                 result.Add(SetHrefPropertyOfStylesheetType(stylesheetType))
+                                             End Sub)
+
+            End If
+
+            Dim inlineStylesAsCss = String.Empty
+            sourceTextContent = ConvertSourceTextInlineStylesToCss(sourceTextContent, inlineStylesAsCss)
+            If String.IsNullOrEmpty(inlineStylesAsCss.Trim()) Then
+                Return result
+            End If
+
+            Dim generatedCssName = SaveGeneratedSourceTextCss(inlineStylesAsCss, sourceTextName, resources)
+            If String.IsNullOrEmpty(generatedCssName) Then
+                Return result
+            End If
+
+            Dim generatedStyleSheetType = GetStylesheetHelper.GetStylesheetType(generatedCssName, _packageCreator.RelativePathToResources)
+            result.Add(SetHrefPropertyOfStylesheetType(generatedStyleSheetType))
+            Return result
+        End Function
+
+        Private Function SetHrefPropertyOfStylesheetType(styleSheetType As StyleSheetType) As StyleSheetType
+            styleSheetType.href = $"resource://package/{Path.GetFileName(styleSheetType.href)}"
+            Return styleSheetType
+        End Function
+
+        Private Function ProcessSourceTextStylesheets(ByRef resources As ConcurrentDictionary(Of String, Dictionary(Of ResourceType, List(Of String))),
+                                                      ByRef eventArgs As ResourceNeededEventArgs) As List(Of StyleSheetType)
+            Dim stylesheetTypes = New List(Of StyleSheetType)
+
             Dim dependentResourceCollection As DependentResourceCollection = _packageCreator.ResourceMan.GetDependentResourcesForResource(eventArgs.ResourceName)
             For Each dependentResource As DependentResource In dependentResourceCollection
-                If ChainHandlerHelper.GetCategoryFolderFromFileName(dependentResource.Name) = PackageCreatorConstants.FileDirectoryType.css Then
-                    Dim cssName As String = GetStylesheetHelper.GetSourceTextStylesheetName(dependentResource.Name)
-                    Dim newReference As String = String.Empty
-                    Dim resourcePath As String = String.Empty
-                    newReference = String.Concat(_FolderDirectory(PackageCreatorConstants.FileDirectoryType.css), "/", cssName)
-                    resourcePath = Path.Combine(_packageCreator.TempWorkingDirectory.FullName, newReference)
-
-                    Dim cssEventArgs As New ResourceNeededEventArgs(dependentResource.Name, AddressOf StreamConverters.ConvertStreamToByteArray)
-                    _packageCreator.ResourceNeeded(Nothing, cssEventArgs)
-                    If cssEventArgs.BinaryResource IsNot Nothing AndAlso cssEventArgs.BinaryResource.ResourceObject IsNot Nothing Then
-                        Dim cssContent As String = Encoding.UTF8.GetString(CType(cssEventArgs.BinaryResource.ResourceObject, Byte()))
-
-                        cssContent = GetStylesheetHelper.PrefixSourceTextStyles(cssContent)
-
-                        cssEventArgs.BinaryResource = New BinaryResource(Encoding.UTF8.GetBytes(cssContent))
-                        ChainHandlerHelper.SaveFile(CType(cssEventArgs.BinaryResource.ResourceObject, Byte()), resourcePath)
-                    End If
-
-                    Dim resourceType = GetResourceType(Nothing, cssName)
-                    resourceType.type = _ResourceTypes(PackageCreator.QTIManifestResourceType.webcontent)
-                    resourceType.href = newReference
-                    Dim file As New FileType
-                    file.href = newReference
-                    Dim fileArray(0) As FileType
-                    fileArray(0) = file
-                    resourceType.file = fileArray
-                    PackageCreator.AddResourceToManifest(resources, resourceType)
+                Dim dependentStylesheet = ProcessSourceTextStylesheet(dependentResource, resources)
+                If dependentStylesheet IsNot Nothing Then
+                    stylesheetTypes.Add(dependentStylesheet)
                 End If
             Next
+
+            Return stylesheetTypes
+        End Function
+
+        Private Function ProcessSourceTextStylesheet(dependentResource As DependentResource,
+                                                    ByRef resources As ConcurrentDictionary(Of String, Dictionary(Of ResourceType, List(Of String)))) As StyleSheetType
+            If ChainHandlerHelper.GetCategoryFolderFromFileName(dependentResource.Name) <> PackageCreatorConstants.FileDirectoryType.css Then
+                Return Nothing
+            End If
+
+            Dim cssName As String = GetStylesheetHelper.GetSourceTextStylesheetName(dependentResource.Name)
+            Dim newReference As String = String.Concat(_FolderDirectory(PackageCreatorConstants.FileDirectoryType.css), "/", cssName)
+            SaveSourceTextStylesheet(newReference, dependentResource)
+            AddSourceTextStylesheetToManifest(cssName, newReference, resources)
+            Return GetStylesheetHelper.GetStylesheetType(cssName, _packageCreator.RelativePathToResources)
+        End Function
+
+        Private Sub SaveSourceTextStylesheet(newReference As String,
+                                             dependentResource As DependentResource)
+            Dim resourcePath As String = Path.Combine(_packageCreator.TempWorkingDirectory.FullName, newReference)
+
+            Dim cssEventArgs As New ResourceNeededEventArgs(dependentResource.Name, AddressOf StreamConverters.ConvertStreamToByteArray)
+            _packageCreator.ResourceNeeded(Nothing, cssEventArgs)
+            If cssEventArgs.BinaryResource IsNot Nothing AndAlso cssEventArgs.BinaryResource.ResourceObject IsNot Nothing Then
+                Dim cssContent As String = Encoding.UTF8.GetString(CType(cssEventArgs.BinaryResource.ResourceObject, Byte()))
+
+                cssContent = GetStylesheetHelper.PrefixSourceTextStyles(cssContent)
+
+                cssEventArgs.BinaryResource = New BinaryResource(Encoding.UTF8.GetBytes(cssContent))
+                ChainHandlerHelper.SaveFile(CType(cssEventArgs.BinaryResource.ResourceObject, Byte()), resourcePath)
+            End If
+        End Sub
+
+        Private Sub AddSourceTextStylesheetToManifest(cssName As String,
+                                                      newReference As String,
+                                                      ByRef resources As ConcurrentDictionary(Of String, Dictionary(Of ResourceType, List(Of String))))
+            Dim resourceType = GetResourceType(Nothing, cssName)
+            resourceType.type = _ResourceTypes(PackageCreator.QTIManifestResourceType.webcontent)
+            resourceType.href = newReference
+            resourceType.file = {New FileType With {.href = newReference}}
+            PackageCreator.AddResourceToManifest(resources, resourceType)
+        End Sub
+
+        Private Function ConvertSourceTextInlineStylesToCss(sourceTextContent As String, ByRef css As String) As String
+            Dim tempDoc = New XmlDocument()
+            tempDoc.LoadXml($"<wrapper>{sourceTextContent}</wrapper>")
+            Using converter = New QTI30XhtmlConverter()
+                converter.ConvertStylesToCss(tempDoc, css)
+            End Using
+            Return tempDoc.DocumentElement.InnerXml
+        End Function
+
+        Private Function SaveGeneratedSourceTextCss(ByRef css As String,
+                                               ByRef sourceTextName As String,
+                                               ByRef resources As ConcurrentDictionary(Of String, Dictionary(Of ResourceType, List(Of String)))) As String
+            If String.IsNullOrEmpty(css.Trim()) Then
+                Return String.Empty
+            End If
+
+            Dim helper = GetStylesheetHelper()
+            GetStylesheetHelper.PrefixGeneratedStyles(css)
+            Dim cssStyleFileName As String = String.Concat(Path.GetFileNameWithoutExtension(PackageCreatorConstants.GENERATED_CSS), "_", sourceTextName.Replace(" ", String.Empty), Path.GetExtension(PackageCreatorConstants.GENERATED_CSS))
+            _packageCreator.SaveGeneratedCss(resources, css, cssStyleFileName, Me.FolderDirectory(PackageCreatorConstants.FileDirectoryType.css), Me.ResourceTypes(PackageCreator.QTIManifestResourceType.webcontent))
+
+            Return cssStyleFileName
+        End Function
+
+        Private Function GetSourceTextAsXmlNodes(ByRef sourceTextContent As String) As Object()
+            Dim tempDoc = New XmlDocument()
+            tempDoc.LoadXml($"<wrapper>{sourceTextContent}</wrapper>")
+            Dim items = New List(Of XmlNode)
+            For Each node As XmlElement In tempDoc.DocumentElement.ChildNodes
+                node.SetAttribute("xmlns", _namespaceHelper.GetImsQtiNamespace().NamespaceName)
+                items.Add(node)
+            Next
+            Return items.ToArray()
+        End Function
+
+        Private Function UpdateSourceTextNamespaces(sourceTextContent As String) As String
+            Dim tempDoc = New XmlDocument()
+            tempDoc.LoadXml(sourceTextContent)
+            _namespaceHelper.UpdateNameSpaces(tempDoc, True)
+            Return tempDoc.DocumentElement.OuterXml
+        End Function
+
+        Private Sub ProcessTextToSpeechForSourceText(ByRef sourceTextContent As String,
+                                                     ByRef sourceTextFile As Byte(),
+                                                     ByRef eventArgs As ResourceNeededEventArgs)
+            Dim xmlDoc As New XmlDocument With {.PreserveWhitespace = True}
+            xmlDoc.LoadXml($"<wrapper>{sourceTextContent}</wrapper>")
+
+            If xmlDoc.SelectNodes("//*[contains(@class, 'TTS')]").Count > 0 Then
+                sourceTextContent = ProcessTextToSpeech(xmlDoc)
+                eventArgs.BinaryResource = New BinaryResource(Encoding.UTF8.GetBytes(sourceTextContent))
+                sourceTextFile = CType(eventArgs.BinaryResource.ResourceObject, Byte())
+            End If
         End Sub
 
         Private Sub ProcessStylesheet(ByRef resourceFile As Byte(), ByRef resourceContent As String, ByRef resourceName As String, ByRef mimeType As String, eventArgs As ResourceNeededEventArgs)
@@ -445,10 +589,10 @@ Namespace QTI.Helpers.QTI30
             Dim resourceContent As String = String.Empty
             Dim resName As String = ResourceNameHelper.GetQtiCompliantResourceName(resourceName, True)
 
-            If rf IsNot Nothing AndAlso ChainHandlerHelper.IsSourceTextFile(rf, resName) Then
+            If rf IsNot Nothing AndAlso IsSourceTextFile(rf, resName) Then
                 resourceContent = Encoding.UTF8.GetString(rf)
-                Dim extension As String = GetExtensionForsourceFiles(resourceContent)
-                mimeType = GetMimeTypeForsourceFiles(resourceContent)
+                Dim extension As String = "xml"
+                mimeType = "text/xml"
                 If Not String.IsNullOrEmpty(extension) Then resName = String.Concat(Path.GetFileNameWithoutExtension(resName), ".", extension)
             End If
 
@@ -526,8 +670,8 @@ Namespace QTI.Helpers.QTI30
             Return PackageCreator.QTIManifestResourceType.webcontent
         End Function
 
-        Protected Overridable Function GetStylesheetHelper() As StyleSheetHelper
-            If _stylesheetHelper Is Nothing Then _stylesheetHelper = New StyleSheetHelper
+        Protected Overridable Function GetStylesheetHelper() As QTI30StyleSheetHelper
+            If _stylesheetHelper Is Nothing Then _stylesheetHelper = New QTI30StyleSheetHelper
             Return _stylesheetHelper
         End Function
 
@@ -836,20 +980,6 @@ Namespace QTI.Helpers.QTI30
             Return canHaveDependencies
         End Function
 
-        Protected Overridable Function GetExtensionForsourceFiles(resourceContent As String) As String
-            If resourceContent.Trim.StartsWith("<html") Then Return "html"
-            If resourceContent.Trim.StartsWith("<?xml") Then Return "xml"
-            If resourceContent.Trim.StartsWith("<") Then Return "html"
-            Return String.Empty
-        End Function
-
-        Protected Overridable Function GetMimeTypeForsourceFiles(resourceContent As String) As String
-            If resourceContent.Trim.StartsWith("<html") Then Return "text/html"
-            If resourceContent.Trim.StartsWith("<?xml") Then Return "text/xml"
-            If resourceContent.Trim.StartsWith("<") Then Return "text/html"
-            Return String.Empty
-        End Function
-
         Private Function ReplaceLanguageStyles(ByRef resourceContent As String) As Boolean
             Dim tempDoc As New XmlDocument
             tempDoc.PreserveWhitespace = True
@@ -914,7 +1044,7 @@ Namespace QTI.Helpers.QTI30
             Return result
         End Function
 
-        Private Sub StripTablerowStylesFromSourcetexts(ByRef resourceContent As String)
+        Private Sub StripTablerowStylesFromSourceTexts(ByRef resourceContent As String)
             Dim tempDoc As New XmlDocument
             tempDoc.PreserveWhitespace = True
             tempDoc.LoadXml($"<wrapper>{resourceContent}</wrapper>")
@@ -942,6 +1072,19 @@ Namespace QTI.Helpers.QTI30
         Private Function ProcessTextToSpeech(ByRef xmlDoc As XmlDocument) As String
             TextToSpeechHelper.ConvertToSsml(xmlDoc, _namespaceHelper.GetSSMLNamespace().NamespaceName)
             Return xmlDoc.DocumentElement.InnerXml
+        End Function
+
+        Private Shared Function IsSourceTextFile(resourceFile() As Byte, resourceName As String) As Boolean
+            Dim mimeType As String = ChainHandlerHelper.GetMimeTypeFromFile(resourceFile, resourceName)
+
+            If mimeType.Contains("application/xhtml+xml") OrElse
+                mimeType.Contains("text/plain") OrElse
+                mimeType.Contains("text/html") OrElse
+                mimeType.Contains("text/html") Then
+                Return True
+            End If
+
+            Return False
         End Function
 
     End Class

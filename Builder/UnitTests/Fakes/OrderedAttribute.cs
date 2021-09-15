@@ -8,7 +8,7 @@ namespace Questify.Builder.UnitTests.Fakes
     {
         private readonly int _order;
 
-        protected OrderedAttribute([CallerLineNumber] int order = 0)
+        protected OrderedAttribute([CallerLineNumber]int order = 0)
         {
             _order = order;
         }

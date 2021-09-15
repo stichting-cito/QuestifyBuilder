@@ -42,6 +42,7 @@ Public Class WidthExtractorTests
     <TestMethod>
     Public Sub ExtractTableCellWidthNoTypeGiven()
         Dim input As XElement = <td width="33"/>
+        ' NotesFor.HtmlConverter.Unit.Parse assumes type to be pixels if not specified.
         Dim expectation As New TableCellWidth With {.Type = TableWidthUnitValues.Dxa, .Width = New StringValue("495")}
         WidthExtractor.Extract(input).Should.BeEquivalentTo(expectation)
     End Sub

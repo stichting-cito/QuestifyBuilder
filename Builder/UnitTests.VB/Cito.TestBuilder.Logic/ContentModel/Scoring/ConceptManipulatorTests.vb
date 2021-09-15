@@ -2,6 +2,10 @@
 Imports Questify.Builder.Logic.ContentModel.Scoring
 Imports Cito.Tester.ContentModel
 
+''' <summary>
+''' These are unit tests based upon the KeyManipulatorTests
+''' Since KeyFinding and ConceptFinding are quite similar.
+''' </summary>
 <TestClass>
 Public Class ConceptManipulatorTests : Inherits BaseScoringManipulatorTests(Of ConceptFinding, ConceptFact, ConceptValue)
 

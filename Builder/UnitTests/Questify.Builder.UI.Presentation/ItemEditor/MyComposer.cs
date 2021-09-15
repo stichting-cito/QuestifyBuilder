@@ -11,22 +11,39 @@ using Questify.Builder.UnitTests.Fakes.ResourcePropertyDialog;
 
 namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 {
+    /// <summary>
+    /// When you want to make Viewmodels testable that are loaded by MEF, you will need to add some types to the container
+    /// of MEF so it can resolve the imports of the class being created. (MEF is an injection framework)
+    /// 
+    /// Usage:
+    /// An example with the test base class 'UsesTheItemEditor'.
+    /// 
+    ///<code>
+    /// protected override IEnumerable&lt;ComposablePartCatalog&gt;GetTypesForInjection()
+    /// {
+    ///     return new[] { MyComposer.GetTestTypesForCinch(),
+    ///                 MyComposer.GetScoreEditors()};
+    /// }
+    ///</code>
+    /// </summary>
     class MyComposer : IComposer
     {
-
+        
         private List<ComposablePartCatalog> _catalogs;
 
+        #region Constructor
 
         public MyComposer(IEnumerable<ComposablePartCatalog> catalogs)
         {
             _catalogs = new List<ComposablePartCatalog>(catalogs);
         }
-
+        
         public MyComposer()
-        {
+        {            
         }
 
 
+        #endregion
 
         public IEnumerable<ExportProvider> GetCustomExportProviders()
         {
@@ -40,10 +57,10 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
         public static ComposablePartCatalog GetTestTypesForCinch()
         {
-            var ret = new TypeCatalog(new[]  {
+            var ret =  new TypeCatalog(new[]  {
                 typeof(FakeMessageBoxService),
                 typeof(FakeCustomMessageBoxService),
-                typeof(FakeResourcePropertyDialogService)
+				typeof(FakeResourcePropertyDialogService)
             });
             return ret;
         }
@@ -87,6 +104,6 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             });
             return ret;
         }
-
+        
     }
 }

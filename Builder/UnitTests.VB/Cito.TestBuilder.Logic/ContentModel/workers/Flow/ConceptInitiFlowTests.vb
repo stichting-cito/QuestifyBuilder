@@ -14,6 +14,7 @@ Public Class ConceptInitiFlowTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub ValidateCopyWorking()
+        'Arrange
         Dim solution = Deserialize(Of Solution)(keyFindingToSynchronize)
         Dim scorePrm = GetScoreParam(Of MultiChoiceScoringParameter)("mc_1", "A")
         scorePrm.MaxChoices = 1
@@ -22,8 +23,10 @@ Public Class ConceptInitiFlowTests
                                                               {"CombinedScoringMapKey", New ScoringMap(New ScoringParameter() {scorePrm}, solution).GetMap().Single()}}
         WriteSolution("Arrange", solution)
 
+        'Act
         WorkflowInvoker.Invoke(New ConceptInitiFlow(), inputs)
 
+        'Assert
         WriteSolution("Assert", solution)
 
         Assert.IsTrue(solution.ConceptFindingsSpecified, "ConceptFindings should be there.")
@@ -33,6 +36,7 @@ Public Class ConceptInitiFlowTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub AfterFlowAllKeysShouldBeSetToMC_1()
+        'Arrange
         Dim solution = Deserialize(Of Solution)(keyFindingToSynchronize)
         Dim scorePrm = GetScoreParam(Of MultiChoiceScoringParameter)("mc_1", "A", "B", "C", "D", "E", "F")
         scorePrm.MaxChoices = 1
@@ -41,8 +45,10 @@ Public Class ConceptInitiFlowTests
                                                               {"CombinedScoringMapKey", New ScoringMap(New ScoringParameter() {scorePrm}, solution).GetMap().Single()}}
         WriteSolution("Arrange", solution)
 
+        'Act
         WorkflowInvoker.Invoke(New ConceptInitiFlow(), inputs)
 
+        'Assert
         WriteSolution("Assert", solution)
         Assert.AreEqual(1, scorePrm.MaxChoices)
 
@@ -52,6 +58,7 @@ Public Class ConceptInitiFlowTests
         Assert.AreEqual(6, mc1Facts.Count())
     End Sub
 
+#Region "Data"
     Private keyFindingToSynchronize As XElement = <solution>
                                                       <keyFindings>
                                                           <keyFinding id="Opgave" scoringMethod="Dichotomous">
@@ -95,6 +102,7 @@ Public Class ConceptInitiFlowTests
                                                       </ItemScoreTranslationTable>
                                                   </solution>
 
+#End Region
 
     Private Function GetScoreParam(Of T As {ScoringParameter, New})(id As String, ParamArray ids As String()) As T
         Dim param = New T() With {.ControllerId = id, .FindingOverride = "Opgave"}

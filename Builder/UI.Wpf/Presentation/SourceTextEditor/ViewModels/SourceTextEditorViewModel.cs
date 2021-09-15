@@ -135,7 +135,7 @@ namespace Questify.Builder.UI.Wpf.Presentation.SourceTextEditor.ViewModels
             _isLoading = true;
             SelectedTab.DataValue = 0; Dispatcher.CurrentDispatcher.InvokeAsynchronouslyInBackground(() =>
 {
-    DoActualLoadOnSourceTextId(SourceTextId.DataValue);
+DoActualLoadOnSourceTextId(SourceTextId.DataValue);
 });
         }
 

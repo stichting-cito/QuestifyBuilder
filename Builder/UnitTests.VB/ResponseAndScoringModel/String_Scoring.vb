@@ -9,40 +9,52 @@ Public Class String_Scoring
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub MaxScore()
+        'Arrange
         Dim solution = toSolution(string_Example)
-
+     
+        'Act
         Dim result = solution.MaxSolutionRawScore
-
+        
+        'Assert
         Assert.AreEqual(1, result)
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub GiveCorrectAnswer_SkipResponseFacts()
+        'Arrange
         Dim solution = toSolution(string_Example)
         Dim valuesToCreate As New List(Of Tuple(Of String, String)) From {New Tuple(Of String, String)("C", "A"), New Tuple(Of String, String)("A", "B"), New Tuple(Of String, String)("B", "C")}
         Dim r = GetResponse(valuesToCreate, "shapeInteractionController")
 
-        Write("Response", "Arrange", r)
-
+        Write("Response", "Arrange", r) 'Write for debugging
+       
+        'Act
         Dim result = solution.ScoreSolution(r)
 
+        'Assert
         Assert.AreEqual(1, result)
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub GiveCorrectAnswer_UseResponseFactFromUnitTestThatErrors()
+        'Arrange
         Dim solution = toSolution(string_Example)
         Dim response = toResponse(failing_unitTestResponse)
-        Write("Response", "Arrange", response)
-
+        Write("Response", "Arrange", response) 'Write for debugging
+       
+        'Act
         Dim result = solution.ScoreSolution(response)
 
+        'Assert
         Assert.AreEqual(1, result)
     End Sub
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub FourGaps_ThreeKeyFacts_CorrectResponses_ShouldScore1()
+        'Situation: four gaps, but only three have a keyfact. The other one doesn't have a key. 
+        'When a value is entered in this gap, it should have no influence on the scoring of the other three gaps.
 
+        'Arrange
         Dim solution = toSolution(string_Example)
         Dim r As New Response()
         Dim rF As New ResponseFinding(id:="shapeInteractionController")
@@ -59,10 +71,12 @@ Public Class String_Scoring
         respFact.Values.Add(createResponseValue(value:="D", domain:="D"))
         rF.Facts.Add(respFact) : r.Findings.Add(rF)
 
-        Write("Response", "Arrange", r)
-
+        Write("Response", "Arrange", r) 'Write for debugging
+       
+        'Act
         Dim result = solution.ScoreSolution(r)
 
+        'Assert
         If ScoringMethod IsNot Nothing AndAlso ScoringMethod.Equals(ScoringFactory.Methods.V23_Scoring) Then
             Assert.AreEqual(0, result)
         Else
@@ -72,7 +86,10 @@ Public Class String_Scoring
 
     <TestMethod()> <TestCategory("ResponseAndScoringModel")>
     Public Sub FourGaps_ThreeKeyFacts_IncorrectResponses_ShouldScore0()
+        'Situation: four gaps, but only three have a keyfact. The other one doesn't have a key. 
+        'When a value is entered in this gap, it should have no influence on the scoring of the other three gaps.
 
+        'Arrange
         Dim solution = toSolution(string_Example)
         Dim r As New Response()
         Dim rF As New ResponseFinding(id:="shapeInteractionController")
@@ -89,10 +106,12 @@ Public Class String_Scoring
         respFact.Values.Add(createResponseValue(value:="D", domain:="D"))
         rF.Facts.Add(respFact) : r.Findings.Add(rF)
 
-        Write("Response", "Arrange", r)
-
+        Write("Response", "Arrange", r) 'Write for debugging
+       
+        'Act
         Dim result = solution.ScoreSolution(r)
 
+        'Assert
         Assert.AreEqual(0, result)
     End Sub
 
@@ -125,6 +144,7 @@ Public Class String_Scoring
                                              <aspectReferences/>
                                          </solution>
 
+    'Note that there are response facts!
     Private failing_unitTestResponse As XElement = <Response xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" active="false" responseNr="-9223372036854775808" translatedScore="0" rawScore="0" navigatedToIndex="-2147483648">
                                                        <ResponseProperties xmlns="http://Cito.Tester.Server/xml/serialization"/>
                                                        <responseFindings xmlns="http://Cito.Tester.Server/xml/serialization">

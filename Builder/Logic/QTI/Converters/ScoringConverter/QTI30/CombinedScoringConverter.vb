@@ -6,16 +6,16 @@ Imports System.Xml.XPath
 Imports Cito.Tester.ContentModel
 Imports Enums
 Imports Questify.Builder.Logic.Publication
+Imports Questify.Builder.Logic.QTI.Converters.Declaration.QTI30
+Imports Questify.Builder.Logic.QTI.Converters.Processing.QTI30
 Imports Questify.Builder.Logic.QTI.Facade.Factories.QTI30
 Imports Questify.Builder.Logic.QTI.Helpers
 Imports Questify.Builder.Logic.QTI.Helpers.QTI_Base
 Imports Questify.Builder.Logic.QTI.Helpers.QTI30
+Imports Questify.Builder.Logic.QTI.Interfaces
 Imports Questify.Builder.Logic.QTI.Interfaces.QTI30
 Imports Questify.Builder.Logic.QTI.PackageCreators.QTI30
 Imports Questify.Builder.Logic.QTI.Xsd.QTI30
-Imports Questify.Builder.Logic.QTI.Interfaces
-Imports Questify.Builder.Logic.QTI.Converters.Declaration.QTI30
-Imports Questify.Builder.Logic.QTI.Converters.Processing.QTI30
 
 Namespace QTI.Converters.ScoringConverter.QTI30
 
@@ -28,7 +28,8 @@ Namespace QTI.Converters.ScoringConverter.QTI30
         Dim _itemMaxScore As Integer = 0
         Dim _findingsInItem As List(Of KeyFinding)
         Dim _conceptFindingsInItem As List(Of ConceptFinding)
-        ReadOnly _scoringParameters As HashSet(Of ScoringParameter)
+        Dim _aspectScoringHelper As AspectScoringHelper
+        Protected ReadOnly _scoringParameters As HashSet(Of ScoringParameter)
 
         Public Sub New()
         End Sub
@@ -43,7 +44,10 @@ Namespace QTI.Converters.ScoringConverter.QTI30
             itemDocument.BringElementOutSide("qti-choice-interaction", "qti-hottext-interaction", addToDiv)
             itemDocument.BringElementOutSide("qti-extended-text-interaction", "p", addToDiv)
             itemDocument.BringElementOutSide("table[@class='tabular']", "p", addToDiv)
-            AspectScoringHelper.UpdateDocumentBeforeProcessing(solution, itemDocument, packageCreator)
+
+            Dim aspectScoringHelper = GetAspectScoringHelper(solution, packageCreator)
+            aspectScoringHelper.UpdateDocumentBeforeProcessing(itemDocument)
+
             HottextScoringHelper.UpdateDocumentBeforeProcessing(solution, itemDocument, packageCreator)
         End Sub
 
@@ -79,87 +83,105 @@ Namespace QTI.Converters.ScoringConverter.QTI30
             Return GetResponseDeclarations(solution, responseIdentifierAttributeList)
         End Function
 
-        Public Overridable Function GetOutcomeDeclarations(ByVal solution As Solution, ByVal responseIdentifierAttributeList As XmlNodeList, translationTable As ItemScoreTranslationTable) As List(Of OutcomeDeclarationType) Implements IScoringConverter.GetOutcomeDeclarations
+        Public Overridable Function GetOutcomeDeclarations(ByVal solution As Solution, ByVal responseIdentifierAttributeList As XmlNodeList, translationTable As ItemScoreTranslationTable,
+                                                           ByVal packageCreator As IPackageCreator) As List(Of OutcomeDeclarationType) Implements IScoringConverter.GetOutcomeDeclarations
             If _findingsInItem Is Nothing Then _findingsInItem = QTI30CombinedScoringHelper.GetFindingsInItem(solution, responseIdentifierAttributeList)
-            Dim list As List(Of OutcomeDeclarationType) = ScoringHelper.GetDefaultOutcomeDeclarationsList(translationTable)
+            Dim outcomeDeclarations As List(Of OutcomeDeclarationType) = ScoringHelper.GetDefaultOutcomeDeclarationsList(translationTable)
 
             If ScoringHelper.HasAutomaticScoring(solution) AndAlso _findingsInItem IsNot Nothing AndAlso _findingsInItem.Count > 0 Then
-                Dim findingIndex As Integer = 1
-                Dim outcomeDeclarationType As OutcomeDeclarationType
-
-                For Each finding As KeyFinding In _findingsInItem
-                    If _findingsInItem.Count > 1 Then
-                        outcomeDeclarationType = ScoringHelper.GetDefaultOutComeDeclaration(Nothing, findingIndex, Nothing, QTIScoringHelper.ShouldScoreBeTranslated(translationTable))
-                        list.Add(outcomeDeclarationType)
-                    End If
-
-                    Dim responseTypeFactory As ResponseTypeFactory = If(_responseTypeFactoryPerFinding.ContainsKey(finding), _responseTypeFactoryPerFinding(finding), Nothing)
-                    Dim responseIndexForScoreCheck As Integer = 1
-
-                    For i As Integer = 0 To responseIdentifierAttributeList.Count - 1
-                        Dim responseIdentifierAttribute As XmlAttribute = DirectCast(responseIdentifierAttributeList(i), XmlAttribute)
-                        Dim controlType As QTI30CombinedScoringHelper.EnumControlType = QTI30CombinedScoringHelper.DetermineControlType(responseIdentifierAttribute, _scoringParameters)
-
-                        If controlType = QTI30CombinedScoringHelper.EnumControlType.Input OrElse
-                           controlType = QTI30CombinedScoringHelper.EnumControlType.CasEqualFormulaEditor OrElse
-                           controlType = QTI30CombinedScoringHelper.EnumControlType.CasEvaluateFormulaEditor Then
-
-                            If Not _responseTypeFactoryPerFinding.ContainsKey(finding) Then
-                                If _scoringParameters Is Nothing Then
-                                    responseTypeFactory = New ResponseTypeFactory(solution, finding, responseIdentifierAttributeList, Me)
-                                Else
-                                    responseTypeFactory = New ResponseTypeFactory(_scoringParameters, finding, responseIdentifierAttributeList, Me)
-                                End If
-                                _responseTypeFactoryPerFinding.Add(finding, responseTypeFactory)
-                            End If
-
-                            Dim keyvalue As KeyValue = QTI30CombinedScoringHelper.GetKeyValueByResponseIdentifier(finding, responseIdentifierAttribute.Value)
-                            If keyvalue Is Nothing Then keyvalue = QTI30CombinedScoringHelper.GetKeyValueForInputByIndex(finding, responseIndexForScoreCheck)
-                            If keyvalue IsNot Nothing AndAlso keyvalue.Values IsNot Nothing AndAlso QTIScoringHelper.KeyValueContainsDecimal(keyvalue.Values) AndAlso QTI30CombinedScoringHelper.DetermineDecimalSeparatorForGap(responseIdentifierAttribute) = QTI30CombinedScoringHelper.DecimalSeparator.Both Then
-                                outcomeDeclarationType = ScoringHelper.GetDecimalOutComeDeclaration(responseTypeFactory.GetResponseIndexByIdentifier(keyvalue.Domain))
-                                list.Add(outcomeDeclarationType)
-                            End If
-                            responseIndexForScoreCheck += 1
-                        End If
-                    Next
-
-                    findingIndex += 1
-                Next
+                Dim automaticScoringOutcomeDeclarations = GetOutcomeDeclarationsForAutomaticallyScoredInteractions(solution, responseIdentifierAttributeList, translationTable)
+                outcomeDeclarations.AddRange(automaticScoringOutcomeDeclarations)
             End If
 
             If ScoringHelper.HasManualScoring(solution) Then
-                For Each aspectReference As AspectReference In solution.AspectReferenceSetCollection(0).Items
-                    Dim outcomeDeclarationType As OutcomeDeclarationType = New OutcomeDeclarationType
-                    outcomeDeclarationType.identifier = $"qtiAspect{aspectReference.SourceName}OutcomeDeclaration"
-                    outcomeDeclarationType.basetype = OutcomeDeclarationTypeBasetype.integer
-                    outcomeDeclarationType.basetypeSpecified = True
-                    outcomeDeclarationType.cardinality = OutcomeDeclarationTypeCardinality.single
-                    outcomeDeclarationType.view = New List(Of ViewType)
-                    outcomeDeclarationType.view.Add(ViewType.scorer)
-
-                    outcomeDeclarationType.normalminimum = 0
-                    outcomeDeclarationType.normalminimumSpecified = True
-
-                    outcomeDeclarationType.normalmaximum = aspectReference.MaxScore
-                    outcomeDeclarationType.normalmaximumSpecified = True
-
-                    list.Add(outcomeDeclarationType)
-                Next
+                Dim aspectScoringHelper = GetAspectScoringHelper(solution, packageCreator)
+                Dim aspectScoringOutcomeDeclarations = aspectScoringHelper.GetOutcomeDeclarations()
+                outcomeDeclarations.AddRange(aspectScoringOutcomeDeclarations)
             End If
 
             Dim maxScore = If(QTIScoringHelper.ShouldScoreBeTranslated(translationTable), solution.MaxSolutionTranslatedScore, solution.MaxSolutionRawScore)
             If maxScore.HasValue Then
                 Dim maxScoreOutcomeDeclarationType = ScoringHelper.GetMaxScoreOutcomeDeclaration(maxScore.Value)
-                list.Add(maxScoreOutcomeDeclarationType)
+                outcomeDeclarations.Add(maxScoreOutcomeDeclarationType)
             End If
 
             Dim listHottext As List(Of OutcomeDeclarationType) = HottextScoringHelper.GetOutcomeDeclarationsForHottextInteractions(responseIdentifierAttributeList)
-            If listHottext.Count > 0 Then list.AddRange(listHottext)
+            If listHottext.Count > 0 Then
+                outcomeDeclarations.AddRange(listHottext)
+            End If
 
             Dim listConcepts As List(Of OutcomeDeclarationType) = GetOutcomeDeclarationsForConceptScoring(solution, responseIdentifierAttributeList)
-            If listConcepts.Count > 0 Then list.AddRange(listConcepts)
+            If listConcepts.Count > 0 Then
+                outcomeDeclarations.AddRange(listConcepts)
+            End If
 
-            Return list
+            Return outcomeDeclarations
+        End Function
+
+        Private Function GetOutcomeDeclarationsForAutomaticallyScoredInteractions(solution As Solution, responseIdentifierAttributeList As XmlNodeList, translationTable As ItemScoreTranslationTable) As List(Of OutcomeDeclarationType)
+            Dim outcomeDeclarations = New List(Of OutcomeDeclarationType)
+            Dim findingIndex As Integer = 1
+            Dim outcomeDeclarationType As OutcomeDeclarationType
+
+            For Each finding As KeyFinding In _findingsInItem
+                If _findingsInItem.Count > 1 Then
+                    outcomeDeclarationType = ScoringHelper.GetDefaultOutComeDeclaration(Nothing, findingIndex, Nothing, QTIScoringHelper.ShouldScoreBeTranslated(translationTable))
+                    outcomeDeclarations.Add(outcomeDeclarationType)
+                End If
+                Dim extraOutcomeDeclarations = AddExtraOutcomeDeclarationForDecimalAndCurrencyGaps(finding, solution, responseIdentifierAttributeList)
+                outcomeDeclarations.AddRange(extraOutcomeDeclarations)
+                findingIndex += 1
+            Next
+
+            Return outcomeDeclarations
+        End Function
+
+        Private Function AddExtraOutcomeDeclarationForDecimalAndCurrencyGaps(finding As KeyFinding, solution As Solution, responseIdentifierAttributeList As XmlNodeList) As List(Of OutcomeDeclarationType)
+            Dim decimalAndConcurrencyGapOutcomeDeclarations = New List(Of OutcomeDeclarationType)
+            Dim responseTypeFactory As ResponseTypeFactory = If(_responseTypeFactoryPerFinding.ContainsKey(finding), _responseTypeFactoryPerFinding(finding), Nothing)
+            Dim responseIndexForScoreCheck As Integer = 1
+
+            For i As Integer = 0 To responseIdentifierAttributeList.Count - 1
+                Dim responseIdentifierAttribute As XmlAttribute = DirectCast(responseIdentifierAttributeList(i), XmlAttribute)
+                Dim controlType As QTI30CombinedScoringHelper.EnumControlType = QTI30CombinedScoringHelper.DetermineControlType(responseIdentifierAttribute, _scoringParameters)
+
+                If controlType <> QTI30CombinedScoringHelper.EnumControlType.Input AndAlso
+                   controlType <> QTI30CombinedScoringHelper.EnumControlType.CasEqualFormulaEditor AndAlso
+                   controlType <> QTI30CombinedScoringHelper.EnumControlType.CasEvaluateFormulaEditor Then
+                    Continue For
+                End If
+
+                If Not _responseTypeFactoryPerFinding.ContainsKey(finding) Then
+                    If _scoringParameters Is Nothing Then
+                        responseTypeFactory = New ResponseTypeFactory(solution, finding, responseIdentifierAttributeList, Me)
+                    Else
+                        responseTypeFactory = New ResponseTypeFactory(_scoringParameters, finding, responseIdentifierAttributeList, Me)
+                    End If
+                    _responseTypeFactoryPerFinding.Add(finding, responseTypeFactory)
+                End If
+
+                Dim keyvalue = GetKeyValueForFinding(finding, responseIdentifierAttribute, responseIndexForScoreCheck)
+                If KeyValueContainsDecimal(keyvalue, responseIdentifierAttribute) Then
+                    Dim outcomeDeclarationType = ScoringHelper.GetDecimalOutComeDeclaration(responseTypeFactory.GetResponseIndexByIdentifier(keyvalue.Domain))
+                    decimalAndConcurrencyGapOutcomeDeclarations.Add(outcomeDeclarationType)
+                End If
+            Next
+            Return decimalAndConcurrencyGapOutcomeDeclarations
+        End Function
+
+        Private Function GetKeyValueForFinding(finding As KeyFinding, responseIdentifierAttribute As XmlAttribute, responseIndexForScoreCheck As Integer) As KeyValue
+            Dim keyvalue As KeyValue = QTI30CombinedScoringHelper.GetKeyValueByResponseIdentifier(finding, responseIdentifierAttribute.Value)
+            If keyvalue IsNot Nothing Then
+                Return keyvalue
+            End If
+            Return QTI30CombinedScoringHelper.GetKeyValueForInputByIndex(finding, responseIndexForScoreCheck)
+        End Function
+
+        Private Function KeyValueContainsDecimal(keyvalue As KeyValue, responseIdentifierAttribute As XmlAttribute) As Boolean
+            Return keyvalue IsNot Nothing AndAlso
+                keyvalue.Values IsNot Nothing AndAlso
+                QTIScoringHelper.KeyValueContainsDecimal(keyvalue.Values) AndAlso
+                QTI30CombinedScoringHelper.DetermineDecimalSeparatorForGap(responseIdentifierAttribute) = QTI30CombinedScoringHelper.DecimalSeparator.Both
         End Function
 
         Private Function GetOutcomeDeclarationsForConceptScoring(ByVal solution As Solution, ByVal responseIdentifierAttributeList As XmlNodeList) As List(Of OutcomeDeclarationType)
@@ -262,11 +284,17 @@ Namespace QTI.Converters.ScoringConverter.QTI30
             Return ret
         End Function
 
-        Public Function GetResponseProcessing(ByVal solution As Solution, ByVal responseIdentifierAttributeList As XmlNodeList, shouldBeTranslated As Boolean) As XmlDocument Implements IScoringConverter.GetResponseProcessing
+        Public Function GetResponseProcessing(ByVal solution As Solution, ByVal responseIdentifierAttributeList As XmlNodeList, shouldBeTranslated As Boolean, packageCreator As IPackageCreator) As XmlDocument Implements IScoringConverter.GetResponseProcessing
 
             _ns.Add(String.Empty, "http://www.imsglobal.org/xsd/imsqtiasi_v3p0")
             Dim result As XmlDocument = New XmlDocument()
             Dim navigator As XPathNavigator = result.CreateNavigator()
+
+            If ScoringHelper.HasManualScoring(solution) Then
+                Dim aspectScoringHelper = GetAspectScoringHelper(solution, packageCreator)
+                aspectScoringHelper.AddLookUpOutComeValues(navigator)
+                aspectScoringHelper.AddOverallSumOfAspectOutcomes(QTIScoringHelper.GetScoreId(shouldBeTranslated), navigator)
+            End If
 
             If QTIScoringHelper.HasAutomaticScoring(solution) Then
                 If _findingsInItem Is Nothing Then _findingsInItem = QTI30CombinedScoringHelper.GetFindingsInItem(solution, responseIdentifierAttributeList)
@@ -294,19 +322,20 @@ Namespace QTI.Converters.ScoringConverter.QTI30
                         AddOverallSumOfResponses(navigator, QTIScoringHelper.GetScoreId(shouldBeTranslated))
                     End If
                 End If
-                If shouldBeTranslated Then
-                    ScoringHelper.AddLookUpOutComeValue(navigator)
-                End If
-
-                If _conceptFindingsInItem Is Nothing Then _conceptFindingsInItem = QTI30CombinedScoringHelper.GetConceptFindingsInItem(solution, responseIdentifierAttributeList)
-                navigator.MoveToRoot()
-                navigator.MoveToFirstChild()
-                For Each finding As ConceptFinding In _conceptFindingsInItem
-                    If Not finding Is Nothing Then
-                        AppendResponseProcessingConceptScoring(navigator, result, responseIdentifierAttributeList, finding)
-                    End If
-                Next
             End If
+
+            If shouldBeTranslated Then
+                ScoringHelper.AddLookUpOutComeValue(navigator)
+            End If
+
+            If _conceptFindingsInItem Is Nothing Then _conceptFindingsInItem = QTI30CombinedScoringHelper.GetConceptFindingsInItem(solution, responseIdentifierAttributeList)
+            navigator.MoveToRoot()
+            navigator.MoveToFirstChild()
+            For Each finding As ConceptFinding In _conceptFindingsInItem
+                If Not finding Is Nothing Then
+                    AppendResponseProcessingConceptScoring(navigator, result, responseIdentifierAttributeList, finding)
+                End If
+            Next
 
             If result.DocumentElement Is Nothing OrElse (Not result.DocumentElement.HasChildNodes AndAlso Not result.DocumentElement.HasAttribute("template")) Then Return Nothing
             Return result
@@ -314,7 +343,7 @@ Namespace QTI.Converters.ScoringConverter.QTI30
 
         Public Overridable Sub AppendResponseProcessing(ByVal navigator As XPathNavigator, result As XmlDocument, responseIdentifierAttributeList As XmlNodeList, solution As Solution, finding As KeyFinding, findingIndex As Integer, shouldBeTranslated As Boolean)
             Dim responseProcessing As ResponseProcessing = Nothing
-            Dim useResponseProcessingTemplate As Boolean = QTI30CombinedScoringHelper.ShouldUseResponseProcessingTemplate(solution, _scoringParameters)
+            Dim useResponseProcessingTemplate As Boolean = ShouldUseResponseProcessingTemplate(solution)
             If _responseTypeFactoryPerFinding.ContainsKey(finding) Then
                 responseProcessing = New ResponseProcessing(finding, findingIndex, _scoringParameters, _responseTypeFactoryPerFinding(finding), shouldBeTranslated, useResponseProcessingTemplate)
             Else
@@ -337,6 +366,10 @@ Namespace QTI.Converters.ScoringConverter.QTI30
                 Next
             End If
         End Sub
+
+        Protected Overridable Function ShouldUseResponseProcessingTemplate(solution As Solution) As Boolean
+            Return QTI30CombinedScoringHelper.ShouldUseResponseProcessingTemplate(solution, _scoringParameters)
+        End Function
 
         Public Sub AppendResponseProcessingPartForDecimalGaps(ByVal navigator As XPathNavigator, solution As Solution, responseIdentifierAttributeList As XmlNodeList)
 
@@ -503,6 +536,13 @@ Namespace QTI.Converters.ScoringConverter.QTI30
             ScoringHelper.RemoveCategorizeAttributesForGraphicGapMatchFields(itemDocument)
             ScoringHelper.DecodeMathMLResponses(itemDocument)
         End Sub
+
+        Private Function GetAspectScoringHelper(solution As Solution, packageCreator As IPackageCreator) As AspectScoringHelper
+            If _aspectScoringHelper Is Nothing Then
+                _aspectScoringHelper = New AspectScoringHelper(solution, packageCreator, _scoringParameters)
+            End If
+            Return _aspectScoringHelper
+        End Function
 
     End Class
 End Namespace

@@ -15,46 +15,64 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void ScoringParameterWithSingleParamCollection_NoSolution_CreatesSingleBlockRowVM()
         {
+            //Arrange
             var solution = new Solution();
             var param = new IntegerScoringParameter() { Value = new ParameterSetCollection() };
             param.Value.Add(new ParameterCollection() { Id = "A" });
+            //Act
             CombinedScoringMapKey combinedKey = param.AsCombinedScoringMap();
             var result = BlockRowViewModelFactory.CreateInstances(combinedKey, solution)
                 .ToList();
+            //Assert
             Assert.AreEqual(1, result.Count);
         }
 
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void CreatedTypeIs_IntegerBlockRowViewModel()
         {
+            //Arrange
             var solution = new Solution();
             var param = new IntegerScoringParameter() { Value = new ParameterSetCollection() };
             param.Value.Add(new ParameterCollection() { Id = "A" });
+            //Act
             var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(), solution)
-    .ToList();
+                .ToList();
+            //Assert
             Assert.IsInstanceOfType(result.First(), typeof(IntegerBlockRowViewModel));
         }
 
+        /// <summary>
+        /// ScoringParameter with three parameter collection_ no solution_ creates three block row vm.
+        /// </summary>
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void ScoringParameterWithThreeParamCollection_NoSolution_CreatesThreeBlockRowVM()
         {
+            //Arrange
             var solution = new Solution();
             var param = new IntegerScoringParameter() { Value = new ParameterSetCollection() };
             param.Value.Add(new ParameterCollection() { Id = "A" });
             param.Value.Add(new ParameterCollection() { Id = "B" });
             param.Value.Add(new ParameterCollection() { Id = "C" });
+            //Act
             var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(0), solution, 0)
-    .ToList();
+                .ToList();
+            //Assert
             Assert.AreEqual(3, result.Count);
         }
 
+        /// <summary>
+        /// ScoringParameter with three parameter collection_ no solution_ creates three block row vm.
+        /// </summary>
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void GetAllBlokRowViewModelsFromFactSet0()
         {
+            //Arrange
             var solution = Deserialize<Solution>(Data);
             var param = new IntegerScoringParameter() { FindingOverride = "sharedIntegerFinding", ControllerId = "integerScore" }.AddSubParameters("1", "2");
+            //Act
             var result = BlockRowViewModelFactory.CreateInstances(param.AsCombinedScoringMap(0), solution, 0)
-    .ToList();
+                .ToList();
+            //Assert
             Assert.AreEqual(4, result.Count);
             Assert.IsTrue(result[0].Name.EndsWith(".1"));
             Assert.IsTrue(result[1].Name.EndsWith(".1"));
@@ -64,7 +82,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
 
 
-        public static XElement Data =
+        public static XElement Data = 
             XElement.Parse(@"<solution>
                                 <keyFindings>
                                   <keyFinding id=""sharedIntegerFinding"" scoringMethod=""Dichotomous"">
@@ -96,11 +114,11 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
                                 </solution>");
 
 
-        private T Deserialize<T>(XElement input)
+        private T Deserialize<T>( XElement input)
         {
             T ret = default(T);
             var s = new System.Xml.Serialization.XmlSerializer(typeof(T));
-            using (var m = new System.IO.StringReader(input.ToString()))
+            using( var m = new System.IO.StringReader(input.ToString()))
             {
                 ret = (T)s.Deserialize(m);
             }

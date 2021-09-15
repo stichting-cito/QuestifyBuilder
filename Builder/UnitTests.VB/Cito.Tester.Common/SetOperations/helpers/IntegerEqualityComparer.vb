@@ -1,4 +1,7 @@
 ﻿
+''' <summary>
+''' Simple Implementation of IEqualityComparer
+''' </summary>
 Public Class IntegerEqualityComparer
     Implements IEqualityComparer(Of Integer)
 

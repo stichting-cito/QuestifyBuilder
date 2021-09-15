@@ -8,9 +8,12 @@ Public Class AssesmentDeserialisationTests
 
     <TestMethod()> <TestCategory("ContentModel")>
     Public Sub DeserializeAssesmentTest()
+        'Arrange
 
+        'Act
         Dim res As AssessmentItem = DirectCast(SerializeHelper.XmlDeserializeFromString(data.ToString(), GetType(AssessmentItem)), AssessmentItem)
-
+        
+        'Assert
         Assert.AreEqual(1, res.Parameters.Count)
         Assert.AreEqual(1, res.Parameters.Count)
         Assert.AreEqual(1, res.Parameters(0).InnerParameters.Count)
@@ -19,12 +22,16 @@ Public Class AssesmentDeserialisationTests
 
     <TestMethod()> <TestCategory("ContentModel")> <WorkItem(9658)>
     Public Sub DeserializeAssesmentTestShouldNotContainDesignerSettings()
+        'Arrange
 
+        'Act
         Dim res As AssessmentItem = DirectCast(SerializeHelper.XmlDeserializeFromString(data.ToString(), GetType(AssessmentItem)), AssessmentItem)
-
+       
+        'Assert
         Assert.IsInstanceOfType(res.Parameters(0).InnerParameters(0), GetType(XHtmlParameter))
         Dim p As XHtmlParameter = DirectCast(res.Parameters(0).InnerParameters(0), XHtmlParameter)
         Assert.IsFalse(p.Value.StartsWith("<designersetting"))
+        'It's true that inlineelement still contains designersettings,...
     End Sub
 
 

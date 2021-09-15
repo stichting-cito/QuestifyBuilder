@@ -46,7 +46,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod(), TestCategory("ViewModel")]
         public void CheckValueOfConstructedName()
         {
-            InlineChoiceScoringParameter isp = new InlineChoiceScoringParameter() { Label = "thelabel", Name = "thename", ControllerId = "thecid", InlineId = "theiid", MinChoices = 1, MaxChoices = 1 };
+            //Arrange
+            InlineChoiceScoringParameter isp = new InlineChoiceScoringParameter() {Label = "thelabel", Name = "thename", ControllerId = "thecid", InlineId = "theiid", MinChoices = 1, MaxChoices = 1};
 
             Solution solution = new Solution();
             KeyFinding keyFinding1 = new KeyFinding("kfId");
@@ -56,7 +57,8 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
 
             InlineChoiceBlockRowViewModel icvm = new InlineChoiceBlockRowViewModel(isp, icsm);
 
-            string name = icvm.Name;
+            //Act
+            string name = icvm.Name;    
 
             isp.Label = null;
             string name2 = icvm.Name;
@@ -70,6 +72,7 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
             isp.ControllerId = null;
             string name5 = icvm.Name;
 
+            //Assert
             Assert.AreEqual("thelabel", name);
             Assert.AreEqual("thename", name2);
             Assert.AreEqual("theiid", name3);

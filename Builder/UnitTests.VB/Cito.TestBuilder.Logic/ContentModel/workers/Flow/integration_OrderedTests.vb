@@ -12,19 +12,23 @@ Public Class integration_OrderedTests
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Set Order Parameter, and compare to expected solution, note that this is stored in a KeyFactSet by default!")>
     Public Sub IntegrationTest_Step1()
+        'Arrange     
         Dim solution = New Solution()
         Dim sp = OrderedChoiceScoringParameters()
         Dim manipulator = sp(0).GetScoreManipulator(solution)
-        manipulator.SetFactSetTarget(0)
+        manipulator.SetFactSetTarget(0) 'Is required since this SP is grouped initially
 
         WriteToDebug(solution, "Arrange")
 
+        'Act
+        'A=5 , B=4, C=3, D=2, E=1, 
         manipulator.SetKey("A", 1)
         manipulator.SetKey("B", 2)
         manipulator.SetKey("C", 3)
         manipulator.SetKey("D", 4)
         manipulator.SetKey("E", 5)
 
+        'Assert
         WriteToDebug(solution, "Assert")
 
         Assert.IsTrue(UnitTestHelper.AreSame(Step1.ToString(), solution.DoSerialize().ToString()))
@@ -33,14 +37,17 @@ Public Class integration_OrderedTests
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Get Concept Manipulator, whole structure is created")>
     Public Sub IntegrationTest_Step2()
+        'Arrange     
         Dim solution = Step1.To(Of Solution)()
         Dim sp = OrderedChoiceScoringParameters()
 
         WriteToDebug(solution, "Arrange")
-
+        
+        'Act
         Dim combinedScoringMap = New ScoringMap(sp, solution).GetMap().Single()
         Dim manipulator = combinedScoringMap.GetConceptManipulator(solution)
 
+        'Assert
         WriteToDebug(solution, "Assert")
 
         Assert.IsTrue(UnitTestHelper.AreSame(Step2.ToString(), solution.DoSerialize().ToString()))
@@ -49,6 +56,7 @@ Public Class integration_OrderedTests
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("Add 2nd KeyFactSet")>
     Public Sub IntegrationTest_Step3()
+        'Arrange     
         Dim solution = Step2.To(Of Solution)()
         Dim sp = OrderedChoiceScoringParameters()
 
@@ -61,12 +69,14 @@ Public Class integration_OrderedTests
 
         WriteToDebug(solution, "Arrange")
 
+        'Act
         manipulator.SetKey("A", 5)
         manipulator.SetKey("B", 4)
         manipulator.SetKey("C", 3)
         manipulator.SetKey("D", 2)
         manipulator.SetKey("E", 1)
 
+        'Assert
         WriteToDebug(solution, "Assert")
 
         Assert.IsTrue(UnitTestHelper.AreSame(Step3.ToString(), solution.DoSerialize().ToString()))
@@ -75,18 +85,22 @@ Public Class integration_OrderedTests
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("Integration")>
     <Description("get ConceptManipulator again")>
     Public Sub IntegrationTest_Step4()
+        'Arrange     
         Dim solution = Step3.To(Of Solution)()
         Dim sp = OrderedChoiceScoringParameters()
 
         WriteToDebug(solution, "Arrange")
+        'Act
         Dim combinedScoringMap = New ScoringMap(sp, solution).GetMap().Single()
         Dim manipulator = combinedScoringMap.GetConceptManipulator(solution)
 
+        'Assert
         WriteToDebug(solution, "Assert")
 
-        Assert.IsTrue(UnitTestHelper.AreSame(Step4.ToString(), solution.DoSerialize().ToString()))
+         Assert.IsTrue(UnitTestHelper.AreSame(Step4.ToString(), solution.DoSerialize().ToString()))
     End Sub
 
+#Region "Data"
 
     ReadOnly Step1 As XElement = <solution xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                                      <keyFindings>
@@ -583,6 +597,7 @@ Public Class integration_OrderedTests
                                      <aspectReferences/>
                                  </solution>
 
+#End Region
 
     Function OrderedChoiceScoringParameters() As OrderScoringParameter()
         Return New OrderScoringParameter() {

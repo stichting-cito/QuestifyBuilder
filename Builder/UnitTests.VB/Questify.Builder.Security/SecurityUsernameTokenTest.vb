@@ -4,8 +4,12 @@ Imports Questify.Builder.Security
 
 <TestClass()> _
 Public Class SecurityUsernameTokenTest
+    '''<summary>
+    '''A test for Policy()
+    '''</summary>
     <TestMethod()> _
     Public Sub SecurityUsernameToken_PolicyTest()
+        'Save current
         Dim currentPolicy As String = SecurityUsernameToken.Policy
 
         Dim val As String = "My Policy"
@@ -13,9 +17,13 @@ Public Class SecurityUsernameTokenTest
 
         Assert.AreEqual(Of String)(val, SecurityUsernameToken.Policy, "Cito.TestBuilder.Security.SecurityUsernameToken.Policy was not set correctly.")
 
+        'Reset current 
         SecurityUsernameToken.Policy = currentPolicy
     End Sub
 
+    '''<summary>
+    '''A test for UsernameToken()
+    '''</summary>
     <TestMethod()> _
     Public Sub SecurityUsernameToken_UsernameTokenTest()
         Dim currentToken As UsernameToken = SecurityUsernameToken.UsernameToken

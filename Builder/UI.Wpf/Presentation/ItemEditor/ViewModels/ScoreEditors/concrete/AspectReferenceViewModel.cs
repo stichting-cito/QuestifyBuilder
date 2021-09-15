@@ -21,6 +21,9 @@ namespace Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels.ScoreEditor
                 OnPropertyChanged();
             }
         }
+
+        public int? maxTranslatedScore { get; set; }
+
         public bool isSelected { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;

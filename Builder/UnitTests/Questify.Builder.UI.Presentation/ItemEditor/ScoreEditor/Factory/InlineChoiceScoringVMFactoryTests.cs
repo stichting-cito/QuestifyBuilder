@@ -7,11 +7,14 @@ using Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels.ScoreEditors.Fa
 namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor.ScoreEditor.Factory
 {
     [TestClass]
-    public class InlineChoiceScoringVMFactoryTests : Runner
+    public class InlineChoiceScoringVMFactoryTests : Runner 
     {
 
+        /// <summary>
+        /// Tests basic Factory functionality
+        /// </summary>
         public InlineChoiceScoringVMFactoryTests()
-    : base(new ScoreFactoryBoilerplate<InlineChoiceScoringVMFactory, InlineChoiceScoringParameter, InlineChoiceScoringViewModel>())
+            : base(new ScoreFactoryBoilerplate<InlineChoiceScoringVMFactory, InlineChoiceScoringParameter, InlineChoiceScoringViewModel>())
         {
             decoree.CreateViewModel = MakeViewModel;
         }

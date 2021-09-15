@@ -322,7 +322,7 @@
     <value>DescriptionEditor</value>
   </data>
   <data name="&gt;&gt;DescriptionEditor.Type" xml:space="preserve">
-    <value>Questify.Builder.UI.FocusedReparentHtmlEditor, Questify.Builder.UI, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Questify.Builder.UI.FocusedReparentHtmlEditor, Questify.Builder.UI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;DescriptionEditor.Parent" xml:space="preserve">
     <value>TableLayoutPanel1</value>

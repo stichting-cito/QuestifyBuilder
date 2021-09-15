@@ -22,6 +22,7 @@ Public Class ItemTemplateSwitchingTest : Inherits baseItemTest
         A.CallTo(Function() _messageBoxService.ShowYesNo(A(Of String).Ignored, A(Of Cinch.CustomDialogIcons).Ignored)).ReturnsLazily(Function()
                                                                                                                                          Return Cinch.CustomDialogResults.Yes
                                                                                                                                      End Function)
+        'tmp
         FailOnAssert.Disable = True
     End Sub
 
@@ -29,54 +30,70 @@ Public Class ItemTemplateSwitchingTest : Inherits baseItemTest
     Public Sub DeInit()
         FakeDal.Deinit()
     End Sub
-
+    
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub Switch_ILT_ThatHasNOMatchingParams_ShouldWork()
+        '!! The Can will fail because there are warnings, but switching allows warnings. 
+        'Warning should be presented to user.
+        'Arrange
         Dim ResourceManager = FakeDal.GetFakeResourceManager()
         Dim itm = MyBase.CreateItem("someItem", ItemTestData.info_AsmntItem, "ilt.html")
 
         Dim processor = New ItemTemplateSwitching(itm, ResourceManager, _messageBoxService)
         Dim assesmnt As AssessmentItem = Nothing
-
+        
+        'Act
         Dim result = processor.SwitchToTemplate("ilt.integer", assesmnt)
-
+        
+        'Assert
         Assert.IsTrue(result)
     End Sub
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub Switch_ILT_ThatHasNOMatchingParams_OnlyHasWarnings()
+        '!! The Can will fail because there are warnings, but switching allows warnings. 
+        'Warning should be presented to user.
+        'Arrange
         Dim ResourceManager = FakeDal.GetFakeResourceManager()
         Dim itm = MyBase.CreateItem("someItem", ItemTestData.info_AsmntItem, "ilt.html")
         Dim processor = New ItemTemplateSwitching(itm, ResourceManager, _messageBoxService)
         Dim assesmnt As AssessmentItem = Nothing
-
+        
+        'Act
         Dim result = processor.SwitchToTemplate("ilt.integer", assesmnt)
-
+        
+        'Assert
         Assert.IsFalse(processor.LastErrorOrWarning.Errors)
         A.CallTo(Function() _messageBoxService.ShowYesNo(A(Of String).Ignored, A(Of Cinch.CustomDialogIcons).Ignored)).MustHaveHappened(Repeated.Exactly.Once)
     End Sub
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub Switch_ILT_ThatHasMatchingAndOneMoreParam_ShouldSucceed()
+        'Arrange
         Dim ResourceManager = FakeDal.GetFakeResourceManager()
         Dim itm = MyBase.CreateItem("someItem", ItemTestData.info_AsmntItem, "ilt.html")
         Dim processor = New ItemTemplateSwitching(itm, ResourceManager, _messageBoxService)
         Dim assesmnt As AssessmentItem = Nothing
-
+        
+        'Act
         Dim result = processor.SwitchToTemplate("ilt.2xhtml", assesmnt)
-
+        
+        'Assert
         Assert.IsTrue(result)
     End Sub
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub Switch_ILT_ThatHasMatchingAndOneMoreParam_NoWarningsOrErrors()
+        'Arrange
         Dim ResourceManager = FakeDal.GetFakeResourceManager()
         Dim itm = MyBase.CreateItem("someItem", ItemTestData.info_AsmntItem, "ilt.html")
         Dim processor = New ItemTemplateSwitching(itm, ResourceManager, _messageBoxService)
         Dim assesmnt As AssessmentItem = Nothing
-
+        
+        'Act
         Dim result = processor.SwitchToTemplate("ilt.2xhtml", assesmnt)
-
+        
+        'Assert
         Assert.IsFalse(processor.LastErrorOrWarning.Errors)
         Assert.IsFalse(processor.LastErrorOrWarning.Warnings)
     End Sub
@@ -84,52 +101,64 @@ Public Class ItemTemplateSwitchingTest : Inherits baseItemTest
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub Switch_ILT_ThatHasMatchingAndOneMoreParam_AssessmentTemplateNameChanged()
+        'Arrange
         Dim ResourceManager = FakeDal.GetFakeResourceManager()
         Dim itm = MyBase.CreateItem("someItem", ItemTestData.info_AsmntItem, "ilt.html")
         Dim processor = New ItemTemplateSwitching(itm, ResourceManager, _messageBoxService)
         Dim assesmnt As AssessmentItem = Nothing
-
+        
+        'Act
         processor.SwitchToTemplate("ilt.2xhtml", assesmnt)
         Dim ResultingAssessment = itm.GetAssessmentItem()
-
+        
+        'Assert
         Assert.AreEqual("ilt.2xhtml", ResultingAssessment.LayoutTemplateSourceName, "Net Template is not present in AssessmentItem ")
     End Sub
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub Switch_ILT_ThatHasMatchingAndOneMoreParam_DependencyTo_original_ILT_isGone()
+        'Arrange
         Dim ResourceManager = FakeDal.GetFakeResourceManager()
         Dim itm = MyBase.CreateItem("someItem", ItemTestData.info_AsmntItem, "ilt.html")
         Dim ilt = FakeDal.Resources.First(Function(r) r.Name = "ilt.html")
         Dim processor = New ItemTemplateSwitching(itm, ResourceManager, _messageBoxService)
         Dim assesmnt As AssessmentItem = Nothing
-
+        
+        'Act
         processor.SwitchToTemplate("ilt.2xhtml", assesmnt)
-
+        
+        'Assert
         Assert.IsFalse(itm.DependentResourceCollection.Any(Function(d) d.DependentResourceId = ilt.ResourceId), "dependency to starting ilt has not been removed.")
     End Sub
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub Switch_ILT_ThatHasMatchingAndOneMoreParam_DependencyTo_new_ILT_isPresent()
+        'Arrange
         Dim ResourceManager = FakeDal.GetFakeResourceManager()
         Dim itm = MyBase.CreateItem("someItem", ItemTestData.info_AsmntItem, "ilt.html")
         Dim ilt = FakeDal.Resources.First(Function(r) r.Name = "ilt.2xhtml")
         Dim processor = New ItemTemplateSwitching(itm, ResourceManager, _messageBoxService)
         Dim assesmnt As AssessmentItem = Nothing
-
+        
+        'Act
         processor.SwitchToTemplate("ilt.2xhtml", assesmnt)
 
+        'Assert
         Assert.IsTrue(itm.DependentResourceCollection.Any(Function(d) d.DependentResourceId = ilt.ResourceId), "dependency is missing")
     End Sub
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub Switch_ILT_NewAssessment_IsProperlyNamed()
+        'Arrange
         Dim ResourceManager = FakeDal.GetFakeResourceManager()
         Dim itm = MyBase.CreateItem("someItem", ItemTestData.info_AsmntItem, "ilt.html")
         Dim processor = New ItemTemplateSwitching(itm, ResourceManager, _messageBoxService)
         Dim assesmnt As AssessmentItem = Nothing
-
+        
+        'Act
         processor.SwitchToTemplate("ilt.2xhtml", assesmnt)
 
+        'Assert
         Assert.AreEqual("ilt.2xhtml", assesmnt.LayoutTemplateSourceName)
         Assert.AreEqual("code", assesmnt.Identifier)
         Assert.AreEqual("title", assesmnt.Title)
@@ -137,18 +166,22 @@ Public Class ItemTemplateSwitchingTest : Inherits baseItemTest
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub Switch_ILT_NewAssessment_AssessmentHasDesignerSettings()
+        'Arrange
         Dim ResourceManager = FakeDal.GetFakeResourceManager()
         Dim itm = MyBase.CreateItem("someItem", ItemTestData.info_AsmntItem, "ilt.html")
         Dim processor = New ItemTemplateSwitching(itm, ResourceManager, _messageBoxService)
         Dim assesmnt As AssessmentItem = Nothing
-
+        
+        'Act
         processor.SwitchToTemplate("ilt.2xhtml", assesmnt)
 
+        'Assert
         Assert.IsTrue(assesmnt.Parameters(0).InnerParameters(0).DesignerSettings.Count > 0)
     End Sub
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub Switch_ILT_MCtoMR_WithScoringParameter_SolutionIsvalid()
+        'Arrange
         Dim expectedResult As XElement = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="code" itemid="testId" title="title" layoutTemplateSrc="ilt.mr.dc">
                                              <solution>
                                                  <keyFindings/>
@@ -206,12 +239,18 @@ Public Class ItemTemplateSwitchingTest : Inherits baseItemTest
         Dim processor = New ItemTemplateSwitching(itm, resourceManager, _messageBoxService)
         Dim assessment As AssessmentItem = Nothing
 
+        'Act
         Dim result = processor.SwitchToTemplate("ilt.mr.dc", assessment)
 
+        'Assert
+        'Switch should have succeeded
         Assert.IsTrue(result)
 
+        'Should have asked confirmation
         Assert.IsTrue(confirmationAsked)
 
+        'MultiChoice of scoringsparam should have been changed.
+        'Value of testInteger should have been changed (defaultvalue changed by new ItemLayoutTemplate)
         Assert.AreEqual(MultiChoiceType.Check, assessment.Parameters(0).InnerParameters.OfType(Of MultiChoiceScoringParameter)().FirstOrDefault().MultiChoice)
         Assert.AreEqual(1, assessment.Parameters(0).InnerParameters.OfType(Of IntegerParameter)().FirstOrDefault(Function(prm) prm.Name = "testInteger").Value)
         Assert.IsTrue(UnitTestHelper.AreSame(itm, expectedResult))
@@ -219,6 +258,7 @@ Public Class ItemTemplateSwitchingTest : Inherits baseItemTest
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub Switch_ILT_DCtoSC()
+        'Arrange
         Dim expected As XElement = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="code" itemid="testId" title="title" layoutTemplateSrc="ilt.mc.sc">
                                        <solution>
                                            <keyFindings>
@@ -288,17 +328,23 @@ Public Class ItemTemplateSwitchingTest : Inherits baseItemTest
         Dim assessment As AssessmentItem = Nothing
 
 
+        'Act
         Dim result = processor.SwitchToTemplate("ilt.mc.sc", assessment)
 
+        'Assert
+        'Switch should have succeeded
         Assert.IsTrue(result)
 
+        'Should have asked confirmation: leftBody is cleared
         Assert.IsTrue(confirmationAsked)
 
+        'MultiChoice of scoringsparam should have been changed.
         Assert.IsTrue(UnitTestHelper.AreSame(itm, expected))
     End Sub
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub Switch_ILT_ItemWithCollectionParametersToInvisible()
+        'Arrange
         Dim expectedResult As XElement = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="code" itemid="testId" title="title" layoutTemplateSrc="ilt.essay.dc">
                                              <solution>
                                                  <keyFindings/>
@@ -330,18 +376,22 @@ Public Class ItemTemplateSwitchingTest : Inherits baseItemTest
         Dim processor = New ItemTemplateSwitching(itm, resourceManager, _messageBoxService)
         Dim assessment As AssessmentItem = Nothing
 
+        'Act
         Dim result = processor.SwitchToTemplate("ilt.essay.dc", assessment)
 
+        'Assert
         Assert.IsTrue(result)
 
+        'Confirmation should have been asked.
         A.CallTo(Function() _messageBoxService.ShowYesNo(A(Of String).Ignored, A(Of Cinch.CustomDialogIcons).Ignored)).MustHaveHappened(Repeated.Exactly.Once)
         Assert.IsFalse(processor.LastErrorOrWarning.Errors)
-        Assert.IsFalse(processor.LastErrorOrWarning.Warnings)
+        Assert.IsFalse(processor.LastErrorOrWarning.Warnings) 'Default, the test confirms the warnings, so the list returned is empty.
         Assert.IsTrue(UnitTestHelper.AreSame(itm, expectedResult))
     End Sub
 
     <TestMethod, TestCategory("ItemProcessing")>
     Public Sub Switch_ILT_WithInlineElementsVideoShouldNotBeDeleted()
+        'Arrange
         ItemTestData.AddInlineItemTemplatesAndControlTemplates()
         Dim expectedResult As XElement = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="itm_inlinechoice" itemid="testId" title="code" layoutTemplateSrc="Cito.Generic.Gaps.Inline.DC">
                                              <solution>
@@ -381,8 +431,10 @@ Public Class ItemTemplateSwitchingTest : Inherits baseItemTest
         Dim processor = New ItemTemplateSwitching(itm, resourceManager, _messageBoxService)
         Dim assessment As AssessmentItem = Nothing
 
+        'Act
         Dim result As Boolean = processor.SwitchToTemplate("Cito.Generic.Gaps.Inline.DC", assessment)
 
+        'Assert
         Assert.IsTrue(result)
         A.CallTo(Function() _messageBoxService.ShowYesNo(A(Of String).Ignored, A(Of Cinch.CustomDialogIcons).Ignored)).MustHaveHappened(Repeated.Exactly.Once)
         Assert.IsTrue(UnitTestHelper.AreSame(itm, expectedResult))
@@ -390,6 +442,7 @@ Public Class ItemTemplateSwitchingTest : Inherits baseItemTest
 
     <TestMethod(), TestCategory("ItemProcessing")>
     Public Sub Switch_ILT_GraphicGapMatchDCtoSC()
+        'Arrang
         Dim expectedResult As XElement = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="TestItemIteration12_Original" itemid="testId" title="TestItemIteration12_Original" layoutTemplateSrc="Cito.Generic.GraphicGapMatch.SC">
                                              <solution>
                                                  <keyFindings>
@@ -472,14 +525,17 @@ Public Class ItemTemplateSwitchingTest : Inherits baseItemTest
         Dim processor = New ItemTemplateSwitching(itm, resourceManager, _messageBoxService)
         Dim assessment As AssessmentItem = Nothing
 
+        'Act
         Dim result As Boolean = processor.SwitchToTemplate("Cito.Generic.GraphicGapMatch.SC", assessment)
 
+        'Assert
         Assert.IsTrue(result)
         Assert.IsTrue(UnitTestHelper.AreSame(itm, expectedResult))
     End Sub
 
     <TestMethod, TestCategory("ItemProcessing")>
     Public Sub Switch_ILT_Tabular_Dc_To_Mc_Sc()
+        'Arrange
         Dim expectedResult As XElement = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="tabular_dc" itemid="testId" title="tabular_dc" layoutTemplateSrc="Cito.Generic.MC.SC">
                                              <solution>
                                                  <keyFindings/>
@@ -519,14 +575,17 @@ Public Class ItemTemplateSwitchingTest : Inherits baseItemTest
         Dim templateSwitcher = New ItemTemplateSwitching(itm, resourceManager, _messageBoxService)
         Dim newAssessmentItem As AssessmentItem = Nothing
 
+        'Act
         Dim result As Boolean = templateSwitcher.SwitchToTemplate("Cito.Generic.MC.SC", newAssessmentItem)
 
+        'Assert
         Assert.AreEqual(True, result, "Expected template to be switched")
         Assert.AreEqual(True, UnitTestHelper.AreSame(itm, expectedResult), "Output is not as expected")
     End Sub
 
     <TestMethod, TestCategory("ItemProcessing")>
     Public Sub Switch_ILT_WithAttributeReferenceCopiedParameter()
+        'Arrange
         Dim expectedResult As XElement = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="HottextItem" itemid="testId" title="HottextItem" layoutTemplateSrc="Cito.Generic.Hottext.Corrections.DC">
                                              <solution>
                                                  <keyFindings/>
@@ -562,8 +621,10 @@ Public Class ItemTemplateSwitchingTest : Inherits baseItemTest
         Dim templateSwitcher = New ItemTemplateSwitching(itm, resourceManager, _messageBoxService)
         Dim newAssessmentItem As AssessmentItem = Nothing
 
+        'Act
         Dim result As Boolean = templateSwitcher.SwitchToTemplate("Cito.Generic.Hottext.Corrections.DC", newAssessmentItem)
 
+        'Assert
         Assert.AreEqual(True, result, "Expected template to be switched.")
         Assert.AreEqual(True, UnitTestHelper.AreSame(itm, expectedResult), "Output is not as expected")
     End Sub

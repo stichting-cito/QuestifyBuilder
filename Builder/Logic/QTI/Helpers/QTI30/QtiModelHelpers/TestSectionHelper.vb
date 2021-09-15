@@ -61,8 +61,8 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
             Dim modulehRef = GetAdaptiveFile(qtiSection.ModuleHref, resources, filesPerEntity, testName, tempFolder, adaptiveDirectoryName, resourceTypeDictionary(PackageCreator.QTIManifestResourceType.adaptive_module), packageCreator)
             Dim driverhRef = GetAdaptiveFile(qtiSection.DriverHref, resources, filesPerEntity, testName, tempFolder, adaptiveDirectoryName, resourceTypeDictionary(PackageCreator.QTIManifestResourceType.adaptive_driver), packageCreator)
 
-            adaptiveSelection.qtiadaptivesettingsref = New AdaptiveHrefType() With {.identifier = "module", .href = $"../{modulehRef}"}
-            adaptiveSelection.qtiadaptiveengineref = New AdaptiveHrefType() With {.identifier = "driver", .href = $"../{driverhRef}"}
+            adaptiveSelection.qtiadaptivesettingsref = New AdaptiveHrefType() With {.identifier = "driver", .href = $"../{driverhRef}"}
+            adaptiveSelection.qtiadaptiveengineref = New AdaptiveHrefType() With {.identifier = "module", .href = $"../{modulehRef}"}
 
             If sectionType.Items Is Nothing Then
                 sectionType.Items = New List(Of Object)

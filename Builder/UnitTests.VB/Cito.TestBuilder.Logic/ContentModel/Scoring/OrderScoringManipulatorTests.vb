@@ -13,12 +13,15 @@ Public Class OrderScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub GetKey_A_NoSolution()
+        'Arrange
         Dim param = CreateOrderScoringParameter("A")
         Dim key = OrderKeyFinding("OC", False)
         Dim manipulator As IOrderScoringManipulator = New OrderScoringManipulator(GetKeyManipulator(key), param)
-
+        
+        'Act
         Dim res = manipulator.GetKeyStatus()
-
+        
+        'Assert
         Write("Assert", key)
         Assert.IsTrue(res.ContainsKey("A"))
         Assert.AreEqual(0, res("A"))
@@ -27,42 +30,52 @@ Public Class OrderScoringManipulatorTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub IdOfFactIsSetToIDOfParam()
+        'Arrange
         Dim param = CreateOrderScoringParameter("A", "B")
         Dim key = OrderKeyFinding("OC", False)
         Dim manipulator As IOrderScoringManipulator = New OrderScoringManipulator(GetKeyManipulator(key), param)
-
+        
+        'Act
         manipulator.SetKey("B", 1)
         Dim result = DirectCast(key.Facts.First(), KeyFact)
-
+        
+        'Assert
         Write("Assert", key)
         Assert.AreEqual("B-OC", result.Id)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub DomainOfValueIsSetToIDOfParam()
+        'Arrange
         Dim param = CreateOrderScoringParameter("A", "B")
         Dim key = OrderKeyFinding("OC", False)
         Dim manipulator As IOrderScoringManipulator = New OrderScoringManipulator(GetKeyManipulator(key), param)
-
+        
+        'Act
         manipulator.SetKey("B", 2)
         Dim result = DirectCast(DirectCast(key.Facts.First(), KeyFact).Values(0), KeyValue)
-
+        
+        'Assert
         Assert.AreEqual("OC", result.Domain)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub ClearDoesClearFinding()
+        'Arrange
         Dim param = CreateOrderScoringParameter("A", "B")
         Dim key = OrderKeyFinding("OC", False)
         Dim manipulator As IOrderScoringManipulator = New OrderScoringManipulator(GetKeyManipulator(key), param)
-
+        
+        'Act
         manipulator.Clear()
-
+        
+        'Assert
         Assert.IsTrue(key.Facts.Count = 0 And key.KeyFactsets.Count = 0)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub CreateInvalidFinding_Test()
+        'Arrange
         Dim param = CreateOrderScoringParameter("A", "B")
 
         Dim key = OrderKeyFinding(param.Value.First().Id, False, "A")
@@ -71,13 +84,16 @@ Public Class OrderScoringManipulatorTests
         manipulator.SetKey(param.Value(0).Id, 1)
         manipulator.SetKey(param.Value(1).Id, 1)
 
+        'Act
         Dim isValidFinding = manipulator.IsValid(1)
 
+        'Assert
         Assert.IsFalse(isValidFinding)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub CreateValidFinding_Test()
+        'Arrange
         Dim param = CreateOrderScoringParameter("A", "B")
 
         Dim key = OrderKeyFinding(param.Value.First().Id, False, "A", "B")
@@ -85,13 +101,16 @@ Public Class OrderScoringManipulatorTests
         Dim manipulator As IOrderScoringManipulator = New OrderScoringManipulator(GetKeyManipulator(key), param)
         manipulator.SetKey(param.Value(1).Id, 1)
 
+        'Act
         Dim isValidFinding = manipulator.IsValid(1)
 
+        'Assert
         Assert.IsTrue(isValidFinding)
     End Sub
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring")>
     Public Sub IsConceptIdDeletableShouldReturnFalseForTheSecondConceptIdForThisSolution()
+        'Arrange
         Dim sol As Solution = Deserialize(Of Solution)(_solutionWith2FindingFactsSetsAnd3ConceptFactSets, Nothing)
         Dim osp = Deserialize(Of OrderScoringParameter)(_orderScoreParam, New XmlRootAttribute("orderScoringParameter"))
         Dim scoreParamList As New List(Of ScoringParameter) From {osp}
@@ -107,10 +126,12 @@ Public Class OrderScoringManipulatorTests
         If idEnumerator.MoveNext Then cid2 = idEnumerator.Current
         If idEnumerator.MoveNext Then cid3 = idEnumerator.Current
 
+        'Act
         Dim CanDelete1 As Boolean = cm.IsConceptIdDeletable(cid1)
         Dim CanDelete2 As Boolean = cm.IsConceptIdDeletable(cid2)
         Dim CanDelete3 As Boolean = cm.IsConceptIdDeletable(cid3)
 
+        'Assert
         Assert.AreEqual(False, CanDelete1)
         Assert.AreEqual(False, CanDelete2)
         Assert.AreEqual(True, CanDelete3)
@@ -164,7 +185,7 @@ Public Class OrderScoringManipulatorTests
         End Using
     End Sub
 
-    Friend Overridable Function GetKeyManipulator(key As KeyFinding) As FindingManipulatorBase
+   Friend Overridable Function GetKeyManipulator(key As KeyFinding) As FindingManipulatorBase
         Return New KeyManipulator(key)
     End Function
 

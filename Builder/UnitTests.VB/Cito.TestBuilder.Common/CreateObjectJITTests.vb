@@ -5,56 +5,72 @@ Imports Questify.Builder.Logic.Service.HelperFunctions
 Public Class CreateObjectJITTests
 
     <TestMethod(), TestCategory("HelperMethods")>
-    Public Sub CreateUninitialized_CurrentValueIsNull()
+    Public Sub CreateUninitialized_CurrentValueIsNull()                                 
+        'Act
         Dim cJit = CreateUninitialized()
-
+        
+        'Assert
         Assert.IsNull(cJit.CurrentValue)
     End Sub
 
     <TestMethod(), TestCategory("HelperMethods")>
-    Public Sub CreateUninitialized_IsNotEnsured()
+    Public Sub CreateUninitialized_IsNotEnsured()                                  
+        'Act
         Dim cJit = CreateUninitialized()
-
+        
+        'Assert
         Assert.IsFalse(cJit.ValueIsEnsured)
     End Sub
 
     <TestMethod(), TestCategory("HelperMethods")>
     Public Sub CreateUninitialized_EnsuredValueIsNotNull()
+        'Act
         Dim cJit = CreateUninitialized()
-
+        
+        'Assert
         Assert.IsNull(cJit.CurrentValue)
     End Sub
 
     <TestMethod(), TestCategory("HelperMethods")>
     Public Sub CreateUninitialized_CallEnsuredWillSetCurrentValue()
+        'Arrange
         Dim cJit = CreateUninitialized()
-
+        
+        'Act
         cJit.Ensure()
-
+        
+        'Assert
         Assert.IsNotNull(cJit.CurrentValue)
     End Sub
 
     <TestMethod(), TestCategory("HelperMethods")>
     Public Sub CreateUninitialized_CallEnsuredWillSetCurrentValueAndSetsIsEnsured()
+        'Arrange
         Dim cJit = CreateUninitialized()
-
+        
+        'Act
         cJit.Ensure()
-
+        
+        'Assert
         Assert.IsTrue(cJit.ValueIsEnsured)
     End Sub
 
     <TestMethod(), TestCategory("HelperMethods")>
     Public Sub CreateUninitialized_GettingEnsuredValueWillReturnActualObject()
+        'Act
         Dim cJit = CreateUninitialized()
-
+        
+        'Assert
         Assert.IsNotNull(cJit.GetEnsuredValue)
     End Sub
 
     <TestMethod(), TestCategory("HelperMethods")>
     Public Sub CreateInitialized_GettingEnsuredValueWillReturnActualObject()
+        'Act
         Dim cJit = CreateInitialized()
         Dim current = cJit.CurrentValue
-
+        
+        'Assert
         Assert.AreSame(current, cJit.GetEnsuredValue)
     End Sub
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qti-response-declarations>
+  <qti-response-declaration identifier="RESPONSE" cardinality="multiple" base-type="directedPair">
+    <qti-correct-response interpretation="(A HSB&amp;B HSC&amp;C HSD&amp;C HSH&amp;B HSI&amp;A HSJ)|(C HSB&amp;A HSC&amp;B HSD&amp;B HSH&amp;A HSI&amp;C HSJ)">
+      <qti-value>A HSB</qti-value>
+      <qti-value>B HSC</qti-value>
+      <qti-value>C HSD</qti-value>
+      <qti-value>C HSH</qti-value>
+      <qti-value>B HSI</qti-value>
+      <qti-value>A HSJ</qti-value>
+    </qti-correct-response>
+  </qti-response-declaration>
+</qti-response-declarations>

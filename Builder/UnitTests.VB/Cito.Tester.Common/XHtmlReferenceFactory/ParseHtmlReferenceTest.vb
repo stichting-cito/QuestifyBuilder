@@ -8,6 +8,7 @@ Public Class ParseHtmlReferenceTest
     <TestMethod()>
     <TestCategory("XHtmlReferences")>
     Public Sub ParseHighlightReferentie()
+        'Arrange
         Dim result As XhtmlReferenceList
         Dim parse As XElement = <html xmlns="http://www.w3.org/1999/xhtml">
                                     <head>
@@ -29,9 +30,11 @@ Public Class ParseHtmlReferenceTest
                                         <p></p>
                                     </body>
                                 </html>
-
+       
+        'Act
         result = XhtmlReferenceFactory.ParseXhtmlReference(parse.ToString(), XhtmlReferenceType.Highlight)
-
+        
+        'Assert
         Assert.AreEqual(1, result.Count)
         Assert.AreEqual(XhtmlReferenceType.Highlight, result(0).Type)
     End Sub
@@ -39,6 +42,7 @@ Public Class ParseHtmlReferenceTest
     <TestMethod()>
     <TestCategory("XHtmlReferences")>
     Public Sub ParsePartialData()
+        'Arrange
         Dim result As XhtmlReferenceList
         Dim parse As XElement = <p>Kies de 
                                 <span id="refbbc82192-bc3f-4f1e-96d1-e76702ba73e5"
@@ -49,9 +53,11 @@ Public Class ParseHtmlReferenceTest
                                     cito:value="1"
                                     xmlns:cito="http://www.cito.nl/citotester"
                                     xmlns="http://www.w3.org/1999/xhtml">juiste</span> koers. </p>
-
+     
+        'Act
         result = XhtmlReferenceFactory.ParseXhtmlReference(parse.ToString(), XhtmlReferenceType.Highlight)
-
+     
+        'Assert
         Assert.AreEqual(1, result.Count)
         Assert.AreEqual(XhtmlReferenceType.Highlight, result(0).Type)
     End Sub
@@ -60,6 +66,9 @@ Public Class ParseHtmlReferenceTest
     <TestMethod()>
     <TestCategory("XHtmlReferences")>
     Public Sub ParsePartialData_WithoutNamespace_ExpectsNoResults()
+        'Arrange
+        'The [XhtmlReferenceList] assumes the Xhtml Namespace (http://www.w3.org/1999/xhtml) for [span] objects.
+        'As it is no reference should be found
         Dim result As XhtmlReferenceList
         Dim parse As XElement = <p>Kies de 
                                 <span id="refbbc82192-bc3f-4f1e-96d1-e76702ba73e5"
@@ -69,15 +78,18 @@ Public Class ParseHtmlReferenceTest
                                     cito:description="juiste"
                                     cito:value="1"
                                     xmlns:cito="http://www.cito.nl/citotester">juiste</span> koers. </p>
-
+        
+        'Act
         result = XhtmlReferenceFactory.ParseXhtmlReference(parse.ToString(), XhtmlReferenceType.Highlight)
-
-        Assert.AreEqual(0, result.Count)
+        
+        'Assert
+        Assert.AreEqual(0, result.Count) 'No result have been found
     End Sub
 
     <TestMethod()>
     <TestCategory("XHtmlReferences")>
     Public Sub ParseElementReferentie()
+        'Arrange
         Dim result As XhtmlReferenceList
         Dim parse As XElement = <html xmlns="http://www.w3.org/1999/xhtml">
                                     <head>
@@ -99,9 +111,11 @@ Public Class ParseHtmlReferenceTest
                                         <p></p>
                                     </body>
                                 </html>
-
+        
+        'Act
         result = XhtmlReferenceFactory.ParseXhtmlReference(parse.ToString(), XhtmlReferenceType.Element)
-
+        
+        'Assert
         Assert.AreEqual(1, result.Count)
         Assert.AreEqual(XhtmlReferenceType.Element, result(0).Type)
     End Sub
@@ -110,6 +124,7 @@ Public Class ParseHtmlReferenceTest
     <TestMethod()>
     <TestCategory("XHtmlReferences")>
     Public Sub ParseSymbolReferentie()
+        'Arrange
         Dim result As XhtmlReferenceList
         Dim parse As XElement = <html xmlns="http://www.w3.org/1999/xhtml">
                                     <head>
@@ -130,9 +145,11 @@ Public Class ParseHtmlReferenceTest
                                                 xmlns:cito="http://www.cito.nl/citotester">passagiersruimte</span></p>
                                     </body>
                                 </html>
-
+       
+        'Act
         result = XhtmlReferenceFactory.ParseXhtmlReference(parse.ToString(), XhtmlReferenceType.Symbol)
-
+       
+        'Assert
         Assert.AreEqual(1, result.Count)
         Assert.AreEqual(XhtmlReferenceType.Symbol, result(0).Type)
     End Sub
@@ -140,6 +157,7 @@ Public Class ParseHtmlReferenceTest
     <TestMethod()>
     <TestCategory("XHtmlReferences")>
     Public Sub ParseAllReferentie()
+        'Arrange
         Dim result As XhtmlReferenceList
         Dim parse As XElement = <html xmlns="http://www.w3.org/1999/xhtml">
                                     <head>
@@ -177,9 +195,11 @@ Public Class ParseHtmlReferenceTest
 
                                     </body>
                                 </html>
-
+       
+        'Act
         result = XhtmlReferenceFactory.ParseXhtmlReference(parse.ToString())
-
+        
+        'Assert
         Assert.AreEqual(3, result.Count)
 
         Assert.AreEqual(XhtmlReferenceType.Symbol, result(0).Type)

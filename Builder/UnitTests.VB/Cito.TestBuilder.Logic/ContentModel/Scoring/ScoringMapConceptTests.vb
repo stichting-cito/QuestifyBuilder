@@ -10,12 +10,15 @@ Public Class ScoringMapConceptTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("ScoringAdv")>
     Public Sub GetScoringMapForConcept()
+        'Arrange
         Dim solution = IntegerParam_2GapsIn_2factSets.To(Of Solution)()
         Dim sp = New IntegerScoringParameter() With {.Name = "Answer", .ControllerId = "integerScore", .FindingOverride = "sharedIntegerFinding"}.AddSubParameters("1", "2")
-
+        
+        'Act    
         Dim resultKey = New ScoringMap(New ScoringParameter() {sp}, solution).GetMap().ToList()
         Dim resultConcept = New ConceptScoringMap(New ScoringParameter() {sp}, solution).GetMap().ToList()
-
+        
+        'Assert
         Assert.AreEqual(1, resultConcept.Count, "int.1 and int.2 are grouped,. thus expecting a single combinedScoringMapKey")
         Assert.AreEqual(4, resultConcept.First().SetNumbers.Count(), "Expected 4 ConceptSets found")
 
@@ -26,12 +29,15 @@ Public Class ScoringMapConceptTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("ScoringAdv")>
     Public Sub GetScoringMapForConcept2()
+        'Arrange
         Dim solution = _2factsets1Fact_WithConceptFinding.To(Of Solution)()
         Dim sp = New IntegerScoringParameter() With {.Name = "Answer", .ControllerId = "integerScore", .FindingOverride = "sharedIntegerFinding"}.AddSubParameters("1", "2", "3", "4", "5")
-
+        
+        'Act    
         Dim resultKey = New ScoringMap(New ScoringParameter() {sp}, solution).GetMap().ToList()
         Dim resultConcept = New ConceptScoringMap(New ScoringParameter() {sp}, solution).GetMap().ToList()
-
+        
+        'Assert
         Assert.AreEqual(3, resultConcept.Count, "int.1 and int.2 are grouped, int.3&int.4 , and int 5 is alone thus 3")
         Assert.AreEqual(2, resultConcept(0).SetNumbers.Count(), "Expected 2 ConceptSets found")
         Assert.AreEqual(2, resultConcept(1).SetNumbers.Count(), "Expected 2 ConceptSets found")
@@ -45,12 +51,15 @@ Public Class ScoringMapConceptTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("ScoringAdv")>
     Public Sub GetScoringMapForConcept3()
+        'Arrange
         Dim solution = _2factsets1Fact_WithConceptFinding_AndAddedSet.To(Of Solution)()
         Dim sp = New IntegerScoringParameter() With {.Name = "Answer", .ControllerId = "integerScore", .FindingOverride = "sharedIntegerFinding"}.AddSubParameters("1", "2", "3", "4", "5")
-
+        
+        'Act    
         Dim resultKey = New ScoringMap(New ScoringParameter() {sp}, solution).GetMap().ToList()
         Dim resultConcept = New ConceptScoringMap(New ScoringParameter() {sp}, solution).GetMap().ToList()
-
+        
+        'Assert
         Assert.AreEqual(3, resultConcept.Count, "int.1 and int.2 are grouped, int.3&int.4 , and int 5 is alone thus 3")
         Assert.AreEqual(3, resultConcept(0).SetNumbers.Count(), "Expected 3 ConceptSets found, due to added sets")
         Assert.AreEqual(2, resultConcept(1).SetNumbers.Count(), "Expected 2 ConceptSets found")
@@ -64,12 +73,15 @@ Public Class ScoringMapConceptTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("ScoringAdv")>
     Public Sub GetScoringMapForConcept4()
+        'Arrange
         Dim solution = _factSetsWithCatchAll.To(Of Solution)()
         Dim sp = New IntegerScoringParameter() With {.Name = "Answer", .ControllerId = "integerScore", .FindingOverride = "sharedIntegerFinding"}.AddSubParameters("1", "2")
-
+        
+        'Act    
         Dim resultKey = New ScoringMap(New ScoringParameter() {sp}, solution).GetMap().ToList()
         Dim resultConcept = New ConceptScoringMap(New ScoringParameter() {sp}, solution).GetMap().ToList()
-
+        
+        'Assert
         Assert.AreEqual(1, resultConcept.Count)
         Assert.AreEqual(3, resultConcept(0).SetNumbers.Count())
 
@@ -79,16 +91,20 @@ Public Class ScoringMapConceptTests
 
     <TestMethod(), TestCategory("Logic"), TestCategory("Scoring"), TestCategory("ScoringAdv")>
     Public Sub GetScoringMapForConcept_With2ChoicePrm_3FactsInConcept_Expects_SetNumbersCountIs1()
+        'Arrange
         Dim solution = _solutionForInlineChoice_ConceptHas3Facts.To(Of Solution)()
         Dim spInlineChoice1 = New InlineChoiceScoringParameter() With {.Name = "Answer", .InlineId = "I16746288-1b56-4c53-880d-2d54d060fba8", .FindingOverride = "Opgave", .MaxChoices = 1}.AddSubParameters("A", "B", "C", "D")
         Dim spInlineChoice2 = New InlineChoiceScoringParameter() With {.Name = "Answer", .InlineId = "Ibb37a53e-43d7-49e6-ab4a-fb967ecba6cc", .FindingOverride = "Opgave", .MaxChoices = 1}.AddSubParameters("A", "B", "C", "D")
-
+        
+        'Act    
         Dim resultConcept = New ConceptScoringMap(New ScoringParameter() {spInlineChoice1, spInlineChoice2}, solution).GetMap().ToList()
-
+        
+        'Assert
         Assert.AreEqual(1, resultConcept.Count)
         Assert.AreEqual(1, resultConcept(0).SetNumbers.Count())
     End Sub
 
+#Region "Data"
     Private IntegerParam_2GapsIn_2factSets As XElement = <solution>
 
                                                              <keyFindings>
@@ -633,6 +649,7 @@ Public Class ScoringMapConceptTests
                                                  </solution>
 
 
+    'ConceptFacts has 3 facts for 2 basically mcs
     ReadOnly _solutionForInlineChoice_ConceptHas3Facts As XElement = <solution xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                                                                          <keyFindings>
                                                                              <keyFinding id="Opgave" scoringMethod="Dichotomous">
@@ -685,5 +702,6 @@ Public Class ScoringMapConceptTests
                                                                          <aspectReferences/>
                                                                      </solution>
 
+#End Region
 
 End Class

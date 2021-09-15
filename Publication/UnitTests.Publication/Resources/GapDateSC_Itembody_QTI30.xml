@@ -1,0 +1,69 @@
+<itemBody class="defaultBody">
+	<div class="content">
+		<div>
+			<div id="question">
+				<p>Een vraag met een datum gap</p>
+			</div>
+			<div id="answer">
+				<table class="interactionTable">
+					<tbody>
+						<tr>
+							<td class="td_gap">
+								<div class="cito_genclass_GapDateSC_1">
+									<p>Tekst voor de datum</p>
+								</div>
+							</td>
+							<td class="td_gap" />
+							<td class="td_gap">
+								<div class="cito_genclass_GapDateSC_2">
+									<qti-text-entry-interaction pattern-mask="^(([0-2]?[0-9])|([3][0-1]))$" response-identifier="gapController" expected-length="2" date-sub-type="dutch" />
+									-
+									<qti-text-entry-interaction pattern-mask="^(([0-9])|([1][0-2]))$" response-identifier="gapController" expected-length="2" date-sub-type="dutch" />
+									-
+									<qti-text-entry-interaction pattern-mask="^([0-9][0-9][0-9][0-9])$" response-identifier="gapController" expected-length="4" date-sub-type="dutch" />
+								</div>
+							</td>
+							<td class="td_gap" />
+							<td class="td_gap">
+								<div class="cito_genclass_GapDateSC_3">
+									<p>tekst achter de datum. Het goede antwoord is 01-01-2013</p>
+								</div>
+							</td>
+							<td class="td_gap" />
+						</tr>
+					</tbody>
+				</table>
+				<table class="interactionTable">
+					<tbody>
+						<tr>
+							<td class="td_gap">
+								<div class="cito_genclass_GapDateSC_4">
+									<qti-text-entry-interaction pattern-mask="^(([0-9])|([1][0-2]))$" response-identifier="gapController" expected-length="2" date-sub-type="american" />
+									/
+									<qti-text-entry-interaction pattern-mask="^(([0-2]?[0-9])|([3][0-1]))$" response-identifier="gapController" expected-length="2" date-sub-type="american" />
+									/
+									<qti-text-entry-interaction pattern-mask="^([0-9][0-9][0-9][0-9])$" response-identifier="gapController" expected-length="4" date-sub-type="american" />
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="interactionTable">
+					<tbody>
+						<tr>
+							<td class="td_gap">
+								<div class="cito_genclass_GapDateSC_5">
+									<qti-text-entry-interaction pattern-mask="^(([0-2]?[0-9])|([3][0-1]))$" response-identifier="gapController" expected-length="2" date-sub-type="scandinavian" />
+									.
+									<qti-text-entry-interaction pattern-mask="^(([0-9])|([1][0-2]))$" response-identifier="gapController" expected-length="2" date-sub-type="scandinavian" />
+									.
+									<qti-text-entry-interaction pattern-mask="^([0-9][0-9][0-9][0-9])$" response-identifier="gapController" expected-length="4" date-sub-type="scandinavian" />
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</itemBody>

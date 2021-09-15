@@ -1,0 +1,82 @@
+<responseProcessing xmlns="http://www.imsglobal.org/xsd/imsqti_v2p2">
+  <responseCondition>
+    <responseIf>
+      <or>
+        <and>
+          <member>
+            <baseValue baseType="directedPair">A HSB</baseValue>
+            <variable identifier="RESPONSE" />
+          </member>
+          <member>
+            <baseValue baseType="directedPair">B HSC</baseValue>
+            <variable identifier="RESPONSE" />
+          </member>
+          <member>
+            <baseValue baseType="directedPair">C HSD</baseValue>
+            <variable identifier="RESPONSE" />
+          </member>
+          <member>
+            <baseValue baseType="directedPair">C HSH</baseValue>
+            <variable identifier="RESPONSE" />
+          </member>
+          <member>
+            <baseValue baseType="directedPair">B HSI</baseValue>
+            <variable identifier="RESPONSE" />
+          </member>
+          <member>
+            <baseValue baseType="directedPair">A HSJ</baseValue>
+            <variable identifier="RESPONSE" />
+          </member>
+        </and>
+        <and>
+          <member>
+            <baseValue baseType="directedPair">C HSB</baseValue>
+            <variable identifier="RESPONSE" />
+          </member>
+          <member>
+            <baseValue baseType="directedPair">A HSC</baseValue>
+            <variable identifier="RESPONSE" />
+          </member>
+          <member>
+            <baseValue baseType="directedPair">B HSD</baseValue>
+            <variable identifier="RESPONSE" />
+          </member>
+          <member>
+            <baseValue baseType="directedPair">B HSH</baseValue>
+            <variable identifier="RESPONSE" />
+          </member>
+          <member>
+            <baseValue baseType="directedPair">A HSI</baseValue>
+            <variable identifier="RESPONSE" />
+          </member>
+          <member>
+            <baseValue baseType="directedPair">C HSJ</baseValue>
+            <variable identifier="RESPONSE" />
+          </member>
+        </and>
+      </or>
+      <setOutcomeValue identifier="SCORE">
+        <sum>
+          <baseValue baseType="float">1</baseValue>
+          <variable identifier="SCORE" />
+        </sum>
+      </setOutcomeValue>
+    </responseIf>
+  </responseCondition>
+  <responseCondition>
+    <responseIf>
+      <gte>
+        <variable identifier="SCORE" />
+        <baseValue baseType="float">1</baseValue>
+      </gte>
+      <setOutcomeValue identifier="SCORE">
+        <baseValue baseType="float">1</baseValue>
+      </setOutcomeValue>
+    </responseIf>
+    <responseElse>
+      <setOutcomeValue identifier="SCORE">
+        <baseValue baseType="float">0</baseValue>
+      </setOutcomeValue>
+    </responseElse>
+  </responseCondition>
+</responseProcessing>

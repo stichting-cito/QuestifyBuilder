@@ -176,16 +176,19 @@ Public Class QTI22ConceptResponseProcessingTests
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessingConcept")>
     Public Sub ConceptResponseProcessing_FactsOnFinding_NoConceptValues_Test()
+        'Situation that could occur when a user first enters conceptvalues, but later decides to remove the checks from all concepts
         RunConceptResponseProcessingTest(_itemBody8, _finding27, _responseProcessing27, GetGapMatchScoringParams())
     End Sub
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessingConcept")>
     Public Sub ConceptResponseProcessing_FactSets_NoConceptValues_Test()
+        'Situation that could occur when a user first enters conceptvalues, but later decides to remove the checks from all concepts
         RunConceptResponseProcessingTest(_itemBody8, _finding28, _responseProcessing27, GetGapMatchScoringParams())
     End Sub
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessingConcept")>
     Public Sub ConceptResponseProcessing_CombinationOfFactSetsAndFactsOnFinding_NoConceptValues_Test()
+        'Situation that could occur when a user first enters conceptvalues, but later decides to remove the checks from all concepts
         RunConceptResponseProcessingTest(_itemBody8, _finding29, _responseProcessing27, GetGapMatchScoringParams())
     End Sub
 
@@ -221,26 +224,36 @@ Public Class QTI22ConceptResponseProcessingTests
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessingConcept")>
     Public Sub ConceptResponseProcessing_HottextCorrection_FactsOnFinding_ZeroValueScenario_I_Test()
+        'Scenario where only the catchall fact has conceptvalues. 
+        'In that case the if-statement for the alternatives should be added (with zero values)
         RunConceptResponseProcessingTest(_itemBody14, _finding39, _responseProcessing37, GetHottextCorrectionScoringParams())
     End Sub
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessingConcept")>
     Public Sub ConceptResponseProcessing_HottextCorrection_FactsOnFinding_ZeroValueScenario_II_Test()
+        'Scenario where the catchall fact has conceptvalues, the first alternative has zero values, and the second alternative has conceptvalues. 
+        'In that case the if-statement for the the alternatives should be added, even for the first alternative (with zero values)
         RunConceptResponseProcessingTest(_itemBody14, _finding40, _responseProcessing38, GetHottextCorrectionScoringParams())
     End Sub
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessingConcept")>
     Public Sub ConceptResponseProcessing_HottextCorrection_FactSets_ZeroValueScenario_I_Test()
+        'Scenario where only the catchall fact has conceptvalues. 
+        'In that case the if-statement for the alternatives should be added (with zero values)
         RunConceptResponseProcessingTest(_itemBody14, _finding41, _responseProcessing39, GetHottextCorrectionScoringParams())
     End Sub
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessingConcept")>
     Public Sub ConceptResponseProcessing_HottextCorrection_FactSets_ZeroValueScenario_II_Test()
+        'Scenario where the catchall fact has conceptvalues, the first alternative has zero values, and the second alternative has conceptvalues. 
+        'In that case the if-statement for the the alternatives should be added, even for the first alternative (with zero values)
         RunConceptResponseProcessingTest(_itemBody14, _finding42, _responseProcessing40, GetHottextCorrectionScoringParams())
     End Sub
 
     <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseProcessingConcept")>
     Public Sub ConceptResponseProcessing_HottextCorrection_FactSets_ZeroValueScenario_III_Test()
+        'Scenario where the catchall fact has no conceptvalues, the first alternative has zero values, and the second alternative has conceptvalues. 
+        'In that case the if-statement for the the second alternative should be added, the other ones (first and catchall) should be skipped
         RunConceptResponseProcessingTest(_itemBody14, _finding43, _responseProcessing41, GetHottextCorrectionScoringParams())
     End Sub
 
@@ -258,18 +271,22 @@ Public Class QTI22ConceptResponseProcessingTests
     Public Sub ConceptResponseProcessing_CustomInteractions_CombinationOfFactSetsAndFactsOnFinding_Test()
         RunConceptResponseProcessingTest(_itemBody15, _finding46, _responseProcessing44, GetCustomInteractionScoringParams())
     End Sub
-
+    
     Private Sub RunConceptResponseProcessingTest(itemBodyElement As XElement, findingElement As XElement, responseProcessingElement As XElement, scoreParams As HashSet(Of ScoringParameter), Optional scoringHelper As QTI22CombinedScoringConverter = Nothing)
 
+        'Arrange
         Dim responseIdentifierAttributeList As XmlNodeList = QTI22PublicationTestHelper.GetResponseIdentifiers(itemBodyElement)
         Dim finding As ConceptFinding = findingElement.Deserialize(Of ConceptFinding)()
         Dim processor = New QTI22ConceptResponseProcessing(responseIdentifierAttributeList, finding, scoreParams, If(scoringHelper IsNot Nothing, scoringHelper, New QTI22CombinedScoringConverter))
 
+        'Act
         Dim result = processor.GetProcessing(False).ToXmlDocument()
 
+        'Assert
         Assert.IsTrue(UnitTestHelper.AreSame(responseProcessingElement, result))
     End Sub
 
+#Region "Get scoring parameter"
 
     Private Function GetMrScoringParams() As HashSet(Of ScoringParameter)
         Dim scoreParams As New HashSet(Of ScoringParameter)
@@ -386,7 +403,7 @@ Public Class QTI22ConceptResponseProcessingTests
         Return scoreParams
     End Function
 
-
+    
     Private Function GetHottextScoringParams() As HashSet(Of ScoringParameter)
         Dim scoreParams As New HashSet(Of ScoringParameter)
 
@@ -1091,7 +1108,7 @@ Public Class QTI22ConceptResponseProcessingTests
                     $"Input_{pair.Key}", .ExpectedLength = 0, .CorrectionIsApplicable = True}
             correctionScoreParam.AddSubParameters("Input")
             correctionScoreParam.RelatedControlLabelParameter = New PlainTextParameter() With {.Name = "controlLabel", .Value = pair.Value}
-            scoreParams.Add(correctionScoreParam)
+            scoreParams.Add(correctionScoreParam)   'For testpurposes... add to collection as well... during a normal publication the scoring parameters are being retrieved from the item using DeepFetchInlineScoringParameters
         Next
 
         Return scoreParams
@@ -1191,7 +1208,9 @@ Public Class QTI22ConceptResponseProcessingTests
         Return scoreParams
     End Function
 
+#End Region
 
+#Region "Itembody"
 
     ReadOnly _itemBody1 As XElement =
         <wrapper>
@@ -1953,9 +1972,11 @@ Public Class QTI22ConceptResponseProcessingTests
             </itemBody>
         </wrapper>
 
+   
 
+#End Region
 
-
+#Region "Finding"
 
     ReadOnly _finding1 As XElement =
         <conceptFinding id="gapController" scoringMethod="None">
@@ -10601,8 +10622,10 @@ Public Class QTI22ConceptResponseProcessingTests
             </conceptFactSet>
         </conceptFinding>
 
+    
+#End Region
 
-
+#Region "Response processing"
 
     ReadOnly _responseProcessing1 As XElement =
         <responseProcessing>
@@ -11296,7 +11319,7 @@ Public Class QTI22ConceptResponseProcessingTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_A x_1</baseValue>
+                        <baseValue baseType="directedPair">y_A x_1</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="CONCEPTRESPONSE_Concept1-1">
@@ -11310,7 +11333,7 @@ Public Class QTI22ConceptResponseProcessingTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_B x_2</baseValue>
+                        <baseValue baseType="directedPair">y_B x_2</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="CONCEPTRESPONSE2_Concept1-1">
@@ -11322,7 +11345,7 @@ Public Class QTI22ConceptResponseProcessingTests
                 </responseIf>
                 <responseElseIf>
                     <member>
-                        <baseValue baseType="identifier">y_B x_1</baseValue>
+                        <baseValue baseType="directedPair">y_B x_1</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="CONCEPTRESPONSE2_Concept1-1">
@@ -11341,7 +11364,7 @@ Public Class QTI22ConceptResponseProcessingTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_C x_1</baseValue>
+                        <baseValue baseType="directedPair">y_C x_1</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="CONCEPTRESPONSE3_Concept1-1">
@@ -11350,7 +11373,7 @@ Public Class QTI22ConceptResponseProcessingTests
                 </responseIf>
                 <responseElseIf>
                     <member>
-                        <baseValue baseType="identifier">y_C x_2</baseValue>
+                        <baseValue baseType="directedPair">y_C x_2</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="CONCEPTRESPONSE3_Concept1-1">
@@ -11371,19 +11394,19 @@ Public Class QTI22ConceptResponseProcessingTests
                 <responseIf>
                     <and>
                         <member>
-                            <baseValue baseType="identifier">y_A x_1</baseValue>
+                            <baseValue baseType="directedPair">y_A x_1</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_B x_2</baseValue>
+                            <baseValue baseType="directedPair">y_B x_2</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_C x_1</baseValue>
+                            <baseValue baseType="directedPair">y_C x_1</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_D x_2</baseValue>
+                            <baseValue baseType="directedPair">y_D x_2</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                     </and>
@@ -11397,19 +11420,19 @@ Public Class QTI22ConceptResponseProcessingTests
                 <responseElseIf>
                     <and>
                         <member>
-                            <baseValue baseType="identifier">y_A x_1</baseValue>
+                            <baseValue baseType="directedPair">y_A x_1</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_B x_1</baseValue>
+                            <baseValue baseType="directedPair">y_B x_1</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_C x_1</baseValue>
+                            <baseValue baseType="directedPair">y_C x_1</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_D x_1</baseValue>
+                            <baseValue baseType="directedPair">y_D x_1</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                     </and>
@@ -11423,19 +11446,19 @@ Public Class QTI22ConceptResponseProcessingTests
                 <responseElseIf>
                     <and>
                         <member>
-                            <baseValue baseType="identifier">y_A x_2</baseValue>
+                            <baseValue baseType="directedPair">y_A x_2</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_B x_2</baseValue>
+                            <baseValue baseType="directedPair">y_B x_2</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_C x_2</baseValue>
+                            <baseValue baseType="directedPair">y_C x_2</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_D x_2</baseValue>
+                            <baseValue baseType="directedPair">y_D x_2</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                     </and>
@@ -11455,11 +11478,11 @@ Public Class QTI22ConceptResponseProcessingTests
                 <responseIf>
                     <and>
                         <member>
-                            <baseValue baseType="identifier">y_A x_1</baseValue>
+                            <baseValue baseType="directedPair">y_A x_1</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_D x_2</baseValue>
+                            <baseValue baseType="directedPair">y_D x_2</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                     </and>
@@ -11473,11 +11496,11 @@ Public Class QTI22ConceptResponseProcessingTests
                 <responseElseIf>
                     <and>
                         <member>
-                            <baseValue baseType="identifier">y_A x_1</baseValue>
+                            <baseValue baseType="directedPair">y_A x_1</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                         <member>
-                            <baseValue baseType="identifier">y_D x_1</baseValue>
+                            <baseValue baseType="directedPair">y_D x_1</baseValue>
                             <variable identifier="RESPONSE"/>
                         </member>
                     </and>
@@ -11497,7 +11520,7 @@ Public Class QTI22ConceptResponseProcessingTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_B x_2</baseValue>
+                        <baseValue baseType="directedPair">y_B x_2</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="CONCEPTRESPONSE2_Concept1-2">
@@ -11513,7 +11536,7 @@ Public Class QTI22ConceptResponseProcessingTests
             <responseCondition>
                 <responseIf>
                     <member>
-                        <baseValue baseType="identifier">y_C x_1</baseValue>
+                        <baseValue baseType="directedPair">y_C x_1</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="CONCEPTRESPONSE3_Concept1-1">
@@ -11522,7 +11545,7 @@ Public Class QTI22ConceptResponseProcessingTests
                 </responseIf>
                 <responseElseIf>
                     <member>
-                        <baseValue baseType="identifier">y_C x_2</baseValue>
+                        <baseValue baseType="directedPair">y_C x_2</baseValue>
                         <variable identifier="RESPONSE"/>
                     </member>
                     <setOutcomeValue identifier="CONCEPTRESPONSE3_Concept1-1">
@@ -14454,11 +14477,11 @@ Public Class QTI22ConceptResponseProcessingTests
                     <responseIf>
                         <and>
                             <member>
-                                <baseValue baseType="identifier">y_A x_1</baseValue>
+                                <baseValue baseType="directedPair">y_A x_1</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                             <member>
-                                <baseValue baseType="identifier">y_B x_2</baseValue>
+                                <baseValue baseType="directedPair">y_B x_2</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                         </and>
@@ -14469,11 +14492,11 @@ Public Class QTI22ConceptResponseProcessingTests
                     <responseElseIf>
                         <and>
                             <member>
-                                <baseValue baseType="identifier">y_A x_1</baseValue>
+                                <baseValue baseType="directedPair">y_A x_1</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                             <member>
-                                <baseValue baseType="identifier">y_B x_1</baseValue>
+                                <baseValue baseType="directedPair">y_B x_1</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                         </and>
@@ -14486,11 +14509,11 @@ Public Class QTI22ConceptResponseProcessingTests
                     <responseIf>
                         <and>
                             <member>
-                                <baseValue baseType="identifier">y_C x_1</baseValue>
+                                <baseValue baseType="directedPair">y_C x_1</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                             <member>
-                                <baseValue baseType="identifier">y_D x_2</baseValue>
+                                <baseValue baseType="directedPair">y_D x_2</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                         </and>
@@ -14501,11 +14524,11 @@ Public Class QTI22ConceptResponseProcessingTests
                     <responseElseIf>
                         <and>
                             <member>
-                                <baseValue baseType="identifier">y_C x_2</baseValue>
+                                <baseValue baseType="directedPair">y_C x_2</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                             <member>
-                                <baseValue baseType="identifier">y_D x_2</baseValue>
+                                <baseValue baseType="directedPair">y_D x_2</baseValue>
                                 <variable identifier="RESPONSE"/>
                             </member>
                         </and>
@@ -16282,5 +16305,6 @@ Public Class QTI22ConceptResponseProcessingTests
         </responseProcessing>
 
 
+#End Region
 
 End Class

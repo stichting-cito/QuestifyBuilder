@@ -62,7 +62,7 @@ Namespace QTI30
         End Sub
 
         <TestMethod(), TestCategory("Publication"), TestCategory("QTIScoring"), TestCategory("CesResponseDeclaration")>
-        Public Sub ItemWithSingleInteractionAndPolytomousScoringWhenCreatingResponseDeclarationShouldCreateCorrectResponseAndMappings()
+        Public Sub ItemWithSingleInteractionAndAlternativeScoringWhenCreatingResponseDeclarationShouldCreateCorrectResponseButNoMappings()
             PublicationTestHelper.RunResponseDeclarationTest(_itemBody6, _solution12, GetSingleInputScoringParam(), _result12, 1)
         End Sub
 
@@ -472,11 +472,6 @@ Namespace QTI30
                     <qti-correct-response interpretation="1#2#3">
                         <qti-value>1</qti-value>
                     </qti-correct-response>
-                    <qti-mapping>
-                        <qti-map-entry map-key="1" mapped-value="1"/>
-                        <qti-map-entry map-key="2" mapped-value="1"/>
-                        <qti-map-entry map-key="3" mapped-value="1"/>
-                    </qti-mapping>
                 </qti-response-declaration>
             </root>
 

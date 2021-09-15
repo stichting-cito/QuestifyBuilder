@@ -5,6 +5,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Questify.Builder.UnitTests
 {
+    /// <summary>
+    /// This class is here to ensure that any test that Debugs.Asserts gets treated like a failed test.
+    /// </summary>
     public class FailOnAssert : TraceListener
     {
         [ThreadStatic]

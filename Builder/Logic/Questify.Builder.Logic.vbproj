@@ -233,6 +233,7 @@
     <Compile Include="Common\Filtering\ModifyResourceRefRequestHandler.vb" />
     <Compile Include="Common\MultiType.vb" />
     <Compile Include="Common\NoValueType.vb" />
+    <Compile Include="ContentModel\AspectExtensions.vb" />
     <Compile Include="ContentModel\AssessmentTestExtensions.vb" />
     <Compile Include="ContentModel\AssessmentTestDtoExtensions.vb" />
     <Compile Include="ContentModel\CombinedScoringMapKeyExtensions.vb" />
@@ -266,7 +267,10 @@
     <Compile Include="ContentModel\Scoring\GapScoringManipulatorDecorator.vb" />
     <Compile Include="ContentModel\Scoring\GeogebraScoringManipulator.vb" />
     <Compile Include="ContentModel\Scoring\IFindingToFindingManipulatorLogic.vb" />
+    <Compile Include="ContentModel\Scoring\AspectScoreTranslationTableCalculator.vb" />
     <Compile Include="ContentModel\Scoring\MultiTypeScoringManipulator.vb" />
+    <Compile Include="ContentModel\Scoring\ItemScoreTranslationTableCalculator.vb" />
+    <Compile Include="ContentModel\Scoring\ScoreTranslationTableCalculator.vb" />
     <Compile Include="ContentModel\Scoring\SkipAnswerCategoriesAsTarget.vb" />
     <Compile Include="ContentModel\Scoring\ValidatingChoiceArrayScoringManipulatorDecorator.vb" />
     <Compile Include="ContentModel\Scoring\IChoiceArrayScoringManipulator.vb" />
@@ -447,7 +451,7 @@
     <Compile Include="HelperClasses\BinarySerializationHelper.vb" />
     <Compile Include="HelperClasses\LogicFileHelper.vb" />
     <Compile Include="HelperClasses\XmlElementSerializationSurrogate.vb" />
-    <Compile Include="ContentModel\AspectExtensions.vb" />
+    <Compile Include="ContentModel\AspectResourceEntityExtensions.vb" />
     <Compile Include="ContentModel\AspectReferenceExtensions.vb" />
     <Compile Include="HelperClasses\XMLExtensions.vb" />
     <Compile Include="HtmlHelpers\ResourceManagerWithEmbeddedResources.vb" />
@@ -695,6 +699,8 @@
     <Compile Include="QTI\Helpers\QTI30\DocumentHelper.vb" />
     <Compile Include="QTI\Helpers\QTI30\HottextScoringHelper.vb" />
     <Compile Include="QTI\Helpers\QTI30\NamespaceHelper.vb" />
+    <Compile Include="QTI\Helpers\QTI30\QtiCompliantHelper\FixInteractions.vb" />
+    <Compile Include="QTI\Helpers\QTI30\QtiCompliantHelper\FixSourceTexts.vb" />
     <Compile Include="QTI\Helpers\QTI30\ResponseIdentifierHelper.vb" />
     <Compile Include="QTI\Helpers\QTI30\StyleSheetHelper.vb" />
     <Compile Include="QTI\Helpers\QTI30\ResponseDeclarationHelper.vb" />
@@ -779,7 +785,7 @@
     <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\FixAspects.vb" />
     <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\FixDiv.vb" />
     <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\FixIds.vb" />
-    <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\FixInteractions.vb" />
+    <Compile Include="QTI\Helpers\QTI22\QtiCompliantHelper\FixInteractions.vb" />
     <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\FixOpenBrTag.vb" />
     <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\FixParagraphInTag.vb" />
     <Compile Include="QTI\Helpers\QTI_Base\QTICompliantHelper\FixTable.vb" />
@@ -819,6 +825,7 @@
     <Compile Include="QTI\Model\QTI30\PublishedItem.vb" />
     <Compile Include="QTI\Model\QTI30\QtixHtml.vb" />
     <Compile Include="QTI\Model\QTI30\TestDocumentSet.vb" />
+    <Compile Include="QTI\PackageCreators\BaseClasses\IPackageCreator.vb" />
     <Compile Include="QTI\PackageCreators\BaseClasses\PackageCreatorBase.vb" />
     <Compile Include="QTI\PackageCreators\QTI22\QTI22PackageCreator.vb" />
     <Compile Include="QTI\PackageCreators\QTI30\PackageCreator.vb" />
@@ -998,7 +1005,8 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="QTI\Resources\Schemas.zip" />
+    <None Include="QTI\Resources\nonqtischemas.zip" />
+    <None Include="QTI\Resources\nonqtischemas_qti22.zip" />
     <None Include="QTI\Resources\schema_qti22.zip" />
     <None Include="QTI\Resources\schema_qti30.zip" />
     <None Include="Service References\PublicationService\PublicationService1.wsdl" />

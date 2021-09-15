@@ -7,10 +7,14 @@ Public Class MatrixScoringParameterSerialisationTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub CompareWithPreviouslyKnowState()
+        'Arrange
         Dim matrixPrm = New MatrixScoringParameter() With {.MatrixColumnsDefinition = New MultiChoiceScoringParameter() With {.MaxChoices = 1, .MinChoices = 1, .MultiChoice = MultiChoiceType.Check}, .ControllerId = "mtx_1"}
-
+   
+        'Act
         Dim result = DoSerialize(Of MatrixScoringParameter)(matrixPrm)
-
+    
+        'Assert
+        'Compare with previously known result 
         Assert.AreEqual(<MatrixScoringParameter
                             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -21,6 +25,7 @@ Public Class MatrixScoringParameterSerialisationTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Deserialize_Test()
+        'Arrange
         Dim xmlData = <MatrixScoringParameter
                           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                           xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -36,9 +41,11 @@ Public Class MatrixScoringParameterSerialisationTest
                           </matrixcolumnsdefinition>
                           <linelabelcolumnwidth name="columnwidth">300</linelabelcolumnwidth>
                       </MatrixScoringParameter>
-
+       
+        'Act
         Dim result = Deserialize(Of MatrixScoringParameter)(xmlData)
-
+      
+        'Assert
         Assert.AreEqual("mtx_1", result.ControllerId)
         Assert.AreEqual(1, result.MatrixColumnsDefinition.MinChoices)
         Assert.AreEqual(1, result.MatrixColumnsDefinition.MaxChoices)
@@ -49,14 +56,17 @@ Public Class MatrixScoringParameterSerialisationTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub SerializeMultiChoice_inAssessmentItem_CompareWithPreviouslyKnownResult_Test()
+        'Arrange
         Dim a = New AssessmentItem With
-        {.Title = "someTitle", .Identifier = "someIdentifier", .LayoutTemplateSourceName = "someIlt"}
+                {.Title = "someTitle", .Identifier = "someIdentifier", .LayoutTemplateSourceName = "someIlt"}
         Dim p = a.Parameters.AddNew()
         p.Id = "id_1"
         p.InnerParameters.Add(New MatrixScoringParameter() With {.MatrixColumnsDefinition = New MultiChoiceScoringParameter() With {.MaxChoices = 1, .MinChoices = 1, .MultiChoice = MultiChoiceType.Check}, .ControllerId = "mtx_1"})
-
+       
+        'Act
         Dim result = DoSerialize(Of AssessmentItem)(a)
-
+       
+        'Assert
         Assert.AreEqual(<assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="someIdentifier" title="someTitle" layoutTemplateSrc="someIlt">
                             <solution>
                                 <keyFindings/>
@@ -74,6 +84,7 @@ Public Class MatrixScoringParameterSerialisationTest
 
     <TestMethod()> <TestCategory("ContentModel"), TestCategory("ScoringParameter")>
     Public Sub Deserialize_InAssessmentItem_Test()
+        'Arrange
         Dim xmlData = <assessmentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" identifier="someIdentifier" title="someTitle" layoutTemplateSrc="someIlt">
                           <solution>
                               <keyFindings/>
@@ -87,9 +98,11 @@ Public Class MatrixScoringParameterSerialisationTest
                               </parameterSet>
                           </parameters>
                       </assessmentItem>
-
+        
+        'Act
         Dim result = Deserialize(Of AssessmentItem)(xmlData)
-
+        
+        'Assert
         Assert.IsInstanceOfType(result.Parameters(0).InnerParameters(0), GetType(MatrixScoringParameter))
     End Sub
 

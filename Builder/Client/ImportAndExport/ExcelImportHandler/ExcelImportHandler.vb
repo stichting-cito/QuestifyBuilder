@@ -18,12 +18,14 @@ Public Class ExcelImportHandler
     Implements IDisposable
     Implements IImportHandler
 
+#Region " Fields "
 
     Private _optionsControl As ImportOptionControlBase
     Private ReadOnly _results As New List(Of String)
     Private ReadOnly _cachedParents As New Dictionary(Of TreeStructurePartCustomBankPropertyEntity, List(Of TreeStructurePartCustomBankPropertyEntity))
     Private _hasError As Boolean
 
+#End Region
 
     Public ReadOnly Property HasError As Boolean
         Get
@@ -31,12 +33,18 @@ Public Class ExcelImportHandler
         End Get
     End Property
 
+    ''' <summary>
+    ''' Gets the supported resource types.
+    ''' </summary>
     Public ReadOnly Property SupportedResourceTypes() As String Implements IImportHandler.SupportedResourceTypes
         Get
             Return "items|media|tests"
         End Get
     End Property
 
+    ''' <summary>
+    ''' Gets the import results.
+    ''' </summary>
     Public ReadOnly Property ImportResults() As String
         Get
             Dim sb As New StringBuilder(String.Empty)
@@ -47,14 +55,27 @@ Public Class ExcelImportHandler
         End Get
     End Property
 
+    ''' <summary>
+    ''' Imports the specified package set.
+    ''' </summary>
+    ''' <param name="packageSet">The package set.</param>
+    ''' <param name="parentBank">The parent bank.</param><returns></returns>
     Public Function Import(ByVal packageSet As PackageSet, ByVal parentBank As Integer?) As Boolean Implements IImportHandler.Import
         Throw New NotImplementedException("Function is used for import package files")
     End Function
 
+    ''' <summary>
+    ''' Imports the specified source resource manager.
+    ''' </summary>
+    ''' <param name="sourceResourceManager">The source resource manager.</param>
+    ''' <param name="bank"></param>
     Public Function Import(ByVal sourceResourceManager As ResourceManagerBase, ByVal bank As Integer) As Boolean Implements IImportHandler.Import
         Throw New NotImplementedException("Function is used for import package files")
     End Function
 
+    ''' <summary>
+    ''' Imports the specified package set.
+    ''' </summary>
     Public Function Import(ByVal parentBankId As Integer?) As Boolean Implements IImportHandler.Import
         _hasError = False
         Try
@@ -62,14 +83,18 @@ Public Class ExcelImportHandler
             Dim listOfKnownColumns As New List(Of String)
             Dim resourceCodeColumnName As String = "code"
 
-            listOfKnownColumns.Add("itm-nr")
-            listOfKnownColumns.Add("code")
+            'should all be lowercase
+            'add first the columns used in the thpro excelsheet.
+            listOfKnownColumns.Add("itm-nr") 'name in thPro Export
+            listOfKnownColumns.Add("code") 'name in TestBuilder
             listOfKnownColumns.Add("mk-sleutel")
             listOfKnownColumns.Add("itm-naam")
             listOfKnownColumns.Add("score-max")
             listOfKnownColumns.Add("mk-alt")
             listOfKnownColumns.Add("type")
 
+            'now add columns from the Item, Media and Test Grids so it's easy create to an excel export,
+            'add custom properties and import back.
             AddColumnsFromGrid(New ItemGrid, listOfKnownColumns)
             AddColumnsFromGrid(New MediaGrid, listOfKnownColumns)
             AddColumnsFromGrid(New TestGrid, listOfKnownColumns)
@@ -95,6 +120,7 @@ Public Class ExcelImportHandler
                 collection.Dispose()
                 Return True
             Else
+                'something went wrong while reading the excelsheet.
                 Dim errorMessageBuilder = New StringBuilder()
                 For Each errormessage As String In excelImportErrors
                     errorMessageBuilder.AppendLine(errormessage)
@@ -123,6 +149,11 @@ Public Class ExcelImportHandler
         End Using
     End Sub
 
+    ''' <summary>
+    ''' Gets the custom properties.
+    ''' </summary>
+    ''' <param name="customBankPropertyValues">The custom bank property values.</param>
+    ''' <param name="parentBankId">The parent bank.</param><returns></returns>
     Private Function GetCollection(ByVal customBankPropertyValues As Dictionary(Of String, Dictionary(Of String, String)), ByVal parentBankId As Integer?) As EntityCollection
         Dim newResourceList As New List(Of String)
         For Each code As String In customBankPropertyValues.Keys
@@ -148,9 +179,14 @@ Public Class ExcelImportHandler
         End Select
     End Function
 
+    ''' <summary>
+    ''' Adds the custom properties to items.
+    ''' </summary>
+    ''' <param name="customBankPropertyValues">The custom bank property values.</param>
+    ''' <param name="parentBankId">The parent bank.</param>
     Private Sub AddCustomPropertiesToResources(ByVal customBankPropertyValues As Dictionary(Of String, Dictionary(Of String, String)),
-                                           ByVal parentBankId As Integer?,
-                                           ByVal collection As EntityCollection)
+                                               ByVal parentBankId As Integer?,
+                                               ByVal collection As EntityCollection)
         Dim added = 0
 
         If Not parentBankId.HasValue Then
@@ -172,6 +208,7 @@ Public Class ExcelImportHandler
                 Case "item"
                     Dim itemResource = DirectCast(resource, ItemResourceEntity)
                     Dim resourceFull = ResourceFactory.Instance.GetItem(itemResource, New ResourceRequestDTO() With {.WithCustomProperties = True})
+                    'Check if custom property exists
                     If AddPropertiesToResource(customPropertyDictionary, resourceFull, existingCustomProperties) Then
                         added = added + 1
                         ResourceFactory.Instance.UpdateItemResource(resourceFull)
@@ -198,6 +235,12 @@ Public Class ExcelImportHandler
         _results.Add(String.Format(My.Resources.ItemsUpdatedWithCustomProperties, added.ToString))
     End Sub
 
+    ''' <summary>
+    ''' Adds the properties to item.
+    ''' </summary>
+    ''' <param name="customPropertyDictionary">The custom property dictionary.</param>
+    ''' <param name="resource">The item resource full.</param>
+    ''' <param name="existingCustomProperties">The existing custom properties.</param>
     Protected Friend Function AddPropertiesToResource(customPropertyDictionary As Dictionary(Of String, String), resource As ResourceEntity, existingCustomProperties As EntityCollection) As Boolean
         Dim isChanged As Boolean = False
         For Each customProperty As String In customPropertyDictionary.Keys
@@ -277,21 +320,30 @@ Public Class ExcelImportHandler
         Return isChanged
     End Function
 
+    ''' <summary>
+    ''' Adds the list value by value or title.
+    ''' </summary>
+    ''' <param name="resource">The item resource.</param>
+    ''' <param name="lcp">The LCP.</param>
+    ''' <param name="listValue">The list value.</param>
+    ''' <param name="values">The values.</param>
     Private Function AddListValueByValueOrTitle(resource As ResourceEntity,
-                                            lcp As ListCustomBankPropertyEntity,
-                                            listValue As ListCustomBankPropertyValueEntity,
-                                            values As String,
-                                            isNew As Boolean) As Boolean
+                                                lcp As ListCustomBankPropertyEntity,
+                                                listValue As ListCustomBankPropertyValueEntity,
+                                                values As String,
+                                                isNew As Boolean) As Boolean
         Dim matchFound = False
         Dim list As New List(Of String)
 
         If lcp.MultipleSelect Then
+            'split on pipeline for multiple values
             list = values.Split(";"c).ToList
         Else
             list = New String() {values}.ToList
         End If
 
         list.ForEach(Sub(customPropertyValue)
+                         ' find value
                          If lcp.ListValueCustomBankPropertyCollection Is Nothing Then
                              Return
                          End If
@@ -305,6 +357,7 @@ Public Class ExcelImportHandler
                          End If
 
                          If Not matchFound Then
+                             'Clear the first time a match is found
                              Dim lsvCount = listValue.ListCustomBankPropertySelectedValueCollection.Count
                              For i = 0 To lsvCount - 1
                                  Dim lvToRemove = listValue.ListCustomBankPropertySelectedValueCollection.Item(0)
@@ -342,6 +395,7 @@ Public Class ExcelImportHandler
             Return matchFound
         End If
 
+        ' find value
         Dim itemResource = DirectCast(resource, ItemResourceEntity)
         Dim assessmentItem = itemResource.GetAssessmentItem
         If assessmentItem IsNot Nothing AndAlso assessmentItem.Solution IsNot Nothing AndAlso assessmentItem.Solution.ConceptFindings.Count = 0 Then
@@ -383,14 +437,23 @@ Public Class ExcelImportHandler
         Return matchFound
     End Function
 
+    ''' <summary>
+    ''' Adds the tree structure value by value or title.
+    ''' </summary>
+    ''' <param name="resource">The item resource.</param>
+    ''' <param name="tcp">The TCP.</param>
+    ''' <param name="treeStructureValue">The tree structure value.</param>
+    ''' <param name="value">The value.</param>
+    ''' <param name="isNew">if set to <c>true</c> [is new].</param>
     Private Function AddTreeStructureValueByValueOrTitle(resource As ResourceEntity,
-                                                     tcp As TreeStructureCustomBankPropertyEntity,
-                                                     treeStructureValue As TreeStructureCustomBankPropertyValueEntity,
-                                                     value As String,
-                                                     isNew As Boolean) As Boolean
+                                                         tcp As TreeStructureCustomBankPropertyEntity,
+                                                         treeStructureValue As TreeStructureCustomBankPropertyValueEntity,
+                                                         value As String,
+                                                         isNew As Boolean) As Boolean
         Dim tsValue = treeStructureValue
         Dim matchFound = False
         Dim isRemoved As Boolean = False
+        ' find value
         Dim list = value.Split(";"c).ToList
         If value.Equals("null", StringComparison.OrdinalIgnoreCase) Then
             RemoveCustomProperty(Of TreeStructureCustomBankPropertyValueEntity)(resource, Nothing, New List(Of TreeStructureCustomBankPropertyValueEntity) From {tsValue})
@@ -432,6 +495,7 @@ Public Class ExcelImportHandler
                              selectedValue.ResourceId = resource.ResourceId
                              selectedValue.TreeStructurePartId = matchedValue.TreeStructurePartCustomBankPropertyId
                              tsValue.TreeStructureCustomBankPropertySelectedPartCollection.Add(selectedValue)
+                             'now we have to make sure a valid structure is select so we'll add the parents if needed
                              If Not _cachedParents.ContainsKey(matchedValue) Then
                                  _cachedParents.Add(matchedValue, matchedValue.GetParents(tcp))
                              End If
@@ -456,6 +520,11 @@ Public Class ExcelImportHandler
         Return matchFound OrElse isRemoved
     End Function
 
+    ''' <summary>
+    ''' Removes the custom property.
+    ''' </summary>
+    ''' <typeparam name="TCustomPropertyType">The type of the custom property type.</typeparam>
+    ''' <param name="resource">The item resource.</param>
     Private Sub RemoveCustomProperty(Of TCustomPropertyType As CustomBankPropertyValueEntity)(resource As ResourceEntity)
         RemoveCustomProperty(Of TCustomPropertyType)(resource, Nothing)
     End Sub
@@ -464,9 +533,15 @@ Public Class ExcelImportHandler
         RemoveCustomProperty(Of TCustomPropertyType)(resource, exclusionList, Nothing)
     End Sub
 
+    ''' <summary>
+    ''' Removes the custom property.
+    ''' </summary>
+    ''' <typeparam name="TCustomPropertyType">The type of the custom property type.</typeparam>
+    ''' <param name="resource">The item resource.</param>
+    ''' <param name="exclusionList">The exclusion list.</param>
     Private Sub RemoveCustomProperty(Of TCustomPropertyType As CustomBankPropertyValueEntity)(resource As ResourceEntity,
-                                                                                          exclusionList As IList(Of TCustomPropertyType),
-                                                                                          propertiesToRemove As IList(Of TCustomPropertyType))
+                                                                                              exclusionList As IList(Of TCustomPropertyType),
+                                                                                              propertiesToRemove As IList(Of TCustomPropertyType))
         Dim currentTrees = resource.CustomBankPropertyValueCollection.OfType(Of TCustomPropertyType)()
         If exclusionList IsNot Nothing Then
             currentTrees = currentTrees.Where(Function(c) Not exclusionList.Contains(c))
@@ -489,6 +564,10 @@ Public Class ExcelImportHandler
     End Sub
 
 
+    ''' <summary>
+    ''' Adds the custom bank properties.
+    ''' </summary>
+    ''' <param name="customPropertyDefintion">The custom property defintion.</param>
     Protected Sub AddCustomBankProperties(ByVal customPropertyDefintion As List(Of String), ByVal parentBankId As Integer?)
         If parentBankId.HasValue Then
 
@@ -501,29 +580,33 @@ Public Class ExcelImportHandler
             Dim existingBankPropery As CustomBankPropertyEntity = Nothing
 
             For Each customProperty As String In customPropertyDefintion
+                ' locate (possible) existing bank property
                 existingBankPropery = GetExistingBankProperty(existingCustomProperties, customProperty)
                 Dim e As New ProgressEventArgs(String.Format(My.Resources.AddingCustomProperties, customProperty))
                 RaiseEvent Progress(Me, e)
 
                 If existingBankPropery Is Nothing Then
+                    'rebuild Property
                     Dim newFreeValuePropertyDefinition As New FreeValueCustomBankPropertyEntity
                     With newFreeValuePropertyDefinition
                         .BankId = parentBankId.Value
                         .CustomBankPropertyId = Guid.NewGuid
                         .Name = customProperty
                         .Title = customProperty
-                        .ApplicableToMask = 35
+                        .ApplicableToMask = 35 'Items, media and tests
                         .Publishable = True
                     End With
                     newCustomProperties.Add(newFreeValuePropertyDefinition)
                     numberOfAddedCustomBankProperties += 1
                 Else
+                    ' skipping this, already exist in bank
                     numberOfExistingCustomBankProperties += 1
                 End If
             Next
             If numberOfAddedCustomBankProperties <> 0 Then
                 BankFactory.Instance.UpdateCustomProperties(newCustomProperties)
             End If
+            'add results
             _results.Add(String.Format(My.Resources.CustomBankPropertiesAdded, numberOfAddedCustomBankProperties.ToString))
             _results.Add(String.Format(My.Resources.CustomBankPropertiesAlreadyExisted, numberOfExistingCustomBankProperties.ToString))
             If numberOfConflicts <> 0 Then
@@ -533,12 +616,18 @@ Public Class ExcelImportHandler
         End If
     End Sub
 
+    ''' <summary>
+    ''' Gets the existing bank property.
+    ''' </summary>
+    ''' <param name="existingCustomProperties">The existing custom properties.</param>
+    ''' <param name="customProperty">The custom property.</param><returns></returns>
     Private Shared Function GetExistingBankProperty(ByVal existingCustomProperties As EntityCollection, ByVal customProperty As String) As CustomBankPropertyEntity
         Dim returnValue As CustomBankPropertyEntity = Nothing
         Dim results As List(Of Integer)
 
+        'Trim on [] because these are exported when exporting the Grid
         Dim filter As New FieldCompareValuePredicate(CustomBankPropertyFields.Name, Nothing, ComparisonOperator.Equal, customProperty.Trim("["c).Trim("]"c))
-        filter.CaseSensitiveCollation = True
+        filter.CaseSensitiveCollation = True 'Make sure the search is case insensitive
 
         results = existingCustomProperties.FindMatches(filter)
         If results.Count >= 1 Then
@@ -547,6 +636,7 @@ Public Class ExcelImportHandler
         Return returnValue
     End Function
 
+#Region " Implementation of IImportHandler "
     Public Event ImportHandlerHandleConflict(ByVal sender As Object, ByVal e As ImportHandlerHandleConflictEventArgs) Implements IImportHandler.ImportHandlerHandleConflict
     Public Event ImportHandlerHandleError(ByVal sender As Object, ByVal e As ImportExportHandlerHandleErrorEventArgs) Implements IImportHandler.ImportHandlerHandleError
     Public Event ImportHandlerHandleWarning(ByVal sender As Object, ByVal e As ImportExportHandlerHandleWarningEventArgs) Implements IImportHandler.ImportHandlerHandleWarning
@@ -554,6 +644,10 @@ Public Class ExcelImportHandler
     Public Event StartProgress(ByVal sender As Object, ByVal e As StartEventArgs) Implements IImportHandler.StartProgress
     Public Event ImportHandlerCustomBankPropertiesRemoved(ByVal sender As Object, ByVal e As ImportCustomBankPropertiesRemovedArgs) Implements IImportHandler.ImportHandlerCustomBankPropertiesRemoved
 
+    ''' <summary>
+    ''' Gets the get options user control.
+    ''' </summary>
+    ''' <value>The get options user control.</value>
     Public ReadOnly Property GetOptionsUserControl() As ImportOptionControlBase Implements IImportHandler.GetOptionsUserControl
         Get
             If _optionsControl Is Nothing Then
@@ -580,27 +674,39 @@ Public Class ExcelImportHandler
         End Get
     End Property
 
+    ''' <summary>
+    ''' Gets the progress message.
+    ''' </summary>
+    ''' <value>The progress message.</value>
     Public ReadOnly Property ProgressMessage() As String Implements IImportHandler.ProgressMessage
         Get
             Return My.Resources.ImportingResourcesToSpecifiedLocation
         End Get
     End Property
 
-    Private _disposedValue As Boolean = False
+    Private _disposedValue As Boolean = False                ' To detect redundant calls
 
+    ' IDisposable
     Protected Overridable Sub Dispose(ByVal disposing As Boolean)
         If Not Me._disposedValue Then
             If disposing Then
+                ' free managed resources when explicitly called
             End If
 
+            ' free shared unmanaged resources
         End If
         Me._disposedValue = True
     End Sub
+#End Region
 
+#Region " IDisposable Support "
+    ' This code added by Visual Basic to correctly implement the disposable pattern.
     Public Sub Dispose() Implements IDisposable.Dispose
+        ' Do not change this code.  Put cleanup code in Dispose(ByVal disposing As Boolean) above.
         Dispose(True)
         GC.SuppressFinalize(Me)
     End Sub
+#End Region
 
 
 End Class

@@ -5,6 +5,9 @@ Imports System.Windows.Threading
 
 Namespace Commanding
 
+    ''' <summary>
+    ''' Allows binding of commands to a toolstripitem (menu, toolbar button, etc.)
+    ''' </summary>
     Public Class MenuItemCommandBinding
         Inherits CommandBinding(Of ToolStripItem)
 
@@ -16,14 +19,30 @@ Namespace Commanding
         Private ReadOnly _clickWaitTimer As New DispatcherTimer(New TimeSpan(0, 0, 0, 0, 500), DispatcherPriority.Background, Sub() WaitTimer_Tick(Nothing, Nothing), Dispatcher.CurrentDispatcher)
 
 
+        ''' <summary>
+        ''' Binds the specified command.
+        ''' </summary>
+        ''' <param name="command">The command.</param>
+        ''' <param name="source">The source.</param>
         Protected Overrides Sub Bind(command As ICommand, source As ToolStripItem)
             AddBinding(command, New ControlTagParameterBinding(), source)
         End Sub
 
+        ''' <summary>
+        ''' Binds the specified command.
+        ''' </summary>
+        ''' <param name="command">The command.</param>
+        ''' <param name="parameter">The parameter.</param>
+        ''' <param name="source">The source.</param>
         Protected Overloads Overrides Sub Bind(command As ICommand, parameter As ParameterBinding, source As ToolStripItem)
             AddBinding(command, parameter, source)
         End Sub
 
+        ''' <summary>
+        ''' Adds the binding.
+        ''' </summary>
+        ''' <param name="command">The command.</param>
+        ''' <param name="source">The source.</param>
         Private Sub AddBinding(command As ICommand, parameter As ParameterBinding, source As ToolStripItem)
             If _sources.Any(Function(s) s.Name.Equals(source.Name, StringComparison.OrdinalIgnoreCase)) Then
                 removeBinding(source.Name)
@@ -50,46 +69,62 @@ Namespace Commanding
             End If
 
             source.Text = command.NameLocalized
+            'Only set image when command has an image.
             If (command.Image IsNot Nothing) Then source.Image = command.Image
         End Sub
 
         Private Sub WaitTimer_Tick(sender As Object, e As EventArgs)
             _clickWaitTimer.Stop()
             _isWaiting = False
+            ' Handle Single Click Actions
             ClickHandler(_currentClickedToolStripItem)
         End Sub
 
+        ''' <summary>
+        ''' Handles the CanExecuteChanged event of the command control.
+        ''' </summary>
+        ''' <param name="sender">The source of the event.</param>
+        ''' <param name="e">The <see cref="System.EventArgs" /> instance containing the event data.</param>
         Private Sub command_CanExecuteChanged(sender As Object, e As EventArgs)
             _commands.Where(Function(c) c.Key IsNot Nothing AndAlso sender.Equals(c.Key)).ToList() _
             .ForEach(Sub(c)
-                         c.Value.ForEach(Sub(cs)
-                                             Dim source As ToolStripItem = _sources.FirstOrDefault(Function(s) s.Name.Equals(cs, StringComparison.OrdinalIgnoreCase))
-                                             If source IsNot Nothing Then
-                                                 Dim parameter As Object = GetCommandParameter(source)
-                                                 source.Enabled = c.Key.CanExecute(parameter)
-                                             End If
-                                         End Sub)
-                     End Sub)
+                           c.Value.ForEach(Sub(cs)
+                                               Dim source As ToolStripItem = _sources.FirstOrDefault(Function(s) s.Name.Equals(cs, StringComparison.OrdinalIgnoreCase))
+                                               If source IsNot Nothing Then
+                                                   Dim parameter As Object = GetCommandParameter(source)
+                                                   source.Enabled = c.Key.CanExecute(parameter)
+                                               End If
+                                           End Sub)
+                       End Sub)
         End Sub
 
+        ''' <summary>
+        ''' Updates the state of the bound commands.
+        ''' </summary>
         Protected Overrides Sub UpdateCommandState()
             Dim temp As Boolean
             _commands.Where(Function(c) c.Key IsNot Nothing AndAlso c.Value IsNot Nothing AndAlso c.Value.Count > 0).ToList() _
                 .ForEach(Sub(c)
-                             Dim source As ToolStripItem = _sources.FirstOrDefault(Function(s) s.Name.Equals(c.Value(0), StringComparison.OrdinalIgnoreCase))
-                             If source IsNot Nothing Then
-                                 Dim parameter As Object = GetCommandParameter(source)
-                                 temp = c.Key.CanExecute(parameter)
-                             End If
-                         End Sub)
+                              Dim source As ToolStripItem = _sources.FirstOrDefault(Function(s) s.Name.Equals(c.Value(0), StringComparison.OrdinalIgnoreCase))
+                              If source IsNot Nothing Then
+                                  Dim parameter As Object = GetCommandParameter(source)
+                                  temp = c.Key.CanExecute(parameter)
+                              End If
+                          End Sub)
         End Sub
 
+        ''' <summary>
+        ''' Handles the Click event of the menuitem control.
+        ''' </summary>
+        ''' <param name="sender">The source of the event.</param>
+        ''' <param name="e">The <see cref="System.EventArgs" /> instance containing the event data.</param>
         Private Sub menuitem_Click(sender As Object, e As EventArgs)
             If Not _isWaiting Then
                 _isWaiting = True
                 _currentClickedToolStripItem = TryCast(sender, ToolStripItem)
                 _clickWaitTimer.Start()
             Else
+                'Handle DoubleClick
                 _isWaiting = False
                 _clickWaitTimer.Stop()
                 ClickHandler(_currentClickedToolStripItem, True)
@@ -119,6 +154,10 @@ Namespace Commanding
             End If
         End Sub
 
+        ''' <summary>
+        ''' Gets the command parameter.
+        ''' </summary>
+        ''' <param name="sender">The sender.</param><returns></returns>
         Private Function GetCommandParameter(sender As Object) As Object
             Dim paramBinding As ParameterBinding = _parameters.FirstOrDefault(Function(p) p.Value.Contains(DirectCast(sender, ToolStripItem).Name, StringComparer.OrdinalIgnoreCase)).Key
             Return If(paramBinding Is Nothing, Nothing, paramBinding.GetCommandParameter(sender))
@@ -155,7 +194,7 @@ Namespace Commanding
                                  End Sub)
 
         End Sub
-
+        
     End Class
 
 End Namespace

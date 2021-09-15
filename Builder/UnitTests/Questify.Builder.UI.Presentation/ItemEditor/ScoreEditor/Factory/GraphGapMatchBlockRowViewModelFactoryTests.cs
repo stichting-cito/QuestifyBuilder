@@ -15,14 +15,17 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void NoScoreIsSupportedGraphicGapMatch()
         {
+            //Arrange
             var item = _assessmentItemNoValueCorrect.To<AssessmentItem>();
             var parameters = item.Parameters.DeepFetchInlineScoringParameters();
             var param = parameters.OfType<GraphGapMatchScoringParameter>().First();
 
+            //Act
             var manipulator = param.GetScoreManipulator(item.Solution);
             var vm1 = new GraphGapMatchBlockRowViewModel(param, manipulator, "A");
             var vm2 = new GraphGapMatchBlockRowViewModel(param, manipulator, "B");
 
+            //Assert
             Assert.AreEqual(GapComparisonType.NoValue, vm1.ComparisonType.DataValue);
             Assert.AreEqual(GapComparisonType.Equals, vm2.ComparisonType.DataValue);
         }
@@ -30,19 +33,23 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
         [TestMethod, TestCategory("ViewModel"), TestCategory("Scoring"), TestCategory("ScoringAdv")]
         public void NoScoreIsSupportedGraphicGapMatchVariant2()
         {
+            //Arrange
             var item = _assessmentItemNoValueCorrectVariant2.To<AssessmentItem>();
             var parameters = item.Parameters.DeepFetchInlineScoringParameters();
             var param = parameters.OfType<GraphGapMatchScoringParameter>().First();
 
+            //Act
             var manipulator = param.GetScoreManipulator(item.Solution);
             var vm1 = new GraphGapMatchVar2BlockRowViewModel(param, manipulator, "A");
             var vm2 = new GraphGapMatchVar2BlockRowViewModel(param, manipulator, "B");
 
+            //Assert
             Assert.AreEqual(GapComparisonType.NoValue, vm1.ComparisonType.DataValue);
             Assert.AreEqual(GapComparisonType.Equals, vm2.ComparisonType.DataValue);
         }
 
-
+        #region Data
+        
         private readonly XElement _assessmentItemNoValueCorrect =
             XElement.Parse(@"
             <assessmentItem xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" identifier=""gdgdg"" itemid=""3228w3"" title=""fgdgdfg"" layoutTemplateSrc=""Cito.Generic.GraphicGapMatch.SC"">
@@ -331,5 +338,6 @@ namespace Questify.Builder.UnitTests.Questify.Builder.UI.Presentation.ItemEditor
               </parameters>
             </assessmentItem>");
 
+        #endregion
     }
 }

@@ -1,6 +1,7 @@
 ﻿Imports Cito.Tester.ContentModel
 Imports System.Xml
 Imports System.Text.RegularExpressions
+Imports Cito.Tester.Common
 
 Namespace ContentModel
     Friend Class XHtmlResourceExtractor
@@ -26,7 +27,7 @@ Namespace ContentModel
             Return ret
         End Function
 
-        Public Function ReplaceInlineImages(bankId As Integer, bankName As string, itemCode As String) As HashSet(Of String)
+        Public Function ReplaceInlineImages(bankId As Integer, bankName As String, itemCode As String) As HashSet(Of String)
             Dim inlineExtractor As New XHtmlInlineElementsManipulator(_arg)
 
             Return inlineExtractor.ReplaceInlineImages(bankId, bankName, itemCode)
@@ -37,7 +38,7 @@ Namespace ContentModel
             Dim namespaceManager = New Xml.XmlNamespaceManager(New System.Xml.NameTable())
             namespaceManager.AddNamespace("def", "http://www.w3.org/1999/xhtml")
             namespaceManager.AddNamespace("cito", "http://www.cito.nl/citotester")
-            Dim doc As XmlDocument = PrepareXmlDoc(html, namespaceManager)
+            Dim doc As XHtmlDocument = PrepareXhtmlDoc(html, namespaceManager)
             Dim RegexToRemovePackagePrefix As String = "resource://package(.*?)/"
             Dim imageNodes As XmlNodeList = doc.SelectNodes("//def:img[not(@isinlineelement=""true"")]", namespaceManager)
             Dim result As New HashSet(Of String)(StringComparer.OrdinalIgnoreCase)
@@ -56,13 +57,11 @@ Namespace ContentModel
 
             Return result
         End Function
-        Private Shared Function PrepareXmlDoc(ByVal html As String, ByVal namespaceManager As XmlNamespaceManager) As XmlDocument
-            Dim doc As New XmlDocument()
-            Dim root As XmlElement = doc.CreateElement("html", namespaceManager.LookupNamespace("def"))
-            root.InnerXml = html
-            doc.AppendChild(root)
+        Private Shared Function PrepareXhtmlDoc(ByVal html As String, ByVal namespaceManager As XmlNamespaceManager) As XHtmlDocument
+            Dim xhtmlDoc As New XHtmlDocument()
+            xhtmlDoc.LoadXml($"<body xmlns=""{namespaceManager.LookupNamespace("def")}"">{html}</body>")
 
-            Return doc
+            Return xhtmlDoc
         End Function
 
     End Class
