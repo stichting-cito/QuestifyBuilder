@@ -57,7 +57,7 @@ Public Class ChromiumScreenshotRenderHandler
     End Function
 
     Protected Overrides Function GetRootScreenRect(browser As CefBrowser, ByRef rect As CefRectangle) As Boolean
-        Return GetViewRect(browser, rect)
+        GetViewRect(browser, rect)
     End Function
 
     Protected Overrides Function GetScreenPoint(browser As CefBrowser, viewX As Integer, viewY As Integer, ByRef screenX As Integer, ByRef screenY As Integer) As Boolean
@@ -66,13 +66,12 @@ Public Class ChromiumScreenshotRenderHandler
         Return True
     End Function
 
-    Protected Overrides Function GetViewRect(browser As CefBrowser, ByRef rect As CefRectangle) As Boolean
+    Protected Overrides Sub GetViewRect(browser As CefBrowser, ByRef rect As CefRectangle)
         rect.X = 0
         rect.Y = 0
         rect.Width = _windowWidth
         rect.Height = _windowHeight
-        Return True
-    End Function
+    End Sub
     Protected Overrides Function GetScreenInfo(browser As CefBrowser, screenInfo As CefScreenInfo) As Boolean
         Return False
     End Function
@@ -111,10 +110,6 @@ Public Class ChromiumScreenshotRenderHandler
 
     End Sub
 
-    Protected Overrides Sub OnCursorChange(ByVal browser As CefBrowser, ByVal cursorHandle As IntPtr, ByVal type As CefCursorType, ByVal customCursorInfo As CefCursorInfo)
-
-    End Sub
-
     Protected Overrides Sub OnScrollOffsetChanged(ByVal browser As CefBrowser, ByVal x As Double, ByVal y As Double)
 
     End Sub
@@ -124,6 +119,10 @@ Public Class ChromiumScreenshotRenderHandler
     End Sub
 
     Protected Overrides Sub OnPopupSize(browser As CefBrowser, rect As CefRectangle)
+
+    End Sub
+
+    Protected Overrides Sub OnAcceleratedPaint(browser As CefBrowser, type As CefPaintElementType, dirtyRects() As CefRectangle, sharedHandle As IntPtr)
 
     End Sub
 End Class

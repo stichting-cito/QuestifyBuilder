@@ -17,8 +17,8 @@ Namespace ContentModel.Scoring
                 AddMissingScoringTranslationRows()
             ElseIf ShouldRemoveScoringTranslationRows() Then
                 RemoveExcessScoringTranslationRows()
-                ClearUnneededScoringTranslationRows()
             End If
+            ClearUnneededScoringTranslationRows()
             Return _currentScoreTranslationTable
         End Function
 

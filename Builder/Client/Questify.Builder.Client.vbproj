@@ -369,7 +369,7 @@
     </Reference>
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <HintPath>..\..\packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
@@ -1077,14 +1077,20 @@
     <None Include="..\..\Documentation\Components.md">
       <Link>Resources\Components.md</Link>
     </None>
+    <Content Include="Cef3Browser\chrome_100_percent.pak">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cef3Browser\chrome_200_percent.pak">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cef3Browser\resources.pak">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="My Project\DataSources\QTI30ImportOptionsDataEntity.datasource" />
     <None Include="Resources\CopyToolStripMenuItem.Image.png" />
     <Content Include="Resources\DocX2Html.xslt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Cef3Browser\cef_extensions.pak">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="Resources\ShowPassword.gif" />
     <None Include="Resources\ShowPasswordImg.png" />
     <None Include="app.config">
@@ -1094,9 +1100,6 @@
       <Link>MediaInfo.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Cef3Browser\cef.pak">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Cef3Browser\locales\en-US.pak">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1104,12 +1107,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="icudtl.dat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Cef3Browser\cef_100_percent.pak">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Cef3Browser\cef_200_percent.pak">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="natives_blob.bin">
@@ -1264,6 +1261,9 @@
     <None Include="Service References\ValidationService\ValidationService59.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="v8_context_snapshot.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Shared\Questify.Builder.IoC\Questify.Builder.IoC.csproj">

@@ -215,6 +215,11 @@ namespace Questify.Builder.UI.Wpf.Presentation.ItemEditor.ViewModels
                         var atr = (AssessmentTestResourceEntity)r;
                         atr.RenameItemCode(currName, _itemEditorVm.AssessmentItem.DataValue.Identifier);
                     }
+                    else if (r is DataSourceResourceEntity)
+                    {
+                        var atr = (DataSourceResourceEntity)r;
+                        atr.RenameItemCode(currName, _itemEditorVm.AssessmentItem.DataValue.Identifier);
+                    }
                 }
                 Update();
             }

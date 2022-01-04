@@ -58,7 +58,7 @@ Namespace QTI.Helpers
                     End If
                 End If
 
-                If uri Is Nothing OrElse uri.ToString.Equals(postLocation, StringComparison.OrdinalIgnoreCase) AndAlso response.Content IsNot Nothing AndAlso Not String.IsNullOrEmpty(response.Content) Then
+                If (uri Is Nothing OrElse uri.ToString.Equals(postLocation, StringComparison.OrdinalIgnoreCase)) AndAlso response.Content IsNot Nothing AndAlso Not String.IsNullOrEmpty(response.Content) Then
                     Errors.Add(StripTagsRegex(response.Content))
                 End If
                 If uri Is Nothing Then

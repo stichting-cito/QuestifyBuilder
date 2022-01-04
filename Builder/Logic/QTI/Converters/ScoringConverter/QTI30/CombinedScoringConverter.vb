@@ -343,7 +343,7 @@ Namespace QTI.Converters.ScoringConverter.QTI30
 
         Public Overridable Sub AppendResponseProcessing(ByVal navigator As XPathNavigator, result As XmlDocument, responseIdentifierAttributeList As XmlNodeList, solution As Solution, finding As KeyFinding, findingIndex As Integer, shouldBeTranslated As Boolean)
             Dim responseProcessing As ResponseProcessing = Nothing
-            Dim useResponseProcessingTemplate As Boolean = ShouldUseResponseProcessingTemplate(solution)
+            Dim useResponseProcessingTemplate As Boolean = ShouldUseResponseProcessingTemplate(solution, responseIdentifierAttributeList)
             If _responseTypeFactoryPerFinding.ContainsKey(finding) Then
                 responseProcessing = New ResponseProcessing(finding, findingIndex, _scoringParameters, _responseTypeFactoryPerFinding(finding), shouldBeTranslated, useResponseProcessingTemplate)
             Else
@@ -367,8 +367,8 @@ Namespace QTI.Converters.ScoringConverter.QTI30
             End If
         End Sub
 
-        Protected Overridable Function ShouldUseResponseProcessingTemplate(solution As Solution) As Boolean
-            Return QTI30CombinedScoringHelper.ShouldUseResponseProcessingTemplate(solution, _scoringParameters)
+        Protected Overridable Function ShouldUseResponseProcessingTemplate(solution As Solution, responseIdentifierAttributeList As XmlNodeList) As Boolean
+            Return QTI30CombinedScoringHelper.ShouldUseResponseProcessingTemplate(solution, _scoringParameters, responseIdentifierAttributeList)
         End Function
 
         Public Sub AppendResponseProcessingPartForDecimalGaps(ByVal navigator As XPathNavigator, solution As Solution, responseIdentifierAttributeList As XmlNodeList)

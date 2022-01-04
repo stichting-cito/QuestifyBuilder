@@ -2,33 +2,30 @@
 Imports System.Collections.ObjectModel
 Imports System.Configuration
 Imports System.Deployment.Application
+Imports System.Globalization
+Imports System.IO
 Imports System.Linq
 Imports System.Reflection
 Imports System.Security.Permissions
 Imports System.Threading
 Imports System.Threading.Tasks
-Imports Questify.Builder.Logic
-Imports Questify.Builder.Configuration
-Imports Questify.Builder.Model.ContentModel.EntityClasses
-Imports Questify.Builder.Security
-Imports Questify.Builder.Logic.Service.Direct
 Imports Microsoft.VisualBasic.ApplicationServices
+Imports NLog
+Imports Questify.Builder.Configuration
+Imports Questify.Builder.IoC
+Imports Questify.Builder.Logic
 Imports Questify.Builder.Logic.Service.Cache
+Imports Questify.Builder.Logic.Service.Direct
 Imports Questify.Builder.Logic.Service.Factories
 Imports Questify.Builder.Logic.Service.InvalidateCache
-Imports SD.LLBLGen.Pro.ORMSupportClasses
-Imports System.Globalization
-Imports System.IO
-Imports Microsoft.ApplicationInsights
-Imports Microsoft.ApplicationInsights.DataContracts
-Imports Microsoft.ApplicationInsights.NLogTarget
-Imports NLog
+Imports Questify.Builder.Logic.Service.Logging
+Imports Questify.Builder.Model.ContentModel.EntityClasses
+Imports Questify.Builder.Security
 Imports Questify.Builder.UI
 Imports Questify.Builder.UI.Wpf.Presentation.GenericDialogs.LoginDialog.ViewModels
-Imports LoginDialogView = Questify.Builder.UI.Wpf.Presentation.GenericDialogs.LoginDialog.Views.LoginDialogView
-Imports Questify.Builder.IoC
+Imports SD.LLBLGen.Pro.ORMSupportClasses
 Imports LogHelper = Questify.Builder.Logic.Service.Logging.LogHelper
-Imports Questify.Builder.Logic.Service.Logging
+Imports LoginDialogView = Questify.Builder.UI.Wpf.Presentation.GenericDialogs.LoginDialog.Views.LoginDialogView
 
 Namespace My
     ' The following events are available for MyApplication:

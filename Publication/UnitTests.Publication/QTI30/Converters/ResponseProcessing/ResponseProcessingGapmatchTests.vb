@@ -78,7 +78,7 @@ Namespace QTI30
             Dim s = New Solution
             s.Findings.Add(finding)
 
-            Dim useResponseProcessingTemplate = QTI30CombinedScoringHelper.ShouldUseResponseProcessingTemplate(s, scoringPrms)
+            Dim useResponseProcessingTemplate = QTI30CombinedScoringHelper.ShouldUseResponseProcessingTemplate(s, scoringPrms, responseIdentifierAttributeList)
             Dim processor = New ResponseProcessing(responseIdentifierAttributeList, s, finding, findingIndex, scoringPrms, New CombinedScoringConverter, False, useResponseProcessingTemplate)
             Dim assessmentItemType As New AssessmentItemType() With {.qtiitembody = CType(ChainHandlerHelper.StringToObject(itemBody.ToString, GetType(ItemBodyType)), ItemBodyType)}
 

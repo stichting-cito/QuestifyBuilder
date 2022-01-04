@@ -30,11 +30,7 @@ Public Class CefBootstrapper
             MessageBox.Show("Failed to execute process", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
         Dim settings As New CefSettings()
-
-        settings.SingleProcess = True
         settings.MultiThreadedMessageLoop = True
-
-        settings.IgnoreCertificateErrors = True
         settings.CommandLineArgsDisabled = False
 
         Dim localPath As String = Path.GetDirectoryName(New Uri(Assembly.GetEntryAssembly().CodeBase).LocalPath)

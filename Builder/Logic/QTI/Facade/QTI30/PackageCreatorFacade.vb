@@ -8,12 +8,13 @@ Namespace QTI.Facade.QTI30
     Public Class PackageCreatorFacade
 
         Protected _chain As ChainManager(Of PublicationRequest)
+        Protected _createPackageChain As ChainManager(Of PublicationRequest)
         Protected _setupTestChain As ChainManager(Of PublicationRequest)
         Protected _testCreationChain As ChainManager(Of PublicationRequest)
         Protected _saveTestAndManifestCreationChain As ChainManager(Of PublicationRequest)
-        Protected _packagingChain As ChainManager(Of PublicationRequest)
         Protected _setupXsdValidationChain As ChainManager(Of PublicationRequest)
         Protected _saveItemAndResourcesChain As ChainManager(Of PublicationRequest)
+        Protected _packagingChain As ChainManager(Of PublicationRequest)
 
         Sub New()
             ResetFacade()
@@ -67,19 +68,23 @@ Namespace QTI.Facade.QTI30
             If appSettings("PublicationParallel") IsNot Nothing AndAlso Boolean.TryParse(appSettings("PublicationParallel"), async) Then
 
             End If
-            _chain = New ChainManager(Of PublicationRequest)("Chain", ProcessStrategyEnum.ProcessEntireChain, False)
+            _chain = New ChainManager(Of PublicationRequest)("Chain", ProcessStrategyEnum.ProcessEntireChain, False, False, False)
+            _createPackageChain = New ChainManager(Of PublicationRequest)("Create Package Chain", ProcessStrategyEnum.ProcessEntireChain, False)
             _setupTestChain = New ChainManager(Of PublicationRequest)("Setup Test Creation Chain", ProcessStrategyEnum.ProcessEntireChain, False, False, False)
             _testCreationChain = New ChainManager(Of PublicationRequest)("Test Creation Chain", ProcessStrategyEnum.ProcessEntireChain, False, False, False)
             _saveItemAndResourcesChain = New ChainManager(Of PublicationRequest)("Item Creation Chain", ProcessStrategyEnum.ProcessEntireChain, False, False, async)
             _saveTestAndManifestCreationChain = New ChainManager(Of PublicationRequest)("Test and manifest Creation Chain", ProcessStrategyEnum.ProcessEntireChain, False, False, False)
             _setupXsdValidationChain = New ChainManager(Of PublicationRequest)("Setup Validation Chain", ProcessStrategyEnum.ProcessEntireChain, False, False, False)
             _packagingChain = New ChainManager(Of PublicationRequest)("Packaging Chain", ProcessStrategyEnum.ProcessEntireChain, False, False)
-            With _chain.HandlerChain
+            With _createPackageChain.HandlerChain
                 .Add(_setupTestChain)
                 .Add(_setupXsdValidationChain)
                 .Add(_testCreationChain)
                 .Add(_saveItemAndResourcesChain)
                 .Add(_saveTestAndManifestCreationChain)
+            End With
+            With _chain.HandlerChain
+                .Add(_createPackageChain)
                 .Add(_packagingChain)
             End With
         End Sub

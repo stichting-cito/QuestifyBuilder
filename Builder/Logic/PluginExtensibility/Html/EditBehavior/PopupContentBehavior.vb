@@ -58,6 +58,12 @@ Namespace PluginExtensibility.Html.EditBehavior
             End Get
         End Property
 
+        Public Overrides ReadOnly Property CanSetTextToSpeechOptions As Boolean
+            Get
+                Return MyBase.CanSetTTSOptions
+            End Get
+        End Property
+
         Protected Overrides Function ConstructChain_FromEditor2Param() As IHtmlConverter
             Dim ret As IHtmlConverter = New HtmlConverter_C1RefToCitoRef()
             ret.LastConverter.NextConverter = New HtmlConverter_OldInlineToHtml(Me, DefaultNamespaceManager)
@@ -69,6 +75,7 @@ Namespace PluginExtensibility.Html.EditBehavior
             ret.LastConverter.NextConverter = New HtmlConverter_FullToPartial()
             ret.LastConverter.NextConverter = New HtmlConverter_RemoveFontInSpan()
             ret.LastConverter.NextConverter = New HtmlConverter_RemoveHyperlinks()
+            ret.LastConverter.NextConverter = New HtmlConverter_TextToSpeechToHtml()
             Return ret
         End Function
 
@@ -80,6 +87,7 @@ Namespace PluginExtensibility.Html.EditBehavior
             ret.LastConverter.NextConverter = _inlineRetriever
             ret.LastConverter.NextConverter = New HtmlConverter_MathMLToMathImage(PluginHelper.MathMlPlugin)
             ret.LastConverter.NextConverter = New HtmlConverter_AddContextNumber(ContextIdentifier)
+            ret.LastConverter.NextConverter = New HtmlConverter_HtmlToTextToSpeech()
             Return ret
         End Function
 

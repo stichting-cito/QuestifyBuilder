@@ -153,18 +153,29 @@ Namespace QTI.Helpers.QTI30
             Return False
         End Function
 
-        Public Shared Function ShouldUseResponseProcessingTemplate(solution As Solution, scoringParams As HashSet(Of ScoringParameter)) As Boolean
+        Public Shared Function ShouldUseResponseProcessingTemplate(solution As Solution, scoringParams As HashSet(Of ScoringParameter), responseIdentifierAttributeList As XmlNodeList) As Boolean
             If solution.AutoScoring AndAlso
                     solution.Findings.Any() AndAlso solution.Findings.Count = 1 AndAlso
                     ItemHasSingleScoringParameter(scoringParams) AndAlso
+                    Not ItemHasCustomInteractions(responseIdentifierAttributeList) AndAlso
+                    Not ItemHasDateOrTimeScoringParameter(scoringParams) AndAlso
                     Not SolutionContainsFactSets(solution) AndAlso
                     Not SolutionContainsAlternativeKeyValues(solution) AndAlso
                     Not SolutionContainsExoticScoringValues(solution) AndAlso
+                    Not SolutionContainsKeyValuesWithPreprocessingRules(solution) AndAlso
                     Not QTIScoringHelper.ShouldScoreBeTranslated(solution.ItemScoreTranslationTable) Then
                 Return True
             End If
 
             Return False
+        End Function
+
+        Private Shared Function ItemHasCustomInteractions(responseIdentifierAttributeList As XmlNodeList) As Boolean
+            Return responseIdentifierAttributeList.Cast(Of XmlNode).Any(Function(r) IsCustomInteraction(r))
+        End Function
+
+        Private Shared Function IsCustomInteraction(ByVal responseIdentifierAttribute As XmlNode) As Boolean
+            Return DirectCast(responseIdentifierAttribute, XmlAttribute).OwnerElement.LocalName.ToLower = "qti-custom-interaction"
         End Function
 
         Public Shared Function GetResponseProcessingTemplate(finding As KeyFinding, scoringParams As HashSet(Of ScoringParameter)) As String
@@ -181,14 +192,12 @@ Namespace QTI.Helpers.QTI30
             Return String.Empty
         End Function
 
-        Public Shared Function ShouldAddResponseDeclarationMappingsForResponseProcessingTemplateUsage(solution As Solution, finding As KeyFinding, scoringParams As HashSet(Of ScoringParameter)) As Boolean
-            If ShouldUseResponseProcessingTemplate(solution, scoringParams) Then
-                If TypeOf scoringParams.First() Is SelectPointScoringParameter Then
-                    Return False
-                End If
-                If finding.Method = EnumScoringMethod.Polytomous Then
-                    Return True
-                End If
+        Public Shared Function ShouldAddResponseDeclarationMappingsForResponseProcessingTemplateUsage(finding As KeyFinding, scoringParams As HashSet(Of ScoringParameter)) As Boolean
+            If scoringParams.Any(Function(sp) TypeOf sp Is SelectPointScoringParameter) Then
+                Return False
+            End If
+            If finding.Method = EnumScoringMethod.Polytomous Then
+                Return True
             End If
 
             Return False
@@ -196,6 +205,10 @@ Namespace QTI.Helpers.QTI30
 
         Private Shared Function ItemHasSingleScoringParameter(scoringParams As HashSet(Of ScoringParameter)) As Boolean
             Return scoringParams IsNot Nothing AndAlso scoringParams.Any() AndAlso scoringParams.Count = 1
+        End Function
+
+        Private Shared Function ItemHasDateOrTimeScoringParameter(scoringParams As HashSet(Of ScoringParameter)) As Boolean
+            Return scoringParams.Any(Function(sp) TypeOf sp Is TimeScoringParameter OrElse TypeOf sp Is DateScoringParameter)
         End Function
 
         Private Shared Function SolutionContainsFactSets(solution As Solution) As Boolean
@@ -216,6 +229,10 @@ Namespace QTI.Helpers.QTI30
 
         Private Shared Function SolutionContainsExoticScoringValues(solution As Solution) As Boolean
             Return solution.Findings.Any(Function(f) f.Facts.Any(Function(fa) fa.Values.OfType(Of KeyValue).Any(Function(kv) kv.Values.Any(Function(v) SolutionValueIsOfExoticType(v)))))
+        End Function
+
+        Private Shared Function SolutionContainsKeyValuesWithPreprocessingRules(solution As Solution) As Boolean
+            Return solution.Findings.Any(Function(f) f.Facts.Any(Function(fa) fa.Values.OfType(Of KeyValue).Any(Function(kv) kv.PreProcessingRules.Any())))
         End Function
 
         Private Shared Function SolutionValueIsOfExoticType(value As BaseValue) As Boolean

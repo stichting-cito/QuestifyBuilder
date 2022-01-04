@@ -59,7 +59,7 @@ Namespace QTI30
 
         Public Shared Sub RunResponseProcessingTest(itemBody As XElement, solution As Solution, finding As KeyFinding, responseProcessingElement As XElement, scoringParams As HashSet(Of ScoringParameter), scoringHelper As CombinedScoringConverter, Optional findingIndex As Integer = 0, Optional shouldBeTranslated As Boolean = False)
             Dim responseIdentifierAttributeList As XmlNodeList = PublicationTestHelper.GetResponseIdentifiers(itemBody)
-            Dim useResponseProcessingTemplate = QTI30CombinedScoringHelper.ShouldUseResponseProcessingTemplate(solution, scoringParams)
+            Dim useResponseProcessingTemplate = QTI30CombinedScoringHelper.ShouldUseResponseProcessingTemplate(solution, scoringParams, responseIdentifierAttributeList)
             Dim processor = New ResponseProcessing(responseIdentifierAttributeList, solution, finding, findingIndex, scoringParams, scoringHelper, shouldBeTranslated, useResponseProcessingTemplate)
 
             Dim result = processor.GetProcessing().ToXmlDocument

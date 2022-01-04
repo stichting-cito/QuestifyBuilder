@@ -101,42 +101,6 @@
     <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/itemPreviewServices/itemPreviewService[@name='FACET100']/@name" />
   </parameter>
   
-  <!-- FACET Publication Handler 3 -->
-  <parameter name="Handler3TestPreviewerUrl" description="Third Facet Publication Handler TestPreviewer URL" defaultvalue="__Handler3TestPreviewerUrl__" tags="">
-    <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/publicationHandlers/handler[@type='Questify.Builder.Plugins.Facet.Facet80PublicationHandler']/testpreviewers/testpreviewer/@url"></parameterEntry>
-  </parameter>
-  <parameter name="Handler3TestPreviewerName" description="Third Facet Publication Handler TestPreviewer Name" defaultvalue="__Handler3TestPreviewerName__" tags="">
-    <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/publicationHandlers/handler[@type='Questify.Builder.Plugins.Facet.Facet80PublicationHandler']/testpreviewers/testpreviewer/@name"></parameterEntry>
-  </parameter>
-  <parameter name="Handler3DefaultClient" description="Third Facet Publication Handler" defaultvalue="__Handler3DefaultClient__" tags="">
-    <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/publicationHandlers/handler[@type='Questify.Builder.Plugins.Facet.Facet80PublicationHandler']/testpreviewers/testpreviewer/@defaultClient"></parameterEntry>
-  </parameter>
-  <parameter name="Handler3EncryptionHandler" description="Third Facet Publication Handler EncryptionHandler" defaultvalue="__Handler3EncryptionHandlerTypeName__" tags="">
-    <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/publicationHandlers/handler[@type='Questify.Builder.Plugins.Facet.Facet80PublicationHandler']/add[@key='EncryptionHandlerTypeName']/@value"></parameterEntry>
-  </parameter>
-  <parameter name="FacetHandler3Type" description="Third Facet Publication Handler" defaultvalue="__Handler3Type__" tags="">
-    <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/publicationHandlers/handler[@type='Questify.Builder.Plugins.Facet.Facet80PublicationHandler']/@type"></parameterEntry>
-  </parameter>
-
-  <!-- FACET Publication To QPR Handler 3 -->
-  <parameter name="Handler3QprEncryptionHandler" description="Facet QPR Encryption Handler" defaultvalue="__Handler3EncryptionHandlerTypeName__" tags="">
-    <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/publicationHandlers/handler[@type='Questify.Builder.Plugins.Facet.Facet80QprPublicationHandler']/add[@key='EncryptionHandlerTypeName']/@value"></parameterEntry>
-  </parameter>
-  <parameter name="Handler3QprHandlerTypeName" description="" defaultvalue="__Handler3QprType__" tags="">
-    <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/publicationHandlers/handler[@type='Questify.Builder.Plugins.Facet.Facet80QprPublicationHandler']/@type"></parameterEntry>
-  </parameter>
-
-  <!-- FACET ItemPreviewerService 3 -->
-  <parameter name="Handler3PreviewServiceUrl" description="" defaultvalue="__Handler3PreviewServiceUrl__" tags="">
-    <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/itemPreviewServices/itemPreviewService[@name='FACET80']/@url" />
-  </parameter>
-  <parameter name="Handler3PreviewServicetype" description="" defaultvalue="__Handler3PreviewServiceType__" tags="">
-    <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/itemPreviewServices/itemPreviewService[@name='FACET80']/@type" />
-  </parameter>
-  <parameter name="Handler3PreviewServiceName" description="" defaultvalue="__Handler3PreviewServiceName__" tags="">
-    <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/itemPreviewServices/itemPreviewService[@name='FACET80']/@name" />
-  </parameter>
-
   <!-- FACET Exchange Publication Handler 1 -->
   <parameter name="Handler1ExchangePublicationHandler" description="" defaultvalue="__Handler1ExchangeType__" tags="">
     <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/publicationHandlers/handler[@type='Questify.Builder.Plugins.Facet.FacetQTI22TestExchangePublicationHandler']/@type"></parameterEntry>

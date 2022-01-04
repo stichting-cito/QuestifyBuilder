@@ -34,6 +34,8 @@ Namespace QTI.Converters.Declaration.QTI30
 
         Public Function GetDeclarations() As List(Of ResponseDeclarationType)
             Dim list As New List(Of ResponseDeclarationType)()
+            Dim shouldUseResponseProcessingTemplate = QTI30CombinedScoringHelper.ShouldUseResponseProcessingTemplate(_solution, _scoringParams, _responseIdentifierAttributeList)
+
             For Each responseIdentifierAttribute As XmlNode In _responseIdentifierAttributeList
                 Dim addEmptyDeclaration = True
                 _finding = QTI30CombinedScoringHelper.GetFindingByResponseIdentifier(_solution, responseIdentifierAttribute.Value)
@@ -50,7 +52,7 @@ Namespace QTI.Converters.Declaration.QTI30
 
                         Dim interPretationValue As String = String.Empty
                         Dim responseIsFirstInteractionInFactSet As Boolean = DetermineIfResponseIsFirstInteractionInFactSet(responseIdentifierAttribute.Value, groups)
-                        Dim addResponseDeclarationMappings = QTI30CombinedScoringHelper.ShouldAddResponseDeclarationMappingsForResponseProcessingTemplateUsage(_solution, _finding, _scoringParams)
+                        Dim addResponseDeclarationMappings = shouldUseResponseProcessingTemplate AndAlso QTI30CombinedScoringHelper.ShouldAddResponseDeclarationMappingsForResponseProcessingTemplateUsage(_finding, _scoringParams)
 
                         If (Not responseIsInFactSet AndAlso Not _indexOfSubPartInComposedInteraction > 1) OrElse (responseIsInFactSet AndAlso responseIsFirstInteractionInFactSet) Then
                             interPretationValue = GetInterpretationValue(responseIdentifierAttribute, groups)

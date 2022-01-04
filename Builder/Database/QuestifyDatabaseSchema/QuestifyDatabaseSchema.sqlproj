@@ -111,8 +111,10 @@
     <BuildContributorArgument Include="OutDir=$(OutDir)" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QuestifyDatabase_DTT.publish.xml" />
     <None Include="QBLocal.publish.xml" />
     <None Include="QuestifyDatabaseSchema.publish.xml" />
+    <None Include="Scripts\UpdateRolesAndRights_27-08-19.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug.publish.xml" />
@@ -125,6 +127,7 @@
     <Folder Include="Security\" />
     <Folder Include="dbo\Functions\" />
     <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\ChildConceptStructurePartCustomBankProperty.sql" />
@@ -189,10 +192,16 @@
     <Build Include="dbo\Tables\MaintenanceWindow.sql" />
     <Build Include="dbo\Stored Procedures\GetMaintenanceWindow.sql" />
     <Build Include="dbo\Stored Procedures\SetMaintenanceWindow.sql" />
+    <None Include="Scripts\AddStateAndStateActionForFreezingResources.sql" />
     <Build Include="dbo\Tables\UserTokens.sql" />
     <Build Include="dbo\Views\GrantedPermissionsView.sql" />
+    <None Include="Scripts\RemovePermissionsForPlugins.sql" />
+    <None Include="Scripts\UpdateRolesAndRights_08-05-19.sql" />
+    <None Include="Scripts\RemovePluginResources.sql" />
     <Build Include="dbo\Functions\GetParentBanks.sql" />
+    <None Include="Scripts\UpdateRolesAndRights_03_07_29.sql" />
     <Build Include="dbo\Stored Procedures\ClearAndDeleteBankHierarchical.sql" />
+    <None Include="Scripts\AddScorablePropertyToCustomProperties.sql" />
   </ItemGroup>
   <ItemGroup Condition="'$(Configuration)' != 'Debug' ">
     <Build Include="Storage\Resource_Properties.sql" />

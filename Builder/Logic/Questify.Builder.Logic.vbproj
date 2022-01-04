@@ -346,6 +346,7 @@
     <Compile Include="ContentModel\workers\Flow\EnforceSingleChoiceScore.vb" />
     <Compile Include="ContentModel\workers\Flow\SynchronizeKeyFindingToConceptFindingActivity.vb" />
     <Compile Include="ContentModel\workers\GetIdForAnswerCategory.vb" />
+    <Compile Include="ContentModel\workers\ItemManipulationInDatasource.vb" />
     <Compile Include="ContentModel\workers\ParameterCollectionCloner.vb" />
     <Compile Include="ContentModel\workers\ParameterCollectionClonerBase.vb" />
     <Compile Include="ContentModel\workers\PokIdentifierGenerator.vb" />

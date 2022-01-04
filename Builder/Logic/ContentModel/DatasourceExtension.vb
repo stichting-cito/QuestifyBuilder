@@ -32,6 +32,12 @@ Namespace ContentModel
             Return ret
         End Function
 
+        <Extension>
+        Public Function RenameItemCode(datasourceResource As DataSourceResourceEntity, currentItemCode As String, newItemCode As String) As Boolean
+            Dim wrk As New ItemManipulationInDatasource(datasourceResource)
+            Return wrk.Rename(currentItemCode, newItemCode)
+        End Function
+
     End Module
 
 End Namespace

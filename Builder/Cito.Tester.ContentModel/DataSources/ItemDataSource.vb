@@ -1,14 +1,9 @@
-
-
-Imports System.Collections.Generic
 Imports Cito.Tester.Common
 
 Namespace Datasources
 
     Public Class ItemDataSource
         Inherits DataSource(Of ResourceRef, ItemDataSourceConfig)
-
-
 
 
         Public Sub New(config As ItemDataSourceConfig)
@@ -31,6 +26,10 @@ Namespace Datasources
 
 
         Public Overrides Function [Get](resourceManager As ResourceManagerBase) As IEnumerable(Of ResourceRef)
+            Throw New NotImplementedException()
+        End Function
+
+        Public Overridable Function RenameItem(currentItemCode As String, newItemCode As String) As Boolean
             Throw New NotImplementedException()
         End Function
 
