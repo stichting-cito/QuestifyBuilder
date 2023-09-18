@@ -39,13 +39,11 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
 
         Public Sub AddTestPartToAssessmentTestType(ByRef assessmentTestType As AssessmentTestType, testPartType As TestPartType)
             If assessmentTestType.qtitestpart IsNot Nothing AndAlso assessmentTestType.qtitestpart.Count > 0 Then
-                Dim testParts As List(Of TestPartType) = assessmentTestType.qtitestpart.ToList
+                Dim testParts As List(Of TestPartType) = assessmentTestType.qtitestpart.ToList()
                 testParts.Add(testPartType)
-                assessmentTestType.qtitestpart = testParts
+                assessmentTestType.qtitestpart = testParts.ToArray()
             Else
-                Dim testParts As New List(Of TestPartType)
-                testParts.Add(testPartType)
-                assessmentTestType.qtitestpart = testParts
+                assessmentTestType.qtitestpart = {testPartType}
             End If
         End Sub
 

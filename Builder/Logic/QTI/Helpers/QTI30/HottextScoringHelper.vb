@@ -52,10 +52,8 @@ Namespace QTI.Helpers.QTI30
         .basetype = OutcomeDeclarationTypeBasetype.boolean, .basetypeSpecified = True,
         .cardinality = OutcomeDeclarationTypeCardinality.single}
                         defaultoutcomeDeclarationType.qtidefaultvalue = New DefaultValueType
-                        Dim defaultValue(0) As ValueType
-                        defaultValue(0) = New ValueType
-                        defaultValue(0).Value = "False"
-                        defaultoutcomeDeclarationType.qtidefaultvalue.qtivalue = defaultValue.ToList()
+                        Dim defaultValue = New ValueType With {.Value = "False"}
+                        defaultoutcomeDeclarationType.qtidefaultvalue.qtivalue = {defaultValue}
 
                         list.Add(defaultoutcomeDeclarationType)
                     Next

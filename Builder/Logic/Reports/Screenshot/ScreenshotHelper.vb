@@ -212,6 +212,7 @@ Public Class ScreenshotHelper
 
             If Me._itemPreviewHandler IsNot Nothing and _previewer IsNot Nothing Then
                 Me._previewer.DisposePreviewerEngine(_itemPreviewHandler)
+                Me._previewer.DisposeItemPreviewer(True)
             End If
 
             TestBuilderAsyncProtocolContextManager.UnRegisterResourceManager(_resourceManager)

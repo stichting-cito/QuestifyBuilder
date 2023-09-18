@@ -24,8 +24,6 @@ Public Class Chromium_ScreenshotClient
 
     End Sub
 
-
-
     Protected Overrides Function GetRenderHandler() As CefRenderHandler
         Return _renderHandler
     End Function
@@ -44,7 +42,6 @@ Public Class ChromiumScreenshotRenderHandler
 
     Public Event ScreenshotCompleted()
 
-
     Public Sub New(windowWidth As Integer, windowHeight As Integer, filename As String)
         _windowHeight = windowHeight
         _windowWidth = windowWidth
@@ -58,6 +55,7 @@ Public Class ChromiumScreenshotRenderHandler
 
     Protected Overrides Function GetRootScreenRect(browser As CefBrowser, ByRef rect As CefRectangle) As Boolean
         GetViewRect(browser, rect)
+        Return True
     End Function
 
     Protected Overrides Function GetScreenPoint(browser As CefBrowser, viewX As Integer, viewY As Integer, ByRef screenX As Integer, ByRef screenY As Integer) As Boolean
@@ -72,6 +70,7 @@ Public Class ChromiumScreenshotRenderHandler
         rect.Width = _windowWidth
         rect.Height = _windowHeight
     End Sub
+
     Protected Overrides Function GetScreenInfo(browser As CefBrowser, screenInfo As CefScreenInfo) As Boolean
         Return False
     End Function
@@ -105,7 +104,6 @@ Public Class ChromiumScreenshotRenderHandler
                               End Sub).ContinueWith(Sub()
                                                         RaiseEvent ScreenshotCompleted()
                                                         browser.GetHost().CloseBrowser()
-                                                        Dispose(True)
                                                     End Sub, TaskContinuationOptions.NotOnCanceled, token)
 
     End Sub

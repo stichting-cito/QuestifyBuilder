@@ -30,7 +30,10 @@ Namespace QTI.Helpers
             Dim uri = New Uri("about:blank")
             Try
                 ServicePointManager.ServerCertificateValidationCallback = New RemoteCertificateValidationCallback(AddressOf CertificateValidationCallBack)
-                Dim client As New RestClient(postLocation)
+                Dim client As New RestClient(postLocation) With {
+                    .Timeout = 300000
+                }
+
                 Dim request As New RestRequest(Method.POST)
 
                 request.AddParameter(parameterName, Path.GetFileName(packageLocation))

@@ -30,9 +30,7 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
                 End If
             End If
 
-            Dim outcomeDeclarations As New List(Of OutcomeDeclarationType)
-            outcomeDeclarations.Add(GetOutComeDeclaration())
-            assessmentTestType.qtioutcomedeclaration = outcomeDeclarations
+            assessmentTestType.qtioutcomedeclaration = {GetOutComeDeclaration()}
             assessmentTestType.qtioutcomeprocessing = GetOutcomeProcessing(GetOutcomeProcessingItems())
             Return assessmentTestType
         End Function
@@ -59,12 +57,10 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
                     .qtidefaultvalue = New DefaultValueType
                     }
 
-            Dim valueList As New List(Of ValueType)
             Dim value As New ValueType With {
                     .Value = "0"
                     }
-            valueList.Add(value)
-            returnValue.qtidefaultvalue.qtivalue = valueList
+            returnValue.qtidefaultvalue.qtivalue = {value}
             Return returnValue
         End Function
 
@@ -88,7 +84,7 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
             }
 
             Return New OutcomeProcessingType() With {
-                .Items = New List(Of Object) From {setOutcomeValue}
+                .Items = {setOutcomeValue}
             }
         End Function
 

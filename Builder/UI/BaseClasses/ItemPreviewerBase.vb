@@ -52,4 +52,7 @@ Public Class ItemPreviewerBase
         RaiseEvent ItemValidatingRequired(sender, e)
     End Sub
 
+    Public Overridable Sub DisposeItemPreviewer(disposing As Boolean) Implements IItemPreviewer.DisposeItemPreviewer
+
+    End Sub
 End Class

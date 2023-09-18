@@ -202,9 +202,7 @@ Namespace QTI.Converters.ScoringConverter.QTI30
 
 
                             Dim value As New ValueType With {.Value = "0"}
-                            Dim val = New List(Of ValueType)
-                            val.Add(value)
-                            Dim defaultValue As New DefaultValueType() With {.qtivalue = val}
+                            Dim defaultValue As New DefaultValueType() With {.qtivalue = {value}}
                             outcomeDeclarationType.qtidefaultvalue = defaultValue
 
                             list.Add(outcomeDeclarationType)

@@ -18,8 +18,7 @@ Namespace QTI30.Helpers
         <TestMethod>
         Public Sub MergeResponseProcessing_OnlyFirstValue_ReturnsFirstValue()
             Dim valueFirst = New ResponseProcessingType()
-            valueFirst.Items = New List(Of Object)()
-            valueFirst.Items.Add(New ResponseConditionType())
+            valueFirst.Items = {New ResponseConditionType()}
             Dim valueSecond As ResponseProcessingType = Nothing
 
             Dim result = ResponseProcessingHelper.MergeResponseProcessing(valueFirst, valueSecond)
@@ -32,8 +31,7 @@ Namespace QTI30.Helpers
         Public Sub MergeResponseProcessing_OnlySecondValue_ReturnsSecondValue()
             Dim valueFirst As ResponseProcessingType = Nothing
             Dim valueSecond = New ResponseProcessingType()
-            valueSecond.Items = New List(Of Object)()
-            valueSecond.Items.Add(New ResponseConditionType())
+            valueSecond.Items = {New ResponseConditionType()}
 
             Dim result = ResponseProcessingHelper.MergeResponseProcessing(valueFirst, valueSecond)
 
@@ -44,11 +42,9 @@ Namespace QTI30.Helpers
         <TestMethod>
         Public Sub MergeResponseProcessing_BothValues_ReturnsMerged()
             Dim valueFirst = New ResponseProcessingType()
-            valueFirst.Items = New List(Of Object)()
-            valueFirst.Items.Add(New ResponseConditionType())
+            valueFirst.Items = {New ResponseConditionType()}
             Dim valueSecond = New ResponseProcessingType()
-            valueSecond.Items = New List(Of Object)()
-            valueSecond.Items.Add(New ResponseConditionType())
+            valueSecond.Items = {New ResponseConditionType()}
 
             Dim result = ResponseProcessingHelper.MergeResponseProcessing(valueFirst, valueSecond)
 

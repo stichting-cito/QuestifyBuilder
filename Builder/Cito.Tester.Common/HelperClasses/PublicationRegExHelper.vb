@@ -1,5 +1,4 @@
 ﻿Imports System.Text
-Imports System.Text.RegularExpressions
 
 Public NotInheritable Class PublicationRegExHelper
 
@@ -176,32 +175,4 @@ Public NotInheritable Class PublicationRegExHelper
 
         Return builder.ToString()
     End Function
-
-    Public Shared Function GetReferencesFromJsonManifest(jsonManifestContents As String) As List(Of String)
-        Dim references As New List(Of String)()
-        Dim regex As New Regex("(?<jsonFile>ref/.+?)["",]*\n")
-        Dim matchColl As MatchCollection = regex.Matches(jsonManifestContents)
-
-        For Each match As Match In matchColl
-            references.Add(match.Groups("jsonFile").Value)
-        Next
-
-        Return references
-    End Function
-
-    Public Shared Function UpdateReferencesInJsonManifest(jsonManifestContents As String, ciNameToAddToReference As String) As String
-        Dim result As String = jsonManifestContents
-        Dim regex As New Regex("(?<jsonFile>ref/.+?)["",]*\n")
-        Dim matchColl As MatchCollection = regex.Matches(jsonManifestContents)
-
-        For Each match As Match In matchColl
-            result = result.Replace(match.Groups("jsonFile").Value, AddCiNameToReference(match.Groups("jsonFile").Value, ciNameToAddToReference))
-        Next
-        Return result
-    End Function
-
-    Public Shared Function AddCiNameToReference(reference As String, ciNameToAddToReference As String) As String
-        Return String.Concat(Left(reference, 4), ciNameToAddToReference, "/", Right(reference, Len(reference) - 4))
-    End Function
-
 End Class

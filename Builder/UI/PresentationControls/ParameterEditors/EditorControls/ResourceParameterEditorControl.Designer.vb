@@ -92,10 +92,10 @@ Partial Class ResourceParameterEditorControl
         resources.ApplyResources(Me.HeightLabel, "HeightLabel")
         Me.HeightLabel.Name = "HeightLabel"
         resources.ApplyResources(Me.WidthTextBox, "WidthTextBox")
-        Me.WidthTextBox.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
+        Me.WidthTextBox.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.WidthTextBox.Name = "WidthTextBox"
         resources.ApplyResources(Me.HeightTextBox, "HeightTextBox")
-        Me.HeightTextBox.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
+        Me.HeightTextBox.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.HeightTextBox.Name = "HeightTextBox"
         resources.ApplyResources(Me.KeepAspectRatioCheckBox, "KeepAspectRatioCheckBox")
         Me.KeepAspectRatioCheckBox.Checked = true

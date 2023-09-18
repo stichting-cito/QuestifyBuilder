@@ -133,6 +133,7 @@
       <Link>GeneralInfo.vb</Link>
     </Compile>
     <Compile Include="CsvHelper\CSVExport.vb" />
+    <Compile Include="AssessmentTestMaxScoreExcelReport.vb" />
     <Compile Include="CustomBankPropertyExcelReport.vb" />
     <Compile Include="ExcelReportBase.vb" />
     <Compile Include="ExcelReportForTestItems.vb" />

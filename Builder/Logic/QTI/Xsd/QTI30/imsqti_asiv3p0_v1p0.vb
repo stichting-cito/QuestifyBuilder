@@ -3,22 +3,23 @@ Option Strict Off
 Option Explicit On
 
 Imports System.Xml.Serialization
+
 Namespace QTI.Xsd.QTI30
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="A.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
- System.Xml.Serialization.XmlRootAttribute("a", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+System.SerializableAttribute(),
+System.Diagnostics.DebuggerStepThroughAttribute(),
+System.ComponentModel.DesignerCategoryAttribute("code"),
+System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+System.Xml.Serialization.XmlRootAttribute("a", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class AType
         Inherits BaseSequenceXBaseType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType47
+        Private itemsElementNameField() As ItemsChoiceType48
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         Private hrefField As String
 
@@ -73,7 +74,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType47()
+        Public Property ItemsElementName() As ItemsChoiceType48()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -83,7 +84,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -113,20 +114,20 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="HTMLText.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("abbr", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class HTMLTextType
         Inherits BaseSequenceXBaseType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType43
+        Private itemsElementNameField() As ItemsChoiceType44
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
@@ -177,7 +178,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType43()
+        Public Property ItemsElementName() As ItemsChoiceType44()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -187,7 +188,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -197,20 +198,20 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="BDI.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("bdi", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class BDIType
         Inherits BaseSequenceType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType29
+        Private itemsElementNameField() As ItemsChoiceType30
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
@@ -227,6 +228,7 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
@@ -277,7 +279,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType29()
+        Public Property ItemsElementName() As ItemsChoiceType30()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -287,7 +289,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -297,20 +299,20 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="BaseHTML5Flow.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("article", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class BaseHTML5FlowType
         Inherits BaseSequenceType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType26
+        Private itemsElementNameField() As ItemsChoiceType24
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
@@ -327,6 +329,7 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
@@ -404,7 +407,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType26()
+        Public Property ItemsElementName() As ItemsChoiceType24()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -414,7 +417,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -424,20 +427,20 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Audio.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("audio", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class AudioType
         Inherits BaseSequenceType
 
-        Private sourceField As List(Of SourceType)
+        Private sourceField() As SourceType
 
-        Private trackField As List(Of TrackType)
+        Private trackField() As TrackType
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         Private srcField As String
 
@@ -471,7 +474,7 @@ Namespace QTI.Xsd.QTI30
         End Sub
 
         <System.Xml.Serialization.XmlElementAttribute("source", Order:=0)>
-        Public Property source() As List(Of SourceType)
+        Public Property source() As SourceType()
             Get
                 Return Me.sourceField
             End Get
@@ -481,7 +484,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("track", Order:=1)>
-        Public Property track() As List(Of TrackType)
+        Public Property track() As TrackType()
             Get
                 Return Me.trackField
             End Get
@@ -491,7 +494,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -632,11 +635,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Source.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("source", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class SourceType
         Inherits BaseSequenceEmptyType
@@ -704,19 +707,21 @@ Namespace QTI.Xsd.QTI30
 
     <System.Xml.Serialization.XmlIncludeAttribute(GetType(TrackType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(SourceType)),
- System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+ System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="BaseSequenceEmpty.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class BaseSequenceEmptyType
         Inherits ARIABaseEmptyType
 
         Private idField As String
 
-        Private classField As List(Of String)
+        Private classField() As String
 
         Private langField As String
+
+        Private lang1Field As String
 
         Private labelField As String
 
@@ -728,7 +733,7 @@ Namespace QTI.Xsd.QTI30
 
         Private dataqtisuppressttsFieldSpecified As Boolean
 
-        Private anyAttrField As List(Of System.Xml.XmlAttribute)
+        Private anyAttrField() As System.Xml.XmlAttribute
 
         Public Sub New()
             MyBase.New
@@ -746,7 +751,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property [class]() As List(Of String)
+        Public Property [class]() As String()
             Get
                 Return Me.classField
             End Get
@@ -755,13 +760,23 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlAttributeAttribute(Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
         Public Property lang() As String
             Get
                 Return Me.langField
             End Get
             Set
                 Me.langField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("lang", Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        Public Property lang1() As String
+            Get
+                Return Me.lang1Field
+            End Get
+            Set
+                Me.lang1Field = Value
             End Set
         End Property
 
@@ -817,7 +832,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAnyAttributeAttribute()>
-        Public Property AnyAttr() As List(Of System.Xml.XmlAttribute)
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
             Get
                 Return Me.anyAttrField
             End Get
@@ -827,7 +842,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum BaseSequenceEmptyTypeDir
@@ -839,7 +854,7 @@ Namespace QTI.Xsd.QTI30
         [auto]
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum BaseSequenceEmptyTypeDataqtisuppresstts
@@ -866,11 +881,11 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlIncludeAttribute(GetType(BaseSequenceEmptyType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(TrackType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(SourceType)),
- System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+ System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ARIABaseEmpty.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class ARIABaseEmptyType
         Inherits EmptyPrimitiveTypeType
 
@@ -910,10 +925,6 @@ Namespace QTI.Xsd.QTI30
 
         Private ariadisabledField As Boolean
 
-        Private ariadropeffectField As List(Of ARIADropEffectListType)
-
-        Private ariadropeffectFieldSpecified As Boolean
-
         Private ariaexpandedField As ARIABaseEmptyTypeAriaexpanded
 
         Private ariahaspopupField As Boolean
@@ -930,9 +941,7 @@ Namespace QTI.Xsd.QTI30
 
         Private ariareadonlyField As Boolean
 
-        Private ariarelevantField As List(Of ARIARelevantListType)
-
-        Private ariarelevantFieldSpecified As Boolean
+        Private ariarelevantField() As ARIARelevantListType
 
         Private ariarequiredField As Boolean
 
@@ -956,6 +965,32 @@ Namespace QTI.Xsd.QTI30
 
         Private ariavaluetextField As String
 
+        Private ariamodalField As Boolean
+
+        Private ariacurrentField As ARIABaseEmptyTypeAriacurrent
+
+        Private ariaplaceholderField As String
+
+        Private ariacolcountField As String
+
+        Private ariarowcountField As String
+
+        Private ariacolindexField As String
+
+        Private ariarowindexField As String
+
+        Private ariacolspanField As String
+
+        Private ariarowspanField As String
+
+        Private ariakeyshortsField As String
+
+        Private ariaroledescriptionField As String
+
+        Private ariaerrormessageField As String
+
+        Private ariadetailsField As String
+
         Public Sub New()
             MyBase.New
             Me.arialiveField = ARIABaseEmptyTypeArialive.off
@@ -973,9 +1008,12 @@ Namespace QTI.Xsd.QTI30
             Me.ariamultiselectableField = False
             Me.ariapressedField = ARIABaseEmptyTypeAriapressed.undefined
             Me.ariareadonlyField = False
+            Me.ariarelevantField = New ARIARelevantListType() {ARIARelevantListType.additions, ARIARelevantListType.text}
             Me.ariarequiredField = False
             Me.ariaselectedField = ARIABaseEmptyTypeAriaselected.undefined
             Me.ariasortField = ARIABaseEmptyTypeAriasort.none
+            Me.ariamodalField = False
+            Me.ariacurrentField = ARIABaseEmptyTypeAriacurrent.[false]
         End Sub
 
         <System.Xml.Serialization.XmlAttributeAttribute()>
@@ -1166,26 +1204,6 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlAttributeAttribute("aria-dropeffect")>
-        Public Property ariadropeffect() As List(Of ARIADropEffectListType)
-            Get
-                Return Me.ariadropeffectField
-            End Get
-            Set
-                Me.ariadropeffectField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ariadropeffectSpecified() As Boolean
-            Get
-                Return Me.ariadropeffectFieldSpecified
-            End Get
-            Set
-                Me.ariadropeffectFieldSpecified = Value
-            End Set
-        End Property
-
         <System.Xml.Serialization.XmlAttributeAttribute("aria-expanded"),
  System.ComponentModel.DefaultValueAttribute(ARIABaseEmptyTypeAriaexpanded.undefined)>
         Public Property ariaexpanded() As ARIABaseEmptyTypeAriaexpanded
@@ -1274,22 +1292,12 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute("aria-relevant")>
-        Public Property ariarelevant() As List(Of ARIARelevantListType)
+        Public Property ariarelevant() As ARIARelevantListType()
             Get
                 Return Me.ariarelevantField
             End Get
             Set
                 Me.ariarelevantField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ariarelevantSpecified() As Boolean
-            Get
-                Return Me.ariarelevantFieldSpecified
-            End Get
-            Set
-                Me.ariarelevantFieldSpecified = Value
             End Set
         End Property
 
@@ -1315,7 +1323,7 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlAttributeAttribute("aria-setsize", DataType:="positiveInteger")>
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-setsize", DataType:="integer")>
         Public Property ariasetsize() As String
             Get
                 Return Me.ariasetsizeField
@@ -1405,9 +1413,141 @@ Namespace QTI.Xsd.QTI30
                 Me.ariavaluetextField = Value
             End Set
         End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-modal"),
+ System.ComponentModel.DefaultValueAttribute(False)>
+        Public Property ariamodal() As Boolean
+            Get
+                Return Me.ariamodalField
+            End Get
+            Set
+                Me.ariamodalField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-current"),
+ System.ComponentModel.DefaultValueAttribute(ARIABaseEmptyTypeAriacurrent.[false])>
+        Public Property ariacurrent() As ARIABaseEmptyTypeAriacurrent
+            Get
+                Return Me.ariacurrentField
+            End Get
+            Set
+                Me.ariacurrentField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-placeholder")>
+        Public Property ariaplaceholder() As String
+            Get
+                Return Me.ariaplaceholderField
+            End Get
+            Set
+                Me.ariaplaceholderField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-colcount", DataType:="nonNegativeInteger")>
+        Public Property ariacolcount() As String
+            Get
+                Return Me.ariacolcountField
+            End Get
+            Set
+                Me.ariacolcountField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-rowcount", DataType:="nonNegativeInteger")>
+        Public Property ariarowcount() As String
+            Get
+                Return Me.ariarowcountField
+            End Get
+            Set
+                Me.ariarowcountField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-colindex", DataType:="nonNegativeInteger")>
+        Public Property ariacolindex() As String
+            Get
+                Return Me.ariacolindexField
+            End Get
+            Set
+                Me.ariacolindexField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-rowindex", DataType:="nonNegativeInteger")>
+        Public Property ariarowindex() As String
+            Get
+                Return Me.ariarowindexField
+            End Get
+            Set
+                Me.ariarowindexField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-colspan", DataType:="nonNegativeInteger")>
+        Public Property ariacolspan() As String
+            Get
+                Return Me.ariacolspanField
+            End Get
+            Set
+                Me.ariacolspanField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-rowspan", DataType:="nonNegativeInteger")>
+        Public Property ariarowspan() As String
+            Get
+                Return Me.ariarowspanField
+            End Get
+            Set
+                Me.ariarowspanField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-keyshorts")>
+        Public Property ariakeyshorts() As String
+            Get
+                Return Me.ariakeyshortsField
+            End Get
+            Set
+                Me.ariakeyshortsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-roledescription")>
+        Public Property ariaroledescription() As String
+            Get
+                Return Me.ariaroledescriptionField
+            End Get
+            Set
+                Me.ariaroledescriptionField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-errormessage", DataType:="IDREF")>
+        Public Property ariaerrormessage() As String
+            Get
+                Return Me.ariaerrormessageField
+            End Get
+            Set
+                Me.ariaerrormessageField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-details", DataType:="IDREF")>
+        Public Property ariadetails() As String
+            Get
+                Return Me.ariadetailsField
+            End Get
+            Set
+                Me.ariadetailsField = Value
+            End Set
+        End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseEmptyTypeRole
@@ -1417,8 +1557,6 @@ Namespace QTI.Xsd.QTI30
         columnheader
 
         definition
-
-        directory
 
         document
 
@@ -1533,9 +1671,37 @@ Namespace QTI.Xsd.QTI30
         treegrid
 
         treeitem
+
+        searchbox
+
+        switch
+
+        term
+
+        figure
+
+        code
+
+        time
+
+        subscript
+
+        superscript
+
+        meter
+
+        generic
+
+        insertion
+
+        deletion
+
+        strong
+
+        emphasis
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseEmptyTypeArialive
@@ -1547,7 +1713,7 @@ Namespace QTI.Xsd.QTI30
         assertive
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseEmptyTypeAriaorientation
@@ -1557,7 +1723,7 @@ Namespace QTI.Xsd.QTI30
         horizontal
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseEmptyTypeAriaautocomplete
@@ -1571,7 +1737,7 @@ Namespace QTI.Xsd.QTI30
         none
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseEmptyTypeAriachecked
@@ -1585,25 +1751,7 @@ Namespace QTI.Xsd.QTI30
         undefined
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ARIADropEffectList.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum ARIADropEffectListType
-
-        copy
-
-        move
-
-        link
-
-        execute
-
-        popup
-
-        none
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseEmptyTypeAriaexpanded
@@ -1615,7 +1763,7 @@ Namespace QTI.Xsd.QTI30
         undefined
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseEmptyTypeAriainvalid
@@ -1629,7 +1777,7 @@ Namespace QTI.Xsd.QTI30
         spelling
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseEmptyTypeAriapressed
@@ -1643,9 +1791,9 @@ Namespace QTI.Xsd.QTI30
         undefined
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ARIARelevantList.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIARelevantListType
 
         additions
@@ -1660,7 +1808,7 @@ Namespace QTI.Xsd.QTI30
         additionstext
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseEmptyTypeAriaselected
@@ -1672,7 +1820,7 @@ Namespace QTI.Xsd.QTI30
         undefined
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseEmptyTypeAriasort
@@ -1686,11 +1834,34 @@ Namespace QTI.Xsd.QTI30
         other
     End Enum
 
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum ARIABaseEmptyTypeAriacurrent
+
+        page
+
+        [step]
+
+        location
+
+        [date]
+
+        time
+
+        [true]
+
+        [false]
+
+        undefined
+    End Enum
+
     <System.Xml.Serialization.XmlIncludeAttribute(GetType(WeightType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(VariableMappingType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(VariableType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(TimeLimitsType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(TestVariablesType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(TemplateUniqueIDRefType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(StyleSheetType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(RandomIntegerType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(RandomFloatType)),
@@ -1707,6 +1878,7 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlIncludeAttribute(GetType(InteractionModuleType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(DefaultType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(CorrectType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(ContextUniqueIDRefType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(AssessmentStimulusRefType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(AssessmentSectionRefType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(ARIABaseEmptyType)),
@@ -1725,29 +1897,29 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlIncludeAttribute(GetType(SourceType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(AreaMapEntryType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(AdaptiveHrefType)),
- System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+ System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="EmptyPrimitiveType.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class EmptyPrimitiveTypeType
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="OutcomeElse.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class OutcomeElseType
 
-        Private itemsField As List(Of Object)
+        Private itemsField() As Object
 
         <System.Xml.Serialization.XmlElementAttribute("qti-exit-test", GetType(EmptyPrimitiveTypeType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-lookup-outcome-value", GetType(LookupOutcomeValueType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-outcome-condition", GetType(OutcomeConditionType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-outcome-processing-fragment", GetType(OutcomeProcessingFragmentType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-set-outcome-value", GetType(SetValueType), Order:=0)>
-        Public Property Items() As List(Of Object)
+        Public Property Items() As Object()
             Get
                 Return Me.itemsField
             End Get
@@ -1757,11 +1929,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="LookupOutcomeValue.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class LookupOutcomeValueType
 
         Private itemField As Object
@@ -1866,11 +2038,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Logic1toMany.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class Logic1toManyType
 
         Private itemsField() As Object
@@ -1963,11 +2135,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="AnyN.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class AnyNType
 
         Private itemsField() As Object
@@ -2084,11 +2256,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="BaseValue.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class BaseValueType
 
         Private basetypeField As BaseValueTypeBasetype
@@ -2116,7 +2288,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum BaseValueTypeBasetype
@@ -2144,11 +2316,11 @@ Namespace QTI.Xsd.QTI30
         uri
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="LogicSingle.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class LogicSingleType
 
         Private itemField As Object
@@ -2241,11 +2413,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="LogicPair.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class LogicPairType
 
         Private itemsField() As Object
@@ -2338,32 +2510,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ContextUniqueIDRefDType", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class ContextUniqueIDRefTypeType
-        Inherits EmptyPrimitiveTypeType
-
-        Private identifierField As String
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
-        Public Property identifier() As String
-            Get
-                Return Me.identifierField
-            End Get
-            Set
-                Me.identifierField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Correct.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class CorrectType
         Inherits EmptyPrimitiveTypeType
 
@@ -2380,24 +2531,24 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="CustomOperator.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class CustomOperatorType
 
         Private itemsField() As Object
 
         Private itemsElementNameField() As ItemsChoiceType6
 
-        Private anyField As List(Of System.Xml.XmlElement)
+        Private anyField() As System.Xml.XmlElement
 
         Private classField As String
 
         Private definitionField As String
 
-        Private anyAttrField As List(Of System.Xml.XmlAttribute)
+        Private anyAttrField() As System.Xml.XmlAttribute
 
         <System.Xml.Serialization.XmlElementAttribute("qti-and", GetType(Logic1toManyType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-any-n", GetType(AnyNType), Order:=0),
@@ -2485,7 +2636,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAnyElementAttribute(Order:=2)>
-        Public Property Any() As List(Of System.Xml.XmlElement)
+        Public Property Any() As System.Xml.XmlElement()
             Get
                 Return Me.anyField
             End Get
@@ -2515,7 +2666,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAnyAttributeAttribute()>
-        Public Property AnyAttr() As List(Of System.Xml.XmlAttribute)
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
             Get
                 Return Me.anyAttrField
             End Get
@@ -2525,11 +2676,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Default.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class DefaultType
         Inherits EmptyPrimitiveTypeType
 
@@ -2546,11 +2697,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Equal.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class EqualType
 
         Private itemsField() As Object
@@ -2559,7 +2710,7 @@ Namespace QTI.Xsd.QTI30
 
         Private tolerancemodeField As EqualTypeTolerancemode
 
-        Private toleranceField As List(Of String)
+        Private toleranceField() As String
 
         Private includelowerboundField As Boolean
 
@@ -2669,7 +2820,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property tolerance() As List(Of String)
+        Public Property tolerance() As String()
             Get
                 Return Me.toleranceField
             End Get
@@ -2701,11 +2852,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="EqualRounded.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class EqualRoundedType
 
         Private itemsField() As Object
@@ -2828,11 +2979,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="FieldValue.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class FieldValueType
 
         Private itemField As Object
@@ -2937,11 +3088,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Index.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class IndexType
 
         Private itemField As Object
@@ -3046,11 +3197,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Inside.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class InsideType
 
         Private itemField As Object
@@ -3167,11 +3318,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="MapResponse.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class MapResponseType
         Inherits EmptyPrimitiveTypeType
 
@@ -3188,11 +3339,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="MathConstant.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class MathConstantType
         Inherits EmptyPrimitiveTypeType
 
@@ -3209,7 +3360,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum MathConstantTypeName
@@ -3219,11 +3370,11 @@ Namespace QTI.Xsd.QTI30
         e
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="MathOperator.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class MathOperatorType
 
         Private itemsField() As Object
@@ -3328,11 +3479,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Logic0toMany.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class Logic0toManyType
 
         Private itemsField() As Object
@@ -3425,19 +3576,19 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Number.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class NumberType
         Inherits EmptyPrimitiveTypeType
 
         Private sectionidentifierField As String
 
-        Private includecategoryField As List(Of String)
+        Private includecategoryField() As String
 
-        Private excludecategoryField As List(Of String)
+        Private excludecategoryField() As String
 
         <System.Xml.Serialization.XmlAttributeAttribute("section-identifier", DataType:="NCName")>
         Public Property sectionidentifier() As String
@@ -3450,7 +3601,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute("include-category", DataType:="NCName")>
-        Public Property includecategory() As List(Of String)
+        Public Property includecategory() As String()
             Get
                 Return Me.includecategoryField
             End Get
@@ -3460,7 +3611,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute("exclude-category", DataType:="NCName")>
-        Public Property excludecategory() As List(Of String)
+        Public Property excludecategory() As String()
             Get
                 Return Me.excludecategoryField
             End Get
@@ -3470,19 +3621,19 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="OutcomeMinMax.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class OutcomeMinMaxType
         Inherits EmptyPrimitiveTypeType
 
         Private sectionidentifierField As String
 
-        Private includecategoryField As List(Of String)
+        Private includecategoryField() As String
 
-        Private excludecategoryField As List(Of String)
+        Private excludecategoryField() As String
 
         Private outcomeidentifierField As String
 
@@ -3499,7 +3650,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute("include-category", DataType:="NCName")>
-        Public Property includecategory() As List(Of String)
+        Public Property includecategory() As String()
             Get
                 Return Me.includecategoryField
             End Get
@@ -3509,7 +3660,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute("exclude-category", DataType:="NCName")>
-        Public Property excludecategory() As List(Of String)
+        Public Property excludecategory() As String()
             Get
                 Return Me.excludecategoryField
             End Get
@@ -3539,11 +3690,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="PatternMatch.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class PatternMatchType
 
         Private itemField As Object
@@ -3648,11 +3799,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="RandomFloat.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class RandomFloatType
         Inherits EmptyPrimitiveTypeType
 
@@ -3687,11 +3838,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="RandomInteger.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class RandomIntegerType
         Inherits EmptyPrimitiveTypeType
 
@@ -3740,11 +3891,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Repeat.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class RepeatType
 
         Private itemsField() As Object
@@ -3849,11 +4000,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="RoundTo.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class RoundToType
 
         Private itemField As Object
@@ -3970,11 +4121,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="StatsOperator.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class StatsOperatorType
 
         Private itemField As Object
@@ -4079,11 +4230,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="StringMatch.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class StringMatchType
 
         Private itemsField() As Object
@@ -4206,11 +4357,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Substring.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class SubstringType
 
         Private itemsField() As Object
@@ -4315,11 +4466,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="NumericLogic1toMany.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class NumericLogic1toManyType
 
         Private itemsField() As Object
@@ -4392,40 +4543,19 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TemplateUniqueIDRefDType", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class TemplateUniqueIDRefType
-        Inherits EmptyPrimitiveTypeType
-
-        Private templateidentifierField As String
-
-        <System.Xml.Serialization.XmlAttributeAttribute("template-identifier", DataType:="NCName")>
-        Public Property templateidentifier() As String
-            Get
-                Return Me.templateidentifierField
-            End Get
-            Set
-                Me.templateidentifierField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TestVariables.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class TestVariablesType
         Inherits EmptyPrimitiveTypeType
 
         Private sectionidentifierField As String
 
-        Private includecategoryField As List(Of String)
+        Private includecategoryField() As String
 
-        Private excludecategoryField As List(Of String)
+        Private excludecategoryField() As String
 
         Private variableidentifierField As String
 
@@ -4446,7 +4576,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute("include-category", DataType:="NCName")>
-        Public Property includecategory() As List(Of String)
+        Public Property includecategory() As String()
             Get
                 Return Me.includecategoryField
             End Get
@@ -4456,7 +4586,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute("exclude-category", DataType:="NCName")>
-        Public Property excludecategory() As List(Of String)
+        Public Property excludecategory() As String()
             Get
                 Return Me.excludecategoryField
             End Get
@@ -4506,7 +4636,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum TestVariablesTypeBasetype
@@ -4534,11 +4664,11 @@ Namespace QTI.Xsd.QTI30
         uri
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Variable.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class VariableType
         Inherits EmptyPrimitiveTypeType
 
@@ -4567,7 +4697,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType8
@@ -4705,7 +4835,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType5
@@ -4903,7 +5033,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType2
@@ -5101,7 +5231,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemChoiceType
@@ -5299,7 +5429,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum StatsOperatorTypeName
@@ -5315,7 +5445,7 @@ Namespace QTI.Xsd.QTI30
         popSD
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemChoiceType1
@@ -5513,7 +5643,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum RoundToTypeRoundingmode
@@ -5523,7 +5653,7 @@ Namespace QTI.Xsd.QTI30
         significantFigures
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType1
@@ -5721,7 +5851,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemChoiceType2
@@ -5919,7 +6049,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType7
@@ -6117,7 +6247,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType
@@ -6315,7 +6445,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum MathOperatorTypeName
@@ -6377,7 +6507,7 @@ Namespace QTI.Xsd.QTI30
         toRadians
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemChoiceType3
@@ -6575,7 +6705,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum InsideTypeShape
@@ -6591,7 +6721,7 @@ Namespace QTI.Xsd.QTI30
         rect
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemChoiceType5
@@ -6789,7 +6919,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemChoiceType4
@@ -6987,7 +7117,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType4
@@ -7185,7 +7315,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum EqualRoundedTypeRoundingmode
@@ -7195,7 +7325,7 @@ Namespace QTI.Xsd.QTI30
         significantFigures
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType3
@@ -7393,7 +7523,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum EqualTypeTolerancemode
@@ -7405,7 +7535,7 @@ Namespace QTI.Xsd.QTI30
         relative
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType6
@@ -7603,7 +7733,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType9
@@ -7801,7 +7931,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemChoiceType6
@@ -7999,7 +8129,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType11
@@ -8197,7 +8327,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType10
@@ -8395,7 +8525,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemChoiceType11
@@ -8593,16 +8723,16 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="OutcomeCondition.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class OutcomeConditionType
 
         Private qtioutcomeifField As OutcomeIfType
 
-        Private qtioutcomeelseifField As List(Of OutcomeIfType)
+        Private qtioutcomeelseifField() As OutcomeIfType
 
         Private qtioutcomeelseField As OutcomeElseType
 
@@ -8617,7 +8747,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-outcome-else-if", Order:=1)>
-        Public Property qtioutcomeelseif() As List(Of OutcomeIfType)
+        Public Property qtioutcomeelseif() As OutcomeIfType()
             Get
                 Return Me.qtioutcomeelseifField
             End Get
@@ -8637,18 +8767,18 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="OutcomeIf.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class OutcomeIfType
 
         Private itemField As Object
 
         Private itemElementNameField As ItemChoiceType14
 
-        Private itemsField As List(Of Object)
+        Private itemsField() As Object
 
         <System.Xml.Serialization.XmlElementAttribute("qti-and", GetType(Logic1toManyType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-any-n", GetType(AnyNType), Order:=0),
@@ -8740,7 +8870,7 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("qti-outcome-condition", GetType(OutcomeConditionType), Order:=2),
  System.Xml.Serialization.XmlElementAttribute("qti-outcome-processing-fragment", GetType(OutcomeProcessingFragmentType), Order:=2),
  System.Xml.Serialization.XmlElementAttribute("qti-set-outcome-value", GetType(SetValueType), Order:=2)>
-        Public Property Items() As List(Of Object)
+        Public Property Items() As Object()
             Get
                 Return Me.itemsField
             End Get
@@ -8750,7 +8880,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemChoiceType14
@@ -8948,21 +9078,21 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="OutcomeProcessingFragment.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class OutcomeProcessingFragmentType
 
-        Private itemsField As List(Of Object)
+        Private itemsField() As Object
 
         <System.Xml.Serialization.XmlElementAttribute("qti-exit-test", GetType(EmptyPrimitiveTypeType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-lookup-outcome-value", GetType(LookupOutcomeValueType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-outcome-condition", GetType(OutcomeConditionType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-outcome-processing-fragment", GetType(OutcomeProcessingFragmentType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-set-outcome-value", GetType(SetValueType), Order:=0)>
-        Public Property Items() As List(Of Object)
+        Public Property Items() As Object()
             Get
                 Return Me.itemsField
             End Get
@@ -8972,11 +9102,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="SetValue.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class SetValueType
 
         Private itemField As Object
@@ -9081,7 +9211,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemChoiceType7
@@ -9279,180 +9409,18 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TestFeedback.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class TestFeedbackType
-
-        Private qtistylesheetField As List(Of StyleSheetType)
-
-        Private qticontentbodyField As FeedbackFlowContentBodyType
-
-        Private qticataloginfoField As CatalogInfoType
-
-        Private accessField As TestFeedbackTypeAccess
-
-        Private outcomeidentifierField As String
-
-        Private showhideField As TestFeedbackTypeShowhide
-
-        Private identifierField As String
-
-        Private titleField As String
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-stylesheet", Order:=0)>
-        Public Property qtistylesheet() As List(Of StyleSheetType)
-            Get
-                Return Me.qtistylesheetField
-            End Get
-            Set
-                Me.qtistylesheetField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-content-body", Order:=1)>
-        Public Property qticontentbody() As FeedbackFlowContentBodyType
-            Get
-                Return Me.qticontentbodyField
-            End Get
-            Set
-                Me.qticontentbodyField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlArrayAttribute("qti-catalog-info", Order:=2),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property qticataloginfo() As CatalogInfoType
-            Get
-                Return Me.qticataloginfoField
-            End Get
-            Set
-                Me.qticataloginfoField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property access() As TestFeedbackTypeAccess
-            Get
-                Return Me.accessField
-            End Get
-            Set
-                Me.accessField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("outcome-identifier", DataType:="NCName")>
-        Public Property outcomeidentifier() As String
-            Get
-                Return Me.outcomeidentifierField
-            End Get
-            Set
-                Me.outcomeidentifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("show-hide")>
-        Public Property showhide() As TestFeedbackTypeShowhide
-            Get
-                Return Me.showhideField
-            End Get
-            Set
-                Me.showhideField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
-        Public Property identifier() As String
-            Get
-                Return Me.identifierField
-            End Get
-            Set
-                Me.identifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
-        Public Property title() As String
-            Get
-                Return Me.titleField
-            End Get
-            Set
-                Me.titleField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="StyleSheet.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class StyleSheetType
-        Inherits EmptyPrimitiveTypeType
-
-        Private hrefField As String
-
-        Private typeField As String
-
-        Private mediaField As String
-
-        Private titleField As String
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="anyURI")>
-        Public Property href() As String
-            Get
-                Return Me.hrefField
-            End Get
-            Set
-                Me.hrefField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
-        Public Property type() As String
-            Get
-                Return Me.typeField
-            End Get
-            Set
-                Me.typeField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
-        Public Property media() As String
-            Get
-                Return Me.mediaField
-            End Get
-            Set
-                Me.mediaField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
-        Public Property title() As String
-            Get
-                Return Me.titleField
-            End Get
-            Set
-                Me.titleField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="FeedbackFlowContentBody.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class FeedbackFlowContentBodyType
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class TestFeedbackFlowContentBodyType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType53
+        Private itemsElementNameField() As ItemsChoiceType56
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
@@ -9469,6 +9437,7 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
@@ -9494,10 +9463,6 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hottext", GetType(HotTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
@@ -9523,7 +9488,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType53()
+        Public Property ItemsElementName() As ItemsChoiceType56()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -9533,7 +9498,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -9543,20 +9508,20 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="BDO.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("bdo", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class BDOType
         Inherits BaseSequenceType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType30
+        Private itemsElementNameField() As ItemsChoiceType31
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         Private titleField As String
 
@@ -9600,7 +9565,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType30()
+        Public Property ItemsElementName() As ItemsChoiceType31()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -9610,7 +9575,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -9630,11 +9595,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="BR.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("br", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class BRType
         Inherits BaseSequenceXBaseEmptyType
@@ -9649,19 +9614,21 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlIncludeAttribute(GetType(ColType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(BRType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(AssociableHotspotType)),
- System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+ System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="BaseSequenceXBaseEmpty.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class BaseSequenceXBaseEmptyType
         Inherits ARIABaseEmptyType
 
         Private idField As String
 
-        Private classField As List(Of String)
+        Private classField() As String
 
         Private langField As String
+
+        Private lang1Field As String
 
         Private labelField As String
 
@@ -9675,7 +9642,7 @@ Namespace QTI.Xsd.QTI30
 
         Private dataqtisuppressttsFieldSpecified As Boolean
 
-        Private anyAttrField As List(Of System.Xml.XmlAttribute)
+        Private anyAttrField() As System.Xml.XmlAttribute
 
         Public Sub New()
             MyBase.New
@@ -9693,7 +9660,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property [class]() As List(Of String)
+        Public Property [class]() As String()
             Get
                 Return Me.classField
             End Get
@@ -9702,13 +9669,23 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlAttributeAttribute(Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
         Public Property lang() As String
             Get
                 Return Me.langField
             End Get
             Set
                 Me.langField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("lang", Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        Public Property lang1() As String
+            Get
+                Return Me.lang1Field
+            End Get
+            Set
+                Me.lang1Field = Value
             End Set
         End Property
 
@@ -9774,7 +9751,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAnyAttributeAttribute()>
-        Public Property AnyAttr() As List(Of System.Xml.XmlAttribute)
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
             Get
                 Return Me.anyAttrField
             End Get
@@ -9784,7 +9761,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum BaseSequenceXBaseEmptyTypeDir
@@ -9796,7 +9773,7 @@ Namespace QTI.Xsd.QTI30
         [auto]
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum BaseSequenceXBaseEmptyTypeDataqtisuppresstts
@@ -9810,11 +9787,11 @@ Namespace QTI.Xsd.QTI30
         all
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TextEntryInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class TextEntryInteractionType
         Inherits BaseSequenceXBaseEmptyType
 
@@ -9831,6 +9808,8 @@ Namespace QTI.Xsd.QTI30
         Private placeholdertextField As String
 
         Private formatField As String
+
+        Private datapatternmaskmessageField As String
 
         Public Sub New()
             MyBase.New
@@ -9907,13 +9886,23 @@ Namespace QTI.Xsd.QTI30
                 Me.formatField = Value
             End Set
         End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-patternmask-message", DataType:="normalizedString")>
+        Public Property datapatternmaskmessage() As String
+            Get
+                Return Me.datapatternmaskmessageField
+            End Get
+            Set
+                Me.datapatternmaskmessageField = Value
+            End Set
+        End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="HotspotChoice.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class HotspotChoiceType
         Inherits BaseSequenceXBaseEmptyType
 
@@ -9996,7 +9985,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum HotspotChoiceTypeShowhide
@@ -10006,7 +9995,7 @@ Namespace QTI.Xsd.QTI30
         hide
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum HotspotChoiceTypeShape
@@ -10022,11 +10011,11 @@ Namespace QTI.Xsd.QTI30
         rect
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Gap.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class GapType
         Inherits BaseSequenceXBaseEmptyType
 
@@ -10036,7 +10025,7 @@ Namespace QTI.Xsd.QTI30
 
         Private showhideField As GapTypeShowhide
 
-        Private matchgroupField As List(Of String)
+        Private matchgroupField() As String
 
         Private requiredField As Boolean
 
@@ -10078,7 +10067,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute("match-group", DataType:="NCName")>
-        Public Property matchgroup() As List(Of String)
+        Public Property matchgroup() As String()
             Get
                 Return Me.matchgroupField
             End Get
@@ -10099,7 +10088,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum GapTypeShowhide
@@ -10109,11 +10098,11 @@ Namespace QTI.Xsd.QTI30
         hide
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="EndAttemptInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class EndAttemptInteractionType
         Inherits BaseSequenceXBaseEmptyType
 
@@ -10166,11 +10155,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="AssociableHotspot.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class AssociableHotspotType
         Inherits BaseSequenceXBaseEmptyType
 
@@ -10180,7 +10169,7 @@ Namespace QTI.Xsd.QTI30
 
         Private showhideField As AssociableHotspotTypeShowhide
 
-        Private matchgroupField As List(Of String)
+        Private matchgroupField() As String
 
         Private shapeField As AssociableHotspotTypeShape
 
@@ -10230,7 +10219,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute("match-group", DataType:="NCName")>
-        Public Property matchgroup() As List(Of String)
+        Public Property matchgroup() As String()
             Get
                 Return Me.matchgroupField
             End Get
@@ -10291,7 +10280,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum AssociableHotspotTypeShowhide
@@ -10301,7 +10290,7 @@ Namespace QTI.Xsd.QTI30
         hide
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum AssociableHotspotTypeShape
@@ -10317,11 +10306,11 @@ Namespace QTI.Xsd.QTI30
         rect
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Img.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("img", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class ImgType
         Inherits BaseSequenceXBaseEmptyType
@@ -10387,20 +10376,20 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Object.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("object", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class ObjectType
         Inherits BaseSequenceXBaseType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType44
+        Private itemsElementNameField() As ItemsChoiceType45
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         Private dataField As String
 
@@ -10425,6 +10414,7 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
@@ -10476,7 +10466,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType44()
+        Public Property ItemsElementName() As ItemsChoiceType45()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -10486,7 +10476,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -10536,28 +10526,43 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="BlockQuote.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("blockquote", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class BlockQuoteType
         Inherits BaseSequenceXBaseType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType28
+        Private itemsElementNameField() As ItemsChoiceType29
+
+        Private textField() As String
 
         Private citeField As String
 
-        <System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
@@ -10568,34 +10573,29 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-associate-interaction", GetType(AssociateInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-choice-interaction", GetType(ChoiceInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-custom-interaction", GetType(CustomInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-drawing-interaction", GetType(DrawingInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-extended-text-interaction", GetType(ExtendedTextInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-gap-match-interaction", GetType(GapMatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-associate-interaction", GetType(GraphicAssociateInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-gap-match-interaction", GetType(GraphicGapMatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-order-interaction", GetType(GraphicOrderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hotspot-interaction", GetType(HotspotInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hottext-interaction", GetType(HotTextInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-match-interaction", GetType(MatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-media-interaction", GetType(MediaInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-order-interaction", GetType(OrderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-portable-custom-interaction", GetType(PortableCustomInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-position-object-stage", GetType(PositionObjectStageType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-select-point-interaction", GetType(SelectPointInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-slider-interaction", GetType(SliderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-upload-interaction", GetType(UploadInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
  System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
         Public Property Items() As Object()
@@ -10609,12 +10609,22 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType28()
+        Public Property ItemsElementName() As ItemsChoiceType29()
             Get
                 Return Me.itemsElementNameField
             End Get
             Set
                 Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlTextAttribute()>
+        Public Property Text() As String()
+            Get
+                Return Me.textField
+            End Get
+            Set
+                Me.textField = Value
             End Set
         End Property
 
@@ -10629,102 +10639,89 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Div.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
- System.Xml.Serialization.XmlRootAttribute("div", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
-    Partial Public Class DivType
-        Inherits BaseSequenceXBaseType
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlRootAttribute("details", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    Partial Public Class DetailsType
+        Inherits BaseSequenceType
+
+        Private summaryField As BaseHTML5PhrasingType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType21
+        Private itemsElementNameField() As ItemsChoiceType18
 
-        Private textField As List(Of String)
+        Private openField As Boolean
 
-        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-associate-interaction", GetType(AssociateInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-choice-interaction", GetType(ChoiceInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-custom-interaction", GetType(CustomInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-drawing-interaction", GetType(DrawingInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-end-attempt-interaction", GetType(EndAttemptInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-extended-text-interaction", GetType(ExtendedTextInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-gap-match-interaction", GetType(GapMatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-associate-interaction", GetType(GraphicAssociateInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-gap-match-interaction", GetType(GraphicGapMatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-order-interaction", GetType(GraphicOrderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hotspot-interaction", GetType(HotspotInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hottext", GetType(HotTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hottext-interaction", GetType(HotTextInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-inline-choice-interaction", GetType(InlineChoiceInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-match-interaction", GetType(MatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-media-interaction", GetType(MediaInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-order-interaction", GetType(OrderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-portable-custom-interaction", GetType(PortableCustomInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-position-object-stage", GetType(PositionObjectStageType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-select-point-interaction", GetType(SelectPointInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-slider-interaction", GetType(SliderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-text-entry-interaction", GetType(TextEntryInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-upload-interaction", GetType(UploadInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
+        Private openFieldSpecified As Boolean
+
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>
+        Public Property summary() As BaseHTML5PhrasingType
+            Get
+                Return Me.summaryField
+            End Get
+            Set
+                Me.summaryField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=1),
  System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
         Public Property Items() As Object()
             Get
@@ -10735,9 +10732,9 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=2),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType21()
+        Public Property ItemsElementName() As ItemsChoiceType18()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -10746,234 +10743,67 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        <System.Xml.Serialization.XmlAttributeAttribute()>
+        Public Property open() As Boolean
             Get
-                Return Me.textField
+                Return Me.openField
             End Get
             Set
-                Me.textField = Value
+                Me.openField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property openSpecified() As Boolean
+            Get
+                Return Me.openFieldSpecified
+            End Get
+            Set
+                Me.openFieldSpecified = Value
             End Set
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="DL.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
- System.Xml.Serialization.XmlRootAttribute("dl", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
-    Partial Public Class DLType
-        Inherits BaseSequenceXBaseType
-
-        Private itemsField As List(Of BaseSequenceXBaseType)
-
-        <System.Xml.Serialization.XmlElementAttribute("dd", GetType(DDType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dt", GetType(DTType), Order:=0)>
-        Public Property Items() As List(Of BaseSequenceXBaseType)
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="DD.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
- System.Xml.Serialization.XmlRootAttribute("dd", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
-    Partial Public Class DDType
-        Inherits BaseSequenceXBaseType
-
-        Private itemsField() As Object
-
-        Private itemsElementNameField() As ItemsChoiceType38
-
-        Private textField As List(Of String)
-
-        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-associate-interaction", GetType(AssociateInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-choice-interaction", GetType(ChoiceInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-custom-interaction", GetType(CustomInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-drawing-interaction", GetType(DrawingInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-end-attempt-interaction", GetType(EndAttemptInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-extended-text-interaction", GetType(ExtendedTextInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-gap-match-interaction", GetType(GapMatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-associate-interaction", GetType(GraphicAssociateInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-gap-match-interaction", GetType(GraphicGapMatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-order-interaction", GetType(GraphicOrderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hotspot-interaction", GetType(HotspotInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hottext", GetType(HotTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hottext-interaction", GetType(HotTextInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-inline-choice-interaction", GetType(InlineChoiceInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-match-interaction", GetType(MatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-media-interaction", GetType(MediaInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-order-interaction", GetType(OrderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-portable-custom-interaction", GetType(PortableCustomInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-select-point-interaction", GetType(SelectPointInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-slider-interaction", GetType(SliderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-text-entry-interaction", GetType(TextEntryInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-upload-interaction", GetType(UploadInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
-        Public Property Items() As Object()
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType38()
-            Get
-                Return Me.itemsElementNameField
-            End Get
-            Set
-                Me.itemsElementNameField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
-            Get
-                Return Me.textField
-            End Get
-            Set
-                Me.textField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Figure.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
- System.Xml.Serialization.XmlRootAttribute("figure", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
-    Partial Public Class FigureType
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlRootAttribute("rb", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    Partial Public Class BaseHTML5PhrasingType
         Inherits BaseSequenceType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType19
+        Private itemsElementNameField() As ItemsChoiceType15
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("figcaption", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
  System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
@@ -10988,7 +10818,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType19()
+        Public Property ItemsElementName() As ItemsChoiceType15()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -10998,7 +10828,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -11008,180 +10838,21 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="HR.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
- System.Xml.Serialization.XmlRootAttribute("hr", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
-    Partial Public Class HRType
-        Inherits BaseSequenceXBaseEmptyType
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="OUL.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
- System.Xml.Serialization.XmlRootAttribute("ol", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
-    Partial Public Class OULType
-        Inherits BaseSequenceXBaseType
-
-        Private liField As List(Of LIType)
-
-        <System.Xml.Serialization.XmlElementAttribute("li", Order:=0)>
-        Public Property li() As List(Of LIType)
-            Get
-                Return Me.liField
-            End Get
-            Set
-                Me.liField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="LI.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
- System.Xml.Serialization.XmlRootAttribute("li", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
-    Partial Public Class LIType
-        Inherits BaseSequenceType
-
-        Private itemsField() As Object
-
-        Private itemsElementNameField() As ItemsChoiceType33
-
-        Private textField As List(Of String)
-
-        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-associate-interaction", GetType(AssociateInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-choice-interaction", GetType(ChoiceInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-custom-interaction", GetType(CustomInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-drawing-interaction", GetType(DrawingInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-end-attempt-interaction", GetType(EndAttemptInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-extended-text-interaction", GetType(ExtendedTextInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-gap-match-interaction", GetType(GapMatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-associate-interaction", GetType(GraphicAssociateInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-gap-match-interaction", GetType(GraphicGapMatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-order-interaction", GetType(GraphicOrderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hotspot-interaction", GetType(HotspotInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hottext", GetType(HotTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hottext-interaction", GetType(HotTextInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-inline-choice-interaction", GetType(InlineChoiceInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-match-interaction", GetType(MatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-media-interaction", GetType(MediaInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-order-interaction", GetType(OrderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-portable-custom-interaction", GetType(PortableCustomInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-select-point-interaction", GetType(SelectPointInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-slider-interaction", GetType(SliderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-text-entry-interaction", GetType(TextEntryInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-upload-interaction", GetType(UploadInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
-        Public Property Items() As Object()
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType33()
-            Get
-                Return Me.itemsElementNameField
-            End Get
-            Set
-                Me.itemsElementNameField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
-            Get
-                Return Me.textField
-            End Get
-            Set
-                Me.textField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Picture.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("picture", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class PictureType
         Inherits BaseSequenceType
 
-        Private sourceField As List(Of SourceType)
+        Private sourceField() As SourceType
 
         Private imgField As ImgType
 
         <System.Xml.Serialization.XmlElementAttribute("source", Order:=0)>
-        Public Property source() As List(Of SourceType)
+        Public Property source() As SourceType()
             Get
                 Return Me.sourceField
             End Get
@@ -11201,42 +10872,44 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.Xml.Serialization.XmlIncludeAttribute(GetType(StimulusBodyType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(InlineChoiceType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(GapImgType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(FigureType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(SimpleChoiceType)),
+    <System.Xml.Serialization.XmlIncludeAttribute(GetType(InlineChoiceType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(TDHType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(TRType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(TablePartType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(ColGroupType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(GapImgType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(DetailsType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(RTCType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(BaseHTML5PhrasingType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(VideoType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(RubyType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(CaptionType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(VideoType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(FigureType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(SimpleChoiceType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(SimpleAssociableChoiceType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(BaseHTML5FlowType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(GapTextType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(CaptionType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(BDIType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(BDOType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(LIType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(PromptType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(PictureType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(AudioType)),
- System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+ System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="BaseSequence.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class BaseSequenceType
         Inherits ARIABaseType
 
         Private idField As String
 
-        Private classField As List(Of String)
+        Private classField() As String
 
         Private langField As String
+
+        Private lang1Field As String
 
         Private labelField As String
 
@@ -11248,7 +10921,7 @@ Namespace QTI.Xsd.QTI30
 
         Private dataqtisuppressttsFieldSpecified As Boolean
 
-        Private anyAttrField As List(Of System.Xml.XmlAttribute)
+        Private anyAttrField() As System.Xml.XmlAttribute
 
         Public Sub New()
             MyBase.New
@@ -11266,7 +10939,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property [class]() As List(Of String)
+        Public Property [class]() As String()
             Get
                 Return Me.classField
             End Get
@@ -11275,13 +10948,23 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlAttributeAttribute(Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
         Public Property lang() As String
             Get
                 Return Me.langField
             End Get
             Set
                 Me.langField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("lang", Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        Public Property lang1() As String
+            Get
+                Return Me.lang1Field
+            End Get
+            Set
+                Me.lang1Field = Value
             End Set
         End Property
 
@@ -11337,7 +11020,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAnyAttributeAttribute()>
-        Public Property AnyAttr() As List(Of System.Xml.XmlAttribute)
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
             Get
                 Return Me.anyAttrField
             End Get
@@ -11347,7 +11030,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum BaseSequenceTypeDir
@@ -11359,7 +11042,7 @@ Namespace QTI.Xsd.QTI30
         [auto]
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum BaseSequenceTypeDataqtisuppresstts
@@ -11405,23 +11088,23 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlIncludeAttribute(GetType(HotTextType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(AType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(BaseSequenceType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(StimulusBodyType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(InlineChoiceType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(GapImgType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(FigureType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(SimpleChoiceType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(TDHType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(TRType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(TablePartType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(ColGroupType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(GapImgType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(DetailsType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(RTCType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(BaseHTML5PhrasingType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(VideoType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(RubyType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(CaptionType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(VideoType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(FigureType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(SimpleChoiceType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(SimpleAssociableChoiceType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(BaseHTML5FlowType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(GapTextType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(CaptionType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(BDIType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(BDOType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(LIType)),
@@ -11444,11 +11127,11 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlIncludeAttribute(GetType(GapMatchInteractionType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(DrawingInteractionType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(PortableCustomInteractionType)),
- System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+ System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ARIABase.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class ARIABaseType
 
         Private roleField As ARIABaseTypeRole
@@ -11487,10 +11170,6 @@ Namespace QTI.Xsd.QTI30
 
         Private ariadisabledField As Boolean
 
-        Private ariadropeffectField As List(Of ARIADropEffectListType)
-
-        Private ariadropeffectFieldSpecified As Boolean
-
         Private ariaexpandedField As ARIABaseTypeAriaexpanded
 
         Private ariahaspopupField As Boolean
@@ -11507,9 +11186,7 @@ Namespace QTI.Xsd.QTI30
 
         Private ariareadonlyField As Boolean
 
-        Private ariarelevantField As List(Of ARIARelevantListType)
-
-        Private ariarelevantFieldSpecified As Boolean
+        Private ariarelevantField() As ARIARelevantListType
 
         Private ariarequiredField As Boolean
 
@@ -11533,6 +11210,32 @@ Namespace QTI.Xsd.QTI30
 
         Private ariavaluetextField As String
 
+        Private ariamodalField As Boolean
+
+        Private ariacurrentField As ARIABaseTypeAriacurrent
+
+        Private ariaplaceholderField As String
+
+        Private ariacolcountField As String
+
+        Private ariarowcountField As String
+
+        Private ariacolindexField As String
+
+        Private ariarowindexField As String
+
+        Private ariacolspanField As String
+
+        Private ariarowspanField As String
+
+        Private ariakeyshortcutsField As String
+
+        Private ariaroledescriptionField As String
+
+        Private ariaerrormessageField As String
+
+        Private ariadetailsField As String
+
         Public Sub New()
             MyBase.New
             Me.arialiveField = ARIABaseTypeArialive.off
@@ -11550,9 +11253,12 @@ Namespace QTI.Xsd.QTI30
             Me.ariamultiselectableField = False
             Me.ariapressedField = ARIABaseTypeAriapressed.undefined
             Me.ariareadonlyField = False
+            Me.ariarelevantField = New ARIARelevantListType() {ARIARelevantListType.additions, ARIARelevantListType.text}
             Me.ariarequiredField = False
             Me.ariaselectedField = ARIABaseTypeAriaselected.undefined
             Me.ariasortField = ARIABaseTypeAriasort.none
+            Me.ariamodalField = False
+            Me.ariacurrentField = ARIABaseTypeAriacurrent.[false]
         End Sub
 
         <System.Xml.Serialization.XmlAttributeAttribute()>
@@ -11743,26 +11449,6 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlAttributeAttribute("aria-dropeffect")>
-        Public Property ariadropeffect() As List(Of ARIADropEffectListType)
-            Get
-                Return Me.ariadropeffectField
-            End Get
-            Set
-                Me.ariadropeffectField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ariadropeffectSpecified() As Boolean
-            Get
-                Return Me.ariadropeffectFieldSpecified
-            End Get
-            Set
-                Me.ariadropeffectFieldSpecified = Value
-            End Set
-        End Property
-
         <System.Xml.Serialization.XmlAttributeAttribute("aria-expanded"),
  System.ComponentModel.DefaultValueAttribute(ARIABaseTypeAriaexpanded.undefined)>
         Public Property ariaexpanded() As ARIABaseTypeAriaexpanded
@@ -11851,22 +11537,12 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute("aria-relevant")>
-        Public Property ariarelevant() As List(Of ARIARelevantListType)
+        Public Property ariarelevant() As ARIARelevantListType()
             Get
                 Return Me.ariarelevantField
             End Get
             Set
                 Me.ariarelevantField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ariarelevantSpecified() As Boolean
-            Get
-                Return Me.ariarelevantFieldSpecified
-            End Get
-            Set
-                Me.ariarelevantFieldSpecified = Value
             End Set
         End Property
 
@@ -11892,7 +11568,7 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlAttributeAttribute("aria-setsize", DataType:="positiveInteger")>
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-setsize", DataType:="integer")>
         Public Property ariasetsize() As String
             Get
                 Return Me.ariasetsizeField
@@ -11982,9 +11658,141 @@ Namespace QTI.Xsd.QTI30
                 Me.ariavaluetextField = Value
             End Set
         End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-modal"),
+ System.ComponentModel.DefaultValueAttribute(False)>
+        Public Property ariamodal() As Boolean
+            Get
+                Return Me.ariamodalField
+            End Get
+            Set
+                Me.ariamodalField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-current"),
+ System.ComponentModel.DefaultValueAttribute(ARIABaseTypeAriacurrent.[false])>
+        Public Property ariacurrent() As ARIABaseTypeAriacurrent
+            Get
+                Return Me.ariacurrentField
+            End Get
+            Set
+                Me.ariacurrentField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-placeholder")>
+        Public Property ariaplaceholder() As String
+            Get
+                Return Me.ariaplaceholderField
+            End Get
+            Set
+                Me.ariaplaceholderField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-colcount", DataType:="nonNegativeInteger")>
+        Public Property ariacolcount() As String
+            Get
+                Return Me.ariacolcountField
+            End Get
+            Set
+                Me.ariacolcountField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-rowcount", DataType:="nonNegativeInteger")>
+        Public Property ariarowcount() As String
+            Get
+                Return Me.ariarowcountField
+            End Get
+            Set
+                Me.ariarowcountField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-colindex", DataType:="nonNegativeInteger")>
+        Public Property ariacolindex() As String
+            Get
+                Return Me.ariacolindexField
+            End Get
+            Set
+                Me.ariacolindexField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-rowindex", DataType:="nonNegativeInteger")>
+        Public Property ariarowindex() As String
+            Get
+                Return Me.ariarowindexField
+            End Get
+            Set
+                Me.ariarowindexField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-colspan", DataType:="nonNegativeInteger")>
+        Public Property ariacolspan() As String
+            Get
+                Return Me.ariacolspanField
+            End Get
+            Set
+                Me.ariacolspanField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-rowspan", DataType:="nonNegativeInteger")>
+        Public Property ariarowspan() As String
+            Get
+                Return Me.ariarowspanField
+            End Get
+            Set
+                Me.ariarowspanField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-keyshortcuts")>
+        Public Property ariakeyshortcuts() As String
+            Get
+                Return Me.ariakeyshortcutsField
+            End Get
+            Set
+                Me.ariakeyshortcutsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-roledescription")>
+        Public Property ariaroledescription() As String
+            Get
+                Return Me.ariaroledescriptionField
+            End Get
+            Set
+                Me.ariaroledescriptionField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-errormessage", DataType:="IDREF")>
+        Public Property ariaerrormessage() As String
+            Get
+                Return Me.ariaerrormessageField
+            End Get
+            Set
+                Me.ariaerrormessageField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("aria-details", DataType:="IDREF")>
+        Public Property ariadetails() As String
+            Get
+                Return Me.ariadetailsField
+            End Get
+            Set
+                Me.ariadetailsField = Value
+            End Set
+        End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseTypeRole
@@ -11994,8 +11802,6 @@ Namespace QTI.Xsd.QTI30
         columnheader
 
         definition
-
-        directory
 
         document
 
@@ -12110,9 +11916,37 @@ Namespace QTI.Xsd.QTI30
         treegrid
 
         treeitem
+
+        searchbox
+
+        switch
+
+        term
+
+        figure
+
+        code
+
+        time
+
+        subscript
+
+        superscript
+
+        meter
+
+        generic
+
+        insertion
+
+        deletion
+
+        strong
+
+        emphasis
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseTypeArialive
@@ -12124,7 +11958,7 @@ Namespace QTI.Xsd.QTI30
         assertive
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseTypeAriaorientation
@@ -12134,7 +11968,7 @@ Namespace QTI.Xsd.QTI30
         horizontal
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseTypeAriaautocomplete
@@ -12148,7 +11982,7 @@ Namespace QTI.Xsd.QTI30
         none
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseTypeAriachecked
@@ -12162,7 +11996,7 @@ Namespace QTI.Xsd.QTI30
         undefined
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseTypeAriaexpanded
@@ -12174,19 +12008,7 @@ Namespace QTI.Xsd.QTI30
         undefined
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum ARIABaseTypeAriagrabbed
-
-        [true]
-
-        [false]
-
-        undefined
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseTypeAriainvalid
@@ -12200,7 +12022,7 @@ Namespace QTI.Xsd.QTI30
         spelling
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseTypeAriapressed
@@ -12214,7 +12036,7 @@ Namespace QTI.Xsd.QTI30
         undefined
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseTypeAriaselected
@@ -12226,7 +12048,7 @@ Namespace QTI.Xsd.QTI30
         undefined
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ARIABaseTypeAriasort
@@ -12240,20 +12062,44 @@ Namespace QTI.Xsd.QTI30
         other
     End Enum
 
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum ARIABaseTypeAriacurrent
+
+        page
+
+        [step]
+
+        location
+
+        [date]
+
+        time
+
+        [true]
+
+        [false]
+
+        undefined
+    End Enum
+
     <System.Xml.Serialization.XmlIncludeAttribute(GetType(PositionObjectInteractionType)),
- System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+ System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="BaseSequenceRIdent.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class BaseSequenceRIdentType
         Inherits ARIABaseType
 
         Private idField As String
 
-        Private classField As List(Of String)
+        Private classField() As String
 
         Private langField As String
+
+        Private lang1Field As String
 
         Private labelField As String
 
@@ -12267,7 +12113,7 @@ Namespace QTI.Xsd.QTI30
 
         Private dataqtisuppressttsFieldSpecified As Boolean
 
-        Private anyAttrField As List(Of System.Xml.XmlAttribute)
+        Private anyAttrField() As System.Xml.XmlAttribute
 
         Public Sub New()
             MyBase.New
@@ -12285,7 +12131,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property [class]() As List(Of String)
+        Public Property [class]() As String()
             Get
                 Return Me.classField
             End Get
@@ -12294,13 +12140,23 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlAttributeAttribute(Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
         Public Property lang() As String
             Get
                 Return Me.langField
             End Get
             Set
                 Me.langField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("lang", Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        Public Property lang1() As String
+            Get
+                Return Me.lang1Field
+            End Get
+            Set
+                Me.lang1Field = Value
             End Set
         End Property
 
@@ -12366,7 +12222,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAnyAttributeAttribute()>
-        Public Property AnyAttr() As List(Of System.Xml.XmlAttribute)
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
             Get
                 Return Me.anyAttrField
             End Get
@@ -12376,7 +12232,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum BaseSequenceRIdentTypeDir
@@ -12388,7 +12244,7 @@ Namespace QTI.Xsd.QTI30
         [auto]
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum BaseSequenceRIdentTypeDataqtisuppresstts
@@ -12402,17 +12258,17 @@ Namespace QTI.Xsd.QTI30
         all
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="PositionObjectInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class PositionObjectInteractionType
         Inherits BaseSequenceRIdentType
 
-        Private objectField As ObjectType
+        Private itemField As Object
 
-        Private centerpointField As List(Of Integer)
+        Private centerpointField() As Integer
 
         Private minchoicesField As String
 
@@ -12423,18 +12279,20 @@ Namespace QTI.Xsd.QTI30
             Me.maxchoicesField = "1"
         End Sub
 
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>
-        Public Property [object]() As ObjectType
+        <System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0)>
+        Public Property Item() As Object
             Get
-                Return Me.objectField
+                Return Me.itemField
             End Get
             Set
-                Me.objectField = Value
+                Me.itemField = Value
             End Set
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute("center-point")>
-        Public Property centerpoint() As List(Of Integer)
+        Public Property centerpoint() As Integer()
             Get
                 Return Me.centerpointField
             End Get
@@ -12469,19 +12327,21 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlIncludeAttribute(GetType(InlineChoiceInteractionType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(GraphicGapMatchInteractionType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(CustomInteractionType)),
- System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+ System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="BaseSequenceFull.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class BaseSequenceFullType
         Inherits ARIABaseType
 
         Private idField As String
 
-        Private classField As List(Of String)
+        Private classField() As String
 
         Private langField As String
+
+        Private lang1Field As String
 
         Private labelField As String
 
@@ -12497,7 +12357,7 @@ Namespace QTI.Xsd.QTI30
 
         Private dataqtisuppressttsFieldSpecified As Boolean
 
-        Private anyAttrField As List(Of System.Xml.XmlAttribute)
+        Private anyAttrField() As System.Xml.XmlAttribute
 
         Public Sub New()
             MyBase.New
@@ -12515,7 +12375,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property [class]() As List(Of String)
+        Public Property [class]() As String()
             Get
                 Return Me.classField
             End Get
@@ -12524,13 +12384,23 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlAttributeAttribute(Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
         Public Property lang() As String
             Get
                 Return Me.langField
             End Get
             Set
                 Me.langField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("lang", Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        Public Property lang1() As String
+            Get
+                Return Me.lang1Field
+            End Get
+            Set
+                Me.lang1Field = Value
             End Set
         End Property
 
@@ -12606,7 +12476,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAnyAttributeAttribute()>
-        Public Property AnyAttr() As List(Of System.Xml.XmlAttribute)
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
             Get
                 Return Me.anyAttrField
             End Get
@@ -12616,7 +12486,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum BaseSequenceFullTypeDir
@@ -12628,7 +12498,7 @@ Namespace QTI.Xsd.QTI30
         [auto]
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum BaseSequenceFullTypeDataqtisuppresstts
@@ -12642,19 +12512,19 @@ Namespace QTI.Xsd.QTI30
         all
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="GraphicOrderInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class GraphicOrderInteractionType
         Inherits BaseSequenceFullType
 
         Private qtipromptField As PromptType
 
-        Private objectField As ObjectType
+        Private itemField As Object
 
-        Private qtihotspotchoiceField As List(Of HotspotChoiceType)
+        Private qtihotspotchoiceField() As HotspotChoiceType
 
         Private minchoicesField As String
 
@@ -12670,18 +12540,20 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>
-        Public Property [object]() As ObjectType
+        <System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=1)>
+        Public Property Item() As Object
             Get
-                Return Me.objectField
+                Return Me.itemField
             End Get
             Set
-                Me.objectField = Value
+                Me.itemField = Value
             End Set
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-hotspot-choice", Order:=2)>
-        Public Property qtihotspotchoice() As List(Of HotspotChoiceType)
+        Public Property qtihotspotchoice() As HotspotChoiceType()
             Get
                 Return Me.qtihotspotchoiceField
             End Get
@@ -12711,19 +12583,19 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Prompt.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class PromptType
         Inherits BaseSequenceType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType40
+        Private itemsElementNameField() As ItemsChoiceType41
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
@@ -12740,6 +12612,7 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
@@ -12790,7 +12663,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType40()
+        Public Property ItemsElementName() As ItemsChoiceType41()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -12800,7 +12673,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -12810,20 +12683,562 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Q.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlRootAttribute("div", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    Partial Public Class DivType
+        Inherits BaseSequenceXBaseType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType22
+
+        Private textField() As String
+
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-associate-interaction", GetType(AssociateInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-choice-interaction", GetType(ChoiceInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-custom-interaction", GetType(CustomInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-drawing-interaction", GetType(DrawingInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-end-attempt-interaction", GetType(EndAttemptInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-extended-text-interaction", GetType(ExtendedTextInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-gap-match-interaction", GetType(GapMatchInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-graphic-associate-interaction", GetType(GraphicAssociateInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-graphic-gap-match-interaction", GetType(GraphicGapMatchInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-graphic-order-interaction", GetType(GraphicOrderInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-hotspot-interaction", GetType(HotspotInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-hottext", GetType(HotTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-hottext-interaction", GetType(HotTextInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-inline-choice-interaction", GetType(InlineChoiceInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-match-interaction", GetType(MatchInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-media-interaction", GetType(MediaInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-order-interaction", GetType(OrderInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-portable-custom-interaction", GetType(PortableCustomInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-position-object-stage", GetType(PositionObjectStageType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-select-point-interaction", GetType(SelectPointInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-slider-interaction", GetType(SliderInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-text-entry-interaction", GetType(TextEntryInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-upload-interaction", GetType(UploadInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType22()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlTextAttribute()>
+        Public Property Text() As String()
+            Get
+                Return Me.textField
+            End Get
+            Set
+                Me.textField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlRootAttribute("dl", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    Partial Public Class DLType
+        Inherits BaseSequenceXBaseType
+
+        Private itemsField() As BaseSequenceXBaseType
+
+        <System.Xml.Serialization.XmlElementAttribute("dd", GetType(DDType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dt", GetType(DTType), Order:=0)>
+        Public Property Items() As BaseSequenceXBaseType()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlRootAttribute("dd", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    Partial Public Class DDType
+        Inherits BaseSequenceXBaseType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType39
+
+        Private textField() As String
+
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-associate-interaction", GetType(AssociateInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-choice-interaction", GetType(ChoiceInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-custom-interaction", GetType(CustomInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-drawing-interaction", GetType(DrawingInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-end-attempt-interaction", GetType(EndAttemptInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-extended-text-interaction", GetType(ExtendedTextInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-gap-match-interaction", GetType(GapMatchInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-graphic-associate-interaction", GetType(GraphicAssociateInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-graphic-gap-match-interaction", GetType(GraphicGapMatchInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-graphic-order-interaction", GetType(GraphicOrderInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-hotspot-interaction", GetType(HotspotInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-hottext", GetType(HotTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-hottext-interaction", GetType(HotTextInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-inline-choice-interaction", GetType(InlineChoiceInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-match-interaction", GetType(MatchInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-media-interaction", GetType(MediaInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-order-interaction", GetType(OrderInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-portable-custom-interaction", GetType(PortableCustomInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-select-point-interaction", GetType(SelectPointInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-slider-interaction", GetType(SliderInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-text-entry-interaction", GetType(TextEntryInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-upload-interaction", GetType(UploadInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType39()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlTextAttribute()>
+        Public Property Text() As String()
+            Get
+                Return Me.textField
+            End Get
+            Set
+                Me.textField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlRootAttribute("figure", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    Partial Public Class FigureType
+        Inherits BaseSequenceType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType19
+
+        Private textField() As String
+
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("figcaption", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType19()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlTextAttribute()>
+        Public Property Text() As String()
+            Get
+                Return Me.textField
+            End Get
+            Set
+                Me.textField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlRootAttribute("hr", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    Partial Public Class HRType
+        Inherits BaseSequenceXBaseEmptyType
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlRootAttribute("ol", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    Partial Public Class OULType
+        Inherits BaseSequenceXBaseType
+
+        Private liField() As LIType
+
+        <System.Xml.Serialization.XmlElementAttribute("li", Order:=0)>
+        Public Property li() As LIType()
+            Get
+                Return Me.liField
+            End Get
+            Set
+                Me.liField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlRootAttribute("li", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    Partial Public Class LIType
+        Inherits BaseSequenceType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType34
+
+        Private textField() As String
+
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-associate-interaction", GetType(AssociateInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-choice-interaction", GetType(ChoiceInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-custom-interaction", GetType(CustomInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-drawing-interaction", GetType(DrawingInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-end-attempt-interaction", GetType(EndAttemptInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-extended-text-interaction", GetType(ExtendedTextInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-gap-match-interaction", GetType(GapMatchInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-graphic-associate-interaction", GetType(GraphicAssociateInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-graphic-gap-match-interaction", GetType(GraphicGapMatchInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-graphic-order-interaction", GetType(GraphicOrderInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-hotspot-interaction", GetType(HotspotInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-hottext", GetType(HotTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-hottext-interaction", GetType(HotTextInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-inline-choice-interaction", GetType(InlineChoiceInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-match-interaction", GetType(MatchInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-media-interaction", GetType(MediaInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-order-interaction", GetType(OrderInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-portable-custom-interaction", GetType(PortableCustomInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-select-point-interaction", GetType(SelectPointInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-slider-interaction", GetType(SliderInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-text-entry-interaction", GetType(TextEntryInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-upload-interaction", GetType(UploadInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType34()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlTextAttribute()>
+        Public Property Text() As String()
+            Get
+                Return Me.textField
+            End Get
+            Set
+                Me.textField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("q", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class QType
         Inherits BaseSequenceXBaseType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType41
+        Private itemsElementNameField() As ItemsChoiceType42
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         Private citeField As String
 
@@ -12876,7 +13291,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType41()
+        Public Property ItemsElementName() As ItemsChoiceType42()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -12886,7 +13301,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -12906,20 +13321,20 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="CustomInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class CustomInteractionType
         Inherits BaseSequenceFullType
 
-        Private anyField As List(Of System.Xml.XmlElement)
+        Private anyField() As System.Xml.XmlElement
 
-        Private anyAttr1Field As List(Of System.Xml.XmlAttribute)
+        Private anyAttr1Field() As System.Xml.XmlAttribute
 
         <System.Xml.Serialization.XmlAnyElementAttribute(Order:=0)>
-        Public Property Any() As List(Of System.Xml.XmlElement)
+        Public Property Any() As System.Xml.XmlElement()
             Get
                 Return Me.anyField
             End Get
@@ -12929,7 +13344,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAnyAttributeAttribute()>
-        Public Property AnyAttr1() As List(Of System.Xml.XmlAttribute)
+        Public Property AnyAttr1() As System.Xml.XmlAttribute()
             Get
                 Return Me.anyAttr1Field
             End Get
@@ -12939,19 +13354,19 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="FeedbackInline.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class FeedbackInlineType
         Inherits BaseSequenceXBaseType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType45
+        Private itemsElementNameField() As ItemsChoiceType46
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         Private outcomeidentifierField As String
 
@@ -13006,7 +13421,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType45()
+        Public Property ItemsElementName() As ItemsChoiceType46()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -13016,7 +13431,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -13057,17 +13472,17 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="PrintedVariable.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class PrintedVariableType
         Inherits EmptyPrimitiveTypeType
 
         Private idField As String
 
-        Private classField As List(Of String)
+        Private classField() As String
 
         Private langField As String
 
@@ -13110,7 +13525,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property [class]() As List(Of String)
+        Public Property [class]() As String()
             Get
                 Return Me.classField
             End Get
@@ -13234,19 +13649,19 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TemplateInline.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class TemplateInlineType
         Inherits BaseSequenceXBaseType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType42
+        Private itemsElementNameField() As ItemsChoiceType43
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         Private templateidentifierField As String
 
@@ -13304,7 +13719,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType42()
+        Public Property ItemsElementName() As ItemsChoiceType43()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -13314,7 +13729,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -13355,19 +13770,19 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="HotText.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class HotTextType
         Inherits BaseSequenceXBaseType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType46
+        Private itemsElementNameField() As ItemsChoiceType47
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         Private identifierField As String
 
@@ -13423,7 +13838,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType46()
+        Public Property ItemsElementName() As ItemsChoiceType47()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -13433,7 +13848,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -13474,11 +13889,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Ruby.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("ruby", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class RubyType
         Inherits BaseSequenceType
@@ -13487,7 +13902,7 @@ Namespace QTI.Xsd.QTI30
 
         Private itemsElementNameField() As ItemsChoiceType17
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
@@ -13542,7 +13957,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -13552,20 +13967,20 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="BaseHTML5Phrasing.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
- System.Xml.Serialization.XmlRootAttribute("rb", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
-    Partial Public Class BaseHTML5PhrasingType
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlRootAttribute("rtc", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    Partial Public Class RTCType
         Inherits BaseSequenceType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType15
+        Private itemsElementNameField() As ItemsChoiceType16
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
@@ -13585,6 +14000,7 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("rt", GetType(BaseHTML5PhrasingType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
@@ -13606,7 +14022,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType15()
+        Public Property ItemsElementName() As ItemsChoiceType16()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -13616,7 +14032,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -13626,20 +14042,20 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Video.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("video", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class VideoType
         Inherits BaseSequenceType
 
-        Private sourceField As List(Of SourceType)
+        Private sourceField() As SourceType
 
-        Private trackField As List(Of TrackType)
+        Private trackField() As TrackType
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         Private srcField As String
 
@@ -13679,7 +14095,7 @@ Namespace QTI.Xsd.QTI30
         End Sub
 
         <System.Xml.Serialization.XmlElementAttribute("source", Order:=0)>
-        Public Property source() As List(Of SourceType)
+        Public Property source() As SourceType()
             Get
                 Return Me.sourceField
             End Get
@@ -13689,7 +14105,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("track", Order:=1)>
-        Public Property track() As List(Of TrackType)
+        Public Property track() As TrackType()
             Get
                 Return Me.trackField
             End Get
@@ -13699,7 +14115,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -13870,11 +14286,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Track.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("track", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class TrackType
         Inherits BaseSequenceEmptyType
@@ -13952,7 +14368,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum TrackTypeKind
@@ -13968,7 +14384,7 @@ Namespace QTI.Xsd.QTI30
         metadata
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum VideoTypeCrossorigin
@@ -13979,7 +14395,7 @@ Namespace QTI.Xsd.QTI30
         usecredentials
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum VideoTypePreload
@@ -13991,142 +14407,7 @@ Namespace QTI.Xsd.QTI30
         metadata
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType15
-
-        a
-
-        abbr
-
-        audio
-
-        b
-
-        bdi
-
-        bdo
-
-        br
-
-        cite
-
-        code
-
-        dfn
-
-        em
-
-        i
-
-        img
-
-        kbd
-
-        label
-
-        [object]
-
-        picture
-
-        q
-
-        ruby
-
-        samp
-
-        small
-
-        span
-
-        strong
-
-        [sub]
-
-        sup
-
-        var
-
-        video
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="RTC.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
- System.Xml.Serialization.XmlRootAttribute("rtc", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
-    Partial Public Class RTCType
-        Inherits BaseSequenceType
-
-        Private itemsField() As Object
-
-        Private itemsElementNameField() As ItemsChoiceType16
-
-        Private textField As List(Of String)
-
-        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("rt", GetType(BaseHTML5PhrasingType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
-        Public Property Items() As Object()
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType16()
-            Get
-                Return Me.itemsElementNameField
-            End Get
-            Set
-                Me.itemsElementNameField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
-            Get
-                Return Me.textField
-            End Get
-            Set
-                Me.textField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType16
@@ -14188,7 +14469,7 @@ Namespace QTI.Xsd.QTI30
         video
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType17
@@ -14256,10 +14537,10 @@ Namespace QTI.Xsd.QTI30
         video
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType46
+    Public Enum ItemsChoiceType47
 
         a
 
@@ -14327,7 +14608,7 @@ Namespace QTI.Xsd.QTI30
         var
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum HotTextTypeShowhide
@@ -14360,19 +14641,21 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlIncludeAttribute(GetType(FeedbackInlineType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(HotTextType)),
  System.Xml.Serialization.XmlIncludeAttribute(GetType(AType)),
- System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+ System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="BaseSequenceXBase.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class BaseSequenceXBaseType
         Inherits ARIABaseType
 
         Private idField As String
 
-        Private classField As List(Of String)
+        Private classField() As String
 
         Private langField As String
+
+        Private lang1Field As String
 
         Private labelField As String
 
@@ -14386,7 +14669,9 @@ Namespace QTI.Xsd.QTI30
 
         Private dataqtisuppressttsFieldSpecified As Boolean
 
-        Private anyAttrField As List(Of System.Xml.XmlAttribute)
+        Private datassmlField As String
+
+        Private anyAttrField() As System.Xml.XmlAttribute
 
         Public Sub New()
             MyBase.New
@@ -14404,7 +14689,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property [class]() As List(Of String)
+        Public Property [class]() As String()
             Get
                 Return Me.classField
             End Get
@@ -14413,13 +14698,23 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlAttributeAttribute(Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
         Public Property lang() As String
             Get
                 Return Me.langField
             End Get
             Set
                 Me.langField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("lang", Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        Public Property lang1() As String
+            Get
+                Return Me.lang1Field
+            End Get
+            Set
+                Me.lang1Field = Value
             End Set
         End Property
 
@@ -14484,8 +14779,18 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
+        <System.Xml.Serialization.XmlAttributeAttribute("data-ssml")>
+        Public Property datassml() As String
+            Get
+                Return Me.datassmlField
+            End Get
+            Set
+                Me.datassmlField = Value
+            End Set
+        End Property
+
         <System.Xml.Serialization.XmlAnyAttributeAttribute()>
-        Public Property AnyAttr() As List(Of System.Xml.XmlAttribute)
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
             Get
                 Return Me.anyAttrField
             End Get
@@ -14495,7 +14800,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum BaseSequenceXBaseTypeDir
@@ -14507,7 +14812,7 @@ Namespace QTI.Xsd.QTI30
         [auto]
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum BaseSequenceXBaseTypeDataqtisuppresstts
@@ -14521,28 +14826,28 @@ Namespace QTI.Xsd.QTI30
         all
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TestRubricBlock.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class TestRubricBlockType
         Inherits BaseSequenceXBaseType
 
-        Private qtistylesheetField As List(Of StyleSheetType)
+        Private qtistylesheetField() As StyleSheetType
 
         Private qticontentbodyField As TestRubricBlockContentBodyType
 
-        Private qticataloginfoField As CatalogInfoType
+        Private qticataloginfoField() As CatalogType
 
         Private qtiprintedvariableField As PrintedVariableType
 
-        Private viewField As List(Of ViewType)
+        Private viewField() As ViewEnumType
 
         Private useField As String
 
         <System.Xml.Serialization.XmlElementAttribute("qti-stylesheet", Order:=0)>
-        Public Property qtistylesheet() As List(Of StyleSheetType)
+        Public Property qtistylesheet() As StyleSheetType()
             Get
                 Return Me.qtistylesheetField
             End Get
@@ -14562,8 +14867,8 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlArrayAttribute("qti-catalog-info", Order:=2),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property qticataloginfo() As CatalogInfoType
+ System.Xml.Serialization.XmlArrayItemAttribute("qti-catalog", IsNullable:=False)>
+        Public Property qticataloginfo() As CatalogType()
             Get
                 Return Me.qticataloginfoField
             End Get
@@ -14583,7 +14888,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property view() As List(Of ViewType)
+        Public Property view() As ViewEnumType()
             Get
                 Return Me.viewField
             End Get
@@ -14603,18 +14908,75 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TestRubricBlockContentBody.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class StyleSheetType
+        Inherits EmptyPrimitiveTypeType
+
+        Private hrefField As String
+
+        Private typeField As String
+
+        Private mediaField As String
+
+        Private titleField As String
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="anyURI")>
+        Public Property href() As String
+            Get
+                Return Me.hrefField
+            End Get
+            Set
+                Me.hrefField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
+        Public Property type() As String
+            Get
+                Return Me.typeField
+            End Get
+            Set
+                Me.typeField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
+        Public Property media() As String
+            Get
+                Return Me.mediaField
+            End Get
+            Set
+                Me.mediaField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
+        Public Property title() As String
+            Get
+                Return Me.titleField
+            End Get
+            Set
+                Me.titleField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class TestRubricBlockContentBodyType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType51
+        Private itemsElementNameField() As ItemsChoiceType52
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
@@ -14631,6 +14993,7 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
@@ -14681,7 +15044,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType51()
+        Public Property ItemsElementName() As ItemsChoiceType52()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -14691,7 +15054,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -14701,30 +15064,32 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Table.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("table", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class TableType
         Inherits BaseSequenceXBaseType
 
         Private captionField As CaptionType
 
-        Private colField As List(Of ColType)
+        Private colField() As ColType
 
-        Private colgroupField As List(Of ColGroupType)
+        Private colgroupField() As ColGroupType
 
         Private theadField As TablePartType
 
         Private tfootField As TablePartType
 
-        Private tbodyField As List(Of TablePartType)
+        Private tbodyField() As TablePartType
+
+        Private trField() As TRType
 
         Private summaryField As String
 
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>
+        <System.Xml.Serialization.XmlElementAttribute()>
         Public Property caption() As CaptionType
             Get
                 Return Me.captionField
@@ -14734,8 +15099,8 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlElementAttribute("col", Order:=1)>
-        Public Property col() As List(Of ColType)
+        <System.Xml.Serialization.XmlElementAttribute("col")>
+        Public Property col() As ColType()
             Get
                 Return Me.colField
             End Get
@@ -14744,8 +15109,8 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlElementAttribute("colgroup", Order:=2)>
-        Public Property colgroup() As List(Of ColGroupType)
+        <System.Xml.Serialization.XmlElementAttribute("colgroup")>
+        Public Property colgroup() As ColGroupType()
             Get
                 Return Me.colgroupField
             End Get
@@ -14754,7 +15119,7 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>
+        <System.Xml.Serialization.XmlElementAttribute()>
         Public Property thead() As TablePartType
             Get
                 Return Me.theadField
@@ -14764,7 +15129,7 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>
+        <System.Xml.Serialization.XmlElementAttribute()>
         Public Property tfoot() As TablePartType
             Get
                 Return Me.tfootField
@@ -14774,13 +15139,23 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlElementAttribute("tbody", Order:=5)>
-        Public Property tbody() As List(Of TablePartType)
+        <System.Xml.Serialization.XmlElementAttribute("tbody")>
+        Public Property tbody() As TablePartType()
             Get
                 Return Me.tbodyField
             End Get
             Set
                 Me.tbodyField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("tr")>
+        Public Property tr() As TRType()
+            Get
+                Return Me.trField
+            End Get
+            Set
+                Me.trField = Value
             End Set
         End Property
 
@@ -14795,785 +15170,20 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Caption.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("caption", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class CaptionType
         Inherits BaseSequenceType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType18
+        Private itemsElementNameField() As ItemsChoiceType26
 
-        Private textField As List(Of String)
-
-        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-custom-interaction", GetType(CustomInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-end-attempt-interaction", GetType(EndAttemptInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-gap", GetType(GapType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hottext", GetType(HotTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-inline-choice-interaction", GetType(InlineChoiceInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-text-entry-interaction", GetType(TextEntryInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
-        Public Property Items() As Object()
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType18()
-            Get
-                Return Me.itemsElementNameField
-            End Get
-            Set
-                Me.itemsElementNameField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
-            Get
-                Return Me.textField
-            End Get
-            Set
-                Me.textField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="InlineChoiceInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class InlineChoiceInteractionType
-        Inherits BaseSequenceFullType
-
-        Private qtilabelField As LabelType
-
-        Private qtiinlinechoiceField As List(Of InlineChoiceType)
-
-        Private shuffleField As Boolean
-
-        Private requiredField As Boolean
-
-        Public Sub New()
-            MyBase.New
-            Me.shuffleField = False
-            Me.requiredField = False
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-label", Order:=0)>
-        Public Property qtilabel() As LabelType
-            Get
-                Return Me.qtilabelField
-            End Get
-            Set
-                Me.qtilabelField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-inline-choice", Order:=1)>
-        Public Property qtiinlinechoice() As List(Of InlineChoiceType)
-            Get
-                Return Me.qtiinlinechoiceField
-            End Get
-            Set
-                Me.qtiinlinechoiceField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(),
- System.ComponentModel.DefaultValueAttribute(False)>
-        Public Property shuffle() As Boolean
-            Get
-                Return Me.shuffleField
-            End Get
-            Set
-                Me.shuffleField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(),
- System.ComponentModel.DefaultValueAttribute(False)>
-        Public Property required() As Boolean
-            Get
-                Return Me.requiredField
-            End Get
-            Set
-                Me.requiredField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Label.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class LabelType
-        Inherits BaseSequenceXBaseType
-
-        Private itemsField() As Object
-
-        Private itemsElementNameField() As ItemsChoiceType31
-
-        Private textField As List(Of String)
-
-        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
-        Public Property Items() As Object()
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType31()
-            Get
-                Return Me.itemsElementNameField
-            End Get
-            Set
-                Me.itemsElementNameField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
-            Get
-                Return Me.textField
-            End Get
-            Set
-                Me.textField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType31
-
-        a
-
-        abbr
-
-        acronym
-
-        b
-
-        bdi
-
-        bdo
-
-        big
-
-        br
-
-        cite
-
-        code
-
-        dfn
-
-        em
-
-        i
-
-        img
-
-        kbd
-
-        label
-
-        [object]
-
-        picture
-
-        q
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
-        qtifeedbackinline
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
-        qtiprintedvariable
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
-        qtitemplateinline
-
-        ruby
-
-        samp
-
-        small
-
-        span
-
-        strong
-
-        [sub]
-
-        sup
-
-        tt
-
-        var
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="InlineChoice.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class InlineChoiceType
-        Inherits BaseSequenceType
-
-        Private itemsField() As Object
-
-        Private itemsElementNameField() As ItemsChoiceType32
-
-        Private textField As List(Of String)
-
-        Private identifierField As String
-
-        Private fixedField As Boolean
-
-        Private templateidentifierField As String
-
-        Private showhideField As InlineChoiceTypeShowhide
-
-        Public Sub New()
-            MyBase.New
-            Me.fixedField = False
-            Me.showhideField = InlineChoiceTypeShowhide.show
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
-        Public Property Items() As Object()
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType32()
-            Get
-                Return Me.itemsElementNameField
-            End Get
-            Set
-                Me.itemsElementNameField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
-            Get
-                Return Me.textField
-            End Get
-            Set
-                Me.textField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
-        Public Property identifier() As String
-            Get
-                Return Me.identifierField
-            End Get
-            Set
-                Me.identifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(),
- System.ComponentModel.DefaultValueAttribute(False)>
-        Public Property fixed() As Boolean
-            Get
-                Return Me.fixedField
-            End Get
-            Set
-                Me.fixedField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("template-identifier", DataType:="NCName")>
-        Public Property templateidentifier() As String
-            Get
-                Return Me.templateidentifierField
-            End Get
-            Set
-                Me.templateidentifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("show-hide"),
- System.ComponentModel.DefaultValueAttribute(InlineChoiceTypeShowhide.show)>
-        Public Property showhide() As InlineChoiceTypeShowhide
-            Get
-                Return Me.showhideField
-            End Get
-            Set
-                Me.showhideField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType32
-
-        a
-
-        abbr
-
-        acronym
-
-        b
-
-        bdi
-
-        bdo
-
-        big
-
-        br
-
-        cite
-
-        code
-
-        dfn
-
-        em
-
-        i
-
-        img
-
-        kbd
-
-        label
-
-        [object]
-
-        picture
-
-        q
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
-        qtifeedbackinline
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
-        qtiprintedvariable
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
-        qtitemplateinline
-
-        ruby
-
-        samp
-
-        small
-
-        span
-
-        strong
-
-        [sub]
-
-        sup
-
-        tt
-
-        var
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum InlineChoiceTypeShowhide
-
-        show
-
-        hide
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType18
-
-        a
-
-        abbr
-
-        acronym
-
-        b
-
-        bdi
-
-        bdo
-
-        big
-
-        br
-
-        cite
-
-        code
-
-        dfn
-
-        em
-
-        i
-
-        img
-
-        kbd
-
-        label
-
-        [object]
-
-        picture
-
-        q
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-custom-interaction")>
-        qticustominteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-end-attempt-interaction")>
-        qtiendattemptinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
-        qtifeedbackinline
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-gap")>
-        qtigap
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-hottext")>
-        qtihottext
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-inline-choice-interaction")>
-        qtiinlinechoiceinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
-        qtiprintedvariable
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
-        qtitemplateinline
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-text-entry-interaction")>
-        qtitextentryinteraction
-
-        ruby
-
-        samp
-
-        small
-
-        span
-
-        strong
-
-        [sub]
-
-        sup
-
-        tt
-
-        var
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Col.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
- System.Xml.Serialization.XmlRootAttribute("col", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
-    Partial Public Class ColType
-        Inherits BaseSequenceXBaseEmptyType
-
-        Private spanField As Integer
-
-        Private spanFieldSpecified As Boolean
-
-        <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property span() As Integer
-            Get
-                Return Me.spanField
-            End Get
-            Set
-                Me.spanField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property spanSpecified() As Boolean
-            Get
-                Return Me.spanFieldSpecified
-            End Get
-            Set
-                Me.spanFieldSpecified = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ColGroup.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
- System.Xml.Serialization.XmlRootAttribute("colgroup", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
-    Partial Public Class ColGroupType
-        Inherits BaseSequenceType
-
-        Private colField As List(Of ColType)
-
-        Private spanField As Integer
-
-        Private spanFieldSpecified As Boolean
-
-        <System.Xml.Serialization.XmlElementAttribute("col", Order:=0)>
-        Public Property col() As List(Of ColType)
-            Get
-                Return Me.colField
-            End Get
-            Set
-                Me.colField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property span() As Integer
-            Get
-                Return Me.spanField
-            End Get
-            Set
-                Me.spanField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property spanSpecified() As Boolean
-            Get
-                Return Me.spanFieldSpecified
-            End Get
-            Set
-                Me.spanFieldSpecified = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TablePart.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
- System.Xml.Serialization.XmlRootAttribute("tbody", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
-    Partial Public Class TablePartType
-        Inherits BaseSequenceType
-
-        Private trField As List(Of TRType)
-
-        <System.Xml.Serialization.XmlElementAttribute("tr", Order:=0)>
-        Public Property tr() As List(Of TRType)
-            Get
-                Return Me.trField
-            End Get
-            Set
-                Me.trField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TR.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
- System.Xml.Serialization.XmlRootAttribute("tr", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
-    Partial Public Class TRType
-        Inherits BaseSequenceType
-
-        Private itemsField() As TDHType
-
-        Private itemsElementNameField() As ItemsChoiceType24
-
-        <System.Xml.Serialization.XmlElementAttribute("td", GetType(TDHType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("th", GetType(TDHType), Order:=0),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
-        Public Property Items() As TDHType()
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType24()
-            Get
-                Return Me.itemsElementNameField
-            End Get
-            Set
-                Me.itemsElementNameField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TDH.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
- System.Xml.Serialization.XmlRootAttribute("td", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
-    Partial Public Class TDHType
-        Inherits BaseSequenceType
-
-        Private itemsField() As Object
-
-        Private itemsElementNameField() As ItemsChoiceType23
-
-        Private textField As List(Of String)
-
-        Private headersField As List(Of String)
-
-        Private scopeField As TDHTypeScope
-
-        Private scopeFieldSpecified As Boolean
-
-        Private abbrField As String
-
-        Private axisField As String
-
-        Private rowspanField As Integer
-
-        Private rowspanFieldSpecified As Boolean
-
-        Private colspanField As Integer
-
-        Private colspanFieldSpecified As Boolean
-
-        Private alignField As TDHTypeAlign
-
-        Private alignFieldSpecified As Boolean
-
-        Private valignField As TDHTypeValign
-
-        Private valignFieldSpecified As Boolean
+        Private textField() As String
 
         <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
@@ -15590,6 +15200,7 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
@@ -15667,6 +15278,201 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType26()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlTextAttribute()>
+        Public Property Text() As String()
+            Get
+                Return Me.textField
+            End Get
+            Set
+                Me.textField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class AssociateInteractionType
+        Inherits BasePromptInteractionType
+
+        Private qtisimpleassociablechoiceField() As SimpleAssociableChoiceType
+
+        Private shuffleField As Boolean
+
+        Private maxassociationsField As String
+
+        Private minassociationsField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.shuffleField = False
+            Me.maxassociationsField = "1"
+            Me.minassociationsField = "0"
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-simple-associable-choice", Order:=0)>
+        Public Property qtisimpleassociablechoice() As SimpleAssociableChoiceType()
+            Get
+                Return Me.qtisimpleassociablechoiceField
+            End Get
+            Set
+                Me.qtisimpleassociablechoiceField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(),
+ System.ComponentModel.DefaultValueAttribute(False)>
+        Public Property shuffle() As Boolean
+            Get
+                Return Me.shuffleField
+            End Get
+            Set
+                Me.shuffleField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("max-associations", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("1")>
+        Public Property maxassociations() As String
+            Get
+                Return Me.maxassociationsField
+            End Get
+            Set
+                Me.maxassociationsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("min-associations", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("0")>
+        Public Property minassociations() As String
+            Get
+                Return Me.minassociationsField
+            End Get
+            Set
+                Me.minassociationsField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class SimpleAssociableChoiceType
+        Inherits BaseSequenceType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType23
+
+        Private textField() As String
+
+        Private identifierField As String
+
+        Private fixedField As Boolean
+
+        Private fixedFieldSpecified As Boolean
+
+        Private templateidentifierField As String
+
+        Private showhideField As SimpleAssociableChoiceTypeShowhide
+
+        Private showhideFieldSpecified As Boolean
+
+        Private matchgroupField() As String
+
+        Private matchmaxField As String
+
+        Private matchminField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.matchminField = "0"
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
         Public Property ItemsElementName() As ItemsChoiceType23()
             Get
                 Return Me.itemsElementNameField
@@ -15677,7 +15483,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -15687,7 +15493,5375 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
-        Public Property headers() As List(Of String)
+        Public Property identifier() As String
+            Get
+                Return Me.identifierField
+            End Get
+            Set
+                Me.identifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute()>
+        Public Property fixed() As Boolean
+            Get
+                Return Me.fixedField
+            End Get
+            Set
+                Me.fixedField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property fixedSpecified() As Boolean
+            Get
+                Return Me.fixedFieldSpecified
+            End Get
+            Set
+                Me.fixedFieldSpecified = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("template-identifier", DataType:="NCName")>
+        Public Property templateidentifier() As String
+            Get
+                Return Me.templateidentifierField
+            End Get
+            Set
+                Me.templateidentifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("show-hide")>
+        Public Property showhide() As SimpleAssociableChoiceTypeShowhide
+            Get
+                Return Me.showhideField
+            End Get
+            Set
+                Me.showhideField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property showhideSpecified() As Boolean
+            Get
+                Return Me.showhideFieldSpecified
+            End Get
+            Set
+                Me.showhideFieldSpecified = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("match-group", DataType:="NCName")>
+        Public Property matchgroup() As String()
+            Get
+                Return Me.matchgroupField
+            End Get
+            Set
+                Me.matchgroupField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("match-max", DataType:="nonNegativeInteger")>
+        Public Property matchmax() As String
+            Get
+                Return Me.matchmaxField
+            End Get
+            Set
+                Me.matchmaxField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("match-min", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("0")>
+        Public Property matchmin() As String
+            Get
+                Return Me.matchminField
+            End Get
+            Set
+                Me.matchminField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class FeedbackBlockType
+        Inherits BaseSequenceXBaseType
+
+        Private qtistylesheetField() As StyleSheetType
+
+        Private qticontentbodyField As FeedbackContentBodyType
+
+        Private qticataloginfoField() As CatalogType
+
+        Private outcomeidentifierField As String
+
+        Private identifierField As String
+
+        Private showhideField As FeedbackBlockTypeShowhide
+
+        Public Sub New()
+            MyBase.New
+            Me.showhideField = FeedbackBlockTypeShowhide.show
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-stylesheet", Order:=0)>
+        Public Property qtistylesheet() As StyleSheetType()
+            Get
+                Return Me.qtistylesheetField
+            End Get
+            Set
+                Me.qtistylesheetField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-content-body", Order:=1)>
+        Public Property qticontentbody() As FeedbackContentBodyType
+            Get
+                Return Me.qticontentbodyField
+            End Get
+            Set
+                Me.qticontentbodyField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlArrayAttribute("qti-catalog-info", Order:=2),
+ System.Xml.Serialization.XmlArrayItemAttribute("qti-catalog", IsNullable:=False)>
+        Public Property qticataloginfo() As CatalogType()
+            Get
+                Return Me.qticataloginfoField
+            End Get
+            Set
+                Me.qticataloginfoField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("outcome-identifier", DataType:="NCName")>
+        Public Property outcomeidentifier() As String
+            Get
+                Return Me.outcomeidentifierField
+            End Get
+            Set
+                Me.outcomeidentifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
+        Public Property identifier() As String
+            Get
+                Return Me.identifierField
+            End Get
+            Set
+                Me.identifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("show-hide"),
+ System.ComponentModel.DefaultValueAttribute(FeedbackBlockTypeShowhide.show)>
+        Public Property showhide() As FeedbackBlockTypeShowhide
+            Get
+                Return Me.showhideField
+            End Get
+            Set
+                Me.showhideField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class FeedbackContentBodyType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType38
+
+        Private textField() As String
+
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-associate-interaction", GetType(AssociateInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-choice-interaction", GetType(ChoiceInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-custom-interaction", GetType(CustomInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-drawing-interaction", GetType(DrawingInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-extended-text-interaction", GetType(ExtendedTextInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-gap-match-interaction", GetType(GapMatchInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-graphic-associate-interaction", GetType(GraphicAssociateInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-graphic-gap-match-interaction", GetType(GraphicGapMatchInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-graphic-order-interaction", GetType(GraphicOrderInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-hotspot-interaction", GetType(HotspotInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-hottext-interaction", GetType(HotTextInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-match-interaction", GetType(MatchInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-media-interaction", GetType(MediaInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-order-interaction", GetType(OrderInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-portable-custom-interaction", GetType(PortableCustomInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-position-object-stage", GetType(PositionObjectStageType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-select-point-interaction", GetType(SelectPointInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-slider-interaction", GetType(SliderInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-upload-interaction", GetType(UploadInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType38()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlTextAttribute()>
+        Public Property Text() As String()
+            Get
+                Return Me.textField
+            End Get
+            Set
+                Me.textField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class ChoiceInteractionType
+        Inherits BasePromptInteractionType
+
+        Private qtisimplechoiceField() As SimpleChoiceType
+
+        Private shuffleField As Boolean
+
+        Private maxchoicesField As String
+
+        Private minchoicesField As String
+
+        Private orientationField As ChoiceInteractionTypeOrientation
+
+        Private dataminselectionsmessageField As String
+
+        Private datamaxselectionsmessageField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.shuffleField = False
+            Me.maxchoicesField = "1"
+            Me.minchoicesField = "0"
+            Me.orientationField = ChoiceInteractionTypeOrientation.vertical
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-simple-choice", Order:=0)>
+        Public Property qtisimplechoice() As SimpleChoiceType()
+            Get
+                Return Me.qtisimplechoiceField
+            End Get
+            Set
+                Me.qtisimplechoiceField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(),
+ System.ComponentModel.DefaultValueAttribute(False)>
+        Public Property shuffle() As Boolean
+            Get
+                Return Me.shuffleField
+            End Get
+            Set
+                Me.shuffleField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("max-choices", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("1")>
+        Public Property maxchoices() As String
+            Get
+                Return Me.maxchoicesField
+            End Get
+            Set
+                Me.maxchoicesField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("min-choices", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("0")>
+        Public Property minchoices() As String
+            Get
+                Return Me.minchoicesField
+            End Get
+            Set
+                Me.minchoicesField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(),
+ System.ComponentModel.DefaultValueAttribute(ChoiceInteractionTypeOrientation.vertical)>
+        Public Property orientation() As ChoiceInteractionTypeOrientation
+            Get
+                Return Me.orientationField
+            End Get
+            Set
+                Me.orientationField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-min-selections-message", DataType:="normalizedString")>
+        Public Property dataminselectionsmessage() As String
+            Get
+                Return Me.dataminselectionsmessageField
+            End Get
+            Set
+                Me.dataminselectionsmessageField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-max-selections-message", DataType:="normalizedString")>
+        Public Property datamaxselectionsmessage() As String
+            Get
+                Return Me.datamaxselectionsmessageField
+            End Get
+            Set
+                Me.datamaxselectionsmessageField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class SimpleChoiceType
+        Inherits BaseSequenceType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType20
+
+        Private textField() As String
+
+        Private identifierField As String
+
+        Private fixedField As Boolean
+
+        Private templateidentifierField As String
+
+        Private showhideField As SimpleChoiceTypeShowhide
+
+        Public Sub New()
+            MyBase.New
+            Me.fixedField = False
+            Me.showhideField = SimpleChoiceTypeShowhide.show
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType20()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlTextAttribute()>
+        Public Property Text() As String()
+            Get
+                Return Me.textField
+            End Get
+            Set
+                Me.textField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
+        Public Property identifier() As String
+            Get
+                Return Me.identifierField
+            End Get
+            Set
+                Me.identifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(),
+ System.ComponentModel.DefaultValueAttribute(False)>
+        Public Property fixed() As Boolean
+            Get
+                Return Me.fixedField
+            End Get
+            Set
+                Me.fixedField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("template-identifier", DataType:="NCName")>
+        Public Property templateidentifier() As String
+            Get
+                Return Me.templateidentifierField
+            End Get
+            Set
+                Me.templateidentifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("show-hide"),
+ System.ComponentModel.DefaultValueAttribute(SimpleChoiceTypeShowhide.show)>
+        Public Property showhide() As SimpleChoiceTypeShowhide
+            Get
+                Return Me.showhideField
+            End Get
+            Set
+                Me.showhideField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class TemplateBlockType
+        Inherits TemplateBlockContentType
+
+        Private templateidentifierField As String
+
+        Private showhideField As TemplateBlockTypeShowhide
+
+        Private identifierField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.showhideField = TemplateBlockTypeShowhide.show
+        End Sub
+
+        <System.Xml.Serialization.XmlAttributeAttribute("template-identifier", DataType:="NCName")>
+        Public Property templateidentifier() As String
+            Get
+                Return Me.templateidentifierField
+            End Get
+            Set
+                Me.templateidentifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("show-hide"),
+ System.ComponentModel.DefaultValueAttribute(TemplateBlockTypeShowhide.show)>
+        Public Property showhide() As TemplateBlockTypeShowhide
+            Get
+                Return Me.showhideField
+            End Get
+            Set
+                Me.showhideField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
+        Public Property identifier() As String
+            Get
+                Return Me.identifierField
+            End Get
+            Set
+                Me.identifierField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum TemplateBlockTypeShowhide
+
+        show
+
+        hide
+    End Enum
+
+    <System.Xml.Serialization.XmlIncludeAttribute(GetType(TemplateBlockFeedbackBlockType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(TemplateBlockType)),
+ System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class TemplateBlockContentType
+        Inherits BaseSequenceXBaseType
+
+        Private qtistylesheetField() As StyleSheetType
+
+        Private qticontentbodyField As TemplateBlockContentBodyType
+
+        Private qticataloginfoField() As CatalogType
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-stylesheet", Order:=0)>
+        Public Property qtistylesheet() As StyleSheetType()
+            Get
+                Return Me.qtistylesheetField
+            End Get
+            Set
+                Me.qtistylesheetField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-content-body", Order:=1)>
+        Public Property qticontentbody() As TemplateBlockContentBodyType
+            Get
+                Return Me.qticontentbodyField
+            End Get
+            Set
+                Me.qticontentbodyField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlArrayAttribute("qti-catalog-info", Order:=2),
+ System.Xml.Serialization.XmlArrayItemAttribute("qti-catalog", IsNullable:=False)>
+        Public Property qticataloginfo() As CatalogType()
+            Get
+                Return Me.qticataloginfoField
+            End Get
+            Set
+                Me.qticataloginfoField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class TemplateBlockContentBodyType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType35
+
+        Private textField() As String
+
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(TemplateBlockFeedbackBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType35()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlTextAttribute()>
+        Public Property Text() As String()
+            Get
+                Return Me.textField
+            End Get
+            Set
+                Me.textField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class TemplateBlockFeedbackBlockType
+        Inherits TemplateBlockContentType
+
+        Private outcomeidentifierField As String
+
+        Private showhideField As TemplateBlockFeedbackBlockTypeShowhide
+
+        Private identifierField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.showhideField = TemplateBlockFeedbackBlockTypeShowhide.show
+        End Sub
+
+        <System.Xml.Serialization.XmlAttributeAttribute("outcome-identifier", DataType:="NCName")>
+        Public Property outcomeidentifier() As String
+            Get
+                Return Me.outcomeidentifierField
+            End Get
+            Set
+                Me.outcomeidentifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("show-hide"),
+ System.ComponentModel.DefaultValueAttribute(TemplateBlockFeedbackBlockTypeShowhide.show)>
+        Public Property showhide() As TemplateBlockFeedbackBlockTypeShowhide
+            Get
+                Return Me.showhideField
+            End Get
+            Set
+                Me.showhideField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
+        Public Property identifier() As String
+            Get
+                Return Me.identifierField
+            End Get
+            Set
+                Me.identifierField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum TemplateBlockFeedbackBlockTypeShowhide
+
+        show
+
+        hide
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType35
+
+        a
+
+        abbr
+
+        acronym
+
+        address
+
+        article
+
+        aside
+
+        audio
+
+        b
+
+        bdi
+
+        bdo
+
+        big
+
+        blockquote
+
+        br
+
+        cite
+
+        code
+
+        details
+
+        dfn
+
+        div
+
+        dl
+
+        em
+
+        figure
+
+        footer
+
+        h1
+
+        h2
+
+        h3
+
+        h4
+
+        h5
+
+        h6
+
+        header
+
+        hr
+
+        i
+
+        img
+
+        kbd
+
+        label
+
+        nav
+
+        [object]
+
+        ol
+
+        p
+
+        picture
+
+        pre
+
+        q
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
+        qtifeedbackblock
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
+        qtifeedbackinline
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
+        qtiprintedvariable
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
+        qtitemplateblock
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
+        qtitemplateinline
+
+        ruby
+
+        samp
+
+        section
+
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
+        table
+
+        tt
+
+        ul
+
+        var
+
+        video
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class CatalogType
+
+        Private qticardField() As CardType
+
+        Private idField As String
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-card", Order:=0)>
+        Public Property qticard() As CardType()
+            Get
+                Return Me.qticardField
+            End Get
+            Set
+                Me.qticardField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="ID")>
+        Public Property id() As String
+            Get
+                Return Me.idField
+            End Get
+            Set
+                Me.idField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class CardType
+
+        Private itemsField() As Object
+
+        Private supportField As String
+
+        Private langField As String
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-card-entry", GetType(CardEntryType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-file-href", GetType(FileHrefCardType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-html-content", GetType(HTMLContentType), Order:=0)>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute()>
+        Public Property support() As String
+            Get
+                Return Me.supportField
+            End Get
+            Set
+                Me.supportField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        Public Property lang() As String
+            Get
+                Return Me.langField
+            End Get
+            Set
+                Me.langField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class CardEntryType
+
+        Private qtihtmlcontentField As HTMLContentType
+
+        Private qtifilehrefField() As FileHrefCardType
+
+        Private langField As String
+
+        Private defaultField As Boolean
+
+        Private anyAttrField() As System.Xml.XmlAttribute
+
+        Public Sub New()
+            MyBase.New
+            Me.defaultField = False
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-html-content", Order:=0)>
+        Public Property qtihtmlcontent() As HTMLContentType
+            Get
+                Return Me.qtihtmlcontentField
+            End Get
+            Set
+                Me.qtihtmlcontentField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-file-href", Order:=1)>
+        Public Property qtifilehref() As FileHrefCardType()
+            Get
+                Return Me.qtifilehrefField
+            End Get
+            Set
+                Me.qtifilehrefField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        Public Property lang() As String
+            Get
+                Return Me.langField
+            End Get
+            Set
+                Me.langField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(),
+ System.ComponentModel.DefaultValueAttribute(False)>
+        Public Property [default]() As Boolean
+            Get
+                Return Me.defaultField
+            End Get
+            Set
+                Me.defaultField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
+            Get
+                Return Me.anyAttrField
+            End Get
+            Set
+                Me.anyAttrField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class HTMLContentType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType36
+
+        Private textField() As String
+
+        Private langField As String
+
+        Private anyAttrField() As System.Xml.XmlAttribute
+
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType36()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlTextAttribute()>
+        Public Property Text() As String()
+            Get
+                Return Me.textField
+            End Get
+            Set
+                Me.textField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        Public Property lang() As String
+            Get
+                Return Me.langField
+            End Get
+            Set
+                Me.langField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
+            Get
+                Return Me.anyAttrField
+            End Get
+            Set
+                Me.anyAttrField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType36
+
+        a
+
+        abbr
+
+        acronym
+
+        address
+
+        article
+
+        aside
+
+        audio
+
+        b
+
+        bdi
+
+        bdo
+
+        big
+
+        blockquote
+
+        br
+
+        cite
+
+        code
+
+        details
+
+        dfn
+
+        div
+
+        dl
+
+        em
+
+        figure
+
+        footer
+
+        h1
+
+        h2
+
+        h3
+
+        h4
+
+        h5
+
+        h6
+
+        header
+
+        hr
+
+        i
+
+        img
+
+        kbd
+
+        label
+
+        nav
+
+        [object]
+
+        ol
+
+        p
+
+        picture
+
+        pre
+
+        q
+
+        ruby
+
+        samp
+
+        section
+
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
+        table
+
+        tt
+
+        ul
+
+        var
+
+        video
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class FileHrefCardType
+
+        Private mimetypeField As String
+
+        Private valueField As String
+
+        <System.Xml.Serialization.XmlAttributeAttribute("mime-type", DataType:="normalizedString")>
+        Public Property mimetype() As String
+            Get
+                Return Me.mimetypeField
+            End Get
+            Set
+                Me.mimetypeField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlTextAttribute(DataType:="anyURI")>
+        Public Property Value() As String
+            Get
+                Return Me.valueField
+            End Get
+            Set
+                Me.valueField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType20
+
+        a
+
+        abbr
+
+        acronym
+
+        address
+
+        article
+
+        aside
+
+        audio
+
+        b
+
+        bdi
+
+        bdo
+
+        big
+
+        blockquote
+
+        br
+
+        cite
+
+        code
+
+        details
+
+        dfn
+
+        div
+
+        dl
+
+        em
+
+        figure
+
+        footer
+
+        h1
+
+        h2
+
+        h3
+
+        h4
+
+        h5
+
+        h6
+
+        header
+
+        hr
+
+        i
+
+        img
+
+        kbd
+
+        label
+
+        nav
+
+        [object]
+
+        ol
+
+        p
+
+        picture
+
+        pre
+
+        q
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
+        qtifeedbackblock
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
+        qtifeedbackinline
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
+        qtiprintedvariable
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
+        qtitemplateblock
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
+        qtitemplateinline
+
+        ruby
+
+        samp
+
+        section
+
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
+        table
+
+        tt
+
+        ul
+
+        var
+
+        video
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum SimpleChoiceTypeShowhide
+
+        show
+
+        hide
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum ChoiceInteractionTypeOrientation
+
+        horizontal
+
+        vertical
+    End Enum
+
+    <System.Xml.Serialization.XmlIncludeAttribute(GetType(AssociateInteractionType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(UploadInteractionType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(ExtendedTextInteractionType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(OrderInteractionType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(HotTextInteractionType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(MediaInteractionType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(ChoiceInteractionType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(SliderInteractionType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(GraphicAssociateInteractionType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(SelectPointInteractionType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(HotspotInteractionType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(MatchInteractionType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(GapMatchInteractionType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(DrawingInteractionType)),
+ System.Xml.Serialization.XmlIncludeAttribute(GetType(PortableCustomInteractionType)),
+ System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class BasePromptInteractionType
+        Inherits ARIABaseType
+
+        Private qtipromptField As PromptType
+
+        Private idField As String
+
+        Private classField() As String
+
+        Private langField As String
+
+        Private lang1Field As String
+
+        Private labelField As String
+
+        Private baseField As String
+
+        Private responseidentifierField As String
+
+        Private dirField As BasePromptInteractionTypeDir
+
+        Private datacatalogidrefField As String
+
+        Private dataqtisuppressttsField As BasePromptInteractionTypeDataqtisuppresstts
+
+        Private dataqtisuppressttsFieldSpecified As Boolean
+
+        Private anyAttrField() As System.Xml.XmlAttribute
+
+        Public Sub New()
+            MyBase.New
+            Me.dirField = BasePromptInteractionTypeDir.[auto]
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-prompt", Order:=0)>
+        Public Property qtiprompt() As PromptType
+            Get
+                Return Me.qtipromptField
+            End Get
+            Set
+                Me.qtipromptField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="ID")>
+        Public Property id() As String
+            Get
+                Return Me.idField
+            End Get
+            Set
+                Me.idField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute()>
+        Public Property [class]() As String()
+            Get
+                Return Me.classField
+            End Get
+            Set
+                Me.classField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
+        Public Property lang() As String
+            Get
+                Return Me.langField
+            End Get
+            Set
+                Me.langField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("lang", Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        Public Property lang1() As String
+            Get
+                Return Me.lang1Field
+            End Get
+            Set
+                Me.lang1Field = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
+        Public Property label() As String
+            Get
+                Return Me.labelField
+            End Get
+            Set
+                Me.labelField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
+        Public Property base() As String
+            Get
+                Return Me.baseField
+            End Get
+            Set
+                Me.baseField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("response-identifier", DataType:="NCName")>
+        Public Property responseidentifier() As String
+            Get
+                Return Me.responseidentifierField
+            End Get
+            Set
+                Me.responseidentifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(),
+ System.ComponentModel.DefaultValueAttribute(BasePromptInteractionTypeDir.[auto])>
+        Public Property dir() As BasePromptInteractionTypeDir
+            Get
+                Return Me.dirField
+            End Get
+            Set
+                Me.dirField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-catalog-idref", DataType:="IDREF")>
+        Public Property datacatalogidref() As String
+            Get
+                Return Me.datacatalogidrefField
+            End Get
+            Set
+                Me.datacatalogidrefField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-qti-suppress-tts")>
+        Public Property dataqtisuppresstts() As BasePromptInteractionTypeDataqtisuppresstts
+            Get
+                Return Me.dataqtisuppressttsField
+            End Get
+            Set
+                Me.dataqtisuppressttsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property dataqtisuppressttsSpecified() As Boolean
+            Get
+                Return Me.dataqtisuppressttsFieldSpecified
+            End Get
+            Set
+                Me.dataqtisuppressttsFieldSpecified = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
+            Get
+                Return Me.anyAttrField
+            End Get
+            Set
+                Me.anyAttrField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum BasePromptInteractionTypeDir
+
+        ltr
+
+        rtl
+
+        [auto]
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum BasePromptInteractionTypeDataqtisuppresstts
+
+        <System.Xml.Serialization.XmlEnumAttribute("computer-read-aloud")>
+        computerreadaloud
+
+        <System.Xml.Serialization.XmlEnumAttribute("screen-reader")>
+        screenreader
+
+        all
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class UploadInteractionType
+        Inherits BasePromptInteractionType
+
+        Private typeField() As String
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
+        Public Property type() As String()
+            Get
+                Return Me.typeField
+            End Get
+            Set
+                Me.typeField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class ExtendedTextInteractionType
+        Inherits BasePromptInteractionType
+
+
+        Private stringidentifierField As String
+
+        Private expectedlengthField As String
+
+        Private patternmaskField As String
+
+        Private placeholdertextField As String
+
+        Private maxstringsField As String
+
+        Private minstringsField As String
+
+        Private expectedlinesField As String
+
+        Private formatField As ExtendedTextInteractionTypeFormat
+
+        Private datapatternmaskmessageField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.minstringsField = "0"
+            Me.formatField = ExtendedTextInteractionTypeFormat.plain
+        End Sub
+
+
+        <System.Xml.Serialization.XmlAttributeAttribute("string-identifier", DataType:="NCName")>
+        Public Property stringidentifier() As String
+            Get
+                Return Me.stringidentifierField
+            End Get
+            Set
+                Me.stringidentifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("expected-length", DataType:="nonNegativeInteger")>
+        Public Property expectedlength() As String
+            Get
+                Return Me.expectedlengthField
+            End Get
+            Set
+                Me.expectedlengthField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("pattern-mask")>
+        Public Property patternmask() As String
+            Get
+                Return Me.patternmaskField
+            End Get
+            Set
+                Me.patternmaskField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("placeholder-text")>
+        Public Property placeholdertext() As String
+            Get
+                Return Me.placeholdertextField
+            End Get
+            Set
+                Me.placeholdertextField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("max-strings", DataType:="nonNegativeInteger")>
+        Public Property maxstrings() As String
+            Get
+                Return Me.maxstringsField
+            End Get
+            Set
+                Me.maxstringsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("min-strings", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("0")>
+        Public Property minstrings() As String
+            Get
+                Return Me.minstringsField
+            End Get
+            Set
+                Me.minstringsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("expected-lines", DataType:="nonNegativeInteger")>
+        Public Property expectedlines() As String
+            Get
+                Return Me.expectedlinesField
+            End Get
+            Set
+                Me.expectedlinesField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(),
+ System.ComponentModel.DefaultValueAttribute(ExtendedTextInteractionTypeFormat.plain)>
+        Public Property format() As ExtendedTextInteractionTypeFormat
+            Get
+                Return Me.formatField
+            End Get
+            Set
+                Me.formatField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-patternmask-message", DataType:="normalizedString")>
+        Public Property datapatternmaskmessage() As String
+            Get
+                Return Me.datapatternmaskmessageField
+            End Get
+            Set
+                Me.datapatternmaskmessageField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum ExtendedTextInteractionTypeFormat
+
+        plain
+
+        preformatted
+
+        xhtml
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class OrderInteractionType
+        Inherits BasePromptInteractionType
+
+        Private qtisimplechoiceField() As SimpleChoiceType
+
+        Private shuffleField As Boolean
+
+        Private minchoicesField As String
+
+        Private maxchoicesField As String
+
+        Private orientationField As OrderInteractionTypeOrientation
+
+        Private orientationFieldSpecified As Boolean
+
+        Private dataminselectionsmessageField As String
+
+        Private datamaxselectionsmessageField As String
+
+        Private datachoicescontainerwidthField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.shuffleField = False
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-simple-choice", Order:=0)>
+        Public Property qtisimplechoice() As SimpleChoiceType()
+            Get
+                Return Me.qtisimplechoiceField
+            End Get
+            Set
+                Me.qtisimplechoiceField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(),
+ System.ComponentModel.DefaultValueAttribute(False)>
+        Public Property shuffle() As Boolean
+            Get
+                Return Me.shuffleField
+            End Get
+            Set
+                Me.shuffleField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("min-choices", DataType:="nonNegativeInteger")>
+        Public Property minchoices() As String
+            Get
+                Return Me.minchoicesField
+            End Get
+            Set
+                Me.minchoicesField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("max-choices", DataType:="nonNegativeInteger")>
+        Public Property maxchoices() As String
+            Get
+                Return Me.maxchoicesField
+            End Get
+            Set
+                Me.maxchoicesField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute()>
+        Public Property orientation() As OrderInteractionTypeOrientation
+            Get
+                Return Me.orientationField
+            End Get
+            Set
+                Me.orientationField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property orientationSpecified() As Boolean
+            Get
+                Return Me.orientationFieldSpecified
+            End Get
+            Set
+                Me.orientationFieldSpecified = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-min-selections-message", DataType:="normalizedString")>
+        Public Property dataminselectionsmessage() As String
+            Get
+                Return Me.dataminselectionsmessageField
+            End Get
+            Set
+                Me.dataminselectionsmessageField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-max-selections-message", DataType:="normalizedString")>
+        Public Property datamaxselectionsmessage() As String
+            Get
+                Return Me.datamaxselectionsmessageField
+            End Get
+            Set
+                Me.datamaxselectionsmessageField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-choices-container-width", DataType:="nonNegativeInteger")>
+        Public Property datachoicescontainerwidth() As String
+            Get
+                Return Me.datachoicescontainerwidthField
+            End Get
+            Set
+                Me.datachoicescontainerwidthField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum OrderInteractionTypeOrientation
+
+        horizontal
+
+        vertical
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class HotTextInteractionType
+        Inherits BasePromptInteractionType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType21
+
+        Private maxchoicesField As String
+
+        Private minchoicesField As String
+
+        Private dataminselectionsmessageField As String
+
+        Private datamaxselectionsmessageField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.maxchoicesField = "1"
+            Me.minchoicesField = "0"
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType21()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("max-choices", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("1")>
+        Public Property maxchoices() As String
+            Get
+                Return Me.maxchoicesField
+            End Get
+            Set
+                Me.maxchoicesField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("min-choices", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("0")>
+        Public Property minchoices() As String
+            Get
+                Return Me.minchoicesField
+            End Get
+            Set
+                Me.minchoicesField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-min-selections-message", DataType:="normalizedString")>
+        Public Property dataminselectionsmessage() As String
+            Get
+                Return Me.dataminselectionsmessageField
+            End Get
+            Set
+                Me.dataminselectionsmessageField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-max-selections-message", DataType:="normalizedString")>
+        Public Property datamaxselectionsmessage() As String
+            Get
+                Return Me.datamaxselectionsmessageField
+            End Get
+            Set
+                Me.datamaxselectionsmessageField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType21
+
+        address
+
+        article
+
+        aside
+
+        audio
+
+        blockquote
+
+        div
+
+        dl
+
+        figure
+
+        footer
+
+        h1
+
+        h2
+
+        h3
+
+        h4
+
+        h5
+
+        h6
+
+        header
+
+        hr
+
+        nav
+
+        ol
+
+        p
+
+        pre
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
+        qtifeedbackblock
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
+        qtitemplateblock
+
+        section
+
+        table
+
+        ul
+
+        video
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class MediaInteractionType
+        Inherits BasePromptInteractionType
+
+        Private itemField As ARIABaseType
+
+        Private autostartField As Boolean
+
+        Private minplaysField As String
+
+        Private maxplaysField As String
+
+        Private loopField As Boolean
+
+        Private coordsField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.minplaysField = "0"
+            Me.maxplaysField = "0"
+            Me.loopField = False
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0)>
+        Public Property Item() As ARIABaseType
+            Get
+                Return Me.itemField
+            End Get
+            Set
+                Me.itemField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute()>
+        Public Property autostart() As Boolean
+            Get
+                Return Me.autostartField
+            End Get
+            Set
+                Me.autostartField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("min-plays", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("0")>
+        Public Property minplays() As String
+            Get
+                Return Me.minplaysField
+            End Get
+            Set
+                Me.minplaysField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("max-plays", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("0")>
+        Public Property maxplays() As String
+            Get
+                Return Me.maxplaysField
+            End Get
+            Set
+                Me.maxplaysField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(),
+ System.ComponentModel.DefaultValueAttribute(False)>
+        Public Property [loop]() As Boolean
+            Get
+                Return Me.loopField
+            End Get
+            Set
+                Me.loopField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
+        Public Property coords() As String
+            Get
+                Return Me.coordsField
+            End Get
+            Set
+                Me.coordsField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class SliderInteractionType
+        Inherits BasePromptInteractionType
+
+        Private lowerboundField As Double
+
+        Private upperboundField As Double
+
+        Private stepField As Double
+
+        Private steplabelField As Boolean
+
+        Private orientationField As SliderInteractionTypeOrientation
+
+        Private orientationFieldSpecified As Boolean
+
+        Private reverseField As Boolean
+
+        Private reverseFieldSpecified As Boolean
+
+        Public Sub New()
+            MyBase.New
+            Me.stepField = 1.0R
+            Me.steplabelField = False
+        End Sub
+
+        <System.Xml.Serialization.XmlAttributeAttribute("lower-bound")>
+        Public Property lowerbound() As Double
+            Get
+                Return Me.lowerboundField
+            End Get
+            Set
+                Me.lowerboundField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("upper-bound")>
+        Public Property upperbound() As Double
+            Get
+                Return Me.upperboundField
+            End Get
+            Set
+                Me.upperboundField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(),
+ System.ComponentModel.DefaultValueAttribute(1.0R)>
+        Public Property [step]() As Double
+            Get
+                Return Me.stepField
+            End Get
+            Set
+                Me.stepField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("step-label"),
+ System.ComponentModel.DefaultValueAttribute(False)>
+        Public Property steplabel() As Boolean
+            Get
+                Return Me.steplabelField
+            End Get
+            Set
+                Me.steplabelField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute()>
+        Public Property orientation() As SliderInteractionTypeOrientation
+            Get
+                Return Me.orientationField
+            End Get
+            Set
+                Me.orientationField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property orientationSpecified() As Boolean
+            Get
+                Return Me.orientationFieldSpecified
+            End Get
+            Set
+                Me.orientationFieldSpecified = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute()>
+        Public Property reverse() As Boolean
+            Get
+                Return Me.reverseField
+            End Get
+            Set
+                Me.reverseField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property reverseSpecified() As Boolean
+            Get
+                Return Me.reverseFieldSpecified
+            End Get
+            Set
+                Me.reverseFieldSpecified = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum SliderInteractionTypeOrientation
+
+        horizontal
+
+        vertical
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class GraphicAssociateInteractionType
+        Inherits BasePromptInteractionType
+
+        Private itemField As Object
+
+        Private qtiassociablehotspotField() As AssociableHotspotType
+
+        Private minassociationsField As String
+
+        Private maxassociationsField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.maxassociationsField = "1"
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0)>
+        Public Property Item() As Object
+            Get
+                Return Me.itemField
+            End Get
+            Set
+                Me.itemField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-associable-hotspot", Order:=1)>
+        Public Property qtiassociablehotspot() As AssociableHotspotType()
+            Get
+                Return Me.qtiassociablehotspotField
+            End Get
+            Set
+                Me.qtiassociablehotspotField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("min-associations", DataType:="nonNegativeInteger")>
+        Public Property minassociations() As String
+            Get
+                Return Me.minassociationsField
+            End Get
+            Set
+                Me.minassociationsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("max-associations", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("1")>
+        Public Property maxassociations() As String
+            Get
+                Return Me.maxassociationsField
+            End Get
+            Set
+                Me.maxassociationsField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class SelectPointInteractionType
+        Inherits BasePromptInteractionType
+
+        Private itemField As Object
+
+        Private minchoicesField As String
+
+        Private maxchoicesField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.minchoicesField = "0"
+            Me.maxchoicesField = "0"
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0)>
+        Public Property Item() As Object
+            Get
+                Return Me.itemField
+            End Get
+            Set
+                Me.itemField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("min-choices", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("0")>
+        Public Property minchoices() As String
+            Get
+                Return Me.minchoicesField
+            End Get
+            Set
+                Me.minchoicesField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("max-choices", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("0")>
+        Public Property maxchoices() As String
+            Get
+                Return Me.maxchoicesField
+            End Get
+            Set
+                Me.maxchoicesField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class HotspotInteractionType
+        Inherits BasePromptInteractionType
+
+        Private itemField As Object
+
+        Private qtihotspotchoiceField() As HotspotChoiceType
+
+        Private minchoicesField As String
+
+        Private maxchoicesField As String
+
+        Private dataminselectionsmessageField As String
+
+        Private datamaxselectionsmessageField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.minchoicesField = "0"
+            Me.maxchoicesField = "1"
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0)>
+        Public Property Item() As Object
+            Get
+                Return Me.itemField
+            End Get
+            Set
+                Me.itemField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-hotspot-choice", Order:=1)>
+        Public Property qtihotspotchoice() As HotspotChoiceType()
+            Get
+                Return Me.qtihotspotchoiceField
+            End Get
+            Set
+                Me.qtihotspotchoiceField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("min-choices", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("0")>
+        Public Property minchoices() As String
+            Get
+                Return Me.minchoicesField
+            End Get
+            Set
+                Me.minchoicesField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("max-choices", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("1")>
+        Public Property maxchoices() As String
+            Get
+                Return Me.maxchoicesField
+            End Get
+            Set
+                Me.maxchoicesField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-min-selections-message", DataType:="normalizedString")>
+        Public Property dataminselectionsmessage() As String
+            Get
+                Return Me.dataminselectionsmessageField
+            End Get
+            Set
+                Me.dataminselectionsmessageField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-max-selections-message", DataType:="normalizedString")>
+        Public Property datamaxselectionsmessage() As String
+            Get
+                Return Me.datamaxselectionsmessageField
+            End Get
+            Set
+                Me.datamaxselectionsmessageField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class MatchInteractionType
+        Inherits BasePromptInteractionType
+
+        Private qtisimplematchsetField() As SimpleMatchSetType
+
+        Private shuffleField As Boolean
+
+        Private maxassociationsField As String
+
+        Private minassociationsField As String
+
+        Private dataminselectionsmessageField As String
+
+        Private datamaxselectionsmessageField As String
+
+        Private datafirstcolumnheaderField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.shuffleField = False
+            Me.maxassociationsField = "1"
+            Me.minassociationsField = "0"
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-simple-match-set", Order:=0)>
+        Public Property qtisimplematchset() As SimpleMatchSetType()
+            Get
+                Return Me.qtisimplematchsetField
+            End Get
+            Set
+                Me.qtisimplematchsetField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(),
+ System.ComponentModel.DefaultValueAttribute(False)>
+        Public Property shuffle() As Boolean
+            Get
+                Return Me.shuffleField
+            End Get
+            Set
+                Me.shuffleField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("max-associations", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("1")>
+        Public Property maxassociations() As String
+            Get
+                Return Me.maxassociationsField
+            End Get
+            Set
+                Me.maxassociationsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("min-associations", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("0")>
+        Public Property minassociations() As String
+            Get
+                Return Me.minassociationsField
+            End Get
+            Set
+                Me.minassociationsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-min-selections-message", DataType:="normalizedString")>
+        Public Property dataminselectionsmessage() As String
+            Get
+                Return Me.dataminselectionsmessageField
+            End Get
+            Set
+                Me.dataminselectionsmessageField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-max-selections-message", DataType:="normalizedString")>
+        Public Property datamaxselectionsmessage() As String
+            Get
+                Return Me.datamaxselectionsmessageField
+            End Get
+            Set
+                Me.datamaxselectionsmessageField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-first-column-header", DataType:="normalizedString")>
+        Public Property datafirstcolumnheader() As String
+            Get
+                Return Me.datafirstcolumnheaderField
+            End Get
+            Set
+                Me.datafirstcolumnheaderField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class SimpleMatchSetType
+
+        Private qtisimpleassociablechoiceField() As SimpleAssociableChoiceType
+
+        Private idField As String
+
+        Private anyAttrField() As System.Xml.XmlAttribute
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-simple-associable-choice", Order:=0)>
+        Public Property qtisimpleassociablechoice() As SimpleAssociableChoiceType()
+            Get
+                Return Me.qtisimpleassociablechoiceField
+            End Get
+            Set
+                Me.qtisimpleassociablechoiceField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="ID")>
+        Public Property id() As String
+            Get
+                Return Me.idField
+            End Get
+            Set
+                Me.idField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
+            Get
+                Return Me.anyAttrField
+            End Get
+            Set
+                Me.anyAttrField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class GapMatchInteractionType
+        Inherits BasePromptInteractionType
+
+        Private itemsField() As BaseSequenceType
+
+        Private items1Field() As Object
+
+        Private items1ElementNameField() As Items1ChoiceType
+
+        Private shuffleField As Boolean
+
+        Private minassociationsField As String
+
+        Private maxassociationsField As String
+
+        Private dataminselectionsmessageField As String
+
+        Private datamaxselectionsmessageField As String
+
+        Private datachoicescontainerwidthField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.shuffleField = False
+            Me.maxassociationsField = "1"
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-gap-img", GetType(GapImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-gap-text", GetType(GapTextType), Order:=0)>
+        Public Property Items() As BaseSequenceType()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=1),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("Items1ElementName")>
+        Public Property Items1() As Object()
+            Get
+                Return Me.items1Field
+            End Get
+            Set
+                Me.items1Field = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("Items1ElementName", Order:=2),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property Items1ElementName() As Items1ChoiceType()
+            Get
+                Return Me.items1ElementNameField
+            End Get
+            Set
+                Me.items1ElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(),
+ System.ComponentModel.DefaultValueAttribute(False)>
+        Public Property shuffle() As Boolean
+            Get
+                Return Me.shuffleField
+            End Get
+            Set
+                Me.shuffleField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("min-associations", DataType:="nonNegativeInteger")>
+        Public Property minassociations() As String
+            Get
+                Return Me.minassociationsField
+            End Get
+            Set
+                Me.minassociationsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("max-associations", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("1")>
+        Public Property maxassociations() As String
+            Get
+                Return Me.maxassociationsField
+            End Get
+            Set
+                Me.maxassociationsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-min-selections-message", DataType:="normalizedString")>
+        Public Property dataminselectionsmessage() As String
+            Get
+                Return Me.dataminselectionsmessageField
+            End Get
+            Set
+                Me.dataminselectionsmessageField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-max-selections-message", DataType:="normalizedString")>
+        Public Property datamaxselectionsmessage() As String
+            Get
+                Return Me.datamaxselectionsmessageField
+            End Get
+            Set
+                Me.datamaxselectionsmessageField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-choices-container-width", DataType:="nonNegativeInteger")>
+        Public Property datachoicescontainerwidth() As String
+            Get
+                Return Me.datachoicescontainerwidthField
+            End Get
+            Set
+                Me.datachoicescontainerwidthField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class GapImgType
+        Inherits BaseSequenceType
+
+        Private itemField As Object
+
+        Private identifierField As String
+
+        Private templateidentifierField As String
+
+        Private showhideField As GapImgTypeShowhide
+
+        Private matchgroupField() As String
+
+        Private matchmaxField As String
+
+        Private matchminField As String
+
+        Private objectlabelField As String
+
+        Private topField As String
+
+        Private leftField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.showhideField = GapImgTypeShowhide.show
+            Me.matchminField = "0"
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0)>
+        Public Property Item() As Object
+            Get
+                Return Me.itemField
+            End Get
+            Set
+                Me.itemField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
+        Public Property identifier() As String
+            Get
+                Return Me.identifierField
+            End Get
+            Set
+                Me.identifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("template-identifier", DataType:="NCName")>
+        Public Property templateidentifier() As String
+            Get
+                Return Me.templateidentifierField
+            End Get
+            Set
+                Me.templateidentifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("show-hide"),
+ System.ComponentModel.DefaultValueAttribute(GapImgTypeShowhide.show)>
+        Public Property showhide() As GapImgTypeShowhide
+            Get
+                Return Me.showhideField
+            End Get
+            Set
+                Me.showhideField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("match-group", DataType:="NCName")>
+        Public Property matchgroup() As String()
+            Get
+                Return Me.matchgroupField
+            End Get
+            Set
+                Me.matchgroupField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("match-max", DataType:="nonNegativeInteger")>
+        Public Property matchmax() As String
+            Get
+                Return Me.matchmaxField
+            End Get
+            Set
+                Me.matchmaxField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("match-min", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("0")>
+        Public Property matchmin() As String
+            Get
+                Return Me.matchminField
+            End Get
+            Set
+                Me.matchminField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("object-label")>
+        Public Property objectlabel() As String
+            Get
+                Return Me.objectlabelField
+            End Get
+            Set
+                Me.objectlabelField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
+        Public Property top() As String
+            Get
+                Return Me.topField
+            End Get
+            Set
+                Me.topField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
+        Public Property left() As String
+            Get
+                Return Me.leftField
+            End Get
+            Set
+                Me.leftField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum GapImgTypeShowhide
+
+        show
+
+        hide
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class GapTextType
+        Inherits BaseSequenceType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType25
+
+        Private textField() As String
+
+        Private identifierField As String
+
+        Private templateidentifierField As String
+
+        Private showhideField As GapTextTypeShowhide
+
+        Private matchgroupField() As String
+
+        Private matchmaxField As String
+
+        Private matchminField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.showhideField = GapTextTypeShowhide.show
+            Me.matchminField = "0"
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType25()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlTextAttribute()>
+        Public Property Text() As String()
+            Get
+                Return Me.textField
+            End Get
+            Set
+                Me.textField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
+        Public Property identifier() As String
+            Get
+                Return Me.identifierField
+            End Get
+            Set
+                Me.identifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("template-identifier", DataType:="NCName")>
+        Public Property templateidentifier() As String
+            Get
+                Return Me.templateidentifierField
+            End Get
+            Set
+                Me.templateidentifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("show-hide"),
+ System.ComponentModel.DefaultValueAttribute(GapTextTypeShowhide.show)>
+        Public Property showhide() As GapTextTypeShowhide
+            Get
+                Return Me.showhideField
+            End Get
+            Set
+                Me.showhideField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("match-group", DataType:="NCName")>
+        Public Property matchgroup() As String()
+            Get
+                Return Me.matchgroupField
+            End Get
+            Set
+                Me.matchgroupField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("match-max", DataType:="nonNegativeInteger")>
+        Public Property matchmax() As String
+            Get
+                Return Me.matchmaxField
+            End Get
+            Set
+                Me.matchmaxField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("match-min", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("0")>
+        Public Property matchmin() As String
+            Get
+                Return Me.matchminField
+            End Get
+            Set
+                Me.matchminField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType25
+
+        a
+
+        abbr
+
+        acronym
+
+        b
+
+        bdi
+
+        bdo
+
+        big
+
+        br
+
+        cite
+
+        code
+
+        dfn
+
+        em
+
+        i
+
+        img
+
+        kbd
+
+        label
+
+        [object]
+
+        picture
+
+        q
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
+        qtifeedbackinline
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
+        qtiprintedvariable
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
+        qtitemplateinline
+
+        ruby
+
+        samp
+
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
+        tt
+
+        var
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum GapTextTypeShowhide
+
+        show
+
+        hide
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum Items1ChoiceType
+
+        address
+
+        article
+
+        aside
+
+        audio
+
+        blockquote
+
+        div
+
+        dl
+
+        figure
+
+        footer
+
+        h1
+
+        h2
+
+        h3
+
+        h4
+
+        h5
+
+        h6
+
+        header
+
+        hr
+
+        nav
+
+        ol
+
+        p
+
+        pre
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
+        qtifeedbackblock
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
+        qtitemplateblock
+
+        section
+
+        table
+
+        ul
+
+        video
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class DrawingInteractionType
+        Inherits BasePromptInteractionType
+
+        Private itemField As Object
+
+        <System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0)>
+        Public Property Item() As Object
+            Get
+                Return Me.itemField
+            End Get
+            Set
+                Me.itemField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class PortableCustomInteractionType
+        Inherits BasePromptInteractionType
+
+        Private qtiinteractionmodulesField As InteractionModulesType
+
+        Private qtiinteractionmarkupField As InteractionMarkupType
+
+        Private qtitemplatevariableField() As TemplateUniqueIDRefType
+
+        Private qticontextvariableField() As ContextUniqueIDRefType
+
+        Private custominteractiontypeidentifierField As String
+
+        Private moduleField As String
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-interaction-modules", Order:=0)>
+        Public Property qtiinteractionmodules() As InteractionModulesType
+            Get
+                Return Me.qtiinteractionmodulesField
+            End Get
+            Set
+                Me.qtiinteractionmodulesField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-interaction-markup", Order:=1)>
+        Public Property qtiinteractionmarkup() As InteractionMarkupType
+            Get
+                Return Me.qtiinteractionmarkupField
+            End Get
+            Set
+                Me.qtiinteractionmarkupField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-template-variable", Order:=2)>
+        Public Property qtitemplatevariable() As TemplateUniqueIDRefType()
+            Get
+                Return Me.qtitemplatevariableField
+            End Get
+            Set
+                Me.qtitemplatevariableField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-context-variable", Order:=3)>
+        Public Property qticontextvariable() As ContextUniqueIDRefType()
+            Get
+                Return Me.qticontextvariableField
+            End Get
+            Set
+                Me.qticontextvariableField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("custom-interaction-type-identifier", DataType:="anyURI")>
+        Public Property custominteractiontypeidentifier() As String
+            Get
+                Return Me.custominteractiontypeidentifierField
+            End Get
+            Set
+                Me.custominteractiontypeidentifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
+        Public Property [module]() As String
+            Get
+                Return Me.moduleField
+            End Get
+            Set
+                Me.moduleField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class InteractionModulesType
+
+        Private qtiinteractionmoduleField() As InteractionModuleType
+
+        Private primaryconfigurationField As String
+
+        Private secondaryconfigurationField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.primaryconfigurationField = "modules/module_resolution.js"
+            Me.secondaryconfigurationField = "modules/fallback_module_resolution.js"
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-interaction-module", Order:=0)>
+        Public Property qtiinteractionmodule() As InteractionModuleType()
+            Get
+                Return Me.qtiinteractionmoduleField
+            End Get
+            Set
+                Me.qtiinteractionmoduleField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("primary-configuration", DataType:="anyURI"),
+ System.ComponentModel.DefaultValueAttribute("modules/module_resolution.js")>
+        Public Property primaryconfiguration() As String
+            Get
+                Return Me.primaryconfigurationField
+            End Get
+            Set
+                Me.primaryconfigurationField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("secondary-configuration", DataType:="anyURI"),
+ System.ComponentModel.DefaultValueAttribute("modules/fallback_module_resolution.js")>
+        Public Property secondaryconfiguration() As String
+            Get
+                Return Me.secondaryconfigurationField
+            End Get
+            Set
+                Me.secondaryconfigurationField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class InteractionModuleType
+        Inherits EmptyPrimitiveTypeType
+
+        Private idField As String
+
+        Private primarypathField As String
+
+        Private fallbackpathField As String
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
+        Public Property id() As String
+            Get
+                Return Me.idField
+            End Get
+            Set
+                Me.idField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("primary-path", DataType:="anyURI")>
+        Public Property primarypath() As String
+            Get
+                Return Me.primarypathField
+            End Get
+            Set
+                Me.primarypathField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("fallback-path", DataType:="anyURI")>
+        Public Property fallbackpath() As String
+            Get
+                Return Me.fallbackpathField
+            End Get
+            Set
+                Me.fallbackpathField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class InteractionMarkupType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType37
+
+        Private templateField() As TemplateType
+
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType37()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("template", Order:=2)>
+        Public Property template() As TemplateType()
+            Get
+                Return Me.templateField
+            End Get
+            Set
+                Me.templateField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType37
+
+        a
+
+        abbr
+
+        acronym
+
+        address
+
+        article
+
+        aside
+
+        audio
+
+        b
+
+        bdi
+
+        bdo
+
+        big
+
+        blockquote
+
+        br
+
+        cite
+
+        code
+
+        details
+
+        dfn
+
+        div
+
+        dl
+
+        em
+
+        figure
+
+        footer
+
+        h1
+
+        h2
+
+        h3
+
+        h4
+
+        h5
+
+        h6
+
+        header
+
+        hr
+
+        i
+
+        img
+
+        kbd
+
+        label
+
+        nav
+
+        [object]
+
+        ol
+
+        p
+
+        picture
+
+        pre
+
+        q
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
+        qtifeedbackblock
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
+        qtifeedbackinline
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
+        qtiprintedvariable
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
+        qtitemplateblock
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
+        qtitemplateinline
+
+        ruby
+
+        samp
+
+        section
+
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
+        table
+
+        tt
+
+        ul
+
+        var
+
+        video
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlRootAttribute("template", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    Partial Public Class TemplateType
+
+        Private anyField() As System.Xml.XmlElement
+
+        <System.Xml.Serialization.XmlAnyElementAttribute(Order:=0)>
+        Public Property Any() As System.Xml.XmlElement()
+            Get
+                Return Me.anyField
+            End Get
+            Set
+                Me.anyField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class TemplateUniqueIDRefType
+        Inherits EmptyPrimitiveTypeType
+
+        Private templateidentifierField As String
+
+        <System.Xml.Serialization.XmlAttributeAttribute("template-identifier", DataType:="NCName")>
+        Public Property templateidentifier() As String
+            Get
+                Return Me.templateidentifierField
+            End Get
+            Set
+                Me.templateidentifierField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class ContextUniqueIDRefType
+        Inherits EmptyPrimitiveTypeType
+
+        Private identifierField As String
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="IDREF")>
+        Public Property identifier() As String
+            Get
+                Return Me.identifierField
+            End Get
+            Set
+                Me.identifierField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class GraphicGapMatchInteractionType
+        Inherits BaseSequenceFullType
+
+        Private qtipromptField As PromptType
+
+        Private itemField As Object
+
+        Private itemsField() As BaseSequenceType
+
+        Private qtiassociablehotspotField() As AssociableHotspotType
+
+        Private minassociationsField As String
+
+        Private maxassociationsField As String
+
+        Private dataminselectionsmessageField As String
+
+        Private datamaxselectionsmessageField As String
+
+        Private datachoicescontainerwidthField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.maxassociationsField = "1"
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-prompt", Order:=0)>
+        Public Property qtiprompt() As PromptType
+            Get
+                Return Me.qtipromptField
+            End Get
+            Set
+                Me.qtipromptField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=1),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=1)>
+        Public Property Item() As Object
+            Get
+                Return Me.itemField
+            End Get
+            Set
+                Me.itemField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-gap-img", GetType(GapImgType), Order:=2),
+ System.Xml.Serialization.XmlElementAttribute("qti-gap-text", GetType(GapTextType), Order:=2)>
+        Public Property Items() As BaseSequenceType()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-associable-hotspot", Order:=3)>
+        Public Property qtiassociablehotspot() As AssociableHotspotType()
+            Get
+                Return Me.qtiassociablehotspotField
+            End Get
+            Set
+                Me.qtiassociablehotspotField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("min-associations", DataType:="nonNegativeInteger")>
+        Public Property minassociations() As String
+            Get
+                Return Me.minassociationsField
+            End Get
+            Set
+                Me.minassociationsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("max-associations", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("1")>
+        Public Property maxassociations() As String
+            Get
+                Return Me.maxassociationsField
+            End Get
+            Set
+                Me.maxassociationsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-min-selections-message", DataType:="normalizedString")>
+        Public Property dataminselectionsmessage() As String
+            Get
+                Return Me.dataminselectionsmessageField
+            End Get
+            Set
+                Me.dataminselectionsmessageField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-max-selections-message", DataType:="normalizedString")>
+        Public Property datamaxselectionsmessage() As String
+            Get
+                Return Me.datamaxselectionsmessageField
+            End Get
+            Set
+                Me.datamaxselectionsmessageField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-choices-container-width", DataType:="nonNegativeInteger")>
+        Public Property datachoicescontainerwidth() As String
+            Get
+                Return Me.datachoicescontainerwidthField
+            End Get
+            Set
+                Me.datachoicescontainerwidthField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class PositionObjectStageType
+
+        Private itemField As Object
+
+        Private qtipositionobjectinteractionField() As PositionObjectInteractionType
+
+        Private idField As String
+
+        Private anyAttrField() As System.Xml.XmlAttribute
+
+        <System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0)>
+        Public Property Item() As Object
+            Get
+                Return Me.itemField
+            End Get
+            Set
+                Me.itemField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-position-object-interaction", Order:=1)>
+        Public Property qtipositionobjectinteraction() As PositionObjectInteractionType()
+            Get
+                Return Me.qtipositionobjectinteractionField
+            End Get
+            Set
+                Me.qtipositionobjectinteractionField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="ID")>
+        Public Property id() As String
+            Get
+                Return Me.idField
+            End Get
+            Set
+                Me.idField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
+            Get
+                Return Me.anyAttrField
+            End Get
+            Set
+                Me.anyAttrField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType38
+
+        a
+
+        abbr
+
+        acronym
+
+        address
+
+        article
+
+        aside
+
+        audio
+
+        b
+
+        bdi
+
+        bdo
+
+        big
+
+        blockquote
+
+        br
+
+        cite
+
+        code
+
+        dfn
+
+        div
+
+        dl
+
+        em
+
+        figure
+
+        footer
+
+        h1
+
+        h2
+
+        h3
+
+        h4
+
+        h5
+
+        h6
+
+        header
+
+        hr
+
+        i
+
+        img
+
+        kbd
+
+        label
+
+        nav
+
+        [object]
+
+        ol
+
+        p
+
+        picture
+
+        pre
+
+        q
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-associate-interaction")>
+        qtiassociateinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-choice-interaction")>
+        qtichoiceinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-custom-interaction")>
+        qticustominteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-drawing-interaction")>
+        qtidrawinginteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-extended-text-interaction")>
+        qtiextendedtextinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
+        qtifeedbackblock
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
+        qtifeedbackinline
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-gap-match-interaction")>
+        qtigapmatchinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-graphic-associate-interaction")>
+        qtigraphicassociateinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-graphic-gap-match-interaction")>
+        qtigraphicgapmatchinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-graphic-order-interaction")>
+        qtigraphicorderinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-hotspot-interaction")>
+        qtihotspotinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-hottext-interaction")>
+        qtihottextinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-match-interaction")>
+        qtimatchinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-media-interaction")>
+        qtimediainteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-order-interaction")>
+        qtiorderinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-portable-custom-interaction")>
+        qtiportablecustominteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-position-object-stage")>
+        qtipositionobjectstage
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
+        qtiprintedvariable
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-select-point-interaction")>
+        qtiselectpointinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-slider-interaction")>
+        qtisliderinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
+        qtitemplateblock
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
+        qtitemplateinline
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-upload-interaction")>
+        qtiuploadinteraction
+
+        ruby
+
+        samp
+
+        section
+
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
+        table
+
+        tt
+
+        ul
+
+        var
+
+        video
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum FeedbackBlockTypeShowhide
+
+        show
+
+        hide
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType23
+
+        a
+
+        abbr
+
+        acronym
+
+        address
+
+        article
+
+        aside
+
+        audio
+
+        b
+
+        bdi
+
+        bdo
+
+        big
+
+        blockquote
+
+        br
+
+        cite
+
+        code
+
+        details
+
+        dfn
+
+        div
+
+        dl
+
+        em
+
+        figure
+
+        footer
+
+        h1
+
+        h2
+
+        h3
+
+        h4
+
+        h5
+
+        h6
+
+        header
+
+        hr
+
+        i
+
+        img
+
+        kbd
+
+        label
+
+        nav
+
+        [object]
+
+        ol
+
+        p
+
+        picture
+
+        pre
+
+        q
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
+        qtifeedbackblock
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
+        qtifeedbackinline
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
+        qtiprintedvariable
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
+        qtitemplateblock
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
+        qtitemplateinline
+
+        ruby
+
+        samp
+
+        section
+
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
+        table
+
+        tt
+
+        ul
+
+        var
+
+        video
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum SimpleAssociableChoiceTypeShowhide
+
+        show
+
+        hide
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class InlineChoiceInteractionType
+        Inherits BaseSequenceFullType
+
+        Private qtilabelField As LabelType
+
+        Private qtiinlinechoiceField() As InlineChoiceType
+
+        Private shuffleField As Boolean
+
+        Private requiredField As Boolean
+
+        Private minchoicesField As String
+
+        Private dataminselectionsmessageField As String
+
+        Private datapromptField As String
+
+        Public Sub New()
+            MyBase.New
+            Me.shuffleField = False
+            Me.requiredField = False
+            Me.minchoicesField = "0"
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-label", Order:=0)>
+        Public Property qtilabel() As LabelType
+            Get
+                Return Me.qtilabelField
+            End Get
+            Set
+                Me.qtilabelField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-inline-choice", Order:=1)>
+        Public Property qtiinlinechoice() As InlineChoiceType()
+            Get
+                Return Me.qtiinlinechoiceField
+            End Get
+            Set
+                Me.qtiinlinechoiceField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(),
+ System.ComponentModel.DefaultValueAttribute(False)>
+        Public Property shuffle() As Boolean
+            Get
+                Return Me.shuffleField
+            End Get
+            Set
+                Me.shuffleField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(),
+ System.ComponentModel.DefaultValueAttribute(False)>
+        Public Property required() As Boolean
+            Get
+                Return Me.requiredField
+            End Get
+            Set
+                Me.requiredField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("min-choices", DataType:="nonNegativeInteger"),
+ System.ComponentModel.DefaultValueAttribute("0")>
+        Public Property minchoices() As String
+            Get
+                Return Me.minchoicesField
+            End Get
+            Set
+                Me.minchoicesField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-min-selections-message", DataType:="normalizedString")>
+        Public Property dataminselectionsmessage() As String
+            Get
+                Return Me.dataminselectionsmessageField
+            End Get
+            Set
+                Me.dataminselectionsmessageField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("data-prompt", DataType:="normalizedString")>
+        Public Property dataprompt() As String
+            Get
+                Return Me.datapromptField
+            End Get
+            Set
+                Me.datapromptField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class LabelType
+        Inherits BaseSequenceXBaseType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType32
+
+        Private textField() As String
+
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType32()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlTextAttribute()>
+        Public Property Text() As String()
+            Get
+                Return Me.textField
+            End Get
+            Set
+                Me.textField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType32
+
+        a
+
+        abbr
+
+        acronym
+
+        b
+
+        bdi
+
+        bdo
+
+        big
+
+        br
+
+        cite
+
+        code
+
+        dfn
+
+        em
+
+        i
+
+        img
+
+        kbd
+
+        label
+
+        [object]
+
+        picture
+
+        q
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
+        qtifeedbackinline
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
+        qtiprintedvariable
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
+        qtitemplateinline
+
+        ruby
+
+        samp
+
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
+        tt
+
+        var
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class InlineChoiceType
+        Inherits BaseSequenceType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType33
+
+        Private textField() As String
+
+        Private identifierField As String
+
+        Private fixedField As Boolean
+
+        Private templateidentifierField As String
+
+        Private showhideField As InlineChoiceTypeShowhide
+
+        Public Sub New()
+            MyBase.New
+            Me.fixedField = False
+            Me.showhideField = InlineChoiceTypeShowhide.show
+        End Sub
+
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType33()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlTextAttribute()>
+        Public Property Text() As String()
+            Get
+                Return Me.textField
+            End Get
+            Set
+                Me.textField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
+        Public Property identifier() As String
+            Get
+                Return Me.identifierField
+            End Get
+            Set
+                Me.identifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(),
+ System.ComponentModel.DefaultValueAttribute(False)>
+        Public Property fixed() As Boolean
+            Get
+                Return Me.fixedField
+            End Get
+            Set
+                Me.fixedField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("template-identifier", DataType:="NCName")>
+        Public Property templateidentifier() As String
+            Get
+                Return Me.templateidentifierField
+            End Get
+            Set
+                Me.templateidentifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("show-hide"),
+ System.ComponentModel.DefaultValueAttribute(InlineChoiceTypeShowhide.show)>
+        Public Property showhide() As InlineChoiceTypeShowhide
+            Get
+                Return Me.showhideField
+            End Get
+            Set
+                Me.showhideField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType33
+
+        a
+
+        abbr
+
+        acronym
+
+        b
+
+        bdi
+
+        bdo
+
+        big
+
+        br
+
+        cite
+
+        code
+
+        dfn
+
+        em
+
+        i
+
+        img
+
+        kbd
+
+        label
+
+        [object]
+
+        picture
+
+        q
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
+        qtifeedbackinline
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
+        qtiprintedvariable
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
+        qtitemplateinline
+
+        ruby
+
+        samp
+
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
+        tt
+
+        var
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum InlineChoiceTypeShowhide
+
+        show
+
+        hide
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType26
+
+        a
+
+        abbr
+
+        acronym
+
+        address
+
+        article
+
+        aside
+
+        audio
+
+        b
+
+        bdi
+
+        bdo
+
+        big
+
+        blockquote
+
+        br
+
+        cite
+
+        code
+
+        details
+
+        dfn
+
+        div
+
+        dl
+
+        em
+
+        figure
+
+        footer
+
+        h1
+
+        h2
+
+        h3
+
+        h4
+
+        h5
+
+        h6
+
+        header
+
+        hr
+
+        i
+
+        img
+
+        kbd
+
+        label
+
+        nav
+
+        [object]
+
+        ol
+
+        p
+
+        picture
+
+        pre
+
+        q
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-associate-interaction")>
+        qtiassociateinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-choice-interaction")>
+        qtichoiceinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-custom-interaction")>
+        qticustominteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-drawing-interaction")>
+        qtidrawinginteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-end-attempt-interaction")>
+        qtiendattemptinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-extended-text-interaction")>
+        qtiextendedtextinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
+        qtifeedbackblock
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
+        qtifeedbackinline
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-gap-match-interaction")>
+        qtigapmatchinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-graphic-associate-interaction")>
+        qtigraphicassociateinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-graphic-gap-match-interaction")>
+        qtigraphicgapmatchinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-graphic-order-interaction")>
+        qtigraphicorderinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-hotspot-interaction")>
+        qtihotspotinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-hottext")>
+        qtihottext
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-hottext-interaction")>
+        qtihottextinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-inline-choice-interaction")>
+        qtiinlinechoiceinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-match-interaction")>
+        qtimatchinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-media-interaction")>
+        qtimediainteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-order-interaction")>
+        qtiorderinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-portable-custom-interaction")>
+        qtiportablecustominteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
+        qtiprintedvariable
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-select-point-interaction")>
+        qtiselectpointinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-slider-interaction")>
+        qtisliderinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
+        qtitemplateblock
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
+        qtitemplateinline
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-text-entry-interaction")>
+        qtitextentryinteraction
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-upload-interaction")>
+        qtiuploadinteraction
+
+        ruby
+
+        samp
+
+        section
+
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
+        table
+
+        tt
+
+        ul
+
+        var
+
+        video
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlRootAttribute("col", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    Partial Public Class ColType
+        Inherits BaseSequenceXBaseEmptyType
+
+        Private spanField As Integer
+
+        Private spanFieldSpecified As Boolean
+
+        <System.Xml.Serialization.XmlAttributeAttribute()>
+        Public Property span() As Integer
+            Get
+                Return Me.spanField
+            End Get
+            Set
+                Me.spanField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property spanSpecified() As Boolean
+            Get
+                Return Me.spanFieldSpecified
+            End Get
+            Set
+                Me.spanFieldSpecified = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlRootAttribute("colgroup", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    Partial Public Class ColGroupType
+        Inherits BaseSequenceType
+
+        Private colField() As ColType
+
+        Private spanField As Integer
+
+        Private spanFieldSpecified As Boolean
+
+        <System.Xml.Serialization.XmlElementAttribute("col", Order:=0)>
+        Public Property col() As ColType()
+            Get
+                Return Me.colField
+            End Get
+            Set
+                Me.colField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute()>
+        Public Property span() As Integer
+            Get
+                Return Me.spanField
+            End Get
+            Set
+                Me.spanField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property spanSpecified() As Boolean
+            Get
+                Return Me.spanFieldSpecified
+            End Get
+            Set
+                Me.spanFieldSpecified = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlRootAttribute("tbody", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    Partial Public Class TablePartType
+        Inherits BaseSequenceType
+
+        Private trField() As TRType
+
+        <System.Xml.Serialization.XmlElementAttribute("tr", Order:=0)>
+        Public Property tr() As TRType()
+            Get
+                Return Me.trField
+            End Get
+            Set
+                Me.trField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlRootAttribute("tr", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    Partial Public Class TRType
+        Inherits BaseSequenceType
+
+        Private itemsField() As TDHType
+
+        Private itemsElementNameField() As ItemsChoiceType28
+
+        <System.Xml.Serialization.XmlElementAttribute("td", GetType(TDHType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("th", GetType(TDHType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As TDHType()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType28()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlRootAttribute("td", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
+    Partial Public Class TDHType
+        Inherits BaseSequenceType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType27
+
+        Private textField() As String
+
+        Private headersField() As String
+
+        Private scopeField As TDHTypeScope
+
+        Private scopeFieldSpecified As Boolean
+
+        Private abbrField As String
+
+        Private axisField As String
+
+        Private rowspanField As Integer
+
+        Private rowspanFieldSpecified As Boolean
+
+        Private colspanField As Integer
+
+        Private colspanFieldSpecified As Boolean
+
+        Private alignField As TDHTypeAlign
+
+        Private alignFieldSpecified As Boolean
+
+        Private valignField As TDHTypeValign
+
+        Private valignFieldSpecified As Boolean
+
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-associate-interaction", GetType(AssociateInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-choice-interaction", GetType(ChoiceInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-custom-interaction", GetType(CustomInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-drawing-interaction", GetType(DrawingInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-end-attempt-interaction", GetType(EndAttemptInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-extended-text-interaction", GetType(ExtendedTextInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-gap-match-interaction", GetType(GapMatchInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-graphic-associate-interaction", GetType(GraphicAssociateInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-graphic-gap-match-interaction", GetType(GraphicGapMatchInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-graphic-order-interaction", GetType(GraphicOrderInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-hotspot-interaction", GetType(HotspotInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-hottext", GetType(HotTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-hottext-interaction", GetType(HotTextInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-inline-choice-interaction", GetType(InlineChoiceInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-match-interaction", GetType(MatchInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-media-interaction", GetType(MediaInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-order-interaction", GetType(OrderInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-portable-custom-interaction", GetType(PortableCustomInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-select-point-interaction", GetType(SelectPointInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-slider-interaction", GetType(SliderInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-text-entry-interaction", GetType(TextEntryInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-upload-interaction", GetType(UploadInteractionType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType27()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlTextAttribute()>
+        Public Property Text() As String()
+            Get
+                Return Me.textField
+            End Get
+            Set
+                Me.textField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
+        Public Property headers() As String()
             Get
                 Return Me.headersField
             End Get
@@ -15817,3248 +20991,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="AssociateInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class AssociateInteractionType
-        Inherits BasePromptInteractionType
-
-        Private qtisimpleassociablechoiceField As List(Of SimpleAssociableChoiceType)
-
-        Private shuffleField As Boolean
-
-        Private maxassociationsField As String
-
-        Private minassociationsField As String
-
-        Public Sub New()
-            MyBase.New
-            Me.shuffleField = False
-            Me.maxassociationsField = "1"
-            Me.minassociationsField = "0"
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-simple-associable-choice", Order:=0)>
-        Public Property qtisimpleassociablechoice() As List(Of SimpleAssociableChoiceType)
-            Get
-                Return Me.qtisimpleassociablechoiceField
-            End Get
-            Set
-                Me.qtisimpleassociablechoiceField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(),
- System.ComponentModel.DefaultValueAttribute(False)>
-        Public Property shuffle() As Boolean
-            Get
-                Return Me.shuffleField
-            End Get
-            Set
-                Me.shuffleField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("max-associations", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("1")>
-        Public Property maxassociations() As String
-            Get
-                Return Me.maxassociationsField
-            End Get
-            Set
-                Me.maxassociationsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("min-associations", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("0")>
-        Public Property minassociations() As String
-            Get
-                Return Me.minassociationsField
-            End Get
-            Set
-                Me.minassociationsField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="SimpleAssociableChoice.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class SimpleAssociableChoiceType
-        Inherits BaseSequenceType
-
-        Private itemsField() As Object
-
-        Private itemsElementNameField() As ItemsChoiceType25
-
-        Private textField As List(Of String)
-
-        Private identifierField As String
-
-        Private fixedField As Boolean
-
-        Private fixedFieldSpecified As Boolean
-
-        Private templateidentifierField As String
-
-        Private showhideField As SimpleAssociableChoiceTypeShowhide
-
-        Private showhideFieldSpecified As Boolean
-
-        Private matchgroupField As List(Of String)
-
-        Private matchmaxField As String
-
-        Private matchminField As String
-
-        Public Sub New()
-            MyBase.New
-            Me.matchminField = "0"
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
-        Public Property Items() As Object()
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType25()
-            Get
-                Return Me.itemsElementNameField
-            End Get
-            Set
-                Me.itemsElementNameField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
-            Get
-                Return Me.textField
-            End Get
-            Set
-                Me.textField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
-        Public Property identifier() As String
-            Get
-                Return Me.identifierField
-            End Get
-            Set
-                Me.identifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property fixed() As Boolean
-            Get
-                Return Me.fixedField
-            End Get
-            Set
-                Me.fixedField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property fixedSpecified() As Boolean
-            Get
-                Return Me.fixedFieldSpecified
-            End Get
-            Set
-                Me.fixedFieldSpecified = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("template-identifier", DataType:="NCName")>
-        Public Property templateidentifier() As String
-            Get
-                Return Me.templateidentifierField
-            End Get
-            Set
-                Me.templateidentifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("show-hide")>
-        Public Property showhide() As SimpleAssociableChoiceTypeShowhide
-            Get
-                Return Me.showhideField
-            End Get
-            Set
-                Me.showhideField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property showhideSpecified() As Boolean
-            Get
-                Return Me.showhideFieldSpecified
-            End Get
-            Set
-                Me.showhideFieldSpecified = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("match-group", DataType:="NCName")>
-        Public Property matchgroup() As List(Of String)
-            Get
-                Return Me.matchgroupField
-            End Get
-            Set
-                Me.matchgroupField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("match-max", DataType:="nonNegativeInteger")>
-        Public Property matchmax() As String
-            Get
-                Return Me.matchmaxField
-            End Get
-            Set
-                Me.matchmaxField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("match-min", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("0")>
-        Public Property matchmin() As String
-            Get
-                Return Me.matchminField
-            End Get
-            Set
-                Me.matchminField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="FeedbackBlock.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class FeedbackBlockType
-        Inherits BaseSequenceXBaseType
-
-        Private qtistylesheetField As List(Of StyleSheetType)
-
-        Private qticontentbodyField As FeedbackContentBodyType
-
-        Private qticataloginfoField As CatalogInfoType
-
-        Private outcomeidentifierField As String
-
-        Private identifierField As String
-
-        Private showhideField As FeedbackBlockTypeShowhide
-
-        Public Sub New()
-            MyBase.New
-            Me.showhideField = FeedbackBlockTypeShowhide.show
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-stylesheet", Order:=0)>
-        Public Property qtistylesheet() As List(Of StyleSheetType)
-            Get
-                Return Me.qtistylesheetField
-            End Get
-            Set
-                Me.qtistylesheetField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-content-body", Order:=1)>
-        Public Property qticontentbody() As FeedbackContentBodyType
-            Get
-                Return Me.qticontentbodyField
-            End Get
-            Set
-                Me.qticontentbodyField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlArrayAttribute("qti-catalog-info", Order:=2),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property qticataloginfo() As CatalogInfoType
-            Get
-                Return Me.qticataloginfoField
-            End Get
-            Set
-                Me.qticataloginfoField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("outcome-identifier", DataType:="NCName")>
-        Public Property outcomeidentifier() As String
-            Get
-                Return Me.outcomeidentifierField
-            End Get
-            Set
-                Me.outcomeidentifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
-        Public Property identifier() As String
-            Get
-                Return Me.identifierField
-            End Get
-            Set
-                Me.identifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("show-hide"),
- System.ComponentModel.DefaultValueAttribute(FeedbackBlockTypeShowhide.show)>
-        Public Property showhide() As FeedbackBlockTypeShowhide
-            Get
-                Return Me.showhideField
-            End Get
-            Set
-                Me.showhideField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="FeedbackContentBody.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class FeedbackContentBodyType
-
-        Private itemsField() As Object
-
-        Private itemsElementNameField() As ItemsChoiceType37
-
-        Private textField As List(Of String)
-
-        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-associate-interaction", GetType(AssociateInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-choice-interaction", GetType(ChoiceInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-custom-interaction", GetType(CustomInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-drawing-interaction", GetType(DrawingInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-extended-text-interaction", GetType(ExtendedTextInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-gap-match-interaction", GetType(GapMatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-associate-interaction", GetType(GraphicAssociateInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-gap-match-interaction", GetType(GraphicGapMatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-graphic-order-interaction", GetType(GraphicOrderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hotspot-interaction", GetType(HotspotInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-hottext-interaction", GetType(HotTextInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-match-interaction", GetType(MatchInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-media-interaction", GetType(MediaInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-order-interaction", GetType(OrderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-portable-custom-interaction", GetType(PortableCustomInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-position-object-stage", GetType(PositionObjectStageType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-select-point-interaction", GetType(SelectPointInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-slider-interaction", GetType(SliderInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-upload-interaction", GetType(UploadInteractionType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
-        Public Property Items() As Object()
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType37()
-            Get
-                Return Me.itemsElementNameField
-            End Get
-            Set
-                Me.itemsElementNameField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
-            Get
-                Return Me.textField
-            End Get
-            Set
-                Me.textField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ChoiceInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class ChoiceInteractionType
-        Inherits BasePromptInteractionType
-
-        Private qtisimplechoiceField As List(Of SimpleChoiceType)
-
-        Private shuffleField As Boolean
-
-        Private maxchoicesField As String
-
-        Private minchoicesField As String
-
-        Private orientationField As ChoiceInteractionTypeOrientation
-
-        Public Sub New()
-            MyBase.New
-            Me.shuffleField = False
-            Me.maxchoicesField = "1"
-            Me.minchoicesField = "0"
-            Me.orientationField = ChoiceInteractionTypeOrientation.vertical
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-simple-choice", Order:=0)>
-        Public Property qtisimplechoice() As List(Of SimpleChoiceType)
-            Get
-                Return Me.qtisimplechoiceField
-            End Get
-            Set
-                Me.qtisimplechoiceField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(),
- System.ComponentModel.DefaultValueAttribute(False)>
-        Public Property shuffle() As Boolean
-            Get
-                Return Me.shuffleField
-            End Get
-            Set
-                Me.shuffleField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("max-choices", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("1")>
-        Public Property maxchoices() As String
-            Get
-                Return Me.maxchoicesField
-            End Get
-            Set
-                Me.maxchoicesField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("min-choices", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("0")>
-        Public Property minchoices() As String
-            Get
-                Return Me.minchoicesField
-            End Get
-            Set
-                Me.minchoicesField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(),
- System.ComponentModel.DefaultValueAttribute(ChoiceInteractionTypeOrientation.vertical)>
-        Public Property orientation() As ChoiceInteractionTypeOrientation
-            Get
-                Return Me.orientationField
-            End Get
-            Set
-                Me.orientationField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="SimpleChoice.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class SimpleChoiceType
-        Inherits BaseSequenceType
-
-        Private itemsField() As Object
-
-        Private itemsElementNameField() As ItemsChoiceType22
-
-        Private textField As List(Of String)
-
-        Private identifierField As String
-
-        Private fixedField As Boolean
-
-        Private templateidentifierField As String
-
-        Private showhideField As SimpleChoiceTypeShowhide
-
-        Public Sub New()
-            MyBase.New
-            Me.fixedField = False
-            Me.showhideField = SimpleChoiceTypeShowhide.show
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
-        Public Property Items() As Object()
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType22()
-            Get
-                Return Me.itemsElementNameField
-            End Get
-            Set
-                Me.itemsElementNameField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
-            Get
-                Return Me.textField
-            End Get
-            Set
-                Me.textField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
-        Public Property identifier() As String
-            Get
-                Return Me.identifierField
-            End Get
-            Set
-                Me.identifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(),
- System.ComponentModel.DefaultValueAttribute(False)>
-        Public Property fixed() As Boolean
-            Get
-                Return Me.fixedField
-            End Get
-            Set
-                Me.fixedField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("template-identifier", DataType:="NCName")>
-        Public Property templateidentifier() As String
-            Get
-                Return Me.templateidentifierField
-            End Get
-            Set
-                Me.templateidentifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("show-hide"),
- System.ComponentModel.DefaultValueAttribute(SimpleChoiceTypeShowhide.show)>
-        Public Property showhide() As SimpleChoiceTypeShowhide
-            Get
-                Return Me.showhideField
-            End Get
-            Set
-                Me.showhideField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TemplateBlock.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class TemplateBlockType
-        Inherits TemplateBlockContentType
-
-        Private templateidentifierField As String
-
-        Private showhideField As TemplateBlockTypeShowhide
-
-        Private identifierField As String
-
-        Public Sub New()
-            MyBase.New
-            Me.showhideField = TemplateBlockTypeShowhide.show
-        End Sub
-
-        <System.Xml.Serialization.XmlAttributeAttribute("template-identifier", DataType:="NCName")>
-        Public Property templateidentifier() As String
-            Get
-                Return Me.templateidentifierField
-            End Get
-            Set
-                Me.templateidentifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("show-hide"),
- System.ComponentModel.DefaultValueAttribute(TemplateBlockTypeShowhide.show)>
-        Public Property showhide() As TemplateBlockTypeShowhide
-            Get
-                Return Me.showhideField
-            End Get
-            Set
-                Me.showhideField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
-        Public Property identifier() As String
-            Get
-                Return Me.identifierField
-            End Get
-            Set
-                Me.identifierField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum TemplateBlockTypeShowhide
-
-        show
-
-        hide
-    End Enum
-
-    <System.Xml.Serialization.XmlIncludeAttribute(GetType(TemplateBlockFeedbackBlockType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(TemplateBlockType)),
- System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TemplateBlockContent.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class TemplateBlockContentType
-        Inherits BaseSequenceXBaseType
-
-        Private qtistylesheetField As List(Of StyleSheetType)
-
-        Private qticontentbodyField As TemplateBlockContentBodyType
-
-        Private qticataloginfoField As CatalogInfoType
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-stylesheet", Order:=0)>
-        Public Property qtistylesheet() As List(Of StyleSheetType)
-            Get
-                Return Me.qtistylesheetField
-            End Get
-            Set
-                Me.qtistylesheetField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-content-body", Order:=1)>
-        Public Property qticontentbody() As TemplateBlockContentBodyType
-            Get
-                Return Me.qticontentbodyField
-            End Get
-            Set
-                Me.qticontentbodyField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlArrayAttribute("qti-catalog-info", Order:=2),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property qticataloginfo() As CatalogInfoType
-            Get
-                Return Me.qticataloginfoField
-            End Get
-            Set
-                Me.qticataloginfoField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TemplateBlockContentBody.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class TemplateBlockContentBodyType
-
-        Private itemsField() As Object
-
-        Private itemsElementNameField() As ItemsChoiceType34
-
-        Private textField As List(Of String)
-
-        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(TemplateBlockFeedbackBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
-        Public Property Items() As Object()
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType34()
-            Get
-                Return Me.itemsElementNameField
-            End Get
-            Set
-                Me.itemsElementNameField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
-            Get
-                Return Me.textField
-            End Get
-            Set
-                Me.textField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TemplateBlockFeedbackBlock.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class TemplateBlockFeedbackBlockType
-        Inherits TemplateBlockContentType
-
-        Private outcomeidentifierField As String
-
-        Private showhideField As TemplateBlockFeedbackBlockTypeShowhide
-
-        Private identifierField As String
-
-        Public Sub New()
-            MyBase.New
-            Me.showhideField = TemplateBlockFeedbackBlockTypeShowhide.show
-        End Sub
-
-        <System.Xml.Serialization.XmlAttributeAttribute("outcome-identifier", DataType:="NCName")>
-        Public Property outcomeidentifier() As String
-            Get
-                Return Me.outcomeidentifierField
-            End Get
-            Set
-                Me.outcomeidentifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("show-hide"),
- System.ComponentModel.DefaultValueAttribute(TemplateBlockFeedbackBlockTypeShowhide.show)>
-        Public Property showhide() As TemplateBlockFeedbackBlockTypeShowhide
-            Get
-                Return Me.showhideField
-            End Get
-            Set
-                Me.showhideField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
-        Public Property identifier() As String
-            Get
-                Return Me.identifierField
-            End Get
-            Set
-                Me.identifierField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum TemplateBlockFeedbackBlockTypeShowhide
-
-        show
-
-        hide
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType34
-
-        a
-
-        abbr
-
-        acronym
-
-        address
-
-        article
-
-        aside
-
-        audio
-
-        b
-
-        bdi
-
-        bdo
-
-        big
-
-        blockquote
-
-        br
-
-        cite
-
-        code
-
-        dfn
-
-        div
-
-        dl
-
-        em
-
-        figure
-
-        footer
-
-        h1
-
-        h2
-
-        h3
-
-        h4
-
-        h5
-
-        h6
-
-        header
-
-        hr
-
-        i
-
-        img
-
-        kbd
-
-        label
-
-        nav
-
-        [object]
-
-        ol
-
-        p
-
-        picture
-
-        pre
-
-        q
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
-        qtifeedbackblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
-        qtifeedbackinline
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
-        qtiprintedvariable
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
-        qtitemplateblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
-        qtitemplateinline
-
-        ruby
-
-        samp
-
-        section
-
-        small
-
-        span
-
-        strong
-
-        [sub]
-
-        sup
-
-        table
-
-        tt
-
-        ul
-
-        var
-
-        video
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
-     System.SerializableAttribute(),
-     System.Diagnostics.DebuggerStepThroughAttribute(),
-     System.ComponentModel.DesignerCategoryAttribute("code"),
-     System.Xml.Serialization.XmlTypeAttribute(TypeName:="CatalogInfo.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class CatalogInfoType
-
-        Private qticataloginfoField As List(Of CatalogType)
-
-        <System.Xml.Serialization.XmlArrayAttribute("qti-catalog-info", Order:=0),
-         System.Xml.Serialization.XmlArrayItemAttribute("qti-catalog", IsNullable:=False)>
-        Public Property qticataloginfo() As List(Of CatalogType)
-            Get
-                Return Me.qticataloginfoField
-            End Get
-            Set
-                Me.qticataloginfoField = Value
-            End Set
-        End Property
-
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Catalog.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class CatalogType
-
-        Private qticardField As List(Of CardType)
-
-        Private idField As String
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-card", Order:=0)>
-        Public Property qticard() As List(Of CardType)
-            Get
-                Return Me.qticardField
-            End Get
-            Set
-                Me.qticardField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="ID")>
-        Public Property id() As String
-            Get
-                Return Me.idField
-            End Get
-            Set
-                Me.idField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Card.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class CardType
-
-        Private itemsField As List(Of Object)
-
-        Private supportField As String
-
-        Private langField As String
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-card-entry", GetType(CardEntryType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-file-href", GetType(FileHrefCardType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-html-content", GetType(HTMLContentType), Order:=0)>
-        Public Property Items() As List(Of Object)
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property support() As String
-            Get
-                Return Me.supportField
-            End Get
-            Set
-                Me.supportField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
-        Public Property lang() As String
-            Get
-                Return Me.langField
-            End Get
-            Set
-                Me.langField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="CardEntry.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class CardEntryType
-
-        Private qtihtmlcontentField As HTMLContentType
-
-        Private qtifilehrefField As List(Of FileHrefCardType)
-
-        Private langField As String
-
-        Private defaultField As Boolean
-
-        Private anyAttrField As List(Of System.Xml.XmlAttribute)
-
-        Public Sub New()
-            MyBase.New
-            Me.defaultField = False
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-html-content", Order:=0)>
-        Public Property qtihtmlcontent() As HTMLContentType
-            Get
-                Return Me.qtihtmlcontentField
-            End Get
-            Set
-                Me.qtihtmlcontentField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-file-href", Order:=1)>
-        Public Property qtifilehref() As List(Of FileHrefCardType)
-            Get
-                Return Me.qtifilehrefField
-            End Get
-            Set
-                Me.qtifilehrefField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
-        Public Property lang() As String
-            Get
-                Return Me.langField
-            End Get
-            Set
-                Me.langField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(),
- System.ComponentModel.DefaultValueAttribute(False)>
-        Public Property [default]() As Boolean
-            Get
-                Return Me.defaultField
-            End Get
-            Set
-                Me.defaultField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
-        Public Property AnyAttr() As List(Of System.Xml.XmlAttribute)
-            Get
-                Return Me.anyAttrField
-            End Get
-            Set
-                Me.anyAttrField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="HTMLContent.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class HTMLContentType
-
-        Private itemsField() As Object
-
-        Private itemsElementNameField() As ItemsChoiceType35
-
-        Private textField As List(Of String)
-
-        Private langField As String
-
-        Private anyAttrField As List(Of System.Xml.XmlAttribute)
-
-        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
-        Public Property Items() As Object()
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType35()
-            Get
-                Return Me.itemsElementNameField
-            End Get
-            Set
-                Me.itemsElementNameField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
-            Get
-                Return Me.textField
-            End Get
-            Set
-                Me.textField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
-        Public Property lang() As String
-            Get
-                Return Me.langField
-            End Get
-            Set
-                Me.langField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
-        Public Property AnyAttr() As List(Of System.Xml.XmlAttribute)
-            Get
-                Return Me.anyAttrField
-            End Get
-            Set
-                Me.anyAttrField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType35
-
-        a
-
-        abbr
-
-        acronym
-
-        address
-
-        article
-
-        aside
-
-        audio
-
-        b
-
-        bdi
-
-        bdo
-
-        big
-
-        blockquote
-
-        br
-
-        cite
-
-        code
-
-        dfn
-
-        div
-
-        dl
-
-        em
-
-        figure
-
-        footer
-
-        h1
-
-        h2
-
-        h3
-
-        h4
-
-        h5
-
-        h6
-
-        header
-
-        hr
-
-        i
-
-        img
-
-        kbd
-
-        label
-
-        nav
-
-        [object]
-
-        ol
-
-        p
-
-        picture
-
-        pre
-
-        q
-
-        ruby
-
-        samp
-
-        section
-
-        small
-
-        span
-
-        strong
-
-        [sub]
-
-        sup
-
-        table
-
-        tt
-
-        ul
-
-        var
-
-        video
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="FileHrefCard.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class FileHrefCardType
-
-        Private mimetypeField As String
-
-        Private valueField As String
-
-        <System.Xml.Serialization.XmlAttributeAttribute("mime-type", DataType:="normalizedString")>
-        Public Property mimetype() As String
-            Get
-                Return Me.mimetypeField
-            End Get
-            Set
-                Me.mimetypeField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlTextAttribute(DataType:="anyURI")>
-        Public Property Value() As String
-            Get
-                Return Me.valueField
-            End Get
-            Set
-                Me.valueField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType22
-
-        a
-
-        abbr
-
-        acronym
-
-        address
-
-        article
-
-        aside
-
-        audio
-
-        b
-
-        bdi
-
-        bdo
-
-        big
-
-        blockquote
-
-        br
-
-        cite
-
-        code
-
-        dfn
-
-        div
-
-        dl
-
-        em
-
-        figure
-
-        footer
-
-        h1
-
-        h2
-
-        h3
-
-        h4
-
-        h5
-
-        h6
-
-        header
-
-        hr
-
-        i
-
-        img
-
-        kbd
-
-        label
-
-        nav
-
-        [object]
-
-        ol
-
-        p
-
-        picture
-
-        pre
-
-        q
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
-        qtifeedbackblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
-        qtifeedbackinline
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
-        qtiprintedvariable
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
-        qtitemplateblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
-        qtitemplateinline
-
-        ruby
-
-        samp
-
-        section
-
-        small
-
-        span
-
-        strong
-
-        [sub]
-
-        sup
-
-        table
-
-        tt
-
-        ul
-
-        var
-
-        video
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum SimpleChoiceTypeShowhide
-
-        show
-
-        hide
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum ChoiceInteractionTypeOrientation
-
-        horizontal
-
-        vertical
-    End Enum
-
-    <System.Xml.Serialization.XmlIncludeAttribute(GetType(AssociateInteractionType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(UploadInteractionType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(ExtendedTextInteractionType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(OrderInteractionType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(HotTextInteractionType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(MediaInteractionType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(ChoiceInteractionType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(SliderInteractionType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(GraphicAssociateInteractionType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(SelectPointInteractionType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(HotspotInteractionType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(MatchInteractionType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(GapMatchInteractionType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(DrawingInteractionType)),
- System.Xml.Serialization.XmlIncludeAttribute(GetType(PortableCustomInteractionType)),
- System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="BasePromptInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class BasePromptInteractionType
-        Inherits ARIABaseType
-
-        Private qtipromptField As PromptType
-
-        Private idField As String
-
-        Private classField As List(Of String)
-
-        Private langField As String
-
-        Private labelField As String
-
-        Private baseField As String
-
-        Private responseidentifierField As String
-
-        Private dirField As BasePromptInteractionTypeDir
-
-        Private datacatalogidrefField As String
-
-        Private dataqtisuppressttsField As BasePromptInteractionTypeDataqtisuppresstts
-
-        Private dataqtisuppressttsFieldSpecified As Boolean
-
-        Private anyAttrField As List(Of System.Xml.XmlAttribute)
-
-        Public Sub New()
-            MyBase.New
-            Me.dirField = BasePromptInteractionTypeDir.[auto]
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-prompt", Order:=0)>
-        Public Property qtiprompt() As PromptType
-            Get
-                Return Me.qtipromptField
-            End Get
-            Set
-                Me.qtipromptField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="ID")>
-        Public Property id() As String
-            Get
-                Return Me.idField
-            End Get
-            Set
-                Me.idField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property [class]() As List(Of String)
-            Get
-                Return Me.classField
-            End Get
-            Set
-                Me.classField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
-        Public Property lang() As String
-            Get
-                Return Me.langField
-            End Get
-            Set
-                Me.langField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
-        Public Property label() As String
-            Get
-                Return Me.labelField
-            End Get
-            Set
-                Me.labelField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(Form:=System.Xml.Schema.XmlSchemaForm.Qualified, [Namespace]:="http://www.w3.org/XML/1998/namespace")>
-        Public Property base() As String
-            Get
-                Return Me.baseField
-            End Get
-            Set
-                Me.baseField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("response-identifier", DataType:="NCName")>
-        Public Property responseidentifier() As String
-            Get
-                Return Me.responseidentifierField
-            End Get
-            Set
-                Me.responseidentifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(),
- System.ComponentModel.DefaultValueAttribute(BasePromptInteractionTypeDir.[auto])>
-        Public Property dir() As BasePromptInteractionTypeDir
-            Get
-                Return Me.dirField
-            End Get
-            Set
-                Me.dirField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("data-catalog-idref", DataType:="IDREF")>
-        Public Property datacatalogidref() As String
-            Get
-                Return Me.datacatalogidrefField
-            End Get
-            Set
-                Me.datacatalogidrefField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("data-qti-suppress-tts")>
-        Public Property dataqtisuppresstts() As BasePromptInteractionTypeDataqtisuppresstts
-            Get
-                Return Me.dataqtisuppressttsField
-            End Get
-            Set
-                Me.dataqtisuppressttsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property dataqtisuppressttsSpecified() As Boolean
-            Get
-                Return Me.dataqtisuppressttsFieldSpecified
-            End Get
-            Set
-                Me.dataqtisuppressttsFieldSpecified = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
-        Public Property AnyAttr() As List(Of System.Xml.XmlAttribute)
-            Get
-                Return Me.anyAttrField
-            End Get
-            Set
-                Me.anyAttrField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum BasePromptInteractionTypeDir
-
-        ltr
-
-        rtl
-
-        [auto]
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum BasePromptInteractionTypeDataqtisuppresstts
-
-        <System.Xml.Serialization.XmlEnumAttribute("computer-read-aloud")>
-        computerreadaloud
-
-        <System.Xml.Serialization.XmlEnumAttribute("screen-reader")>
-        screenreader
-
-        all
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="UploadInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class UploadInteractionType
-        Inherits BasePromptInteractionType
-
-        Private typeField As String
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
-        Public Property type() As String
-            Get
-                Return Me.typeField
-            End Get
-            Set
-                Me.typeField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ExtendedTextInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class ExtendedTextInteractionType
-        Inherits BasePromptInteractionType
-
-
-        Private stringidentifierField As String
-
-        Private expectedlengthField As String
-
-        Private patternmaskField As String
-
-        Private placeholdertextField As String
-
-        Private maxstringsField As String
-
-        Private minstringsField As String
-
-        Private expectedlinesField As String
-
-        Private formatField As ExtendedTextInteractionTypeFormat
-
-        Public Sub New()
-            MyBase.New
-            Me.minstringsField = "0"
-            Me.formatField = ExtendedTextInteractionTypeFormat.plain
-        End Sub
-
-
-        <System.Xml.Serialization.XmlAttributeAttribute("string-identifier", DataType:="NCName")>
-        Public Property stringidentifier() As String
-            Get
-                Return Me.stringidentifierField
-            End Get
-            Set
-                Me.stringidentifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("expected-length", DataType:="nonNegativeInteger")>
-        Public Property expectedlength() As String
-            Get
-                Return Me.expectedlengthField
-            End Get
-            Set
-                Me.expectedlengthField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("pattern-mask")>
-        Public Property patternmask() As String
-            Get
-                Return Me.patternmaskField
-            End Get
-            Set
-                Me.patternmaskField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("placeholder-text")>
-        Public Property placeholdertext() As String
-            Get
-                Return Me.placeholdertextField
-            End Get
-            Set
-                Me.placeholdertextField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("max-strings", DataType:="nonNegativeInteger")>
-        Public Property maxstrings() As String
-            Get
-                Return Me.maxstringsField
-            End Get
-            Set
-                Me.maxstringsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("min-strings", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("0")>
-        Public Property minstrings() As String
-            Get
-                Return Me.minstringsField
-            End Get
-            Set
-                Me.minstringsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("expected-lines", DataType:="nonNegativeInteger")>
-        Public Property expectedlines() As String
-            Get
-                Return Me.expectedlinesField
-            End Get
-            Set
-                Me.expectedlinesField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(),
- System.ComponentModel.DefaultValueAttribute(ExtendedTextInteractionTypeFormat.plain)>
-        Public Property format() As ExtendedTextInteractionTypeFormat
-            Get
-                Return Me.formatField
-            End Get
-            Set
-                Me.formatField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum ExtendedTextInteractionTypeFormat
-
-        plain
-
-        preformatted
-
-        xhtml
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="OrderInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class OrderInteractionType
-        Inherits BasePromptInteractionType
-
-        Private qtisimplechoiceField As List(Of SimpleChoiceType)
-
-        Private shuffleField As Boolean
-
-        Private minchoicesField As String
-
-        Private maxchoicesField As String
-
-        Private orientationField As OrderInteractionTypeOrientation
-
-        Private orientationFieldSpecified As Boolean
-
-        Public Sub New()
-            MyBase.New
-            Me.shuffleField = False
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-simple-choice", Order:=0)>
-        Public Property qtisimplechoice() As List(Of SimpleChoiceType)
-            Get
-                Return Me.qtisimplechoiceField
-            End Get
-            Set
-                Me.qtisimplechoiceField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(),
- System.ComponentModel.DefaultValueAttribute(False)>
-        Public Property shuffle() As Boolean
-            Get
-                Return Me.shuffleField
-            End Get
-            Set
-                Me.shuffleField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("min-choices", DataType:="nonNegativeInteger")>
-        Public Property minchoices() As String
-            Get
-                Return Me.minchoicesField
-            End Get
-            Set
-                Me.minchoicesField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("max-choices", DataType:="nonNegativeInteger")>
-        Public Property maxchoices() As String
-            Get
-                Return Me.maxchoicesField
-            End Get
-            Set
-                Me.maxchoicesField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property orientation() As OrderInteractionTypeOrientation
-            Get
-                Return Me.orientationField
-            End Get
-            Set
-                Me.orientationField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property orientationSpecified() As Boolean
-            Get
-                Return Me.orientationFieldSpecified
-            End Get
-            Set
-                Me.orientationFieldSpecified = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum OrderInteractionTypeOrientation
-
-        horizontal
-
-        vertical
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="HotTextInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class HotTextInteractionType
-        Inherits BasePromptInteractionType
-
-        Private itemsField() As Object
-
-        Private itemsElementNameField() As ItemsChoiceType20
-
-        Private maxchoicesField As String
-
-        Private minchoicesField As String
-
-        Public Sub New()
-            MyBase.New
-            Me.maxchoicesField = "1"
-            Me.minchoicesField = "0"
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
-        Public Property Items() As Object()
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType20()
-            Get
-                Return Me.itemsElementNameField
-            End Get
-            Set
-                Me.itemsElementNameField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("max-choices", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("1")>
-        Public Property maxchoices() As String
-            Get
-                Return Me.maxchoicesField
-            End Get
-            Set
-                Me.maxchoicesField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("min-choices", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("0")>
-        Public Property minchoices() As String
-            Get
-                Return Me.minchoicesField
-            End Get
-            Set
-                Me.minchoicesField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType20
-
-        address
-
-        article
-
-        aside
-
-        audio
-
-        blockquote
-
-        div
-
-        dl
-
-        figure
-
-        footer
-
-        h1
-
-        h2
-
-        h3
-
-        h4
-
-        h5
-
-        h6
-
-        header
-
-        hr
-
-        nav
-
-        ol
-
-        p
-
-        pre
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
-        qtifeedbackblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
-        qtitemplateblock
-
-        section
-
-        table
-
-        ul
-
-        video
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="MediaInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class MediaInteractionType
-        Inherits BasePromptInteractionType
-
-        Private itemField As ARIABaseType
-
-        Private autostartField As Boolean
-
-        Private minplaysField As String
-
-        Private maxplaysField As String
-
-        Private loopField As Boolean
-
-        Private coordsField As String
-
-        Public Sub New()
-            MyBase.New
-            Me.minplaysField = "0"
-            Me.maxplaysField = "0"
-            Me.loopField = False
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0)>
-        Public Property Item() As ARIABaseType
-            Get
-                Return Me.itemField
-            End Get
-            Set
-                Me.itemField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property autostart() As Boolean
-            Get
-                Return Me.autostartField
-            End Get
-            Set
-                Me.autostartField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("min-plays", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("0")>
-        Public Property minplays() As String
-            Get
-                Return Me.minplaysField
-            End Get
-            Set
-                Me.minplaysField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("max-plays", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("0")>
-        Public Property maxplays() As String
-            Get
-                Return Me.maxplaysField
-            End Get
-            Set
-                Me.maxplaysField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(),
- System.ComponentModel.DefaultValueAttribute(False)>
-        Public Property [loop]() As Boolean
-            Get
-                Return Me.loopField
-            End Get
-            Set
-                Me.loopField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
-        Public Property coords() As String
-            Get
-                Return Me.coordsField
-            End Get
-            Set
-                Me.coordsField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="SliderInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class SliderInteractionType
-        Inherits BasePromptInteractionType
-
-        Private lowerboundField As Double
-
-        Private upperboundField As Double
-
-        Private stepField As Double
-
-        Private steplabelField As Boolean
-
-        Private orientationField As SliderInteractionTypeOrientation
-
-        Private orientationFieldSpecified As Boolean
-
-        Private reverseField As Boolean
-
-        Private reverseFieldSpecified As Boolean
-
-        Public Sub New()
-            MyBase.New
-            Me.stepField = 1.0R
-            Me.steplabelField = False
-        End Sub
-
-        <System.Xml.Serialization.XmlAttributeAttribute("lower-bound")>
-        Public Property lowerbound() As Double
-            Get
-                Return Me.lowerboundField
-            End Get
-            Set
-                Me.lowerboundField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("upper-bound")>
-        Public Property upperbound() As Double
-            Get
-                Return Me.upperboundField
-            End Get
-            Set
-                Me.upperboundField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(),
- System.ComponentModel.DefaultValueAttribute(1.0R)>
-        Public Property [step]() As Double
-            Get
-                Return Me.stepField
-            End Get
-            Set
-                Me.stepField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("step-label"),
- System.ComponentModel.DefaultValueAttribute(False)>
-        Public Property steplabel() As Boolean
-            Get
-                Return Me.steplabelField
-            End Get
-            Set
-                Me.steplabelField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property orientation() As SliderInteractionTypeOrientation
-            Get
-                Return Me.orientationField
-            End Get
-            Set
-                Me.orientationField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property orientationSpecified() As Boolean
-            Get
-                Return Me.orientationFieldSpecified
-            End Get
-            Set
-                Me.orientationFieldSpecified = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property reverse() As Boolean
-            Get
-                Return Me.reverseField
-            End Get
-            Set
-                Me.reverseField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property reverseSpecified() As Boolean
-            Get
-                Return Me.reverseFieldSpecified
-            End Get
-            Set
-                Me.reverseFieldSpecified = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum SliderInteractionTypeOrientation
-
-        horizontal
-
-        vertical
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="GraphicAssociateInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class GraphicAssociateInteractionType
-        Inherits BasePromptInteractionType
-
-        Private objectField As ObjectType
-
-        Private qtiassociablehotspotField As List(Of AssociableHotspotType)
-
-        Private minassociationsField As String
-
-        Private maxassociationsField As String
-
-        Public Sub New()
-            MyBase.New
-            Me.maxassociationsField = "1"
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>
-        Public Property [object]() As ObjectType
-            Get
-                Return Me.objectField
-            End Get
-            Set
-                Me.objectField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-associable-hotspot", Order:=1)>
-        Public Property qtiassociablehotspot() As List(Of AssociableHotspotType)
-            Get
-                Return Me.qtiassociablehotspotField
-            End Get
-            Set
-                Me.qtiassociablehotspotField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("min-associations", DataType:="nonNegativeInteger")>
-        Public Property minassociations() As String
-            Get
-                Return Me.minassociationsField
-            End Get
-            Set
-                Me.minassociationsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("max-associations", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("1")>
-        Public Property maxassociations() As String
-            Get
-                Return Me.maxassociationsField
-            End Get
-            Set
-                Me.maxassociationsField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="SelectPointInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class SelectPointInteractionType
-        Inherits BasePromptInteractionType
-
-        Private objectField As ObjectType
-
-        Private minchoicesField As String
-
-        Private maxchoicesField As String
-
-        Public Sub New()
-            MyBase.New
-            Me.minchoicesField = "0"
-            Me.maxchoicesField = "0"
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>
-        Public Property [object]() As ObjectType
-            Get
-                Return Me.objectField
-            End Get
-            Set
-                Me.objectField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("min-choices", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("0")>
-        Public Property minchoices() As String
-            Get
-                Return Me.minchoicesField
-            End Get
-            Set
-                Me.minchoicesField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("max-choices", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("0")>
-        Public Property maxchoices() As String
-            Get
-                Return Me.maxchoicesField
-            End Get
-            Set
-                Me.maxchoicesField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="HotspotInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class HotspotInteractionType
-        Inherits BasePromptInteractionType
-
-        Private objectField As ObjectType
-
-        Private qtihotspotchoiceField As List(Of HotspotChoiceType)
-
-        Private minchoicesField As String
-
-        Private maxchoicesField As String
-
-        Public Sub New()
-            MyBase.New
-            Me.minchoicesField = "0"
-            Me.maxchoicesField = "1"
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>
-        Public Property [object]() As ObjectType
-            Get
-                Return Me.objectField
-            End Get
-            Set
-                Me.objectField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-hotspot-choice", Order:=1)>
-        Public Property qtihotspotchoice() As List(Of HotspotChoiceType)
-            Get
-                Return Me.qtihotspotchoiceField
-            End Get
-            Set
-                Me.qtihotspotchoiceField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("min-choices", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("0")>
-        Public Property minchoices() As String
-            Get
-                Return Me.minchoicesField
-            End Get
-            Set
-                Me.minchoicesField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("max-choices", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("1")>
-        Public Property maxchoices() As String
-            Get
-                Return Me.maxchoicesField
-            End Get
-            Set
-                Me.maxchoicesField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="MatchInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class MatchInteractionType
-        Inherits BasePromptInteractionType
-
-        Private qtisimplematchsetField As List(Of SimpleMatchSetType)
-
-        Private shuffleField As Boolean
-
-        Private maxassociationsField As String
-
-        Private minassociationsField As String
-
-        Public Sub New()
-            MyBase.New
-            Me.shuffleField = False
-            Me.maxassociationsField = "1"
-            Me.minassociationsField = "0"
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-simple-match-set", Order:=0)>
-        Public Property qtisimplematchset() As List(Of SimpleMatchSetType)
-            Get
-                Return Me.qtisimplematchsetField
-            End Get
-            Set
-                Me.qtisimplematchsetField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(),
- System.ComponentModel.DefaultValueAttribute(False)>
-        Public Property shuffle() As Boolean
-            Get
-                Return Me.shuffleField
-            End Get
-            Set
-                Me.shuffleField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("max-associations", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("1")>
-        Public Property maxassociations() As String
-            Get
-                Return Me.maxassociationsField
-            End Get
-            Set
-                Me.maxassociationsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("min-associations", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("0")>
-        Public Property minassociations() As String
-            Get
-                Return Me.minassociationsField
-            End Get
-            Set
-                Me.minassociationsField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="SimpleMatchSet.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class SimpleMatchSetType
-
-        Private qtisimpleassociablechoiceField As List(Of SimpleAssociableChoiceType)
-
-        Private idField As String
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-simple-associable-choice", Order:=0)>
-        Public Property qtisimpleassociablechoice() As List(Of SimpleAssociableChoiceType)
-            Get
-                Return Me.qtisimpleassociablechoiceField
-            End Get
-            Set
-                Me.qtisimpleassociablechoiceField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="ID")>
-        Public Property id() As String
-            Get
-                Return Me.idField
-            End Get
-            Set
-                Me.idField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="GapMatchInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class GapMatchInteractionType
-        Inherits BasePromptInteractionType
-
-        Private itemsField As List(Of BaseSequenceType)
-
-        Private items1Field() As Object
-
-        Private items1ElementNameField() As Items1ChoiceType
-
-        Private shuffleField As Boolean
-
-        Private minassociationsField As String
-
-        Private maxassociationsField As String
-
-        Public Sub New()
-            MyBase.New
-            Me.shuffleField = False
-            Me.maxassociationsField = "1"
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-gap-img", GetType(GapImgType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-gap-text", GetType(GapTextType), Order:=0)>
-        Public Property Items() As List(Of BaseSequenceType)
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=1),
- System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=1),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("Items1ElementName")>
-        Public Property Items1() As Object()
-            Get
-                Return Me.items1Field
-            End Get
-            Set
-                Me.items1Field = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("Items1ElementName", Order:=2),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property Items1ElementName() As Items1ChoiceType()
-            Get
-                Return Me.items1ElementNameField
-            End Get
-            Set
-                Me.items1ElementNameField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(),
- System.ComponentModel.DefaultValueAttribute(False)>
-        Public Property shuffle() As Boolean
-            Get
-                Return Me.shuffleField
-            End Get
-            Set
-                Me.shuffleField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("min-associations", DataType:="nonNegativeInteger")>
-        Public Property minassociations() As String
-            Get
-                Return Me.minassociationsField
-            End Get
-            Set
-                Me.minassociationsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("max-associations", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("1")>
-        Public Property maxassociations() As String
-            Get
-                Return Me.maxassociationsField
-            End Get
-            Set
-                Me.maxassociationsField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="GapImg.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class GapImgType
-        Inherits BaseSequenceType
-
-        Private objectField As ObjectType
-
-        Private identifierField As String
-
-        Private templateidentifierField As String
-
-        Private showhideField As GapImgTypeShowhide
-
-        Private matchgroupField As List(Of String)
-
-        Private matchmaxField As String
-
-        Private matchminField As String
-
-        Private objectlabelField As String
-
-        Private topField As String
-
-        Private leftField As String
-
-        Public Sub New()
-            MyBase.New
-            Me.showhideField = GapImgTypeShowhide.show
-            Me.matchminField = "0"
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>
-        Public Property [object]() As ObjectType
-            Get
-                Return Me.objectField
-            End Get
-            Set
-                Me.objectField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
-        Public Property identifier() As String
-            Get
-                Return Me.identifierField
-            End Get
-            Set
-                Me.identifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("template-identifier", DataType:="NCName")>
-        Public Property templateidentifier() As String
-            Get
-                Return Me.templateidentifierField
-            End Get
-            Set
-                Me.templateidentifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("show-hide"),
- System.ComponentModel.DefaultValueAttribute(GapImgTypeShowhide.show)>
-        Public Property showhide() As GapImgTypeShowhide
-            Get
-                Return Me.showhideField
-            End Get
-            Set
-                Me.showhideField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("match-group", DataType:="NCName")>
-        Public Property matchgroup() As List(Of String)
-            Get
-                Return Me.matchgroupField
-            End Get
-            Set
-                Me.matchgroupField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("match-max", DataType:="nonNegativeInteger")>
-        Public Property matchmax() As String
-            Get
-                Return Me.matchmaxField
-            End Get
-            Set
-                Me.matchmaxField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("match-min", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("0")>
-        Public Property matchmin() As String
-            Get
-                Return Me.matchminField
-            End Get
-            Set
-                Me.matchminField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("object-label")>
-        Public Property objectlabel() As String
-            Get
-                Return Me.objectlabelField
-            End Get
-            Set
-                Me.objectlabelField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
-        Public Property top() As String
-            Get
-                Return Me.topField
-            End Get
-            Set
-                Me.topField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
-        Public Property left() As String
-            Get
-                Return Me.leftField
-            End Get
-            Set
-                Me.leftField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum GapImgTypeShowhide
-
-        show
-
-        hide
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="GapText.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class GapTextType
-        Inherits BaseSequenceType
-
-        Private itemsField() As Object
-
-        Private itemsElementNameField() As ItemsChoiceType27
-
-        Private textField As List(Of String)
-
-        Private identifierField As String
-
-        Private templateidentifierField As String
-
-        Private showhideField As GapTextTypeShowhide
-
-        Private matchgroupField As List(Of String)
-
-        Private matchmaxField As String
-
-        Private matchminField As String
-
-        Public Sub New()
-            MyBase.New
-            Me.showhideField = GapTextTypeShowhide.show
-            Me.matchminField = "0"
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
-        Public Property Items() As Object()
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType27()
-            Get
-                Return Me.itemsElementNameField
-            End Get
-            Set
-                Me.itemsElementNameField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
-            Get
-                Return Me.textField
-            End Get
-            Set
-                Me.textField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
-        Public Property identifier() As String
-            Get
-                Return Me.identifierField
-            End Get
-            Set
-                Me.identifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("template-identifier", DataType:="NCName")>
-        Public Property templateidentifier() As String
-            Get
-                Return Me.templateidentifierField
-            End Get
-            Set
-                Me.templateidentifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("show-hide"),
- System.ComponentModel.DefaultValueAttribute(GapTextTypeShowhide.show)>
-        Public Property showhide() As GapTextTypeShowhide
-            Get
-                Return Me.showhideField
-            End Get
-            Set
-                Me.showhideField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("match-group", DataType:="NCName")>
-        Public Property matchgroup() As List(Of String)
-            Get
-                Return Me.matchgroupField
-            End Get
-            Set
-                Me.matchgroupField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("match-max", DataType:="nonNegativeInteger")>
-        Public Property matchmax() As String
-            Get
-                Return Me.matchmaxField
-            End Get
-            Set
-                Me.matchmaxField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("match-min", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("0")>
-        Public Property matchmin() As String
-            Get
-                Return Me.matchminField
-            End Get
-            Set
-                Me.matchminField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType27
@@ -19069,451 +21002,6 @@ Namespace QTI.Xsd.QTI30
 
         acronym
 
-        b
-
-        bdi
-
-        bdo
-
-        big
-
-        br
-
-        cite
-
-        code
-
-        dfn
-
-        em
-
-        i
-
-        img
-
-        kbd
-
-        label
-
-        [object]
-
-        picture
-
-        q
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
-        qtifeedbackinline
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
-        qtiprintedvariable
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
-        qtitemplateinline
-
-        ruby
-
-        samp
-
-        small
-
-        span
-
-        strong
-
-        [sub]
-
-        sup
-
-        tt
-
-        var
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum GapTextTypeShowhide
-
-        show
-
-        hide
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum Items1ChoiceType
-
-        address
-
-        article
-
-        aside
-
-        audio
-
-        blockquote
-
-        div
-
-        dl
-
-        figure
-
-        footer
-
-        h1
-
-        h2
-
-        h3
-
-        h4
-
-        h5
-
-        h6
-
-        header
-
-        hr
-
-        nav
-
-        ol
-
-        p
-
-        pre
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
-        qtifeedbackblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
-        qtitemplateblock
-
-        section
-
-        table
-
-        ul
-
-        video
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="DrawingInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class DrawingInteractionType
-        Inherits BasePromptInteractionType
-
-        Private objectField As ObjectType
-
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>
-        Public Property [object]() As ObjectType
-            Get
-                Return Me.objectField
-            End Get
-            Set
-                Me.objectField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="PortableCustomInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class PortableCustomInteractionType
-        Inherits BasePromptInteractionType
-
-        Private qtiinteractionmodulesField As InteractionModulesType
-
-        Private qtiinteractionmarkupField As InteractionMarkupType
-
-        Private qtitemplatevariableField As List(Of String)
-
-        Private qticontextvariableField As List(Of String)
-
-        Private custominteractiontypeidentifierField As String
-
-        Private moduleField As String
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-interaction-modules", Order:=0)>
-        Public Property qtiinteractionmodules() As InteractionModulesType
-            Get
-                Return Me.qtiinteractionmodulesField
-            End Get
-            Set
-                Me.qtiinteractionmodulesField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-interaction-markup", Order:=1)>
-        Public Property qtiinteractionmarkup() As InteractionMarkupType
-            Get
-                Return Me.qtiinteractionmarkupField
-            End Get
-            Set
-                Me.qtiinteractionmarkupField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-template-variable", DataType:="IDREF", Order:=2)>
-        Public Property qtitemplatevariable() As List(Of String)
-            Get
-                Return Me.qtitemplatevariableField
-            End Get
-            Set
-                Me.qtitemplatevariableField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-context-variable", DataType:="IDREF", Order:=3)>
-        Public Property qticontextvariable() As List(Of String)
-            Get
-                Return Me.qticontextvariableField
-            End Get
-            Set
-                Me.qticontextvariableField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("custom-interaction-type-identifier", DataType:="anyURI")>
-        Public Property custominteractiontypeidentifier() As String
-            Get
-                Return Me.custominteractiontypeidentifierField
-            End Get
-            Set
-                Me.custominteractiontypeidentifierField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
-        Public Property [module]() As String
-            Get
-                Return Me.moduleField
-            End Get
-            Set
-                Me.moduleField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="InteractionModules.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class InteractionModulesType
-
-        Private qtiinteractionmoduleField As List(Of InteractionModuleType)
-
-        Private primaryconfigurationField As String
-
-        Private secondaryconfigurationField As String
-
-        Public Sub New()
-            MyBase.New
-            Me.primaryconfigurationField = "modules/module_resolution.js"
-            Me.secondaryconfigurationField = "modules/fallback_module_resolution.js"
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-interaction-module", Order:=0)>
-        Public Property qtiinteractionmodule() As List(Of InteractionModuleType)
-            Get
-                Return Me.qtiinteractionmoduleField
-            End Get
-            Set
-                Me.qtiinteractionmoduleField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("primary-configuration", DataType:="anyURI"),
- System.ComponentModel.DefaultValueAttribute("modules/module_resolution.js")>
-        Public Property primaryconfiguration() As String
-            Get
-                Return Me.primaryconfigurationField
-            End Get
-            Set
-                Me.primaryconfigurationField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("secondary-configuration", DataType:="anyURI"),
- System.ComponentModel.DefaultValueAttribute("modules/fallback_module_resolution.js")>
-        Public Property secondaryconfiguration() As String
-            Get
-                Return Me.secondaryconfigurationField
-            End Get
-            Set
-                Me.secondaryconfigurationField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="InteractionModule.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class InteractionModuleType
-        Inherits EmptyPrimitiveTypeType
-
-        Private idField As String
-
-        Private primarypathField As String
-
-        Private fallbackpathField As String
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
-        Public Property id() As String
-            Get
-                Return Me.idField
-            End Get
-            Set
-                Me.idField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("primary-path", DataType:="anyURI")>
-        Public Property primarypath() As String
-            Get
-                Return Me.primarypathField
-            End Get
-            Set
-                Me.primarypathField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("fallback-path", DataType:="anyURI")>
-        Public Property fallbackpath() As String
-            Get
-                Return Me.fallbackpathField
-            End Get
-            Set
-                Me.fallbackpathField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="InteractionMarkup.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class InteractionMarkupType
-
-        Private itemsField() As Object
-
-        Private itemsElementNameField() As ItemsChoiceType36
-
-        Private templateField As List(Of TemplateType)
-
-        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-block", GetType(FeedbackBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-feedback-inline", GetType(FeedbackInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
- System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
-        Public Property Items() As Object()
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType36()
-            Get
-                Return Me.itemsElementNameField
-            End Get
-            Set
-                Me.itemsElementNameField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("template", Order:=2)>
-        Public Property template() As List(Of TemplateType)
-            Get
-                Return Me.templateField
-            End Get
-            Set
-                Me.templateField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType36
-
-        a
-
-        abbr
-
-        acronym
-
         address
 
         article
@@ -19538,616 +21026,7 @@ Namespace QTI.Xsd.QTI30
 
         code
 
-        dfn
-
-        div
-
-        dl
-
-        em
-
-        figure
-
-        footer
-
-        h1
-
-        h2
-
-        h3
-
-        h4
-
-        h5
-
-        h6
-
-        header
-
-        hr
-
-        i
-
-        img
-
-        kbd
-
-        label
-
-        nav
-
-        [object]
-
-        ol
-
-        p
-
-        picture
-
-        pre
-
-        q
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
-        qtifeedbackblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
-        qtifeedbackinline
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
-        qtiprintedvariable
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
-        qtitemplateblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
-        qtitemplateinline
-
-        ruby
-
-        samp
-
-        section
-
-        small
-
-        span
-
-        strong
-
-        [sub]
-
-        sup
-
-        table
-
-        tt
-
-        ul
-
-        var
-
-        video
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Template.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
- System.Xml.Serialization.XmlRootAttribute("template", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
-    Partial Public Class TemplateType
-
-        Private anyField As List(Of System.Xml.XmlElement)
-
-        <System.Xml.Serialization.XmlAnyElementAttribute(Order:=0)>
-        Public Property Any() As List(Of System.Xml.XmlElement)
-            Get
-                Return Me.anyField
-            End Get
-            Set
-                Me.anyField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="GraphicGapMatchInteraction.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class GraphicGapMatchInteractionType
-        Inherits BaseSequenceFullType
-
-        Private qtipromptField As PromptType
-
-        Private objectField As ObjectType
-
-        Private itemsField As List(Of BaseSequenceType)
-
-        Private qtiassociablehotspotField As List(Of AssociableHotspotType)
-
-        Private minassociationsField As String
-
-        Private maxassociationsField As String
-
-        Public Sub New()
-            MyBase.New
-            Me.maxassociationsField = "1"
-        End Sub
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-prompt", Order:=0)>
-        Public Property qtiprompt() As PromptType
-            Get
-                Return Me.qtipromptField
-            End Get
-            Set
-                Me.qtipromptField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>
-        Public Property [object]() As ObjectType
-            Get
-                Return Me.objectField
-            End Get
-            Set
-                Me.objectField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-gap-img", GetType(GapImgType), Order:=2),
- System.Xml.Serialization.XmlElementAttribute("qti-gap-text", GetType(GapTextType), Order:=2)>
-        Public Property Items() As List(Of BaseSequenceType)
-            Get
-                Return Me.itemsField
-            End Get
-            Set
-                Me.itemsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-associable-hotspot", Order:=3)>
-        Public Property qtiassociablehotspot() As List(Of AssociableHotspotType)
-            Get
-                Return Me.qtiassociablehotspotField
-            End Get
-            Set
-                Me.qtiassociablehotspotField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("min-associations", DataType:="nonNegativeInteger")>
-        Public Property minassociations() As String
-            Get
-                Return Me.minassociationsField
-            End Get
-            Set
-                Me.minassociationsField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute("max-associations", DataType:="nonNegativeInteger"),
- System.ComponentModel.DefaultValueAttribute("1")>
-        Public Property maxassociations() As String
-            Get
-                Return Me.maxassociationsField
-            End Get
-            Set
-                Me.maxassociationsField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="PositionObjectStage.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class PositionObjectStageType
-
-        Private objectField As ObjectType
-
-        Private qtipositionobjectinteractionField As List(Of PositionObjectInteractionType)
-
-        Private idField As String
-
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>
-        Public Property [object]() As ObjectType
-            Get
-                Return Me.objectField
-            End Get
-            Set
-                Me.objectField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlElementAttribute("qti-position-object-interaction", Order:=1)>
-        Public Property qtipositionobjectinteraction() As List(Of PositionObjectInteractionType)
-            Get
-                Return Me.qtipositionobjectinteractionField
-            End Get
-            Set
-                Me.qtipositionobjectinteractionField = Value
-            End Set
-        End Property
-
-        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="ID")>
-        Public Property id() As String
-            Get
-                Return Me.idField
-            End Get
-            Set
-                Me.idField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType37
-
-        a
-
-        abbr
-
-        acronym
-
-        address
-
-        article
-
-        aside
-
-        audio
-
-        b
-
-        bdi
-
-        bdo
-
-        big
-
-        blockquote
-
-        br
-
-        cite
-
-        code
-
-        dfn
-
-        div
-
-        dl
-
-        em
-
-        figure
-
-        footer
-
-        h1
-
-        h2
-
-        h3
-
-        h4
-
-        h5
-
-        h6
-
-        header
-
-        hr
-
-        i
-
-        img
-
-        kbd
-
-        label
-
-        nav
-
-        [object]
-
-        ol
-
-        p
-
-        picture
-
-        pre
-
-        q
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-associate-interaction")>
-        qtiassociateinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-choice-interaction")>
-        qtichoiceinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-custom-interaction")>
-        qticustominteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-drawing-interaction")>
-        qtidrawinginteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-extended-text-interaction")>
-        qtiextendedtextinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
-        qtifeedbackblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
-        qtifeedbackinline
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-gap-match-interaction")>
-        qtigapmatchinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-graphic-associate-interaction")>
-        qtigraphicassociateinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-graphic-gap-match-interaction")>
-        qtigraphicgapmatchinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-graphic-order-interaction")>
-        qtigraphicorderinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-hotspot-interaction")>
-        qtihotspotinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-hottext-interaction")>
-        qtihottextinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-match-interaction")>
-        qtimatchinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-media-interaction")>
-        qtimediainteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-order-interaction")>
-        qtiorderinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-portable-custom-interaction")>
-        qtiportablecustominteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-position-object-stage")>
-        qtipositionobjectstage
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
-        qtiprintedvariable
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-select-point-interaction")>
-        qtiselectpointinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-slider-interaction")>
-        qtisliderinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
-        qtitemplateblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
-        qtitemplateinline
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-upload-interaction")>
-        qtiuploadinteraction
-
-        ruby
-
-        samp
-
-        section
-
-        small
-
-        span
-
-        strong
-
-        [sub]
-
-        sup
-
-        table
-
-        tt
-
-        ul
-
-        var
-
-        video
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum FeedbackBlockTypeShowhide
-
-        show
-
-        hide
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType25
-
-        a
-
-        abbr
-
-        acronym
-
-        address
-
-        article
-
-        aside
-
-        audio
-
-        b
-
-        bdi
-
-        bdo
-
-        big
-
-        blockquote
-
-        br
-
-        cite
-
-        code
-
-        dfn
-
-        div
-
-        dl
-
-        em
-
-        figure
-
-        footer
-
-        h1
-
-        h2
-
-        h3
-
-        h4
-
-        h5
-
-        h6
-
-        header
-
-        hr
-
-        i
-
-        img
-
-        kbd
-
-        label
-
-        nav
-
-        [object]
-
-        ol
-
-        p
-
-        picture
-
-        pre
-
-        q
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
-        qtifeedbackblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
-        qtifeedbackinline
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
-        qtiprintedvariable
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
-        qtitemplateblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
-        qtitemplateinline
-
-        ruby
-
-        samp
-
-        section
-
-        small
-
-        span
-
-        strong
-
-        [sub]
-
-        sup
-
-        table
-
-        tt
-
-        ul
-
-        var
-
-        video
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum SimpleAssociableChoiceTypeShowhide
-
-        show
-
-        hide
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType23
-
-        a
-
-        abbr
-
-        acronym
-
-        address
-
-        article
-
-        aside
-
-        audio
-
-        b
-
-        bdi
-
-        bdo
-
-        big
-
-        blockquote
-
-        br
-
-        cite
-
-        code
+        details
 
         dfn
 
@@ -20307,7 +21186,7 @@ Namespace QTI.Xsd.QTI30
         video
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum TDHTypeScope
@@ -20321,7 +21200,7 @@ Namespace QTI.Xsd.QTI30
         rowgroup
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum TDHTypeAlign
@@ -20337,7 +21216,7 @@ Namespace QTI.Xsd.QTI30
         [char]
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum TDHTypeValign
@@ -20351,20 +21230,20 @@ Namespace QTI.Xsd.QTI30
         baseline
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType24
+    Public Enum ItemsChoiceType28
 
         td
 
         th
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType51
+    Public Enum ItemsChoiceType52
 
         a
 
@@ -20395,6 +21274,8 @@ Namespace QTI.Xsd.QTI30
         cite
 
         code
+
+        details
 
         dfn
 
@@ -20473,10 +21354,10 @@ Namespace QTI.Xsd.QTI30
         video
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="View.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum ViewType
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum ViewEnumType
 
         author
 
@@ -20491,19 +21372,19 @@ Namespace QTI.Xsd.QTI30
         tutor
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="RubricBlockTemplateInline.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class RubricBlockTemplateInlineType
         Inherits BaseSequenceXBaseType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType49
+        Private itemsElementNameField() As ItemsChoiceType50
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         Private templateidentifierField As String
 
@@ -20536,7 +21417,6 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(RubricBlockTemplateInlineType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
@@ -20558,7 +21438,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType49()
+        Public Property ItemsElementName() As ItemsChoiceType50()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -20568,7 +21448,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -20609,10 +21489,10 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType49
+    Public Enum ItemsChoiceType50
 
         a
 
@@ -20655,9 +21535,6 @@ Namespace QTI.Xsd.QTI30
         <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
         qtiprintedvariable
 
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
-        qtitemplateinline
-
         ruby
 
         samp
@@ -20677,7 +21554,7 @@ Namespace QTI.Xsd.QTI30
         var
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum RubricBlockTemplateInlineTypeShowhide
@@ -20687,19 +21564,19 @@ Namespace QTI.Xsd.QTI30
         hide
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="RubricBlockTemplateBlock.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class RubricBlockTemplateBlockType
         Inherits BaseSequenceXBaseType
 
-        Private qtistylesheetField As List(Of StyleSheetType)
+        Private qtistylesheetField() As StyleSheetType
 
         Private qticontentbodyField As RubricBlockTemplateBlockContentBodyType
 
-        Private qticataloginfoField As CatalogInfoType
+        Private qticataloginfoField() As CatalogType
 
         Private templateidentifierField As String
 
@@ -20713,7 +21590,7 @@ Namespace QTI.Xsd.QTI30
         End Sub
 
         <System.Xml.Serialization.XmlElementAttribute("qti-stylesheet", Order:=0)>
-        Public Property qtistylesheet() As List(Of StyleSheetType)
+        Public Property qtistylesheet() As StyleSheetType()
             Get
                 Return Me.qtistylesheetField
             End Get
@@ -20733,8 +21610,8 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlArrayAttribute("qti-catalog-info", Order:=2),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property qticataloginfo() As CatalogInfoType
+ System.Xml.Serialization.XmlArrayItemAttribute("qti-catalog", IsNullable:=False)>
+        Public Property qticataloginfo() As CatalogType()
             Get
                 Return Me.qticataloginfoField
             End Get
@@ -20775,18 +21652,18 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="RubricBlockTemplateBlockContentBody.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class RubricBlockTemplateBlockContentBodyType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType48
+        Private itemsElementNameField() As ItemsChoiceType49
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
@@ -20803,6 +21680,7 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
@@ -20829,7 +21707,6 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
- System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(RubricBlockTemplateBlockType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
@@ -20855,7 +21732,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType48()
+        Public Property ItemsElementName() As ItemsChoiceType49()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -20865,7 +21742,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -20875,10 +21752,10 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType48
+    Public Enum ItemsChoiceType49
 
         a
 
@@ -20909,6 +21786,8 @@ Namespace QTI.Xsd.QTI30
         cite
 
         code
+
+        details
 
         dfn
 
@@ -20963,9 +21842,6 @@ Namespace QTI.Xsd.QTI30
         <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
         qtiprintedvariable
 
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
-        qtitemplateblock
-
         ruby
 
         samp
@@ -20993,7 +21869,7 @@ Namespace QTI.Xsd.QTI30
         video
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum RubricBlockTemplateBlockTypeShowhide
@@ -21003,26 +21879,26 @@ Namespace QTI.Xsd.QTI30
         hide
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="RubricBlock.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class RubricBlockType
         Inherits BaseSequenceXBaseType
 
-        Private qtistylesheetField As List(Of StyleSheetType)
+        Private qtistylesheetField() As StyleSheetType
 
         Private qticontentbodyField As RubricBlockContentBodyType
 
-        Private qticataloginfoField As CatalogInfoType
+        Private qticataloginfoField() As CatalogType
 
         Private useField As String
 
-        Private viewField As List(Of ViewType)
+        Private viewField() As ViewEnumType
 
         <System.Xml.Serialization.XmlElementAttribute("qti-stylesheet", Order:=0)>
-        Public Property qtistylesheet() As List(Of StyleSheetType)
+        Public Property qtistylesheet() As StyleSheetType()
             Get
                 Return Me.qtistylesheetField
             End Get
@@ -21042,8 +21918,8 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlArrayAttribute("qti-catalog-info", Order:=2),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property qticataloginfo() As CatalogInfoType
+ System.Xml.Serialization.XmlArrayItemAttribute("qti-catalog", IsNullable:=False)>
+        Public Property qticataloginfo() As CatalogType()
             Get
                 Return Me.qticataloginfoField
             End Get
@@ -21063,7 +21939,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property view() As List(Of ViewType)
+        Public Property view() As ViewEnumType()
             Get
                 Return Me.viewField
             End Get
@@ -21073,18 +21949,18 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="RubricBlockContentBody.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class RubricBlockContentBodyType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType50
+        Private itemsElementNameField() As ItemsChoiceType51
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
@@ -21101,6 +21977,7 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
@@ -21154,7 +22031,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType50()
+        Public Property ItemsElementName() As ItemsChoiceType51()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -21164,7 +22041,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -21174,10 +22051,10 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType50
+    Public Enum ItemsChoiceType51
 
         a
 
@@ -21208,6 +22085,8 @@ Namespace QTI.Xsd.QTI30
         cite
 
         code
+
+        details
 
         dfn
 
@@ -21295,7 +22174,172 @@ Namespace QTI.Xsd.QTI30
         video
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType43
+
+        a
+
+        abbr
+
+        acronym
+
+        b
+
+        bdi
+
+        bdo
+
+        big
+
+        br
+
+        cite
+
+        code
+
+        dfn
+
+        em
+
+        i
+
+        img
+
+        kbd
+
+        label
+
+        [object]
+
+        picture
+
+        q
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
+        qtifeedbackinline
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-gap")>
+        qtigap
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-hottext")>
+        qtihottext
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
+        qtiprintedvariable
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
+        qtitemplateinline
+
+        ruby
+
+        samp
+
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
+        tt
+
+        var
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum TemplateInlineTypeShowhide
+
+        show
+
+        hide
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType46
+
+        a
+
+        abbr
+
+        acronym
+
+        b
+
+        bdi
+
+        bdo
+
+        big
+
+        br
+
+        cite
+
+        code
+
+        dfn
+
+        em
+
+        i
+
+        img
+
+        kbd
+
+        label
+
+        [object]
+
+        picture
+
+        q
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
+        qtiprintedvariable
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
+        qtitemplateinline
+
+        ruby
+
+        samp
+
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
+        tt
+
+        var
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Public Enum FeedbackInlineTypeShowhide
+
+        show
+
+        hide
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType42
@@ -21338,171 +22382,6 @@ Namespace QTI.Xsd.QTI30
 
         q
 
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-inline")>
-        qtifeedbackinline
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-gap")>
-        qtigap
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-hottext")>
-        qtihottext
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
-        qtiprintedvariable
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
-        qtitemplateinline
-
-        ruby
-
-        samp
-
-        small
-
-        span
-
-        strong
-
-        [sub]
-
-        sup
-
-        tt
-
-        var
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum TemplateInlineTypeShowhide
-
-        show
-
-        hide
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType45
-
-        a
-
-        abbr
-
-        acronym
-
-        b
-
-        bdi
-
-        bdo
-
-        big
-
-        br
-
-        cite
-
-        code
-
-        dfn
-
-        em
-
-        i
-
-        img
-
-        kbd
-
-        label
-
-        [object]
-
-        picture
-
-        q
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
-        qtiprintedvariable
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
-        qtitemplateinline
-
-        ruby
-
-        samp
-
-        small
-
-        span
-
-        strong
-
-        [sub]
-
-        sup
-
-        tt
-
-        var
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Public Enum FeedbackInlineTypeShowhide
-
-        show
-
-        hide
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType41
-
-        a
-
-        abbr
-
-        acronym
-
-        b
-
-        bdi
-
-        bdo
-
-        big
-
-        br
-
-        cite
-
-        code
-
-        dfn
-
-        em
-
-        i
-
-        img
-
-        kbd
-
-        label
-
-        [object]
-
-        picture
-
-        q
-
         <System.Xml.Serialization.XmlEnumAttribute("qti-custom-interaction")>
         qticustominteraction
 
@@ -21549,10 +22428,10 @@ Namespace QTI.Xsd.QTI30
         var
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType40
+    Public Enum ItemsChoiceType34
 
         a
 
@@ -21584,260 +22463,7 @@ Namespace QTI.Xsd.QTI30
 
         code
 
-        dfn
-
-        div
-
-        dl
-
-        em
-
-        figure
-
-        footer
-
-        h1
-
-        h2
-
-        h3
-
-        h4
-
-        h5
-
-        h6
-
-        header
-
-        hr
-
-        i
-
-        img
-
-        kbd
-
-        label
-
-        nav
-
-        [object]
-
-        ol
-
-        p
-
-        picture
-
-        pre
-
-        q
-
-        ruby
-
-        samp
-
-        section
-
-        small
-
-        span
-
-        strong
-
-        [sub]
-
-        sup
-
-        table
-
-        tt
-
-        ul
-
-        var
-
-        video
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Diagnostics.DebuggerStepThroughAttribute(),
- System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="StimulusBody.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
-    Partial Public Class StimulusBodyType
-        Inherits BaseSequenceType
-
-        Private itemsField() As Object
-
-        Private itemsElementNameField() As ItemsChoiceType54
-
-        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType54()
-            Get
-                Return Me.itemsElementNameField
-            End Get
-            Set
-                Me.itemsElementNameField = Value
-            End Set
-        End Property
-    End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType54
-
-        address
-
-        article
-
-        aside
-
-        audio
-
-        blockquote
-
-        div
-
-        dl
-
-        figure
-
-        footer
-
-        h1
-
-        h2
-
-        h3
-
-        h4
-
-        h5
-
-        h6
-
-        header
-
-        hr
-
-        nav
-
-        ol
-
-        p
-
-        pre
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-associate-interaction")>
-        qtiassociateinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-choice-interaction")>
-        qtichoiceinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-custom-interaction")>
-        qticustominteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-drawing-interaction")>
-        qtidrawinginteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-extended-text-interaction")>
-        qtiextendedtextinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
-        qtifeedbackblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-gap-match-interaction")>
-        qtigapmatchinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-graphic-associate-interaction")>
-        qtigraphicassociateinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-graphic-gap-match-interaction")>
-        qtigraphicgapmatchinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-graphic-order-interaction")>
-        qtigraphicorderinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-hotspot-interaction")>
-        qtihotspotinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-hottext-interaction")>
-        qtihottextinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-match-interaction")>
-        qtimatchinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-media-interaction")>
-        qtimediainteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-order-interaction")>
-        qtiorderinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-portable-custom-interaction")>
-        qtiportablecustominteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-position-object-stage")>
-        qtipositionobjectstage
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-select-point-interaction")>
-        qtiselectpointinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-slider-interaction")>
-        qtisliderinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
-        qtitemplateblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-upload-interaction")>
-        qtiuploadinteraction
-
-        section
-
-        table
-
-        ul
-
-        video
-    End Enum
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
- System.SerializableAttribute(),
- System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType33
-
-        a
-
-        abbr
-
-        acronym
-
-        address
-
-        article
-
-        aside
-
-        audio
-
-        b
-
-        bdi
-
-        bdo
-
-        big
-
-        blockquote
-
-        br
-
-        cite
-
-        code
+        details
 
         dfn
 
@@ -21997,7 +22623,7 @@ Namespace QTI.Xsd.QTI30
         video
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType19
@@ -22031,6 +22657,8 @@ Namespace QTI.Xsd.QTI30
         cite
 
         code
+
+        details
 
         dfn
 
@@ -22111,10 +22739,10 @@ Namespace QTI.Xsd.QTI30
         video
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType38
+    Public Enum ItemsChoiceType39
 
         a
 
@@ -22145,6 +22773,8 @@ Namespace QTI.Xsd.QTI30
         cite
 
         code
+
+        details
 
         dfn
 
@@ -22304,20 +22934,20 @@ Namespace QTI.Xsd.QTI30
         video
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="DT.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("dt", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class DTType
         Inherits BaseSequenceXBaseType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType39
+        Private itemsElementNameField() As ItemsChoiceType40
 
-        Private textField As List(Of String)
+        Private textField() As String
 
         <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
@@ -22368,7 +22998,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType39()
+        Public Property ItemsElementName() As ItemsChoiceType40()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -22378,7 +23008,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlTextAttribute()>
-        Public Property Text() As List(Of String)
+        Public Property Text() As String()
             Get
                 Return Me.textField
             End Get
@@ -22388,10 +23018,10 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType39
+    Public Enum ItemsChoiceType40
 
         a
 
@@ -22477,10 +23107,10 @@ Namespace QTI.Xsd.QTI30
         var
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType21
+    Public Enum ItemsChoiceType22
 
         a
 
@@ -22511,6 +23141,8 @@ Namespace QTI.Xsd.QTI30
         cite
 
         code
+
+        details
 
         dfn
 
@@ -22673,10 +23305,16 @@ Namespace QTI.Xsd.QTI30
         video
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType28
+    Public Enum ItemsChoiceType41
+
+        a
+
+        abbr
+
+        acronym
 
         address
 
@@ -22686,11 +23324,31 @@ Namespace QTI.Xsd.QTI30
 
         audio
 
+        b
+
+        bdi
+
+        bdo
+
+        big
+
         blockquote
+
+        br
+
+        cite
+
+        code
+
+        details
+
+        dfn
 
         div
 
         dl
+
+        em
 
         figure
 
@@ -22712,91 +23370,348 @@ Namespace QTI.Xsd.QTI30
 
         hr
 
+        i
+
+        img
+
+        kbd
+
+        label
+
         nav
+
+        [object]
 
         ol
 
         p
 
+        picture
+
         pre
 
-        <System.Xml.Serialization.XmlEnumAttribute("qti-associate-interaction")>
-        qtiassociateinteraction
+        q
 
-        <System.Xml.Serialization.XmlEnumAttribute("qti-choice-interaction")>
-        qtichoiceinteraction
+        ruby
 
-        <System.Xml.Serialization.XmlEnumAttribute("qti-custom-interaction")>
-        qticustominteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-drawing-interaction")>
-        qtidrawinginteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-extended-text-interaction")>
-        qtiextendedtextinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-feedback-block")>
-        qtifeedbackblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-gap-match-interaction")>
-        qtigapmatchinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-graphic-associate-interaction")>
-        qtigraphicassociateinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-graphic-gap-match-interaction")>
-        qtigraphicgapmatchinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-graphic-order-interaction")>
-        qtigraphicorderinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-hotspot-interaction")>
-        qtihotspotinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-hottext-interaction")>
-        qtihottextinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-match-interaction")>
-        qtimatchinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-media-interaction")>
-        qtimediainteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-order-interaction")>
-        qtiorderinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-portable-custom-interaction")>
-        qtiportablecustominteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-position-object-stage")>
-        qtipositionobjectstage
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-select-point-interaction")>
-        qtiselectpointinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-slider-interaction")>
-        qtisliderinteraction
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
-        qtitemplateblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-upload-interaction")>
-        qtiuploadinteraction
+        samp
 
         section
 
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
         table
 
+        tt
+
         ul
+
+        var
 
         video
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType15
+
+        a
+
+        abbr
+
+        audio
+
+        b
+
+        bdi
+
+        bdo
+
+        br
+
+        cite
+
+        code
+
+        dfn
+
+        em
+
+        i
+
+        img
+
+        kbd
+
+        label
+
+        [object]
+
+        picture
+
+        q
+
+        ruby
+
+        samp
+
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
+        var
+
+        video
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType18
+
+        a
+
+        abbr
+
+        acronym
+
+        address
+
+        article
+
+        aside
+
+        audio
+
+        b
+
+        bdi
+
+        bdo
+
+        big
+
+        blockquote
+
+        br
+
+        cite
+
+        code
+
+        details
+
+        dfn
+
+        div
+
+        dl
+
+        em
+
+        figure
+
+        footer
+
+        h1
+
+        h2
+
+        h3
+
+        h4
+
+        h5
+
+        h6
+
+        header
+
+        hr
+
+        i
+
+        img
+
+        kbd
+
+        label
+
+        nav
+
+        [object]
+
+        ol
+
+        p
+
+        picture
+
+        pre
+
+        q
+
+        ruby
+
+        samp
+
+        section
+
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
+        table
+
+        tt
+
+        ul
+
+        var
+
+        video
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType29
+
+        a
+
+        abbr
+
+        acronym
+
+        address
+
+        article
+
+        aside
+
+        audio
+
+        b
+
+        bdi
+
+        bdo
+
+        big
+
+        blockquote
+
+        br
+
+        cite
+
+        code
+
+        details
+
+        dfn
+
+        div
+
+        dl
+
+        em
+
+        figure
+
+        footer
+
+        h1
+
+        h2
+
+        h3
+
+        h4
+
+        h5
+
+        h6
+
+        header
+
+        hr
+
+        i
+
+        img
+
+        kbd
+
+        label
+
+        nav
+
+        [object]
+
+        ol
+
+        p
+
+        picture
+
+        pre
+
+        q
+
+        ruby
+
+        samp
+
+        section
+
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
+        table
+
+        tt
+
+        ul
+
+        var
+
+        video
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Param.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class ParamType
         Inherits EmptyPrimitiveTypeType
 
@@ -22849,7 +23764,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ParamTypeValuetype
@@ -22859,10 +23774,10 @@ Namespace QTI.Xsd.QTI30
         REF
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType44
+    Public Enum ItemsChoiceType45
 
         a
 
@@ -22893,6 +23808,8 @@ Namespace QTI.Xsd.QTI30
         cite
 
         code
+
+        details
 
         dfn
 
@@ -22973,10 +23890,10 @@ Namespace QTI.Xsd.QTI30
         video
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType30
+    Public Enum ItemsChoiceType31
 
         a
 
@@ -23035,10 +23952,10 @@ Namespace QTI.Xsd.QTI30
         var
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType53
+    Public Enum ItemsChoiceType56
 
         a
 
@@ -23069,6 +23986,8 @@ Namespace QTI.Xsd.QTI30
         cite
 
         code
+
+        details
 
         dfn
 
@@ -23120,18 +24039,6 @@ Namespace QTI.Xsd.QTI30
 
         q
 
-        <System.Xml.Serialization.XmlEnumAttribute("qti-hottext")>
-        qtihottext
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
-        qtiprintedvariable
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
-        qtitemplateblock
-
-        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
-        qtitemplateinline
-
         ruby
 
         samp
@@ -23159,7 +24066,124 @@ Namespace QTI.Xsd.QTI30
         video
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class TestFeedbackType
+
+        Private qtistylesheetField() As StyleSheetType
+
+        Private qticontentbodyField As TestFeedbackFlowContentBodyType
+
+        Private qticataloginfoField() As CatalogType
+
+        Private accessField As TestFeedbackTypeAccess
+
+        Private outcomeidentifierField As String
+
+        Private showhideField As TestFeedbackTypeShowhide
+
+        Private identifierField As String
+
+        Private titleField As String
+
+        Private anyAttrField() As System.Xml.XmlAttribute
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-stylesheet", Order:=0)>
+        Public Property qtistylesheet() As StyleSheetType()
+            Get
+                Return Me.qtistylesheetField
+            End Get
+            Set
+                Me.qtistylesheetField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-content-body", Order:=1)>
+        Public Property qticontentbody() As TestFeedbackFlowContentBodyType
+            Get
+                Return Me.qticontentbodyField
+            End Get
+            Set
+                Me.qticontentbodyField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlArrayAttribute("qti-catalog-info", Order:=2),
+ System.Xml.Serialization.XmlArrayItemAttribute("qti-catalog", IsNullable:=False)>
+        Public Property qticataloginfo() As CatalogType()
+            Get
+                Return Me.qticataloginfoField
+            End Get
+            Set
+                Me.qticataloginfoField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute()>
+        Public Property access() As TestFeedbackTypeAccess
+            Get
+                Return Me.accessField
+            End Get
+            Set
+                Me.accessField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("outcome-identifier", DataType:="NCName")>
+        Public Property outcomeidentifier() As String
+            Get
+                Return Me.outcomeidentifierField
+            End Get
+            Set
+                Me.outcomeidentifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute("show-hide")>
+        Public Property showhide() As TestFeedbackTypeShowhide
+            Get
+                Return Me.showhideField
+            End Get
+            Set
+                Me.showhideField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
+        Public Property identifier() As String
+            Get
+                Return Me.identifierField
+            End Get
+            Set
+                Me.identifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
+        Public Property title() As String
+            Get
+                Return Me.titleField
+            End Get
+            Set
+                Me.titleField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
+            Get
+                Return Me.anyAttrField
+            End Get
+            Set
+                Me.anyAttrField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum TestFeedbackTypeAccess
@@ -23169,7 +24193,7 @@ Namespace QTI.Xsd.QTI30
         during
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum TestFeedbackTypeShowhide
@@ -23179,35 +24203,41 @@ Namespace QTI.Xsd.QTI30
         hide
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TestPart.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class TestPartType
 
-        Private qtipreconditionField As List(Of LogicSingleType)
+        Private qtipreconditionField() As LogicSingleType
 
-        Private qtibranchruleField As List(Of BranchRuleType)
+        Private qtibranchruleField() As BranchRuleType
 
         Private qtiitemsessioncontrolField As ItemSessionControlType
 
         Private qtitimelimitsField As TimeLimitsType
 
-        Private sectionsField As List(Of Object)
+        Private qtirubricblockField() As TestRubricBlockType
 
-        Private qtitestfeedbackField As List(Of TestFeedbackType)
+        Private itemsField() As Object
+
+        Private qtitestfeedbackField() As TestFeedbackType
 
         Private identifierField As String
 
         Private titleField As String
 
+        Private classField() As String
+
         Private navigationmodeField As TestPartTypeNavigationmode
 
         Private submissionmodeField As TestPartTypeSubmissionmode
 
+        Private anyAttrField() As System.Xml.XmlAttribute
+
         <System.Xml.Serialization.XmlElementAttribute("qti-pre-condition", Order:=0)>
-        Public Property qtiprecondition() As List(Of LogicSingleType)
+        Public Property qtiprecondition() As LogicSingleType()
             Get
                 Return Me.qtipreconditionField
             End Get
@@ -23217,7 +24247,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-branch-rule", Order:=1)>
-        Public Property qtibranchrule() As List(Of BranchRuleType)
+        Public Property qtibranchrule() As BranchRuleType()
             Get
                 Return Me.qtibranchruleField
             End Get
@@ -23246,19 +24276,29 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlElementAttribute("qti-assessment-section", GetType(AssessmentSectionType), Order:=4),
- System.Xml.Serialization.XmlElementAttribute("qti-assessment-section-ref", GetType(AssessmentSectionRefType), Order:=4)>
-        Public Property sections() As List(Of Object)
+        <System.Xml.Serialization.XmlElementAttribute("qti-rubric-block", Order:=4)>
+        Public Property qtirubricblock() As TestRubricBlockType()
             Get
-                Return Me.sectionsField
+                Return Me.qtirubricblockField
             End Get
             Set
-                Me.sectionsField = Value
+                Me.qtirubricblockField = Value
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlElementAttribute("qti-test-feedback", Order:=5)>
-        Public Property qtitestfeedback() As List(Of TestFeedbackType)
+        <System.Xml.Serialization.XmlElementAttribute("qti-assessment-section", GetType(AssessmentSectionType), Order:=5),
+ System.Xml.Serialization.XmlElementAttribute("qti-assessment-section-ref", GetType(AssessmentSectionRefType), Order:=5)>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-test-feedback", Order:=6)>
+        Public Property qtitestfeedback() As TestFeedbackType()
             Get
                 Return Me.qtitestfeedbackField
             End Get
@@ -23282,8 +24322,18 @@ Namespace QTI.Xsd.QTI30
             Get
                 Return Me.titleField
             End Get
-            Set(value As String)
-                Me.titleField = value
+            Set
+                Me.titleField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute()>
+        Public Property [class]() As String()
+            Get
+                Return Me.classField
+            End Get
+            Set
+                Me.classField = Value
             End Set
         End Property
 
@@ -23306,13 +24356,23 @@ Namespace QTI.Xsd.QTI30
                 Me.submissionmodeField = Value
             End Set
         End Property
+
+        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
+            Get
+                Return Me.anyAttrField
+            End Get
+            Set
+                Me.anyAttrField = Value
+            End Set
+        End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="BranchRule.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class BranchRuleType
 
         Private itemField As Object
@@ -23417,7 +24477,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemChoiceType12
@@ -23615,11 +24675,11 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ItemSessionControl.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class ItemSessionControlType
         Inherits EmptyPrimitiveTypeType
 
@@ -23736,11 +24796,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TimeLimits.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class TimeLimitsType
         Inherits EmptyPrimitiveTypeType
 
@@ -23811,27 +24871,27 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="AssessmentSection.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("qti-assessment-section", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class AssessmentSectionType
 
-        Private qtipreconditionField As List(Of LogicSingleType)
+        Private qtipreconditionField() As LogicSingleType
 
-        Private qtibranchruleField As List(Of BranchRuleType)
+        Private qtibranchruleField() As BranchRuleType
 
         Private qtiitemsessioncontrolField As ItemSessionControlType
 
         Private qtitimelimitsField As TimeLimitsType
 
-        Private sectionRulesField As List(Of Object)
+        Private itemsField() As Object
 
-        Private qtirubricblockField As List(Of RubricBlockType)
+        Private qtirubricblockField() As TestRubricBlockType
 
-        Private testComponentsField As List(Of Object)
+        Private items1Field() As Object
 
         Private identifierField As String
 
@@ -23841,9 +24901,13 @@ Namespace QTI.Xsd.QTI30
 
         Private titleField As String
 
+        Private classField() As String
+
         Private visibleField As Boolean
 
         Private keeptogetherField As Boolean
+
+        Private anyAttrField() As System.Xml.XmlAttribute
 
         Public Sub New()
             MyBase.New
@@ -23853,7 +24917,7 @@ Namespace QTI.Xsd.QTI30
         End Sub
 
         <System.Xml.Serialization.XmlElementAttribute("qti-pre-condition", Order:=0)>
-        Public Property qtiprecondition() As List(Of LogicSingleType)
+        Public Property qtiprecondition() As LogicSingleType()
             Get
                 Return Me.qtipreconditionField
             End Get
@@ -23863,7 +24927,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-branch-rule", Order:=1)>
-        Public Property qtibranchrule() As List(Of BranchRuleType)
+        Public Property qtibranchrule() As BranchRuleType()
             Get
                 Return Me.qtibranchruleField
             End Get
@@ -23895,17 +24959,17 @@ Namespace QTI.Xsd.QTI30
         <System.Xml.Serialization.XmlElementAttribute("qti-adaptive-selection", GetType(AdaptiveSelectionType), Order:=4),
  System.Xml.Serialization.XmlElementAttribute("qti-ordering", GetType(OrderingType), Order:=4),
  System.Xml.Serialization.XmlElementAttribute("qti-selection", GetType(SelectionType), Order:=4)>
-        Public Property Items() As List(Of Object)
+        Public Property Items() As Object()
             Get
-                Return Me.sectionRulesField
+                Return Me.itemsField
             End Get
             Set
-                Me.sectionRulesField = Value
+                Me.itemsField = Value
             End Set
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-rubric-block", Order:=5)>
-        Public Property qtirubricblock() As List(Of RubricBlockType)
+        Public Property qtirubricblock() As TestRubricBlockType()
             Get
                 Return Me.qtirubricblockField
             End Get
@@ -23917,12 +24981,12 @@ Namespace QTI.Xsd.QTI30
         <System.Xml.Serialization.XmlElementAttribute("qti-assessment-item-ref", GetType(AssessmentItemRefType), Order:=6),
  System.Xml.Serialization.XmlElementAttribute("qti-assessment-section", GetType(AssessmentSectionType), Order:=6),
  System.Xml.Serialization.XmlElementAttribute("qti-assessment-section-ref", GetType(AssessmentSectionRefType), Order:=6)>
-        Public Property testComponents() As List(Of Object)
+        Public Property Items1() As Object()
             Get
-                Return Me.testComponentsField
+                Return Me.items1Field
             End Get
             Set
-                Me.testComponentsField = Value
+                Me.items1Field = Value
             End Set
         End Property
 
@@ -23969,6 +25033,16 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute()>
+        Public Property [class]() As String()
+            Get
+                Return Me.classField
+            End Get
+            Set
+                Me.classField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute()>
         Public Property visible() As Boolean
             Get
                 Return Me.visibleField
@@ -23988,13 +25062,23 @@ Namespace QTI.Xsd.QTI30
                 Me.keeptogetherField = Value
             End Set
         End Property
+
+        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
+            Get
+                Return Me.anyAttrField
+            End Get
+            Set
+                Me.anyAttrField = Value
+            End Set
+        End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="AdaptiveSelection.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class AdaptiveSelectionType
 
         Private qtiadaptiveenginerefField As AdaptiveHrefType
@@ -24046,11 +25130,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="AdaptiveHref.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class AdaptiveHrefType
         Inherits EmptyPrimitiveTypeType
 
@@ -24079,18 +25163,18 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Ordering.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class OrderingType
 
-        Private anyField As List(Of System.Xml.XmlElement)
+        Private anyField() As System.Xml.XmlElement
 
         Private shuffleField As Boolean
 
-        Private anyAttrField As List(Of System.Xml.XmlAttribute)
+        Private anyAttrField() As System.Xml.XmlAttribute
 
         Public Sub New()
             MyBase.New
@@ -24098,7 +25182,7 @@ Namespace QTI.Xsd.QTI30
         End Sub
 
         <System.Xml.Serialization.XmlAnyElementAttribute(Order:=0)>
-        Public Property Any() As List(Of System.Xml.XmlElement)
+        Public Property Any() As System.Xml.XmlElement()
             Get
                 Return Me.anyField
             End Get
@@ -24119,7 +25203,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAnyAttributeAttribute()>
-        Public Property AnyAttr() As List(Of System.Xml.XmlAttribute)
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
             Get
                 Return Me.anyAttrField
             End Get
@@ -24129,20 +25213,20 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Selection.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class SelectionType
 
-        Private anyField As List(Of System.Xml.XmlElement)
+        Private anyField() As System.Xml.XmlElement
 
         Private selectField As Integer
 
         Private withreplacementField As Boolean
 
-        Private anyAttrField As List(Of System.Xml.XmlAttribute)
+        Private anyAttrField() As System.Xml.XmlAttribute
 
         Public Sub New()
             MyBase.New
@@ -24150,7 +25234,7 @@ Namespace QTI.Xsd.QTI30
         End Sub
 
         <System.Xml.Serialization.XmlAnyElementAttribute(Order:=0)>
-        Public Property Any() As List(Of System.Xml.XmlElement)
+        Public Property Any() As System.Xml.XmlElement()
             Get
                 Return Me.anyField
             End Get
@@ -24181,7 +25265,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAnyAttributeAttribute()>
-        Public Property AnyAttr() As List(Of System.Xml.XmlAttribute)
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
             Get
                 Return Me.anyAttrField
             End Get
@@ -24191,26 +25275,26 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="AssessmentItemRef.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class AssessmentItemRefType
 
-        Private qtipreconditionField As List(Of LogicSingleType)
+        Private qtipreconditionField() As LogicSingleType
 
-        Private qtibranchruleField As List(Of BranchRuleType)
+        Private qtibranchruleField() As BranchRuleType
 
         Private qtiitemsessioncontrolField As ItemSessionControlType
 
         Private qtitimelimitsField As TimeLimitsType
 
-        Private qtivariablemappingField As List(Of VariableMappingType)
+        Private qtivariablemappingField() As VariableMappingType
 
-        Private qtiweightField As List(Of WeightType)
+        Private qtiweightField() As WeightType
 
-        Private qtitemplatedefaultField As List(Of TemplateDefaultType)
+        Private qtitemplatedefaultField() As TemplateDefaultType
 
         Private identifierField As String
 
@@ -24218,9 +25302,13 @@ Namespace QTI.Xsd.QTI30
 
         Private fixedField As Boolean
 
+        Private classField() As String
+
         Private hrefField As String
 
-        Private categoryField As List(Of String)
+        Private categoryField() As String
+
+        Private anyAttrField() As System.Xml.XmlAttribute
 
         Public Sub New()
             MyBase.New
@@ -24229,7 +25317,7 @@ Namespace QTI.Xsd.QTI30
         End Sub
 
         <System.Xml.Serialization.XmlElementAttribute("qti-pre-condition", Order:=0)>
-        Public Property qtiprecondition() As List(Of LogicSingleType)
+        Public Property qtiprecondition() As LogicSingleType()
             Get
                 Return Me.qtipreconditionField
             End Get
@@ -24239,7 +25327,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-branch-rule", Order:=1)>
-        Public Property qtibranchrule() As List(Of BranchRuleType)
+        Public Property qtibranchrule() As BranchRuleType()
             Get
                 Return Me.qtibranchruleField
             End Get
@@ -24269,7 +25357,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-variable-mapping", Order:=4)>
-        Public Property qtivariablemapping() As List(Of VariableMappingType)
+        Public Property qtivariablemapping() As VariableMappingType()
             Get
                 Return Me.qtivariablemappingField
             End Get
@@ -24279,7 +25367,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-weight", Order:=5)>
-        Public Property qtiweight() As List(Of WeightType)
+        Public Property qtiweight() As WeightType()
             Get
                 Return Me.qtiweightField
             End Get
@@ -24289,7 +25377,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-template-default", Order:=6)>
-        Public Property qtitemplatedefault() As List(Of TemplateDefaultType)
+        Public Property qtitemplatedefault() As TemplateDefaultType()
             Get
                 Return Me.qtitemplatedefaultField
             End Get
@@ -24330,6 +25418,16 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
+        <System.Xml.Serialization.XmlAttributeAttribute()>
+        Public Property [class]() As String()
+            Get
+                Return Me.classField
+            End Get
+            Set
+                Me.classField = Value
+            End Set
+        End Property
+
         <System.Xml.Serialization.XmlAttributeAttribute(DataType:="anyURI")>
         Public Property href() As String
             Get
@@ -24341,7 +25439,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
-        Public Property category() As List(Of String)
+        Public Property category() As String()
             Get
                 Return Me.categoryField
             End Get
@@ -24349,13 +25447,23 @@ Namespace QTI.Xsd.QTI30
                 Me.categoryField = Value
             End Set
         End Property
+
+        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
+            Get
+                Return Me.anyAttrField
+            End Get
+            Set
+                Me.anyAttrField = Value
+            End Set
+        End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="VariableMapping.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class VariableMappingType
         Inherits EmptyPrimitiveTypeType
 
@@ -24384,11 +25492,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Weight.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class WeightType
         Inherits EmptyPrimitiveTypeType
 
@@ -24417,11 +25525,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TemplateDefault.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class TemplateDefaultType
 
         Private itemField As Object
@@ -24526,7 +25634,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemChoiceType13
@@ -24724,17 +25832,21 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="AssessmentSectionRef.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class AssessmentSectionRefType
         Inherits EmptyPrimitiveTypeType
 
         Private identifierField As String
 
+        Private classField() As String
+
         Private hrefField As String
+
+        Private anyAttrField() As System.Xml.XmlAttribute
 
         <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
         Public Property identifier() As String
@@ -24743,6 +25855,16 @@ Namespace QTI.Xsd.QTI30
             End Get
             Set
                 Me.identifierField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute()>
+        Public Property [class]() As String()
+            Get
+                Return Me.classField
+            End Get
+            Set
+                Me.classField = Value
             End Set
         End Property
 
@@ -24755,9 +25877,19 @@ Namespace QTI.Xsd.QTI30
                 Me.hrefField = Value
             End Set
         End Property
+
+        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
+            Get
+                Return Me.anyAttrField
+            End Get
+            Set
+                Me.anyAttrField = Value
+            End Set
+        End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum TestPartTypeNavigationmode
@@ -24767,7 +25899,7 @@ Namespace QTI.Xsd.QTI30
         nonlinear
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum TestPartTypeSubmissionmode
@@ -24777,18 +25909,326 @@ Namespace QTI.Xsd.QTI30
         simultaneous
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ModalFeedback.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class StimulusBodyType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType55
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType55()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType55
+
+        address
+
+        article
+
+        aside
+
+        audio
+
+        blockquote
+
+        div
+
+        dl
+
+        figure
+
+        footer
+
+        h1
+
+        h2
+
+        h3
+
+        h4
+
+        h5
+
+        h6
+
+        header
+
+        hr
+
+        nav
+
+        ol
+
+        p
+
+        pre
+
+        section
+
+        table
+
+        ul
+
+        video
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+    Partial Public Class FeedbackFlowContentBodyType
+
+        Private itemsField() As Object
+
+        Private itemsElementNameField() As ItemsChoiceType54
+
+        Private textField() As String
+
+        <System.Xml.Serialization.XmlElementAttribute("a", GetType(AType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("abbr", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("acronym", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("address", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("article", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("aside", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("audio", GetType(AudioType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("b", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdi", GetType(BDIType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("bdo", GetType(BDOType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("big", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("blockquote", GetType(BlockQuoteType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("br", GetType(BRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("cite", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("code", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("details", GetType(DetailsType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dfn", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("div", GetType(DivType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("dl", GetType(DLType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("em", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("figure", GetType(FigureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("footer", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h1", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h2", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h3", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h4", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h5", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("h6", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("header", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("hr", GetType(HRType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("i", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("img", GetType(ImgType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("kbd", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("label", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("nav", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("object", GetType(ObjectType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ol", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("p", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("picture", GetType(PictureType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("pre", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("q", GetType(QType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-hottext", GetType(HotTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-printed-variable", GetType(PrintedVariableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-block", GetType(TemplateBlockType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("qti-template-inline", GetType(TemplateInlineType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ruby", GetType(RubyType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("samp", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("section", GetType(BaseHTML5FlowType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("small", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("span", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("strong", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sub", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("sup", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("table", GetType(TableType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("tt", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("ul", GetType(OULType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("var", GetType(HTMLTextType), Order:=0),
+ System.Xml.Serialization.XmlElementAttribute("video", GetType(VideoType), Order:=0),
+ System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")>
+        Public Property Items() As Object()
+            Get
+                Return Me.itemsField
+            End Get
+            Set
+                Me.itemsField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
+ System.Xml.Serialization.XmlIgnoreAttribute()>
+        Public Property ItemsElementName() As ItemsChoiceType54()
+            Get
+                Return Me.itemsElementNameField
+            End Get
+            Set
+                Me.itemsElementNameField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlTextAttribute()>
+        Public Property Text() As String()
+            Get
+                Return Me.textField
+            End Get
+            Set
+                Me.textField = Value
+            End Set
+        End Property
+    End Class
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
+    Public Enum ItemsChoiceType54
+
+        a
+
+        abbr
+
+        acronym
+
+        address
+
+        article
+
+        aside
+
+        audio
+
+        b
+
+        bdi
+
+        bdo
+
+        big
+
+        blockquote
+
+        br
+
+        cite
+
+        code
+
+        details
+
+        dfn
+
+        div
+
+        dl
+
+        em
+
+        figure
+
+        footer
+
+        h1
+
+        h2
+
+        h3
+
+        h4
+
+        h5
+
+        h6
+
+        header
+
+        hr
+
+        i
+
+        img
+
+        kbd
+
+        label
+
+        nav
+
+        [object]
+
+        ol
+
+        p
+
+        picture
+
+        pre
+
+        q
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-hottext")>
+        qtihottext
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-printed-variable")>
+        qtiprintedvariable
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-block")>
+        qtitemplateblock
+
+        <System.Xml.Serialization.XmlEnumAttribute("qti-template-inline")>
+        qtitemplateinline
+
+        ruby
+
+        samp
+
+        section
+
+        small
+
+        span
+
+        strong
+
+        [sub]
+
+        sup
+
+        table
+
+        tt
+
+        ul
+
+        var
+
+        video
+    End Enum
+
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
+ System.SerializableAttribute(),
+ System.Diagnostics.DebuggerStepThroughAttribute(),
+ System.ComponentModel.DesignerCategoryAttribute("code"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class ModalFeedbackType
 
-        Private qtistylesheetField As List(Of StyleSheetType)
+        Private qtistylesheetField() As StyleSheetType
 
         Private qticontentbodyField As FeedbackFlowContentBodyType
 
-        Private qticataloginfoField As CatalogInfoType
+        Private qticataloginfoField() As CatalogType
 
         Private outcomeidentifierField As String
 
@@ -24798,8 +26238,10 @@ Namespace QTI.Xsd.QTI30
 
         Private titleField As String
 
+        Private anyAttrField() As System.Xml.XmlAttribute
+
         <System.Xml.Serialization.XmlElementAttribute("qti-stylesheet", Order:=0)>
-        Public Property qtistylesheet() As List(Of StyleSheetType)
+        Public Property qtistylesheet() As StyleSheetType()
             Get
                 Return Me.qtistylesheetField
             End Get
@@ -24819,8 +26261,8 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlArrayAttribute("qti-catalog-info", Order:=2),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property qticataloginfo() As CatalogInfoType
+ System.Xml.Serialization.XmlArrayItemAttribute("qti-catalog", IsNullable:=False)>
+        Public Property qticataloginfo() As CatalogType()
             Get
                 Return Me.qticataloginfoField
             End Get
@@ -24868,9 +26310,19 @@ Namespace QTI.Xsd.QTI30
                 Me.titleField = Value
             End Set
         End Property
+
+        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
+            Get
+                Return Me.anyAttrField
+            End Get
+            Set
+                Me.anyAttrField = Value
+            End Set
+        End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ModalFeedbackTypeShowhide
@@ -24880,21 +26332,21 @@ Namespace QTI.Xsd.QTI30
         hide
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ResponseElse.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class ResponseElseType
 
-        Private itemsField As List(Of Object)
+        Private itemsField() As Object
 
         <System.Xml.Serialization.XmlElementAttribute("qti-exit-response", GetType(EmptyPrimitiveTypeType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-lookup-outcome-value", GetType(LookupOutcomeValueType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-response-condition", GetType(ResponseConditionType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-response-processing-fragment", GetType(ResponseProcessingFragmentType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-set-outcome-value", GetType(SetValueType), Order:=0)>
-        Public Property Items() As List(Of Object)
+        Public Property Items() As Object()
             Get
                 Return Me.itemsField
             End Get
@@ -24904,16 +26356,16 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ResponseCondition.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class ResponseConditionType
 
         Private qtiresponseifField As ResponseIfType
 
-        Private qtiresponseelseifField As List(Of ResponseIfType)
+        Private qtiresponseelseifField() As ResponseIfType
 
         Private qtiresponseelseField As ResponseElseType
 
@@ -24928,7 +26380,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-response-else-if", Order:=1)>
-        Public Property qtiresponseelseif() As List(Of ResponseIfType)
+        Public Property qtiresponseelseif() As ResponseIfType()
             Get
                 Return Me.qtiresponseelseifField
             End Get
@@ -24948,18 +26400,18 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ResponseIf.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class ResponseIfType
 
         Private itemField As Object
 
         Private itemElementNameField As ItemChoiceType10
 
-        Private itemsField As List(Of Object)
+        Private itemsField() As Object
 
         <System.Xml.Serialization.XmlElementAttribute("qti-and", GetType(Logic1toManyType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-any-n", GetType(AnyNType), Order:=0),
@@ -25051,7 +26503,7 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("qti-response-condition", GetType(ResponseConditionType), Order:=2),
  System.Xml.Serialization.XmlElementAttribute("qti-response-processing-fragment", GetType(ResponseProcessingFragmentType), Order:=2),
  System.Xml.Serialization.XmlElementAttribute("qti-set-outcome-value", GetType(SetValueType), Order:=2)>
-        Public Property Items() As List(Of Object)
+        Public Property Items() As Object()
             Get
                 Return Me.itemsField
             End Get
@@ -25061,7 +26513,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemChoiceType10
@@ -25259,21 +26711,21 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ResponseProcessingFragment.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class ResponseProcessingFragmentType
 
-        Private itemsField As List(Of Object)
+        Private itemsField() As Object
 
         <System.Xml.Serialization.XmlElementAttribute("qti-exit-response", GetType(EmptyPrimitiveTypeType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-lookup-outcome-value", GetType(LookupOutcomeValueType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-response-condition", GetType(ResponseConditionType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-response-processing-fragment", GetType(ResponseProcessingFragmentType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-set-outcome-value", GetType(SetValueType), Order:=0)>
-        Public Property Items() As List(Of Object)
+        Public Property Items() As Object()
             Get
                 Return Me.itemsField
             End Get
@@ -25283,21 +26735,21 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ItemBody.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("qti-item-body", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class ItemBodyType
 
         Private itemsField() As Object
 
-        Private itemsElementNameField() As ItemsChoiceType52
+        Private itemsElementNameField() As ItemsChoiceType53
 
         Private idField As String
 
-        Private classField As List(Of String)
+        Private classField() As String
 
         Private langField As String
 
@@ -25314,7 +26766,7 @@ Namespace QTI.Xsd.QTI30
 
         <System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order:=1),
  System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property ItemsElementName() As ItemsChoiceType52()
+        Public Property ItemsElementName() As ItemsChoiceType53()
             Get
                 Return Me.itemsElementNameField
             End Get
@@ -25334,7 +26786,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property [class]() As List(Of String)
+        Public Property [class]() As String()
             Get
                 Return Me.classField
             End Get
@@ -25385,10 +26837,10 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType52
+    Public Enum ItemsChoiceType53
 
         address
 
@@ -25507,7 +26959,7 @@ Namespace QTI.Xsd.QTI30
         video
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ItemBodyTypeDir
@@ -25519,11 +26971,11 @@ Namespace QTI.Xsd.QTI30
         [auto]
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="RadialUSValue.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class RadialUSValueType
 
         Private unitField As RadialUSValueTypeUnit
@@ -25551,7 +27003,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum RadialUSValueTypeUnit
@@ -25563,11 +27015,11 @@ Namespace QTI.Xsd.QTI30
         Second
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="IncrementUS.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class IncrementUSType
 
         Private qtiminorincrementField As RadialUSValueType
@@ -25595,11 +27047,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="RadialSIValue.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class RadialSIValueType
 
         Private unitField As RadialSIValueTypeUnit
@@ -25627,7 +27079,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum RadialSIValueTypeUnit
@@ -25635,11 +27087,11 @@ Namespace QTI.Xsd.QTI30
         Radian
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="IncrementSI.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class IncrementSIType
 
         Private qtiminorincrementField As RadialSIValueType
@@ -25667,11 +27119,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Protractor.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class ProtractorType
 
         Private qtidescriptionField As String
@@ -25700,11 +27152,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="USLinearValue.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class USLinearValueType
 
         Private unitField As USLinearValueTypeUnit
@@ -25732,7 +27184,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum USLinearValueTypeUnit
@@ -25746,11 +27198,11 @@ Namespace QTI.Xsd.QTI30
         Mile
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="USRuleSystem.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class USRuleSystemType
 
         Private qtiminimumlengthField As String
@@ -25790,11 +27242,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="SILinearValue.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class SILinearValueType
 
         Private unitField As SILinearValueTypeUnit
@@ -25822,7 +27274,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum SILinearValueTypeUnit
@@ -25836,11 +27288,11 @@ Namespace QTI.Xsd.QTI30
         Kilometer
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="SIRuleSystem.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class SIRuleSystemType
 
         Private qtiminimumlengthField As String
@@ -25880,11 +27332,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Rule.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class RuleType
 
         Private qtidescriptionField As String
@@ -25913,11 +27365,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ItemFileInfo.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class ItemFileInfoType
 
         Private qtifilehrefField As String
@@ -25969,11 +27421,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Calculator.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class CalculatorType
 
         Private qticalculatortypeField As CalculatorTypeQticalculatortype
@@ -26013,7 +27465,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum CalculatorTypeQticalculatortype
@@ -26027,28 +27479,28 @@ Namespace QTI.Xsd.QTI30
         graphing
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="CompanionMaterialsInfo.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("qti-companion-materials-info", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class CompanionMaterialsInfoType
 
-        Private qticalculatorField As List(Of CalculatorType)
+        Private qticalculatorField() As CalculatorType
 
-        Private qtiruleField As List(Of RuleType)
+        Private qtiruleField() As RuleType
 
-        Private qtiprotractorField As List(Of ProtractorType)
+        Private qtiprotractorField() As ProtractorType
 
-        Private qtidigitalmaterialField As List(Of ItemFileInfoType)
+        Private qtidigitalmaterialField() As ItemFileInfoType
 
-        Private qtiphysicalmaterialField As List(Of String)
+        Private qtiphysicalmaterialField() As String
 
-        Private anyField As List(Of System.Xml.XmlElement)
+        Private anyField() As System.Xml.XmlElement
 
         <System.Xml.Serialization.XmlElementAttribute("qti-calculator", Order:=0)>
-        Public Property qticalculator() As List(Of CalculatorType)
+        Public Property qticalculator() As CalculatorType()
             Get
                 Return Me.qticalculatorField
             End Get
@@ -26058,7 +27510,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-rule", Order:=1)>
-        Public Property qtirule() As List(Of RuleType)
+        Public Property qtirule() As RuleType()
             Get
                 Return Me.qtiruleField
             End Get
@@ -26068,7 +27520,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-protractor", Order:=2)>
-        Public Property qtiprotractor() As List(Of ProtractorType)
+        Public Property qtiprotractor() As ProtractorType()
             Get
                 Return Me.qtiprotractorField
             End Get
@@ -26078,7 +27530,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-digital-material", Order:=3)>
-        Public Property qtidigitalmaterial() As List(Of ItemFileInfoType)
+        Public Property qtidigitalmaterial() As ItemFileInfoType()
             Get
                 Return Me.qtidigitalmaterialField
             End Get
@@ -26088,7 +27540,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-physical-material", DataType:="normalizedString", Order:=4)>
-        Public Property qtiphysicalmaterial() As List(Of String)
+        Public Property qtiphysicalmaterial() As String()
             Get
                 Return Me.qtiphysicalmaterialField
             End Get
@@ -26098,7 +27550,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAnyElementAttribute(Order:=5)>
-        Public Property Any() As List(Of System.Xml.XmlElement)
+        Public Property Any() As System.Xml.XmlElement()
             Get
                 Return Me.anyField
             End Get
@@ -26108,11 +27560,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TemplateElse.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class TemplateElseType
 
         Private itemsField() As Object
@@ -26147,16 +27599,16 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TemplateCondition.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class TemplateConditionType
 
         Private qtitemplateifField As TemplateIfType
 
-        Private qtitemplateelseifField As List(Of TemplateIfType)
+        Private qtitemplateelseifField() As TemplateIfType
 
         Private qtitemplateelseField As TemplateElseType
 
@@ -26171,7 +27623,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-template-else-if", Order:=1)>
-        Public Property qtitemplateelseif() As List(Of TemplateIfType)
+        Public Property qtitemplateelseif() As TemplateIfType()
             Get
                 Return Me.qtitemplateelseifField
             End Get
@@ -26191,11 +27643,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TemplateIf.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class TemplateIfType
 
         Private itemField As Object
@@ -26319,7 +27771,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemChoiceType8
@@ -26517,11 +27969,11 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TemplateConstraint.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class TemplateConstraintType
 
         Private itemField As Object
@@ -26614,7 +28066,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemChoiceType9
@@ -26812,7 +28264,7 @@ Namespace QTI.Xsd.QTI30
         qtivariable
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType12
@@ -26836,7 +28288,7 @@ Namespace QTI.Xsd.QTI30
         qtitemplateconstraint
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType13
@@ -26860,11 +28312,11 @@ Namespace QTI.Xsd.QTI30
         qtitemplateconstraint
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TemplateProcessing.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class TemplateProcessingType
 
         Private itemsField() As Object
@@ -26899,7 +28351,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
     Public Enum ItemsChoiceType14
@@ -26923,11 +28375,11 @@ Namespace QTI.Xsd.QTI30
         qtitemplateconstraint
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="TemplateDeclaration.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class TemplateDeclarationType
 
         Private qtidefaultvalueField As DefaultValueType
@@ -27023,19 +28475,19 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="DefaultValue.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class DefaultValueType
 
-        Private qtivalueField As List(Of ValueType)
+        Private qtivalueField() As ValueType
 
         Private interpretationField As String
 
         <System.Xml.Serialization.XmlElementAttribute("qti-value", Order:=0)>
-        Public Property qtivalue() As List(Of ValueType)
+        Public Property qtivalue() As ValueType()
             Get
                 Return Me.qtivalueField
             End Get
@@ -27055,11 +28507,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Value.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class ValueType
 
         Private fieldidentifierField As String
@@ -27111,7 +28563,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ValueTypeBasetype
@@ -27139,7 +28591,7 @@ Namespace QTI.Xsd.QTI30
         uri
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum TemplateDeclarationTypeCardinality
@@ -27153,7 +28605,7 @@ Namespace QTI.Xsd.QTI30
         [single]
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum TemplateDeclarationTypeBasetype
@@ -27181,19 +28633,19 @@ Namespace QTI.Xsd.QTI30
         uri
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="InterpolationTable.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class InterpolationTableType
 
-        Private qtiinterpolationtableentryField As List(Of InterpolationTableEntryType)
+        Private qtiinterpolationtableentryField() As InterpolationTableEntryType
 
         Private defaultvalueField As String
 
         <System.Xml.Serialization.XmlElementAttribute("qti-interpolation-table-entry", Order:=0)>
-        Public Property qtiinterpolationtableentry() As List(Of InterpolationTableEntryType)
+        Public Property qtiinterpolationtableentry() As InterpolationTableEntryType()
             Get
                 Return Me.qtiinterpolationtableentryField
             End Get
@@ -27213,11 +28665,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="InterpolationTableEntry.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class InterpolationTableEntryType
         Inherits EmptyPrimitiveTypeType
 
@@ -27264,19 +28716,19 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="MatchTable.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class MatchTableType
 
-        Private qtimatchtableentryField As List(Of MatchTableEntryType)
+        Private qtimatchtableentryField() As MatchTableEntryType
 
         Private defaultvalueField As String
 
         <System.Xml.Serialization.XmlElementAttribute("qti-match-table-entry", Order:=0)>
-        Public Property qtimatchtableentry() As List(Of MatchTableEntryType)
+        Public Property qtimatchtableentry() As MatchTableEntryType()
             Get
                 Return Me.qtimatchtableentryField
             End Get
@@ -27296,11 +28748,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="MatchTableEntry.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class MatchTableEntryType
         Inherits EmptyPrimitiveTypeType
 
@@ -27329,7 +28781,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum MatchTableEntryTypeTargetvalue
@@ -27357,14 +28809,14 @@ Namespace QTI.Xsd.QTI30
         uri
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="Mapping.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class MappingType
 
-        Private qtimapentryField As List(Of MapEntryType)
+        Private qtimapentryField() As MapEntryType
 
         Private lowerboundField As Double
 
@@ -27382,7 +28834,7 @@ Namespace QTI.Xsd.QTI30
         End Sub
 
         <System.Xml.Serialization.XmlElementAttribute("qti-map-entry", Order:=0)>
-        Public Property qtimapentry() As List(Of MapEntryType)
+        Public Property qtimapentry() As MapEntryType()
             Get
                 Return Me.qtimapentryField
             End Get
@@ -27443,11 +28895,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="MapEntry.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class MapEntryType
         Inherits EmptyPrimitiveTypeType
 
@@ -27494,19 +28946,19 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="CorrectResponse.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class CorrectResponseType
 
-        Private qtivalueField As List(Of ValueType)
+        Private qtivalueField() As ValueType
 
         Private interpretationField As String
 
         <System.Xml.Serialization.XmlElementAttribute("qti-value", Order:=0)>
-        Public Property qtivalue() As List(Of ValueType)
+        Public Property qtivalue() As ValueType()
             Get
                 Return Me.qtivalueField
             End Get
@@ -27526,11 +28978,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ResponseDeclaration.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("qti-response-declaration", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class ResponseDeclarationType
 
@@ -27631,14 +29083,14 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="AreaMapping.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class AreaMappingType
 
-        Private qtiareamapentryField As List(Of AreaMapEntryType)
+        Private qtiareamapentryField() As AreaMapEntryType
 
         Private lowerboundField As Double
 
@@ -27656,7 +29108,7 @@ Namespace QTI.Xsd.QTI30
         End Sub
 
         <System.Xml.Serialization.XmlElementAttribute("qti-area-map-entry", Order:=0)>
-        Public Property qtiareamapentry() As List(Of AreaMapEntryType)
+        Public Property qtiareamapentry() As AreaMapEntryType()
             Get
                 Return Me.qtiareamapentryField
             End Get
@@ -27717,11 +29169,11 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="AreaMapEntry.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class AreaMapEntryType
         Inherits EmptyPrimitiveTypeType
 
@@ -27762,7 +29214,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum AreaMapEntryTypeShape
@@ -27778,7 +29230,7 @@ Namespace QTI.Xsd.QTI30
         rect
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ResponseDeclarationTypeCardinality
@@ -27792,7 +29244,7 @@ Namespace QTI.Xsd.QTI30
         [single]
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ResponseDeclarationTypeBasetype
@@ -27820,11 +29272,11 @@ Namespace QTI.Xsd.QTI30
         uri
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ContextDeclaration.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class ContextDeclarationType
 
         Private qtidefaultvalueField As DefaultValueType
@@ -27832,8 +29284,6 @@ Namespace QTI.Xsd.QTI30
         Private identifierField As String
 
         Private cardinalityField As ContextDeclarationTypeCardinality
-
-        Private cardinalityFieldSpecified As Boolean
 
         Private basetypeField As ContextDeclarationTypeBasetype
 
@@ -27869,16 +29319,6 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property cardinalitySpecified() As Boolean
-            Get
-                Return Me.cardinalityFieldSpecified
-            End Get
-            Set
-                Me.cardinalityFieldSpecified = Value
-            End Set
-        End Property
-
         <System.Xml.Serialization.XmlAttributeAttribute("base-type")>
         Public Property basetype() As ContextDeclarationTypeBasetype
             Get
@@ -27900,7 +29340,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ContextDeclarationTypeCardinality
@@ -27914,7 +29354,7 @@ Namespace QTI.Xsd.QTI30
         [single]
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum ContextDeclarationTypeBasetype
@@ -27942,17 +29382,21 @@ Namespace QTI.Xsd.QTI30
         uri
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="AssessmentStimulusRef.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Partial Public Class AssessmentStimulusRefType
         Inherits EmptyPrimitiveTypeType
 
         Private identifierField As String
 
         Private hrefField As String
+
+        Private titleField As String
+
+        Private anyAttrField() As System.Xml.XmlAttribute
 
         <System.Xml.Serialization.XmlAttributeAttribute(DataType:="NCName")>
         Public Property identifier() As String
@@ -27973,9 +29417,29 @@ Namespace QTI.Xsd.QTI30
                 Me.hrefField = Value
             End Set
         End Property
+
+        <System.Xml.Serialization.XmlAttributeAttribute(DataType:="normalizedString")>
+        Public Property title() As String
+            Get
+                Return Me.titleField
+            End Get
+            Set
+                Me.titleField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
+            Get
+                Return Me.anyAttrField
+            End Get
+            Set
+                Me.anyAttrField = Value
+            End Set
+        End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum AudioTypeCrossorigin
@@ -27986,7 +29450,7 @@ Namespace QTI.Xsd.QTI30
         usecredentials
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum AudioTypePreload
@@ -27998,10 +29462,10 @@ Namespace QTI.Xsd.QTI30
         metadata
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType26
+    Public Enum ItemsChoiceType24
 
         a
 
@@ -28032,6 +29496,8 @@ Namespace QTI.Xsd.QTI30
         cite
 
         code
+
+        details
 
         dfn
 
@@ -28191,10 +29657,10 @@ Namespace QTI.Xsd.QTI30
         video
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType29
+    Public Enum ItemsChoiceType30
 
         a
 
@@ -28225,6 +29691,8 @@ Namespace QTI.Xsd.QTI30
         cite
 
         code
+
+        details
 
         dfn
 
@@ -28303,10 +29771,10 @@ Namespace QTI.Xsd.QTI30
         video
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType43
+    Public Enum ItemsChoiceType44
 
         a
 
@@ -28392,10 +29860,10 @@ Namespace QTI.Xsd.QTI30
         var
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IncludeInSchema:=False)>
-    Public Enum ItemsChoiceType47
+    Public Enum ItemsChoiceType48
 
         a
 
@@ -28481,22 +29949,22 @@ Namespace QTI.Xsd.QTI30
         var
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="OutcomeProcessing.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("qti-outcome-processing", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class OutcomeProcessingType
 
-        Private itemsField As List(Of Object)
+        Private itemsField() As Object
 
         <System.Xml.Serialization.XmlElementAttribute("qti-exit-test", GetType(EmptyPrimitiveTypeType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-lookup-outcome-value", GetType(LookupOutcomeValueType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-outcome-condition", GetType(OutcomeConditionType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-outcome-processing-fragment", GetType(OutcomeProcessingFragmentType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-set-outcome-value", GetType(SetValueType), Order:=0)>
-        Public Property Items() As List(Of Object)
+        Public Property Items() As Object()
             Get
                 Return Me.itemsField
             End Get
@@ -28506,37 +29974,37 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="AssessmentItem.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("qti-assessment-item", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class AssessmentItemType
 
-        Private qticontextdeclarationField As List(Of ContextDeclarationType)
+        Private qticontextdeclarationField() As ContextDeclarationType
 
-        Private qtiresponsedeclarationField As List(Of ResponseDeclarationType)
+        Private qtiresponsedeclarationField() As ResponseDeclarationType
 
-        Private qtioutcomedeclarationField As List(Of OutcomeDeclarationType)
+        Private qtioutcomedeclarationField() As OutcomeDeclarationType
 
-        Private qtitemplatedeclarationField As List(Of TemplateDeclarationType)
+        Private qtitemplatedeclarationField() As TemplateDeclarationType
 
         Private qtitemplateprocessingField As TemplateProcessingType
 
-        Private qtiassessmentstimulusrefField As List(Of AssessmentStimulusRefType)
+        Private qtiassessmentstimulusrefField() As AssessmentStimulusRefType
 
         Private qticompanionmaterialsinfoField As CompanionMaterialsInfoType
 
-        Private qtistylesheetField As List(Of StyleSheetType)
+        Private qtistylesheetField() As StyleSheetType
 
         Private qtiitembodyField As ItemBodyType
 
-        Private qticataloginfoField As CatalogInfoType
+        Private qticataloginfoField() As CatalogType
 
         Private qtiresponseprocessingField As ResponseProcessingType
 
-        Private qtimodalfeedbackField As List(Of ModalFeedbackType)
+        Private qtimodalfeedbackField() As ModalFeedbackType
 
         Private identifierField As String
 
@@ -28554,13 +30022,15 @@ Namespace QTI.Xsd.QTI30
 
         Private timedependentField As Boolean
 
+        Private anyAttrField() As System.Xml.XmlAttribute
+
         Public Sub New()
             MyBase.New
             Me.adaptiveField = False
         End Sub
 
         <System.Xml.Serialization.XmlElementAttribute("qti-context-declaration", Order:=0)>
-        Public Property qticontextdeclaration() As List(Of ContextDeclarationType)
+        Public Property qticontextdeclaration() As ContextDeclarationType()
             Get
                 Return Me.qticontextdeclarationField
             End Get
@@ -28570,7 +30040,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-response-declaration", Order:=1)>
-        Public Property qtiresponsedeclaration() As List(Of ResponseDeclarationType)
+        Public Property qtiresponsedeclaration() As ResponseDeclarationType()
             Get
                 Return Me.qtiresponsedeclarationField
             End Get
@@ -28580,7 +30050,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-outcome-declaration", Order:=2)>
-        Public Property qtioutcomedeclaration() As List(Of OutcomeDeclarationType)
+        Public Property qtioutcomedeclaration() As OutcomeDeclarationType()
             Get
                 Return Me.qtioutcomedeclarationField
             End Get
@@ -28590,7 +30060,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-template-declaration", Order:=3)>
-        Public Property qtitemplatedeclaration() As List(Of TemplateDeclarationType)
+        Public Property qtitemplatedeclaration() As TemplateDeclarationType()
             Get
                 Return Me.qtitemplatedeclarationField
             End Get
@@ -28610,7 +30080,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-assessment-stimulus-ref", Order:=5)>
-        Public Property qtiassessmentstimulusref() As List(Of AssessmentStimulusRefType)
+        Public Property qtiassessmentstimulusref() As AssessmentStimulusRefType()
             Get
                 Return Me.qtiassessmentstimulusrefField
             End Get
@@ -28630,7 +30100,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-stylesheet", Order:=7)>
-        Public Property qtistylesheet() As List(Of StyleSheetType)
+        Public Property qtistylesheet() As StyleSheetType()
             Get
                 Return Me.qtistylesheetField
             End Get
@@ -28650,8 +30120,8 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlArrayAttribute("qti-catalog-info", Order:=9),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property qticataloginfo() As CatalogInfoType
+ System.Xml.Serialization.XmlArrayItemAttribute("qti-catalog", IsNullable:=False)>
+        Public Property qticataloginfo() As CatalogType()
             Get
                 Return Me.qticataloginfoField
             End Get
@@ -28671,7 +30141,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlElementAttribute("qti-modal-feedback", Order:=11)>
-        Public Property qtimodalfeedback() As List(Of ModalFeedbackType)
+        Public Property qtimodalfeedback() As ModalFeedbackType()
             Get
                 Return Me.qtimodalfeedbackField
             End Get
@@ -28760,13 +30230,23 @@ Namespace QTI.Xsd.QTI30
                 Me.timedependentField = Value
             End Set
         End Property
+
+        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
+            Get
+                Return Me.anyAttrField
+            End Get
+            Set
+                Me.anyAttrField = Value
+            End Set
+        End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="OutcomeDeclaration.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("qti-outcome-declaration", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class OutcomeDeclarationType
 
@@ -28782,7 +30262,7 @@ Namespace QTI.Xsd.QTI30
 
         Private basetypeFieldSpecified As Boolean
 
-        Private viewField As List(Of ViewType)
+        Private viewField() As ViewEnumType
 
         Private interpretationField As String
 
@@ -28868,7 +30348,7 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlAttributeAttribute()>
-        Public Property view() As List(Of ViewType)
+        Public Property view() As ViewEnumType()
             Get
                 Return Me.viewField
             End Get
@@ -28988,7 +30468,7 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum OutcomeDeclarationTypeCardinality
@@ -29002,7 +30482,7 @@ Namespace QTI.Xsd.QTI30
         [single]
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum OutcomeDeclarationTypeBasetype
@@ -29030,7 +30510,7 @@ Namespace QTI.Xsd.QTI30
         uri
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Xml.Serialization.XmlTypeAttribute(AnonymousType:=True, [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0")>
     Public Enum OutcomeDeclarationTypeExternalscored
@@ -29040,15 +30520,15 @@ Namespace QTI.Xsd.QTI30
         human
     End Enum
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="ResponseProcessing.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("qti-response-processing", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class ResponseProcessingType
 
-        Private itemsField As List(Of Object)
+        Private itemsField() As Object
 
         Private templateField As String
 
@@ -29059,7 +30539,7 @@ Namespace QTI.Xsd.QTI30
  System.Xml.Serialization.XmlElementAttribute("qti-response-condition", GetType(ResponseConditionType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-response-processing-fragment", GetType(ResponseProcessingFragmentType), Order:=0),
  System.Xml.Serialization.XmlElementAttribute("qti-set-outcome-value", GetType(SetValueType), Order:=0)>
-        Public Property Items() As List(Of Object)
+        Public Property Items() As Object()
             Get
                 Return Me.itemsField
             End Get
@@ -29089,19 +30569,19 @@ Namespace QTI.Xsd.QTI30
         End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="AssessmentStimulus.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("qti-assessment-stimulus", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class AssessmentStimulusType
 
-        Private qtistylesheetField As List(Of StyleSheetType)
+        Private qtistylesheetField() As StyleSheetType
 
         Private qtistimulusbodyField As StimulusBodyType
 
-        Private qticataloginfoField As CatalogInfoType
+        Private qticataloginfoField() As CatalogType
 
         Private identifierField As String
 
@@ -29115,8 +30595,10 @@ Namespace QTI.Xsd.QTI30
 
         Private toolversionField As String
 
+        Private anyAttrField() As System.Xml.XmlAttribute
+
         <System.Xml.Serialization.XmlElementAttribute("qti-stylesheet", Order:=0)>
-        Public Property qtistylesheet() As List(Of StyleSheetType)
+        Public Property qtistylesheet() As StyleSheetType()
             Get
                 Return Me.qtistylesheetField
             End Get
@@ -29136,8 +30618,8 @@ Namespace QTI.Xsd.QTI30
         End Property
 
         <System.Xml.Serialization.XmlArrayAttribute("qti-catalog-info", Order:=2),
- System.Xml.Serialization.XmlIgnoreAttribute()>
-        Public Property qticataloginfo() As CatalogInfoType
+ System.Xml.Serialization.XmlArrayItemAttribute("qti-catalog", IsNullable:=False)>
+        Public Property qticataloginfo() As CatalogType()
             Get
                 Return Me.qticataloginfoField
             End Get
@@ -29205,40 +30687,66 @@ Namespace QTI.Xsd.QTI30
                 Me.toolversionField = Value
             End Set
         End Property
+
+        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
+            Get
+                Return Me.anyAttrField
+            End Get
+            Set
+                Me.anyAttrField = Value
+            End Set
+        End Property
     End Class
 
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0"),
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.4084.0"),
  System.SerializableAttribute(),
  System.Diagnostics.DebuggerStepThroughAttribute(),
  System.ComponentModel.DesignerCategoryAttribute("code"),
- System.Xml.Serialization.XmlTypeAttribute(TypeName:="AssessmentTest.Type", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
+ System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"),
  System.Xml.Serialization.XmlRootAttribute("qti-assessment-test", [Namespace]:="http://www.imsglobal.org/xsd/imsqtiasi_v3p0", IsNullable:=False)>
     Partial Public Class AssessmentTestType
 
-        Private qtioutcomedeclarationField As List(Of OutcomeDeclarationType)
+        Private qticontextdeclarationField() As ContextDeclarationType
+
+        Private qtioutcomedeclarationField() As OutcomeDeclarationType
 
         Private qtitimelimitsField As TimeLimitsType
 
-        Private qtistylesheetField As List(Of StyleSheetType)
+        Private qtistylesheetField() As StyleSheetType
 
-        Private qtirubricblockField As List(Of TestRubricBlockType)
+        Private qtirubricblockField() As TestRubricBlockType
 
-        Private qtitestpartField As List(Of TestPartType)
+        Private qtitestpartField() As TestPartType
 
         Private qtioutcomeprocessingField As OutcomeProcessingType
 
-        Private qtitestfeedbackField As List(Of TestFeedbackType)
+        Private qtitestfeedbackField() As TestFeedbackType
 
         Private identifierField As String
 
         Private titleField As String
 
+        Private classField() As String
+
         Private toolnameField As String
 
         Private toolversionField As String
 
-        <System.Xml.Serialization.XmlElementAttribute("qti-outcome-declaration", Order:=0)>
-        Public Property qtioutcomedeclaration() As List(Of OutcomeDeclarationType)
+        Private anyAttrField() As System.Xml.XmlAttribute
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-context-declaration", Order:=0)>
+        Public Property qticontextdeclaration() As ContextDeclarationType()
+            Get
+                Return Me.qticontextdeclarationField
+            End Get
+            Set
+                Me.qticontextdeclarationField = Value
+            End Set
+        End Property
+
+        <System.Xml.Serialization.XmlElementAttribute("qti-outcome-declaration", Order:=1)>
+        Public Property qtioutcomedeclaration() As OutcomeDeclarationType()
             Get
                 Return Me.qtioutcomedeclarationField
             End Get
@@ -29247,7 +30755,7 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlElementAttribute("qti-time-limits", Order:=1)>
+        <System.Xml.Serialization.XmlElementAttribute("qti-time-limits", Order:=2)>
         Public Property qtitimelimits() As TimeLimitsType
             Get
                 Return Me.qtitimelimitsField
@@ -29257,8 +30765,8 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlElementAttribute("qti-stylesheet", Order:=2)>
-        Public Property qtistylesheet() As List(Of StyleSheetType)
+        <System.Xml.Serialization.XmlElementAttribute("qti-stylesheet", Order:=3)>
+        Public Property qtistylesheet() As StyleSheetType()
             Get
                 Return Me.qtistylesheetField
             End Get
@@ -29267,8 +30775,8 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlElementAttribute("qti-rubric-block", Order:=3)>
-        Public Property qtirubricblock() As List(Of TestRubricBlockType)
+        <System.Xml.Serialization.XmlElementAttribute("qti-rubric-block", Order:=4)>
+        Public Property qtirubricblock() As TestRubricBlockType()
             Get
                 Return Me.qtirubricblockField
             End Get
@@ -29277,8 +30785,8 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlElementAttribute("qti-test-part", Order:=4)>
-        Public Property qtitestpart() As List(Of TestPartType)
+        <System.Xml.Serialization.XmlElementAttribute("qti-test-part", Order:=5)>
+        Public Property qtitestpart() As TestPartType()
             Get
                 Return Me.qtitestpartField
             End Get
@@ -29287,7 +30795,7 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlElementAttribute("qti-outcome-processing", Order:=5)>
+        <System.Xml.Serialization.XmlElementAttribute("qti-outcome-processing", Order:=6)>
         Public Property qtioutcomeprocessing() As OutcomeProcessingType
             Get
                 Return Me.qtioutcomeprocessingField
@@ -29297,8 +30805,8 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
-        <System.Xml.Serialization.XmlElementAttribute("qti-test-feedback", Order:=6)>
-        Public Property qtitestfeedback() As List(Of TestFeedbackType)
+        <System.Xml.Serialization.XmlElementAttribute("qti-test-feedback", Order:=7)>
+        Public Property qtitestfeedback() As TestFeedbackType()
             Get
                 Return Me.qtitestfeedbackField
             End Get
@@ -29327,6 +30835,16 @@ Namespace QTI.Xsd.QTI30
             End Set
         End Property
 
+        <System.Xml.Serialization.XmlAttributeAttribute()>
+        Public Property [class]() As String()
+            Get
+                Return Me.classField
+            End Get
+            Set
+                Me.classField = Value
+            End Set
+        End Property
+
         <System.Xml.Serialization.XmlAttributeAttribute("tool-name", DataType:="normalizedString")>
         Public Property toolname() As String
             Get
@@ -29346,5 +30864,16 @@ Namespace QTI.Xsd.QTI30
                 Me.toolversionField = Value
             End Set
         End Property
+
+        <System.Xml.Serialization.XmlAnyAttributeAttribute()>
+        Public Property AnyAttr() As System.Xml.XmlAttribute()
+            Get
+                Return Me.anyAttrField
+            End Get
+            Set
+                Me.anyAttrField = Value
+            End Set
+        End Property
     End Class
+
 End Namespace

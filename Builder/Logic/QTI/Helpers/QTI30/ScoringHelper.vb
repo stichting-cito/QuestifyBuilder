@@ -132,9 +132,7 @@ Namespace QTI.Helpers.QTI30
                         returnValue = ResponseDeclarationTypeCardinality.multiple
                     End If
                 Case "qti-graphic-gap-match-interaction", "qti-graphic-associate-interaction"
-                    If DirectCast(responseIdentifierAttribute, XmlAttribute).OwnerElement.SelectNodes("//qti-associable-hotspot").Count > 1 Then
-                        returnValue = ResponseDeclarationTypeCardinality.multiple
-                    End If
+                    returnValue = ResponseDeclarationTypeCardinality.multiple
                 Case "qti-extended-text-interaction"
                     If DirectCast(responseIdentifierAttribute, XmlAttribute).OwnerElement.Attributes("isFormulaEditor") IsNot Nothing Then
                         returnValue = ResponseDeclarationTypeCardinality.ordered
@@ -205,7 +203,7 @@ Namespace QTI.Helpers.QTI30
                 responseIndex += 1
             Next
 
-            assessmentItemType.qtiresponsedeclaration = responseList
+            assessmentItemType.qtiresponsedeclaration = responseList.ToArray()
         End Sub
 
         Friend Shared Sub AddResponseToMediaInteraction(ByRef xmlDoc As XmlDocument)
@@ -347,12 +345,11 @@ Namespace QTI.Helpers.QTI30
             If addDefaultValue Then
                 defaultoutcomeDeclarationType.qtidefaultvalue = New DefaultValueType
 
-                Dim defaultValue(0) As ValueType
-                defaultValue(0) = New ValueType With {
+                Dim defaultValue = New ValueType With {
                     .Value = "0"
                 }
 
-                defaultoutcomeDeclarationType.qtidefaultvalue.qtivalue = defaultValue.ToList()
+                defaultoutcomeDeclarationType.qtidefaultvalue.qtivalue = {defaultValue}
             End If
 
             Return defaultoutcomeDeclarationType
@@ -437,7 +434,7 @@ Namespace QTI.Helpers.QTI30
                 Sub(element) interpolationTableEntryList.Add(New InterpolationTableEntryType() With {
                                                                 .includeboundary = True, .sourcevalue = element.RawScore,
                                                                 .targetvalue = element.TranslatedScore.ToString}))
-            interpolationTable.qtiinterpolationtableentry = interpolationTableEntryList
+            interpolationTable.qtiinterpolationtableentry = interpolationTableEntryList.ToArray()
 
             outcomeDeclarationinterpolation.Item = interpolationTable
 

@@ -1,8 +1,8 @@
 ﻿Imports System.IO
 Imports System.IO.Compression
 Imports System.Linq
-Imports Cito.Tester.Common
 Imports Newtonsoft.Json
+Imports Questify.Builder.Logic.HelperClasses
 
 Namespace CustomInteractions
 
@@ -97,19 +97,20 @@ Namespace CustomInteractions
         End Function
 
         Private Sub ValidateReferences(archive As ZipArchive, jsonEntryManifest As ZipArchiveEntry, errorMessages As List(Of String))
+            Dim allFileReferences = CiReferenceMetadataHelper.GetReferencesFromJsonManifest(jsonEntryManifest)
 
-            Using jsonFileReader As StreamReader = New StreamReader(jsonEntryManifest.Open())
-                Dim jsonFileContents As String = jsonFileReader.ReadToEnd()
-                Dim jsonManifestReferences As List(Of String) = PublicationRegExHelper.GetReferencesFromJsonManifest(jsonFileContents)
-                For Each referencedFileName As String In jsonManifestReferences
-                    Dim referencedFile = archive.GetEntry(referencedFileName)
-                    If referencedFile Is Nothing Then
-                        errorMessages.Add(String.Format(My.Resources.ReferencedFileNotFoundInJsonManifest, jsonEntryManifest.FullName, referencedFileName, Path))
-                    End If
-                Next
-            End Using
-
+            For Each missingFile As String In GetMissingFiles(allFileReferences, archive)
+                errorMessages.Add(String.Format(My.Resources.ReferencedFileNotFoundInJsonManifest, jsonEntryManifest.FullName, missingFile, Path))
+            Next
         End Sub
+
+        Private Shared Iterator Function GetMissingFiles(allFileReferences As IEnumerable(Of String), archive As ZipArchive) As IEnumerable(Of String)
+            For Each referencedFileName As String In allFileReferences
+                If archive.GetEntry(referencedFileName) Is Nothing Then
+                    Yield referencedFileName
+                End If
+            Next
+        End Function
 
         Friend Shared Function ReadCustomInteractionMetadata(metadataContent As String, ByRef errorMessages As List(Of String)) As MetadataRoot
             Try

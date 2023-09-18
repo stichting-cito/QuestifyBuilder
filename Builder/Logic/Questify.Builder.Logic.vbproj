@@ -391,6 +391,7 @@
     <Compile Include="CustomInteractions\MetadataPciModules.vb" />
     <Compile Include="CustomInteractions\PackageValidator.vb" />
     <Compile Include="CustomInteractions\PciPackageValidator.vb" />
+    <Compile Include="CustomInteractions\ReferenceMetadata.vb" />
     <Compile Include="CustomInteractions\ScoreParameterAdapter.vb" />
     <Compile Include="CustomProperties\Helpers\CustomPropertyHelper.vb" />
     <Compile Include="CustomProperties\Interfaces\ICustomPropertyValueConverter.vb" />
@@ -431,6 +432,7 @@
     <Compile Include="Enums\Enums.vb" />
     <Compile Include="CustomInteractions\CustomInterActionDimensionsHelper.vb" />
     <Compile Include="HelperClasses\AspectHelper.vb" />
+    <Compile Include="HelperClasses\CiReferenceMetadataHelper.vb" />
     <Compile Include="HelperClasses\DataTableConvertHelper.vb" />
     <Compile Include="HelperClasses\DataTableConvertHelperExtensions.vb" />
     <Compile Include="HelperClasses\HtmlContentHelper.vb" />

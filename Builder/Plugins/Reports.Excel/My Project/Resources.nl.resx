@@ -501,4 +501,19 @@
   <data name="Scorable" xml:space="preserve">
     <value>Scoorbaar</value>
   </data>
+  <data name="DatatableColumn_AssessmentTestCode" xml:space="preserve">
+    <value>Toetscode</value>
+  </data>
+  <data name="DatatableColumn_AssessmentTestTitle" xml:space="preserve">
+    <value>Toetstitel</value>
+  </data>
+  <data name="DatatableColumn_MaxScore" xml:space="preserve">
+    <value>Maximaal te behalen punten</value>
+  </data>
+  <data name="ReportDescriptionAssessmentTestMaxScore" xml:space="preserve">
+    <value>Een overzicht van het maximaal te behalen punten per geselecteerde toets.</value>
+  </data>
+  <data name="ReportNameAssessmentTestMaxScore" xml:space="preserve">
+    <value>Maximaal te behalen punten per toets in MS Excel</value>
+  </data>
 </root>

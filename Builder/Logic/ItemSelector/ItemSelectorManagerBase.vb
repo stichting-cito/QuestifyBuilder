@@ -9,7 +9,6 @@ Namespace ItemSelector
     Public MustInherit Class ItemSelectorManagerBase
 
 
-
         Private _currentTestPart As TestPartViewBase
         Private _pickedItems As PickedItemCollectionV2
         Private _sectionItemSelectors As Dictionary(Of String, IItemSelectorV2)
@@ -23,7 +22,6 @@ Namespace ItemSelector
         Protected Sub New()
             _sectionItemSelectors = New Dictionary(Of String, IItemSelectorV2)
             _pickedItems = New PickedItemCollectionV2
-            TestSessionContext.PickedItemsV2 = _pickedItems
         End Sub
 
         Public Sub New(test As AssessmentTestViewBase)
@@ -45,18 +43,6 @@ Namespace ItemSelector
         Public ReadOnly Property Test() As AssessmentTestViewBase
             Get
                 Return _test
-            End Get
-        End Property
-
-        Protected ReadOnly Property PickedItems() As PickedItemCollectionV2
-            Get
-                Return _pickedItems
-            End Get
-        End Property
-
-        Public ReadOnly Property RegularItemsPickedCount() As Integer
-            Get
-                Return Me.PickedItems.Values.Where(Function(i) i.ItemFunctionalType = ItemFunctionalType.Regular).Count()
             End Get
         End Property
 
@@ -132,28 +118,34 @@ Namespace ItemSelector
 
 
         Protected Function PickNewItem(lastResponse As Response, index As Integer, transactionToUse As TransactionData, overriddenSelector As IItemSelectorV2) As ItemReferenceViewBase
-            Dim pickedItem As ItemReferenceViewBase = Nothing
-            For Each part As TestPartViewBase In _test.TestParts
-
-                If part.State = ComponentState.Pickable Then
-                    For Each section As TestSectionViewBase In part.Sections
-                        For Each subSection As TestComponentViewBase In section.Components.OfType(Of TestSectionViewBase)()
-                            pickedItem = PickItemForSection(part, CType(subSection, TestSectionViewBase), overriddenSelector, transactionToUse, lastResponse, index)
-                            If pickedItem IsNot Nothing Then
-                                CurrentTestPart = part
-                                Return pickedItem
-                            End If
-                        Next
-                        pickedItem = PickItemForSection(part, section, overriddenSelector, transactionToUse, lastResponse, index)
-                        If pickedItem IsNot Nothing Then
-                            CurrentTestPart = part
-                            Return pickedItem
-                        End If
-                    Next
+            For Each part As TestPartViewBase In _test.TestParts.Where(Function(tp) tp.State = ComponentState.Pickable)
+                Dim pickedItemFromPart = PickNewItemFromTestPart(part, lastResponse, index, transactionToUse, overriddenSelector)
+                If pickedItemFromPart IsNot Nothing Then
+                    Return pickedItemFromPart
                 End If
             Next
 
             Throw New TestViewerException("A new item was not picked by the item selector, while it was expected that an item would be available!")
+        End Function
+
+        Private Function PickNewItemFromTestPart(part As TestPartViewBase, lastResponse As Response, index As Integer, transactionToUse As TransactionData, overriddenSelector As IItemSelectorV2) As ItemReferenceViewBase
+            Return PickNewItemFromSections(part, part.Sections.Where(Function(s) s.State = ComponentState.Pickable), lastResponse, index, transactionToUse, overriddenSelector)
+        End Function
+
+        Private Function PickNewItemFromSections(part As TestPartViewBase, sections As IEnumerable(Of TestSectionViewBase), lastResponse As Response, index As Integer, transactionToUse As TransactionData, overriddenSelector As IItemSelectorV2) As ItemReferenceViewBase
+            For Each section As TestSectionViewBase In sections
+                If section.Components.OfType(Of TestSectionViewBase).Any() Then
+                    Dim pickedSubSectionItem = PickNewItemFromSections(part, section.Components.OfType(Of TestSectionViewBase), lastResponse, index, transactionToUse, overriddenSelector)
+                    If pickedSubSectionItem IsNot Nothing Then
+                        Return pickedSubSectionItem
+                    End If
+                End If
+                Dim pickedSectionItem = PickItemForSection(part, section, overriddenSelector, transactionToUse, lastResponse, index)
+                If pickedSectionItem IsNot Nothing Then
+                    Return pickedSectionItem
+                End If
+            Next
+            Return Nothing
         End Function
 
         Private Function PickItemForSection(part As TestPartViewBase, section As TestSectionViewBase, overriddenSelector As IItemSelectorV2, transactionToUse As TransactionData, lastResponse As Response, index As Integer) As ItemReferenceViewBase

@@ -2,16 +2,11 @@ Imports System.IO
 
 Public Class SkipNativeDll
     Implements IDisposable
-    Private ReadOnly _nativeDlls As New HashSet(Of String)() From { _
-        "NPSWF32_20_0_0_306.DLL", _
-        "MEDIAINFO.DLL", _
-        "LIBGLESV2.DLL", _
-        "LIBEGL.DLL", _
-        "LIBCEF.DLL", _
-        "F_IN_BOX.DLL", _
-        "FFMPEGSUMO.DLL", _
-        "BASSMIX.DLL", _
-        "BASS.DLL" _
+    Private ReadOnly _nativeDlls As New HashSet(Of String)() From {
+        "MEDIAINFO.DLL",
+        "LIBGLESV2.DLL",
+        "LIBEGL.DLL",
+        "LIBCEF.DLL"
     }
 
     Private _disposed As Boolean

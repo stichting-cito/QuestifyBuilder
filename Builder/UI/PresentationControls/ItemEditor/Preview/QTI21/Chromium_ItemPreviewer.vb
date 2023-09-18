@@ -106,8 +106,13 @@ Public Class Chromium_ItemPreviewer
 
     Private Sub LoadUrl()
         Dim browser = CefBrowserManager.GetBrowser(_browserClaim)
-        If browser.Browser IsNot Nothing Then
-            browser.Browser.GetMainFrame().LoadUrl(Me.PublicationUrl)
+        If browser IsNot Nothing AndAlso
+            browser.Browser IsNot Nothing Then
+
+            Dim cefFrame = browser.Browser.GetMainFrame()
+            If cefFrame IsNot Nothing Then
+                browser.Browser.GetMainFrame().LoadUrl(Me.PublicationUrl)
+            End If
         End If
     End Sub
 
@@ -124,9 +129,13 @@ Public Class Chromium_ItemPreviewer
 
     Private Async Sub InitCef()
         InitializeCefWebBrowser()
-        try
+        Try
             Dim task = Await GetPreviewAsync(_handler, _bankId, _item, New List(Of PublicationProperty), False)
             PublicationUrl = GetPublicationUrl(task)
+
+            If _disposing Then
+                Return
+            End If
 
             Dim browser = CefBrowserManager.GetBrowser(_browserClaim)
             If browser IsNot Nothing AndAlso Not browser.IsDisposed AndAlso Not _disposing Then
@@ -219,6 +228,10 @@ Public Class Chromium_ItemPreviewer
             NativeMethods.SetWindowPos(handle, IntPtr.Zero, 0, 0, width, height,
                 NativeMethods.SetWindowPosFlags.IgnoreMove Or NativeMethods.SetWindowPosFlags.IgnoreZOrder)
         End If
+    End Sub
+
+    Public Overrides Sub DisposeItemPreviewer(disposing As Boolean)
+        Me.Dispose(disposing)
     End Sub
 
     Protected Overrides Sub Dispose(disposing As Boolean)

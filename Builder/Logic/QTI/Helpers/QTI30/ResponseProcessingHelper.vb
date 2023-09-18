@@ -48,7 +48,9 @@ Namespace QTI.Helpers.QTI30
 
         Friend Shared Function MergeResponseProcessing(valueFirst As ResponseProcessingType, valueSecond As ResponseProcessingType) As ResponseProcessingType
             If valueFirst IsNot Nothing AndAlso valueSecond IsNot Nothing Then
-                valueFirst.Items.AddRange(valueSecond.Items)
+                Dim valueItemsList = valueFirst.Items.ToList()
+                valueItemsList.AddRange(valueSecond.Items.ToList())
+                valueFirst.Items = valueItemsList.ToArray()
                 Return valueFirst
             End If
 

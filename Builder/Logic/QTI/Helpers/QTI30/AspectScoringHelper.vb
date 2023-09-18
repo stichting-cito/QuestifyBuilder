@@ -167,7 +167,7 @@ Namespace QTI.Helpers.QTI30
                 .basetype = OutcomeDeclarationTypeBasetype.integer,
                 .basetypeSpecified = True,
                 .cardinality = OutcomeDeclarationTypeCardinality.single,
-                .view = New List(Of ViewType) From {ViewType.scorer},
+                .view = {ViewEnumType.scorer},
                 .normalminimum = GetMinScoreFromInterpolationTable(interpolationTableForAspect),
                 .normalminimumSpecified = True,
                 .normalmaximum = GetMaxScoreForAspectOutcomeDeclaration(interpolationTableForAspect, aspectReference),
@@ -189,7 +189,7 @@ Namespace QTI.Helpers.QTI30
                 .basetype = OutcomeDeclarationTypeBasetype.integer,
                 .basetypeSpecified = True,
                 .cardinality = OutcomeDeclarationTypeCardinality.single,
-                .view = New List(Of ViewType) From {ViewType.scorer},
+                .view = {ViewEnumType.scorer},
                 .normalminimum = 0,
                 .normalminimumSpecified = True,
                 .normalmaximum = aspectReference.MaxScore,
@@ -204,17 +204,17 @@ Namespace QTI.Helpers.QTI30
                 Return Nothing
             End If
 
-            Dim interpolationTable = New InterpolationTableType() With {
-                    .qtiinterpolationtableentry = New List(Of InterpolationTableEntryType)()
-                }
+            Dim interpolationTableEntries = New List(Of InterpolationTableEntryType)
 
             Dim aspect = GetAspectByCode(aspectReference.SourceName)
             For Each st In aspect.AspectScoreTranslationTable
                 Dim interpolationTableEntry = New InterpolationTableEntryType With {.sourcevalue = st.RawScore, .targetvalue = st.TranslatedScore.ToString()}
-                interpolationTable.qtiinterpolationtableentry.Add(interpolationTableEntry)
+                interpolationTableEntries.Add(interpolationTableEntry)
             Next
 
-            Return interpolationTable
+            Return New InterpolationTableType() With {
+                    .qtiinterpolationtableentry = interpolationTableEntries.ToArray()
+                }
         End Function
 
         Private Function GetAspectByCode(aspectCode As String) As Aspect

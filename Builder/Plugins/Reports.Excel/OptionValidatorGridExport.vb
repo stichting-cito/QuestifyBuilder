@@ -38,7 +38,8 @@ Public Class OptionValidatorGridExport
                 valid = False
             End Try
 
-            If Not value.EndsWith(".xls", StringComparison.CurrentCultureIgnoreCase) Then
+            If Not value.EndsWith(".xls", StringComparison.CurrentCultureIgnoreCase) AndAlso
+                Not value.EndsWith(".xlsx", StringComparison.CurrentCultureIgnoreCase) Then
                 _validationErrors.Add(field, My.Resources.FilenameNotValid)
                 valid = False
             End If

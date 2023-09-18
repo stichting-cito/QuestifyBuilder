@@ -2,7 +2,6 @@
 Imports System.IO
 Imports System.Linq
 Imports System.Net
-Imports System.Windows.Forms
 Imports System.Xml.Linq
 Imports Questify.Builder.Logic.HelperClasses
 Imports Questify.Builder.Logic.Service.HelperFunctions
@@ -15,7 +14,6 @@ Namespace PluginExtensibility.Html.Converters
         Private ReadOnly _mml As XNamespace = "http://www.w3.org/1998/Math/MathML"
         Private _mathMlEditorPlugin As IMathMlEditorPlugin
         Private _processedMathMlImages As Dictionary(Of Integer, String)
-        Private _equalityComparer As XNodeEqualityComparer = New XNodeEqualityComparer()
 
         Sub New(mathMlEditorPlugin As IMathMlEditorPlugin)
             _mathMlEditorPlugin = mathMlEditorPlugin
@@ -49,7 +47,7 @@ Namespace PluginExtensibility.Html.Converters
         End Sub
 
         Private Sub ProcessMathFormulaTag(mathElement As XElement)
-            Dim hash = _equalityComparer.GetHashCode(mathElement)
+            Dim hash = mathElement.ToString().GetHashCode()
             If _processedMathMlImages.ContainsKey(hash) Then
                 mathElement.AddAfterSelf(XElement.Parse(_processedMathMlImages(hash)))
             Else

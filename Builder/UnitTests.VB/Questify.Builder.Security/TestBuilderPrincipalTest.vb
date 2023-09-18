@@ -1,4 +1,4 @@
-﻿'ELMO
+﻿
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 Imports Questify.Builder.Security
 

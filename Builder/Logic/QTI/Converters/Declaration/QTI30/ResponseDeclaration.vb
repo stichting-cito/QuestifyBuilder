@@ -92,23 +92,23 @@ Namespace QTI.Converters.Declaration.QTI30
             If correctResponseValues IsNot Nothing OrElse Not String.IsNullOrEmpty(interPretationValue) Then
                 responseDeclarationType.qticorrectresponse = New CorrectResponseType
                 If Not String.IsNullOrEmpty(interPretationValue) Then responseDeclarationType.qticorrectresponse.interpretation = interPretationValue
-                If correctResponseValues IsNot Nothing Then responseDeclarationType.qticorrectresponse.qtivalue = correctResponseValues.ToList()
+                If correctResponseValues IsNot Nothing Then responseDeclarationType.qticorrectresponse.qtivalue = correctResponseValues
             End If
 
             If defaultValues IsNot Nothing Then
                 responseDeclarationType.qtidefaultvalue = New DefaultValueType
-                responseDeclarationType.qtidefaultvalue.qtivalue = defaultValues.ToList()
+                responseDeclarationType.qtidefaultvalue.qtivalue = defaultValues
             End If
 
             If areaMappings IsNot Nothing Then
                 responseDeclarationType.qtiareamapping = New AreaMappingType()
-                responseDeclarationType.qtiareamapping.qtiareamapentry = areaMappings.ToList()
+                responseDeclarationType.qtiareamapping.qtiareamapentry = areaMappings
             End If
 
             If mappings IsNot Nothing Then
                 responseDeclarationType.qtimapping = New MappingType()
                 responseDeclarationType.qtimapping.defaultvalue = 0
-                responseDeclarationType.qtimapping.qtimapentry = mappings.ToList()
+                responseDeclarationType.qtimapping.qtimapentry = mappings
             End If
 
             responseDeclarationType.basetype = ScoringHelper.GetResponseDeclarationBaseType(responseIdentifierAttribute, GetResponseTypeFactory().GetScoringParamFromFactIdsPerScoringParameterById(responseIdentifierAttribute.Value), _finding, keyValue)

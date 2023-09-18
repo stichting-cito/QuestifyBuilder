@@ -18,7 +18,6 @@ Namespace QTI
 
         Private _customItemSelector As IItemSelectorV2
         Private _isLastItemInTest As Boolean
-        Private _isLastItemInTestPart As Boolean
 
 
 
@@ -31,7 +30,7 @@ Namespace QTI
 
 
 
-        Private Function DetermineLastItemInTest(ByVal itemRef As ItemReferenceViewBase) As Boolean
+        Private Function DetermineLastItemInTest() As Boolean
             Dim returnValue As Boolean = True
 
             For Each t As TestPartViewBase In Me.Test.TestParts
@@ -46,12 +45,10 @@ Namespace QTI
 
 
 
-        Public Overloads Function PickNewItem(ByVal index As Integer) As ItemReferenceViewBase
+        Public Overloads Function PickNewItem(index As Integer) As ItemReferenceViewBase
             Dim newItem As ItemReferenceViewBase = DirectCast(Me.PickNewItem(Nothing, index, New TransactionData, _customItemSelector), ItemReferenceViewBase)
-            Me.CurrentTestPart = GetTestPartOf(newItem)
 
-            _isLastItemInTestPart = newItem.LastItemInTestPart
-            _isLastItemInTest = DetermineLastItemInTest(newItem)
+            _isLastItemInTest = DetermineLastItemInTest()
 
             Return newItem
         End Function

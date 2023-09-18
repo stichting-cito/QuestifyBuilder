@@ -90,7 +90,7 @@ Public Class TestPreviewLauncher
                                 Throw New FileNotFoundException("Could not find preview client: " + previewClient)
                             End If
 
-                            Process.Start(previewClient, publicationTaskProgress.PublicationUrls.First())
+                            Process.Start(previewClient, $"--facet-overwrite-url={publicationTaskProgress.PublicationUrls.First()}")
                         End If
                     Else
                         Dim tempPackageLocation = DownloadPackage(publicationTaskProgress.PublicationLocations.FirstOrDefault(), _test, _testPreviewHandler.FileExtension)

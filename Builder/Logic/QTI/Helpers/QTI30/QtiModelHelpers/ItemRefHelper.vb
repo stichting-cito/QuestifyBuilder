@@ -27,11 +27,8 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
             itemRef.href = $"{itemResourceIdentifier}.xml"
             itemRef.childIndex = GetChildIndex(ChainHandlerHelper.RemovePrefixFromResourceIdentifier(test.identifier, PackageCreatorConstants.TypeOfResource.test))
 
-            Dim weight As New WeightType
-            weight.identifier = PackageCreatorConstants.WEIGHT
-            weight.value = GetWeigth()
-            itemRef.qtiweight = New List(Of WeightType)
-            itemRef.qtiweight.Add(weight)
+            Dim weight As New WeightType With {.identifier = PackageCreatorConstants.WEIGHT, .value = GetWeigth()}
+            itemRef.qtiweight = {weight}
 
             If TypeOf _itemRef Is QTIItemReferenceBase AndAlso DirectCast(_itemRef, QTIItemReferenceBase).SectionPart IsNot Nothing Then
                 If maxItemDuration > 0 Then
@@ -61,13 +58,12 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
         Public Overridable Sub AddItemRefToSection(test As AssessmentTestType, itemRef As AssessmentItemRefType)
             Dim parentId = ChainHandlerHelper.GetIdentifierFromResourceId(_itemRef.Parent.Identifier, PackageCreatorConstants.TypeOfResource.resource)
             Dim section = GetSectionReference(test, parentId)
-            If section.testComponents IsNot Nothing AndAlso section.testComponents.Count <> 0 Then
-                Dim currentlist = section.testComponents.ToList
+            If section.Items1 IsNot Nothing AndAlso section.Items1.Count <> 0 Then
+                Dim currentlist = section.Items1.ToList()
                 currentlist.Insert(itemRef.childIndex, itemRef)
-                section.testComponents = currentlist
+                section.Items1 = currentlist.ToArray()
             Else
-                section.testComponents = New List(Of Object)
-                section.testComponents.Add(itemRef)
+                section.Items1 = {itemRef}
             End If
         End Sub
 
@@ -91,17 +87,17 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
         Private Function GetAllSections(test As AssessmentTestType) As IList(Of AssessmentSectionType)
             Dim returnValue As New List(Of AssessmentSectionType)
             test.qtitestpart.ToList.ForEach(Sub(part)
-                                                part.sections.OfType(Of AssessmentSectionType).ToList.ForEach(Sub(section)
-                                                                                                                  returnValue.Add(section)
-                                                                                                                  GetSectionsFromSection(section, returnValue)
-                                                                                                              End Sub)
+                                                part.Items.OfType(Of AssessmentSectionType).ToList.ForEach(Sub(section)
+                                                                                                               returnValue.Add(section)
+                                                                                                               GetSectionsFromSection(section, returnValue)
+                                                                                                           End Sub)
                                             End Sub)
             Return returnValue
         End Function
 
         Private Sub GetSectionsFromSection(section As AssessmentSectionType, sections As List(Of AssessmentSectionType))
-            If section.testComponents IsNot Nothing Then
-                Dim newSections = From comp In section.testComponents
+            If section.Items1 IsNot Nothing Then
+                Dim newSections = From comp In section.Items1
                                   Where TypeOf comp Is AssessmentSectionType
                                   Select DirectCast(comp, AssessmentSectionType)
                 If newSections IsNot Nothing Then

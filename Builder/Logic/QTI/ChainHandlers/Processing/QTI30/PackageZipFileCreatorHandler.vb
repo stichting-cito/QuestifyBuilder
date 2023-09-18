@@ -22,7 +22,7 @@ Namespace QTI.ChainHandlers.Processing.QTI30
                     {"http://www.imsglobal.org/xsd/imsqti_metadata_v3p0", "https://purl.imsglobal.org/spec/qti/v3p0/schema/xsd/imsqti_metadatav3p0_v1p0.xsd"},
                     {"http://ltsc.ieee.org/xsd/LOM", "https://purl.imsglobal.org/spec/md/v1p3/schema/xsd/imsmd_loose_v1p3p2.xsd"},
                     {"http://www.w3.org/1998/Math/MathML", "https://purl.imsglobal.org/spec/mathml/v3p0/schema/xsd/mathml3.xsd"},
-                    {"http://www.w3.org/2010/10/synthesis", "http://www.imsglobal.org/xsd/w3/2010/ssmlv1p1-core.xsd"},
+                    {"http://www.w3.org/2001/10/synthesis", "https://purl.imsglobal.org/spec/ssml/v1p1/schema/xsd/ssmlv1p1-core.xsd"},
                     {"http://www.imsglobal.org/xsd/qti/qtiv3p0/imscp_extensionv1p2", "https://purl.imsglobal.org/spec/qti/v3p0/schema/xsd/imsqtiv3p0_cpextv1p2_v1p0.xsd"}
             }
 

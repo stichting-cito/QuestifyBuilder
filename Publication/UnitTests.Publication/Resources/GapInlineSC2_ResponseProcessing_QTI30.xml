@@ -3,157 +3,157 @@
     <qti-response-if>
       <qti-or>
         <qti-and>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE" />
             <qti-base-value base-type="integer">19</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE2" />
             <qti-base-value base-type="integer">9</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE3" />
             <qti-base-value base-type="integer">10</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE4" />
             <qti-base-value base-type="integer">3</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE5" />
             <qti-base-value base-type="integer">6</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE6" />
             <qti-base-value base-type="integer">4</qti-base-value>
           </qti-equal>
         </qti-and>
         <qti-and>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE" />
             <qti-base-value base-type="integer">19</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE2" />
             <qti-base-value base-type="integer">10</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE3" />
             <qti-base-value base-type="integer">9</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE4" />
             <qti-base-value base-type="integer">4</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE5" />
             <qti-base-value base-type="integer">6</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE6" />
             <qti-base-value base-type="integer">3</qti-base-value>
           </qti-equal>
         </qti-and>
         <qti-and>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE" />
             <qti-base-value base-type="integer">17</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE2" />
             <qti-base-value base-type="integer">10</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE3" />
             <qti-base-value base-type="integer">7</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE4" />
             <qti-base-value base-type="integer">6</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE5" />
             <qti-base-value base-type="integer">4</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE6" />
             <qti-base-value base-type="integer">3</qti-base-value>
           </qti-equal>
         </qti-and>
         <qti-and>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE" />
             <qti-base-value base-type="integer">17</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE2" />
             <qti-base-value base-type="integer">7</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE3" />
             <qti-base-value base-type="integer">10</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE4" />
             <qti-base-value base-type="integer">3</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE5" />
             <qti-base-value base-type="integer">4</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE6" />
             <qti-base-value base-type="integer">6</qti-base-value>
           </qti-equal>
         </qti-and>
         <qti-and>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE" />
             <qti-base-value base-type="integer">16</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE2" />
             <qti-base-value base-type="integer">9</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE3" />
             <qti-base-value base-type="integer">7</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE4" />
             <qti-base-value base-type="integer">6</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE5" />
             <qti-base-value base-type="integer">3</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE6" />
             <qti-base-value base-type="integer">4</qti-base-value>
           </qti-equal>
         </qti-and>
         <qti-and>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE" />
             <qti-base-value base-type="integer">16</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE2" />
             <qti-base-value base-type="integer">7</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE3" />
             <qti-base-value base-type="integer">9</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE4" />
             <qti-base-value base-type="integer">4</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE5" />
             <qti-base-value base-type="integer">3</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE6" />
             <qti-base-value base-type="integer">6</qti-base-value>
           </qti-equal>

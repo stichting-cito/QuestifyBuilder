@@ -10,17 +10,11 @@ Public Class CefBrowserManager
         SyncLock _lock
             Dim b = BrowserPool.FirstOrDefault(Function(cb) cb.ClaimId = claimId)
             If b IsNot Nothing Then
-                Dim listOfDisposedBrowserIndex As New List(Of Integer)
-                Dim freeBrowsers = BrowserPool.Where(Function(fb) fb.ClaimId = Guid.Empty).ToList
-                freeBrowsers.ForEach(Sub(fb)
-                                         listOfDisposedBrowserIndex.Add(BrowserPool.IndexOf(fb))
-                                         DisposeBrowser(fb.Browser)
-                                     End Sub)
-                listOfDisposedBrowserIndex.ForEach(Sub(index) BrowserPool.RemoveAt(index))
+                ReleaseBrowsers()
                 b.ClaimId = Guid.Empty
                 Return true
             Else
-                Return false
+                Return False
             End If
         End SyncLock
     End Function
@@ -35,7 +29,8 @@ Public Class CefBrowserManager
                 BrowserPool.Add(New CachedBrowser(newBrowser, claimId))
                 Return newBrowser
             Else
-                browser.claimId = claimId
+                browser.ClaimId = claimId
+                ReleaseBrowsers()
                 Return browser.Browser
             End If
         End SyncLock
@@ -49,6 +44,15 @@ Public Class CefBrowserManager
         End If
     End Sub
 
+    Private Shared Function ReleaseBrowsers() As Boolean
+        Dim listOfDisposedBrowserIndex As New List(Of Integer)
+        Dim freeBrowsers = BrowserPool.Where(Function(fb) fb.ClaimId = Guid.Empty).ToList
+        freeBrowsers.ForEach(Sub(fb)
+                                 listOfDisposedBrowserIndex.Add(BrowserPool.IndexOf(fb))
+                                 DisposeBrowser(fb.Browser)
+                             End Sub)
+        listOfDisposedBrowserIndex.ForEach(Sub(index) BrowserPool.RemoveAt(index))
+    End Function
 
 End Class
 

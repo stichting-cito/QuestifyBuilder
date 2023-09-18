@@ -10,6 +10,7 @@ Imports System.Xml.XPath
 Imports Cito.Tester.Common
 Imports Cito.Tester.ContentModel
 Imports Questify.Builder.Logic.CustomInteractions
+Imports Questify.Builder.Logic.HelperClasses
 Imports Questify.Builder.Logic.ImageGenerator
 Imports Questify.Builder.Logic.QTI.Helpers.QTI_Base
 Imports Questify.Builder.Logic.QTI.PackageCreators.QTI_Base
@@ -681,17 +682,20 @@ Namespace QTI.Helpers.QTI22
                         If Not ciAlreadyInPackage Then
                             Using jsonFileReader As StreamReader = New StreamReader(manifestEntry.Open())
                                 Dim jsonFileContents As String = jsonFileReader.ReadToEnd()
-                                ChainHandlerHelper.SaveFile(PublicationRegExHelper.UpdateReferencesInJsonManifest(jsonFileContents, subFolderForCiName), Path.Combine(tempPackageDir, PublicationRegExHelper.AddCiNameToReference(manifestEntry.FullName, subFolderForCiName)))
-                                jsonManifestReferences = PublicationRegExHelper.GetReferencesFromJsonManifest(jsonFileContents)
+                                Dim updatedReferences = CiReferenceMetadataHelper.AddCiNameToReferencesInJsonManifest(jsonFileContents, subFolderForCiName)
+                                Dim filePath = Path.Combine(tempPackageDir, CiReferenceMetadataHelper.AddCiNameToReference(manifestEntry.FullName, subFolderForCiName))
+                                ChainHandlerHelper.SaveFile(updatedReferences, filePath)
+
+                                jsonManifestReferences = CiReferenceMetadataHelper.GetReferencesFromJsonManifest(jsonFileContents)
 
                                 If Not isPreview Then
-                                    QTI22PackageCreator.AddResourceToManifest(resources, CreateResourceType(PublicationRegExHelper.AddCiNameToReference(manifestEntry.FullName.Replace("\", "/").TrimStart("/"c), subFolderForCiName), subFolderForCiName))
+                                    QTI22PackageCreator.AddResourceToManifest(resources, CreateResourceType(CiReferenceMetadataHelper.AddCiNameToReference(manifestEntry.FullName.Replace("\", "/").TrimStart("/"c), subFolderForCiName), subFolderForCiName))
                                 End If
                             End Using
                         Else
                             Using jsonFileReader As StreamReader = New StreamReader(manifestEntry.Open())
                                 Dim jsonFileContents As String = jsonFileReader.ReadToEnd()
-                                jsonManifestReferences = PublicationRegExHelper.GetReferencesFromJsonManifest(jsonFileContents)
+                                jsonManifestReferences = CiReferenceMetadataHelper.GetReferencesFromJsonManifest(jsonFileContents)
                             End Using
                         End If
 
@@ -704,10 +708,10 @@ Namespace QTI.Helpers.QTI22
                                 Dim referencedFile = archive.GetEntry(referencedFileName)
                                 If referencedFile IsNot Nothing Then
                                     Using referencedFileStream As Stream = referencedFile.Open()
-                                        ChainHandlerHelper.SaveFile(ConvertStreamToByteArray(referencedFileStream), Path.Combine(tempPackageDir, PublicationRegExHelper.AddCiNameToReference(referencedFileName.TrimStart("/"c), subFolderForCiName)))
+                                        ChainHandlerHelper.SaveFile(ConvertStreamToByteArray(referencedFileStream), Path.Combine(tempPackageDir, CiReferenceMetadataHelper.AddCiNameToReference(referencedFileName.TrimStart("/"c), subFolderForCiName)))
                                     End Using
                                     If Not isPreview Then
-                                        QTI22PackageCreator.AddResourceToManifest(resources, CreateResourceType(PublicationRegExHelper.AddCiNameToReference(referencedFileName, subFolderForCiName), subFolderForCiName))
+                                        QTI22PackageCreator.AddResourceToManifest(resources, CreateResourceType(CiReferenceMetadataHelper.AddCiNameToReference(referencedFileName, subFolderForCiName), subFolderForCiName))
                                     End If
 
                                     resourceDependencies.Add(ChainHandlerHelper.GetIdentifierFromResourceId(String.Concat(subFolderForCiName, "_", Path.GetFileName(referencedFileName)), PackageCreatorConstants.TypeOfResource.resource))

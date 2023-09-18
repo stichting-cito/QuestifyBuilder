@@ -4,7 +4,7 @@ namespace Questify.Builder.Services.PublicationService.Properties
     using System;
 
 
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources
@@ -59,6 +59,22 @@ namespace Questify.Builder.Services.PublicationService.Properties
             get
             {
                 return ResourceManager.GetString("Facet_100", resourceCulture);
+            }
+        }
+
+        internal static string Facet_110
+        {
+            get
+            {
+                return ResourceManager.GetString("Facet_110", resourceCulture);
+            }
+        }
+
+        internal static string Facet_120
+        {
+            get
+            {
+                return ResourceManager.GetString("Facet_120", resourceCulture);
             }
         }
 

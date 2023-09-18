@@ -14,6 +14,8 @@ namespace Questify.Builder.Logic.Service.Interfaces
 
         int? ContextIdentifierForItemViewer { get; set; }
 
+        void DisposeItemPreviewer(Boolean disposing);
+
         void DisposePreviewerEngine(IItemPreviewHandler handler);
 
         string PreviewItem(IItemPreviewHandler handler, int bankId, AssessmentItem assessmentItem, bool force);

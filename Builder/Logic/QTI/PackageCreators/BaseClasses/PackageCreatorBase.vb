@@ -52,19 +52,13 @@ Namespace QTI.PackageCreators.BaseClasses
             AddHandler _itemSelector.TestPartChangeEvent, AddressOf NewTestPart
 
             Dim endOfTest As Boolean = False
-            Dim itemIndex As Integer = 0
 
             While Not endOfTest
-                TestSessionContext.CurrentItem = Nothing
                 Dim itemReference As ItemReferenceViewBase = _itemSelector.PickNewItem(_itemCounter)
                 NewItemReference(itemReference, test.Identifier)
                 Dim item As AssessmentItem = GetItemByCode(itemReference.SourceName)
 
-
-                TestSessionContext.CurrentItem = item
-                TestSessionContext.CurrentItemIndex = itemIndex
                 endOfTest = _itemSelector.IsLastItemInTest
-                itemIndex += 1
             End While
 
             RemoveHandler _itemSelector.ResourceNeeded, AddressOf ResourceNeeded
@@ -312,7 +306,6 @@ Namespace QTI.PackageCreators.BaseClasses
             If Not Me.disposedValue Then
                 If disposing Then
                     DisposeResourceManager()
-                    RemoveHandler TestSessionContext.ResourceNeeded, AddressOf ResourceNeeded
                 End If
             End If
             Me.disposedValue = True

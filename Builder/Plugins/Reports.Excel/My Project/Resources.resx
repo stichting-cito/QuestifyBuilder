@@ -510,4 +510,19 @@
   <data name="Scorable" xml:space="preserve">
     <value>Scorable</value>
   </data>
+  <data name="DatatableColumn_AssessmentTestCode" xml:space="preserve">
+    <value>Test code</value>
+  </data>
+  <data name="DatatableColumn_AssessmentTestTitle" xml:space="preserve">
+    <value>Test title</value>
+  </data>
+  <data name="DatatableColumn_MaxScore" xml:space="preserve">
+    <value>Max score</value>
+  </data>
+  <data name="ReportDescriptionAssessmentTestMaxScore" xml:space="preserve">
+    <value>An overview of the maximum score that can be achived per selected test.</value>
+  </data>
+  <data name="ReportNameAssessmentTestMaxScore" xml:space="preserve">
+    <value>Max score of tests in MS Excel</value>
+  </data>
 </root>

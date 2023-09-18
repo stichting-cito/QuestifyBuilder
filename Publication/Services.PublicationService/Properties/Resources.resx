@@ -123,6 +123,12 @@
   <data name="Facet_100" xml:space="preserve">
     <value>Facet 10.0</value>
   </data>
+  <data name="Facet_110" xml:space="preserve">
+    <value>Facet 11.0</value>
+  </data>
+  <data name="Facet_120" xml:space="preserve">
+    <value>Facet 12.0</value>
+  </data>
   <data name="Facet_70" xml:space="preserve">
     <value>Facet 7.0</value>
   </data>

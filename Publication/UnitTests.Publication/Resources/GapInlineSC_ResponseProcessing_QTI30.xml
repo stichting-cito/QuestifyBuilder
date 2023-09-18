@@ -3,29 +3,29 @@
     <qti-response-if>
       <qti-or>
         <qti-and>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE" />
             <qti-base-value base-type="integer">2</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE2" />
             <qti-base-value base-type="integer">3</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE3" />
             <qti-base-value base-type="integer">5</qti-base-value>
           </qti-equal>
         </qti-and>
         <qti-and>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE" />
             <qti-base-value base-type="integer">3</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE2" />
             <qti-base-value base-type="integer">2</qti-base-value>
           </qti-equal>
-          <qti-equal tolerance="">
+          <qti-equal>
             <qti-variable identifier="RESPONSE3" />
             <qti-base-value base-type="integer">5</qti-base-value>
           </qti-equal>

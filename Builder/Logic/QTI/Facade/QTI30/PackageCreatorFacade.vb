@@ -8,12 +8,12 @@ Namespace QTI.Facade.QTI30
     Public Class PackageCreatorFacade
 
         Protected _chain As ChainManager(Of PublicationRequest)
-        Protected _createPackageChain As ChainManager(Of PublicationRequest)
         Protected _setupTestChain As ChainManager(Of PublicationRequest)
-        Protected _testCreationChain As ChainManager(Of PublicationRequest)
-        Protected _saveTestAndManifestCreationChain As ChainManager(Of PublicationRequest)
         Protected _setupXsdValidationChain As ChainManager(Of PublicationRequest)
-        Protected _saveItemAndResourcesChain As ChainManager(Of PublicationRequest)
+        Protected _createItemAndResourcesChain As ChainManager(Of PublicationRequest)
+        Protected _createTestChain As ChainManager(Of PublicationRequest)
+        Protected _saveTestAndManifestCreationChain As ChainManager(Of PublicationRequest)
+        Protected _testAndManifestChain As ChainManager(Of PublicationRequest)
         Protected _packagingChain As ChainManager(Of PublicationRequest)
 
         Sub New()
@@ -22,13 +22,13 @@ Namespace QTI.Facade.QTI30
 
         Public ReadOnly Property TestCreationChain() As IList(Of IChainhandler(Of PublicationRequest))
             Get
-                Return _testCreationChain.HandlerChain
+                Return _createTestChain.HandlerChain
             End Get
         End Property
 
         Public ReadOnly Property SaveItemAndResourcesChain() As IList(Of IChainhandler(Of PublicationRequest))
             Get
-                Return _saveItemAndResourcesChain.HandlerChain
+                Return _createItemAndResourcesChain.HandlerChain
             End Get
         End Property
 
@@ -62,29 +62,37 @@ Namespace QTI.Facade.QTI30
             End Get
         End Property
 
-        Public Overridable Sub ResetFacade()
+        Private Function GetAsyncValueFromConfig() As Boolean
             Dim appSettings = ConfigurationManager.AppSettings
             Dim async = True
-            If appSettings("PublicationParallel") IsNot Nothing AndAlso Boolean.TryParse(appSettings("PublicationParallel"), async) Then
-
+            If appSettings("PublicationParallel") IsNot Nothing Then
+                Boolean.TryParse(appSettings("PublicationParallel"), async)
             End If
+            Return async
+        End Function
+
+        Public Overridable Sub ResetFacade()
+            Dim async As Boolean = GetAsyncValueFromConfig()
+
             _chain = New ChainManager(Of PublicationRequest)("Chain", ProcessStrategyEnum.ProcessEntireChain, False, False, False)
-            _createPackageChain = New ChainManager(Of PublicationRequest)("Create Package Chain", ProcessStrategyEnum.ProcessEntireChain, False)
+            _testAndManifestChain = New ChainManager(Of PublicationRequest)("Create Package Chain", ProcessStrategyEnum.ProcessEntireChain, False)
+
             _setupTestChain = New ChainManager(Of PublicationRequest)("Setup Test Creation Chain", ProcessStrategyEnum.ProcessEntireChain, False, False, False)
-            _testCreationChain = New ChainManager(Of PublicationRequest)("Test Creation Chain", ProcessStrategyEnum.ProcessEntireChain, False, False, False)
-            _saveItemAndResourcesChain = New ChainManager(Of PublicationRequest)("Item Creation Chain", ProcessStrategyEnum.ProcessEntireChain, False, False, async)
+            _createTestChain = New ChainManager(Of PublicationRequest)("Test Creation Chain", ProcessStrategyEnum.ProcessEntireChain, False, False, False)
+            _createItemAndResourcesChain = New ChainManager(Of PublicationRequest)("Item Creation Chain", ProcessStrategyEnum.ProcessEntireChain, False, False, async)
             _saveTestAndManifestCreationChain = New ChainManager(Of PublicationRequest)("Test and manifest Creation Chain", ProcessStrategyEnum.ProcessEntireChain, False, False, False)
             _setupXsdValidationChain = New ChainManager(Of PublicationRequest)("Setup Validation Chain", ProcessStrategyEnum.ProcessEntireChain, False, False, False)
             _packagingChain = New ChainManager(Of PublicationRequest)("Packaging Chain", ProcessStrategyEnum.ProcessEntireChain, False, False)
-            With _createPackageChain.HandlerChain
-                .Add(_setupTestChain)
-                .Add(_setupXsdValidationChain)
-                .Add(_testCreationChain)
-                .Add(_saveItemAndResourcesChain)
+
+            With _testAndManifestChain.HandlerChain
+                .Add(_createTestChain)
                 .Add(_saveTestAndManifestCreationChain)
             End With
             With _chain.HandlerChain
-                .Add(_createPackageChain)
+                .Add(_setupTestChain)
+                .Add(_setupXsdValidationChain)
+                .Add(_createItemAndResourcesChain)
+                .Add(_testAndManifestChain)
                 .Add(_packagingChain)
             End With
         End Sub

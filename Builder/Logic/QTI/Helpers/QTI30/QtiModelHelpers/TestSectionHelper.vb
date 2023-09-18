@@ -64,11 +64,15 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
             adaptiveSelection.qtiadaptivesettingsref = New AdaptiveHrefType() With {.identifier = "driver", .href = $"../{driverhRef}"}
             adaptiveSelection.qtiadaptiveengineref = New AdaptiveHrefType() With {.identifier = "module", .href = $"../{modulehRef}"}
 
-            If sectionType.Items Is Nothing Then
-                sectionType.Items = New List(Of Object)
+            Dim sectionItemsList As List(Of Object)
+            If sectionType.Items IsNot Nothing AndAlso Not sectionType.Items.Count = 0 Then
+                sectionItemsList = sectionType.Items.ToList()
+            Else
+                sectionItemsList = New List(Of Object)
             End If
+            sectionItemsList.Add(adaptiveSelection)
 
-            sectionType.Items.Add(adaptiveSelection)
+            sectionType.Items = sectionItemsList.ToArray()
         End Sub
 
         Public Sub AddTestSectionToAssessmentTestType(ByRef assessmentTestType As AssessmentTestType, testSectionPart As AssessmentSectionType, parentId As String)
@@ -78,29 +82,29 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
                                           Where component.identifier = id
                 If referencedTestParts.Count = 1 Then
                     Dim testPartRef As TestPartType = referencedTestParts(0)
-                    If testPartRef.sections IsNot Nothing AndAlso testPartRef.sections.Count > 0 Then
-                        Dim sectionList As List(Of Object) = testPartRef.sections.Where(Function(o) TypeOf o Is AssessmentSectionType).ToList
+                    If testPartRef.Items IsNot Nothing AndAlso testPartRef.Items.Count > 0 Then
+                        Dim sectionList As List(Of Object) = testPartRef.Items.Where(Function(o) TypeOf o Is AssessmentSectionType).ToList()
                         sectionList.Add(testSectionPart)
-                        testPartRef.sections = sectionList
+                        testPartRef.Items = sectionList.ToArray()
                     Else
-                        testPartRef.sections = New List(Of Object) From {testSectionPart}
+                        testPartRef.Items = {testSectionPart}
                     End If
                 Else
                     Dim referencedTestSection As AssessmentSectionType = Nothing
                     assessmentTestType.qtitestpart.ToList.ForEach(Sub(tp)
-                                                                      If referencedTestSection Is Nothing AndAlso tp.sections IsNot Nothing Then
-                                                                          referencedTestSection = FindParentSectionById(tp.sections.OfType(Of AssessmentSectionType).ToArray(), id)
+                                                                      If referencedTestSection Is Nothing AndAlso tp.Items IsNot Nothing Then
+                                                                          referencedTestSection = FindParentSectionById(tp.Items.OfType(Of AssessmentSectionType).ToArray(), id)
                                                                       End If
                                                                   End Sub)
                     If referencedTestSection IsNot Nothing Then
                         Dim sectionList As List(Of Object)
-                        If referencedTestSection.testComponents IsNot Nothing AndAlso Not referencedTestSection.testComponents.Count = 0 Then
-                            sectionList = referencedTestSection.testComponents
+                        If referencedTestSection.Items1 IsNot Nothing AndAlso Not referencedTestSection.Items1.Count = 0 Then
+                            sectionList = referencedTestSection.Items1.ToList()
                         Else
                             sectionList = New List(Of Object)
                         End If
                         sectionList.Add(testSectionPart)
-                        referencedTestSection.testComponents = sectionList
+                        referencedTestSection.Items1 = sectionList.ToArray()
                     Else
                         Debug.Assert(True, $"Parent: '{parentId}' for TestSection: '{testSectionPart.identifier}' cannot be found")
                     End If
@@ -172,12 +176,12 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
         Private Function FindParentSectionById(assessmentSectionType As AssessmentSectionType, id As String) As AssessmentSectionType
             Dim referencedTestSection As AssessmentSectionType = Nothing
             If assessmentSectionType.identifier.Equals(id, StringComparison.InvariantCultureIgnoreCase) Then Return assessmentSectionType
-            If assessmentSectionType.testComponents IsNot Nothing Then
-                assessmentSectionType.testComponents.ToList.ForEach(Sub(tc)
-                                                                        If referencedTestSection Is Nothing Then
-                                                                            If TypeOf tc Is AssessmentSectionType Then referencedTestSection = FindParentSectionById(DirectCast(tc, AssessmentSectionType), id)
-                                                                        End If
-                                                                    End Sub)
+            If assessmentSectionType.Items1 IsNot Nothing Then
+                assessmentSectionType.Items1.ToList.ForEach(Sub(tc)
+                                                                If referencedTestSection Is Nothing Then
+                                                                    If TypeOf tc Is AssessmentSectionType Then referencedTestSection = FindParentSectionById(DirectCast(tc, AssessmentSectionType), id)
+                                                                End If
+                                                            End Sub)
             End If
             Return referencedTestSection
         End Function

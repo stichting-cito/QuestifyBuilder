@@ -194,10 +194,11 @@ Namespace QTI.PackageCreators.QTI30
                         returnValue = Errors.Count = 0
                     End If
                     For Each handlerEx In _facade.Chain.HandlerExceptions
-                        Dim publicationError = New PublicationError
-                        publicationError.Message = handlerEx.Message
-                        publicationError.EntityProcessed = handlerEx.Message
-                        publicationError.ExceptionType = "General Exception"
+                        Dim publicationError = New PublicationError With {
+                            .Message = handlerEx.Message,
+                            .EntityProcessed = handlerEx.Message,
+                            .ExceptionType = "General Exception"
+                        }
                         If handlerEx.InnerException IsNot Nothing Then
                             publicationError.ExceptionType = handlerEx.InnerException.GetType.ToString
                             If Not String.IsNullOrEmpty(handlerEx.InnerException.Message) Then
@@ -377,7 +378,7 @@ Namespace QTI.PackageCreators.QTI30
         End Function
 
         Protected Overrides Sub NewSection(sender As Object, e As SectionChangeEventArgs)
-            _facade.SetupTestChain.Add(GetAssessmentSectionHandler(CType(e.Section, GeneralTestSection), CurrentTestIdentifier, TempWorkingDirectory.FullName))
+            _facade.SetupTestChain.Add(GetAssessmentSectionHandler(CType(e.Section, GeneralTestSection), CurrentTestIdentifier))
         End Sub
 
         Protected Overrides Sub NewTestPart(sender As Object, e As TestPartChangeEventArgs)
@@ -590,8 +591,8 @@ Namespace QTI.PackageCreators.QTI30
             Return testIdentifierInput.Replace(Chr(32), "_"c).Replace(".", "_")
         End Function
 
-        Protected Overridable Function GetAssessmentSectionHandler(qtiTestSection As GeneralTestSection, testname As String, tempFolder As String) As AssessmentSectionHandler
-            Return New AssessmentSectionHandler(qtiTestSection, testname, tempFolder, Me)
+        Protected Overridable Function GetAssessmentSectionHandler(qtiTestSection As GeneralTestSection, testname As String) As AssessmentSectionHandler
+            Return New AssessmentSectionHandler(qtiTestSection, testname, Me)
         End Function
 
         Protected Overridable Function GetAssessmentTestPartHandler(qtiTestPart As GeneralTestPart, testname As String) As AssessmentTestPartHandler

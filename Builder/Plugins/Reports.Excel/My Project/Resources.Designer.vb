@@ -217,6 +217,18 @@ Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
             End Get
         End Property
 
+        Friend ReadOnly Property DatatableColumn_AssessmentTestCode() As String
+            Get
+                Return ResourceManager.GetString("DatatableColumn_AssessmentTestCode", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property DatatableColumn_AssessmentTestTitle() As String
+            Get
+                Return ResourceManager.GetString("DatatableColumn_AssessmentTestTitle", resourceCulture)
+            End Get
+        End Property
+
         Friend ReadOnly Property DatatableColumn_Code() As String
             Get
                 Return ResourceManager.GetString("DatatableColumn_Code", resourceCulture)
@@ -268,6 +280,12 @@ Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
         Friend ReadOnly Property DatatableColumn_Itemtitle() As String
             Get
                 Return ResourceManager.GetString("DatatableColumn_Itemtitle", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property DatatableColumn_MaxScore() As String
+            Get
+                Return ResourceManager.GetString("DatatableColumn_MaxScore", resourceCulture)
             End Get
         End Property
 
@@ -601,6 +619,12 @@ Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
             End Get
         End Property
 
+        Friend ReadOnly Property ReportDescriptionAssessmentTestMaxScore() As String
+            Get
+                Return ResourceManager.GetString("ReportDescriptionAssessmentTestMaxScore", resourceCulture)
+            End Get
+        End Property
+
         Friend ReadOnly Property ReportDescriptionConceptScoring() As String
             Get
                 Return ResourceManager.GetString("ReportDescriptionConceptScoring", resourceCulture)
@@ -646,6 +670,12 @@ Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
         Friend ReadOnly Property ReportDescriptionTestWithoutParameter() As String
             Get
                 Return ResourceManager.GetString("ReportDescriptionTestWithoutParameter", resourceCulture)
+            End Get
+        End Property
+
+        Friend ReadOnly Property ReportNameAssessmentTestMaxScore() As String
+            Get
+                Return ResourceManager.GetString("ReportNameAssessmentTestMaxScore", resourceCulture)
             End Get
         End Property
 

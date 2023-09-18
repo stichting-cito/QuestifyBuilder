@@ -133,9 +133,7 @@ Namespace QTI.Helpers.QTI22
                         returnValue = ResponseDeclarationTypeCardinality.multiple
                     End If
                 Case "graphicgapmatchinteraction", "graphicassociateinteraction"
-                    If DirectCast(responseIdentifierAttribute, XmlAttribute).OwnerElement.SelectNodes("//associableHotspot").Count > 1 Then
-                        returnValue = ResponseDeclarationTypeCardinality.multiple
-                    End If
+                    returnValue = ResponseDeclarationTypeCardinality.multiple
                 Case "extendedtextinteraction"
                     If DirectCast(responseIdentifierAttribute, XmlAttribute).OwnerElement.Attributes("isFormulaEditor") IsNot Nothing Then
                         returnValue = ResponseDeclarationTypeCardinality.ordered

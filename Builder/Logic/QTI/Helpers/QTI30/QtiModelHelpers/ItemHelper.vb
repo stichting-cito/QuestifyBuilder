@@ -120,7 +120,7 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
             ProcessTts(AssessmentItem)
         End Sub
 
-        Private Function CreateAssessmentStimulusRef(doc As XmlDocument) As List(Of AssessmentStimulusRefType)
+        Private Function CreateAssessmentStimulusRef(doc As XmlDocument) As AssessmentStimulusRefType()
             Dim sharedStimuli As XmlNodeList = doc.SelectNodes($"//div[@data-stimulus-idref]")
             If sharedStimuli.Count <= 0 Then
                 Return Nothing
@@ -133,7 +133,7 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
             Return stimulusRefTypes
         End Function
 
-        Private Function ProcessStimuliNodes(sharedStimuli As XmlNodeList) As List(Of AssessmentStimulusRefType)
+        Private Function ProcessStimuliNodes(sharedStimuli As XmlNodeList) As AssessmentStimulusRefType()
             Dim result = New List(Of AssessmentStimulusRefType)
             For Each node As XmlNode In sharedStimuli
                 Dim stimulusIdentifier = ChainHandlerHelper.GetIdentifierFromResourceId($"{node.Attributes("data-stimulus-idref").Value}.xml", PackageCreatorConstants.TypeOfResource.resource)
@@ -146,7 +146,7 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
                     result.Add(newStimulus)
                 End If
             Next
-            Return result
+            Return result.ToArray()
         End Function
 
         Private Function ProcessStimulusNode(node As XmlNode, stimulusIdentifier As String) As String
@@ -333,7 +333,7 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
                                                     Dependencies.Add(nameInManifest)
                                                 End If
                                             End Sub)
-            item.qtistylesheet = qtiTemplate.StyleSheets
+            item.qtistylesheet = qtiTemplate.StyleSheets.ToArray()
         End Sub
 
         Protected Overridable Sub ProcessTts(item As AssessmentItem)
@@ -421,8 +421,8 @@ Namespace QTI.Helpers.QTI30.QtiModelHelpers
                 If responseProcessing IsNot Nothing Then item.qtiresponseprocessing = ResponseProcessingHelper.MergeResponseProcessing(item.qtiresponseprocessing, CreateResponseProcessing(responseProcessing.OuterXml))
             End If
 
-            item.qtioutcomedeclaration = outcomeDeclarations
-            item.qtiresponsedeclaration = responseDeclarations
+            item.qtioutcomedeclaration = outcomeDeclarations.ToArray()
+            item.qtiresponsedeclaration = responseDeclarations.ToArray()
         End Sub
 
         Private Function GetResponseDeclarations(responseIdentifierAttributeList As XmlNodeList) As List(Of ResponseDeclarationType)

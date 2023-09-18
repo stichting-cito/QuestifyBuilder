@@ -38,6 +38,10 @@ namespace Cito.ItemViewer.AsyncPluggableProtocol
                 if (ar != null)
                 {
                     var data = (ProtocolDataHandler)ar.AsyncState;
+                    if (data is null)
+                    {
+                        return;
+                    }
                     data.EndInvoke(ar);
 
                     lock (_streamData)

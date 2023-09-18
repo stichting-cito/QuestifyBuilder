@@ -386,6 +386,7 @@ Public Class WordReport
 
             If OptionValidator.ShouldAddItemContent AndAlso (OptionValidator.SelectedHandler IsNot Nothing AndAlso OptionValidator.SelectedHandler.PreviewTarget <> PaperBasedTestPlugin.PLUGIN_NAME) Then
                 _publicationProperties = New List(Of PublicationProperty)
+
                 Dim previewer As IItemPreviewer
                 If OptionValidator.SelectedHandler.PreviewTarget = "Word" Then
                     previewer = New Word_ItemPreviewer
